@@ -326,7 +326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -200, y: -100}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1336079393
@@ -341,11 +341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d5ba84eeca5a9429d07f09aceddec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentRoom: {fileID: 0}
-  Broom: {fileID: 0}
-  EmptyRoom: {fileID: 0}
-  unexploretRoom: {fileID: 0}
-  TreasureRoom: {fileID: 0}
+  CurrentRoom: {fileID: 21300000, guid: 5c448d688dc1b64478839cbf25732f50, type: 3}
+  Broom: {fileID: 21300000, guid: 559ed83e3c386f046b401c51b1e777ce, type: 3}
+  EmptyRoom: {fileID: 21300000, guid: f5c19026d22d441499b5dd3492b9bf38, type: 3}
+  unexploretRoom: {fileID: 21300000, guid: cd05a9ad49d008e44b54d4915d255265, type: 3}
+  TreasureRoom: {fileID: 21300000, guid: fbbc95c7c25fb6d49bab15cd8bc04ee8, type: 3}
 --- !u!114 &1336079394
 MonoBehaviour:
   m_ObjectHideFlags: 0
