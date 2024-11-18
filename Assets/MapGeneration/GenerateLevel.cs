@@ -12,49 +12,95 @@ public class GenerateLevel : MonoBehaviour
     public Sprite unexploretRoom;
     public Sprite TreasureRoom;
 
-    void DrawRoomOnMap(Sprite s, Vector2 Location)
+    void DrawRoomOnMap(Room R)
     {
         GameObject Maptile = new GameObject("MapTile");
         Image RoomImage = Maptile.AddComponent<Image>();
-        RoomImage.sprite = s;
+        RoomImage.sprite = R.RoomImage;
         RectTransform rectTransform = RoomImage.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(Levels.height, Levels.height) * Levels.IconScale;
-        rectTransform.position = Location * (Levels.IconScale * Levels.height * Levels.scale + (Levels.padding * Levels.height * Levels.scale));
+        rectTransform.position = R.Location * (Levels.IconScale * Levels.height * Levels.scale + (Levels.padding * Levels.height * Levels.scale));
         RoomImage.transform.SetParent(transform, false);
+
+        Levels.Rooms.Add(R);
     }
 
-    void Generate(Vector2 Location)
+    bool CheckIfRoomExists(Vector2 v)
     {
-        if (Random.value > Levels.RoomGenerationChance)
+        return (Levels.Rooms.Exists(x => x.Location == v));
+    }
+
+    int failsafe = 0;
+
+    void Generate(Room room)
+    {
+        failsafe++;
+        if (failsafe > 40)
         {
-            
-            DrawRoomOnMap(Levels.unexploredroomIcon, Location + new Vector2(0, 1));
-            Generate(Location + new Vector2(0, 1));
+            return;
+        }
+        
+
+        DrawRoomOnMap (room);
+
+        if (Random.value > 0.5f)
+        {
+
+
+            Room NewRoom = new Room();
+            NewRoom.Location = new Vector2(-1, 0) + room.Location;
+            NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            if (!CheckIfRoomExists(NewRoom.Location))
+            {
+                Generate(NewRoom);
+            }
+
         }
 
-        //left
-        if (Random.value > Levels.RoomGenerationChance)
+        //Right
+        if (Random.value > 0.5f)
         {
-            
-            DrawRoomOnMap(Levels.unexploredroomIcon, Location +  new Vector2(1, 0));
-            Generate(Location + new Vector2(1, 0));
+            Room NewRoom = new Room();
+            NewRoom.Location = new Vector2(1, 0) + room.Location;
+            NewRoom.RoomImage = Levels.DefaultRoomIcon;
+
+            if (!CheckIfRoomExists(NewRoom.Location))
+            {
+                Generate(NewRoom);
+            }
+
+
         }
 
-        //right
-        if (Random.value > Levels.RoomGenerationChance)
+        //UP
+        if (Random.value > 0.5f)
         {
-            
-            DrawRoomOnMap(Levels.unexploredroomIcon, Location + new Vector2(-1, 0));
-            Generate(Location + new Vector2(-1, 0));
+            Room NewRoom = new Room();
+            NewRoom.Location = new Vector2(0, 1) + room.Location;
+            NewRoom.RoomImage = Levels.DefaultRoomIcon;
+
+            if (!CheckIfRoomExists(NewRoom.Location))
+            {   
+                Generate(NewRoom);
+            }
+    
         }
 
         //Down
-        if (Random.value > Levels.RoomGenerationChance)
+        if (Random.value > 0.5f)
         {
-            
-            DrawRoomOnMap(Levels.unexploredroomIcon, Location + new Vector2(0, -1));
-            Generate(Location + new Vector2(0, -1));
+            Room NewRoom = new Room();
+            NewRoom.Location = new Vector2(0, -1) + room.Location;
+            NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            if (!CheckIfRoomExists(NewRoom.Location))
+            {
+                Generate(NewRoom);
+            }
         }
+
+
+
+
     }
 
 
@@ -67,38 +113,54 @@ public class GenerateLevel : MonoBehaviour
         Levels.currentroomIcon = CurrentRoom;       //4
         Levels.unexploredroomIcon = unexploretRoom; //5
 
-        DrawRoomOnMap(Levels.currentroomIcon, new Vector2(0, 0)); //Star room draw
+        Room StarRoom = new Room();
+        StarRoom.Location = new Vector2(0, 0);
+        StarRoom.RoomImage = Levels.currentroomIcon;
+
+        DrawRoomOnMap(StarRoom); //Star room draw
 
 
-        //up
-        if (Random.value > Levels.RoomGenerationChance)
-        {
-            Generate(new Vector2(0, 1));
-            DrawRoomOnMap(Levels.unexploredroomIcon, new Vector2(0, 1));
-        }
-
+        
         //left
-        if (Random.value > Levels.RoomGenerationChance) 
+        if(Random.value > 0.5f)
         {
-            Generate(new Vector2(-1, 0));
-            DrawRoomOnMap(Levels.unexploredroomIcon, new Vector2(1, 0)); 
+            Room NewRoom = new Room();
+            NewRoom.Location = new Vector2(-1, 0);
+            NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            Generate(NewRoom);
         }
 
-        //right
-        if (Random.value > Levels.RoomGenerationChance)
+        //Right
+        if (Random.value > 0.5f)
         {
-            Generate(new Vector2(1, 0));
-            DrawRoomOnMap(Levels.unexploredroomIcon, new Vector2(-1, 0));
+            Room NewRoom = new Room();
+            NewRoom.Location = new Vector2(1, 0);
+            NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            Generate(NewRoom);
+        }
+
+        //UP
+        if (Random.value > 0.5f)
+        {
+            Room NewRoom = new Room();
+            NewRoom.Location = new Vector2(0, 1);
+            NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            Generate(NewRoom);
         }
 
         //Down
-        if (Random.value > Levels.RoomGenerationChance)
+        if (Random.value > 0.5f)
         {
-            Generate(new Vector2(1, -1));
-            DrawRoomOnMap(Levels.unexploredroomIcon, new Vector2(0, -1));
+            Room NewRoom = new Room();
+            NewRoom.Location = new Vector2(0, -1);
+            NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            Generate(NewRoom);
         }
-    }
 
+
+
+
+    }
 
 
     // Update is called once per fram

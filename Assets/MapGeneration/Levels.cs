@@ -18,4 +18,15 @@ public static class Levels
     public static Sprite currentroomIcon;
     public static Sprite unexploredroomIcon;
     public static Sprite DefaultRoomIcon;
+
+    public static List<Room> Rooms = new List<Room>();
+    public static Room CurrentRoom;
+}
+
+public class Room
+{
+    public int RoomNumber = 0;
+    public Vector2 Location;
+    public Sprite RoomImage;
+
 }
