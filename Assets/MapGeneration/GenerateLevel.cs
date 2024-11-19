@@ -32,6 +32,59 @@ public class GenerateLevel : MonoBehaviour
 
     int failsafe = 0;
 
+
+    bool CheckIfRoomsAroundGeneratedRoom(Vector2 v, string direction)
+    {
+        switch (direction)
+        {
+            case "Right":
+                {
+                    //Check Down, Left and up
+
+                    if (Levels.Rooms.Exists(x => x.Location == new Vector2(v.x - 1, v.y)) ||
+                       Levels.Rooms.Exists(x => x.Location == new Vector2(v.x, v.y - 1)) ||
+                       Levels.Rooms.Exists(x => x.Location == new Vector2(v.x, v.y + 1)))
+                        return true;
+                    break;
+                }
+            case "Left":
+                {
+                    //Check Down, Right and up
+
+                    if (Levels.Rooms.Exists(x => x.Location == new Vector2(v.x + 1, v.y)) ||
+                       Levels.Rooms.Exists(x => x.Location == new Vector2(v.x, v.y - 1)) ||
+                       Levels.Rooms.Exists(x => x.Location == new Vector2(v.x, v.y + 1)))
+                        return true;
+                    break;
+                }
+            case "Up":
+                {
+                    //Check Down, Right and Left
+
+                    if (Levels.Rooms.Exists(x => x.Location == new Vector2(v.x + 1, v.y)) ||
+                       Levels.Rooms.Exists(x => x.Location == new Vector2(v.x -1, v.y)) ||
+                       Levels.Rooms.Exists(x => x.Location == new Vector2(v.x, v.y - 1)))
+                        return true;
+                    break;
+                }
+            case "Down":
+                {
+                    //Check Down, up and Left
+
+                    if (Levels.Rooms.Exists(x => x.Location == new Vector2(v.x, v.y + 1)) ||
+                       Levels.Rooms.Exists(x => x.Location == new Vector2(v.x - 1, v.y)) ||
+                       Levels.Rooms.Exists(x => x.Location == new Vector2(v.x + 1, v.y - 1)))
+                        return true;
+                    break;
+                }
+
+        }
+
+        return false;
+    }
+
+
+
     void Generate(Room room)
     {
         failsafe++;
@@ -42,7 +95,8 @@ public class GenerateLevel : MonoBehaviour
         
 
         DrawRoomOnMap (room);
-
+        
+        //Left
         if (Random.value > 0.5f)
         {
 
@@ -52,7 +106,8 @@ public class GenerateLevel : MonoBehaviour
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
             if (!CheckIfRoomExists(NewRoom.Location))
             {
-                Generate(NewRoom);
+                if (CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Left"))
+                    Generate(NewRoom);
             }
 
         }
@@ -66,6 +121,7 @@ public class GenerateLevel : MonoBehaviour
 
             if (!CheckIfRoomExists(NewRoom.Location))
             {
+                if(CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Left"))
                 Generate(NewRoom);
             }
 
@@ -80,8 +136,9 @@ public class GenerateLevel : MonoBehaviour
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
 
             if (!CheckIfRoomExists(NewRoom.Location))
-            {   
-                Generate(NewRoom);
+            {
+                if (CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Down"))
+                    Generate(NewRoom);
             }
     
         }
@@ -94,7 +151,8 @@ public class GenerateLevel : MonoBehaviour
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
             if (!CheckIfRoomExists(NewRoom.Location))
             {
-                Generate(NewRoom);
+                if (CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Up"))
+                    Generate(NewRoom);
             }
         }
 
