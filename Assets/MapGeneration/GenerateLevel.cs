@@ -174,6 +174,68 @@ public class GenerateLevel : MonoBehaviour
 
     }
 
+    private void GenerateBossRoom()
+    {
+        float MaxNumber = 0f;
+        Vector2 FartestRoom = new Vector2();
+
+        foreach (Room R in Levels.Rooms)
+        {
+            if (Mathf.Abs(R.Location.x) + Mathf.Abs(R.Location.y) >= MaxNumber)
+            {
+                MaxNumber = Mathf.Abs(R.Location.x) + Mathf.Abs(R.Location.y);
+                FartestRoom = R.Location;
+            }
+
+        }
+
+        Room BossRoom = new Room();
+        BossRoom.RoomImage = Levels.BossRoomIcon;
+        BossRoom.RoomNumber = 3;
+
+        //Left
+
+        if (!CheckIfRoomExists(FartestRoom + new Vector2(-1, 0)))
+        {
+            if(!CheckIfRoomsAroundGeneratedRoom(FartestRoom + new Vector2(-1, 0), "Right"))
+            {
+                BossRoom.Location = FartestRoom + new Vector2(-1, 0);
+            }
+        }
+
+        //Right
+
+        else if (!CheckIfRoomExists(FartestRoom + new Vector2(1, 0)))
+        {
+            if (!CheckIfRoomsAroundGeneratedRoom(FartestRoom + new Vector2(1, 0), "Left"))
+            {
+                BossRoom.Location = FartestRoom + new Vector2(1, 0);
+            }
+        }
+
+        //Up
+
+        else if (!CheckIfRoomExists(FartestRoom + new Vector2(0, 1)))
+        {
+            if (!CheckIfRoomsAroundGeneratedRoom(FartestRoom + new Vector2(0, 1), "Down"))
+            {
+                BossRoom.Location = FartestRoom + new Vector2(0, 1);
+            }
+        }
+
+        //Down
+
+        else if (!CheckIfRoomExists(FartestRoom + new Vector2(0, -1)))
+        {
+            if (!CheckIfRoomsAroundGeneratedRoom(FartestRoom + new Vector2(0, -1), "Up"))
+            {
+                BossRoom.Location = FartestRoom + new Vector2(0, -1);
+            }
+        }
+
+        DrawRoomOnMap(BossRoom);
+    }
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -248,7 +310,7 @@ public class GenerateLevel : MonoBehaviour
             }
         }
 
-
+        GenerateBossRoom();
 
 
     }
@@ -269,6 +331,7 @@ public class GenerateLevel : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Tab) && !regenerating) 
         {
             regenerating=true;
+            Levels.Rooms.Clear();
             Invoke(nameof(stopRegenerating), 1);
             for (int i = transform.childCount - 1; i >= 0; i--)
             {
@@ -276,7 +339,7 @@ public class GenerateLevel : MonoBehaviour
                 Destroy(child.gameObject);
             
             }
-            Levels.Rooms.Clear();
+            
 
             Start();
 
