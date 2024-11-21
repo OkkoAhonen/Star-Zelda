@@ -26,6 +26,11 @@ public class GenerateLevel : MonoBehaviour
         Levels.Rooms.Add(R);
     }
 
+    int RandomRoomNumber()
+    {
+        return 6;
+    }
+
     bool CheckIfRoomExists(Vector2 v)
     {
         return (Levels.Rooms.Exists(x => x.Location == v));
@@ -105,6 +110,7 @@ public class GenerateLevel : MonoBehaviour
             Room NewRoom = new Room();
             NewRoom.Location = new Vector2(-1, 0) + room.Location;
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            NewRoom.RoomNumber = RandomRoomNumber();
             if (!CheckIfRoomExists(NewRoom.Location))
             {
                 if (!CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Right"))
@@ -122,7 +128,7 @@ public class GenerateLevel : MonoBehaviour
             Room NewRoom = new Room();
             NewRoom.Location = new Vector2(1, 0) + room.Location;
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
-
+            NewRoom.RoomNumber = RandomRoomNumber();
             if (!CheckIfRoomExists(NewRoom.Location))
             {
                 if (!CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Left"))
@@ -141,7 +147,7 @@ public class GenerateLevel : MonoBehaviour
             Room NewRoom = new Room();
             NewRoom.Location = new Vector2(0, 1) + room.Location;
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
-
+            NewRoom.RoomNumber = RandomRoomNumber();
             if (!CheckIfRoomExists(NewRoom.Location))
             {
                 if (!CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Down"))
@@ -159,6 +165,7 @@ public class GenerateLevel : MonoBehaviour
             Room NewRoom = new Room();
             NewRoom.Location = new Vector2(0, -1) + room.Location;
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            NewRoom.RoomNumber = RandomRoomNumber();
             if (!CheckIfRoomExists(NewRoom.Location))
             {
                 if (!CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Up"))
@@ -191,7 +198,7 @@ public class GenerateLevel : MonoBehaviour
 
         Room BossRoom = new Room();
         BossRoom.RoomImage = Levels.BossRoomIcon;
-        BossRoom.RoomNumber = 3;
+        BossRoom.RoomNumber = 1;
 
         //Left
 
@@ -236,8 +243,80 @@ public class GenerateLevel : MonoBehaviour
         DrawRoomOnMap(BossRoom);
     }
 
+    void SuffleList<T>(List<T> list)
+    {
+        int n = list.Count;
+        System.Random rng = new System.Random();
+        
+        while(n > 1)
+        {
+            n--;
+            int k = rng.Next(n);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
 
-    // Start is called before the first frame update
+        Vector2 SpecialRoomLocation = Vector2.zero;
+
+        Room BossRoom = new Room();
+        BossRoom.RoomImage = Levels.BossRoomIcon;
+        BossRoom.RoomNumber = 1;
+
+        //Left
+
+        if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(-1, 0)))
+        {
+            if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(-1, 0), "Right"))
+            {
+                BossRoom.Location = SpecialRoomLocation + new Vector2(-1, 0);
+            }
+        }
+
+        //Right
+
+        else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(1, 0)))
+        {
+            if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(1, 0), "Left"))
+            {
+                BossRoom.Location = SpecialRoomLocation + new Vector2(1, 0);
+            }
+        }
+
+        //Up
+
+        else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(0, 1)))
+        {
+            if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(0, 1), "Down"))
+            {
+                BossRoom.Location = SpecialRoomLocation + new Vector2(0, 1);
+            }
+        }
+
+        //Down
+
+        else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(0, -1)))
+        {
+            if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(0, -1), "Up"))
+            {
+                BossRoom.Location = SpecialRoomLocation + new Vector2(0, -1);
+            }
+        }
+
+        DrawRoomOnMap(BossRoom);
+    }
+
+
+    private void GenerateSpecialRoom(Sprite MapIcon, int RoomNumber )
+    {
+        List<Room> SuffledList = new List<Room>(Levels.Rooms);
+
+        foreach (Room R in SuffledList)
+        {
+
+        }
+    }
+
     private void Awake()
     {
         Levels.DefaultRoomIcon = EmptyRoom;         //1
@@ -253,6 +332,8 @@ public class GenerateLevel : MonoBehaviour
         Room StarRoom = new Room();
         StarRoom.Location = new Vector2(0, 0);
         StarRoom.RoomImage = Levels.currentroomIcon;
+        StarRoom.RoomNumber = 0;
+
 
         DrawRoomOnMap(StarRoom); //Star room draw
 
@@ -264,6 +345,7 @@ public class GenerateLevel : MonoBehaviour
             Room NewRoom = new Room();
             NewRoom.Location = new Vector2(-1, 0);
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            NewRoom.RoomNumber = RandomRoomNumber();
             if (!CheckIfRoomExists(NewRoom.Location))
             {
                 if (!CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Right"))
@@ -277,6 +359,7 @@ public class GenerateLevel : MonoBehaviour
             Room NewRoom = new Room();
             NewRoom.Location = new Vector2(1, 0);
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            NewRoom.RoomNumber = RandomRoomNumber();
             if (!CheckIfRoomExists(NewRoom.Location))
             {
                 if (!CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Left"))
@@ -290,6 +373,7 @@ public class GenerateLevel : MonoBehaviour
             Room NewRoom = new Room();
             NewRoom.Location = new Vector2(0, 1);
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            NewRoom.RoomNumber = RandomRoomNumber();
             if (!CheckIfRoomExists(NewRoom.Location))
             {
                 if (!CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Down"))
@@ -303,6 +387,7 @@ public class GenerateLevel : MonoBehaviour
             Room NewRoom = new Room();
             NewRoom.Location = new Vector2(0, -1);
             NewRoom.RoomImage = Levels.DefaultRoomIcon;
+            NewRoom.RoomNumber = RandomRoomNumber();
             if (!CheckIfRoomExists(NewRoom.Location))
             {
                 if (!CheckIfRoomsAroundGeneratedRoom(NewRoom.Location, "Up"))
@@ -311,6 +396,8 @@ public class GenerateLevel : MonoBehaviour
         }
 
         GenerateBossRoom();
+
+        GenerateSpecialRoom(Levels.TreasureRoomIcon, 3);
 
 
     }
