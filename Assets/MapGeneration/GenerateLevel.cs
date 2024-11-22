@@ -15,7 +15,10 @@ public class GenerateLevel : MonoBehaviour
 
     void DrawRoomOnMap(Room R)
     {
-        GameObject Maptile = new GameObject("MapTile");
+        string TileName = "MapTile";
+        if (R.RoomNumber == 1) TileName = "BossRoom";
+        if (R.RoomNumber == 3) TileName = "TreasureRoom";
+        GameObject Maptile = new GameObject(TileName);
         Image RoomImage = Maptile.AddComponent<Image>();
         RoomImage.sprite = R.RoomImage;
         RectTransform rectTransform = RoomImage.GetComponent<RectTransform>();
@@ -257,64 +260,82 @@ public class GenerateLevel : MonoBehaviour
             list[n] = value;
         }
 
-        Vector2 SpecialRoomLocation = Vector2.zero;
-
-        Room BossRoom = new Room();
-        BossRoom.RoomImage = Levels.BossRoomIcon;
-        BossRoom.RoomNumber = 1;
-
-        //Left
-
-        if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(-1, 0)))
-        {
-            if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(-1, 0), "Right"))
-            {
-                BossRoom.Location = SpecialRoomLocation + new Vector2(-1, 0);
-            }
-        }
-
-        //Right
-
-        else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(1, 0)))
-        {
-            if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(1, 0), "Left"))
-            {
-                BossRoom.Location = SpecialRoomLocation + new Vector2(1, 0);
-            }
-        }
-
-        //Up
-
-        else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(0, 1)))
-        {
-            if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(0, 1), "Down"))
-            {
-                BossRoom.Location = SpecialRoomLocation + new Vector2(0, 1);
-            }
-        }
-
-        //Down
-
-        else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(0, -1)))
-        {
-            if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(0, -1), "Up"))
-            {
-                BossRoom.Location = SpecialRoomLocation + new Vector2(0, -1);
-            }
-        }
-
-        DrawRoomOnMap(BossRoom);
     }
 
 
-    private void GenerateSpecialRoom(Sprite MapIcon, int RoomNumber )
+    private bool GenerateSpecialRoom(Sprite MapIcon, int RoomNumber )
     {
         List<Room> SuffledList = new List<Room>(Levels.Rooms);
+        Room SpecialRoom = new Room();
+        SpecialRoom.RoomImage = MapIcon;
+        SpecialRoom.RoomNumber = RoomNumber;
+
+        bool FoundAvailkableLocation = false;
 
         foreach (Room R in SuffledList)
         {
+            Vector2 SpecialRoomLocation = R.Location;
 
+            if(R.RoomNumber < 6)
+            {
+                continue;
+            }
+
+
+            //Left
+
+            if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(-1, 0)))
+            {
+                if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(-1, 0), "Right"))
+                {
+                    SpecialRoom.Location = SpecialRoomLocation + new Vector2(-1, 0);
+                    FoundAvailkableLocation = true;
+                }
+            }
+
+            //Right
+
+            else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(1, 0)))
+            {
+                if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(1, 0), "Left"))
+                {
+                    SpecialRoom.Location = SpecialRoomLocation + new Vector2(1, 0);
+                    FoundAvailkableLocation = true;
+                }
+            }
+
+            //Up
+
+            else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(0, 1)))
+            {
+                if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(0, 1), "Down"))
+                {
+                    SpecialRoom.Location = SpecialRoomLocation + new Vector2(0, 1);
+                    FoundAvailkableLocation = true;
+                }
+            }
+
+            //Down
+
+            else if (!CheckIfRoomExists(SpecialRoomLocation + new Vector2(0, -1)))
+            {
+                if (!CheckIfRoomsAroundGeneratedRoom(SpecialRoomLocation + new Vector2(0, -1), "Up"))
+                {
+                    SpecialRoom.Location = SpecialRoomLocation + new Vector2(0, -1);
+                    FoundAvailkableLocation = true;
+                }
+            }
+
+            if (FoundAvailkableLocation)
+            {
+                DrawRoomOnMap(SpecialRoom);
+                return true;
+            }
+            
         }
+
+        return false;
+
     }
 
     private void Awake()
@@ -397,7 +418,12 @@ public class GenerateLevel : MonoBehaviour
 
         GenerateBossRoom();
 
-        GenerateSpecialRoom(Levels.TreasureRoomIcon, 3);
+        bool Treasure = GenerateSpecialRoom(Levels.TreasureRoomIcon, 3);
+
+        if(!Treasure)
+        {
+            Regenerate();
+        }
 
 
     }
@@ -406,7 +432,23 @@ public class GenerateLevel : MonoBehaviour
     // Update is called once per fram
 
 
+    void Regenerate()
+    {
+        regenerating = true;
+        failsafe = 0;
+        Levels.Rooms.Clear();
+        Invoke(nameof(stopRegenerating), 1);
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            Transform child = transform.GetChild(i);
+            Destroy(child.gameObject);
 
+        }
+
+
+        Start();
+
+    }
     bool regenerating = false;
 
     void stopRegenerating()
@@ -417,19 +459,20 @@ public class GenerateLevel : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab) && !regenerating) 
         {
+            Regenerate();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !regenerating)
+        {
             regenerating=true;
-            Levels.Rooms.Clear();
             Invoke(nameof(stopRegenerating), 1);
-            for (int i = transform.childCount - 1; i >= 0; i--)
+
+            string Log = "Room List: \n-----------------\n";
+
+            foreach(Room R in Levels.Rooms)
             {
-                Transform child = transform.GetChild(i);
-                Destroy(child.gameObject);
-            
+                Log += "Room#:" + R.RoomNumber + "Location: " + R.Location + "\n";
             }
-            
-
-            Start();
-
+            Debug.Log(Log);
         }
     }
 }
