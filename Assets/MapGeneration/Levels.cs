@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class Levels
 {
@@ -22,13 +23,16 @@ public static class Levels
     public static Sprite DefaultRoomIcon;
 
     public static List<Room> Rooms = new List<Room>();
-    public static Room CurrentRoom;
+
+    public static float RoomChangeTime = 1f;
+
 }
 
 public class Room
 {
     public int RoomNumber = 0;
     public Vector2 Location;
-    public Sprite RoomImage;
+    public Image RoomImage;
+    public Sprite RoomSprite;
 
 }

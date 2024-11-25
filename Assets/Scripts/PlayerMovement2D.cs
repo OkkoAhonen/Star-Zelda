@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement2D : MonoBehaviour
 {
     // Liikkumisen nopeus
-    public float moveSpeed = 5f;
 
     // Rigidbody2D komponentti
     private Rigidbody2D rb;
@@ -35,6 +34,6 @@ public class PlayerMovement2D : MonoBehaviour
     void FixedUpdate()
     {
         // Liikuta pelaajaa
-        rb.velocity = movement * moveSpeed;
+        rb.velocity = movement * Player.Speed;
     }
 }
