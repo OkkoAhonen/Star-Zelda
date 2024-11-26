@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4977fa41a192144b920665cf7759bbc
+guid: f2b6a3ace5b48dc44831c47b9dd47a39
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 21, y: 159, z: 50, w: 13}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kristalli kivi_0
+      name: Pelaaja anim walk 2_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 165
-        width: 1031
-        height: 890
+        x: 73
+        y: 7
+        width: 887
+        height: 1187
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be2277477dae628448036740d43a2d00
-      internalID: -101045919
+      spriteID: ac05e614d0f8a1a48b68b5aa9a37eae4
+      internalID: -2017238314
       vertices: []
       indices: 
       edges: []
@@ -173,14 +173,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Kristalli kivi_0: -101045919
+      Pelaaja anim walk 2_0: -2017238314
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

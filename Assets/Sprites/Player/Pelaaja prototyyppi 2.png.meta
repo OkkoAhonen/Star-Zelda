@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4977fa41a192144b920665cf7759bbc
+guid: b026b957ef9d20a4eb2ed324e21acab9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 21, y: 159, z: 50, w: 13}
+  spriteBorder: {x: 149, y: 0, z: 107, w: 80}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kristalli kivi_0
+      name: Pelaaja prototyyppi 2_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 165
-        width: 1031
-        height: 890
+        x: 162
+        y: 7
+        width: 798
+        height: 1187
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be2277477dae628448036740d43a2d00
-      internalID: -101045919
+      spriteID: 435eb486b8c7ab0488088d172e021219
+      internalID: -1830075891
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Kristalli kivi_0: -101045919
+      Pelaaja prototyyppi 2_0: -1830075891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
