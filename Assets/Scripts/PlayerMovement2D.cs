@@ -1,39 +1,55 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement2D : MonoBehaviour
 {
-    // Liikkumisen nopeus
+    bool isFacingRight = false; //For sprite flipping so player sprite faces right direction
 
-    // Rigidbody2D komponentti
     private Rigidbody2D rb;
 
-    // Inputin tallentaminen
+    Animator animator;
+
+    // Saving an input
     private Vector2 movement;
 
-    // Start kutsutaan ennen ensimmäistä frame-päivitystä
     void Start()
     {
-        // Haetaan Rigidbody2D komponentti
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
-    // Update kutsutaan kerran per frame
     void Update()
     {
-        // Inputin lukeminen
-        movement.x = Input.GetAxisRaw("Horizontal"); // A/D tai nuolinäppäimet vasen/oikea
-        movement.y = Input.GetAxisRaw("Vertical");   // W/S tai nuolinäppäimet ylös/alas
+        // Reading an input
+        movement.x = Input.GetAxisRaw("Horizontal"); // A/D or left/right arrow keys
+        movement.y = Input.GetAxisRaw("Vertical");   // W/S or up/down arrow keys
+
+        FlipSprite();
 
         // Input normalisoidaan diagonaalista liikettä varten
         movement = movement.normalized;
     }
 
-    // FixedUpdate kutsutaan kiinteillä aikaväleillä fysiikkapäivityksiä varten
+    // Called fixed time stamps for physics updates
     void FixedUpdate()
     {
-        // Liikuta pelaajaa
+        // Player moves
         rb.velocity = movement * Player.Speed;
+
+        // Player walking animation
+        animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+    }
+
+    void FlipSprite()
+    {
+        if(isFacingRight && movement.x < 0f || !isFacingRight && movement.x > 0f)
+        {
+            isFacingRight = false;
+            Vector3 sprite = transform.localScale;
+            sprite.x *= -1f;
+            transform.localScale = sprite;
+        }
     }
 }
