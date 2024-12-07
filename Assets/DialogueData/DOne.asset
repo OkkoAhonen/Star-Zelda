@@ -10,15 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 454e925da1687a34483e945f48f1626d, type: 3}
-  m_Name: Test
+  m_Name: DOne
   m_EditorClassIdentifier: 
   dialogue:
-  - 'This! is, my dialogue!
-
-    h. hello'
-  - "fdacva! \ngrsdsf"
-  responses:
-  - responseText: Yes
-    dialogueObject: {fileID: 11400000, guid: e18d0ae260ca05049bc90f90b9432a66, type: 2}
-  - responseText: No
-    dialogueObject: {fileID: 11400000, guid: 8324f282303df3e4a890c2db5729f81f, type: 2}
+  - I'm Done
+  responses: []

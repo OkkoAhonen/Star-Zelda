@@ -5,51 +5,81 @@ using UnityEngine;
 
 public class PlayerMovement2D : MonoBehaviour
 {
-    bool isFacingRight = false; //For sprite flipping so player sprite faces right direction
+    [SerializeField] private DialogueUI dialogueUI; // Varmista, että asetat tämän Inspectorissa
+    [SerializeField] private float speed = 5f; // Nopeus, säädettävissä Inspectorissa
 
+    public DialogueUI DialogueUI => dialogueUI;
+    public Interactable Interactable { get; set; }
+
+    private bool isFacingRight = true; // Oletuksena pelaaja katsoo oikealle
     private Rigidbody2D rb;
+    //private Animator animator;
 
-    Animator animator;
-
-    // Saving an input
+    // Tallennetaan pelaajan syötteet
     private Vector2 movement;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody2D component is missing from the Player.");
+        }
+
+        /*animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("Animator component is missing from the Player.");
+        }*/
     }
 
     void Update()
     {
-        // Reading an input
-        movement.x = Input.GetAxisRaw("Horizontal"); // A/D or left/right arrow keys
-        movement.y = Input.GetAxisRaw("Vertical");   // W/S or up/down arrow keys
+        if (dialogueUI.IsOpen) return;
 
+        // Lukee pelaajan syötteet
+        movement.x = Input.GetAxisRaw("Horizontal"); // A/D tai nuolinäppäimet vasen/oikea
+        movement.y = Input.GetAxisRaw("Vertical");   // W/S tai nuolinäppäimet ylös/alas
+
+        // Normalisoidaan liike diagonaalisia tilanteita varten
+        movement = movement.normalized;
+
+        // Päivitetään spritejen kääntö
         FlipSprite();
 
-        // Input normalisoidaan diagonaalista liikettä varten
-        movement = movement.normalized;
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if(Interactable != null)
+            {
+                Interactable.Interact(this);
+            }
+        }
     }
 
-    // Called fixed time stamps for physics updates
     void FixedUpdate()
     {
-        // Player moves
-        rb.velocity = movement * Player.Speed;
+        // Pelaajan liike
+        rb.velocity = movement * speed;
 
-        // Player walking animation
-        animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+        // Pelaajan kävelyanimaatio
+        //animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
     }
 
     void FlipSprite()
     {
-        if(isFacingRight && movement.x < 0f || !isFacingRight && movement.x > 0f)
+        // Tarkistaa, pitääkö sprite kääntää
+        if (isFacingRight && movement.x < 0f || !isFacingRight && movement.x > 0f)
         {
-            isFacingRight = false;
+            isFacingRight = !isFacingRight; // Vaihdetaan suunta
             Vector3 sprite = transform.localScale;
-            sprite.x *= -1f;
+            sprite.x *= -1f; // Käännetään sprite
             transform.localScale = sprite;
         }
     }
+    public void SetInteractable(Interactable interactable)
+    {
+        Interactable = interactable;
+    }
+
 }
