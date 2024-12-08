@@ -8,7 +8,7 @@ public class TypeWriterEffect : MonoBehaviour
     public float WriteSpeed = 20f;
 
 
-    public bool IsRunning {  get; private set; }
+    public bool IsRunning { get; private set; }
 
     private readonly Dictionary<HashSet<char>, float> punktuations = new Dictionary<HashSet<char>, float>()
     {
@@ -65,7 +65,7 @@ public class TypeWriterEffect : MonoBehaviour
 
 
         IsRunning = false;
-        
+
     }
 
     private bool IsPunctuation(char ch, out float waitTime)
