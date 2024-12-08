@@ -35,10 +35,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Update()
     {
-        //if (dialogueUI.IsOpen) return;
-        //Muista laittaa päälle ku dialogi
-
-
+        if (dialogueUI.IsOpen) return;
 
         // Lukee pelaajan syötteet
         movement.x = Input.GetAxisRaw("Horizontal"); // A/D tai nuolinäppäimet vasen/oikea
