@@ -4832,11 +4832,11 @@ GameObject:
   - component: {fileID: 811823812}
   m_Layer: 0
   m_Name: Vihu
-  m_TagString: Enemy
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &811823809
 BoxCollider2D:
   m_ObjectHideFlags: 0
