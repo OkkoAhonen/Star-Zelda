@@ -3,7 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class SimpleSceneManager : MonoBehaviour
 {
-    // Vaihda scene nimellä
+    public static SimpleSceneManager Instance;
+    private void Awake()
+    {
+        Instance = this;
+
+    }
     public void LoadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);

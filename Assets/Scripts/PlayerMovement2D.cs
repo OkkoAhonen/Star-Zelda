@@ -8,6 +8,7 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private DialogueUI dialogueUI; // Varmista, että asetat tämän Inspectorissa
 
     //public float speed = Player.Speed;
+    
 
     public DialogueUI DialogueUI => dialogueUI;
     public Interactable Interactable { get; set; }
