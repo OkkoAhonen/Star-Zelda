@@ -42,4 +42,6 @@ public class SimpleSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("Town kokeilu");
     }
+
+    
 }

@@ -33,7 +33,10 @@ public class PlayerMovement2D : MonoBehaviour
         {
             Debug.LogError("Animator component is missing from the Player.");
         }*/
+        
     }
+
+    
 
     void Update()
     {
@@ -49,6 +52,7 @@ public class PlayerMovement2D : MonoBehaviour
         // Päivitetään spritejen kääntö
         FlipSprite();
 
+        
         if (dialogueUI.IsOpen) return;
 
         if (Input.GetKeyDown(KeyCode.E))
