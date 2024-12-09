@@ -53,7 +53,7 @@ public class PlayerMovement2D : MonoBehaviour
         FlipSprite();
 
         
-        if (dialogueUI.IsOpen) return;
+        //if (dialogueUI.IsOpen) return;
 
         if (Input.GetKeyDown(KeyCode.E))
         {
