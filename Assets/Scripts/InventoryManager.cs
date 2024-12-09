@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager Instance;
+
+    public Item[] startItems;
+
     //public int maxStackItems = 4;
     public InventorySlot[] inventorySlots;
     public GameObject InventoryItemPrefab;
@@ -19,7 +23,10 @@ public class InventoryManager : MonoBehaviour
         inventorySlots[NewValue].Select();
         selectedSlot = NewValue;
     }
-
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {

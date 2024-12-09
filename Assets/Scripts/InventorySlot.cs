@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
+
+
     public Image image;
     public Color selectedColor, notSelectedColor;
 
