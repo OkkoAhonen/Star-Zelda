@@ -6,7 +6,9 @@ using UnityEngine;
 public class PlayerMovement2D : MonoBehaviour
 {
     [SerializeField] private DialogueUI dialogueUI; // Varmista, että asetat tämän Inspectorissa
-    [SerializeField] private float speed = 5f; // Nopeus, säädettävissä Inspectorissa
+
+    //public float speed = Player.Speed;
+    
 
     public DialogueUI DialogueUI => dialogueUI;
     public Interactable Interactable { get; set; }
@@ -31,11 +33,14 @@ public class PlayerMovement2D : MonoBehaviour
         {
             Debug.LogError("Animator component is missing from the Player.");
         }*/
+        
     }
+
+    
 
     void Update()
     {
-        //if (dialogueUI.IsOpen) return;
+        
 
         // Lukee pelaajan syötteet
         movement.x = Input.GetAxisRaw("Horizontal"); // A/D tai nuolinäppäimet vasen/oikea
@@ -47,20 +52,23 @@ public class PlayerMovement2D : MonoBehaviour
         // Päivitetään spritejen kääntö
         FlipSprite();
 
+        
+        if (dialogueUI.IsOpen) return;
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if(Interactable != null)
             {
                 Interactable.Interact(this);
             }
         }
+        
     }
 
     void FixedUpdate()
     {
         // Pelaajan liike
-        rb.velocity = movement * speed;
+        rb.velocity = movement * Player.Speed;
 
         // Pelaajan kävelyanimaatio
         //animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
