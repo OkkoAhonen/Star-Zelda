@@ -70,7 +70,7 @@ public class EnemyStats : MonoBehaviour
             case "boss":
                 maxHealth = 100f;
                 attackDmg = 10f;
-                speed = 5f;
+                speed = 1.5f;
                 cooldown = 3;
                 break;
 

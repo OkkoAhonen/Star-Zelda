@@ -105,14 +105,14 @@ public class PlayerCombat : MonoBehaviour
             currentAngle += swingSpeed * Time.deltaTime;
 
             // Siirretään miekka pelaajan eteenpäin hyökkäyssuunnan mukaan
-            sword.transform.localPosition = swordOffset + attackDirection * 0.5f; // 0.5f on etäisyys pelaajasta
+            //sword.transform.localPosition = swordOffset + attackDirection * 0.5f; // 0.5f on etäisyys pelaajasta
 
             yield return null; // Odotetaan seuraavaa framea.
         }
 
         // Palautetaan miekka alkuasentoon.
         sword.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        sword.transform.localPosition = swordOffset; // Miekan alkuperäinen sijainti
+        //sword.transform.localPosition = swordOffset; // Miekan alkuperäinen sijainti
         isSwinging = false;
     }
 
