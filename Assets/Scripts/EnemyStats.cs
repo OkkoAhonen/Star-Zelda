@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public GameObject enemy; // T‰m‰ tulee m‰‰ritt‰‰ Unity-editorissa.
+    public GameObject enemy; // Asetetaan Unity-editorissa.
 
     public float maxHealth;
     public float attackDmg;
     public float speed;
     public int cooldown;
-    public string enemyName; // Korjattu "name" ristiriitojen v‰ltt‰miseksi.
+    public string enemyName; // Korjattu ristiriitojen v‰ltt‰miseksi.
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +23,21 @@ public class EnemyStats : MonoBehaviour
         else
         {
             Debug.LogError("Enemy GameObject is not assigned in the Inspector for " + gameObject.name);
+            // Varmistetaan, ett‰ ominaisuuksilla on oletusarvot.
+            SetDefaultStats();
+        }
+
+        // Varmistetaan, ettei maxHealth ole nolla tai negatiivinen.
+        if (maxHealth <= 0)
+        {
+            Debug.LogWarning("Enemy " + gameObject.name + " has invalid maxHealth. Setting default value.");
+            maxHealth = 10f; // Oletusarvo.
         }
     }
 
     void SetEnemyStats(string name)
     {
-        switch (name.ToLower()) // K‰ytet‰‰n ToLower() varmistamaan, ettei kirjainkoolla ole v‰li‰.
+        switch (name.ToLower()) // Kirjainkoon varmistus.
         {
             case "skeleton":
                 maxHealth = 30f;
@@ -67,11 +76,16 @@ public class EnemyStats : MonoBehaviour
 
             default:
                 Debug.LogWarning("Enemy type not recognized: " + name);
-                maxHealth = 10f; // Oletusarvot tuntemattomille vihollisille.
-                attackDmg = 1f;
-                speed = 1f;
-                cooldown = 1;
+                SetDefaultStats(); // K‰ytet‰‰n oletusarvoja.
                 break;
         }
+    }
+
+    void SetDefaultStats()
+    {
+        maxHealth = 10f; // Oletusarvot.
+        attackDmg = 1f;
+        speed = 1f;
+        cooldown = 1;
     }
 }

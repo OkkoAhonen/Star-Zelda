@@ -1,3 +1,5 @@
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private DialogueUI dialogueUI; // Varmista, että asetat tämän Inspectorissa
 
     //public float speed = Player.Speed;
-    
+
 
     public DialogueUI DialogueUI => dialogueUI;
     public Interactable Interactable { get; set; }
@@ -33,18 +35,30 @@ public class PlayerMovement2D : MonoBehaviour
         {
             Debug.LogError("Animator component is missing from the Player.");
         }*/
-        
+
     }
 
-    
+
 
     void Update()
     {
-        
+
 
         // Lukee pelaajan syötteet
-        movement.x = Input.GetAxisRaw("Horizontal"); // A/D tai nuolinäppäimet vasen/oikea
-        movement.y = Input.GetAxisRaw("Vertical");   // W/S tai nuolinäppäimet ylös/alas
+        //movement.x = Input.GetAxisRaw("Horizontal"); // A/D tai nuolinäppäimet vasen/oikea
+        //movement.y = Input.GetAxisRaw("Vertical");   // W/S tai nuolinäppäimet ylös/alas
+        movement.x = 0;
+        movement.y = 0;
+
+        if (Input.GetKey(KeyCode.W))
+            movement.y = 1;
+        if (Input.GetKey(KeyCode.S))
+            movement.y = -1;
+        if (Input.GetKey(KeyCode.A))
+            movement.x = -1;
+        if (Input.GetKey(KeyCode.D))
+            movement.x = 1;
+
 
         // Normalisoidaan liike diagonaalisia tilanteita varten
         movement = movement.normalized;
@@ -52,17 +66,17 @@ public class PlayerMovement2D : MonoBehaviour
         // Päivitetään spritejen kääntö
         FlipSprite();
 
-        
+
         //if (dialogueUI.IsOpen) return;
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(Interactable != null)
+            if (Interactable != null)
             {
                 Interactable.Interact(this);
             }
         }
-        
+
     }
 
     void FixedUpdate()
