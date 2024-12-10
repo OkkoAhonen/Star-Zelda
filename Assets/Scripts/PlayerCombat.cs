@@ -4,27 +4,47 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public int hitDamage = 3;
-    public bool hit = false;
-    public float currentHealth;
-    public float enemyHealth;
-
-    public GameObject player;
-    public GameObject sword;
+    public int hitDamage = 3; // Miekan tekemä vahinko.
+    public GameObject sword; // Pelaajan miekka.
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject player = GetComponent<GameObject>();
+        if (sword == null)
+        {
+            Debug.LogError("Sword GameObject is not assigned to PlayerCombat!");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Tämä metodi kutsutaan, kun miekka osuu viholliseen.
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
+        Debug.Log("lyönti");
 
-    public void enemyDamage(int hit)
-    {
+        // Tarkistetaan, osuuko miekka viholliseen.
+        //if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("lyönti viholliseen " + other.name);
+            // Haetaan EnemyStats-komponentti viholliselta.
+            EnemyStats enemyStats = other.GetComponent<EnemyStats>();
+
+            if (enemyStats != null)
+            {
+                // Vähennetään vihollisen terveyttä.
+                enemyStats.maxHealth -= hitDamage;
+                Debug.Log("Hit enemy! Remaining health: " + enemyStats.maxHealth);
+
+                // Tarkistetaan, kuoleeko vihollinen.
+                if (enemyStats.maxHealth <= 0)
+                {
+                    enemyStats.maxHealth = 0;
+                    other.GetComponent<EnemyController>()?.Death();
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Enemy does not have an EnemyStats component.");
+            }
+        }
     }
 }
