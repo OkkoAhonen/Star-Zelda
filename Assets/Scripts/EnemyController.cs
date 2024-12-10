@@ -5,36 +5,44 @@ using UnityEngine;
 public enum EnemyState
 {
     Wander,
-
     Follow,
-
     Die
-};
-
-
+}
 
 public class EnemyController : MonoBehaviour
 {
     GameObject player;
     public EnemyState currentState = EnemyState.Wander;
+    public EnemyStats enemyStats;
 
     public float range;
     public float speed;
-
     private bool chooseDir = false;
     private bool dead = false;
     private Vector3 randomDir;
 
-
     // Start is called before the first frame update
     void Start()
     {
+        range = 15f;
         player = GameObject.FindGameObjectWithTag("Player");
+
+        if (enemyStats == null)
+        {
+            Debug.LogError("EnemyStats is not assigned for " + gameObject.name);
+            return;
+        }
+
+        // Asetetaan nopeus EnemyStats-komponentista.
+        speed = enemyStats.speed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (dead)
+            return;
+
         switch (currentState)
         {
             case EnemyState.Wander:
@@ -47,8 +55,6 @@ public class EnemyController : MonoBehaviour
 
             case EnemyState.Die:
                 break;
-
-
         }
 
         if (IsPlayerInRange(range) && currentState != EnemyState.Die)
@@ -59,11 +65,13 @@ public class EnemyController : MonoBehaviour
         {
             currentState = EnemyState.Wander;
         }
-
     }
 
     private bool IsPlayerInRange(float range)
     {
+        if (player == null)
+            return false;
+
         return Vector3.Distance(transform.position, player.transform.position) <= range;
     }
 
@@ -71,21 +79,23 @@ public class EnemyController : MonoBehaviour
     {
         chooseDir = true;
         yield return new WaitForSeconds(Random.Range(2f, 8f));
-        randomDir = new Vector3(0, 0, Random.Range(0, 360));
-        Quaternion NextRotation = Quaternion.Euler(randomDir);
-        transform.rotation = Quaternion.Lerp(transform.rotation, NextRotation, Random.Range(0.5f, 2.5f));
+
+        // Satunnainen suunta viholliselle.
+        randomDir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
         chooseDir = false;
     }
 
     void Wander()
     {
-        if(!chooseDir)
+        if (!chooseDir)
         {
             StartCoroutine(ChooseDirection());
         }
 
-        transform.position += transform.right * speed * Time.deltaTime;
-        if(IsPlayerInRange(range))
+        // Liikkuu satunnaiseen suuntaan.
+        transform.position += randomDir * speed * Time.deltaTime;
+
+        if (IsPlayerInRange(range))
         {
             currentState = EnemyState.Follow;
         }
@@ -93,12 +103,16 @@ public class EnemyController : MonoBehaviour
 
     void Follow()
     {
+        if (player == null)
+            return;
+
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-    
     }
 
     public void Death()
     {
+        dead = true;
+        currentState = EnemyState.Die;
         Destroy(gameObject);
     }
 }
