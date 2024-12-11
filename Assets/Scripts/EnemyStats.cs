@@ -37,47 +37,53 @@ public class EnemyStats : MonoBehaviour
 
     void SetEnemyStats(string name)
     {
-        switch (name.ToLower()) // Kirjainkoon varmistus.
+        // Muutetaan nimi pieniksi kirjaimiksi.
+        string lowerName = name.ToLower();
+
+        // Tarkistetaan, sisältääkö nimi "zombie".
+        if (lowerName.Contains("zombie"))
         {
-            case "skeleton":
-                maxHealth = 30f;
-                attackDmg = 3f;
-                speed = 5f;
-                cooldown = 1;
-                break;
-
-            case "zombie":
-                maxHealth = 15f;
-                attackDmg = 1.5f;
-                speed = 3.5f;
-                cooldown = 1;
-                break;
-
-            case "slime":
-                maxHealth = 20f;
-                attackDmg = 2f;
-                speed = 2f;
-                cooldown = 2;
-                break;
-
-            case "void":
-                maxHealth = 50f;
-                attackDmg = 6f;
-                speed = 5f;
-                cooldown = 2;
-                break;
-
-            case "boss":
-                maxHealth = 100f;
-                attackDmg = 10f;
-                speed = 1.5f;
-                cooldown = 3;
-                break;
-
-            default:
-                Debug.LogWarning("Enemy type not recognized: " + name);
-                SetDefaultStats(); // Käytetään oletusarvoja.
-                break;
+            maxHealth = 15f;
+            attackDmg = 1.5f;
+            speed = 3.5f;
+            cooldown = 1;
+        }
+        // Tarkistetaan, sisältääkö nimi "skeleton".
+        else if (lowerName.Contains("skeleton"))
+        {
+            maxHealth = 30f;
+            attackDmg = 3f;
+            speed = 5f;
+            cooldown = 1;
+        }
+        // Tarkistetaan, sisältääkö nimi "slime".
+        else if (lowerName.Contains("slime"))
+        {
+            maxHealth = 20f;
+            attackDmg = 2f;
+            speed = 2f;
+            cooldown = 2;
+        }
+        // Tarkistetaan, sisältääkö nimi "void".
+        else if (lowerName.Contains("void"))
+        {
+            maxHealth = 50f;
+            attackDmg = 6f;
+            speed = 5f;
+            cooldown = 2;
+        }
+        // Tarkistetaan, sisältääkö nimi "boss".
+        else if (lowerName.Contains("boss"))
+        {
+            maxHealth = 100f;
+            attackDmg = 10f;
+            speed = 1.5f;
+            cooldown = 3;
+        }
+        else
+        {
+            Debug.LogWarning("Enemy type not recognized: " + name);
+            SetDefaultStats(); // Käytetään oletusarvoja.
         }
     }
 

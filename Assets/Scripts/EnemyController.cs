@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        range = 15f;
+        range = 100f;
         player = GameObject.FindGameObjectWithTag("Player");
 
         if (enemyStats == null)
@@ -40,6 +40,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = enemyStats.speed;
         if (dead)
             return;
 

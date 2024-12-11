@@ -32,8 +32,8 @@ public class GenerateLevel : MonoBehaviour
 
     int RandomRoomNumber()
     {
-        //return Random.RandomRange(6, GameObject.Find("Rooms").transform.childCount);
-        return 6;
+        return Random.RandomRange(6, GameObject.Find("Rooms").transform.childCount);
+        //return 6;
     }
 
     bool CheckIfRoomExists(Vector2 v)

@@ -8,14 +8,19 @@ public class InventoryManager : MonoBehaviour
 
     public Item[] startItems;
 
-    //public int maxStackItems = 4;
     public InventorySlot[] inventorySlots;
     public GameObject InventoryItemPrefab;
 
-    int selectedSlot = -1;
+    int selectedSlot = 0; // Ensimmäinen slotti oletuksena valittuna.
 
     void ChangeSelectedSlot(int NewValue)
     {
+        if (NewValue < 0 || NewValue >= inventorySlots.Length)
+        {
+            Debug.LogWarning("Tried to select a slot outside valid range.");
+            return;
+        }
+
         if (selectedSlot >= 0)
         {
             inventorySlots[selectedSlot].Deselect();
@@ -23,6 +28,7 @@ public class InventoryManager : MonoBehaviour
         inventorySlots[NewValue].Select();
         selectedSlot = NewValue;
     }
+
     private void Awake()
     {
         Instance = this;
@@ -31,9 +37,12 @@ public class InventoryManager : MonoBehaviour
     private void Start()
     {
         ChangeSelectedSlot(0);
-        foreach (var item in startItems) {
+        foreach (var item in startItems)
+        {
             AddItem(item);
         }
+
+        Debug.Log(selectedSlot);
     }
 
     private void Update()
@@ -41,15 +50,15 @@ public class InventoryManager : MonoBehaviour
         if (Input.inputString != null)
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number < 10)
+            if (isNumber && number > 0 && number <= inventorySlots.Length) // Tarkistus lisätty.
             {
                 ChangeSelectedSlot(number - 1);
             }
         }
     }
+
     public bool AddItem(Item item)
     {
-        //find if there is another slot with the same item
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -57,8 +66,7 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot != null &&
                 itemInSlot.item == item &&
                 itemInSlot.count < 4 &&
-                itemInSlot.item.stackable == true
-                )
+                itemInSlot.item.stackable == true)
             {
                 Debug.Log($"Found stackable item in slot {i}");
 
@@ -66,9 +74,8 @@ public class InventoryManager : MonoBehaviour
                 itemInSlot.RefrestCount();
                 return true;
             }
-
         }
-        //Find empty slot
+
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
@@ -81,16 +88,22 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
+
     public void SpawnNewItem(Item item, InventorySlot slot)
     {
         GameObject newItemGo = Instantiate(InventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.IntialiseItem(item);
-
     }
 
     public Item GetSelectedItem(bool use)
     {
+        if (selectedSlot < 0 || selectedSlot >= inventorySlots.Length)
+        {
+            Debug.LogWarning("Selected slot is out of range.");
+            return null;
+        }
+
         InventorySlot slot = inventorySlots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
         if (itemInSlot != null)
@@ -102,14 +115,11 @@ public class InventoryManager : MonoBehaviour
                 if (itemInSlot.count <= 0)
                 {
                     Destroy(itemInSlot.gameObject);
-
                 }
                 else
                 {
                     itemInSlot.RefrestCount();
                 }
-
-
             }
 
             return item;
