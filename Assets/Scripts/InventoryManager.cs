@@ -31,6 +31,9 @@ public class InventoryManager : MonoBehaviour
     private void Start()
     {
         ChangeSelectedSlot(0);
+        foreach (var item in startItems) {
+            AddItem(item);
+        }
     }
 
     private void Update()
@@ -106,7 +109,7 @@ public class InventoryManager : MonoBehaviour
                     itemInSlot.RefrestCount();
                 }
 
-                
+
             }
 
             return item;

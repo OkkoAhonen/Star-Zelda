@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public int hitDamage = 3; // Miekan tekemä vahinko.
-    public GameObject sword; // Pelaajan miekka.
+    public Item equippedItem; // Pelaajan varustettu miekka (ScriptableObject)
+    public GameObject sword; // Miekan fyysinen GameObject
     public float swingSpeed = 200f; // Miekan heilautuksen nopeus (asteet per sekunti).
     private bool isSwinging = false; // Onko miekka parhaillaan heilautuksessa.
     private Vector2 attackDirection = Vector2.right; // Lyönnin oletussuunnan vektori.
-    private Vector2 swordOffset; // Miekan alkuperäinen sijainti pelaajasta (offset).
 
     [SerializeField] private Transform UpSwing;
     [SerializeField] private Transform DownSwing;
@@ -23,20 +22,22 @@ public class PlayerCombat : MonoBehaviour
             Debug.LogError("Sword GameObject is not assigned to PlayerCombat!");
         }
 
-        // Alustetaan miekan alkuperäinen sijainti (offset) pelaajasta
-        swordOffset = sword.transform.localPosition;
+        if (equippedItem == null)
+        {
+            Debug.LogError("No item equipped! Assign an Item in the Inspector.");
+        }
     }
 
     void Update()
     {
         HandleAttackDirection(); // Päivittää lyönnin suunnan nuolinäppäimistä.
+
         if (Input.GetKeyDown(KeyCode.Space) && !isSwinging)
         {
             StartCoroutine(SwingSword());
         }
     }
 
-    // Päivittää hyökkäyksen suunnan nuolinäppäinten perusteella.
     void HandleAttackDirection()
     {
         if (Input.GetKey(KeyCode.UpArrow))
@@ -56,11 +57,9 @@ public class PlayerCombat : MonoBehaviour
             attackDirection = Vector2.right;
         }
 
-        // Vaihdetaan miekan sijainti oikealle paikalle, riippuen nuolinäppäimestä
         UpdateSwordPosition();
     }
 
-    // Päivittää miekan sijainnin sen mukaan, mikä suunta on valittu
     void UpdateSwordPosition()
     {
         if (attackDirection == Vector2.up)
@@ -81,7 +80,6 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    // Miekan heilautus kaarena.
     IEnumerator SwingSword()
     {
         isSwinging = true;
@@ -92,45 +90,36 @@ public class PlayerCombat : MonoBehaviour
         float endAngle = baseAngle + 45f;  // Lopeta oikealle.
         float currentAngle = startAngle;
 
-        // Asetetaan miekan paikka suhteessa pelaajaan
-        sword.transform.localPosition = swordOffset;
-
-        // Aloitetaan heilautus.
         while (currentAngle <= endAngle)
         {
-            // Päivitetään miekan rotaatio suhteessa pelaajaan.
             sword.transform.localRotation = Quaternion.Euler(0, 0, currentAngle);
-
-            // Siirrytään seuraavaan kulmaan swingSpeedin perusteella.
             currentAngle += swingSpeed * Time.deltaTime;
 
-            // Siirretään miekka pelaajan eteenpäin hyökkäyssuunnan mukaan
-            //sword.transform.localPosition = swordOffset + attackDirection * 0.5f; // 0.5f on etäisyys pelaajasta
-
-            yield return null; // Odotetaan seuraavaa framea.
+            yield return null;
         }
 
-        // Palautetaan miekka alkuasentoon.
         sword.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        //sword.transform.localPosition = swordOffset; // Miekan alkuperäinen sijainti
         isSwinging = false;
     }
 
-    // Tämä metodi kutsutaan, kun miekka osuu viholliseen.
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && equippedItem != null)
         {
-            Debug.Log("lyönti viholliseen " + other.name);
+            Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+
+
+            Debug.Log($"Sword hit enemy {other.name}");
 
             // Haetaan EnemyStats-komponentti viholliselta.
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();
 
             if (enemyStats != null)
             {
-                // Vähennetään vihollisen terveyttä.
-                enemyStats.maxHealth = Mathf.Max(0, enemyStats.maxHealth - hitDamage);
-                Debug.Log("Hit enemy! Remaining health: " + enemyStats.maxHealth);
+                // Vähennetään vihollisen terveyttä käyttäen varustetun miekan vahinkoa.
+                int damage = equippedItem.attackDamage; // Miekan vahinko ScriptableObjectista
+                enemyStats.maxHealth = Mathf.Max(0, enemyStats.maxHealth - damage);
+                Debug.Log($"Hit enemy! Damage: {damage}, Remaining health: {enemyStats.maxHealth}");
 
                 // Tarkistetaan, kuoleeko vihollinen.
                 if (enemyStats.maxHealth == 0)
