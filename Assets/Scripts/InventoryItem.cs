@@ -18,6 +18,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private void Start()
     {
         IntialiseItem(item);
+
+        
     }
 
     public void IntialiseItem(Item newItem)

@@ -24,17 +24,25 @@ public class Item : ScriptableObject
     [Header("Both")]
     public Sprite image;
 
+    [Header("Combat Properties")]
+    public int attackDamage = 0;
+    public float attackRange = 1.5f; // Esim. kuinka kaukana pelaaja voi osua miekalla.
+    public bool isWeapon = false; // Voit m‰‰ritt‰‰, onko kyseinen item ase.
+
+
 }
 
 public enum ItemType
 {
     BuildingBlock,
-    Tool
+    Tool,
+    Weapon
 }
 
 public enum ActionType
 {
     Dig,
-    Mine
+    Mine,
+    Slash
 }
 
