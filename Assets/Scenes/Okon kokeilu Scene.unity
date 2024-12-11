@@ -4174,7 +4174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2356484b904aebb48b0306341da14e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equippedItem: {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
   sword: {fileID: 1599626956}
   swingSpeed: 200
   UpSwing: {fileID: 46890925}

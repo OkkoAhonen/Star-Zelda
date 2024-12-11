@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    // Pelaajan varustettu esine, esimerkiksi miekka. T‰m‰ on ScriptableObject.
-    public Item equippedItem;
-
     // Viittaus miekan GameObjectiin, jota k‰ytet‰‰n lyˆntianimaatioihin.
     public GameObject sword;
 
@@ -24,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private Transform LeftSwing;
     [SerializeField] private Transform RightSwing;
 
-    // Miekan liikkeen asetukset, jotka voidaan s‰‰t‰‰ Unityn Inspectorissa
+    // Miekan liikkeen asetukset, jotka voidaan s‰‰t‰‰ Unityn Inspectorissa.
     [Header("Swing Settings")]
     [Tooltip("Miekan liikkuma et‰isyys (yksikˆit‰) heilautuksen aikana.")]
     public float swingDistance = 2.0f;
@@ -32,7 +29,7 @@ public class PlayerCombat : MonoBehaviour
     [Tooltip("Aika (sekunteina), joka menee heilautukseen eteenp‰in ja takaisin.")]
     public float swingDuration = 0.5f;
 
-    // Miekan heilautuksen kulkusuunta
+    // Miekan heilautuksen kulkusuunta.
     private Vector3 swingEndPosition;
 
     void Start()
@@ -41,12 +38,6 @@ public class PlayerCombat : MonoBehaviour
         if (sword == null)
         {
             Debug.LogError("Sword GameObject is not assigned to PlayerCombat!");
-        }
-
-        // Tarkistetaan, ett‰ varustettu esine on m‰‰ritetty, ja annetaan varoitus, jos ei ole.
-        if (equippedItem == null)
-        {
-            Debug.LogError("No item equipped! Assign an Item in the Inspector.");
         }
     }
 
@@ -116,16 +107,16 @@ public class PlayerCombat : MonoBehaviour
         // Merkitsee, ett‰ miekka on heilautuksessa.
         isSwinging = true;
 
-        // Miekan alkuper‰inen sijainti
+        // Miekan alkuper‰inen sijainti.
         Vector3 initialPosition = sword.transform.position;
 
-        // M‰‰ritet‰‰n, mihin suuntaan miekka liikkuu
+        // M‰‰ritet‰‰n, mihin suuntaan miekka liikkuu.
         swingEndPosition = initialPosition + (Vector3)attackDirection * swingDistance;
 
-        // Liikkeen nopeus ja aikaraja
+        // Liikkeen nopeus ja aikaraja.
         float elapsedTime = 0f;
 
-        // Liikutetaan miekkaa eteenp‰in
+        // Liikutetaan miekkaa eteenp‰in.
         while (elapsedTime < swingDuration)
         {
             sword.transform.position = Vector3.Lerp(initialPosition, swingEndPosition, elapsedTime / swingDuration);
@@ -133,10 +124,10 @@ public class PlayerCombat : MonoBehaviour
             yield return null;
         }
 
-        // Varmistetaan, ett‰ miekka on p‰‰ssyt t‰yteen et‰isyyteens‰
+        // Varmistetaan, ett‰ miekka on p‰‰ssyt t‰yteen et‰isyyteens‰.
         sword.transform.position = swingEndPosition;
 
-        // Palautetaan miekka alkuper‰iseen paikkaansa
+        // Palautetaan miekka alkuper‰iseen paikkaansa.
         elapsedTime = 0f;
         while (elapsedTime < swingDuration)
         {
@@ -145,17 +136,17 @@ public class PlayerCombat : MonoBehaviour
             yield return null;
         }
 
-        // Asetetaan miekan sijainti alkuper‰iseen tilaan
+        // Asetetaan miekan sijainti alkuper‰iseen tilaan.
         sword.transform.position = initialPosition;
 
-        // Merkitsee, ett‰ miekka ei ole en‰‰ heilautuksessa
+        // Merkitsee, ett‰ miekka ei ole en‰‰ heilautuksessa.
         isSwinging = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Tarkistaa, osuuko miekka viholliseen ja onko varustettu esine olemassa.
-        if (other.CompareTag("Enemy") && equippedItem != null)
+        if (other.CompareTag("Enemy"))
         {
             Debug.Log($"Sword hit enemy {other.name}");
 
@@ -164,15 +155,25 @@ public class PlayerCombat : MonoBehaviour
 
             if (enemyStats != null)
             {
-                // V‰hent‰‰ vihollisen terveytt‰ miekan vahingon m‰‰r‰ll‰.
-                int damage = equippedItem.attackDamage;
-                enemyStats.maxHealth = Mathf.Max(0, enemyStats.maxHealth - damage);
-                Debug.Log($"Hit enemy! Damage: {damage}, Remaining health: {enemyStats.maxHealth}");
+                // Hakee aktiivisesti valitun esineen InventoryManagerista.
+                Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
 
-                // Tarkistaa, kuoleeko vihollinen, ja kutsuu tarvittaessa sen kuoleman k‰sittelev‰n metodin.
-                if (enemyStats.maxHealth == 0)
+                // V‰hent‰‰ vihollisen terveytt‰ miekan vahingon m‰‰r‰ll‰.
+                if (equippedItem != null && equippedItem.isWeapon)
                 {
-                    other.GetComponent<EnemyController>()?.Death();
+                    int damage = equippedItem.attackDamage;
+                    enemyStats.maxHealth = Mathf.Max(0, enemyStats.maxHealth - damage);
+                    Debug.Log($"Hit enemy! Damage: {damage}, Remaining health: {enemyStats.maxHealth}");
+
+                    // Tarkistaa, kuoleeko vihollinen, ja kutsuu tarvittaessa sen kuoleman k‰sittelev‰n metodin.
+                    if (enemyStats.maxHealth == 0)
+                    {
+                        other.GetComponent<EnemyController>()?.Death();
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("No weapon equipped or item is not a weapon!");
                 }
             }
             else
