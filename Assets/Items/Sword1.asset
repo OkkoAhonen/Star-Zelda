@@ -17,7 +17,7 @@ MonoBehaviour:
   actionType: 2
   range: {x: 5, y: 4}
   stackable: 0
-  image: {fileID: 21300000, guid: cf19f45fca849480992598c96f1790f5, type: 3}
+  image: {fileID: 1401672937, guid: addf0e4d0b0523b41ac817912d933495, type: 3}
   attackDamage: 3
   attackRange: 1.5
   isWeapon: 1

@@ -14,7 +14,7 @@ public static class Levels
 
     public static float RoomGenerationChance = 0.5f;
 
-    public static int RoomLimit = 5;
+    public static int RoomLimit = 3;
 
     public static Sprite TreasureRoomIcon;
     public static Sprite BossRoomIcon;

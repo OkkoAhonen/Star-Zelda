@@ -33,7 +33,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.LogError("Sword SpriteRenderer is not assigned!");
         }
 
-        UpdateSwordAppearance(); // P‰ivitt‰‰ miekan ulkon‰ˆn heti alussa.
+        
     }
 
     void Update()
@@ -44,6 +44,7 @@ public class PlayerCombat : MonoBehaviour
         {
             StartCoroutine(SwingSword());
         }
+        UpdateSwordAppearance();
     }
 
     void HandleAttackDirection()
@@ -133,6 +134,7 @@ public class PlayerCombat : MonoBehaviour
                 if (equippedItem != null && equippedItem.isWeapon)
                 {
                     int damage = equippedItem.attackDamage;
+
                     enemyStats.maxHealth = Mathf.Max(0, enemyStats.maxHealth - damage);
                     Debug.Log($"Hit enemy! Damage: {damage}, Remaining health: {enemyStats.maxHealth}");
 
@@ -156,15 +158,17 @@ public class PlayerCombat : MonoBehaviour
     public void UpdateSwordAppearance()
     {
 
+        
+
         //wordRenderer.sprite = sprite2;
         // Hakee aktiivisesti valitun esineen InventoryManagerista.
         Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
 
+        int damage = equippedItem.attackDamage;
+        Debug.Log(damage);
 
-        
 
-
-        if (equippedItem != null && equippedItem.isWeapon)
+            if (equippedItem != null && equippedItem.isWeapon)
         {
             // P‰ivitt‰‰ miekan Sprite-kuvan vastaamaan esineen sprite‰.
             swordRenderer.sprite = equippedItem.image;
