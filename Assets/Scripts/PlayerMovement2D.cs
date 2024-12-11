@@ -64,7 +64,7 @@ public class PlayerMovement2D : MonoBehaviour
         movement = movement.normalized;
 
         // P‰ivitet‰‰n spritejen k‰‰ntˆ
-        FlipSprite();
+        //FlipSprite();
 
 
         //if (dialogueUI.IsOpen) return;
@@ -88,7 +88,7 @@ public class PlayerMovement2D : MonoBehaviour
         //animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
     }
 
-    void FlipSprite()
+    /*void FlipSprite()
     {
         // Tarkistaa, pit‰‰kˆ sprite k‰‰nt‰‰
         if (isFacingRight && movement.x < 0f || !isFacingRight && movement.x > 0f)
@@ -98,7 +98,7 @@ public class PlayerMovement2D : MonoBehaviour
             sprite.x *= -1f; // K‰‰nnet‰‰n sprite
             transform.localScale = sprite;
         }
-    }
+    }*/
     public void SetInteractable(Interactable interactable)
     {
         Interactable = interactable;

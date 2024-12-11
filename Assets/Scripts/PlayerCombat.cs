@@ -1,27 +1,49 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public Item equippedItem; // Pelaajan varustettu miekka (ScriptableObject)
-    public GameObject sword; // Miekan fyysinen GameObject
-    public float swingSpeed = 200f; // Miekan heilautuksen nopeus (asteet per sekunti).
-    private bool isSwinging = false; // Onko miekka parhaillaan heilautuksessa.
-    private Vector2 attackDirection = Vector2.right; // Lyönnin oletussuunnan vektori.
+    // Pelaajan varustettu esine, esimerkiksi miekka. Tämä on ScriptableObject.
+    public Item equippedItem;
 
+    // Viittaus miekan GameObjectiin, jota käytetään lyöntianimaatioihin.
+    public GameObject sword;
+
+    // Nopeus, jolla miekkaa heilautetaan (asteet sekunnissa).
+    public float swingSpeed = 200f;
+
+    // Tieto siitä, onko miekka parhaillaan heilautuksessa.
+    private bool isSwinging = false;
+
+    // Lyönnin suunta (oletuksena oikealle).
+    private Vector2 attackDirection = Vector2.right;
+
+    // Määriteltyjä Transform-pisteitä, joihin miekka siirtyy eri hyökkäyssuunnissa.
     [SerializeField] private Transform UpSwing;
     [SerializeField] private Transform DownSwing;
     [SerializeField] private Transform LeftSwing;
     [SerializeField] private Transform RightSwing;
 
+    // Miekan liikkeen asetukset, jotka voidaan säätää Unityn Inspectorissa
+    [Header("Swing Settings")]
+    [Tooltip("Miekan liikkuma etäisyys (yksiköitä) heilautuksen aikana.")]
+    public float swingDistance = 2.0f;
+
+    [Tooltip("Aika (sekunteina), joka menee heilautukseen eteenpäin ja takaisin.")]
+    public float swingDuration = 0.5f;
+
+    // Miekan heilautuksen kulkusuunta
+    private Vector3 swingEndPosition;
+
     void Start()
     {
+        // Tarkistetaan, että miekka on määritetty, ja annetaan varoitus, jos ei ole.
         if (sword == null)
         {
             Debug.LogError("Sword GameObject is not assigned to PlayerCombat!");
         }
 
+        // Tarkistetaan, että varustettu esine on määritetty, ja annetaan varoitus, jos ei ole.
         if (equippedItem == null)
         {
             Debug.LogError("No item equipped! Assign an Item in the Inspector.");
@@ -30,8 +52,10 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        HandleAttackDirection(); // Päivittää lyönnin suunnan nuolinäppäimistä.
+        // Päivittää hyökkäyssuunnan nuolinäppäimien perusteella.
+        HandleAttackDirection();
 
+        // Aloittaa miekan heilautuksen, jos välilyöntiä painetaan eikä miekka ole jo heilautuksessa.
         if (Input.GetKeyDown(KeyCode.Space) && !isSwinging)
         {
             StartCoroutine(SwingSword());
@@ -40,28 +64,35 @@ public class PlayerCombat : MonoBehaviour
 
     void HandleAttackDirection()
     {
+        // Päivittää hyökkäyssuunnan nuolinäppäimien perusteella.
         if (Input.GetKey(KeyCode.UpArrow))
         {
             attackDirection = Vector2.up;
+            sword.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             attackDirection = Vector2.down;
+            sword.transform.rotation = Quaternion.Euler(0, 0, -180);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             attackDirection = Vector2.left;
+            sword.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             attackDirection = Vector2.right;
+            sword.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
 
+        // Päivittää miekan sijainnin hyökkäyssuunnan mukaan.
         UpdateSwordPosition();
     }
 
     void UpdateSwordPosition()
     {
+        // Siirtää miekan sijainnin oikeaan kohtaan määritettyjen Transform-pisteiden perusteella.
         if (attackDirection == Vector2.up)
         {
             sword.transform.position = UpSwing.position;
@@ -82,46 +113,63 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator SwingSword()
     {
+        // Merkitsee, että miekka on heilautuksessa.
         isSwinging = true;
 
-        // Lasketaan perussuunnan kulma hyökkäyssuunnan perusteella.
-        float baseAngle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg;
-        float startAngle = baseAngle - 45f; // Aloita vasemmalta.
-        float endAngle = baseAngle + 45f;  // Lopeta oikealle.
-        float currentAngle = startAngle;
+        // Miekan alkuperäinen sijainti
+        Vector3 initialPosition = sword.transform.position;
 
-        while (currentAngle <= endAngle)
+        // Määritetään, mihin suuntaan miekka liikkuu
+        swingEndPosition = initialPosition + (Vector3)attackDirection * swingDistance;
+
+        // Liikkeen nopeus ja aikaraja
+        float elapsedTime = 0f;
+
+        // Liikutetaan miekkaa eteenpäin
+        while (elapsedTime < swingDuration)
         {
-            sword.transform.localRotation = Quaternion.Euler(0, 0, currentAngle);
-            currentAngle += swingSpeed * Time.deltaTime;
-
+            sword.transform.position = Vector3.Lerp(initialPosition, swingEndPosition, elapsedTime / swingDuration);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        sword.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        // Varmistetaan, että miekka on päässyt täyteen etäisyyteensä
+        sword.transform.position = swingEndPosition;
+
+        // Palautetaan miekka alkuperäiseen paikkaansa
+        elapsedTime = 0f;
+        while (elapsedTime < swingDuration)
+        {
+            sword.transform.position = Vector3.Lerp(swingEndPosition, initialPosition, elapsedTime / swingDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Asetetaan miekan sijainti alkuperäiseen tilaan
+        sword.transform.position = initialPosition;
+
+        // Merkitsee, että miekka ei ole enää heilautuksessa
         isSwinging = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Tarkistaa, osuuko miekka viholliseen ja onko varustettu esine olemassa.
         if (other.CompareTag("Enemy") && equippedItem != null)
         {
-            Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
-
-
             Debug.Log($"Sword hit enemy {other.name}");
 
-            // Haetaan EnemyStats-komponentti viholliselta.
+            // Hakee vihollisen EnemyStats-komponentin.
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();
 
             if (enemyStats != null)
             {
-                // Vähennetään vihollisen terveyttä käyttäen varustetun miekan vahinkoa.
-                int damage = equippedItem.attackDamage; // Miekan vahinko ScriptableObjectista
+                // Vähentää vihollisen terveyttä miekan vahingon määrällä.
+                int damage = equippedItem.attackDamage;
                 enemyStats.maxHealth = Mathf.Max(0, enemyStats.maxHealth - damage);
                 Debug.Log($"Hit enemy! Damage: {damage}, Remaining health: {enemyStats.maxHealth}");
 
-                // Tarkistetaan, kuoleeko vihollinen.
+                // Tarkistaa, kuoleeko vihollinen, ja kutsuu tarvittaessa sen kuoleman käsittelevän metodin.
                 if (enemyStats.maxHealth == 0)
                 {
                     other.GetComponent<EnemyController>()?.Death();

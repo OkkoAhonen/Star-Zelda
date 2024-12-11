@@ -3657,7 +3657,7 @@ SpriteRenderer:
   m_Size: {x: 7.75, y: 8.93}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &513956102
@@ -4181,6 +4181,8 @@ MonoBehaviour:
   DownSwing: {fileID: 228695965}
   LeftSwing: {fileID: 2080701003}
   RightSwing: {fileID: 27331467}
+  swingDistance: 2
+  swingDuration: 0.1
 --- !u!1 &573927458
 GameObject:
   m_ObjectHideFlags: 0
@@ -12555,13 +12557,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599626956}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 10.2, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.40202764, w: 0.9156276}
+  m_LocalPosition: {x: -6.7, y: 8.1, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 559387945}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 47.41}
 --- !u!61 &1599626958
 BoxCollider2D:
   m_ObjectHideFlags: 0
