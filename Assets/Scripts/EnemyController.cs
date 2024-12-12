@@ -116,4 +116,18 @@ public class EnemyController : MonoBehaviour
         currentState = EnemyState.Die;
         Destroy(gameObject);
     }
+
+    // Tämä metodi kutsutaan, kun vihollinen törmää pelaajaan
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Pelaajalle vahinkoa vihollisen hyökkäysvoimalla
+            PlayerMovement2D playerMovement = collision.gameObject.GetComponent<PlayerMovement2D>();
+            if (playerMovement != null)
+            {
+                playerMovement.TakeDamage(enemyStats.attackDmg);
+            }
+        }
+    }
 }

@@ -5,18 +5,20 @@ using UnityEngine;
 public class BossAI : MonoBehaviour
 {
     public enum BossState { Idle, Charging, Attacking, Rushing }
-    private BossState currentState = BossState.Idle;
+    [SerializeField] private BossState currentState = BossState.Idle;
 
-    private Transform player;
+    [SerializeField] private Transform player;
     private EnemyStats enemyStats;
     private Rigidbody2D rb;
     private Vector2 targetPosition;
 
-    private float chargeTime = 2f; // Aika, jonka boss lataa projektiilin
+    public Transform shootingpoint;
+
+    private float chargeTime = 1.5f; // Aika, jonka boss lataa projektiilin
     private float rushSpeedMultiplier = 2f; // Rynnäkkönopeus
     private float attackCooldownTimer = 0f;
 
-    private float attackCooldown = 3f; // Aika, jonka bossilla menee hyökkäyksen välillä
+    private float attackCooldown = 1f; // Aika, jonka bossilla menee hyökkäyksen välillä
 
     public GameObject projectilePrefab; // Projektiili, joka ammutaan pelaajaa kohti
 
@@ -41,7 +43,10 @@ public class BossAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyStats.maxHealth <= 0) return; // Jos pomo on kuollut, ei tehdä mitään
+        if (enemyStats.maxHealth <= 0) {
+            Destroy(gameObject);
+            
+            return; } // Jos pomo on kuollut, ei tehdä mitään
 
         attackCooldownTimer -= Time.deltaTime; // Aika, jonka pomo voi odottaa ennen seuraavaa hyökkäystä
 
@@ -85,8 +90,24 @@ public class BossAI : MonoBehaviour
         }
     }
 
+    private float stateTimer = 0f; // Seuraa tilan kestoa
+
     void RushingBehavior()
     {
+        // Päivitä ajastin
+        stateTimer += Time.deltaTime;
+
+        // Tarkista, kauanko tila on jatkunut
+        int timer = Random.Range(3, 12);
+
+        if (stateTimer > timer)
+        {
+            Debug.Log("Rushing too long, switching to Charging state.");
+            currentState = BossState.Charging; // Vaihdetaan lataustilaan
+            stateTimer = 0f; // Nollataan ajastin seuraavaa tilaa varten
+            return;
+        }
+
         // Boss ryntää pelaajaa kohti
         Vector2 direction = (player.position - transform.position).normalized;
         rb.velocity = direction * enemyStats.speed * rushSpeedMultiplier; // Rynnäkkönopeus
@@ -96,6 +117,7 @@ public class BossAI : MonoBehaviour
             // Pomo törmää pelaajaan
             // Voit lisätä myös vahingon pelaajalle tässä kohtaa, jos haluat
             currentState = BossState.Idle; // Palataan takaisin odottavaan tilaan
+            stateTimer = 0f; // Nollataan ajastin seuraavaa tilaa varten
         }
     }
 

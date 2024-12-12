@@ -165,7 +165,7 @@ public class PlayerCombat : MonoBehaviour
         Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
 
         int damage = equippedItem.attackDamage;
-        Debug.Log(damage);
+        
 
 
             if (equippedItem != null && equippedItem.isWeapon)
