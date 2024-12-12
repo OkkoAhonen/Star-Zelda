@@ -5,39 +5,19 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    /*
     public GameObject heartPrefab;
     public PlayerHeart playerHealth;
+    public GameObject healthHearts;
 
-    List<HealthHeart> hearts = new List<HealthHeart>();
+    List<GameObject> hearts;
 
-    public void CreateEmptyHeart()
+    public void Start()
     {
-        GameObject newHEart = Instantiate(heartPrefab);
-        newHeart.transform.SetParent(transform);
-
-        HealthHeart heartComponent = newHeart.GetComponent<HealthHeart>();
-
+        hearts = new List<GameObject>(healthHearts.GetComponentsInChildren<GameObject>());
     }
 
-    public void ClearHearts()
+    public void CreateHearts()
     {
-        foreach(Transform t in transform)
-        {
-            Destroy(t.gameObject);
-        }
 
-        hearts = new List<HealthHeart>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }*/
 }
