@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public float swingSpeed = 200f; // Miekan heilautusnopeus.
     private bool isSwinging = false; // Tieto siitä, onko miekka parhaillaan heilautuksessa.
     private Vector2 attackDirection = Vector2.right; // Lyönnin suunta (oletuksena oikealle).
+    public PlayerMovement2D playerMovement;
 
     [SerializeField] private Transform UpSwing;
     [SerializeField] private Transform DownSwing;
@@ -24,6 +25,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Start()
     {
+
         if (sword == null)
         {
             Debug.LogError("Sword GameObject is not assigned!");
@@ -52,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             attackDirection = Vector2.up;
-            sword.transform.rotation = Quaternion.Euler(0, 0, 180);
+            sword.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
@@ -62,6 +64,7 @@ public class PlayerCombat : MonoBehaviour
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             attackDirection = Vector2.left;
+            
             sword.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
@@ -164,7 +167,7 @@ public class PlayerCombat : MonoBehaviour
         // Hakee aktiivisesti valitun esineen InventoryManagerista.
         Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
 
-        int damage = equippedItem.attackDamage;
+        
         
 
 

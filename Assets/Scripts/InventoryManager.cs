@@ -8,6 +8,10 @@ public class InventoryManager : MonoBehaviour
 
     public Item[] startItems;
 
+    public PlayerMovement2D playerMovement;
+
+    public Item[] ShopItem1;
+
     public InventorySlot[] inventorySlots;
     public GameObject InventoryItemPrefab;
 
@@ -40,9 +44,21 @@ public class InventoryManager : MonoBehaviour
         foreach (var item in startItems)
         {
             AddItem(item);
+            
         }
 
         Debug.Log(selectedSlot);
+    }
+
+    public void OstaShopItem1()
+    {
+        playerMovement.money -= 90;
+        foreach (var item in ShopItem1)
+        {
+            AddItem(item);
+            
+
+        }
     }
 
     private void Update()

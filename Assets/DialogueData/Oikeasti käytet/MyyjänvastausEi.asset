@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 454e925da1687a34483e945f48f1626d, type: 3}
-  m_Name: "Myyj\xE41"
+  m_Name: "Myyj\xE4nvastausEi"
   m_EditorClassIdentifier: 
   dialogue:
-  - Hey. I sell stuff! Woud you want to buy something?
-  responses:
-  - responseText: Yes I want
-    dialogueObject: {fileID: 11400000, guid: 4f87edd07663407449ec79d4ae80d129, type: 2}
-  - responseText: No I don't want
-    dialogueObject: {fileID: 11400000, guid: 4f87edd07663407449ec79d4ae80d129, type: 2}
+  - 'You said:
+
+
+    No I don''t want'
+  responses: []

@@ -44,7 +44,7 @@ public class EnemyStats : MonoBehaviour
         if (lowerName.Contains("zombie"))
         {
             maxHealth = 15f;
-            attackDmg = 1.5f;
+            attackDmg = 0.5f;
             speed = 3.5f;
             cooldown = 1;
         }
@@ -52,7 +52,7 @@ public class EnemyStats : MonoBehaviour
         else if (lowerName.Contains("skeleton"))
         {
             maxHealth = 30f;
-            attackDmg = 3f;
+            attackDmg = 1f;
             speed = 5f;
             cooldown = 1;
         }
@@ -60,7 +60,7 @@ public class EnemyStats : MonoBehaviour
         else if (lowerName.Contains("slime"))
         {
             maxHealth = 20f;
-            attackDmg = 2f;
+            attackDmg = 0.5f;
             speed = 2f;
             cooldown = 2;
         }
@@ -68,7 +68,7 @@ public class EnemyStats : MonoBehaviour
         else if (lowerName.Contains("void"))
         {
             maxHealth = 50f;
-            attackDmg = 6f;
+            attackDmg = 0.5f;
             speed = 5f;
             cooldown = 2;
         }
@@ -76,7 +76,7 @@ public class EnemyStats : MonoBehaviour
         else if (lowerName.Contains("boss"))
         {
             maxHealth = 100f;
-            attackDmg = 10f;
+            attackDmg = 2f;
             speed = 1.5f;
             cooldown = 3;
         }

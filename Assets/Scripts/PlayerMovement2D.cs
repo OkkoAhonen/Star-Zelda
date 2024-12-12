@@ -2,59 +2,80 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement2D : MonoBehaviour
 {
     public static event Action OnplayerDamaged;
 
-
-    [SerializeField] private DialogueUI dialogueUI; // Varmista, ett‰ asetat t‰m‰n Inspectorissa
-
+    [SerializeField] private DialogueUI dialogueUI; // Aseta t‰m‰ Inspectorissa
     public float health = 8f, MaxHealth = 8f;
+    public Animator animator;
 
     public DialogueUI DialogueUI => dialogueUI;
+
+    public int money = 0;
+    [SerializeField] private Text moneyText;
     public Interactable Interactable { get; set; }
 
-    private bool isFacingRight = true; // Oletuksena pelaaja katsoo oikealle
+    private bool isFacingRight = true; // Pelaaja katsoo oletuksena oikealle
     private Rigidbody2D rb;
 
     // Tallennetaan pelaajan syˆtteet
     private Vector2 movement;
 
+    public bool hasItFlipped = false;
+
+    // Viittaus visuaaliseen osaan (lapsiobjekti)
+    [SerializeField] private Transform visuals;
+
     void Start()
     {
+        animator = GetComponentInChildren<Animator>(); // Haetaan animaattori lapsiobjektista
         health = MaxHealth;
+
         rb = GetComponent<Rigidbody2D>();
         if (rb == null)
         {
             Debug.LogError("Rigidbody2D component is missing from the Player.");
         }
+
+        if (visuals == null)
+        {
+            visuals = transform.Find("Visuals"); // Yritet‰‰n lˆyt‰‰ lapsi nimelt‰ "Visuals"
+            if (visuals == null)
+            {
+                Debug.LogError("Visuals child object is missing!");
+            }
+        }
     }
+
+    private void UpdateMoneyUI()
+    {
+        moneyText.text = "Money: " + money; // P‰ivitt‰‰ UI:n
+    }
+
 
     void Update()
     {
-        movement.x = 0;
-        movement.y = 0;
+        movement = Vector2.zero;
 
-        if (Input.GetKey(KeyCode.W))
-            movement.y = 1;
-        if (Input.GetKey(KeyCode.S))
-            movement.y = -1;
-        if (Input.GetKey(KeyCode.A))
-            movement.x = -1;
-        if (Input.GetKey(KeyCode.D))
-            movement.x = 1;
+        // Lukee pelaajan syˆtteet
+        if (Input.GetKey(KeyCode.W)) movement.y = 1;
+        if (Input.GetKey(KeyCode.S)) movement.y = -1;
+        if (Input.GetKey(KeyCode.A)) movement.x = -1;
+        if (Input.GetKey(KeyCode.D)) movement.x = 1;
 
         // Normalisoidaan liike diagonaalisia tilanteita varten
         movement = movement.normalized;
 
+        UpdateAnimation();
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Interactable != null)
-            {
-                Interactable.Interact(this);
-            }
+            Interactable?.Interact(this);
         }
+        UpdateMoneyUI();
     }
 
     void FixedUpdate()
@@ -63,41 +84,59 @@ public class PlayerMovement2D : MonoBehaviour
         rb.velocity = movement * Player.Speed;
     }
 
-    // T‰m‰ metodi vie pelaajalta vahinkoa
+    private void UpdateAnimation()
+    {
+        // Tarkista, liikkuuko pelaaja
+        bool isMoving = movement.sqrMagnitude > 0;
+
+        // P‰ivit‰ animaation tila
+        animator.SetBool("IsPlayerMoving", isMoving);
+
+        // K‰‰nn‰ sprite, jos pelaaja liikkuu
+        if (isMoving)
+        {
+            if (movement.x > 0 && !isFacingRight) FlipSprite();
+            else if (movement.x < 0 && isFacingRight) FlipSprite();
+        }
+    }
+
+    // Pelaajan vahinkok‰sittely
     public void TakeDamage(float damage)
     {
-        Debug.Log("Player has taken damage" +  damage);
+        Debug.Log("Player has taken damage: " + damage);
         health -= damage;
+
+        // Kutsutaan tapahtumaa
         OnplayerDamaged?.Invoke();
+
         if (health <= 0)
         {
             Die();
         }
-
-
     }
 
-    // Pelaajan kuolema
     private void Die()
     {
         Debug.Log("Player has died.");
-        // T‰ss‰ voit lis‰t‰ pelaajan kuoleman k‰sittelyn (esim. pelin lopetus, animaatiot jne.)
+        // Pelaajan kuoleman k‰sittely, kuten peli loppuu tai animaatio alkaa
     }
 
     public void SetInteractable(Interactable interactable)
     {
         Interactable = interactable;
     }
-}
 
-/*void FlipSprite()
-{
-    // Tarkistaa, pit‰‰kˆ sprite k‰‰nt‰‰
-    if (isFacingRight && movement.x < 0f || !isFacingRight && movement.x > 0f)
+    private void FlipSprite()
     {
-        isFacingRight = !isFacingRight; // Vaihdetaan suunta
-        Vector3 sprite = transform.localScale;
-        sprite.x *= -1f; // K‰‰nnet‰‰n sprite
-        transform.localScale = sprite;
+        // Tarkistaa, pit‰‰kˆ sprite k‰‰nt‰‰
+        if (visuals != null)
+        {
+            hasItFlipped = !hasItFlipped;
+            isFacingRight = !isFacingRight; // Vaihdetaan suunta
+
+            Vector3 scale = visuals.localScale;
+            scale.x *= -1f; // K‰‰nnet‰‰n vain visuals-objekti
+            visuals.localScale = scale;
+        }
     }
-}*/
+}

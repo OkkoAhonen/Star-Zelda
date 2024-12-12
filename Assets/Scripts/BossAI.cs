@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossAI : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class BossAI : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 targetPosition;
 
+    public SceneManager sceneManager;
     public Transform shootingpoint;
 
     private float chargeTime = 1.5f; // Aika, jonka boss lataa projektiilin
@@ -45,6 +47,7 @@ public class BossAI : MonoBehaviour
     {
         if (enemyStats.maxHealth <= 0) {
             Destroy(gameObject);
+            SceneManager.LoadScene("Town kokeilu");
             
             return; } // Jos pomo on kuollut, ei tehdä mitään
 
@@ -144,5 +147,18 @@ public class BossAI : MonoBehaviour
         Vector2 direction = (player.position - transform.position).normalized;
         projectile.GetComponent<Rigidbody2D>().velocity = direction * 10f; // Ammutaan pelaajaa kohti
         Destroy(projectile, 5f); // Tuhoa projektiili, jos se ei osu pelaajaan tietyn ajan jälkeen
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Pelaajalle vahinkoa vihollisen hyökkäysvoimalla
+            PlayerMovement2D playerMovement = collision.gameObject.GetComponent<PlayerMovement2D>();
+            if (playerMovement != null)
+            {
+                playerMovement.TakeDamage(enemyStats.attackDmg);
+            }
+        }
     }
 }
