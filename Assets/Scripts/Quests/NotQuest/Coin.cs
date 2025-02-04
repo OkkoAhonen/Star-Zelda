@@ -21,7 +21,7 @@ public class Coin : MonoBehaviour
     private void CollectCoin()
     {
         circleCollider.enabled = false;
-        visual.enabled = false;
+        visual.gameObject.SetActive(false);
         GameEventsManager.instance.goldEvents.GoldGained(goldGained);
         GameEventsManager.instance.miscEvents.CoinCollected();
         StopAllCoroutines();
@@ -32,7 +32,7 @@ public class Coin : MonoBehaviour
     {
         yield return new WaitForSeconds(respawnTimeSeconds);
         circleCollider.enabled = true;
-        visual.enabled = true;
+        visual.gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)

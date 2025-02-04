@@ -45,7 +45,6 @@ public class QuestPoint : MonoBehaviour
         {
             return;
         }
-
         // if we have a knot name defined, try to start dialogue with it
         if (!dialogueKnotName.Equals(""))
         {
