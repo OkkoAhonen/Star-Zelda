@@ -19,12 +19,12 @@ public class InputEvents
         }
     }
 
-    public event Action<InputEventContext> onSubmitPressed;
+    public event Action<InputEventContext> OnSubmitPressed;
     public void SubmitPressed()
     {
-        if (onSubmitPressed != null)
+        if (OnSubmitPressed != null)
         {
-            onSubmitPressed(this.inputEventContext);
+            OnSubmitPressed(this.inputEventContext);
         }
     }
 
