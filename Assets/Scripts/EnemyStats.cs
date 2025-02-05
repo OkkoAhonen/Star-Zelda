@@ -14,6 +14,8 @@ public class EnemyStats : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+
+
     {
         if (enemy != null) // Tarkistetaan, että enemy on asetettu.
         {
@@ -47,6 +49,7 @@ public class EnemyStats : MonoBehaviour
             attackDmg = 0.5f;
             speed = 3.5f;
             cooldown = 1;
+
         }
         // Tarkistetaan, sisältääkö nimi "skeleton".
         else if (lowerName.Contains("skeleton"))

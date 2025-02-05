@@ -122,6 +122,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+
             // Pelaajalle vahinkoa vihollisen hyökkäysvoimalla
             PlayerMovement2D playerMovement = collision.gameObject.GetComponent<PlayerMovement2D>();
             if (playerMovement != null)

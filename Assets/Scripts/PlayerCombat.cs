@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerCombat : MonoBehaviour
     private bool isSwinging = false; // Tieto siitä, onko miekka parhaillaan heilautuksessa.
     private Vector2 attackDirection = Vector2.right; // Lyönnin suunta (oletuksena oikealle).
     public PlayerMovement2D playerMovement;
+
+    public AudioSource Scr;
+    public AudioClip clip;
 
     [SerializeField] private Transform UpSwing;
     [SerializeField] private Transform DownSwing;
@@ -130,6 +134,9 @@ public class PlayerCombat : MonoBehaviour
         {
             Debug.Log($"Sword hit enemy {other.name}");
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();
+
+            Scr.clip = clip;
+            Scr.Play();
 
             if (enemyStats != null)
             {
