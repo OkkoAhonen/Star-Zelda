@@ -9,36 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454e925da1687a34483e945f48f1626d, type: 3}
+  m_Script: {fileID: 11500000, guid: 50f6b1f6506df7b4086f1a2f461ea451, type: 3}
   m_Name: "Kyl\xE4nJohtajanPuhe1"
   m_EditorClassIdentifier: 
-  dialogue:
-  - 'Random:
-
-    Heeeellou!
-
-    I''m leader and founder of this village'
-  - 'Random:
-
-    You can call me Mayor
-
-    and of course it''s with capital M'
-  - 'Mayor:
-
-    You look like somebody who is in need of a job.
-
-    I think I have
-    just the right job for you'
-  - 'Mayor:
-
-    We have lately heard some weird sounds in our cave. We send our
-    only caveman to that cave, but he never came back!?!'
-  - 'Mayor:
-
-    Can you go to that cave to check if everything is right. When you
-    come back, there will be major gold reward waiting for you'
-  responses:
-  - responseText: Yes I will
-    dialogueObject: {fileID: 11400000, guid: 83a6a26c4fe3b684db09332ce96912d0, type: 2}
-  - responseText: No I wont
-    dialogueObject: {fileID: 11400000, guid: bb68b9a1c61997d4fa26364955a12bda, type: 2}
+  tile: {fileID: 0}
+  type: 0
+  actionType: 0
+  range: {x: 5, y: 4}
+  stackable: 1
+  image: {fileID: 0}
