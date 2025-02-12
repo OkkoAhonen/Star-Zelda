@@ -17,6 +17,8 @@ public class PlayerAttackMelee : MonoBehaviour
     //Charge muuttujat
 
     public float maxChargeTime = 3f; //Tämä korvataan myöhemmin itemien arvoilla
+    public float Damage = 5f;
+    public float Damagebooster = 1f;
     public float currentChargeTime = 0f;
     private bool UpOrDown = false;
 
@@ -32,47 +34,46 @@ public class PlayerAttackMelee : MonoBehaviour
     void Update()
     {
         chargeSword();
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            attack1();
+        }
     }
 
     public void attack1()
     {
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackpoint.transform.position, radius, enemies );
-
+        Damagebooster = Damagebooster + (Damagebooster * currentChargeTime);
         foreach (Collider2D enemyGameobje in enemy)
         {
-            Debug.Log("Hit enemy");
-            enemyGameobje.GetComponent<EnemyStats>().maxHealth = 0;
+            Debug.Log(Damage * Damagebooster);
+
+            EnemyAI enemyhealth = enemyGameobje.GetComponent<EnemyAI>();
+            enemyhealth.enemyTakeDamage(Damage * Damagebooster);
 
             
         }
+
+
+        Damagebooster = 1f;
+        currentChargeTime = 0f;
     }
 
     private void chargeSword()
     {
         if(Input.GetMouseButton(0))
         {
-
-            if(UpOrDown == false) {
+            
                 currentChargeTime += Time.deltaTime * 2;
 
                 if ( currentChargeTime > maxChargeTime ) // Vaihdetaan chargen suuntaa
-                {
-                    UpOrDown = !UpOrDown;
+                {  
+                    currentChargeTime = maxChargeTime;
         
                 }
-            }
 
-            else 
-            {
-                currentChargeTime -= Time.deltaTime * 2;
-                if (currentChargeTime < 0) // Vaihdetaan chargen suuntaa
-                {
-                    UpOrDown = !UpOrDown;
-
-                }
-
-            }
-
+            
 
             slider.UpdateSlider(currentChargeTime, maxChargeTime);
 

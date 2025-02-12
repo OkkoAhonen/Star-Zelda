@@ -6,5 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
 
     public float playerMoveSpeed = 10f;
+    public float playerMaxHealth = 100f;
+    public float playerCurrentHealth = 100f;
     
 }
