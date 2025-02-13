@@ -14060,7 +14060,7 @@ GameObject:
   - component: {fileID: 1172223345}
   m_Layer: 7
   m_Name: TestEnemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32190,6 +32190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   potionSpash: {fileID: 3598729058638829589, guid: 90d86e1c557ae034babe32aba2e317d4, type: 3}
   potionAttackTimer: 2
+  potionDamage: 20
 --- !u!4 &7940647586316711373
 Transform:
   m_ObjectHideFlags: 0
