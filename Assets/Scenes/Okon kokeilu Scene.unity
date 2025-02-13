@@ -31132,6 +31132,7 @@ GameObject:
   - component: {fileID: 7937146960278251857}
   - component: {fileID: 7937146960278251858}
   - component: {fileID: 7937146960278251859}
+  - component: {fileID: 7937146960278251860}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -32175,6 +32176,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 0}
+--- !u!114 &7937146960278251860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787826632738736156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8dea04a27eb104f94eb0a806338c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potionplace: {x: 0, y: 0}
+  potionAttackTimer: 2
+  timer: 0
 --- !u!4 &7940647586316711373
 Transform:
   m_ObjectHideFlags: 0

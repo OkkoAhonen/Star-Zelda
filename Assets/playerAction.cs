@@ -18,5 +18,5 @@ public class playerAction : MonoBehaviour
     public void playerTakeDamage(float damage)
     {
         playerStats.playerCurrentHealth -= damage;
-    } 
+    }
 }

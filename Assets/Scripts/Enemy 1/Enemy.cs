@@ -12,6 +12,7 @@ public class Enemy : ScriptableObject
     public float strength;
     public float detectionRange;
 
+    public bool canfire;
 
 
     
