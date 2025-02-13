@@ -1,33 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class PotionAttack : MonoBehaviour
 {
-    [SerializeField] private Vector2 potionplace = Vector2.zero;
+    [SerializeField] private GameObject potionSpash;
     public float potionAttackTimer = 2f;
-    public float timer = 0f;
-    void Start()
-    {
-        
-    }
+    private float timer = 0f;
 
-    // Update is called once per frame
+    public float potionDamage = 20f;
+
     void Update()
     {
-        potionAttack();
+        watchPotionTimer();
+        if (Input.GetMouseButtonDown(0))
+        {
+            potionAttack();
+        }
     }
 
     public void potionAttack()
     {
-        
-        
-        timer += Time.deltaTime;
-        if(potionAttackTimer <= timer) { 
-            potionplace = Input.mousePosition;
-            Debug.Log(potionplace);
-            timer= 0f;
+        if (timer >= potionAttackTimer)
+        {
+            // Muutetaan hiiren sijainti pelimaailman koordinaateiksi
+            Vector3 potionplace = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            potionplace.z = 0f; // Asetetaan z-arvo, jotta se näkyy 2D-pelissä
+
+            Instantiate(potionSpash, potionplace, Quaternion.identity);
+            Debug.Log($"Potion spawned at: {potionplace}");
+
+            timer = 0f;
         }
+    }
+
+    public void watchPotionTimer()
+    {
+        timer += Time.deltaTime;
     }
 }

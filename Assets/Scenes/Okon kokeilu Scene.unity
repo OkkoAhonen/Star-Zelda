@@ -32188,9 +32188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8dea04a27eb104f94eb0a806338c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionplace: {x: 0, y: 0}
+  potionSpash: {fileID: 3598729058638829589, guid: 90d86e1c557ae034babe32aba2e317d4, type: 3}
   potionAttackTimer: 2
-  timer: 0
 --- !u!4 &7940647586316711373
 Transform:
   m_ObjectHideFlags: 0
