@@ -18,9 +18,13 @@ public class CharacterUIManager : MonoBehaviour
 	[Header("Perks UI")]
 	[SerializeField] private Transform perkContainer;
 	[SerializeField] private GameObject perkPrefab;
+	[SerializeField] private PerkTooltip perkTooltip;
 
 	private Dictionary<StatType, TMP_Text> statTexts = new Dictionary<StatType, TMP_Text>();
 	private List<GameObject> displayedPerks = new List<GameObject>();
+
+	private PlayerStats playerStats;
+	private PlayerStatsManager playerStatsManager;
 
 	private void Start()
 	{
@@ -30,6 +34,9 @@ public class CharacterUIManager : MonoBehaviour
 		playerEvents.onHealthChanged += UpdateHealth;
 		playerEvents.onArmorChanged += UpdateArmor;
 		GameEventsManager.instance.goldEvents.onGoldGained += UpdateGold;
+
+		playerStats = PlayerStatsManager.instance.PlayerStats;
+		playerStatsManager = PlayerStatsManager.instance;
 
 		InitializeStatsUI();
 		RefreshUI();
@@ -58,12 +65,10 @@ public class CharacterUIManager : MonoBehaviour
 
 	private void RefreshUI()
 	{
-		var playerStats = GameManager.instance.PlayerStats;
-
 		healthText.text = $"Health: {playerStats.CurrentHealth}/{playerStats.MaxHealth}";
 		armorText.text = $"Armor: {playerStats.GetStat(StatType.Armor)}";
-		experienceText.text = $"XP: {GameManager.instance.PlayerStatsManager.CurrentExperience}";
-		goldText.text = $"Gold: {GameManager.instance.PlayerStatsManager.CurrentGold}";
+		experienceText.text = $"XP: {playerStatsManager.CurrentExperience}";
+		goldText.text = $"Gold: {playerStatsManager.CurrentGold}";
 
 		foreach (var stat in statTexts)
 		{
@@ -110,17 +115,26 @@ public class CharacterUIManager : MonoBehaviour
 		}
 		displayedPerks.Clear();
 
-		var playerStats = GameManager.instance.PlayerStats;
 		foreach (var perk in PerkDatabase.Instance.GetAllPerks())
 		{
-			if (perk.CanUnlock(playerStats))
-			{
-				GameObject perkEntry = Instantiate(perkPrefab, perkContainer);
-				perkEntry.transform.Find("Name").GetComponent<TMP_Text>().text = perk.Name;
-				perkEntry.transform.Find("Description").GetComponent<TMP_Text>().text = perk.Description;
-				perkEntry.transform.Find("Icon").GetComponent<Image>().sprite = perk.Icon;
-				displayedPerks.Add(perkEntry);
-			}
+			bool isUnlocked = perk.CanUnlock(playerStats);
+			GameObject perkEntry = Instantiate(perkPrefab, perkContainer);
+
+			TMP_Text nameText = perkEntry.transform.Find("Name").GetComponent<TMP_Text>();
+			TMP_Text descriptionText = perkEntry.transform.Find("Description").GetComponent<TMP_Text>();
+			Image icon = perkEntry.transform.Find("Icon").GetComponent<Image>();
+
+			nameText.text = perk.Name;
+			descriptionText.text = perk.Description;
+			icon.sprite = perk.Icon;
+
+			// Gray out locked perks
+			icon.color = isUnlocked ? Color.white : new Color(0.6f, 0.6f, 0.6f, 1f);
+			displayedPerks.Add(perkEntry);
+
+			// Add Tooltip Event Listeners
+			PerkTooltipHandler tooltipHandler = perkEntry.AddComponent<PerkTooltipHandler>();
+			tooltipHandler.Initialize(perkTooltip, perk, isUnlocked);
 		}
 	}
 }
