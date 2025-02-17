@@ -66,7 +66,7 @@ public class InventoryManager : MonoBehaviour
         if (Input.inputString != null)
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number <= inventorySlots.Length) // Tarkistus lisätty.
+            if (isNumber && number > 0 && number <= inventorySlots.Length) 
             {
                 ChangeSelectedSlot(number - 1);
             }
@@ -105,7 +105,7 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    public void SpawnNewItem(Item item, InventorySlot slot)
+    public void SpawnNewItem(Item item, InventorySlot slot) //Ei tarvitse koskea 
     {
         GameObject newItemGo = Instantiate(InventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();

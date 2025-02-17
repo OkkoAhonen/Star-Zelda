@@ -12,16 +12,22 @@ public class PotionAttack : MonoBehaviour
 
     void Update()
     {
+        Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+
         watchPotionTimer();
-        if (Input.GetMouseButtonDown(0))
-        {
-            potionAttack();
+
+        if(equippedItem.isPotion == true) { 
+            if (Input.GetMouseButtonDown(0))
+            {
+                potionAttack();
+            }
         }
     }
 
     public void potionAttack()
     {
-        if (timer >= potionAttackTimer)
+        Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+        if (timer >= equippedItem.potionActivetimer)
         {
             // Muutetaan hiiren sijainti pelimaailman koordinaateiksi
             Vector3 potionplace = Camera.main.ScreenToWorldPoint(Input.mousePosition);

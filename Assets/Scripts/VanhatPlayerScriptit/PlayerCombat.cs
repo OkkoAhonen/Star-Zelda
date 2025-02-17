@@ -136,7 +136,7 @@ public class PlayerCombat : MonoBehaviour
                 Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
                 if (equippedItem != null && equippedItem.isWeapon)
                 {
-                    int damage = equippedItem.attackDamage;
+                    float damage = equippedItem.attackDamage;
 
                     enemyStats.maxHealth = Mathf.Max(0, enemyStats.maxHealth - damage);
                     Debug.Log($"Hit enemy! Damage: {damage}, Remaining health: {enemyStats.maxHealth}");

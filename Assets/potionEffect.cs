@@ -29,8 +29,10 @@ public class potionEffect : MonoBehaviour
         {
             timer += Time.deltaTime;
             float t = timer / duration;
-            sr.color = Color.Lerp(startColor, endColor, t);
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, Mathf.Lerp(1f, 0f, t));
+            Color newColor = Color.Lerp(startColor, endColor, t);
+            newColor.a = Mathf.Lerp(1f, 0f, t);
+            sr.color = newColor;
+
             yield return null;
         }
 
@@ -44,12 +46,13 @@ public class potionEffect : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
             if (canDamage) {
                 
                 EnemyAI enemyAI = collision.GetComponent<EnemyAI>();
 
-                PotionAttack potionAttack = player.GetComponent<PotionAttack>();
-                enemyAI.health -= potionAttack.potionDamage;
+                Debug.Log(equippedItem.name);
+                enemyAI.health -= equippedItem.potionAttackDamage;
                 Debug.Log(enemyAI.health);
                 canDamage = false;
             }
@@ -59,7 +62,8 @@ public class potionEffect : MonoBehaviour
 
     private IEnumerator PotionDamageCooldown()
     {
-        yield return new WaitForSeconds(damageDuration);
+        Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+        yield return new WaitForSeconds(equippedItem.damageDuration);
         canDamage = true;
     }
 

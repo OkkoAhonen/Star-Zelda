@@ -24,11 +24,18 @@ public class Item : ScriptableObject
     [Header("Both")]
     public Sprite image;
 
-    [Header("Combat Properties")]
-    public int attackDamage = 0;
-    public float attackRange = 1.5f; // Esim. kuinka kaukana pelaaja voi osua miekalla.
+    [Header("Melee Combat Properties")]
+    public float attackDamage = 0f; //katso combat script
+    public float damageBooster = 1f; //jkatso combat script
+    public float attackRadius = 1.5f;
+    public float maxChargeTime = 3f;
     public bool isWeapon = false; // Voit m‰‰ritt‰‰, onko kyseinen item ase.
 
+    [Header("Potion Combat Properties")]
+    public float potionAttackDamage = 20f;
+    public float potionActivetimer = 2f;
+    public float damageDuration = 0.5f;
+    public bool isPotion = false;
 
 }
 
@@ -36,13 +43,16 @@ public enum ItemType
 {
     BuildingBlock,
     Tool,
-    Weapon
+    Weapon,
+    potion
 }
 
 public enum ActionType
 {
     Dig,
     Mine,
-    Slash
+    Slash,
+    potionthrow
+    
 }
 

@@ -19926,9 +19926,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1717343560}
   - component: {fileID: 1717343559}
+  - component: {fileID: 1717343561}
   m_Layer: 0
   m_Name: InventoryManager
-  m_TagString: Untagged
+  m_TagString: InventoryManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19948,6 +19949,7 @@ MonoBehaviour:
   startItems:
   - {fileID: 11400000, guid: e28f9b1b4d177ff4b9d9259eeabb25a6, type: 2}
   - {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
+  - {fileID: 11400000, guid: b668c7c1eadd129499ea4402670d9fbb, type: 2}
   playerMovement: {fileID: 0}
   ShopItem1: []
   inventorySlots:
@@ -19971,6 +19973,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1717343561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717343558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4b7d5b30a9e1f48b9568845aa169b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1717835981
 GameObject:
   m_ObjectHideFlags: 0
@@ -31133,6 +31147,7 @@ GameObject:
   - component: {fileID: 7937146960278251858}
   - component: {fileID: 7937146960278251859}
   - component: {fileID: 7937146960278251860}
+  - component: {fileID: 7937146960278251861}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -32148,7 +32163,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6787826632738736156}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36b94e3d4dff71f4e9cad134b7b4e6f0, type: 3}
   m_Name: 
@@ -32191,6 +32206,19 @@ MonoBehaviour:
   potionSpash: {fileID: 3598729058638829589, guid: 90d86e1c557ae034babe32aba2e317d4, type: 3}
   potionAttackTimer: 2
   potionDamage: 20
+--- !u!114 &7937146960278251861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787826632738736156}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595f5b4985d0a9745b55532d5359d2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 255ff07ae540775478a4842fdd73f366, type: 2}
 --- !u!4 &7940647586316711373
 Transform:
   m_ObjectHideFlags: 0
