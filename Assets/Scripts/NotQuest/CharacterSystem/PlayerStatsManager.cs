@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerStatsManager : MonoBehaviour
 {
+	public static PlayerStatsManager instance { get; private set; }
+	private PlayerStats playerStats;
+	public PlayerStats PlayerStats => playerStats;
+	public event Action onStatChanged;
+
 	[Header("Configuration")]
 	[SerializeField] private int startingLevel = 1;
 	[SerializeField] private int startingExperience = 0;
@@ -17,6 +23,14 @@ public class PlayerStatsManager : MonoBehaviour
 
 	private void Awake()
 	{
+		if (instance != null && instance != this)
+		{
+			Destroy(gameObject);
+			return;
+		}
+		instance = this;
+		
+		playerStats = new PlayerStats();
 		CurrentLevel = startingLevel;
 		CurrentExperience = startingExperience;
 		CurrentGold = startingGold;
@@ -40,7 +54,7 @@ public class PlayerStatsManager : MonoBehaviour
 		GameEventsManager.instance.playerEvents.PlayerLevelChange(CurrentLevel);
 		GameEventsManager.instance.playerEvents.PlayerExperienceChange(CurrentExperience);
 		GameEventsManager.instance.goldEvents.GoldChange(CurrentGold);
-		GameEventsManager.instance.playerEvents.PlayerArmorChange(CurrentArmor);
+		GameEventsManager.instance.playerEvents.ArmorChange(CurrentArmor);
 	}
 
 	private void GainExperience(int experience)
@@ -66,6 +80,17 @@ public class PlayerStatsManager : MonoBehaviour
 	public void ChangeArmor(int amount)
 	{
 		CurrentArmor = Mathf.Max(0, CurrentArmor + amount);
-		GameEventsManager.instance.playerEvents.PlayerArmorChange(CurrentArmor);
+		GameEventsManager.instance.playerEvents.ArmorChange(CurrentArmor);
+	}
+
+	public int GetStat(StatType statType)
+	{
+		return playerStats.GetStat(statType);
+	}
+
+	public void IncreaseStat(StatType statType)
+	{
+		playerStats.IncreaseStat(statType);
+		onStatChanged?.Invoke();
 	}
 }

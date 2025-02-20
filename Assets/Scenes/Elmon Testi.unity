@@ -3788,7 +3788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce56afc1e173b61449b141d2617d201c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadQuestState: 0
 --- !u!1 &928797175
 GameObject:
   m_ObjectHideFlags: 0
@@ -6513,7 +6512,7 @@ MonoBehaviour:
   startingLevel: 1
   startingExperience: 0
   startingGold: 5
-  startingStatPoints: 5
+  startingArmor: 0
 --- !u!1001 &1492759190
 PrefabInstance:
   m_ObjectHideFlags: 0

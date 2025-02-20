@@ -18,6 +18,8 @@ public class PerkDatabase : ScriptableObject
 	[SerializeField] private List<Perk> allPerks = new List<Perk>();
 	private Dictionary<string, Perk> perkDictionary;
 
+	public List<Perk> AllPerks => allPerks;
+
 	private void OnEnable()
 	{
 		if (_instance == null)
@@ -38,6 +40,4 @@ public class PerkDatabase : ScriptableObject
 	{
 		return perkDictionary.TryGetValue(name, out var perk) ? perk : null;
 	}
-
-	public List<Perk> GetAllPerks() => allPerks;
 }

@@ -5,7 +5,7 @@ public enum StatType
 {
 	Strength, Dexterity, Vitality, Intelligence, Sanity, Wisdom, Charisma,
 	Endurance, Agility, Luck, Perception, Willpower,
-	Magic, Faith, Alchemy, Ranged, Instinct
+	Magic, Faith, Alchemy, Ranged, Instinct, Armor
 }
 
 public class PlayerStats

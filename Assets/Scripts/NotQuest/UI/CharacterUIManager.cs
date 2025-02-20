@@ -29,10 +29,10 @@ public class CharacterUIManager : MonoBehaviour
 	private void Start()
 	{
 		var playerEvents = GameEventsManager.instance.playerEvents;
-		playerEvents.onStatChanged += UpdateStatDisplay;
+		playerEvents.onStatChange += UpdateStatDisplay;
 		playerEvents.onGainExperience += UpdateExperience;
-		playerEvents.onHealthChanged += UpdateHealth;
-		playerEvents.onArmorChanged += UpdateArmor;
+		playerEvents.onHealthChange += UpdateHealth;
+		playerEvents.onArmorChange += UpdateArmor;
 		GameEventsManager.instance.goldEvents.onGoldGained += UpdateGold;
 
 		playerStats = PlayerStatsManager.instance.PlayerStats;
@@ -45,10 +45,10 @@ public class CharacterUIManager : MonoBehaviour
 	private void OnDestroy()
 	{
 		var playerEvents = GameEventsManager.instance.playerEvents;
-		playerEvents.onStatChanged -= UpdateStatDisplay;
+		playerEvents.onStatChange -= UpdateStatDisplay;
 		playerEvents.onGainExperience -= UpdateExperience;
-		playerEvents.onHealthChanged -= UpdateHealth;
-		playerEvents.onArmorChanged -= UpdateArmor;
+		playerEvents.onHealthChange -= UpdateHealth;
+		playerEvents.onArmorChange -= UpdateArmor;
 		GameEventsManager.instance.goldEvents.onGoldGained -= UpdateGold;
 	}
 
@@ -115,7 +115,7 @@ public class CharacterUIManager : MonoBehaviour
 		}
 		displayedPerks.Clear();
 
-		foreach (var perk in PerkDatabase.Instance.GetAllPerks())
+		foreach (Perk perk in PerkDatabase.Instance.AllPerks)
 		{
 			bool isUnlocked = perk.CanUnlock(playerStats);
 			GameObject perkEntry = Instantiate(perkPrefab, perkContainer);

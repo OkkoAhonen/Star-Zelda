@@ -35,7 +35,7 @@ public class PerkTracker
 	// Unlock a new perk
 	private void UnlockPerk(string perkName)
 	{
-		Perk newPerk = PerkDatabase.GetPerkByName(perkName);
+		Perk newPerk = PerkDatabase.Instance.GetPerkByName(perkName);
 		if (newPerk != null)
 		{
 			unlockedPerks.Add(newPerk);
