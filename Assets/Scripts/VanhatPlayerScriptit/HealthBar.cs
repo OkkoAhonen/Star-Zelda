@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
 {
 
     public GameObject heartPrefab;
-    public PlayerMovement2D playerMovement2D;
+    //public PlayerMovement2D playerMovement2D;
 
 
 
@@ -19,12 +19,12 @@ public class HealthBar : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerMovement2D.OnplayerDamaged += DrawHearts;
+        //PlayerMovement2D.OnplayerDamaged += DrawHearts;
 
     }
     private void OnDisable()
     {
-        PlayerMovement2D.OnplayerDamaged -= DrawHearts;
+        //PlayerMovement2D.OnplayerDamaged -= DrawHearts;
     }
 
     public void DrawHearts()
@@ -34,10 +34,10 @@ public class HealthBar : MonoBehaviour
         //determine how many hearts to make total
         //Bsed off the max health
 
-        float maxHealthRemainder = playerMovement2D.MaxHealth % 2;
-        int heartsToMake = (int)(playerMovement2D.MaxHealth / 2 + maxHealthRemainder);
+        //float maxHealthRemainder = playerMovement2D.MaxHealth % 2;
+        //int heartsToMake = (int)(playerMovement2D.MaxHealth / 2 + maxHealthRemainder);
 
-        for (int i = 0; i < heartsToMake; i++)
+       // for (int i = 0; i < heartsToMake; i++)
         {
 
             CreateEmptyHeart();
@@ -45,8 +45,8 @@ public class HealthBar : MonoBehaviour
         }
         for (int i = 0; i < hearts.Count; i++)
         {
-            int heartStatusRemainder = (int)math.clamp(playerMovement2D.health - (i * 2), 0, 2);
-            hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
+           // int heartStatusRemainder = (int)math.clamp(playerMovement2D.health - (i * 2), 0, 2);
+            //hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
 
 
         }

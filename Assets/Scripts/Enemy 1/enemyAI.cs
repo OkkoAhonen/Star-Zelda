@@ -33,11 +33,11 @@ public class EnemyAI : MonoBehaviour
         WatchHealth();
 
         //Movement towards player
-        if (player != null && enemystats != null)
+        /*if (player != null && enemystats != null)
         {
-            Vector2 newPositon = Vector2.MoveTowards(rb.position, player.transform.position, enemystats.speed * Time.fixedDeltaTime);
-            rb.MovePosition(newPositon);
-        }
+            //Vector2 newPositon = Vector2.MoveTowards(rb.position, player.transform.position, enemystats.speed * Time.fixedDeltaTime);
+            //rb.MovePosition(newPositon);
+        }*/
     }
 
 

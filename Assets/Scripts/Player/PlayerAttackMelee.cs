@@ -90,9 +90,11 @@ public class PlayerAttackMelee : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+        if ( equippedItem != null ) { 
         Gizmos.DrawWireSphere(attackpoint.transform.position, equippedItem.attackRadius);
-    }
+        }
+    }*/
 }
