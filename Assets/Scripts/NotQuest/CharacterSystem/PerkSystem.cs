@@ -25,6 +25,7 @@ public class PerkSystem
 
 	private void TryUnlockPerk(Perk perk)
 	{
+		// Upgrade perk:
 		if (unlockedPerks.ContainsKey(perk) && perk.isTiered && unlockedPerks[perk] < perk.maxLevel)
 		{
 			int requiredLevel = perk.requiredStatLevel + (unlockedPerks[perk] * perk.scalingFactor);
@@ -34,7 +35,7 @@ public class PerkSystem
 				unlockedPerks[perk]++;
 				Debug.Log($"Upgraded Perk: {perk.perkName} to Level {unlockedPerks[perk]}");
 			}
-		}
+		} // Unlocks perk:
 		else if (!unlockedPerks.ContainsKey(perk) && MeetsStatRequirements(perk, perk.requiredStatLevel))
 		{
 			unlockedPerks[perk] = 1;

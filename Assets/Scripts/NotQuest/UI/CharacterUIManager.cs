@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -25,6 +26,7 @@ public class CharacterUIManager : MonoBehaviour
 
 	private PlayerStats playerStats;
 	private PlayerStatsManager playerStatsManager;
+	private PerkTracker perkTracker;
 
 	private void Start()
 	{
@@ -38,8 +40,30 @@ public class CharacterUIManager : MonoBehaviour
 		playerStats = PlayerStatsManager.instance.PlayerStats;
 		playerStatsManager = PlayerStatsManager.instance;
 
+		perkTracker = new PerkTracker(playerEvents);
+
 		InitializeStatsUI();
-		RefreshUI();
+		
+		StartCoroutine(InitializeUIWithDelay());
+	}
+
+	private IEnumerator InitializeUIWithDelay()
+	{
+		yield return null;
+
+		if (PerkDatabase.Instance != null)
+		{
+			// Kill a wolf to get perk
+			#if UNITY_EDITOR
+			GameEventsManager.instance.playerEvents.EnemyKilled("Wolf");
+#endif
+
+			RefreshUI();
+		}
+		else
+		{
+			Debug.LogError("PerkDatabase.Instance is null! Make sure it's properly initialized.");
+		}
 	}
 
 	private void OnDestroy()
@@ -50,6 +74,8 @@ public class CharacterUIManager : MonoBehaviour
 		playerEvents.onHealthChange -= UpdateHealth;
 		playerEvents.onArmorChange -= UpdateArmor;
 		GameEventsManager.instance.goldEvents.onGoldGained -= UpdateGold;
+
+		perkTracker.Cleanup();
 	}
 
 	private void InitializeStatsUI()
@@ -57,7 +83,7 @@ public class CharacterUIManager : MonoBehaviour
 		foreach (StatType stat in System.Enum.GetValues(typeof(StatType)))
 		{
 			GameObject statEntry = Instantiate(statPrefab, statContainer);
-			TMP_Text statText = statEntry.GetComponent<TMP_Text>();
+			TMP_Text statText = statEntry.transform.GetChild(1).GetComponent<TMP_Text>();
 			statText.text = stat.ToString() + ": 0";
 			statTexts[stat] = statText;
 		}
@@ -94,7 +120,7 @@ public class CharacterUIManager : MonoBehaviour
 
 	private void UpdateArmor(int newArmorValue)
 	{
-		armorText.text = $"Armor: {newArmorValue}";
+        armorText.text = $"{newArmorValue}";
 	}
 
 	private void UpdateExperience(int newXP)
@@ -109,6 +135,12 @@ public class CharacterUIManager : MonoBehaviour
 
 	private void RefreshPerksUI()
 	{
+		if (PerkDatabase.Instance == null || PerkDatabase.Instance.AllPerks == null)
+		{
+			Debug.LogWarning("PerkDatabase not ready yet");
+			return;
+		}
+
 		foreach (var perkObj in displayedPerks)
 		{
 			Destroy(perkObj);
@@ -117,24 +149,15 @@ public class CharacterUIManager : MonoBehaviour
 
 		foreach (Perk perk in PerkDatabase.Instance.AllPerks)
 		{
-			bool isUnlocked = perk.CanUnlock(playerStats);
-			GameObject perkEntry = Instantiate(perkPrefab, perkContainer);
+		    bool isUnlocked = perk.CanUnlock(playerStats);
+		    GameObject perkEntry = Instantiate(perkPrefab, perkContainer);
 
-			TMP_Text nameText = perkEntry.transform.Find("Name").GetComponent<TMP_Text>();
-			TMP_Text descriptionText = perkEntry.transform.Find("Description").GetComponent<TMP_Text>();
-			Image icon = perkEntry.transform.Find("Icon").GetComponent<Image>();
+		    perkEntry.GetComponent<PerkDisplayPrefab>().Setup(perk, isUnlocked);
+		    displayedPerks.Add(perkEntry);
 
-			nameText.text = perk.Name;
-			descriptionText.text = perk.Description;
-			icon.sprite = perk.Icon;
-
-			// Gray out locked perks
-			icon.color = isUnlocked ? Color.white : new Color(0.6f, 0.6f, 0.6f, 1f);
-			displayedPerks.Add(perkEntry);
-
-			// Add Tooltip Event Listeners
-			PerkTooltipHandler tooltipHandler = perkEntry.AddComponent<PerkTooltipHandler>();
-			tooltipHandler.Initialize(perkTooltip, perk, isUnlocked);
+		    // Add Tooltip Handler
+		    PerkTooltipHandler tooltipHandler = perkEntry.AddComponent<PerkTooltipHandler>();
+		    tooltipHandler.Initialize(perkTooltip, perk, isUnlocked);
 		}
 	}
 }

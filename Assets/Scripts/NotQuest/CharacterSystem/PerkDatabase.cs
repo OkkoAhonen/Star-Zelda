@@ -32,7 +32,10 @@ public class PerkDatabase : ScriptableObject
 		perkDictionary = new Dictionary<string, Perk>();
 		foreach (var perk in allPerks)
 		{
-			perkDictionary[perk.Name] = perk;
+			if (perk != null && !string.IsNullOrEmpty(perk.Name))
+			{
+				perkDictionary[perk.Name] = perk;
+			}
 		}
 	}
 
