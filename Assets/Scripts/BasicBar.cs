@@ -18,11 +18,11 @@ public class BasicBar : MonoBehaviour
 
 
 
-
     }
 
     public void UpdateSlider(float currentValue, float maxValue)
     {
-        slider.value = currentValue/maxValue;  
+        slider.value = currentValue / maxValue;
     }
+
 }
