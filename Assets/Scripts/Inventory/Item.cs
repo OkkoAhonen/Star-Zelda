@@ -8,9 +8,6 @@ using UnityEngine.Tilemaps;
 
 public class Item : ScriptableObject
 {
-    
-    
-    
 
     [Header("Only gameplay")]
     public TileBase tile;
@@ -36,6 +33,10 @@ public class Item : ScriptableObject
     public float potionActivetimer = 2f;
     public float damageDuration = 0.5f;
     public bool isPotion = false;
+
+    [Header("archer Combat Properties")]
+    public float accurasu = 20f;
+    public bool isBow = false;
 
 }
 
