@@ -5696,18 +5696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0aa5e210a80f704abfbd8a7aca08c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
-  player: {fileID: 0}
-  enemyStats: {fileID: 0}
-  rb: {fileID: 0}
-  targetPosition: {x: 0, y: 0}
-  shootingpoint: {fileID: 0}
-  chargeTime: 1.5
-  rushSpeedMultiplier: 2
-  attackCooldownTimer: 0
-  attackCooldown: 1
-  projectilePrefab: {fileID: 9087156057951269479, guid: a0ccf8ff25f035c45bf615bf5f749e8d, type: 3}
-  stateTimer: 0
 --- !u!114 &513956100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5720,12 +5708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d874681d1447afa4a9bc68267cc26088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 513956097}
-  maxHealth: 100
-  attackDmg: 0
-  speed: 0
-  cooldown: 0
-  enemyName: 
 --- !u!212 &513956101
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5862,10 +5844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e9aa05f1591904080b6c9736ccad9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1459294816}
-  bossStats: {fileID: 513956100}
-  currentHealth: 0
-  cameraFollow: {fileID: 305327798}
 --- !u!95 &513956105
 Animator:
   serializedVersion: 5
@@ -10158,14 +10136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc20d420226b005408955acb8fb88b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  currentState: 0
-  enemyStats: {fileID: 0}
-  range: 100
-  speed: 2
-  chooseDir: 0
-  dead: 0
-  randomDir: {x: 0, y: 0, z: 0}
 --- !u!1 &821144051
 GameObject:
   m_ObjectHideFlags: 0
@@ -14071,6 +14041,7 @@ GameObject:
   - component: {fileID: 1172223342}
   - component: {fileID: 1172223341}
   - component: {fileID: 1172223345}
+  - component: {fileID: 1172223346}
   m_Layer: 7
   m_Name: TestEnemy1
   m_TagString: Untagged
@@ -14229,11 +14200,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f40fe8db74db2429f7260394d68371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemystats: {fileID: 11400000, guid: a3a95d3e34b35cd479c1bc71b8c9f97a, type: 2}
+  enemystats: {fileID: 11400000, guid: 0c30b354196d31b408e3bbf2afcaabe4, type: 2}
   player: {fileID: 0}
-  lootprefab: {fileID: 0}
+  lootprefab: {fileID: 7965118795102050452, guid: b94c9f454947e98408dde126b55d54ff, type: 3}
   dropItem: {fileID: 0}
   health: 0
+--- !u!114 &1172223346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172223340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabee88b8a795b44aa0e7cabc6efde7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6111697678096974037}
+  speed: 2
+  detectionRange: 5
+  avoidanceDistance: 1
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1174560044
 GameObject:
   m_ObjectHideFlags: 0
@@ -19963,6 +19953,7 @@ MonoBehaviour:
   startItems:
   - {fileID: 11400000, guid: e28f9b1b4d177ff4b9d9259eeabb25a6, type: 2}
   - {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
+  - {fileID: 11400000, guid: b668c7c1eadd129499ea4402670d9fbb, type: 2}
   inventorySlots:
   - {fileID: 1369857048}
   - {fileID: 1159995755}
@@ -31103,14 +31094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc20d420226b005408955acb8fb88b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  currentState: 0
-  enemyStats: {fileID: 0}
-  range: 50
-  speed: 5
-  chooseDir: 0
-  dead: 0
-  randomDir: {x: 0, y: 0, z: 0}
 --- !u!224 &6681267767703715987
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32165,7 +32148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6787826632738736156}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36b94e3d4dff71f4e9cad134b7b4e6f0, type: 3}
   m_Name: 
@@ -32206,7 +32189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8dea04a27eb104f94eb0a806338c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionSpash: {fileID: 0}
+  potionSpash: {fileID: 3598729058638829589, guid: 90d86e1c557ae034babe32aba2e317d4, type: 3}
   potionAttackTimer: 2
   potionDamage: 20
 --- !u!4 &7940647586316711373
