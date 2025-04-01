@@ -73,7 +73,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Interactable?.Interact(this);
+            //Interactable?.Interact(this);
         }
         UpdateMoneyUI();
     }

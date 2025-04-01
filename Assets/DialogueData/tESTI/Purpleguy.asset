@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454e925da1687a34483e945f48f1626d, type: 3}
+  m_Name: Purpleguy
+  m_EditorClassIdentifier: 
+  dialogue:
+  - I was behind the bind of -87
+  - What do you think about it?
+  responses:
+  - responseText: Not good
+    dialogueObject: {fileID: 11400000, guid: 4a0ff3e3278b6f346a8c87fe23899786, type: 2}
+  - responseText: Yes
+    dialogueObject: {fileID: 11400000, guid: 692b445e471e9dc4f8a1a72e096fdaf6, type: 2}

@@ -1,5 +1,5 @@
 
 public interface Interactable
 {
-    void Interact(PlayerMovement2D player);
+    void Interact(playerAction player);
 }

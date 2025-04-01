@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class PlayerAttackMelee : MonoBehaviour
 {
+
+
     public GameObject attackpoint;
     public float radius;
     public LayerMask enemies;
@@ -18,41 +20,54 @@ public class PlayerAttackMelee : MonoBehaviour
 
     public float maxChargeTime = 3f; //Tämä korvataan myöhemmin itemien arvoilla
     public float Damage = 5f;
-    public float Damagebooster = 1f;
+    public float Damagebooster;
     public float currentChargeTime = 0f;
     private bool UpOrDown = false;
 
- 
+    //[SerializeField] private GameObject chargebar;
+    private bool charging = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        chargeSword();
 
-        if (Input.GetMouseButtonUp(0))
+
+        if (InventoryManager.Instance.GetSelectedItem(false) != null)
         {
-            attack1();
+            Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+            if (equippedItem.isWeapon == true)
+            {
+                chargeSword();
+
+                if (Input.GetMouseButtonUp(0))
+                {
+                    attack1();
+
+                }
+
+            }
         }
     }
 
     public void attack1()
     {
-        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackpoint.transform.position, radius, enemies );
+        Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+        Damagebooster = equippedItem.damageBooster;
+        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackpoint.transform.position, equippedItem.attackRadius, enemies);
         Damagebooster = Damagebooster + (Damagebooster * currentChargeTime);
         foreach (Collider2D enemyGameobje in enemy)
         {
-            Debug.Log(Damage * Damagebooster);
+            Debug.Log(equippedItem.attackDamage * Damagebooster);
 
             EnemyAI enemyhealth = enemyGameobje.GetComponent<EnemyAI>();
-            enemyhealth.enemyTakeDamage(Damage * Damagebooster);
+            enemyhealth.enemyTakeDamage(equippedItem.attackDamage * Damagebooster);
 
-            
+
         }
 
 
@@ -62,29 +77,24 @@ public class PlayerAttackMelee : MonoBehaviour
 
     private void chargeSword()
     {
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
-            
-                currentChargeTime += Time.deltaTime * 2;
+            Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+            if (equippedItem == null || slider == null)
+            {
+                Debug.LogError("Cannot charge sword: equippedItem or slider is null!");
+                return;
+            }
 
-                if ( currentChargeTime > maxChargeTime ) // Vaihdetaan chargen suuntaa
-                {  
-                    currentChargeTime = maxChargeTime;
-        
-                }
+            currentChargeTime += Time.deltaTime * 2;
 
-            
+            if (currentChargeTime > equippedItem.maxChargeTime)
+            {
+                currentChargeTime = equippedItem.maxChargeTime;
+            }
 
-            slider.UpdateSlider(currentChargeTime, maxChargeTime);
-
-            
-
-            
+            slider.UpdateSlider(currentChargeTime, equippedItem.maxChargeTime);
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(attackpoint.transform.position, radius);
-    }
 }

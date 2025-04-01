@@ -8,10 +8,6 @@ public class InventoryManager : MonoBehaviour
 
     public Item[] startItems;
 
-    public PlayerMovement2D playerMovement;
-
-    public Item[] ShopItem1;
-
     public InventorySlot[] inventorySlots;
     public GameObject InventoryItemPrefab;
 
@@ -35,8 +31,16 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("Multiple InventoryManager instances detected. Destroying duplicate.");
+        }
     }
+
 
     private void Start()
     {
@@ -50,23 +54,13 @@ public class InventoryManager : MonoBehaviour
         Debug.Log(selectedSlot);
     }
 
-    public void OstaShopItem1()
-    {
-        playerMovement.money -= 90;
-        foreach (var item in ShopItem1)
-        {
-            AddItem(item);
-            
-
-        }
-    }
 
     private void Update()
     {
         if (Input.inputString != null)
         {
             bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number <= inventorySlots.Length) // Tarkistus lisätty.
+            if (isNumber && number > 0 && number <= inventorySlots.Length) 
             {
                 ChangeSelectedSlot(number - 1);
             }
@@ -105,7 +99,7 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    public void SpawnNewItem(Item item, InventorySlot slot)
+    public void SpawnNewItem(Item item, InventorySlot slot) //Ei tarvitse koskea 
     {
         GameObject newItemGo = Instantiate(InventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();

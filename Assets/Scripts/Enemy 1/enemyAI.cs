@@ -7,14 +7,14 @@ public class EnemyAI : MonoBehaviour
     public Enemy enemystats; // Muista asettaa tämä Inspectorissa!
     private Rigidbody2D rb;
     [SerializeField] private GameObject player;
-
+    [SerializeField] private GameObject lootprefab;
+    [SerializeField] private Item dropItem;
     public float health;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
-
         health = enemystats.maxHealth;
 
         if (player == null)
@@ -31,29 +31,25 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         WatchHealth();
-
-        //Movement towards player
-        if (player != null && enemystats != null)
-        {
-            Vector2 newPositon = Vector2.MoveTowards(rb.position, player.transform.position, enemystats.speed * Time.fixedDeltaTime);
-            rb.MovePosition(newPositon);
-        }
     }
 
-
-    //Damage player on collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("Player"))
         {
             playerAction playerAction = collision.gameObject.GetComponent<playerAction>();
-
             playerAction.playerTakeDamage(enemystats.strength);
         }
     }
 
     void Die()
     {
+        GameObject lootObject = Instantiate(lootprefab, transform.position, transform.rotation);
+        Loot loot = lootObject.GetComponent<Loot>();
+        if (loot != null && dropItem != null)
+        {
+            loot.Initialize(dropItem);
+        }
         Destroy(gameObject);
     }
 
@@ -64,7 +60,7 @@ public class EnemyAI : MonoBehaviour
 
     void WatchHealth()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
             Die();
         }

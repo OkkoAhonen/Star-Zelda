@@ -18,6 +18,8 @@ MonoBehaviour:
   range: {x: 5, y: 4}
   stackable: 0
   image: {fileID: 1401672937, guid: addf0e4d0b0523b41ac817912d933495, type: 3}
-  attackDamage: 3
-  attackRange: 1.5
+  attackDamage: 15
+  damageBooster: 1
+  attackRadius: 1
+  maxChargeTime: 3
   isWeapon: 1
