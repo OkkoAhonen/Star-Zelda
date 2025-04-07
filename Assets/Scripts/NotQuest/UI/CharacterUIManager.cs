@@ -53,7 +53,7 @@ public class CharacterUIManager : MonoBehaviour
 
 		if (PerkDatabase.Instance != null)
 		{
-			// Kill a wolf to get perk
+			// If there are no perks, kill a wolf to get a perk
 			#if UNITY_EDITOR
 			GameEventsManager.instance.playerEvents.EnemyKilled("Wolf");
 #endif

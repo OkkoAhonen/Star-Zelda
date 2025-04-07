@@ -33,4 +33,13 @@ public class InputManager : MonoBehaviour
             GameEventsManager.instance.inputEvents.QuestLogTogglePressed();
         }
     }
+
+    public void BookOpenPressed(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Debug.Log("OpenBook action triggered");
+            GameEventsManager.instance.inputEvents.BookOpenPressed();
+        }
+    }
 }

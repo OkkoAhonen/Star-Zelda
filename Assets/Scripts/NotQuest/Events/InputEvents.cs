@@ -36,4 +36,16 @@ public class InputEvents
             onQuestLogTogglePressed();
         }
     }
+
+    public event Action onInventory;
+    public void InventoryPressed()
+    {
+        onInventory?.Invoke();
+    }
+
+    public event Action onBookOpen;
+    public void BookOpenPressed()
+    {
+        onBookOpen?.Invoke();
+    }
 }
