@@ -38,7 +38,6 @@ public class InputManager : MonoBehaviour
     {
         if (context.started)
         {
-            Debug.Log("OpenBook action triggered");
             GameEventsManager.instance.inputEvents.BookOpenPressed();
         }
     }

@@ -1,28 +1,31 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class BookDisplay : MonoBehaviour
 {
+    [Header("Book Parts")]
+    public GameObject frontCover;
+    public GameObject backCover;
+    public GameObject insideCover;
+    public BookPagesContainer pagesContainer;
+    public GameObject bookUI;
+
     [Header("UI Elements")]
-    public GameObject bookUI;               // Parent UI GameObject to enable/disable
-    public TMP_Text leftPageText;           // Text content for the left page
-    public TMP_Text rightPageText;          // Text content for the right page
-    public TMP_Text leftPageNumberText;     // Page number for the left page
-    public TMP_Text rightPageNumberText;    // Page number for the right page
+    public TMP_InputField leftPageInput;
+    public TMP_InputField rightPageInput;
+    public TMP_Text pageNumberLeft;
+    public TMP_Text pageNumberRight;
 
     [Header("Buttons")]
     public Button nextButton;
     public Button prevButton;
     public Button closeButton;
 
-    [Header("Current Book")]
-    public BaseBook currentBook;
-
-    [Header("Input Settings")]
-    public TMP_InputField editableTextField; // Only active when book is editable
-
-    private int currentPage = 0; // Start at the first page
+    private BookData currentBook => pagesContainer?.bookData;
+    private int currentPage = 0;
+    private bool isOpen = false;
 
     void Start()
     {
@@ -30,13 +33,37 @@ public class BookDisplay : MonoBehaviour
         prevButton.onClick.AddListener(PreviousPage);
         closeButton.onClick.AddListener(CloseBook);
 
+        leftPageInput.onEndEdit.AddListener((text) => HandleTextInput(text, true));
+        rightPageInput.onEndEdit.AddListener((text) => HandleTextInput(text, false));
+
         GameEventsManager.instance.inputEvents.onBookOpen += OpenBook;
 
-        ToggleBook(false);
+        SetBookState(false);
+    }
 
-        if (editableTextField != null)
+    private void SetBookState(bool open)
+    {
+        isOpen = open;
+        
+        frontCover.SetActive(!open);
+        backCover.SetActive(!open);
+        insideCover.SetActive(open);
+        bookUI.SetActive(open);
+
+        // Hide all pages when closing
+        if (!open)
         {
-            editableTextField.onValueChanged.AddListener(HandleTextInput);
+            foreach (var page in currentBook.pages)
+            {
+                if (page.pageObject != null)
+                {
+                    page.pageObject.SetActive(false);
+                }
+            }
+        }
+        else
+        {
+            UpdatePages();
         }
     }
 
@@ -44,28 +71,22 @@ public class BookDisplay : MonoBehaviour
     {
         if (currentBook != null)
         {
-            currentPage = 0; // Reset to the first page when opening the book
-            ToggleBook(true);
-            UpdatePage();
+            currentPage = 0;
+            SetBookState(true);
         }
     }
 
     public void CloseBook()
     {
-        ToggleBook(false);
-    }
-
-    void ToggleBook(bool open)
-    {
-        bookUI.SetActive(open);
+        SetBookState(false);
     }
 
     public void NextPage()
     {
-        if (currentPage < currentBook.pages.Count - 1) // Check for at least one page
+        if (currentPage < currentBook.pages.Count - 1)
         {
-            currentPage++; // Move to the next page
-            UpdatePage();
+            currentPage += 2;
+            UpdatePages();
         }
     }
 
@@ -73,59 +94,90 @@ public class BookDisplay : MonoBehaviour
     {
         if (currentPage > 0)
         {
-            currentPage--; // Move back to the previous page
-            UpdatePage();
+            currentPage -= 2;
+            UpdatePages();
         }
     }
 
-    private void HandleTextInput(string newText)
+    private void HandleTextInput(string newText, bool isLeftPage)
     {
-        if (currentBook != null && currentBook.playerCanEdit)
+        if (currentBook == null || !currentBook.playerCanEdit) return;
+
+        int pageIndex = isLeftPage ? currentPage - 1 : currentPage;
+        if (pageIndex >= 0 && pageIndex < currentBook.pages.Count)
         {
-            currentBook.AddTextToCurrentPage(newText, currentPage);
-            UpdatePage();
+            currentBook.AddTextToCurrentPage(newText, pageIndex);
         }
     }
 
-    public void UpdatePage()
+    public void UpdatePages()
     {
-        if (currentBook == null || currentBook.pages.Count == 0) return;
+        if (currentBook == null || !isOpen) return;
 
-        // Set text for the right page (current page)
-        if (currentPage < currentBook.pages.Count)
+        // Hide all pages
+        foreach (var page in currentBook.pages)
         {
-            BookPage rightPage = currentBook.pages[currentPage];
-            rightPageText.text = rightPage.text;
-            rightPageNumberText.text = (currentPage + 1).ToString(); // Set right page number
-        }
-        else
-        {
-            rightPageText.text = ""; // Clear if no page exists
-            rightPageNumberText.text = ""; // Clear if no page exists
+            if (page.pageObject != null)
+            {
+                page.pageObject.SetActive(false);
+            }
         }
 
-        // Set text for the left page (previous page)
-        if (currentPage - 1 >= 0)
+        // Handle first page (show only right page)
+        if (currentPage == 0)
         {
-            BookPage leftPage = currentBook.pages[currentPage - 1];
-            leftPageText.text = leftPage.text;
-            leftPageNumberText.text = (currentPage).ToString(); // Set left page number
+            if (currentBook.pages.Count > 0)
+            {
+                currentBook.pages[0].pageObject?.SetActive(true);
+                UpdatePageContent(rightPageInput, pageNumberRight, currentBook.pages[0], 1);
+                leftPageInput.text = "";
+                pageNumberLeft.text = "";
+            }
         }
-        else
+        // Handle last page for odd number of pages
+        else if (currentPage == currentBook.pages.Count - 1 && currentBook.pages.Count % 2 != 0)
         {
-            leftPageText.text = ""; // Clear if no page exists
-            leftPageNumberText.text = ""; // Clear if no page exists
+            var lastPage = currentBook.pages[currentPage];
+            lastPage.pageObject?.SetActive(true);
+            UpdatePageContent(leftPageInput, pageNumberLeft, lastPage, currentPage + 1);
+            rightPageInput.text = "";
+            pageNumberRight.text = "";
         }
+        // Handle normal two-page spread
+        else if (currentPage < currentBook.pages.Count)
+        {
+            var leftPage = currentBook.pages[currentPage - 1];
+            var rightPage = currentBook.pages[currentPage];
+            
+            leftPage.pageObject?.SetActive(true);
+            rightPage.pageObject?.SetActive(true);
+            
+            UpdatePageContent(leftPageInput, pageNumberLeft, leftPage, currentPage);
+            UpdatePageContent(rightPageInput, pageNumberRight, rightPage, currentPage + 1);
+        }
+
+        // Update navigation buttons
+        nextButton.interactable = currentPage < currentBook.pages.Count - 1;
+        prevButton.interactable = currentPage > 0;
+    }
+
+    private void UpdatePageContent(TMP_InputField input, TMP_Text pageNumber, BookPage page, int number)
+    {
+        input.text = page.text;
+        input.interactable = currentBook.playerCanEdit && page.isEditable;
+        pageNumber.text = number.ToString();
     }
 
     private void OnDestroy()
     {
-        // Clean up button listeners
         nextButton.onClick.RemoveListener(NextPage);
         prevButton.onClick.RemoveListener(PreviousPage);
         closeButton.onClick.RemoveListener(CloseBook);
 
-        // Unsubscribe from the book open event
+        leftPageInput.onEndEdit.RemoveListener((text) => HandleTextInput(text, true));
+        rightPageInput.onEndEdit.RemoveListener((text) => HandleTextInput(text, false));
+
         GameEventsManager.instance.inputEvents.onBookOpen -= OpenBook;
     }
 }
+
