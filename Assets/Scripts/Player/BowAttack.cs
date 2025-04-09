@@ -1,60 +1,82 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BowAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject arrow;
-    [SerializeField] private GameObject bow;
+    [SerializeField] GameObject ArrowPrefab;
+    [SerializeField] SpriteRenderer ArrowGFX;
+    [SerializeField] Slider BowPowerSlider;
+    [SerializeField] Transform Bow;
 
-    public float bowAttackTimer = 1f;
-    private float timer = 0f;
-    public float bowDamage = 15f;
+    [Range(0, 10)]
 
+    [SerializeField] float BowPower;
 
-    // Start is called before the first frame update
-    void Start()
+    [Range(0, 3)]
+
+    [SerializeField] float MaxBowCharge;
+
+    float BowCharge;
+    bool CanFire = true;
+
+    private void Start()
     {
-        
+        BowPowerSlider.value = 0f;
+        BowPowerSlider.maxValue = MaxBowCharge;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (InventoryManager.Instance.GetSelectedItem(false) != null)
+        if (Input.GetMouseButton(0) && CanFire)
         {
-            Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
-
-            watchArrowTimer();
-
-            if (equippedItem.isPotion == true)
+            ChargeBow();
+        }else if (Input.GetMouseButton(0) && CanFire)
+        {
+            FireBow();
+        }else
+        {
+            if (BowCharge > 0f)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    bowAttack();
-                }
+                BowCharge -= 0.1f * Time.deltaTime;
+            }else
+            {
+                BowCharge = 0f;
+                CanFire = true;
             }
+
+            BowPowerSlider.value = BowCharge;
         }
     }
 
-    public void bowAttack()
+    void ChargeBow()
     {
-        Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
-        if (timer >= equippedItem.potionActivetimer)
+        ArrowGFX.enabled = true;
+        BowCharge += Time.deltaTime;
+
+        BowPowerSlider.value = BowCharge;
+
+        if (BowCharge >  MaxBowCharge)
         {
-            // Muutetaan hiiren sijainti pelimaailman koordinaateiksi
-            Vector3 arrowPlace = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            arrowPlace.z = 0f; // Asetetaan z-arvo, jotta se näkyy 2D-pelissä
-
-            Instantiate(arrow, arrowPlace, Quaternion.identity);
-            Debug.Log($"Potion spawned at: {arrowPlace}");
-
-            timer = 0f;
+            BowPowerSlider.value = MaxBowCharge;
         }
     }
 
-    public void watchArrowTimer()
+    void FireBow()
     {
-        timer += Time.deltaTime;
+        if (BowCharge > MaxBowCharge) BowCharge = MaxBowCharge;
+
+        float ArrowSpeed = BowCharge + BowPower;
+
+        float angle = Utility.AngleTowardsMouse(Bow.position);
+        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+
+        Arrow Arrow = Instantiate(ArrowPrefab, Bow.position, rot).GetComponent<Arrow>();
+        Arrow.ArrowVelocity = ArrowSpeed;
+
+        CanFire = false;
+        ArrowGFX.enabled = false;
+
     }
 }

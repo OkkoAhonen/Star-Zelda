@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEditor.Playables;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+
+    //pelaajan käden paikannus jousipyssyn sijaintia varten
+    [SerializeField] Transform hand;
 
     //playerStats kansio pelaajan tiedot
     PlayerStats stats;
@@ -54,6 +58,12 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = moveDirection * stats.playerMoveSpeed;
 
         PlayerMouseRotation();
+    }
+
+    private void Reset()
+    {
+        float angle = Utility.AngleTowardsMouse(hand.position);
+        hand.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
     }
 
     public void PlayerMouseRotation() {
