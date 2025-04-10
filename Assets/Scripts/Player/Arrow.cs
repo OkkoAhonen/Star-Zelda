@@ -10,6 +10,7 @@ public class Arrow : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, 4f);
     }
 

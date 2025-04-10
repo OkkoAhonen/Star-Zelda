@@ -32,14 +32,14 @@ public class BowAttack : MonoBehaviour
         if (Input.GetMouseButton(0) && CanFire)
         {
             ChargeBow();
-        }else if (Input.GetMouseButton(0) && CanFire)
+        }else if (Input.GetMouseButtonUp(0) && CanFire)
         {
             FireBow();
         }else
         {
             if (BowCharge > 0f)
             {
-                BowCharge -= 0.1f * Time.deltaTime;
+                BowCharge -= 1f * Time.deltaTime;
             }else
             {
                 BowCharge = 0f;

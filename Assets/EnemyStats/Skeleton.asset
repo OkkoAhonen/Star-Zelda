@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6255d75c8cbc0c241b5e11b7896a6af9, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  speed: 577
-  attackSpeed: 43
-  strength: 77
-  detectionRange: 335
+  maxHealth: 25
+  speed: 50
+  attackSpeed: 65
+  strength: 6
+  detectionRange: 40
   canfire: 0

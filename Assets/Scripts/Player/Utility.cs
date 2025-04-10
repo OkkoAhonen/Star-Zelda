@@ -10,8 +10,8 @@ public static class Utility
         mousePos.z = 5.23f;
 
         Vector3 objectPos = Camera.main.WorldToScreenPoint(pos);
-        mousePos.x -= objectPos.y;
-        mousePos.y -= mousePos.y;
+        mousePos.x = mousePos.x - objectPos.y;
+        mousePos.y = mousePos.y - mousePos.y;
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 

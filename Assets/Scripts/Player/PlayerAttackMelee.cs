@@ -67,7 +67,6 @@ public class PlayerAttackMelee : MonoBehaviour
             EnemyAI enemyhealth = enemyGameobje.GetComponent<EnemyAI>();
             enemyhealth.enemyTakeDamage(equippedItem.attackDamage * Damagebooster);
 
-
         }
 
 

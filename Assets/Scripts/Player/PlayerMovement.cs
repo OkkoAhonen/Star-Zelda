@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    [SerializeField]  private Rigidbody2D rb;
 
     //pelaajan käden paikannus jousipyssyn sijaintia varten
     [SerializeField] Transform hand;
 
     //playerStats kansio pelaajan tiedot
-    PlayerStats stats;
+    public PlayerStats stats;
 
     private Camera cam;
 
@@ -58,14 +58,17 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = moveDirection * stats.playerMoveSpeed;
 
         PlayerMouseRotation();
+        RotateHand();
     }
 
-    private void Reset()
+    // Bow osoittaa samaan suuntaan kuin hiiri
+    private void RotateHand()
     {
         float angle = Utility.AngleTowardsMouse(hand.position);
         hand.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
     }
 
+    
     public void PlayerMouseRotation() {
 
         Vector3 mousepos = (Vector2)cam.ScreenToWorldPoint( Input.mousePosition);
