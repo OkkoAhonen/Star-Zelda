@@ -18,7 +18,7 @@ public class PotionAttack : MonoBehaviour
 
             watchPotionTimer();
 
-            if (equippedItem.isPotion == true)
+            if (equippedItem.type == ItemType.potion)
             {
                 if (Input.GetMouseButtonDown(0))
                 {

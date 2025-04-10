@@ -33,12 +33,16 @@ public class Item : ScriptableObject
     public float potionAttackDamage = 20f;
     public float potionActivetimer = 2f;
     public float damageDuration = 0.5f;
-    public bool isPotion = false;
+    public bool isDamagePotion;
+    public bool isHealthPotion;
+    public float PotionHeal = 10f;
 
     [Header("archer Combat Properties")]
     public float accurasu = 20f;
     public bool isBow = false;
 
+    [Header("Food")]
+    public float foodHeal = 20f;
 }
 
 public enum ItemType
@@ -46,7 +50,17 @@ public enum ItemType
     BuildingBlock,
     Tool,
     Weapon,
-    potion
+    potion,
+    bow,
+    Food,
+    Mushroom,
+    GemStone,
+    Blood,
+    Stone,
+
+
+    QuestItem
+
 }
 
 public enum ActionType

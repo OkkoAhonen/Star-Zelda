@@ -44,5 +44,16 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    public void OpenShop()
+    {
+        GameObject shop = GameObject.FindWithTag("Shop");
+        shop.SetActive(true);
+    }
+    public void CloseShop()
+    {
+        GameObject shop = GameObject.FindWithTag("Shop");
+        shop.SetActive(true);
+    }
+
 
 }

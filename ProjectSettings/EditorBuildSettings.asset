@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Demo2/MainMenu.unity
+    guid: b125e38b79258c5439870e5ffd520ec2
+  - enabled: 1
     path: Assets/Scenes/Demo2/DemoTwon.unity
     guid: ee91f68227d781e429a4361b02d392cc
   - enabled: 1
     path: Assets/Scenes/Demo2/Okon kokeilu Scene.unity
     guid: 0e81a1df5509dd04e9f8e07ecd84d49f
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

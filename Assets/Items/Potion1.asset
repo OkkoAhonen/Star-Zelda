@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 3
   actionType: 3
   range: {x: 5, y: 4}
+  price: 25
   stackable: 0
   image: {fileID: -3794662817809912853, guid: 772354a4a9aef43b9b7cb37f061197a3, type: 3}
   attackDamage: 0
@@ -26,4 +27,9 @@ MonoBehaviour:
   potionAttackDamage: 20
   potionActivetimer: 2
   damageDuration: 0
-  isPotion: 1
+  isDamagePotion: 1
+  isHealthPotion: 1
+  PotionHeal: 10
+  accurasu: 20
+  isBow: 0
+  foodHeal: 20

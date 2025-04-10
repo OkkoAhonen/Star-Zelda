@@ -42,21 +42,27 @@ public class potionEffect : MonoBehaviour
         }
     }
 
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
-        {
-            Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
-            if (canDamage) {
-                
-                EnemyAI enemyAI = collision.GetComponent<EnemyAI>();
+        Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
 
-                Debug.Log(equippedItem.name);
-                enemyAI.health -= equippedItem.potionAttackDamage;
-                Debug.Log(enemyAI.health);
-                canDamage = false;
-            }
+        if (collision.CompareTag("Enemy") && canDamage && equippedItem.isDamagePotion)
+        {
+            EnemyAI enemyAI = collision.GetComponent<EnemyAI>();
+            Debug.Log(equippedItem.name);
+            enemyAI.health -= equippedItem.potionAttackDamage;
+            Debug.Log(enemyAI.health);
+            canDamage = false;
             StartCoroutine(PotionDamageCooldown());
+        }
+        else if (collision.CompareTag("Player") && equippedItem.isHealthPotion && canDamage)
+        {
+            playerAction playeraction = collision.gameObject.GetComponent<playerAction>();
+            playeraction.playerTakeDamage(-equippedItem.PotionHeal);
+            StartCoroutine(PotionDamageCooldown());
+  
         }
     }
 
