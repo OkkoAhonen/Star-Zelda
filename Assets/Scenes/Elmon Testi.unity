@@ -7252,9 +7252,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingLevel: 1
-  startingExperience: 0
+  startingExperience: 50
   startingGold: 5
   startingArmor: 0
+  startingAttributePoints: 5
 --- !u!1001 &1492759190
 PrefabInstance:
   m_ObjectHideFlags: 0

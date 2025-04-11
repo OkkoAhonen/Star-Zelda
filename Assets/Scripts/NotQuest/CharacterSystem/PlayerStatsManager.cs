@@ -1,7 +1,6 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public enum StatType
@@ -38,8 +37,9 @@ public class PlayerStatsManager : MonoBehaviour
 	[SerializeField] private int startingExperience = 0;
 	[SerializeField] private int startingGold = 98;
 	[SerializeField] private int startingArmor = 0;
+	[SerializeField] private int startingAttributePoints = 5; // NEW: Starting attribute points
 
-	// { get; private set; }  eli voi ottaa, mutta ei muutta muista scripteistä
+	// These values are read-only from other scripts
 	public int CurrentLevel { get; private set; }
 	public int CurrentExperience { get; private set; }
 	public int CurrentGold { get; private set; }
@@ -50,12 +50,12 @@ public class PlayerStatsManager : MonoBehaviour
 	public int ExperienceNeededPerLevel { get; private set; }
 	public int PointsPerLevel { get; private set; }
 
-	// Main attributes are integers (for now)
+	// Main attributes (calculated as the sum of stats from each group, if desired)
 	public int Body { get; private set; }
 	public int Accuracy { get; private set; }
 	public int MagicPowers { get; private set; }
 
-	//private int levelPoints; // Spend on skills
+	// Level point pools for spending on stats under attributes
 	private int bodyLevelPoints;
 	private int accuracyLevelPoints;
 	private int magicPowersLevelPoints;
@@ -70,13 +70,17 @@ public class PlayerStatsManager : MonoBehaviour
 			return;
 		}
 		instance = this;
+
+		PointsPerLevel = 15;
+		
+		// Initialize attribute points with starting value
+		attributePoints = startingAttributePoints;
 		
 		// Initialize the stats dictionary
 		stats = new Dictionary<StatType, int>();
-
-		foreach (StatType stat in System.Enum.GetValues(typeof(StatType)))
+		foreach (StatType stat in Enum.GetValues(typeof(StatType)))
 		{
-			stats[stat] = 1; // Initialize all stats to 1 (needed?)
+			stats[stat] = 1;
 		}
 
 		MaxHealth = 50 + GetStat(StatType.Vitality) * 5;
@@ -92,7 +96,7 @@ public class PlayerStatsManager : MonoBehaviour
 	public int GetStat(StatType stat) => stats[stat];
 
 	public void IncreaseStat(StatType stat, int amount)
-	{ // increase stat by amount
+	{
 		stats[stat] += amount;
 		Debug.Log(stat + " increased to " + stats[stat]);
 		onStatChanged?.Invoke();
@@ -119,44 +123,49 @@ public class PlayerStatsManager : MonoBehaviour
 	}
 
 	public void SpendAttributePoint(string attribute)
-    {
-        if (attributePoints <= 0)
-        {
-            Debug.LogWarning("No attribute points.");
-            return;
-        }
-        attributePoints--;
-        switch (attribute.ToLower())
-        {
-            case "body":
-                bodyLevelPoints += PointsPerLevel;
-                break;
-            case "accuracy":
-                accuracyLevelPoints += PointsPerLevel;
-                break;
-            case "magicpowers":
-                magicPowersLevelPoints += PointsPerLevel;
-                break;
-            default:
-                Debug.LogWarning("Unknown attribute.");
-                break;
-        }
-    }
+	{
+		if (attributePoints <= 0)
+		{
+			Debug.LogWarning("No attribute points.");
+			return;
+		}
+		attributePoints--;
+		
+		switch (attribute.ToLower())
+		{
+			case "body":
+				Body++;
+				bodyLevelPoints += PointsPerLevel;
+				break;
+			case "accuracy":
+				Accuracy++;
+				accuracyLevelPoints += PointsPerLevel;
+				break;
+			case "magicpowers":
+				MagicPowers++;
+				magicPowersLevelPoints += PointsPerLevel;
+				break;
+			default:
+				Debug.LogWarning("Unknown attribute.");
+				break;
+		}
+		onStatChanged?.Invoke(); // This will help if other things listen to it
+	}
 
 	public int GetAttribute(string attribute)
-    {
-        switch (attribute.ToLower())
-        {
-            case "body":
-                return Body;
-            case "accuracy":
-                return Accuracy;
-            case "magicpowers":
-                return MagicPowers;
-            default:
-                return 0;
-        }
-    }
+	{
+		switch (attribute.ToLower())
+		{
+			case "body":
+				return Body;
+			case "accuracy":
+				return Accuracy;
+			case "magicpowers":
+				return MagicPowers;
+			default:
+				return 0;
+		}
+	}
 
 	public void SpendLevelPointOnStat(StatType stat)
 	{
@@ -167,7 +176,6 @@ public class PlayerStatsManager : MonoBehaviour
 				Debug.LogWarning("No Body level points remaining.");
 				return;
 			}
-
 			stats[stat] += 1;
 			bodyLevelPoints--;
 			Debug.Log($"Increased {stat} by 1. Remaining Body points: {bodyLevelPoints}");
@@ -179,7 +187,6 @@ public class PlayerStatsManager : MonoBehaviour
 				Debug.LogWarning("No Accuracy level points remaining.");
 				return;
 			}
-
 			stats[stat] += 1;
 			accuracyLevelPoints--;
 			Debug.Log($"Increased {stat} by 1. Remaining Accuracy points: {accuracyLevelPoints}");
@@ -191,7 +198,6 @@ public class PlayerStatsManager : MonoBehaviour
 				Debug.LogWarning("No Magic Power level points remaining.");
 				return;
 			}
-
 			stats[stat] += 1;
 			magicPowersLevelPoints--;
 			Debug.Log($"Increased {stat} by 1. Remaining MagicPower points: {magicPowersLevelPoints}");
@@ -200,27 +206,24 @@ public class PlayerStatsManager : MonoBehaviour
 		{
 			Debug.LogWarning($"Stat {stat} does not belong to any known category.");
 		}
-
 		onStatChanged?.Invoke();
 	}
 
 	public void GainExperience(int experience)
 	{
 		CurrentExperience += experience;
-
 		while (CurrentExperience >= XPToNextLevel)
-		{ // "while" for if you get more than one level's worth of xp 
+		{
 			CurrentExperience -= XPToNextLevel;
 			CurrentLevel++;
 			attributePoints++;
-			if (CurrentLevel % 3 == 0) // Every 3 levels
+			if (CurrentLevel % 3 == 0)
 			{
 				perkPurchasesAvailable++;
 			}
 			Debug.Log("Level UP! Current level: " + CurrentLevel);
 			GameEventsManager.instance.playerEvents.PlayerLevelChangeTo(CurrentLevel);
 			CharacterUIManager.instance.RefreshUI();
-			
 		}
 	}
 
@@ -228,7 +231,7 @@ public class PlayerStatsManager : MonoBehaviour
 	{
 		if (attributePoints >= points)
 		{
-			stats[attribute] += points * 15; // Each point gives 15 to the attribute
+			stats[attribute] += points * 15;
 			attributePoints -= points;
 			Debug.Log($"{attribute} increased by {points * 15}.");
 			onStatChanged?.Invoke();

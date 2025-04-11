@@ -48,6 +48,16 @@ public class CharacterUIManager : MonoBehaviour
 	private PerkTracker perkTracker;
 	private Dictionary<StatType, Button> buttonByStat = new();
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject); // Prevent duplicate managers
+            return;
+        }
+        instance = this;
+    }	
+	
 	private void Start()
 	{
 		var playerEvents = GameEventsManager.instance.playerEvents;
