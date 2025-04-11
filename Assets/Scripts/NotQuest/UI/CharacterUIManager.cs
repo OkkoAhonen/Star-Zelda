@@ -7,24 +7,18 @@ using UnityEngine.UI;
 public class CharacterUIManager : MonoBehaviour
 {
 	[Header("Main Stats UI")]
-	[SerializeField] private TMP_Text healthText;
-	[SerializeField] private TMP_Text armorText;
-	[SerializeField] private TMP_Text experienceText;
-	[SerializeField] private TMP_Text goldText;
+	[SerializeField] private TMP_Text healthNumber;
+	[SerializeField] private TMP_Text armorNumber;
+	[SerializeField] private TMP_Text experienceNumber;
+	[SerializeField] private TMP_Text goldNumber;
 
 	[Header("Stats UI")]
 	[SerializeField] private Transform statContainer;
 	[SerializeField] private GameObject statPrefab;
 
-	[Header("Perks UI")]
-	[SerializeField] private Transform perkContainer;
-	[SerializeField] private GameObject perkPrefab;
-	[SerializeField] private PerkTooltip perkTooltip;
-
 	private Dictionary<StatType, TMP_Text> statTexts = new Dictionary<StatType, TMP_Text>();
 	private List<GameObject> displayedPerks = new List<GameObject>();
 
-	private PlayerStats playerStats;
 	private PlayerStatsManager playerStatsManager;
 	private PerkTracker perkTracker;
 
@@ -33,49 +27,16 @@ public class CharacterUIManager : MonoBehaviour
 		var playerEvents = GameEventsManager.instance.playerEvents;
 		playerEvents.onStatChange += UpdateStatDisplay;
 		playerEvents.onGainExperience += UpdateExperience;
-		playerEvents.onHealthChange += UpdateHealth;
-		playerEvents.onArmorChange += UpdateArmor;
-		GameEventsManager.instance.goldEvents.onGoldGained += UpdateGold;
+		playerEvents.onHealthChangeTo += UpdateHealth;
+		playerEvents.onChangeArmorBy += UpdateArmor;
+		GameEventsManager.instance.playerEvents.onChangeGoldTo += UpdateGold;
 
-		playerStats = PlayerStatsManager.instance.PlayerStats;
 		playerStatsManager = PlayerStatsManager.instance;
 
 		perkTracker = new PerkTracker(playerEvents);
 
 		InitializeStatsUI();
-		
-		StartCoroutine(InitializeUIWithDelay());
-	}
-
-	private IEnumerator InitializeUIWithDelay()
-	{
-		yield return null;
-
-		if (PerkDatabase.Instance != null)
-		{
-			// If there are no perks, kill a wolf to get a perk
-			#if UNITY_EDITOR
-			GameEventsManager.instance.playerEvents.EnemyKilled("Wolf");
-#endif
-
-			RefreshUI();
-		}
-		else
-		{
-			Debug.LogError("PerkDatabase.Instance is null! Make sure it's properly initialized.");
-		}
-	}
-
-	private void OnDestroy()
-	{
-		var playerEvents = GameEventsManager.instance.playerEvents;
-		playerEvents.onStatChange -= UpdateStatDisplay;
-		playerEvents.onGainExperience -= UpdateExperience;
-		playerEvents.onHealthChange -= UpdateHealth;
-		playerEvents.onArmorChange -= UpdateArmor;
-		GameEventsManager.instance.goldEvents.onGoldGained -= UpdateGold;
-
-		perkTracker.Cleanup();
+		RefreshUI();
 	}
 
 	private void InitializeStatsUI()
@@ -91,17 +52,15 @@ public class CharacterUIManager : MonoBehaviour
 
 	private void RefreshUI()
 	{
-		healthText.text = $"Health: {playerStats.CurrentHealth}/{playerStats.MaxHealth}";
-		armorText.text = $"Armor: {playerStats.GetStat(StatType.Armor)}";
-		experienceText.text = $"XP: {playerStatsManager.CurrentExperience}";
-		goldText.text = $"Gold: {playerStatsManager.CurrentGold}";
+		healthNumber.text = $"{playerStatsManager.CurrentHealth}/{playerStatsManager.MaxHealth}";
+		armorNumber.text = $"{playerStatsManager.CurrentArmor}";
+		experienceNumber.text = $"{playerStatsManager.CurrentExperience}/{playerStatsManager.XPToNextLevel}";
+		goldNumber.text = $"{playerStatsManager.CurrentGold}";
 
 		foreach (var stat in statTexts)
 		{
-			stat.Value.text = $"{stat.Key}: {playerStats.GetStat(stat.Key)}";
+			stat.Value.text = $"{stat.Key}: {playerStatsManager.GetStat(stat.Key)}";
 		}
-
-		RefreshPerksUI();
 	}
 
 	private void UpdateStatDisplay(StatType statType, int newValue)
@@ -110,54 +69,25 @@ public class CharacterUIManager : MonoBehaviour
 		{
 			text.text = $"{statType}: {newValue}";
 		}
-		RefreshPerksUI();
 	}
 
 	private void UpdateHealth(int currentHealth, int maxHealth)
 	{
-		healthText.text = $"Health: {currentHealth}/{maxHealth}";
-	}
-
-	private void UpdateArmor(int newArmorValue)
-	{
-        armorText.text = $"{newArmorValue}";
+		healthNumber.text = $"{currentHealth}/{maxHealth}";
 	}
 
 	private void UpdateExperience(int newXP)
 	{
-		experienceText.text = $"XP: {newXP}";
+		experienceNumber.text = $"{playerStatsManager.CurrentExperience}/{playerStatsManager.XPToNextLevel}";
 	}
 
-	private void UpdateGold(int newGold)
+	private void UpdateGold(int temp)
 	{
-		goldText.text = $"Gold: {newGold}";
+		goldNumber.text = $"{playerStatsManager.CurrentGold}";
 	}
 
-	private void RefreshPerksUI()
+	private void UpdateArmor(int newArmorValue)
 	{
-		if (PerkDatabase.Instance == null || PerkDatabase.Instance.AllPerks == null)
-		{
-			Debug.LogWarning("PerkDatabase not ready yet");
-			return;
-		}
-
-		foreach (var perkObj in displayedPerks)
-		{
-			Destroy(perkObj);
-		}
-		displayedPerks.Clear();
-
-		foreach (Perk perk in PerkDatabase.Instance.AllPerks)
-		{
-		    bool isUnlocked = perk.CanUnlock(playerStats);
-		    GameObject perkEntry = Instantiate(perkPrefab, perkContainer);
-
-		    perkEntry.GetComponent<PerkDisplayPrefab>().Setup(perk, isUnlocked);
-		    displayedPerks.Add(perkEntry);
-
-		    // Add Tooltip Handler
-		    PerkTooltipHandler tooltipHandler = perkEntry.AddComponent<PerkTooltipHandler>();
-		    tooltipHandler.Initialize(perkTooltip, perk, isUnlocked);
-		}
+        armorNumber.text = $"{newArmorValue}";
 	}
 }

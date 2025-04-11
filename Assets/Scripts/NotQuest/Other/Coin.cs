@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
     {
         circleCollider.enabled = false;
         visual.gameObject.SetActive(false);
-        GameEventsManager.instance.goldEvents.GoldGained(goldGained);
+        GameEventsManager.instance.playerEvents.ChangeGoldTo(goldGained);
         GameEventsManager.instance.miscEvents.CoinCollected();
         StopAllCoroutines();
         StartCoroutine(RespawnAfterTime());

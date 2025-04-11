@@ -2,15 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Perk
+[CreateAssetMenu(fileName = "NewPerk", menuName = "Game Data/Perk")]
+public class Perk : ScriptableObject // Inherits from ScriptableObject
 {
-	[SerializeField] private string name;
 	[SerializeField] private string description;
 	[SerializeField] private Sprite icon;
 	[SerializeField] private bool _isTiered;
 	[SerializeField] private int _maxLevel = 1;
 	[SerializeField] private int _requiredStatLevel = 1;
 	[SerializeField] private int _scalingFactor = 1;
+	[SerializeField] private int price = 100;
 	[SerializeField] private List<StatRequirement> _statRequirements = new List<StatRequirement>();
 
 	// Properties that use the serialized fields
@@ -21,14 +22,12 @@ public class Perk
 	public int maxLevel => _maxLevel;
 	public int requiredStatLevel => _requiredStatLevel;
 	public int scalingFactor => _scalingFactor;
+	public int Price => price;
 	public List<StatRequirement> statRequirements => _statRequirements;
 	public string perkName => name;
 
-	// Remove the constructor or make it private if you want to force creation through the Inspector
-	private Perk() { }
-
-	public bool CanUnlock(PlayerStats playerStats)
-	{
+	public bool CanUnlock(PlayerStatsManager playerStats)
+	{// Check if the player meets all stat requirements to unlock this perk
 		foreach (var requirement in statRequirements)
 		{
 			if (playerStats.GetStat(requirement.statType) < requirement.requiredLevel)

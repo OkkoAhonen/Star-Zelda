@@ -34,11 +34,11 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public void BookOpenPressed(InputAction.CallbackContext context)
+    public void BookToggled(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            GameEventsManager.instance.inputEvents.BookOpenPressed();
+            GameEventsManager.instance.inputEvents.BookToggled();
         }
     }
 }

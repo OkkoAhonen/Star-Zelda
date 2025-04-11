@@ -7,66 +7,63 @@ public class BookPagesContainer : MonoBehaviour
     [Header("Book Data")]
     public BookData bookData;
 
-    [Header("UI References")]
-    public TMP_Text titleText;        // Reference to Title under FrontCover
-    public TMP_Text creatorText;      // Reference to Creator under InsideCover
-    public TMP_Text creationDateText; // Reference to CreationDate under InsideCover
+    private BookDisplay bookDisplay;
+    private List<GameObject> pages = new List<GameObject>();
 
     void Start()
     {
-        InitializeBookInfo();
+        // Get the BookDisplay from parent
+        bookDisplay = GetComponentInParent<BookDisplay>();
+        if (bookDisplay != null)
+        {
+            InitializeBookInfo();
+            CachePages();
+            // Hide all pages after initialization
+            for (int i = 0; i < pages.Count; i++)
+            {
+                pages[i].SetActive(false);
+            }
+        }
     }
 
     private void InitializeBookInfo()
     {
-        if (bookData != null)
+        if (bookData != null && bookDisplay != null)
         {
             // Update title if component exists
+            TMP_InputField titleText = bookDisplay.frontCover?.transform.GetComponent<TMP_InputField>();
             if (titleText != null)
             {
                 titleText.text = bookData.title;
             }
 
-            // Update creator if component exists
-            if (creatorText != null)
+            // Update creator and creation date using references from BookDisplay
+            if (bookDisplay.creator != null)
             {
-                creatorText.text = bookData.creator;
+                bookDisplay.creator.text = bookData.creator;
             }
-
-            // Update creation date if component exists
-            if (creationDateText != null)
+            if (bookDisplay.creationDate != null)
             {
-                creationDateText.text = bookData.creationDate;
-            }
-
-            // Initialize pages with the physical page objects
-            List<GameObject> pageObjects = new List<GameObject>();
-            foreach (Transform child in transform)
-            {
-                pageObjects.Add(child.gameObject);
-            }
-
-            // If bookData doesn't have pages initialized yet, do it now
-            if (bookData.pages.Count == 0 && pageObjects.Count > 0)
-            {
-                for (int i = 0; i < pageObjects.Count; i++)
-                {
-                    bookData.pages.Add(new BookPage 
-                    { 
-                        text = "",
-                        isEditable = bookData.playerCanEdit,
-                        pageObject = pageObjects[i]
-                    });
-                }
-            }
-            // If pages are already initialized, just update the page object references
-            else if (bookData.pages.Count > 0)
-            {
-                for (int i = 0; i < Mathf.Min(bookData.pages.Count, pageObjects.Count); i++)
-                {
-                    bookData.pages[i].pageObject = pageObjects[i];
-                }
+                bookDisplay.creationDate.text = bookData.creationDate;
             }
         }
     }
+
+    private void CachePages()
+    {
+        pages.Clear();
+        foreach (Transform child in transform)
+        {
+            pages.Add(child.gameObject);
+        }
+    }
+
+    public GameObject GetPage(int index)
+    {
+        if (index >= 0 && index < pages.Count)
+            return pages[index];
+        return null;
+    }
+
+    public int PageCount => pages.Count;
 } 

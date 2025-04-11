@@ -3,7 +3,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "PerkDatabase", menuName = "Game Data/Perk Database")]
 public class PerkDatabase : ScriptableObject
-{
+{ // This script is for keeping track of all perks
 	private static PerkDatabase _instance;
 	public static PerkDatabase Instance
 	{

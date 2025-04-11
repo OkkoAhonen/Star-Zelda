@@ -16,7 +16,7 @@ public class PerkSystem
 	}
 
 	private void CheckPerkUnlocks()
-	{
+	{ // Check all perks if any can be upgraded or unlocked
 		foreach (var perk in PerkDatabase.Instance.AllPerks)
 		{
 			TryUnlockPerk(perk);
@@ -25,7 +25,7 @@ public class PerkSystem
 
 	private void TryUnlockPerk(Perk perk)
 	{
-		// Upgrade perk:
+		// Try to upgrade unlocked perk
 		if (unlockedPerks.ContainsKey(perk) && perk.isTiered && unlockedPerks[perk] < perk.maxLevel)
 		{
 			int requiredLevel = perk.requiredStatLevel + (unlockedPerks[perk] * perk.scalingFactor);
@@ -35,7 +35,7 @@ public class PerkSystem
 				unlockedPerks[perk]++;
 				Debug.Log($"Upgraded Perk: {perk.perkName} to Level {unlockedPerks[perk]}");
 			}
-		} // Unlocks perk:
+		} // Unlocks perk if stats are high enough and you don't have it yet
 		else if (!unlockedPerks.ContainsKey(perk) && MeetsStatRequirements(perk, perk.requiredStatLevel))
 		{
 			unlockedPerks[perk] = 1;
@@ -45,7 +45,7 @@ public class PerkSystem
 	}
 
 	private bool MeetsStatRequirements(Perk perk, int requiredLevel)
-	{
+	{	// Unlock perk if player's stats are high enough
 		foreach (var req in perk.statRequirements)
 		{
 			if (playerStatsManager.GetStat(req.statType) < req.requiredLevel)

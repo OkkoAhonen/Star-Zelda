@@ -43,9 +43,9 @@ public class InputEvents
         onInventory?.Invoke();
     }
 
-    public event Action onBookOpen;
-    public void BookOpenPressed()
+    public event Action onBookToggle;
+    public void BookToggled()
     {
-        onBookOpen?.Invoke();
+        onBookToggle?.Invoke();
     }
 }

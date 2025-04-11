@@ -25,7 +25,7 @@ public class QuestManager : MonoBehaviour
 
         GameEventsManager.instance.questEvents.onQuestStepStateChange += QuestStepStateChange;
 
-        GameEventsManager.instance.playerEvents.onPlayerLevelChange += PlayerLevelChange;
+        GameEventsManager.instance.playerEvents.onPlayerLevelChangeTo += PlayerLevelChangeTo;
     }
 
     private void OnDisable()
@@ -36,7 +36,7 @@ public class QuestManager : MonoBehaviour
 
         GameEventsManager.instance.questEvents.onQuestStepStateChange -= QuestStepStateChange;
 
-        GameEventsManager.instance.playerEvents.onPlayerLevelChange -= PlayerLevelChange;
+        GameEventsManager.instance.playerEvents.onPlayerLevelChangeTo -= PlayerLevelChangeTo;
     }
 
     private void Start()
@@ -61,7 +61,7 @@ public class QuestManager : MonoBehaviour
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
     }
 
-    private void PlayerLevelChange(int level)
+    private void PlayerLevelChangeTo(int level)
     {
         currentPlayerLevel = level;
     }
@@ -138,7 +138,7 @@ public class QuestManager : MonoBehaviour
 
     private void ClaimRewards(Quest quest)
     {
-        GameEventsManager.instance.goldEvents.GoldGained(quest.info.goldReward);
+        GameEventsManager.instance.playerEvents.ChangeGoldTo(quest.info.goldReward);
         GameEventsManager.instance.playerEvents.GainExperience(quest.info.experienceReward);
     }
 

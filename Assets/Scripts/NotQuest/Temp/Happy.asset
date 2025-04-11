@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131f6129bdfec314d93d177c15ae2e75, type: 3}
+  m_Name: Happy
+  m_EditorClassIdentifier: 
+  description: Smile
+  icon: {fileID: 4060682636331337571, guid: 1b39c0fe73f0433468e25eb21cfde7c2, type: 3}
+  _isTiered: 0
+  _maxLevel: 1
+  _requiredStatLevel: 1
+  _scalingFactor: 1
+  price: 0
+  _statRequirements: []
