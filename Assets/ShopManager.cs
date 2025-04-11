@@ -14,14 +14,13 @@ public class ShopManager : MonoBehaviour
     public ItemShop1Script itemShop1Script;
 
     public ShopItemDisplay[] shopDisplays;
-
-
-
+    public GameObject shopGameObject; //Aseta inspectorissa
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
         inventoryManagerGameObject = GameObject.FindGameObjectWithTag("InventoryManager");
         moneyManager = inventoryManagerGameObject.GetComponent<MoneyManager>();
         inventoryManager = inventoryManagerGameObject.GetComponent<InventoryManager>();
@@ -47,7 +46,7 @@ public class ShopManager : MonoBehaviour
     public void OpenShop()
     {
         GameObject shop = GameObject.FindWithTag("Shop");
-        shop.SetActive(true);
+        shopGameObject.SetActive(true);
     }
     public void CloseShop()
     {
