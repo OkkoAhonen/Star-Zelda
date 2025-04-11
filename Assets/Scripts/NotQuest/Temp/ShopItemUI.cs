@@ -20,7 +20,6 @@ public class ShopItemUI : MonoBehaviour
     private int cost;
 
     [Header("Slide Settings")]
-    public float slideDistance = 131.71f;
     public float slideDuration = 0.3f;
 
     private bool buttonIsOpen = false;
@@ -66,6 +65,9 @@ public class ShopItemUI : MonoBehaviour
             Debug.LogWarning("Perk not sold here.");
             return;
         }
+        PerkSystem perkSystem = PerkSystem.instance;
+        if (!perkSystem.TryUnlockPerk(perkData))
+            return;
         if (PlayerStatsManager.instance.CurrentGold < cost)
         {
             Debug.LogWarning("Not enough gold to buy perk.");

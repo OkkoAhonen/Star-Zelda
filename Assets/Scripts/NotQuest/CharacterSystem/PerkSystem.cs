@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PerkSystem
 {
+    public static PerkSystem instance { get; private set; }
 	private Dictionary<Perk, int> unlockedPerks = new Dictionary<Perk, int>();
 	private PlayerStatsManager playerStatsManager;
 
 	public event Action<Perk> OnPerkUnlocked;
 
-	public PerkSystem(PlayerStatsManager statsManager)
-	{
-		playerStatsManager = statsManager;
-		playerStatsManager.onStatChanged += CheckPerkUnlocks;
-	}
+    public PerkSystem()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Debug.LogWarning("Multiple instances of PerkSystem created!");
+    }
 
 	private void CheckPerkUnlocks()
 	{ // Check all perks if any can be upgraded or unlocked
@@ -23,7 +26,7 @@ public class PerkSystem
 		}
 	}
 
-	private void TryUnlockPerk(Perk perk)
+	public bool TryUnlockPerk(Perk perk)
 	{
 		// Try to upgrade unlocked perk
 		if (unlockedPerks.ContainsKey(perk) && perk.isTiered && unlockedPerks[perk] < perk.maxLevel)
@@ -41,14 +44,16 @@ public class PerkSystem
 			unlockedPerks[perk] = 1;
 			Debug.Log($"Unlocked Perk: {perk.perkName}");
 			OnPerkUnlocked?.Invoke(perk);
+			return true;
 		}
+		return false;
 	}
 
 	private bool MeetsStatRequirements(Perk perk, int requiredLevel)
 	{	// Unlock perk if player's stats are high enough
 		foreach (var req in perk.statRequirements)
 		{
-			if (playerStatsManager.GetStat(req.statType) < req.requiredLevel)
+			if (PlayerStatsManager.instance.GetStat(req.statType) < req.requiredLevel)
 			{
 				return false;
 			}

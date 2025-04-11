@@ -49,7 +49,7 @@ public class BookDisplay : MonoBehaviour
     {
         leftPagePosition = leftPage.transform.position;
         rightPagePosition = rightPage.transform.position;
-        
+
         // Only set current book if there's no content
         if (bookContentParent.childCount == 0)
         {
@@ -69,6 +69,8 @@ public class BookDisplay : MonoBehaviour
 
         leftPageInput.onEndEdit.AddListener((text) => HandleTextInput(text, true));
         rightPageInput.onEndEdit.AddListener((text) => HandleTextInput(text, false));
+        leftPageInput.gameObject.SetActive(false); // Hide these for now
+        rightPageInput.gameObject.SetActive(false);
 
         GameEventsManager.instance.inputEvents.onBookToggle += ToggleBook;
 
@@ -130,8 +132,8 @@ public class BookDisplay : MonoBehaviour
         closeButton.gameObject.SetActive(open);
         nextButton.gameObject.SetActive(open);
         prevButton.gameObject.SetActive(open);
-        leftPageInput.gameObject.SetActive(open);
-        rightPageInput.gameObject.SetActive(open);
+        //leftPageInput.gameObject.SetActive(open); // These get in the way of stat inputs
+        //rightPageInput.gameObject.SetActive(open);
         pageNumberLeft.gameObject.SetActive(open);
         pageNumberRight.gameObject.SetActive(open);
 

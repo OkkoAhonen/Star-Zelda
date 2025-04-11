@@ -97,6 +97,26 @@ public class PlayerStatsManager : MonoBehaviour
 		Debug.Log(stat + " increased to " + stats[stat]);
 		onStatChanged?.Invoke();
 	}
+	
+	public int GetRemainingPoints(string category)
+	{
+		switch (category.ToLower())
+		{
+			case "body": return bodyLevelPoints;
+			case "accuracy": return accuracyLevelPoints;
+			case "magicpowers": return magicPowersLevelPoints;
+			default: return 0;
+		}
+	}
+
+	public bool IsBodyStat(StatType stat) => bodyStats.Contains(stat);
+	public bool IsAccuracyStat(StatType stat) => accuracyStats.Contains(stat);
+	public bool IsMagicStat(StatType stat) => magicPowerStats.Contains(stat);
+
+	public int GetRemainingAttributePoints()
+	{
+		return attributePoints;
+	}
 
 	public void SpendAttributePoint(string attribute)
     {
@@ -184,7 +204,7 @@ public class PlayerStatsManager : MonoBehaviour
 		onStatChanged?.Invoke();
 	}
 
-	private void GainExperience(int experience)
+	public void GainExperience(int experience)
 	{
 		CurrentExperience += experience;
 
@@ -197,8 +217,10 @@ public class PlayerStatsManager : MonoBehaviour
 			{
 				perkPurchasesAvailable++;
 			}
-
+			Debug.Log("Level UP! Current level: " + CurrentLevel);
 			GameEventsManager.instance.playerEvents.PlayerLevelChangeTo(CurrentLevel);
+			CharacterUIManager.instance.RefreshUI();
+			
 		}
 	}
 
