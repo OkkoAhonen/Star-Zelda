@@ -9,6 +9,7 @@ TagManager:
   - Pickaxe
   - InventoryManager
   - Shop
+  - Enemies
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 2
+    uniqueID: 3881153111
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 280916825
     locked: 0
