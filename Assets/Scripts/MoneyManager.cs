@@ -8,7 +8,7 @@ public class MoneyManager : MonoBehaviour
     [SerializeField] GameObject MoneyText;
 
     public static float PlayerMoney = 100f;    // Nykyinen raham‰‰r‰ (julkinen ja staattinen)
-    private float targetMoney = 100f;          // Tavoite, johon raham‰‰r‰ animoidaan
+    public float targetMoney = 100f;          // Tavoite, johon raham‰‰r‰ animoidaan
     [SerializeField] private float lerpSpeed = 3f; // Nopeus, jolla raha liikkuu (s‰‰dett‰viss‰ Inspectorissa)
     private bool isAnimating = false;          // Seurataanko animaatiota
 
