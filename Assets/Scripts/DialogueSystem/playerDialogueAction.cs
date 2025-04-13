@@ -9,9 +9,20 @@ public class PlayerDialogueAction : MonoBehaviour
 
     public GameObject player;
 
+    public ShopManager shopManager;
+
+    private void Awake()
+    {
+        shopManager = GameObject.Find("ShopManager").GetComponent<ShopManager>();
+    }
 
     private void Start()
     {
+        if(shopManager == null)
+        {
+            Debug.LogError("ShopManager null");
+        }
+
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -34,6 +45,15 @@ public class PlayerDialogueAction : MonoBehaviour
     {
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.PlusStartPoints();
+    }
+
+    public void AvaaSepanKauppa()
+    {
+        shopManager.OpenSepanKauppa();
+    }
+    public void AvaaNormiKauppa()
+    {
+        shopManager.OpenShop();
     }
 
 }
