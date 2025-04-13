@@ -1,19 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
-    public Item[] shopItems;
-    public int shopCount = 1;
+    public Item[] shopItems;                    // Lista kaupan tavaroista
+    public GameObject itemsToBuyPrefab;         // Viittaus ItemsToBuy-prefabiin (asetetaan Inspectorissa)
+    public Transform shopContent;               // Viittaus Shop1:n Transformiin (asetetaan Inspectorissa)
 
     [HideInInspector] public GameObject inventoryManagerGameObject;
     public MoneyManager moneyManager;
     public InventoryManager inventoryManager;
-    public ItemShop1Script itemShop1Script;
 
-    public GameObject shop; //Aseta Inspectorissa
-    public GameObject ExitButton;//Aseta Inspectorissa
-
-    public ShopItemDisplay[] shopDisplays;
+    public GameObject shop;                     // Kaupan UI-paneeli (asetetaan Inspectorissa)
+    public GameObject ExitButton;               // Poistu-painike (asetetaan Inspectorissa)
 
     void Start()
     {
@@ -21,37 +20,55 @@ public class ShopManager : MonoBehaviour
         moneyManager = inventoryManagerGameObject.GetComponent<MoneyManager>();
         inventoryManager = inventoryManagerGameObject.GetComponent<InventoryManager>();
 
-        shopCount = shopItems.Length;
         Debug.Log("ShopManager alustettu");
-    }
-
-    // Uusi metodi itemien alustamiseen
-    public void InitializeShopItems()
-    {
-        for (int i = 0; i < shopItems.Length && i < shopDisplays.Length; i++)
-        {
-            if (shopDisplays[i] != null)
-            {
-                shopDisplays[i].SetItem(shopItems[i]);
-            }
-            else
-            {
-                Debug.LogWarning($"shopDisplays[{i}] on null!");
-            }
-        }
     }
 
     public void OpenShop()
     {
         shop.SetActive(true);
         ExitButton.SetActive(true);
-        InitializeShopItems(); // Alustaa itemit, kun kauppa avataan
+        InitializeShopItems(); // Alustaa kaupan tavarat
     }
 
     public void CloseShop()
     {
-        shop.SetActive(false); // Korjattu: sulkee kaupan
+        shop.SetActive(false);
         ExitButton.SetActive(false);
+    }
+
+    public void InitializeShopItems()
+    {
+        // Poista vanhat ItemsToBuy-objetit Shop1:st‰
+        foreach (Transform child in shopContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Luo uudet ItemsToBuy-objetit shopItems-listan perusteella
+        for (int i = 0; i < shopItems.Length; i++)
+        {
+            // Luo uusi instanssi prefabista Shop1:n lapseksi
+            GameObject newItem = Instantiate(itemsToBuyPrefab, shopContent);
+
+            // Aseta tavaran tiedot ShopItemDisplay-skriptiin
+            ShopItemDisplay display = newItem.GetComponent<ShopItemDisplay>();
+            if (display != null)
+            {
+                display.SetItem(shopItems[i]);
+            }
+            else
+            {
+                Debug.LogWarning("ShopItemDisplay-komponentti puuttuu prefabista!");
+            }
+
+            // Lis‰‰ napin toiminnallisuus
+            Button button = newItem.GetComponent<Button>();
+            if (button != null)
+            {
+                int index = i; // Tarvitaan lambda-funktiota varten
+                button.onClick.AddListener(() => BuyItem(index));
+            }
+        }
     }
 
     public void BuyItem(int index)
