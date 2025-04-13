@@ -5,8 +5,9 @@ using UnityEngine;
 public class PerkSystem
 {
     public static PerkSystem instance { get; private set; }
-	private Dictionary<Perk, int> unlockedPerks = new Dictionary<Perk, int>();
-	private PlayerStatsManager playerStatsManager;
+	public int perksBought { get; private set; }
+	private Dictionary<Perk, int> unlockedPerks = new Dictionary<Perk, int>(); // int is level of perk
+    public List<Perk> allPerks = new List<Perk>();
 
 	public event Action<Perk> OnPerkUnlocked;
 
@@ -20,7 +21,7 @@ public class PerkSystem
 
 	private void CheckPerkUnlocks()
 	{ // Check all perks if any can be upgraded or unlocked
-		foreach (var perk in PerkDatabase.Instance.AllPerks)
+		foreach (var perk in allPerks)
 		{
 			TryUnlockPerk(perk);
 		}
@@ -28,33 +29,46 @@ public class PerkSystem
 
 	public bool TryUnlockPerk(Perk perk)
 	{
-		// Try to upgrade unlocked perk
-		if (unlockedPerks.ContainsKey(perk) && perk.isTiered && unlockedPerks[perk] < perk.maxLevel)
+		if (PlayerStatsManager.instance.perkPurchasesAvailable == 0)
 		{
-			int requiredLevel = perk.requiredStatLevel + (unlockedPerks[perk] * perk.scalingFactor);
+			Debug.Log($"You can get a perk every 3 levels. You've bought: {perksBought}");
+			return false;
+		}
 
-			if (MeetsStatRequirements(perk, requiredLevel))
+		// Try to upgrade unlocked perk
+		if (unlockedPerks.ContainsKey(perk) && unlockedPerks[perk] < perk.maxLevel)
+		{
+		int scaling = unlockedPerks[perk] * perk.scalingFactor; // requiredStatLevel + unlockedPerks' level * multiplier (e.g. 10 + 1 * 5 = 15)
+
+			if (MeetsStatRequirements(perk, scaling))
 			{
 				unlockedPerks[perk]++;
 				Debug.Log($"Upgraded Perk: {perk.perkName} to Level {unlockedPerks[perk]}");
 			}
 		} // Unlocks perk if stats are high enough and you don't have it yet
-		else if (!unlockedPerks.ContainsKey(perk) && MeetsStatRequirements(perk, perk.requiredStatLevel))
+		else if (!unlockedPerks.ContainsKey(perk) && MeetsStatRequirements(perk, 0)) // No scaling need if you don't have it
 		{
 			unlockedPerks[perk] = 1;
 			Debug.Log($"Unlocked Perk: {perk.perkName}");
 			OnPerkUnlocked?.Invoke(perk);
+			perksBought++;
 			return true;
 		}
+		Debug.Log("Doesn't meet requirements?");
 		return false;
 	}
 
-	private bool MeetsStatRequirements(Perk perk, int requiredLevel)
+	private bool MeetsStatRequirements(Perk perk, int scaling)
 	{	// Unlock perk if player's stats are high enough
 		foreach (var req in perk.statRequirements)
 		{
-			if (PlayerStatsManager.instance.GetStat(req.statType) < req.requiredLevel)
+			var type = req.statType;
+			int scaledRequiredLevel = req.requiredLevel + scaling;
+			int currentLevel = PlayerStatsManager.instance.GetStat(type);
+
+			if (currentLevel < scaledRequiredLevel)
 			{
+				Debug.Log($"{type} {currentLevel} is lower than {scaledRequiredLevel}");
 				return false;
 			}
 		}

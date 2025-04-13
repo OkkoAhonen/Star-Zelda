@@ -22,7 +22,6 @@ public class ExperienceGem : MonoBehaviour
         circleCollider.enabled = false;
         visual.gameObject.SetActive(false);
         GameEventsManager.instance.playerEvents.GainExperience(GainExperience);
-        GameEventsManager.instance.miscEvents.GemCollected();
         StopAllCoroutines();
         StartCoroutine(RespawnAfterTime());
     }

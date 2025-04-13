@@ -6,13 +6,7 @@ using TMPro;
 using UnityEngine.UI;
 
 public class CharacterUIManager : MonoBehaviour
-{
-	[Header("Main Stats UI")]
-	[SerializeField] private TMP_Text healthNumber;
-	[SerializeField] private TMP_Text armorNumber;
-	[SerializeField] private TMP_Text experienceNumber;
-	[SerializeField] private TMP_Text goldNumber;
-
+{ // This script is for all the UI concerning perks, stats, attributes and so on
 	[Header("Stats UI")]
 	[SerializeField] private Transform statContainer;
 	[SerializeField] private GameObject statPrefab;
@@ -45,7 +39,6 @@ public class CharacterUIManager : MonoBehaviour
 	private List<GameObject> displayedPerks = new List<GameObject>();
 
 	private PlayerStatsManager playerStatsManager;
-	private PerkTracker perkTracker;
 	private Dictionary<StatType, Button> buttonByStat = new();
 
     private void Awake()
@@ -62,14 +55,8 @@ public class CharacterUIManager : MonoBehaviour
 	{
 		var playerEvents = GameEventsManager.instance.playerEvents;
 		//playerEvents.onStatChange += UpdateStatDisplay;
-		playerEvents.onGainExperience += UpdateExperience;
-		playerEvents.onHealthChangeTo += UpdateHealth;
-		playerEvents.onChangeArmorBy += UpdateArmor;
-		GameEventsManager.instance.playerEvents.onChangeGoldTo += UpdateGold;
 
 		playerStatsManager = PlayerStatsManager.instance;
-
-		perkTracker = new PerkTracker(playerEvents);
 
 		InitializeStatsUI();
 
@@ -177,25 +164,5 @@ public class CharacterUIManager : MonoBehaviour
 		{
 			text.text = $"{statType}: {newValue}";
 		}
-	}
-
-	private void UpdateHealth(int currentHealth, int maxHealth)
-	{
-		healthNumber.text = $"{currentHealth}/{maxHealth}";
-	}
-
-	private void UpdateExperience(int newXP)
-	{
-		experienceNumber.text = $"{playerStatsManager.CurrentExperience}/{playerStatsManager.XPToNextLevel}";
-	}
-
-	private void UpdateGold(int temp)
-	{
-		goldNumber.text = $"{playerStatsManager.CurrentGold}";
-	}
-
-	private void UpdateArmor(int newArmorValue)
-	{
-        armorNumber.text = $"{newArmorValue}";
 	}
 }

@@ -37,7 +37,7 @@ public class PlayerStatsManager : MonoBehaviour
 	[SerializeField] private int startingExperience = 0;
 	[SerializeField] private int startingGold = 98;
 	[SerializeField] private int startingArmor = 0;
-	[SerializeField] private int startingAttributePoints = 5; // NEW: Starting attribute points
+	[SerializeField] private int startingAttributePoints = 5;
 
 	// These values are read-only from other scripts
 	public int CurrentLevel { get; private set; }
@@ -49,6 +49,7 @@ public class PlayerStatsManager : MonoBehaviour
 	public int XPToNextLevel { get; private set; }
 	public int ExperienceNeededPerLevel { get; private set; }
 	public int PointsPerLevel { get; private set; }
+	public int perkPurchasesAvailable { get; private set; }
 
 	// Main attributes (calculated as the sum of stats from each group, if desired)
 	public int Body { get; private set; }
@@ -60,7 +61,6 @@ public class PlayerStatsManager : MonoBehaviour
 	private int accuracyLevelPoints;
 	private int magicPowersLevelPoints;
 	private int attributePoints; // Spend on attributes
-	private int perkPurchasesAvailable;
 
 	private void Awake()
 	{
@@ -268,12 +268,12 @@ public class PlayerStatsManager : MonoBehaviour
 	private void OnEnable()
 	{
 		GameEventsManager.instance.playerEvents.onGainExperience += GainExperience;
-		GameEventsManager.instance.playerEvents.onChangeGoldTo += ChangeGold;
+		GameEventsManager.instance.playerEvents.onChangeGoldBy += ChangeGold;
 	}
 
 	private void OnDisable()
 	{
 		GameEventsManager.instance.playerEvents.onGainExperience -= GainExperience;
-		GameEventsManager.instance.playerEvents.onChangeGoldTo -= ChangeGold;
+		GameEventsManager.instance.playerEvents.onChangeGoldBy -= ChangeGold;
 	}
 }

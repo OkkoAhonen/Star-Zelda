@@ -1,93 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D))]
 public class QuestPoint : MonoBehaviour
 {
-    [Header("Dialogue (optional)")]
-    [SerializeField] private string dialogueKnotName;
+    public string questId;
+    public bool autoStart = false; // Should it trigger automatically?
 
-    [Header("Quest")]
-    [SerializeField] private QuestInfoSO questInfoForPoint;
+    private bool questStarted = false;
 
-    [Header("Config")]
-    [SerializeField] private bool startPoint = true;
-    [SerializeField] private bool finishPoint = true;
-
-    private bool playerIsNear = false;
-    private string questId;
-    private QuestState currentQuestState;
-
-    private QuestIcon questIcon;
-
-    private void Awake()
+    private void Start()
     {
-        questId = questInfoForPoint.id;
-        questIcon = GetComponentInChildren<QuestIcon>();
+        if (autoStart)
+            TryStartQuest();
     }
 
-    private void OnEnable()
+    public void TryStartQuest()
     {
-        GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
-        GameEventsManager.instance.inputEvents.OnSubmitPressed += SubmitPressed;
-    }
+        if (questStarted) return;
 
-    private void OnDisable()
-    {
-        GameEventsManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
-        GameEventsManager.instance.inputEvents.OnSubmitPressed -= SubmitPressed;
-    }
-
-    private void SubmitPressed(InputEventContext inputEventContext)
-    {
-        if (!playerIsNear || !inputEventContext.Equals(InputEventContext.DEFAULT))
+        Quest quest = QuestManager.instance.GetQuestById(questId);
+        if (quest != null && quest.state == Quest.QuestState.INACTIVE)
         {
-            return;
+            QuestManager.instance.StartQuest(quest);
+            questStarted = true;
         }
-        // if we have a knot name defined, try to start dialogue with it
-        if (!dialogueKnotName.Equals(""))
+    }
+
+    public void Interact()
+    {
+        if (!questStarted)
         {
-            GameEventsManager.instance.dialogueEvents.EnterDialogue(dialogueKnotName);
+            TryStartQuest();
         }
-        // otherwise, start or finish the quest immediately without dialogue
         else
         {
-            // start or finish a quest
-            if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
+            Quest quest = QuestManager.instance.GetQuestById(questId);
+            if (quest != null && quest.state == Quest.QuestState.CAN_FINISH)
             {
-                GameEventsManager.instance.questEvents.StartQuest(questId);
+                QuestManager.instance.CompleteQuest(quest);
             }
-            else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
-            {
-                GameEventsManager.instance.questEvents.FinishQuest(questId);
-            }
-        }
-    }
-
-    private void QuestStateChange(Quest quest)
-    {
-        // only update the quest state if this point has the corresponding quest
-        if (quest.info.id.Equals(questId))
-        {
-            currentQuestState = quest.state;
-            questIcon.SetState(currentQuestState, startPoint, finishPoint);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D otherCollider)
-    {
-        if (otherCollider.CompareTag("Player"))
-        {
-            playerIsNear = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D otherCollider)
-    {
-        if (otherCollider.CompareTag("Player"))
-        {
-            playerIsNear = false;
         }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Managers : MonoBehaviour
-{
+{ // This script just keeps this from being deleted (temporary?)
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

@@ -13,16 +13,6 @@ public class CollectCoinsQuestStep : QuestStep
         UpdateState();
     }
 
-    private void OnEnable()
-    {
-        GameEventsManager.instance.miscEvents.onCoinCollected += CoinCollected;
-    }
-
-    private void OnDisable()
-    {
-        GameEventsManager.instance.miscEvents.onCoinCollected -= CoinCollected;
-    }
-
     private void CoinCollected()
     {
         if (coinsCollected < coinsToComplete)

@@ -31,11 +31,11 @@ public class ShopItemUI : MonoBehaviour
     public void Initialize(Perk perk)
     {
         perkData = perk;
-        cost = perk.Price;
+        cost = perk.price;
         nameText.text = perk.perkName;
         priceText.text = cost.ToString();
-        descriptionText.text = perk.Description;
-        iconImage.sprite = perk.Icon;
+        descriptionText.text = perk.description;
+        iconImage.sprite = perk.icon;
         buyButton.onClick.AddListener(Buy);
         toggleButton.onClick.AddListener(ToggleItem);
     }
@@ -73,7 +73,7 @@ public class ShopItemUI : MonoBehaviour
             Debug.LogWarning("Not enough gold to buy perk.");
             return;
         }
-        GameEventsManager.instance.playerEvents.ChangeGoldTo(PlayerStatsManager.instance.CurrentGold - cost);
+        GameEventsManager.instance.playerEvents.ChangeGoldBy(-cost);
         shop.unlockedPerks.Add(perkData);
         Debug.Log("Purchased perk: " + perkData.perkName);
         shop.ReorderItems();
