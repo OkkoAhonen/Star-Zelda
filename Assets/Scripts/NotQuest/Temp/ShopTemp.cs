@@ -77,7 +77,7 @@ public class ShopTemp : MonoBehaviour
     {
         if (canShop)
             if (collision.transform.name == "Player")
-                canShop = true;
+                canShop = false;
     }
 
     private void OnEnable()

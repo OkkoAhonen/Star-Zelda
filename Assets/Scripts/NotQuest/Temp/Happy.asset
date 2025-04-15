@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131f6129bdfec314d93d177c15ae2e75, type: 3}
   m_Name: Happy
   m_EditorClassIdentifier: 
-  description: Smile
-  icon: {fileID: 4060682636331337571, guid: 1b39c0fe73f0433468e25eb21cfde7c2, type: 3}
+  _perkName: Happy
+  _description: Cuz I'm so happy
+  _icon: {fileID: 21300000, guid: ed1c3da0e33704648aa43b338e00a5b4, type: 3}
   _isTiered: 0
   _maxLevel: 1
-  _requiredStatLevel: 1
   _scalingFactor: 1
-  price: 0
+  _price: 0
   _statRequirements: []

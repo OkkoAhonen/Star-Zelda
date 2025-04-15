@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131f6129bdfec314d93d177c15ae2e75, type: 3}
   m_Name: Wolf Killer
   m_EditorClassIdentifier: 
-  description: I had to kill so many goddamn wolves for this
-  icon: {fileID: 2650639267301248524, guid: 1b39c0fe73f0433468e25eb21cfde7c2, type: 3}
+  _perkName: Wolf Killer
+  _description: I killed so goddamn many wolves for this!
+  _icon: {fileID: 2650639267301248524, guid: 1b39c0fe73f0433468e25eb21cfde7c2, type: 3}
   _isTiered: 0
   _maxLevel: 1
-  _requiredStatLevel: 1
   _scalingFactor: 1
-  price: 100
+  _price: 100
   _statRequirements:
   - statType: 0
-    requiredLevel: 1
+    requiredLevel: 12

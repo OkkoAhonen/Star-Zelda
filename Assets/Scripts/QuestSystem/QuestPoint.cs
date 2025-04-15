@@ -3,14 +3,13 @@ using UnityEngine;
 public class QuestPoint : MonoBehaviour
 {
     public string questId;
-    public bool autoStart = false; // Should it trigger automatically?
+    public bool autoStart = false;
 
     private bool questStarted = false;
 
     private void Start()
     {
-        if (autoStart)
-            TryStartQuest();
+        if (autoStart) TryStartQuest();
     }
 
     public void TryStartQuest()
@@ -27,10 +26,7 @@ public class QuestPoint : MonoBehaviour
 
     public void Interact()
     {
-        if (!questStarted)
-        {
-            TryStartQuest();
-        }
+        if (!questStarted) TryStartQuest();
         else
         {
             Quest quest = QuestManager.instance.GetQuestById(questId);

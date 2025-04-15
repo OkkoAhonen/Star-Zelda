@@ -1,13 +1,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class QuestReward
+{
+    public int gold;
+    public int experience;
+    public List<Sprite> itemIcons;
+}
+
+
 [CreateAssetMenu(fileName = "New Quest", menuName = "Quest System/Quest")]
 public class Quest : ScriptableObject
 {
+    [HideInInspector] public bool wasCompleted = false; // Tracks completion order
+    [HideInInspector] public int completionOrder = -1; // Index of when it was completed
+
+    public string questGiverName;
+    public int questImportance; // Used for sorting active quests
+
+
+    public string description;
     public string id;
     public string displayName;
-    public int goldReward;
-    public int experienceReward;
+
+    [Header("Rewards")]
+    public QuestReward rewards;
 
     public enum QuestState { INACTIVE, CAN_START, IN_PROGRESS, CAN_FINISH, FINISHED }
     public QuestState state = QuestState.INACTIVE;
@@ -15,9 +33,7 @@ public class Quest : ScriptableObject
     [Header("Steps")]
     public List<QuestStep> steps;
 
-    // runtime state — not stored in QuestStep!
-    [HideInInspector]
-    public List<QuestStep.QuestStepState> stepStates = new List<QuestStep.QuestStepState>();
+    [HideInInspector] public List<QuestStep.QuestStepState> stepStates = new();
 
     public void InitializeRuntimeState()
     {
@@ -30,10 +46,11 @@ public class Quest : ScriptableObject
 
     public void MarkStepComplete(int index)
     {
-        if (index >= 0 && index < stepStates.Count)
-        {
-            stepStates[index] = QuestStep.QuestStepState.COMPLETE;
-        }
+        if (index < 0 || index >= stepStates.Count) return;
+
+        stepStates[index] = QuestStep.QuestStepState.COMPLETE;
+
+        GameEventsManager.instance.questEvents.QuestStepStateChange(id, index, QuestStep.QuestStepState.COMPLETE);
 
         if (AllStepsComplete())
         {
@@ -46,16 +63,12 @@ public class Quest : ScriptableObject
     {
         foreach (var state in stepStates)
         {
-            if (state != QuestStep.QuestStepState.COMPLETE)
-                return false;
+            if (state != QuestStep.QuestStepState.COMPLETE) return false;
         }
         return true;
     }
 
-    public void ResetSteps()
-    {
-        InitializeRuntimeState();
-    }
+    public void ResetSteps() => InitializeRuntimeState();
 
     [System.Serializable]
     public class QuestData
@@ -65,15 +78,12 @@ public class Quest : ScriptableObject
         public List<QuestStep.QuestStepState> stepStates;
     }
 
-    public QuestData GetQuestData()
+    public QuestData GetQuestData() => new QuestData
     {
-        return new QuestData
-        {
-            id = this.id,
-            state = this.state,
-            stepStates = new List<QuestStep.QuestStepState>(this.stepStates)
-        };
-    }
+        id = this.id,
+        state = this.state,
+        stepStates = new List<QuestStep.QuestStepState>(this.stepStates)
+    };
 
     public void LoadQuestData(QuestData data)
     {

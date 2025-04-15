@@ -6,20 +6,14 @@ public class QuestStepManager : MonoBehaviour
     public Transform stepParent;
 
     private Quest currentQuest;
-    private int currentStepIndex;
 
     private void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
+        if (instance != null) { Destroy(gameObject); return; }
         instance = this;
     }
 
-    public void LoadStep(Quest quest)
+    public void LoadSteps(Quest quest)
     {
         ClearCurrentSteps();
         currentQuest = quest;
@@ -28,20 +22,20 @@ public class QuestStepManager : MonoBehaviour
         {
             if (quest.stepStates[i] == QuestStep.QuestStepState.INCOMPLETE)
             {
-                QuestStep stepInstance = Instantiate(quest.steps[i], stepParent);
-                stepInstance.stepIndex = i;
-                stepInstance.onStepComplete += HandleStepComplete;
+                QuestStep step = Instantiate(quest.steps[i], stepParent);
+                step.stepIndex = i;
+                step.onStepComplete += HandleStepComplete;
             }
         }
     }
 
     private void HandleStepComplete(QuestStep.QuestStepState state)
     {
-        var step = UnityEngine.EventSystems.EventSystem.current?.currentSelectedGameObject?.GetComponent<QuestStep>();
-        if (step == null) return;
+        var stepObj = UnityEngine.EventSystems.EventSystem.current?.currentSelectedGameObject?.GetComponent<QuestStep>();
+        if (stepObj == null) return;
 
-        currentQuest.MarkStepComplete(step.stepIndex);
-        Destroy(step.gameObject);
+        currentQuest.MarkStepComplete(stepObj.stepIndex);
+        Destroy(stepObj.gameObject);
     }
 
     private void ClearCurrentSteps()
@@ -54,11 +48,13 @@ public class QuestStepManager : MonoBehaviour
 
     public void TriggerStepCondition(string conditionId)
     {
-        foreach (Transform child in stepParent)
+        foreach (Transform stepTransform in stepParent)
         {
-            QuestStep step = child.GetComponent<QuestStep>();
+            var step = stepTransform.GetComponent<QuestStep>();
             if (step != null)
+            {
                 step.TryAutoComplete(conditionId);
+            }
         }
     }
 }
