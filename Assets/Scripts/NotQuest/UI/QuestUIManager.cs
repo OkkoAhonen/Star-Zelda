@@ -13,6 +13,12 @@ public class QuestUIManager : MonoBehaviour
 
     private void OnEnable()
     {
+        GameEventsManager.instance.questEvents.onQuestStateChange += OnQuestStateChanged;
+        RefreshUI();
+    }
+
+    private void OnQuestStateChanged(Quest quest)
+    {
         RefreshUI();
     }
 
@@ -25,8 +31,11 @@ public class QuestUIManager : MonoBehaviour
         }
         activeEntries.Clear();
 
-        var allQuests = QuestManager.instance.GetActiveQuests().Values.ToList();
-        var completedQuests = QuestManager.instance.GetAllQuests().Where(q => q.state == Quest.QuestState.FINISHED).ToList();
+        var activeQuestsDict = QuestManager.instance.GetActiveQuests();
+        var allQuestsList = QuestManager.instance.GetAllQuests();
+
+        var allQuests = activeQuestsDict?.Values?.ToList() ?? new List<Quest>();
+        var completedQuests = allQuestsList?.Where(q => q.state == Quest.QuestState.FINISHED).ToList() ?? new List<Quest>();
 
         // Set order for completed quests if not already set
         foreach (var quest in completedQuests)
@@ -60,5 +69,10 @@ public class QuestUIManager : MonoBehaviour
             entry.SetData(quest);
             activeEntries.Add(entry);
         }
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.questEvents.onQuestStateChange -= OnQuestStateChanged;
     }
 }

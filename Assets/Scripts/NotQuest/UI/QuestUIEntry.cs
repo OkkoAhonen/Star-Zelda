@@ -6,6 +6,9 @@ using Unity.VisualScripting;
 
 public class QuestUIEntry : MonoBehaviour
 {
+    public static bool closeOtherEntries = true;
+    private static List<QuestUIEntry> allEntries = new();
+    
     public float howGrayedOut = 0.5f;
     public CanvasGroup canvasGroup;
 
@@ -21,9 +24,61 @@ public class QuestUIEntry : MonoBehaviour
     public GameObject experienceIconObject;
     public Transform itemIconContainer;
     public GameObject itemIconPrefab;
+    public Transform stepListContainer;
+    public GameObject stepEntryPrefab;
+
+    private Quest currentQuest;
+    public bool IsForQuest(Quest q) => currentQuest == q;
+
+    private void Awake()
+    {
+        allEntries.Add(this);
+        GameEventsManager.instance.questEvents.onQuestStepStateChange += StepChangeData;
+    }
+
+    private void StepChangeData(string id, int index, Quest.QuestStepState state)
+    {
+        if (currentQuest == null || currentQuest.id != id)
+            return;
+
+        SetStepData();
+    }
+
+    private void OnDestroy()
+    {
+        allEntries.Remove(this);
+    }
+
+    public void OnClicked()
+    {
+        bool isCurrentlyExpanded = IsExpanded();
+
+        if (closeOtherEntries)
+        {
+            foreach (var entry in allEntries)
+                entry.SetExpanded(false);
+        }
+
+        SetExpanded(!isCurrentlyExpanded);
+    }
+
+    private bool IsExpanded()
+    {
+        return transform.childCount > 1 && transform.GetChild(1).gameObject.activeSelf;
+    }
+
+    private void SetExpanded(bool expanded)
+    {
+        for (int i = 1; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(expanded);
+        }
+    }
 
     public void SetData(Quest quest)
     {
+        currentQuest = quest;
+
         titleText.text = quest.displayName;
         stateText.text = quest.state.ToString();
 
@@ -76,5 +131,39 @@ public class QuestUIEntry : MonoBehaviour
         }
 
         rewardSection.SetActive(hasRewards);
+
+        SetStepData();
+
+        SetExpanded(false); // Collapsed by default (might be a little broken if here)
+    }
+
+    public void SetStepData()
+    {
+
+        // Clear existing step entries
+        foreach (Transform child in stepListContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Display steps
+        for (int i = 0; i < currentQuest.steps.Count; i++)
+        {
+            var step = currentQuest.steps[i];
+            var state = currentQuest.stepStates[i];
+            var progress = currentQuest.stepProgress[i];
+
+            string progressText = step.stepType switch
+            {
+                QuestStepData.StepType.Kill => $"{step.stepType}: {progress} / {step.requiredAmount}",
+                QuestStepData.StepType.Gather => $"{step.stepType}: {progress} / {step.requiredAmount}",
+                QuestStepData.StepType.Visit => state == Quest.QuestStepState.COMPLETE ? $"{step.stepType}: Complete" : $"{step.stepType}: Incomplete",
+                QuestStepData.StepType.Talk => state == Quest.QuestStepState.COMPLETE ? $"{step.stepType}: Complete" : $"{step.stepType}: Incomplete",
+                _ => "Unknown step"
+            };
+
+            var entry = Instantiate(stepEntryPrefab, stepListContainer);
+            entry.GetComponent<TextMeshProUGUI>().text = progressText;
+        }
     }
 }

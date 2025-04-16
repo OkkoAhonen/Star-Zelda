@@ -9,6 +9,15 @@ public class QuestReward
     public List<Sprite> itemIcons;
 }
 
+[System.Serializable]
+public class QuestStepData
+{
+    public enum StepType { Kill, Gather, Visit, Talk }
+    public StepType stepType;
+
+    public string targetId;     // Could be enemy ID, item ID, or location name
+    public int requiredAmount = 1; // For kills/gathers
+}
 
 [CreateAssetMenu(fileName = "New Quest", menuName = "Quest System/Quest")]
 public class Quest : ScriptableObject
@@ -19,7 +28,7 @@ public class Quest : ScriptableObject
     public string questGiverName;
     public int questImportance; // Used for sorting active quests
 
-
+    [HideInInspector] public List<QuestStepState> stepStates = new();
     public string description;
     public string id;
     public string displayName;
@@ -28,19 +37,22 @@ public class Quest : ScriptableObject
     public QuestReward rewards;
 
     public enum QuestState { INACTIVE, CAN_START, IN_PROGRESS, CAN_FINISH, FINISHED }
-    public QuestState state = QuestState.INACTIVE;
+    public QuestState state = QuestState.CAN_START;
 
     [Header("Steps")]
-    public List<QuestStep> steps;
-
-    [HideInInspector] public List<QuestStep.QuestStepState> stepStates = new();
+    public List<QuestStepData> steps = new();
+    [HideInInspector] public List<int> stepProgress = new(); // runtime progress tracking
+    [HideInInspector] public enum QuestStepState { INCOMPLETE, COMPLETE }
 
     public void InitializeRuntimeState()
     {
         stepStates.Clear();
+        stepProgress.Clear();
+
         for (int i = 0; i < steps.Count; i++)
         {
-            stepStates.Add(QuestStep.QuestStepState.INCOMPLETE);
+            stepStates.Add(QuestStepState.INCOMPLETE);
+            stepProgress.Add(0);
         }
     }
 
@@ -48,9 +60,9 @@ public class Quest : ScriptableObject
     {
         if (index < 0 || index >= stepStates.Count) return;
 
-        stepStates[index] = QuestStep.QuestStepState.COMPLETE;
+        stepStates[index] = QuestStepState.COMPLETE;
 
-        GameEventsManager.instance.questEvents.QuestStepStateChange(id, index, QuestStep.QuestStepState.COMPLETE);
+        GameEventsManager.instance.questEvents.QuestStepStateChange(id, index, QuestStepState.COMPLETE);
 
         if (AllStepsComplete())
         {
@@ -63,7 +75,7 @@ public class Quest : ScriptableObject
     {
         foreach (var state in stepStates)
         {
-            if (state != QuestStep.QuestStepState.COMPLETE) return false;
+            if (state != QuestStepState.COMPLETE) return false;
         }
         return true;
     }
@@ -75,19 +87,19 @@ public class Quest : ScriptableObject
     {
         public string id;
         public QuestState state;
-        public List<QuestStep.QuestStepState> stepStates;
+        public List<QuestStepState> stepStates;
     }
 
     public QuestData GetQuestData() => new QuestData
     {
         id = this.id,
         state = this.state,
-        stepStates = new List<QuestStep.QuestStepState>(this.stepStates)
+        stepStates = new List<QuestStepState>(this.stepStates)
     };
 
     public void LoadQuestData(QuestData data)
     {
         this.state = data.state;
-        this.stepStates = new List<QuestStep.QuestStepState>(data.stepStates);
+        this.stepStates = new List<QuestStepState>(data.stepStates);
     }
 }
