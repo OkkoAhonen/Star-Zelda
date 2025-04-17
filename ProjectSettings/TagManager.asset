@@ -47,13 +47,13 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Streets and grass
+  - name: Ground
     uniqueID: 1232288969
     locked: 0
-  - name: 2
+  - name: Interractable
     uniqueID: 3881153111
     locked: 0
-  - name: Top
+  - name: Props
     uniqueID: 280916825
     locked: 0
   - name: OverTop
