@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/DialogueData/AikuistenOikeastiKäytetyt/vendor.asset.meta
 guid: e7539e9b82eb29243bc458856c3b98be
+========
+guid: 0fcba41a55e34db40af209919d0218b9
+>>>>>>>> ElmonMergeTesti:Assets/Scripts/NotQuest/Temp/Bunny Killer.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

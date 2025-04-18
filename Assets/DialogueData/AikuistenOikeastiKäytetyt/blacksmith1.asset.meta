@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/DialogueData/AikuistenOikeastiKäytetyt/blacksmith1.asset.meta
 guid: 4fd9b30ff45f32c49a6eeecf686c2eab
+========
+guid: 7c721ab2c15aac440aede3a61bafc289
+>>>>>>>> ElmonMergeTesti:Assets/Scripts/NotQuest/Temp/Happy.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

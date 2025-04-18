@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/DialogueData/Ei käytetät/Eip.asset.meta
 guid: 692b445e471e9dc4f8a1a72e096fdaf6
+========
+guid: 0cb6bb9e77ee1bb45a1577e7da5a280c
+>>>>>>>> ElmonMergeTesti:Assets/Scripts/NotQuest/Book/Notebook.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

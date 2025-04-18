@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/DialogueData/AikuistenOikeastiKäytetyt.meta
 guid: 678650035a4db5b4390ce1bc21f6e91d
+========
+guid: 563239cdc3746df4594b0620045e7dfc
+>>>>>>>> ElmonMergeTesti:Assets/Scripts/NotQuest.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

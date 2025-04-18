@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/DialogueData/Ei käytetät/Done.asset.meta
 guid: 5db12818a868d3d4a9400901cfa3cc27
+========
+guid: 47182f5e0f61e434c845c531410dadc5
+>>>>>>>> ElmonMergeTesti:Assets/Scripts/QuestSystem/Tutorial.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
