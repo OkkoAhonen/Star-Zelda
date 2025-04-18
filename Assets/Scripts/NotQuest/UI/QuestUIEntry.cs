@@ -26,6 +26,12 @@ public class QuestUIEntry : MonoBehaviour
     public GameObject itemIconPrefab;
     public Transform stepListContainer;
     public GameObject stepEntryPrefab;
+    public Button trackQuestButton;
+    public Image trackQuestButtonImage; // Assign the button's image component in the inspector
+    public TextMeshProUGUI questDifficulty;
+
+    private Color trackedColor = Color.green;
+    private Color untrackedColor = Color.red;
 
     private Quest currentQuest;
     public bool IsForQuest(Quest q) => currentQuest == q;
@@ -75,9 +81,34 @@ public class QuestUIEntry : MonoBehaviour
         }
     }
 
+    private void ToggleTrackQuest(Quest quest)
+    {
+        if (QuestTrackerUI.instance.IsTracked(quest))
+            QuestTrackerUI.instance.UntrackQuest(quest);
+        else
+            QuestTrackerUI.instance.TrackQuest(quest);
+
+        UpdateTrackButtonVisual(quest);
+    }
+
+    private void UpdateTrackButtonVisual(Quest quest)
+    {
+        bool isTracked = QuestTrackerUI.instance.IsTracked(quest);
+        trackQuestButtonImage.color = isTracked ? trackedColor : untrackedColor;
+    }
+
     public void SetData(Quest quest)
     {
         currentQuest = quest;
+
+        questDifficulty.text = new string('I', quest.questDifficulty); // ★ *
+
+        trackQuestButton.onClick.RemoveAllListeners();
+        trackQuestButton.onClick.AddListener(() =>
+        {
+            ToggleTrackQuest(currentQuest);
+        });
+        UpdateTrackButtonVisual(currentQuest);
 
         titleText.text = quest.displayName;
         stateText.text = quest.state.ToString();
@@ -161,6 +192,8 @@ public class QuestUIEntry : MonoBehaviour
                 QuestStepData.StepType.Talk => state == Quest.QuestStepState.COMPLETE ? $"{step.stepType}: Complete" : $"{step.stepType}: Incomplete",
                 _ => "Unknown step"
             };
+
+            progressText += $"  (★{step.stepDifficulty})";
 
             var entry = Instantiate(stepEntryPrefab, stepListContainer);
             entry.GetComponent<TextMeshProUGUI>().text = progressText;

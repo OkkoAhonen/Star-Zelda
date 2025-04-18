@@ -17,6 +17,7 @@ public class QuestStepData
 
     public string targetId;     // Could be enemy ID, item ID, or location name
     public int requiredAmount = 1; // For kills/gathers
+    public int stepDifficulty;
 }
 
 [CreateAssetMenu(fileName = "New Quest", menuName = "Quest System/Quest")]
@@ -27,6 +28,7 @@ public class Quest : ScriptableObject
 
     public string questGiverName;
     public int questImportance; // Used for sorting active quests
+    public int questDifficulty;
 
     [HideInInspector] public List<QuestStepState> stepStates = new();
     public string description;

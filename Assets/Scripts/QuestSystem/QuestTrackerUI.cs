@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class QuestTrackerUI : MonoBehaviour
 {
+    public static QuestTrackerUI instance;
+    private List<Quest> trackedQuests = new();    
     public TextMeshProUGUI questTitleText;
     public Transform stepsContainer;
     public GameObject stepTextPrefab;
@@ -12,9 +14,34 @@ public class QuestTrackerUI : MonoBehaviour
 
     private void Start()
     {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
         GameEventsManager.instance.questEvents.onQuestStepStateChange += UpdateSteps;
         GameEventsManager.instance.questEvents.onQuestStateChange += OnQuestStateChanged;
     }
+
+    public void TrackQuest(Quest quest)
+    {
+        if (!trackedQuests.Contains(quest))
+        {
+            trackedQuests.Add(quest);
+            Debug.Log("Now tracking: " + quest.displayName);
+            // Update your UI here if needed
+        }
+    }
+
+    public bool IsTracked(Quest quest) => trackedQuests.Contains(quest);
+
+    public void UntrackQuest(Quest quest)
+    {
+        if (trackedQuests.Contains(quest))
+        {
+            trackedQuests.Remove(quest);
+            Debug.Log("Untracked: " + quest.displayName);
+        }
+    }
+
+    public List<Quest> GetTrackedQuests() => trackedQuests;
 
     private void OnDestroy()
     {
