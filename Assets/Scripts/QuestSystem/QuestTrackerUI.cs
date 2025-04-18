@@ -25,8 +25,9 @@ public class QuestTrackerUI : MonoBehaviour
         if (!trackedQuests.Contains(quest))
         {
             trackedQuests.Add(quest);
+            currentQuest = quest;
+            RefreshUI();
             Debug.Log("Now tracking: " + quest.displayName);
-            // Update your UI here if needed
         }
     }
 
@@ -38,6 +39,16 @@ public class QuestTrackerUI : MonoBehaviour
         {
             trackedQuests.Remove(quest);
             Debug.Log("Untracked: " + quest.displayName);
+
+            // If the current quest was untracked, clear or update UI
+            if (currentQuest == quest)
+            {
+                currentQuest = trackedQuests.Count > 0 ? trackedQuests[0] : null;
+                if (currentQuest != null)
+                    RefreshUI();
+                else
+                    ClearUI();
+            }
         }
     }
 
@@ -88,7 +99,7 @@ public class QuestTrackerUI : MonoBehaviour
             var state = currentQuest.stepStates[i];
 
             string status = state == Quest.QuestStepState.COMPLETE ? "[O]" : "[ ]";
-            string label = $"{step.stepType}: Step {i + 1} {status}";
+            string label = $"{step.stepType}: Step {i + 1} {status}  (I{step.stepDifficulty})";
 
             var stepObj = Instantiate(stepTextPrefab, stepsContainer);
             stepObj.GetComponentInChildren<TextMeshProUGUI>().text = label;

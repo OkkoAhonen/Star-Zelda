@@ -101,6 +101,11 @@ public class QuestUIEntry : MonoBehaviour
     {
         currentQuest = quest;
 
+        if (QuestTrackerUI.instance.GetTrackedQuests().Count == 0)
+        {
+            QuestTrackerUI.instance.TrackQuest(quest);
+        }
+
         questDifficulty.text = new string('I', quest.questDifficulty); // ★ *
 
         trackQuestButton.onClick.RemoveAllListeners();
@@ -193,7 +198,7 @@ public class QuestUIEntry : MonoBehaviour
                 _ => "Unknown step"
             };
 
-            progressText += $"  (★{step.stepDifficulty})";
+            progressText += new string('I', currentQuest.questDifficulty);
 
             var entry = Instantiate(stepEntryPrefab, stepListContainer);
             entry.GetComponent<TextMeshProUGUI>().text = progressText;
