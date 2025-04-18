@@ -6,7 +6,7 @@ public class potionEffect : MonoBehaviour
     private SpriteRenderer sr;
     public Color startColor = Color.cyan;
     public Color endColor = Color.red;
-    public float duration = 5f; // Aika, jonka kuluessa väri muuttuu
+    public float duration = 5f; // Aika, jonka kuluessa vï¿½ri muuttuu
 
     private float timer = 0f;
     private float damageDuration = .5f;
