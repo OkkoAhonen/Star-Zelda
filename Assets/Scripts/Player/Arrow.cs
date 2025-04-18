@@ -1,26 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class Arrow : MonoBehaviour
 {
-    [HideInInspector] public float ArrowVelocity;
-    [SerializeField] Rigidbody2D rb;
+    [Header("Debug")]
+    [SerializeField] private float speed;      // Arrow movement speed
+    [SerializeField] private float damage;     // Damage it deals
+    [SerializeField] private float lifespan;   // Max lifetime
+    [SerializeField] private float lifeTimer;  // Tracks time alive
 
+    public float Speed => speed;
+    public float Damage => damage;
+    public float Lifespan => lifespan;
+    public float LifeTimer => lifeTimer;
 
-    private void Start()
+    public void Initialize(float newSpeed, float newDamage, float newLifespan)
     {
-        rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 4f);
+        speed = newSpeed;
+        damage = newDamage;
+        lifespan = newLifespan;
+        lifeTimer = 0f;
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        rb.velocity = transform.up * ArrowVelocity;
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        lifeTimer += Time.deltaTime;
+
+        if (lifeTimer >= lifespan)
+            Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
+        other.GetComponent<EnemyAI>()?.enemyTakeDamage(damage);
+
         Destroy(gameObject);
     }
 }

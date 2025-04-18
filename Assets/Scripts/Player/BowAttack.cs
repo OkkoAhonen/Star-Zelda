@@ -1,82 +1,92 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; // Required for Slider
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class BowAttack : MonoBehaviour
 {
-    [SerializeField] GameObject ArrowPrefab;
-    [SerializeField] SpriteRenderer ArrowGFX;
-    [SerializeField] Slider BowPowerSlider;
-    [SerializeField] Transform Bow;
+    [Header("Bow Settings")]
+    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private Transform arrowSpawnPoint;
+    [SerializeField] private float maxChargeTime = 1.5f;
+    //[SerializeField] private float minChargeTime = 0.2f;
+    [SerializeField] private float cooldownTime = 0.5f;
+    [SerializeField] private float maxArrowSpeed = 20f;
+    [SerializeField] private float maxArrowDamage = 50f;
+    [SerializeField] private float arrowLifespan = 3f;
 
-    [Range(0, 10)]
+    [Header("UI")]
+    [SerializeField] private Slider chargeSlider; // Slider to show charge progress
 
-    [SerializeField] float BowPower;
+    [Header("Debug")]
+    [SerializeField] private float currentChargeTime = 0f;
+    [SerializeField] private float currentCooldown = 0f;
+    [SerializeField] private bool isCharging = false;
 
-    [Range(0, 3)]
+    public float CurrentChargeTime => currentChargeTime;
+    public float CurrentCooldown => currentCooldown;
+    public bool IsCharging => isCharging;
 
-    [SerializeField] float MaxBowCharge;
-
-    float BowCharge;
-    bool CanFire = true;
-
-    private void Start()
+    void Update()
     {
-        BowPowerSlider.value = 0f;
-        BowPowerSlider.maxValue = MaxBowCharge;
+        HandleCooldown();
+        HandleInput();
+        UpdateSlider();
     }
 
-    private void Update()
+    void HandleCooldown()
     {
-        if (Input.GetMouseButton(0) && CanFire)
-        {
-            ChargeBow();
-        }else if (Input.GetMouseButtonUp(0) && CanFire)
-        {
-            FireBow();
-        }else
-        {
-            if (BowCharge > 0f)
-            {
-                BowCharge -= 1f * Time.deltaTime;
-            }else
-            {
-                BowCharge = 0f;
-                CanFire = true;
-            }
-
-            BowPowerSlider.value = BowCharge;
-        }
+        if (currentCooldown > 0f)
+            currentCooldown -= Time.deltaTime;
     }
 
-    void ChargeBow()
+    void HandleInput()
     {
-        ArrowGFX.enabled = true;
-        BowCharge += Time.deltaTime;
+        if (Input.GetButtonDown("Fire1") && currentCooldown <= 0f)
+            StartCharging();
 
-        BowPowerSlider.value = BowCharge;
+        if (Input.GetButton("Fire1") && isCharging)
+            Charge();
 
-        if (BowCharge >  MaxBowCharge)
-        {
-            BowPowerSlider.value = MaxBowCharge;
-        }
+        if (Input.GetButtonUp("Fire1") && isCharging)
+            ReleaseArrow();
     }
 
-    void FireBow()
+    void StartCharging()
     {
-        if (BowCharge > MaxBowCharge) BowCharge = MaxBowCharge;
+        isCharging = true;
+        currentChargeTime = 0f;
+    }
 
-        float ArrowSpeed = BowCharge + BowPower;
+    void Charge()
+    {
+        currentChargeTime += Time.deltaTime;
+        currentChargeTime = Mathf.Min(currentChargeTime, maxChargeTime);
+    }
 
-        float angle = Utility.AngleTowardsMouse(Bow.position);
-        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+    void ReleaseArrow()
+    {
+        isCharging = false;
+        
+        float chargePercent = currentChargeTime / maxChargeTime;
+        float arrowSpeed = chargePercent * maxArrowSpeed;
+        float arrowDamage = chargePercent * maxArrowDamage;
 
-        Arrow Arrow = Instantiate(ArrowPrefab, Bow.position, rot).GetComponent<Arrow>();
-        Arrow.ArrowVelocity = ArrowSpeed;
+        GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
+        Arrow arrowScript = arrow.GetComponent<Arrow>();
+        arrowScript.Initialize(arrowSpeed, arrowDamage, arrowLifespan);
 
-        CanFire = false;
-        ArrowGFX.enabled = false;
+        currentCooldown = cooldownTime;
+        currentChargeTime = 0f; // Reset charge
+    }
 
+    void UpdateSlider()
+    {
+        if (chargeSlider == null)
+            return;
+
+        if (isCharging)
+            chargeSlider.value = currentChargeTime / maxChargeTime;
+        else
+            chargeSlider.value = 0f;
     }
 }
