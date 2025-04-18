@@ -7,6 +7,12 @@ using UnityEngine.InputSystem;
 // script in the project easily subscribe to an input action
 // without having to deal with the PlayerInput component directly.
 
+public enum InputEventContext
+{
+    DEFAULT,
+    DIALOGUE
+}
+
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {
