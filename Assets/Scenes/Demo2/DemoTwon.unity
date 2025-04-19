@@ -1056,6 +1056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7357542518209199140, guid: feddf28b309d3bd40904299d11a7145c, type: 3}
+    - {fileID: 84593382654301068, guid: feddf28b309d3bd40904299d11a7145c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -22060,18 +22061,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopItems:
-  - {fileID: 11400000, guid: b668c7c1eadd129499ea4402670d9fbb, type: 2}
-  - {fileID: 11400000, guid: 255ff07ae540775478a4842fdd73f366, type: 2}
-  - {fileID: 11400000, guid: b668c7c1eadd129499ea4402670d9fbb, type: 2}
-  - {fileID: 11400000, guid: d58ebe70ea2eb994b8c164d0ee13df6b, type: 2}
+  - {fileID: 11400000, guid: dad08e94eea4fbe42909cfe29ac73a9a, type: 2}
+  - {fileID: 11400000, guid: 806ca55d7b544214ca2b60d8d269ab81, type: 2}
+  - {fileID: 11400000, guid: a66fbeddb5195ae4eb03fb0a82fd40ac, type: 2}
+  - {fileID: 11400000, guid: 1fb7e3931db47d74b9e5c671ec85a3c8, type: 2}
+  - {fileID: 11400000, guid: c1270598977e16640b02cfa91f08049f, type: 2}
+  - {fileID: 11400000, guid: fc0f02982d80db84b8c7cc0e3212e3ff, type: 2}
   sepanItems:
-  - {fileID: 11400000, guid: e28f9b1b4d177ff4b9d9259eeabb25a6, type: 2}
-  - {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
-  - {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
-  - {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
-  - {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
-  - {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
-  - {fileID: 11400000, guid: 0199931292d192b42b02c6cba1e4ada7, type: 2}
+  - {fileID: 11400000, guid: 67039aa33f186b74ea931aff873414be, type: 2}
+  - {fileID: 11400000, guid: bb423a1bc21d75f48ad81fa86ba52cf5, type: 2}
   itemsToBuyPrefab: {fileID: 3460413430638925547, guid: b919661aa6102e34284241456afdd06b, type: 3}
   shopContent: {fileID: 279656440}
   sepanKauppa: {fileID: 1188440578}
@@ -29513,8 +29511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startItems:
-  - {fileID: 11400000, guid: e28f9b1b4d177ff4b9d9259eeabb25a6, type: 2}
-  - {fileID: 11400000, guid: b668c7c1eadd129499ea4402670d9fbb, type: 2}
+  - {fileID: 11400000, guid: 67039aa33f186b74ea931aff873414be, type: 2}
+  - {fileID: 11400000, guid: a66fbeddb5195ae4eb03fb0a82fd40ac, type: 2}
+  - {fileID: 11400000, guid: a66fbeddb5195ae4eb03fb0a82fd40ac, type: 2}
   inventorySlots:
   - {fileID: 2007007171}
   - {fileID: 1540015794}

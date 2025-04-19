@@ -10,11 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50f6b1f6506df7b4086f1a2f461ea451, type: 3}
-  m_Name: Digging Block
+  m_Name: HealthPotion_1
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  type: 0
-  actionType: 0
+  type: 3
+  actionType: 3
   range: {x: 5, y: 4}
+  price: 10
   stackable: 1
-  image: {fileID: 2167505942708378944, guid: 1b39c0fe73f0433468e25eb21cfde7c2, type: 3}
+  image: {fileID: 21300000, guid: 3f02b1d5725482f4ba26f1727a4e1b77, type: 3}
+  attackDamage: 0
+  damageBooster: 1
+  attackRadius: 1.5
+  maxChargeTime: 3
+  isWeapon: 0
+  potionAttackDamage: 10
+  potionActivetimer: 2
+  damageDuration: 0.5
+  isDamagePotion: 0
+  isHealthPotion: 1
+  PotionHeal: 20
+  accurasu: 20
+  isBow: 0
+  foodHeal: 20
