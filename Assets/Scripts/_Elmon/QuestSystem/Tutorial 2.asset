@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ecb5eb1880bf84baad899bc672cfd0, type: 3}
+  m_Name: Tutorial 2
+  m_EditorClassIdentifier: 
+  wasCompleted: 0
+  completionOrder: -1
+  questGiverName: Tutorial 2
+  questImportance: -99
+  questDifficulty: 2
+  stepStates: 000000000000000000000000
+  description: Visit all three pillars
+  id: 1
+  displayName: Visit all pillars
+  rewards:
+    gold: 200
+    experience: 500
+    itemIcons:
+    - {fileID: 21300000, guid: 4683e64797a364ad1adde74cc69b1ec9, type: 3}
+    - {fileID: 21300000, guid: b3a67fc6bd9f6405ba5785b99c7d830a, type: 3}
+  state: 2
+  steps:
+  - stepType: 2
+    targetId: 1
+    requiredAmount: 1
+    stepDifficulty: 1
+  - stepType: 2
+    targetId: 2
+    requiredAmount: 1
+    stepDifficulty: 2
+  - stepType: 2
+    targetId: 3
+    requiredAmount: 1
+    stepDifficulty: 3
+  stepProgress: 000000000000000000000000
