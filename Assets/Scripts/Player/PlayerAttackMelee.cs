@@ -15,6 +15,7 @@ public class PlayerAttackMelee : MonoBehaviour
 
     public BasicBar slider;
 
+    public Animator animator; //Aseta inspektorissa
 
     //Charge muuttujat
 
@@ -30,6 +31,7 @@ public class PlayerAttackMelee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator.speed = 2f;
     }
 
     // Update is called once per frame
@@ -56,6 +58,7 @@ public class PlayerAttackMelee : MonoBehaviour
 
     public void attack1()
     {
+        animator.SetTrigger("Attack1");
         Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
         Damagebooster = equippedItem.damageBooster;
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackpoint.transform.position, equippedItem.attackRadius, enemies);
@@ -73,6 +76,7 @@ public class PlayerAttackMelee : MonoBehaviour
 
         Damagebooster = 1f;
         currentChargeTime = 0f;
+
     }
 
     private void chargeSword()
@@ -94,6 +98,22 @@ public class PlayerAttackMelee : MonoBehaviour
             }
 
             slider.UpdateSlider(currentChargeTime, equippedItem.maxChargeTime);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (attackpoint != null)
+        {
+            // Haetaan varustettu esine, jos se on olemassa
+            Item equippedItem = InventoryManager.Instance != null ? InventoryManager.Instance.GetSelectedItem(false) : null;
+            float currentRadius = equippedItem != null && equippedItem.isWeapon ? equippedItem.attackRadius : radius;
+
+            // Asetetaan Gizmos-väri (esim. punainen)
+            Gizmos.color = Color.red;
+
+            // Piirretään hyökkäysalueen ympyrä
+            Gizmos.DrawWireSphere(attackpoint.transform.position, currentRadius);
         }
     }
 
