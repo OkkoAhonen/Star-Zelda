@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 1232765225}
+  pivotPoint: {fileID: 144195274}
   mainCam: {fileID: 2089764055}
   playerMoveSpeed: 5
   moveDirection: {x: 0, y: 0}
