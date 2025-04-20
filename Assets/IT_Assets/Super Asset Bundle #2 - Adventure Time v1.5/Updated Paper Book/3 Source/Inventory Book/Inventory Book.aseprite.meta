@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -4104,1598 +4105,1802 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1865589231
+    uuid:
+      value0: 4191480939
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -103486357
     name: Inventory Book
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Inventory Book_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 8ee4f55ed2b52974da3fd93943ace490
-    - name: Inventory Book_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ad4cee9a434d33d45a24fbb9b3a618d7
-    - name: Inventory Book_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ca0bdf8e80026124fb3421a577272d1e
-    - name: Inventory Book_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 086dad9f9ced9184c8ef158dd30f779b
-    - name: Inventory Book_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 68921c26d1f9bbb49a94c58e17c8d799
-    - name: Inventory Book_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: af3a14e5f38e5df4fa6643edc4ed612d
-    - name: Inventory Book_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b4d5d54321203664595f5a9bd95a05ed
-    - name: Inventory Book_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 9f00a19f64320324f8854bad18db208d
-    - name: Inventory Book_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 9ac28e0c825c0ea40b8d04aa4d1f8ee5
-    - name: Inventory Book_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: c479a43a44b47f942a867aa3c29f0eff
-    - name: Inventory Book_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f62484f7f83aacf44ab4cc78df8b39fe
-    - name: Inventory Book_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d5c9a5c004fcd5843aec4edf20b9907c
-    - name: Inventory Book_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 299aacb549634d14f9486626935c65dd
-    - name: Inventory Book_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 159c064829d8027499efae74a74c4c74
-    - name: Inventory Book_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 561f60ce395fda043993877f0da2f7d3
-    - name: Inventory Book_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 7520ab0330d0d934cb5697a5d17707c2
-    - name: Inventory Book_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6442259f7a55dec489ad27fa273f9f06
-    - name: Inventory Book_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b8acbf51909a97b4f87a511a2b71a651
-    - name: Inventory Book_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 7b97fa5dcfa14464982329d93ae21a83
-    - name: Inventory Book_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 68342b94ad39c4248a7f5cfbd2174300
-    - name: Inventory Book_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 4f60a9ffe925c204dac6d464657eeea4
-    - name: Inventory Book_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ab4f9f7eb179a0b4cb9d5f52cfe3f018
-    - name: Inventory Book_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: afbd548d5f191414ea97eae40dce43d1
-    - name: Inventory Book_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 47c3d9c58199d7445941a74c88c100f9
-    - name: Inventory Book_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 0ce7517431d722541916dad0ab8317d0
-    - name: Inventory Book_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 4b1010b27db24b54a9bb0cac434d7863
-    - name: Inventory Book_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 82a3ac4ef7e989e4887af4dead0bf782
-    - name: Inventory Book_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: fe3bb3ee32f99e84b973ec00916a31f7
-    - name: Inventory Book_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f5c687c2010bc8548b27ca495838921f
-    - name: Inventory Book_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 96f5029f72f554649bbffae4e48afecf
-    - name: Inventory Book_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 68cb0df58e5ea0a43b999950bf56f94d
-    - name: Inventory Book_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2cf4cce546b7ac6478fd654dd3eb4807
-    - name: Inventory Book_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 0d26f22266c8ad644a4cc3bd2f4a648a
-    - name: Inventory Book_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f9c1b9725156fa049a17c5c07bbfff23
-    - name: Inventory Book_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: da875f7d82fcf744c8f44e009836d65f
-    - name: Inventory Book_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: a33b2df38bd551c4d80d0be24d6a48fe
-    - name: Inventory Book_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 7249978dcd6f38645a239aebd336dd96
-    - name: Inventory Book_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ad780285250d6684abe370409faeb69a
-    - name: Inventory Book_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: c48b25ceffb09a646bb7ca283b0fa1c8
-    - name: Inventory Book_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 084920a4a17d58e45b3a1d9e5c73a065
-    - name: Inventory Book_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: e2b2813e72e280c4e9eb61f676f2ba23
-    - name: Inventory Book_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: afb8b1cb3fa92204482fd1c36b695830
-    - name: Inventory Book_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ec98c5fa4d66f61458136c699745c110
-    - name: Inventory Book_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: c2c9342bfc8505a41a51aceb21a5eafb
-    - name: Inventory Book_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 8280fd9e568a3334283c40c6b599e0ab
-    - name: Inventory Book_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ffe49b6121568ee41b8dc1e513fc5f35
-    - name: Inventory Book_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 4d6d71fb1b44fe945b22133da3ed721f
-    - name: Inventory Book_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6d20c366b6ae0204494421476aaa386a
-    - name: Inventory Book_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 71301d669187405438ee83eaabd84a0f
-    - name: Inventory Book_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: bc32f81b75166874fb5e292cf10899d3
-    - name: Inventory Book_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 3ec8d771caae39748aa877c4202a3b91
-    - name: Inventory Book_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: e4cb6e21d806b444795a4ebc61ec6e97
-    - name: Inventory Book_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 16f25c7a1c5d4a44ab6ceb9b4ebd0752
-    - name: Inventory Book_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 98eb02be94bbb9d4aa32f5c24e37abe7
-    - name: Inventory Book_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d6f0c7c469fa04e4c93b395ae4a75425
-    - name: Inventory Book_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d28fdf373a3fcb447b243fd27271731c
-    - name: Inventory Book_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 661e6ef53fc6a2246a3a135fa4e4ef08
-    - name: Inventory Book_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 4254dd5d729b38e46a5e07f79c45ee29
-    - name: Inventory Book_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 472af8be074f2484e8846b7ae78d21ba
-    - name: Inventory Book_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 4f8cae983b95aff438a8c8c38cfaa5b3
-    - name: Inventory Book_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 48fccbcd634cded468e9ab8afff79a19
-    - name: Inventory Book_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: fac49784def84a84da35a4fe1686baf6
-    - name: Inventory Book_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 01fcf086a7c176d4285c807475892b8b
-    - name: Inventory Book_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2bd9140b971cb6c4996545334fefeb54
-    - name: Inventory Book_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 77fa3bedca9c9304ab94b32d97c38e1d
-    - name: Inventory Book_Frame_65
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 41ab80817c4f27742a5d3b4fde21e479
-    - name: Inventory Book_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: fd55f4654acc0ec4f92970b05f9a7c3f
-    - name: Inventory Book_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f9b45968f51d6e94c8e286393e92fcee
-    - name: Inventory Book_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2bf14b2689a1c3b479a025cbdb31e18a
-    - name: Inventory Book_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 63075b791e31d8940afcde74f6c784f1
-    - name: Inventory Book_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 557b7192b5fd5454baa8ddc64f2c0d09
-    - name: Inventory Book_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 0762c555487d1d0469e5e6fdfcfc07dd
-    - name: Inventory Book_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 06428c312787c5e4388136c799006beb
-    - name: Inventory Book_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: cee46378f7890c740ade20e6dbdb78ab
-    - name: Inventory Book_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 242421fa2b58e504591c499671c6ba92
-    - name: Inventory Book_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: fe983d5f8e4c7eb4e98c8c1019d6cc4a
-    - name: Inventory Book_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f92a5a3eddb5ab3459dc81713d7af9a5
-    - name: Inventory Book_Frame_77
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 758a6c48c07baea4f876e84e6cb9581d
-    - name: Inventory Book_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 0d4e7dc41f20ffd4aa7eb252346a5ade
-    - name: Inventory Book_Frame_79
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b92c8c90fea7bad44a33aeed13635064
-    - name: Inventory Book_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: c7ed037e887dac64b9db248fd38e0daf
-    - name: Inventory Book_Frame_81
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 49b11a58b39eda04b977d5c49a44343c
-    - name: Inventory Book_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 35fe96b9447dbbb4b8534918bf1f2f46
-    - name: Inventory Book_Frame_83
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ffa69595209cfae438528122902b5d05
-    - name: Inventory Book_Frame_84
+    - name: Frame_84
       frameIndex: 84
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d17e550b7f6355e4489f69eec41a21a9
-    - name: Inventory Book_Frame_85
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 5379c004d1ac1954da1d984c9b0d46de
-    - name: Inventory Book_Frame_86
+    - name: Frame_86
       frameIndex: 86
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f98273089071b9b4a8d0e2c2e5a7fdcf
-    - name: Inventory Book_Frame_87
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 82b7a12a19bbab943865f408226bf4f3
-    - name: Inventory Book_Frame_88
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 1e3525344f218f54695d4b5731a938f7
-    - name: Inventory Book_Frame_89
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d10330dcee3fca44ea76772050fdf69d
-    - name: Inventory Book_Frame_90
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d5212d07a54f70a40a295685d7a94ff8
-    - name: Inventory Book_Frame_91
+    - name: Frame_91
       frameIndex: 91
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b5123ef88db2cf942bcb8618c4b90c98
-    - name: Inventory Book_Frame_92
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 35a93016f7420124eb84306aa1a7238b
-    - name: Inventory Book_Frame_93
+    - name: Frame_93
       frameIndex: 93
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 10aab03ff0962cc489dcf4879942d294
-    - name: Inventory Book_Frame_94
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6038fbb324338434d8fe8c9127acca2f
-    - name: Inventory Book_Frame_95
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2a5480b4094cf5547a767352fed5ac19
-    - name: Inventory Book_Frame_96
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: a3ecbe25a9cfd9c45bc637c732b6b6c3
-    - name: Inventory Book_Frame_97
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 752f8f70cc9211c42b933da7a1427e76
-    - name: Inventory Book_Frame_98
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b212b1a67428a1146803c0dd5e608bde
-    - name: Inventory Book_Frame_99
+    - name: Frame_99
       frameIndex: 99
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 4fb5a2a8c3f35c44b884548bf08d10d9
-    - name: Inventory Book_Frame_100
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: c1eb0bbae3bfb394b8ac8bde3a7492b6
-    - name: Inventory Book_Frame_101
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 149a50afe698c55418b2cadf405ed7c8
-    - name: Inventory Book_Frame_102
+    - name: Frame_102
       frameIndex: 102
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d750ac0d42a16bf42a8d2431c66b19b4
-    - name: Inventory Book_Frame_103
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 5ac45de59f5bdb0478ce61a08d58152f
-    - name: Inventory Book_Frame_104
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 22ba954bf604d954f9476323625225c5
-    - name: Inventory Book_Frame_105
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: e1e2a3f6ec14dfe409d52e13c4def4ec
-    - name: Inventory Book_Frame_106
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 57f96cd6048c7754084ba9166792da82
-    - name: Inventory Book_Frame_107
+    - name: Frame_107
       frameIndex: 107
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 42dce2eadbbb8054aa3d523716ae8fe3
-    - name: Inventory Book_Frame_108
+    - name: Frame_108
       frameIndex: 108
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f29c88558d405214fb66b77d3859eef7
-    - name: Inventory Book_Frame_109
+    - name: Frame_109
       frameIndex: 109
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 12eafb140e3769f498c75c6a5ac2668c
-    - name: Inventory Book_Frame_110
+    - name: Frame_110
       frameIndex: 110
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d421ceef3d51755439f379278aa53501
-    - name: Inventory Book_Frame_111
+    - name: Frame_111
       frameIndex: 111
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 70fa3177c1685bc49bf9e2b4312b5e21
-    - name: Inventory Book_Frame_112
+    - name: Frame_112
       frameIndex: 112
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 74db83b1b892914459eaf12c9aff7146
-    - name: Inventory Book_Frame_113
+    - name: Frame_113
       frameIndex: 113
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 027e70cb73146e845b9be30d614682ad
-    - name: Inventory Book_Frame_114
+    - name: Frame_114
       frameIndex: 114
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: db2c8db0ca442e641a3b9fcd242038a7
-    - name: Inventory Book_Frame_115
+    - name: Frame_115
       frameIndex: 115
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: c5af5ca53d090f448a0ab55ecca74c48
-    - name: Inventory Book_Frame_116
+    - name: Frame_116
       frameIndex: 116
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 317ced5449d20f545bac2bb65719dd38
-    - name: Inventory Book_Frame_117
+    - name: Frame_117
       frameIndex: 117
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6ecd35344cbabd647a2840318ca4764a
-    - name: Inventory Book_Frame_118
+    - name: Frame_118
       frameIndex: 118
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 8d4b3a5801e4d9d4aa20c9e0ab17da47
-    - name: Inventory Book_Frame_119
+    - name: Frame_119
       frameIndex: 119
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 4ffd345318a742e4782e326e808020af
-    - name: Inventory Book_Frame_120
+    - name: Frame_120
       frameIndex: 120
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 714bf58963e7faa4ebdd95e9838fdcf6
-    - name: Inventory Book_Frame_121
+    - name: Frame_121
       frameIndex: 121
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2236b9b936d8d5940b27952b0118ee89
-    - name: Inventory Book_Frame_122
+    - name: Frame_122
       frameIndex: 122
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: e7814896c9954f24ca28ad0414697680
-    - name: Inventory Book_Frame_123
+    - name: Frame_123
       frameIndex: 123
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2cb0c76432712fb41af0624a118eba83
-    - name: Inventory Book_Frame_124
+    - name: Frame_124
       frameIndex: 124
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6085aff28a8c61045bf662b4a2203974
-    - name: Inventory Book_Frame_125
+    - name: Frame_125
       frameIndex: 125
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: bddee98c4da17dd479a9a375546fe7a7
-    - name: Inventory Book_Frame_126
+    - name: Frame_126
       frameIndex: 126
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ffe4b2f16383f444d8c795cfa7005ec5
-    - name: Inventory Book_Frame_127
+    - name: Frame_127
       frameIndex: 127
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 30bb0ec5de9b8414996eb1a2287dadcf
-    - name: Inventory Book_Frame_128
+    - name: Frame_128
       frameIndex: 128
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 4833c8823355c9b4aa37e217f8a32cb4
-    - name: Inventory Book_Frame_129
+    - name: Frame_129
       frameIndex: 129
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b8e90b695bc10164aa39f5d498877e5a
-    - name: Inventory Book_Frame_130
+    - name: Frame_130
       frameIndex: 130
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 7bacb7945e32e8a44a8b5b3667bfc4a1
-    - name: Inventory Book_Frame_131
+    - name: Frame_131
       frameIndex: 131
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 9f3e10ecd7e92944786be6f094ec9378
-    - name: Inventory Book_Frame_132
+    - name: Frame_132
       frameIndex: 132
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: af8ab7683affcc24d9b4204fe3e081fb
-    - name: Inventory Book_Frame_133
+    - name: Frame_133
       frameIndex: 133
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 05e06200fbbfd914c99c8b665ad3795a
-    - name: Inventory Book_Frame_134
+    - name: Frame_134
       frameIndex: 134
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 837292bb69d3bf7419c74efceb128aae
-    - name: Inventory Book_Frame_135
+    - name: Frame_135
       frameIndex: 135
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: a2c1855ad1727824b9ba0e0c75455f75
-    - name: Inventory Book_Frame_136
+    - name: Frame_136
       frameIndex: 136
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b127cfc5c1fb94f4aa32b700689c45d2
-    - name: Inventory Book_Frame_137
+    - name: Frame_137
       frameIndex: 137
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: c4b96e69143ffa8459369d0caed568e4
-    - name: Inventory Book_Frame_138
+    - name: Frame_138
       frameIndex: 138
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2ed9464acdbec9b4e90327b283c294f1
-    - name: Inventory Book_Frame_139
+    - name: Frame_139
       frameIndex: 139
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 882aa4a0b92193d499d2e83e368b279d
-    - name: Inventory Book_Frame_140
+    - name: Frame_140
       frameIndex: 140
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 27b7cd81a93a524488bf2b9e9190030f
-    - name: Inventory Book_Frame_141
+    - name: Frame_141
       frameIndex: 141
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 447d2d6da77327b419f7f78e794ea768
-    - name: Inventory Book_Frame_142
+    - name: Frame_142
       frameIndex: 142
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 45987b1b146a05747917e8d6f8087936
-    - name: Inventory Book_Frame_143
+    - name: Frame_143
       frameIndex: 143
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ef03f73a384537f4c80bfdb55300f0b2
-    - name: Inventory Book_Frame_144
+    - name: Frame_144
       frameIndex: 144
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6e31354e1ed99eb44a697134a6335e7c
-    - name: Inventory Book_Frame_145
+    - name: Frame_145
       frameIndex: 145
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d60729c0a20b42747b77df3f6b9e4268
-    - name: Inventory Book_Frame_146
+    - name: Frame_146
       frameIndex: 146
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2847bf413ca6d1242954c573eefa3463
-    - name: Inventory Book_Frame_147
+    - name: Frame_147
       frameIndex: 147
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6acb4e794e6e12c49863634a0bbb704b
-    - name: Inventory Book_Frame_148
+    - name: Frame_148
       frameIndex: 148
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d7d6286de1bd17247a554b7240486398
-    - name: Inventory Book_Frame_149
+    - name: Frame_149
       frameIndex: 149
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 2c7592d66e3b501489d42abba7699ad2
-    - name: Inventory Book_Frame_150
+    - name: Frame_150
       frameIndex: 150
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6c6eb072c56a13846abf35ead33f2ed5
-    - name: Inventory Book_Frame_151
+    - name: Frame_151
       frameIndex: 151
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 193a66b67ebd89e449352570d63b31f7
-    - name: Inventory Book_Frame_152
+    - name: Frame_152
       frameIndex: 152
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f9d0f6099dfbb33459497c683c2754c0
-    - name: Inventory Book_Frame_153
+    - name: Frame_153
       frameIndex: 153
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 76ce8f697047027488d3560ce6261caa
-    - name: Inventory Book_Frame_154
+    - name: Frame_154
       frameIndex: 154
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 47d02862ae5f97d4581a1b181af113ef
-    - name: Inventory Book_Frame_155
+    - name: Frame_155
       frameIndex: 155
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b25d05f9315339340bb488f3ee476f77
-    - name: Inventory Book_Frame_156
+    - name: Frame_156
       frameIndex: 156
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ca28c3314b8ae804d87fffda2b006d9b
-    - name: Inventory Book_Frame_157
+    - name: Frame_157
       frameIndex: 157
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 81f3ba63578f4244b986379813edde96
-    - name: Inventory Book_Frame_158
+    - name: Frame_158
       frameIndex: 158
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: f18809ffb92d0f84ab8d6356c6759487
-    - name: Inventory Book_Frame_159
+    - name: Frame_159
       frameIndex: 159
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 7019a536b259a78439a95e4b1e1de4f4
-    - name: Inventory Book_Frame_160
+    - name: Frame_160
       frameIndex: 160
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 80dd1c46edd0461458efca3557549d63
-    - name: Inventory Book_Frame_161
+    - name: Frame_161
       frameIndex: 161
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 50ee816f4ecc82e458bad4fcaa839d72
-    - name: Inventory Book_Frame_162
+    - name: Frame_162
       frameIndex: 162
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: ac4b987f779c49d48b258a3a7ea4d5ea
-    - name: Inventory Book_Frame_163
+    - name: Frame_163
       frameIndex: 163
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 31108910d659a5342b88fa66f90a7675
-    - name: Inventory Book_Frame_164
+    - name: Frame_164
       frameIndex: 164
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d3982ab6e5bf44447a28014b597c5d58
-    - name: Inventory Book_Frame_165
+    - name: Frame_165
       frameIndex: 165
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 9db187e8c3fd5e4428babd0ebc24573c
-    - name: Inventory Book_Frame_166
+    - name: Frame_166
       frameIndex: 166
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 5dfd15979f156534180a7d37707ea967
-    - name: Inventory Book_Frame_167
+    - name: Frame_167
       frameIndex: 167
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 81c6c5ea4dcd47941ac0271925301d34
-    - name: Inventory Book_Frame_168
+    - name: Frame_168
       frameIndex: 168
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 5ad10e87368c01749925f47e0d89e5ce
-    - name: Inventory Book_Frame_169
+    - name: Frame_169
       frameIndex: 169
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 64a3caea0889589439f0b44949c3bf90
-    - name: Inventory Book_Frame_170
+    - name: Frame_170
       frameIndex: 170
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 7cc34e82e3d33914d907e4eb44974c03
-    - name: Inventory Book_Frame_171
+    - name: Frame_171
       frameIndex: 171
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 20b7e6b917d87054facc9c7cb102837a
-    - name: Inventory Book_Frame_172
+    - name: Frame_172
       frameIndex: 172
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 72ff66d421ede5240a379809d864a779
-    - name: Inventory Book_Frame_173
+    - name: Frame_173
       frameIndex: 173
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b84bb37483ab16a40b5b18f5fa2c681a
-    - name: Inventory Book_Frame_174
+    - name: Frame_174
       frameIndex: 174
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 142d6ca708aa3ca4f9c5da6baa57bf9a
-    - name: Inventory Book_Frame_175
+    - name: Frame_175
       frameIndex: 175
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: def99be2d323252479552e81645152da
-    - name: Inventory Book_Frame_176
+    - name: Frame_176
       frameIndex: 176
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 9be89b257e2c45341a8a021424aee768
-    - name: Inventory Book_Frame_177
+    - name: Frame_177
       frameIndex: 177
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6ccaa5579cd4f3442867204205aee483
-    - name: Inventory Book_Frame_178
+    - name: Frame_178
       frameIndex: 178
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 72931874fc242d144962422e4d4f2de1
-    - name: Inventory Book_Frame_179
+    - name: Frame_179
       frameIndex: 179
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 3c2924a28c2a1104fb7de630a42c268f
-    - name: Inventory Book_Frame_180
+    - name: Frame_180
       frameIndex: 180
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: de92c0cfa0769cf47b8dac9abbb08114
-    - name: Inventory Book_Frame_181
+    - name: Frame_181
       frameIndex: 181
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: b079520035ad3204fa060a433cef732b
-    - name: Inventory Book_Frame_182
+    - name: Frame_182
       frameIndex: 182
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 00c889557c10653488bc854a467a25da
-    - name: Inventory Book_Frame_183
+    - name: Frame_183
       frameIndex: 183
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 6cf608c9f0095fa43b98d69200704f2f
-    - name: Inventory Book_Frame_184
+    - name: Frame_184
       frameIndex: 184
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 9b6e892c7c05dc04b89c7cc23d49b6da
-    - name: Inventory Book_Frame_185
+    - name: Frame_185
       frameIndex: 185
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: e4bf71ae168fd114b8d9f99f734af2d9
-    - name: Inventory Book_Frame_186
+    - name: Frame_186
       frameIndex: 186
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 42dd99ad3877a324faa346107f715df6
-    - name: Inventory Book_Frame_187
+    - name: Frame_187
       frameIndex: 187
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 99a361eac02239a46addcef247df5bf7
-    - name: Inventory Book_Frame_188
+    - name: Frame_188
       frameIndex: 188
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 523cb6543bf63e142bd30f0f82cb4e1e
-    - name: Inventory Book_Frame_189
+    - name: Frame_189
       frameIndex: 189
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 0142409d9673a3f488d86e56aa06cfd0
-    - name: Inventory Book_Frame_190
+    - name: Frame_190
       frameIndex: 190
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 94ac21400c18fd64b9fdf58854246e08
-    - name: Inventory Book_Frame_191
+    - name: Frame_191
       frameIndex: 191
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 0b9753c12462d804f8666d360580613e
-    - name: Inventory Book_Frame_192
+    - name: Frame_192
       frameIndex: 192
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: e0e3b5c8b5c2be145966ad9d2673ed4a
-    - name: Inventory Book_Frame_193
+    - name: Frame_193
       frameIndex: 193
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: a6023331401c2c742ad3ee211689d41c
-    - name: Inventory Book_Frame_194
+    - name: Frame_194
       frameIndex: 194
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 5f215883f6f906d4994d22feaeecd7e8
-    - name: Inventory Book_Frame_195
+    - name: Frame_195
       frameIndex: 195
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: e529d434dd32b2f4b82ab37c13afb908
-    - name: Inventory Book_Frame_196
+    - name: Frame_196
       frameIndex: 196
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: 1dd725b1cddc9174eb254cd5ac9d1234
-    - name: Inventory Book_Frame_197
+    - name: Frame_197
       frameIndex: 197
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
         width: 768
         height: 624
       spriteId: d3f451c0f83a07c46a76e8d6e3b40af8
-    - name: Inventory Book_Frame_198
+    - name: Frame_198
       frameIndex: 198
+      additiveSortOrder: 0
       cellRect:
         x: 64
         y: 64
@@ -5709,3 +5914,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 896, y: 720}
+  previousTextureSize: {x: 8192, y: 16384}
