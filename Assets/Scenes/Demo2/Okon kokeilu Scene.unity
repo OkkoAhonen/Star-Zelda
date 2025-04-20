@@ -4046,6 +4046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6388d439f22e3e649a1519bd9e343848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   rotationFix: {fileID: 1464153341}
   rotationFixRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &7937146960278251857
