@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -2864,1102 +2865,1244 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 2126741252
+    uuid:
+      value0: 1963515924
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 1963515924
     name: Day & Nignt Cycle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Day & Nignt Cycle_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 6b7365ea2148b0e42894bc891182147b
-    - name: Day & Nignt Cycle_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: db176f561297f9c4cb16a40ba2b2e315
-    - name: Day & Nignt Cycle_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 0c7569e14a394944e86a079fd11d8bf3
-    - name: Day & Nignt Cycle_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 0bdcaf4078a91794ca83157f937f2c19
-    - name: Day & Nignt Cycle_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: c32a856740b24b943882b790fc46fcde
-    - name: Day & Nignt Cycle_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 806e3756325ce2141b3c0fb7ad27b75b
-    - name: Day & Nignt Cycle_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 7e712706ebc4f9840a5ac6ed2f38e059
-    - name: Day & Nignt Cycle_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 3ca1364a2c58c434f9c2739fe0d1e59c
-    - name: Day & Nignt Cycle_Frame_65
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 7c17b2d94f4fe3b408aa5ba4019b04db
-    - name: Day & Nignt Cycle_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 4aafb048dffbe1f4cad6713278a9803d
-    - name: Day & Nignt Cycle_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 2027a601ecce00a439e2888120964b36
-    - name: Day & Nignt Cycle_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 37bb83f5ddbd1e841896b689e49fd472
-    - name: Day & Nignt Cycle_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 5e592dd846b0b8e458c4558ef12c9a04
-    - name: Day & Nignt Cycle_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: c343ca2ccbe07b143832322e9535c528
-    - name: Day & Nignt Cycle_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 6baf9c0462ef30841aa4972d8298de7a
-    - name: Day & Nignt Cycle_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 323bfa21c6efa874da3f9f6ab993eed0
-    - name: Day & Nignt Cycle_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: fe397934c48426d479eda8e5b0355627
-    - name: Day & Nignt Cycle_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 814000b41a73c6c4da7479d5090872f0
-    - name: Day & Nignt Cycle_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 7825294460fc7c14b9d550ee5ad1bfe5
-    - name: Day & Nignt Cycle_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 4862f648dcc745d49a60f8e9220f384f
-    - name: Day & Nignt Cycle_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 5490ecb42575a574faab6024dbc0d383
-    - name: Day & Nignt Cycle_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 3cb3b981587d4744b9b487e685760a89
-    - name: Day & Nignt Cycle_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a14a74e295587274e9491647643f0280
-    - name: Day & Nignt Cycle_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 82edd4d06366d07478a2cb6d1ceeccab
-    - name: Day & Nignt Cycle_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 26cb5eec291d5184ab076e148b3da09b
-    - name: Day & Nignt Cycle_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 4553f83ea32eb774b9e95f869269323b
-    - name: Day & Nignt Cycle_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 71f836ea85f13e44fac5ce4b0d29e72f
-    - name: Day & Nignt Cycle_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: ce9a5a6e8e25ddb48b361fe9bf626983
-    - name: Day & Nignt Cycle_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 5d115de5d124d3d4cbcea03e5259fa2e
-    - name: Day & Nignt Cycle_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: f0c624529227093439560410cc77bc81
-    - name: Day & Nignt Cycle_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 005c22122f27e514fb7ad92cf64f1dae
-    - name: Day & Nignt Cycle_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 62cdd1d8929a62b408d59449390a99a8
-    - name: Day & Nignt Cycle_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 6b744d584f362324398dc32fa1db64c3
-    - name: Day & Nignt Cycle_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: b7330c849ee8fbb4b9c88bce7e3db9bb
-    - name: Day & Nignt Cycle_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: d528fb1e06c6ab641b5e58b07920429a
-    - name: Day & Nignt Cycle_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 0a665477c31878343b1c9bd12cbea002
-    - name: Day & Nignt Cycle_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 34a85689133e1734fa10aa3082ba825c
-    - name: Day & Nignt Cycle_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 66dbdbf17aff26640be9fde49e1bfc42
-    - name: Day & Nignt Cycle_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: b5e6266c2c8bbb541bb3bca134a698d5
-    - name: Day & Nignt Cycle_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: ee719e0d1e3a9f6478f4ba8fe4b417a0
-    - name: Day & Nignt Cycle_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: e40c505e089a50642aeb0096c64dfca4
-    - name: Day & Nignt Cycle_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 4a1255d13204c194bb60cf9511fba3fa
-    - name: Day & Nignt Cycle_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: be81318c844a08943891c3ddb0bd7f1b
-    - name: Day & Nignt Cycle_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: dddb77588ffd02e46a6c0c7351afc312
-    - name: Day & Nignt Cycle_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 75fcb21acaedc2e4786af6c72b8b9e32
-    - name: Day & Nignt Cycle_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 39e0ce9307cc30440b4b8d2eebbaedab
-    - name: Day & Nignt Cycle_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: f58f01471df11ee4b81c454b37f8eae4
-    - name: Day & Nignt Cycle_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 1398dc84121bdcf46b03301197738cd3
-    - name: Day & Nignt Cycle_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: b9d06a4920300dd4ea8493cea81b9974
-    - name: Day & Nignt Cycle_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 8e9abf74ed43c2d44b0dab19c7a23711
-    - name: Day & Nignt Cycle_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 282ee714c0e79ff4a975ba8ebe92d5b2
-    - name: Day & Nignt Cycle_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a34e21fda71c56246840fd4f6d1b4fc4
-    - name: Day & Nignt Cycle_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 428753f0e1d77e14683109be61420dcd
-    - name: Day & Nignt Cycle_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 18b5177e358b96841b5d28dfcd020902
-    - name: Day & Nignt Cycle_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 12752ff6cdf8d7045ab4f814aaf2a9c4
-    - name: Day & Nignt Cycle_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a0db85b11ff668d4cb1557ce5a7cf6b1
-    - name: Day & Nignt Cycle_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 3f5979572b313ff43a97d33371266b0e
-    - name: Day & Nignt Cycle_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: d456a98af40479a449830489996352ff
-    - name: Day & Nignt Cycle_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 9f6007aaf8a7a3944950295c3e4f5426
-    - name: Day & Nignt Cycle_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a8b11af873255684582ca69c8aa47007
-    - name: Day & Nignt Cycle_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: eaf80aeabc7ecf047a440092616172cb
-    - name: Day & Nignt Cycle_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 1f11c5e732da4ed40b03b0982c579d58
-    - name: Day & Nignt Cycle_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: eb6d9697058d8a94480c45eb30e8f929
-    - name: Day & Nignt Cycle_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: ef66a0f89cd255a48bb2acb63a9f8fef
-    - name: Day & Nignt Cycle_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a684234d633931d44970b2b62c58ef08
-    - name: Day & Nignt Cycle_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 0549396059e070444aeff8e3966ff473
-    - name: Day & Nignt Cycle_Frame_77
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a37e4a9b78a5d234d923ad22ace20e58
-    - name: Day & Nignt Cycle_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 09dfb51dca630f54bb51b1021fb99d24
-    - name: Day & Nignt Cycle_Frame_79
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: e185fb7dde604114eb9774b629ffd489
-    - name: Day & Nignt Cycle_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: c4b93a43027259b4fbf2d894172ab824
-    - name: Day & Nignt Cycle_Frame_81
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 1ee9931fb50df2c4d9fe19c353383c86
-    - name: Day & Nignt Cycle_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a2e8a1cc823a9e3418c5f21f7c31edae
-    - name: Day & Nignt Cycle_Frame_83
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 971762b77258da94a9025708d688047e
-    - name: Day & Nignt Cycle_Frame_85
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 58774da5708f9974ba71463dc4372bdc
-    - name: Day & Nignt Cycle_Frame_86
+    - name: Frame_86
       frameIndex: 86
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 9bca90d0551a8b24c9358ce55a3e81e2
-    - name: Day & Nignt Cycle_Frame_87
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 8d67bf842ea41044c979313400321c98
-    - name: Day & Nignt Cycle_Frame_88
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: eee95fb626adc9647a98d6d9d44faa1b
-    - name: Day & Nignt Cycle_Frame_89
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: b2558e8bbf3612446a2923098701d5fc
-    - name: Day & Nignt Cycle_Frame_90
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 671b2ab96ee77e541a28f9d219001a4c
-    - name: Day & Nignt Cycle_Frame_91
+    - name: Frame_91
       frameIndex: 91
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: ac9133f5aee0d7843818953c9d772f98
-    - name: Day & Nignt Cycle_Frame_92
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 92e6da11440bcb042b414055cf724b1d
-    - name: Day & Nignt Cycle_Frame_94
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: c1210ee96dc419945a0035adc50d82e0
-    - name: Day & Nignt Cycle_Frame_95
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: e6aca9873ab25ef47be44f2b30958b81
-    - name: Day & Nignt Cycle_Frame_96
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: d06bf4e7c9ca8544ba1bd0195986bdc0
-    - name: Day & Nignt Cycle_Frame_97
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: b8a81a2bd2418e6479254dd7b0ac0465
-    - name: Day & Nignt Cycle_Frame_98
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 73152c1eada720449906de0b05704969
-    - name: Day & Nignt Cycle_Frame_99
+    - name: Frame_99
       frameIndex: 99
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 0104c713bde3c9e4e99ba2d8e572c6f7
-    - name: Day & Nignt Cycle_Frame_100
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: d2512a68b981c2c4396b2f25a108b58d
-    - name: Day & Nignt Cycle_Frame_101
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: d23e870b73ad072459da56db5c31b469
-    - name: Day & Nignt Cycle_Frame_103
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 161b9d50248324141a5e02a949d25e49
-    - name: Day & Nignt Cycle_Frame_104
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 61ca62333f201124da869aea283a7db7
-    - name: Day & Nignt Cycle_Frame_105
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 365742fa2d24b544aae77940acbd2343
-    - name: Day & Nignt Cycle_Frame_106
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 0403e6d17e7a0834d90be5fb7b4dcba3
-    - name: Day & Nignt Cycle_Frame_107
+    - name: Frame_107
       frameIndex: 107
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: c07d2ecf0359b1440bf61bc1edead150
-    - name: Day & Nignt Cycle_Frame_108
+    - name: Frame_108
       frameIndex: 108
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: c3bf545a354c90d46a5406f55ab05740
-    - name: Day & Nignt Cycle_Frame_109
+    - name: Frame_109
       frameIndex: 109
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 231b6b77f79980f45a5164a5d28d1ae6
-    - name: Day & Nignt Cycle_Frame_110
+    - name: Frame_110
       frameIndex: 110
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 49e2258f0d3500b49aa84ffb92f4aa9a
-    - name: Day & Nignt Cycle_Frame_112
+    - name: Frame_112
       frameIndex: 112
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 08710ede0e3fc7e40aa5af98d03e6755
-    - name: Day & Nignt Cycle_Frame_113
+    - name: Frame_113
       frameIndex: 113
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: c24fb88f179591a4087e6c3c20530311
-    - name: Day & Nignt Cycle_Frame_114
+    - name: Frame_114
       frameIndex: 114
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 689d26defcb4d284288f4302a43c0d4c
-    - name: Day & Nignt Cycle_Frame_115
+    - name: Frame_115
       frameIndex: 115
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: e9ca34e01e7e83c46a6ea7dcc8c787b8
-    - name: Day & Nignt Cycle_Frame_116
+    - name: Frame_116
       frameIndex: 116
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 468f883d78ba2e14b83bddf4d4fa3313
-    - name: Day & Nignt Cycle_Frame_117
+    - name: Frame_117
       frameIndex: 117
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: e8872e2f41bb7eb4ab9e64b3b1e2b213
-    - name: Day & Nignt Cycle_Frame_118
+    - name: Frame_118
       frameIndex: 118
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: b9fcde01f32d54f49bf7ad09b5e61c01
-    - name: Day & Nignt Cycle_Frame_119
+    - name: Frame_119
       frameIndex: 119
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 4e073a3468e88c7438c1a92da96b99d2
-    - name: Day & Nignt Cycle_Frame_121
+    - name: Frame_121
       frameIndex: 121
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 2b07d07dcb6cc1843b836e740c318768
-    - name: Day & Nignt Cycle_Frame_122
+    - name: Frame_122
       frameIndex: 122
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 0b42e8579adff104e8c1004ea4226054
-    - name: Day & Nignt Cycle_Frame_123
+    - name: Frame_123
       frameIndex: 123
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 24983fbe0246306469adae0cbabb37bd
-    - name: Day & Nignt Cycle_Frame_124
+    - name: Frame_124
       frameIndex: 124
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 85fb1128f36559542ab2a34dc7b992ca
-    - name: Day & Nignt Cycle_Frame_125
+    - name: Frame_125
       frameIndex: 125
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 775aed7d14601e245ba3dcf51eaff19b
-    - name: Day & Nignt Cycle_Frame_126
+    - name: Frame_126
       frameIndex: 126
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 49075078049d0a844863ffb1c250df84
-    - name: Day & Nignt Cycle_Frame_127
+    - name: Frame_127
       frameIndex: 127
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 3ba37d04e92890043879cd7931ec35dd
-    - name: Day & Nignt Cycle_Frame_128
+    - name: Frame_128
       frameIndex: 128
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: fe8f0308b930d2749aaef2318d77cda4
-    - name: Day & Nignt Cycle_Frame_130
+    - name: Frame_130
       frameIndex: 130
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: c3f4c93a274def449a4e0d1708bd2e86
-    - name: Day & Nignt Cycle_Frame_131
+    - name: Frame_131
       frameIndex: 131
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 89b3f4a17ac734c47a140a10fe4e9070
-    - name: Day & Nignt Cycle_Frame_132
+    - name: Frame_132
       frameIndex: 132
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 7b6419fc899cbf84abad53ec8f215570
-    - name: Day & Nignt Cycle_Frame_133
+    - name: Frame_133
       frameIndex: 133
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 3758a67666595a449bead33bcf698139
-    - name: Day & Nignt Cycle_Frame_134
+    - name: Frame_134
       frameIndex: 134
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: dd274e5cdc852974595056ebae656419
-    - name: Day & Nignt Cycle_Frame_135
+    - name: Frame_135
       frameIndex: 135
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a16bfaa89d38b7c4d8d6bbd7849aea14
-    - name: Day & Nignt Cycle_Frame_136
+    - name: Frame_136
       frameIndex: 136
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 4e1e4fe08f4495b46bce9b9ed63f9975
-    - name: Day & Nignt Cycle_Frame_137
+    - name: Frame_137
       frameIndex: 137
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: eea5ef03aa40209479db77bdbdcf3c7a
-    - name: Day & Nignt Cycle_Frame_139
+    - name: Frame_139
       frameIndex: 139
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: d06b20f1cddf08644b4084b1a4033b3d
-    - name: Day & Nignt Cycle_Frame_140
+    - name: Frame_140
       frameIndex: 140
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 9d11e603ea73a374cb3ff40fc16d93a9
-    - name: Day & Nignt Cycle_Frame_141
+    - name: Frame_141
       frameIndex: 141
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 8bc9950cde01c58468f2580263615078
-    - name: Day & Nignt Cycle_Frame_142
+    - name: Frame_142
       frameIndex: 142
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: e58c8050e39e33e45a85adcbdd4d0ac1
-    - name: Day & Nignt Cycle_Frame_143
+    - name: Frame_143
       frameIndex: 143
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: f5a83c075b821044e9f76bedaa7b8a85
-    - name: Day & Nignt Cycle_Frame_144
+    - name: Frame_144
       frameIndex: 144
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: bc23b8bf0b6c3d34697d0358aaee6524
-    - name: Day & Nignt Cycle_Frame_145
+    - name: Frame_145
       frameIndex: 145
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: b579196f43f872b4eae5a22198fcdf8c
-    - name: Day & Nignt Cycle_Frame_146
+    - name: Frame_146
       frameIndex: 146
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: a344e820690b81d4f92fde6f0e7dc840
-    - name: Day & Nignt Cycle_Frame_148
+    - name: Frame_148
       frameIndex: 148
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: babfc171b9a569c42a275e65aa43bc40
-    - name: Day & Nignt Cycle_Frame_149
+    - name: Frame_149
       frameIndex: 149
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 547a0da55c3d90b4abc469b328203a34
-    - name: Day & Nignt Cycle_Frame_150
+    - name: Frame_150
       frameIndex: 150
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 6a44a235142e62b48bf181f91c7de6b7
-    - name: Day & Nignt Cycle_Frame_151
+    - name: Frame_151
       frameIndex: 151
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 13a3acaf2b3a93841b745f21c9cbc196
-    - name: Day & Nignt Cycle_Frame_152
+    - name: Frame_152
       frameIndex: 152
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 013f1850a1f625d4c9a37958e651de83
-    - name: Day & Nignt Cycle_Frame_153
+    - name: Frame_153
       frameIndex: 153
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 17bbb717eaebda44ab67793b1b77f5ab
-    - name: Day & Nignt Cycle_Frame_154
+    - name: Frame_154
       frameIndex: 154
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
       spriteId: 68e161fab21ee7f478913114b5c9ffab
-    - name: Day & Nignt Cycle_Frame_155
+    - name: Frame_155
       frameIndex: 155
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
@@ -3973,3 +4116,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 78, y: 77}
+  previousTextureSize: {x: 1024, y: 1024}

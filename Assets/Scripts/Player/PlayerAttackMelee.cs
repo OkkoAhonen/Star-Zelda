@@ -15,6 +15,9 @@ public class PlayerAttackMelee : MonoBehaviour
 
     public BasicBar slider;
 
+    public Animator animator; //Aseta inspektorissa
+
+    public PlayerStatsManager playerStatsManager;
 
     //Charge muuttujat
 
@@ -30,6 +33,15 @@ public class PlayerAttackMelee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log(PlayerStatsManager.instance.GetStat(StatType.Strength));
+        Debug.Log("Kuka oot?");
+
+        if (animator != null)
+        
+        { 
+            animator.speed = 2f;
+            Debug.Log("animation speed: " + animator.speed);
+        }
     }
 
     // Update is called once per frame
@@ -51,11 +63,25 @@ public class PlayerAttackMelee : MonoBehaviour
                 }
 
             }
+
+
+            if(equippedItem.type  == ItemType.Weapon)
+            {
+                if (equippedItem.name.Contains("_1"))
+                {
+                    animator.gameObject.transform.localScale = new Vector3(40, 40, 1);
+                }
+                else
+                {
+                    animator.gameObject.transform.localScale = new Vector3(60, 60, 1);
+                }
+            }
         }
     }
 
     public void attack1()
     {
+        animator.SetTrigger("Attack1");
         Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
         Damagebooster = equippedItem.damageBooster;
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackpoint.transform.position, equippedItem.attackRadius, enemies);
@@ -64,8 +90,9 @@ public class PlayerAttackMelee : MonoBehaviour
         {
             Debug.Log(equippedItem.attackDamage * Damagebooster);
 
-            EnemyAI enemyhealth = enemyGameobje.GetComponent<EnemyAI>();
-            enemyhealth.enemyTakeDamage(equippedItem.attackDamage * Damagebooster);
+            EnemyController enemyhealth = enemyGameobje.GetComponent<EnemyController>();
+            Debug.Log(enemyhealth.gameObject.name + "Moi");
+            enemyhealth.TakeDamage( equippedItem.attackDamage * Damagebooster /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/);
 
 
         }
@@ -73,6 +100,7 @@ public class PlayerAttackMelee : MonoBehaviour
 
         Damagebooster = 1f;
         currentChargeTime = 0f;
+
     }
 
     private void chargeSword()
@@ -94,6 +122,22 @@ public class PlayerAttackMelee : MonoBehaviour
             }
 
             slider.UpdateSlider(currentChargeTime, equippedItem.maxChargeTime);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (attackpoint != null)
+        {
+            // Haetaan varustettu esine, jos se on olemassa
+            Item equippedItem = InventoryManager.Instance != null ? InventoryManager.Instance.GetSelectedItem(false) : null;
+            float currentRadius = equippedItem != null && equippedItem.isWeapon ? equippedItem.attackRadius : radius;
+
+            // Asetetaan Gizmos-väri (esim. punainen)
+            Gizmos.color = Color.red;
+
+            // Piirretään hyökkäysalueen ympyrä
+            Gizmos.DrawWireSphere(attackpoint.transform.position, currentRadius);
         }
     }
 

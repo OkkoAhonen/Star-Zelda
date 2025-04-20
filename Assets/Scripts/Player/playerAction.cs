@@ -35,5 +35,19 @@ public class playerAction : MonoBehaviour
         {
             Interactable?.Interact(this);
         }
+
+        Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+        if(equippedItem!= null) { 
+        if(equippedItem.type == ItemType.Food)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                playerStats.playerCurrentHealth += equippedItem.foodHeal;
+                InventoryManager.Instance.GetSelectedItem(true);
+                Debug.Log("Food healed "+ equippedItem.foodHeal+ "Health back");
+            }
+        }
     }
+    }
+
 }

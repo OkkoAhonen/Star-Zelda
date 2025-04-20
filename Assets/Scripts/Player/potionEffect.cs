@@ -6,7 +6,7 @@ public class potionEffect : MonoBehaviour
     private SpriteRenderer sr;
     public Color startColor = Color.cyan;
     public Color endColor = Color.red;
-    public float duration = 5f; // Aika, jonka kuluessa väri muuttuu
+    public float duration = 5f; // Aika, jonka kuluessa vï¿½ri muuttuu
 
     private float timer = 0f;
     private float damageDuration = .5f;
@@ -50,10 +50,8 @@ public class potionEffect : MonoBehaviour
 
         if (collision.CompareTag("Enemy") && canDamage && equippedItem.isDamagePotion)
         {
-            EnemyAI enemyAI = collision.GetComponent<EnemyAI>();
-            Debug.Log(equippedItem.name);
-            enemyAI.health -= equippedItem.potionAttackDamage;
-            Debug.Log(enemyAI.health);
+            EnemyController enemyhealth = collision.GetComponent<EnemyController>();
+            enemyhealth.TakeDamage(equippedItem.potionAttackDamage);
             canDamage = false;
             StartCoroutine(PotionDamageCooldown());
         }

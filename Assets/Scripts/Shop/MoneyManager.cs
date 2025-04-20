@@ -48,7 +48,8 @@ public class MoneyManager : MonoBehaviour
     // P‰ivitt‰‰ UI-tekstin
     private void UpdateMoneyUI()
     {
-        m_TextMeshPro.text = "$" + PlayerMoney.ToString("F2"); // N‰ytt‰‰ 2 desimaalia, esim. $99.85
+        // m_TextMeshPro.text = "$" + PlayerMoney.ToString("F2"); // N‰ytt‰‰ 2 desimaalia, esim. $99.85
+        Debug.Log("UpdateMoneyUI");
     }
 
 }
