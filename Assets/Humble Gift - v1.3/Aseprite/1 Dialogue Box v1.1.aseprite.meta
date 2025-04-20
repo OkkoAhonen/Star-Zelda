@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -1784,670 +1785,758 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 439449364
+    uuid:
+      value0: 3798420580
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -496546716
     name: 1 Dialogue Box v1.1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 1 Dialogue Box v1.1_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 204e0e9620536a446bad30c7a4480b68
-    - name: 1 Dialogue Box v1.1_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9e51f38b18a21a1458222b47e3d50249
-    - name: 1 Dialogue Box v1.1_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f50719cb501b3d143acac632eaac00f1
-    - name: 1 Dialogue Box v1.1_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 82a8cde71bba0f84a898da877ae28d9a
-    - name: 1 Dialogue Box v1.1_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 99d8614cd948803489b49450b77113e8
-    - name: 1 Dialogue Box v1.1_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bf4a61631ddff3d4ebdc0f00151f95bb
-    - name: 1 Dialogue Box v1.1_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d01fee7b0fa9e8f458dabcd19d965efc
-    - name: 1 Dialogue Box v1.1_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c0760426ad026984382e1210630b78bf
-    - name: 1 Dialogue Box v1.1_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c2cbffcad5859964ab10a1f83b3fba4a
-    - name: 1 Dialogue Box v1.1_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c2219e5d4a76e0e47a28fd8a79c55c4a
-    - name: 1 Dialogue Box v1.1_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 130793468a51b0b4794f1e62bdb3d7da
-    - name: 1 Dialogue Box v1.1_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 41abc25aeb3705144844fa661fc1391b
-    - name: 1 Dialogue Box v1.1_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7d8202408ebad244a84f191c357545a7
-    - name: 1 Dialogue Box v1.1_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7a78c3ab35aee99459a9242b416af356
-    - name: 1 Dialogue Box v1.1_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 5c30db2402cdecf4ab6c851a842ad385
-    - name: 1 Dialogue Box v1.1_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 5bf7069e7252d284daf00ea6d8afc921
-    - name: 1 Dialogue Box v1.1_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 6d7058b56d558bf409971b8b9ad53bef
-    - name: 1 Dialogue Box v1.1_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: eee3ae550e773a849b62a991dc99e549
-    - name: 1 Dialogue Box v1.1_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ded7075e416bff14bbc0b6fda93f1c86
-    - name: 1 Dialogue Box v1.1_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b19bfcb1137b77948a3ba7d6621a886d
-    - name: 1 Dialogue Box v1.1_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 456137ad5d7572841ad2caaeb2fed47b
-    - name: 1 Dialogue Box v1.1_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e099b1f72b6590742ad05a2613e5851a
-    - name: 1 Dialogue Box v1.1_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2f3562122177c3a48945dff05240b391
-    - name: 1 Dialogue Box v1.1_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d7b05958aea6c5e4a8b44df6d6ab5f38
-    - name: 1 Dialogue Box v1.1_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c5eccd35471b9274288b4f764cee421d
-    - name: 1 Dialogue Box v1.1_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 4bea01b713079fb40ac462df92ede566
-    - name: 1 Dialogue Box v1.1_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ceebd43b51afb614cb3ff327bc614470
-    - name: 1 Dialogue Box v1.1_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 8764b1c0df30f04429f37161fdb6618a
-    - name: 1 Dialogue Box v1.1_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 753b50879f7391740852b3d3bf11dba0
-    - name: 1 Dialogue Box v1.1_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 16f59ec5c9b1cf64e867392648c8b3db
-    - name: 1 Dialogue Box v1.1_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 073fefa41098d50468ce4faed26f7f73
-    - name: 1 Dialogue Box v1.1_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e9a7282c0371dd54a9bb6e16aadc1b8a
-    - name: 1 Dialogue Box v1.1_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 83292abd335a1794ea7ac245e53a1b81
-    - name: 1 Dialogue Box v1.1_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 0d4638534673cf24fa579d4f48502ab9
-    - name: 1 Dialogue Box v1.1_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 4f25fdde892c9de49ae37446a0cadfb3
-    - name: 1 Dialogue Box v1.1_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d5024dfdc916e3e44ab14f7503858661
-    - name: 1 Dialogue Box v1.1_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 71321d2e4e91d7e4ca7f5d6b7a67d765
-    - name: 1 Dialogue Box v1.1_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 6261d7bb1b95de341a6a408fe725178a
-    - name: 1 Dialogue Box v1.1_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 8a5bc08d03490fa4e8f02b4f7de3fd0d
-    - name: 1 Dialogue Box v1.1_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: a029d8686860fb44c8838abcd933a4a6
-    - name: 1 Dialogue Box v1.1_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 0c90162696ac29048a95b8c161f5fc2b
-    - name: 1 Dialogue Box v1.1_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: eab4d45c0e7d837418d07e5102c626f4
-    - name: 1 Dialogue Box v1.1_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 3de101b52ecf96049a396104e24ac738
-    - name: 1 Dialogue Box v1.1_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ad1cf63249ea5be47a4dfc933a9293c9
-    - name: 1 Dialogue Box v1.1_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1c4ba6267afde3449964ed83678ad032
-    - name: 1 Dialogue Box v1.1_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 602eb62202a1ec840b0b91e2d7800472
-    - name: 1 Dialogue Box v1.1_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 03dbe0f49c30014429d582fa7ae69be5
-    - name: 1 Dialogue Box v1.1_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 895717bc28ba412449604544724f6f51
-    - name: 1 Dialogue Box v1.1_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 3b9c071ef2a768640bca3b2a0a644076
-    - name: 1 Dialogue Box v1.1_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bf6d9d660e2dd4d408accf1292bfc08d
-    - name: 1 Dialogue Box v1.1_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9bb04dacdeec341428dbc230578846cc
-    - name: 1 Dialogue Box v1.1_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d7a65bf32a150134a88687e22b2064ae
-    - name: 1 Dialogue Box v1.1_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 08308615be5e53642a2c2f8bfabf8ee2
-    - name: 1 Dialogue Box v1.1_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 11fc7a7ca521dec40980dcc0130e8e7e
-    - name: 1 Dialogue Box v1.1_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7d22a8ae7064d604abc3f6a8fa0d0e7b
-    - name: 1 Dialogue Box v1.1_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9d8b6b2e392b982488a0c5c7780c9607
-    - name: 1 Dialogue Box v1.1_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d2d365260a7f9f3459c8dcf0c1d1c58c
-    - name: 1 Dialogue Box v1.1_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 56870290d1d77dc43a91ad251140ae84
-    - name: 1 Dialogue Box v1.1_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 486f43fd7205e434da83ad3e1aed2468
-    - name: 1 Dialogue Box v1.1_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2e64651314709e047812618358c58f48
-    - name: 1 Dialogue Box v1.1_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b3ec2bfb74d9c9b47bef1dcfc6216b16
-    - name: 1 Dialogue Box v1.1_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9d7ce86a2dfe68245bcbd7ba8d9c22bf
-    - name: 1 Dialogue Box v1.1_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 29b527fded86af145b1e7e2b1144fa6f
-    - name: 1 Dialogue Box v1.1_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 5f52de23def3b9e49b3067f8e7c6b232
-    - name: 1 Dialogue Box v1.1_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: fa3356426efeb8d45b50b50e4fc50394
-    - name: 1 Dialogue Box v1.1_Frame_65
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9ef89ec2183c9a14cabaca5501d38d28
-    - name: 1 Dialogue Box v1.1_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 84b9d54afaf461741a6884d082ea333a
-    - name: 1 Dialogue Box v1.1_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 5c740aa886064fc47af4b3ce3fc26d3c
-    - name: 1 Dialogue Box v1.1_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 8d24b6a61cf61564fbb61cdd0cf1a82f
-    - name: 1 Dialogue Box v1.1_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 59eb79e7295512541afee01b1d8e4e3d
-    - name: 1 Dialogue Box v1.1_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 867910e92afadc642bd1c056826cb5fd
-    - name: 1 Dialogue Box v1.1_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 13a28856fb0ac4d49a8f926135b8380d
-    - name: 1 Dialogue Box v1.1_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 543600afa482fce40a2a594bb1481b11
-    - name: 1 Dialogue Box v1.1_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 215e297fbf5f2fe42a5fbcd345d5a38b
-    - name: 1 Dialogue Box v1.1_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e5149aa81ff0fd14689d7afb4490c7c0
-    - name: 1 Dialogue Box v1.1_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 51fa38a774c6e124da649c543e77749e
-    - name: 1 Dialogue Box v1.1_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f7f2581e6f584f044bbd303d5a773666
-    - name: 1 Dialogue Box v1.1_Frame_77
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b688205b4cc6eff4680115371cd8c264
-    - name: 1 Dialogue Box v1.1_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ffc73804993efc14db591db029c96271
-    - name: 1 Dialogue Box v1.1_Frame_79
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ecfe6535789636649817aee9e8792708
-    - name: 1 Dialogue Box v1.1_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e11ad1a9aba1e784a934c2c60ab5fc29
-    - name: 1 Dialogue Box v1.1_Frame_81
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9cfd9a5a822998d44aece78b6c5a5dde
-    - name: 1 Dialogue Box v1.1_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
@@ -2461,3 +2550,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 672, y: 480}
+  previousTextureSize: {x: 8192, y: 8192}

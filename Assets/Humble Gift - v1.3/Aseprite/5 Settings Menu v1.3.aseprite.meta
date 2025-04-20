@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -2844,1094 +2845,1235 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 2024078917
+    uuid:
+      value0: 2331088281
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -1963879015
     name: 5 Settings Menu v1.3
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 5 Settings Menu v1.3_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d57207ff816b5914fbd8cfbd50b4763f
-    - name: 5 Settings Menu v1.3_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ba5bf32c8bc409e49b0a35800301756d
-    - name: 5 Settings Menu v1.3_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: facfffc6016abda489db35082b2b1bf8
-    - name: 5 Settings Menu v1.3_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1897b21036e9d9f459090ab45a3d3d0e
-    - name: 5 Settings Menu v1.3_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 32f1af4bf979ff346b9ff46561191c04
-    - name: 5 Settings Menu v1.3_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2224994b300e4544da63cef289a4d9db
-    - name: 5 Settings Menu v1.3_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: fd083b57a8ef7754d86f7461ff3189f9
-    - name: 5 Settings Menu v1.3_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1309b3267bcd55a4db3254a1dc4e43e2
-    - name: 5 Settings Menu v1.3_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 44075e2a6ac16124fa5057bf5ced7ac3
-    - name: 5 Settings Menu v1.3_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 11e8d357aa98c1848b74c19d95832414
-    - name: 5 Settings Menu v1.3_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b50aff7d13fc33145a2883d44ab35fc0
-    - name: 5 Settings Menu v1.3_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 69da6d20e8a9bbb49877f8b6d534cd88
-    - name: 5 Settings Menu v1.3_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b6028c46061e3b140bbdd412fc47376d
-    - name: 5 Settings Menu v1.3_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c03c66cfe46c8784cb8fc0f8d89fd7a1
-    - name: 5 Settings Menu v1.3_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 75ef15c069ab4d048a43fe805988daff
-    - name: 5 Settings Menu v1.3_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 427d306fe04de1a4d9f334c477707e76
-    - name: 5 Settings Menu v1.3_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 914f1eed8800eac40a929124e1f64b67
-    - name: 5 Settings Menu v1.3_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d6784b5f0fbecf741b7c10b026a2f973
-    - name: 5 Settings Menu v1.3_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 33bf4b35a2734b14aa777f844cf785b3
-    - name: 5 Settings Menu v1.3_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b4b1d1ec4f9817744a23187b1c46bcc4
-    - name: 5 Settings Menu v1.3_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: a5a7bf747af926a4fb4b0d66bbef3614
-    - name: 5 Settings Menu v1.3_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 896302bf680268b45a68f9e89d6de7dd
-    - name: 5 Settings Menu v1.3_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b00ce2cc659ac1b4a950e2b574c9985d
-    - name: 5 Settings Menu v1.3_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 985f342b77a0a3a499b75509c003852f
-    - name: 5 Settings Menu v1.3_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 84813a106fe3d164a809d4abbbe02a0b
-    - name: 5 Settings Menu v1.3_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 15f8640786bd9e24b8a947efe94f31c7
-    - name: 5 Settings Menu v1.3_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 17b2cf6593e1c234bb1062805d36d6a5
-    - name: 5 Settings Menu v1.3_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 43e369c8b9580334ba626daf9cc1f810
-    - name: 5 Settings Menu v1.3_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 45d9042e8217f4e4e942221df6f9fbe5
-    - name: 5 Settings Menu v1.3_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9b8ced477dfd8264486746dbee715fc5
-    - name: 5 Settings Menu v1.3_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d37bc7806914df94c9be30d1416f7e75
-    - name: 5 Settings Menu v1.3_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 97b6e87abc55e834180287b3959da990
-    - name: 5 Settings Menu v1.3_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bd169d40a1f29344a9345b3f820842f5
-    - name: 5 Settings Menu v1.3_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 795d8386983042a42824fd3c6bcf8d4f
-    - name: 5 Settings Menu v1.3_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7ed01656918b2394cbe46d5f07dcce73
-    - name: 5 Settings Menu v1.3_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f808b2417384b044ebbcd46f20a3b532
-    - name: 5 Settings Menu v1.3_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 751f3b12ecb31674ab8630eaefec0333
-    - name: 5 Settings Menu v1.3_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 382946d202ceab84b9ad4f080c346e85
-    - name: 5 Settings Menu v1.3_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bb68e4822bc06154d865a2e57d2be1bf
-    - name: 5 Settings Menu v1.3_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 715d7c4915b798440ad3030eafa9501b
-    - name: 5 Settings Menu v1.3_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 4fba87985918c3d47ab1b3db9ee526d5
-    - name: 5 Settings Menu v1.3_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e9a87f5b085e19840b96f47e2fafdbf0
-    - name: 5 Settings Menu v1.3_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e282fe95d8b156845b09c0dfda0c09ec
-    - name: 5 Settings Menu v1.3_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d844fdade1c8e8e4eb91abec54ad9a30
-    - name: 5 Settings Menu v1.3_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ee375757b9103144c9af6b77d4188d05
-    - name: 5 Settings Menu v1.3_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c892113b1727bb744badc9b73dbde9a9
-    - name: 5 Settings Menu v1.3_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 085b1f4365633534e91bb7ccd34b2416
-    - name: 5 Settings Menu v1.3_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 16a21da779e8f074fa201ad3c0b8644f
-    - name: 5 Settings Menu v1.3_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d2829969f73abf84ea18cac6daf1c229
-    - name: 5 Settings Menu v1.3_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c15063267841eea43a9c138040ca9d7c
-    - name: 5 Settings Menu v1.3_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 55979d615cf732a4cbd655499fbe016c
-    - name: 5 Settings Menu v1.3_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 736312b026fbe8d4e8eb27bc2e3c9570
-    - name: 5 Settings Menu v1.3_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 3131f67ab8aa1e04597df8061ecb448a
-    - name: 5 Settings Menu v1.3_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: be66da223a336754e87e59258dea84a1
-    - name: 5 Settings Menu v1.3_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1697dffb57b20ec4fa07ff45a2a72919
-    - name: 5 Settings Menu v1.3_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 604b1a83a38f1094387014616e924048
-    - name: 5 Settings Menu v1.3_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 3f9a47c9ef898c5408af34c8f045f879
-    - name: 5 Settings Menu v1.3_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1971631191724184fbff7b0386a82f89
-    - name: 5 Settings Menu v1.3_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 920991692deec0d46bf6b6df5e23b460
-    - name: 5 Settings Menu v1.3_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 234988e653d120b47a3c2cd8899cccb2
-    - name: 5 Settings Menu v1.3_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 744827c7e6b6b2b47af755b4b35e6be4
-    - name: 5 Settings Menu v1.3_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 0af5cb779ea3e974c9b1e098c8be6550
-    - name: 5 Settings Menu v1.3_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 8ebd76bbbfa226e43a8b84c37b033fa7
-    - name: 5 Settings Menu v1.3_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 280e49e0e2d126b44b863d6ef0af4c0e
-    - name: 5 Settings Menu v1.3_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 56b75278e593f314391e5bbcb9e5daa9
-    - name: 5 Settings Menu v1.3_Frame_65
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f612bd6235db0fd4d840053f264df722
-    - name: 5 Settings Menu v1.3_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 03302e03151d8144d93b665e843bf38e
-    - name: 5 Settings Menu v1.3_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 20f6d008a3cda2043bb937fcb51b3bc6
-    - name: 5 Settings Menu v1.3_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 40a716c923be6504ea1d5fe6408f22a7
-    - name: 5 Settings Menu v1.3_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b633df805fc609941a688ced88edbb2e
-    - name: 5 Settings Menu v1.3_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 96d1c1102a47d374899b3ed7033b7cd3
-    - name: 5 Settings Menu v1.3_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b1f7cc18761644747b1e227bda2fa930
-    - name: 5 Settings Menu v1.3_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 75bb12bf922851e46b8c9f0fb237d209
-    - name: 5 Settings Menu v1.3_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f3768c3897737ed4ebce7fc7d2f780fc
-    - name: 5 Settings Menu v1.3_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 6c11041c699803a428d7c638a48b5fa4
-    - name: 5 Settings Menu v1.3_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c4a5153f8a3fb0c48909800670e6d1e2
-    - name: 5 Settings Menu v1.3_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1723a335af21be648bdfee5d9bfbff3b
-    - name: 5 Settings Menu v1.3_Frame_77
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 70943204f0cec464b9b7b696de50bbcb
-    - name: 5 Settings Menu v1.3_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 5eda0f78bd16e5743b1b42a9b033bf2f
-    - name: 5 Settings Menu v1.3_Frame_79
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 71426d98a9c26364189e6cdd400287f9
-    - name: 5 Settings Menu v1.3_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 78f7efacc48c21e4681450352740b868
-    - name: 5 Settings Menu v1.3_Frame_81
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: be5da9fa0cb6ef644ad517eeba9427f4
-    - name: 5 Settings Menu v1.3_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 12863a41b9639504c864c83212f3bfa7
-    - name: 5 Settings Menu v1.3_Frame_83
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 0bc439235ad81414c9c3097be613b958
-    - name: 5 Settings Menu v1.3_Frame_84
+    - name: Frame_84
       frameIndex: 84
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d3194ff35c6f48d45be748c6a6de06b1
-    - name: 5 Settings Menu v1.3_Frame_85
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 681170c980464f44f930e93b602e7d76
-    - name: 5 Settings Menu v1.3_Frame_86
+    - name: Frame_86
       frameIndex: 86
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bc0151e2ddf525444a6092a0bf81a450
-    - name: 5 Settings Menu v1.3_Frame_87
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bd201a9eb2ceec44dac4ca6bc08182d8
-    - name: 5 Settings Menu v1.3_Frame_88
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c073d077ba2f1c74aa8be4a8521cede4
-    - name: 5 Settings Menu v1.3_Frame_89
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 235ad074ba6b765498484ab44d4a18e4
-    - name: 5 Settings Menu v1.3_Frame_90
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7c9fd940874a30d48a80b1882197a87d
-    - name: 5 Settings Menu v1.3_Frame_91
+    - name: Frame_91
       frameIndex: 91
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 876295a30598fc848ad222b1b2994093
-    - name: 5 Settings Menu v1.3_Frame_92
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b4fa1643a84925948bdef603f8ad2380
-    - name: 5 Settings Menu v1.3_Frame_93
+    - name: Frame_93
       frameIndex: 93
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: dcc3cf99110176f49af27f269ac8726d
-    - name: 5 Settings Menu v1.3_Frame_94
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b261257b7eff29c4c978263c113fd9c4
-    - name: 5 Settings Menu v1.3_Frame_95
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 4dc526a7dd26bfd468a8c6a2ba88c021
-    - name: 5 Settings Menu v1.3_Frame_96
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f1fd2187f1c114d4ab2fa0154be02a74
-    - name: 5 Settings Menu v1.3_Frame_97
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2bc4a88cfb181914a9f3be4c5ffca90d
-    - name: 5 Settings Menu v1.3_Frame_98
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c2252003b3c9f97488237263b406fb76
-    - name: 5 Settings Menu v1.3_Frame_99
+    - name: Frame_99
       frameIndex: 99
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 761bd2f656cbd3948b67fb0c8bfa9bda
-    - name: 5 Settings Menu v1.3_Frame_100
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: fee8f0f899fa00d44abfc3a5839f6e5f
-    - name: 5 Settings Menu v1.3_Frame_101
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 18ec0afb5c9c15e43b32212899391bcf
-    - name: 5 Settings Menu v1.3_Frame_102
+    - name: Frame_102
       frameIndex: 102
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 53b84fc39f713614589c8438db5d3633
-    - name: 5 Settings Menu v1.3_Frame_103
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1c624988f6d1bbf49b01668ce6a3d5b1
-    - name: 5 Settings Menu v1.3_Frame_104
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7e75a4c8a69f7de4d9a835fbf527b985
-    - name: 5 Settings Menu v1.3_Frame_105
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2decfe5708ab3444589e8cfd663bbcf4
-    - name: 5 Settings Menu v1.3_Frame_106
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ec72493120b727546936f1abbc64f4e5
-    - name: 5 Settings Menu v1.3_Frame_107
+    - name: Frame_107
       frameIndex: 107
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 544a0f5c8d6e38948b7fa9020025ab04
-    - name: 5 Settings Menu v1.3_Frame_108
+    - name: Frame_108
       frameIndex: 108
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f6ee0323113e3fe47be873018974a4b9
-    - name: 5 Settings Menu v1.3_Frame_109
+    - name: Frame_109
       frameIndex: 109
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e82c8feee18399d4dbb27c57a6ad2627
-    - name: 5 Settings Menu v1.3_Frame_110
+    - name: Frame_110
       frameIndex: 110
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c3bcc3214098f7148923301cd2d22c1b
-    - name: 5 Settings Menu v1.3_Frame_111
+    - name: Frame_111
       frameIndex: 111
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 5ec40a4654d1e4140ae3291e3e92ae7a
-    - name: 5 Settings Menu v1.3_Frame_112
+    - name: Frame_112
       frameIndex: 112
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 62669c0ee3d14c6419fd7c99ad5c626a
-    - name: 5 Settings Menu v1.3_Frame_113
+    - name: Frame_113
       frameIndex: 113
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 40b8839f01005bb4c887bae0613f19bd
-    - name: 5 Settings Menu v1.3_Frame_114
+    - name: Frame_114
       frameIndex: 114
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e9da053de3054d544b1dc2a1bff27881
-    - name: 5 Settings Menu v1.3_Frame_115
+    - name: Frame_115
       frameIndex: 115
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e8e51944195178944871d7b78fde872d
-    - name: 5 Settings Menu v1.3_Frame_116
+    - name: Frame_116
       frameIndex: 116
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d2cb8980b1a413e49962c71db674484d
-    - name: 5 Settings Menu v1.3_Frame_117
+    - name: Frame_117
       frameIndex: 117
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e07a029d1e2a7334ba03453a98e02739
-    - name: 5 Settings Menu v1.3_Frame_118
+    - name: Frame_118
       frameIndex: 118
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: cd489d878eaa26547bdc8ed782f6d7e3
-    - name: 5 Settings Menu v1.3_Frame_119
+    - name: Frame_119
       frameIndex: 119
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 4ee2f9b62259e524d87c3a4df9b907d5
-    - name: 5 Settings Menu v1.3_Frame_120
+    - name: Frame_120
       frameIndex: 120
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 3a4e500a936de30459d6df10c038835f
-    - name: 5 Settings Menu v1.3_Frame_121
+    - name: Frame_121
       frameIndex: 121
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9b05159962dfe0348bcf499d5bd0772e
-    - name: 5 Settings Menu v1.3_Frame_122
+    - name: Frame_122
       frameIndex: 122
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2426e8c81568d194db952ab153df3436
-    - name: 5 Settings Menu v1.3_Frame_123
+    - name: Frame_123
       frameIndex: 123
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 080ba4a22679b8a46a2c4a3aa0857462
-    - name: 5 Settings Menu v1.3_Frame_124
+    - name: Frame_124
       frameIndex: 124
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: a40023586724d934fb8a7e0ba03f7ec9
-    - name: 5 Settings Menu v1.3_Frame_125
+    - name: Frame_125
       frameIndex: 125
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 305c26183212eb542903ecd4fc3493c5
-    - name: 5 Settings Menu v1.3_Frame_126
+    - name: Frame_126
       frameIndex: 126
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: aba860622d56cf84b9691fd117a23f76
-    - name: 5 Settings Menu v1.3_Frame_127
+    - name: Frame_127
       frameIndex: 127
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1e092f309e4bf6049a8230f63ebf758e
-    - name: 5 Settings Menu v1.3_Frame_128
+    - name: Frame_128
       frameIndex: 128
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 6a05681c3dcdd294ba003ead6ac2a8aa
-    - name: 5 Settings Menu v1.3_Frame_129
+    - name: Frame_129
       frameIndex: 129
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 895b058be2acdb94688e4508e94085bb
-    - name: 5 Settings Menu v1.3_Frame_130
+    - name: Frame_130
       frameIndex: 130
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f830284d0ef3aca4d83190644e549290
-    - name: 5 Settings Menu v1.3_Frame_131
+    - name: Frame_131
       frameIndex: 131
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e4857fb40e437104390b86d8b5ad79d6
-    - name: 5 Settings Menu v1.3_Frame_132
+    - name: Frame_132
       frameIndex: 132
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 8c7a27d00029c1f41a8ddd9036aebca1
-    - name: 5 Settings Menu v1.3_Frame_133
+    - name: Frame_133
       frameIndex: 133
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 106101ab112dc5c4aa28993d682f8e88
-    - name: 5 Settings Menu v1.3_Frame_134
+    - name: Frame_134
       frameIndex: 134
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1b2c5d0254c5a7847b9aa76139fb2e32
-    - name: 5 Settings Menu v1.3_Frame_135
+    - name: Frame_135
       frameIndex: 135
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
@@ -3945,3 +4087,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 672, y: 480}
+  previousTextureSize: {x: 8192, y: 16384}

@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -1304,478 +1305,542 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 319531393
+    uuid:
+      value0: 3473561797
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -821405499
     name: 4 Mini Dialogue Box v1.2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 4 Mini Dialogue Box v1.2_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: e630751eb41a1064cb81e84ff37a4383
-    - name: 4 Mini Dialogue Box v1.2_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 6b13173b4353a004caea7a6477942c82
-    - name: 4 Mini Dialogue Box v1.2_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 2204c6acdb283bb40bcad4a54da7894a
-    - name: 4 Mini Dialogue Box v1.2_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: f0244ae8f66d51f49873e9931e38e968
-    - name: 4 Mini Dialogue Box v1.2_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 29595f2d39006aa42aa071446e6e2c9c
-    - name: 4 Mini Dialogue Box v1.2_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: ba0182a8782de394aa2453ec43dcf222
-    - name: 4 Mini Dialogue Box v1.2_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 0b300fb4d629882409842363073d2971
-    - name: 4 Mini Dialogue Box v1.2_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: cc78483ec0dd7894483fd57a00246d29
-    - name: 4 Mini Dialogue Box v1.2_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: c3b493b7692463f4c9fd98abae74456d
-    - name: 4 Mini Dialogue Box v1.2_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 2c65e973ebd774d4f8359c7473982bf1
-    - name: 4 Mini Dialogue Box v1.2_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: f3e904d4bf94101468a84dda971f5c17
-    - name: 4 Mini Dialogue Box v1.2_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: a1c75750be2390346addff7edc309ca6
-    - name: 4 Mini Dialogue Box v1.2_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 9e4f4fcb58f26e94d8b10c62c1a1b690
-    - name: 4 Mini Dialogue Box v1.2_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: cad83899f6ddaa14689e02e2133d4a75
-    - name: 4 Mini Dialogue Box v1.2_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 97cff5e5ca18f614fb7a159ce924e7ec
-    - name: 4 Mini Dialogue Box v1.2_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 72a4437899d699f48908e6beeecd3299
-    - name: 4 Mini Dialogue Box v1.2_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 10bbeb2abd398d242801c29c7c4d9691
-    - name: 4 Mini Dialogue Box v1.2_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: eba33ad78e9ee774b99c3a5229362c14
-    - name: 4 Mini Dialogue Box v1.2_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: bec426ab1c6020944b194641e0526369
-    - name: 4 Mini Dialogue Box v1.2_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 8b7eff93663a03947a93f59d3b3d6a0c
-    - name: 4 Mini Dialogue Box v1.2_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: f33d111873b29a847bdd37549c988ce4
-    - name: 4 Mini Dialogue Box v1.2_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 62e4ef791e842b44fa85a37b7d5591ba
-    - name: 4 Mini Dialogue Box v1.2_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: ba3921797f5cc69408c3218c34a78900
-    - name: 4 Mini Dialogue Box v1.2_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 37e91b524d883904196c5596a18bda2e
-    - name: 4 Mini Dialogue Box v1.2_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 3ba79d3860cf1444aa337f05cff28576
-    - name: 4 Mini Dialogue Box v1.2_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: e69ae876d5f0826468f653011c0eeab2
-    - name: 4 Mini Dialogue Box v1.2_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 766ee3bc734d79b409c1c8528aaaef9c
-    - name: 4 Mini Dialogue Box v1.2_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: cc2281f8938ff7746b2439935940ea2d
-    - name: 4 Mini Dialogue Box v1.2_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 56d6d720ea42f294c9014e3a3058aa56
-    - name: 4 Mini Dialogue Box v1.2_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 2b92ddc468586e540a30895a00697f30
-    - name: 4 Mini Dialogue Box v1.2_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 21525a03cd3ddb04facc7c3121c6bfb8
-    - name: 4 Mini Dialogue Box v1.2_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: d92717d9cdb3fb441ac82ba7bbe22098
-    - name: 4 Mini Dialogue Box v1.2_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 04c02c9d23499914aa529be0d9955914
-    - name: 4 Mini Dialogue Box v1.2_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: a403a2285fb905f4c935ca3787e883d6
-    - name: 4 Mini Dialogue Box v1.2_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: eb5eb86b84257ae41bc926b9cd149306
-    - name: 4 Mini Dialogue Box v1.2_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 692eaed30aa7e014099c8f7ae6e32b7f
-    - name: 4 Mini Dialogue Box v1.2_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 5cb08af9cc16f094da48a06fbd66ae8c
-    - name: 4 Mini Dialogue Box v1.2_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 21ed9d6c0c58a5342ba154e653177e98
-    - name: 4 Mini Dialogue Box v1.2_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: fc2e894f8e269654aaf00f5bf8045b33
-    - name: 4 Mini Dialogue Box v1.2_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: eec07d6890b7fdc478e51cec307b5293
-    - name: 4 Mini Dialogue Box v1.2_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 40d630aac98bff3429cea6a68fd4ed43
-    - name: 4 Mini Dialogue Box v1.2_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 2e48ae7310f9ec744b849fc6cbdabdc6
-    - name: 4 Mini Dialogue Box v1.2_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: d943964f5b3c64f47914e0a179a8486d
-    - name: 4 Mini Dialogue Box v1.2_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 16ff5c626726f664996b80401a228c4c
-    - name: 4 Mini Dialogue Box v1.2_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 078fce937fcee8b419a0c898f2cf275d
-    - name: 4 Mini Dialogue Box v1.2_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 62e6ed1240e7c8b42a05d155d73f1a20
-    - name: 4 Mini Dialogue Box v1.2_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: b14d2c56e248e9b4ba505d616b28d867
-    - name: 4 Mini Dialogue Box v1.2_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 2098d01f8e963a4479b7d1c949c36084
-    - name: 4 Mini Dialogue Box v1.2_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: ea201f918912ff947bf1fc89dcf26751
-    - name: 4 Mini Dialogue Box v1.2_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 969cb01f7626781419d8b1d0ec6feb9f
-    - name: 4 Mini Dialogue Box v1.2_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 604add05e3a2261428d2e106ff78a094
-    - name: 4 Mini Dialogue Box v1.2_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: c56fb4c4390ad44429101f78a8190e11
-    - name: 4 Mini Dialogue Box v1.2_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 3e64487fa715c4c4ab843e0fad45a6f1
-    - name: 4 Mini Dialogue Box v1.2_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: cded0c05bd77658489b4f45c5163e851
-    - name: 4 Mini Dialogue Box v1.2_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 75c84d2f742549d4ebf9df447de3f73f
-    - name: 4 Mini Dialogue Box v1.2_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: d6c2e636cc57e2149a0a1db558caf20c
-    - name: 4 Mini Dialogue Box v1.2_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: 6d2cb182ef2dd6746bd4c578d5a56783
-    - name: 4 Mini Dialogue Box v1.2_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
       spriteId: ad384a590552eae4f8390d3d5965f464
-    - name: 4 Mini Dialogue Box v1.2_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -1789,3 +1854,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 672, y: 480}
+  previousTextureSize: {x: 4096, y: 8192}
