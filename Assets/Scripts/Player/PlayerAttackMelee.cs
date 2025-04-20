@@ -33,9 +33,15 @@ public class PlayerAttackMelee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerStatsManager.instance.GetStat(StatType.Strength) + "moi");
+        //Debug.Log(PlayerStatsManager.instance.GetStat(StatType.Strength));
+        Debug.Log("Kuka oot?");
 
-        if (animator != null) animator.speed = 2f;
+        if (animator != null)
+        
+        { 
+            animator.speed = 2f;
+            Debug.Log("animation speed: " + animator.speed);
+        }
     }
 
     // Update is called once per frame
@@ -57,6 +63,19 @@ public class PlayerAttackMelee : MonoBehaviour
                 }
 
             }
+
+
+            if(equippedItem.type  == ItemType.Weapon)
+            {
+                if (equippedItem.name.Contains("_1"))
+                {
+                    animator.gameObject.transform.localScale = new Vector3(40, 40, 1);
+                }
+                else
+                {
+                    animator.gameObject.transform.localScale = new Vector3(60, 60, 1);
+                }
+            }
         }
     }
 
@@ -72,7 +91,8 @@ public class PlayerAttackMelee : MonoBehaviour
             Debug.Log(equippedItem.attackDamage * Damagebooster);
 
             EnemyController enemyhealth = enemyGameobje.GetComponent<EnemyController>();
-            enemyhealth.TakeDamage( equippedItem.attackDamage * Damagebooster *  PlayerStatsManager.instance.GetStat(StatType.Strength));
+            Debug.Log(enemyhealth.gameObject.name + "Moi");
+            enemyhealth.TakeDamage( equippedItem.attackDamage * Damagebooster /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/);
 
 
         }

@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -3584,1390 +3585,1568 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -545470224
+    uuid:
+      value0: 214997168
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 214997168
     name: Combat 1.1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Combat 1.1_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 7
         width: 10
         height: 8
       spriteId: 168a940bf7772534887683a5398ff436
-    - name: Combat 1.1_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 4
         width: 34
         height: 53
       spriteId: bdca759cc1976514ba092e44c9c17c8b
-    - name: Combat 1.1_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 10
         width: 32
         height: 51
       spriteId: 7b474e72e8fe2234c8392f5af4bf0156
-    - name: Combat 1.1_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 11
         width: 36
         height: 51
       spriteId: 0655c53e55f67f44294fb15a9a280e80
-    - name: Combat 1.1_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 19
         width: 10
         height: 26
       spriteId: e2647fc68c05550438b6abbd455d7ab5
-    - name: Combat 1.1_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 17
         width: 11
         height: 27
       spriteId: 4b44e9f64e7fa3a4599b3b556191ae62
-    - name: Combat 1.1_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 13
         width: 45
         height: 21
       spriteId: 7b932620b6a68b741885305b75e68844
-    - name: Combat 1.1_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 13
         width: 37
         height: 25
       spriteId: 57cf0ad1b14503f42b16aa96b7059b11
-    - name: Combat 1.1_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 35
         y: 13
         width: 22
         height: 28
       spriteId: aa3fad36175bb1d4c923754d234f8f97
-    - name: Combat 1.1_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 48
         y: 17
         width: 9
         height: 26
       spriteId: 79b6ed781eae2464d86b3eacdd3f0b5c
-    - name: Combat 1.1_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 50
         y: 22
         width: 7
         height: 8
       spriteId: ae96e416835e05044ad5bdd603ee73d3
-    - name: Combat 1.1_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 21
         width: 20
         height: 20
       spriteId: e6e9be3ba7f73a54ea6e83d550a4c3be
-    - name: Combat 1.1_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 19
         width: 34
         height: 33
       spriteId: 16e047e08cf45374a962b48fc8291c8c
-    - name: Combat 1.1_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 20
         width: 37
         height: 32
       spriteId: 0b0b5bc3bc453fe49b02386a638f3e83
-    - name: Combat 1.1_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 25
         y: 18
         width: 28
         height: 33
       spriteId: 51a2ce6af436c734ea9c669f571c351b
-    - name: Combat 1.1_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 25
         y: 18
         width: 28
         height: 5
       spriteId: 15a7582a6a346f64ea88ce3619b6590d
-    - name: Combat 1.1_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 33
         y: 25
         width: 24
         height: 20
       spriteId: c0aa2c1d8718f48498c3bc8ece7036f3
-    - name: Combat 1.1_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 32
         y: 21
         width: 24
         height: 20
       spriteId: bbaa9796e407de14eb344d8825ff2da1
-    - name: Combat 1.1_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 9
         width: 40
         height: 37
       spriteId: 5eb43a6acc7e9be4fa60ba4620248476
-    - name: Combat 1.1_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 9
         width: 29
         height: 42
       spriteId: 376e4307a7ea92745a33d8b706632522
-    - name: Combat 1.1_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 10
         width: 25
         height: 45
       spriteId: 496410665b914b74bbc2dd28f4383690
-    - name: Combat 1.1_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 30
         width: 15
         height: 3
       spriteId: 269520460c58f0c4ca64d14bf39a2c42
-    - name: Combat 1.1_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 23
         width: 53
         height: 17
       spriteId: 17c4e15a2b0ba7f449cfdf3ea7cb6b13
-    - name: Combat 1.1_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 26
         width: 54
         height: 11
       spriteId: a35ff32948862c047a4af10d8c99188b
-    - name: Combat 1.1_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 29
         width: 58
         height: 5
       spriteId: 768756deb3924b148a9505dd836ac0c4
-    - name: Combat 1.1_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 30
         width: 59
         height: 3
       spriteId: 7dd74e96f6d6f4e458963ecee2f129a4
-    - name: Combat 1.1_Frame_87
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 27
         width: 20
         height: 20
       spriteId: dfe4a7d57e58ca54cbb30bc86d38bcd3
-    - name: Combat 1.1_Frame_88
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 46
         width: 26
         height: 5
       spriteId: 595dce0d2cbf23f47b0e007daca8e438
-    - name: Combat 1.1_Frame_89
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 26
         width: 40
         height: 31
       spriteId: c880339e6a6903441823f2400bd011c6
-    - name: Combat 1.1_Frame_90
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 12
         width: 56
         height: 45
       spriteId: 913875dea371b3f49951529b06c9b492
-    - name: Combat 1.1_Frame_91
+    - name: Frame_91
       frameIndex: 91
+      additiveSortOrder: 0
       cellRect:
         x: 27
         y: 14
         width: 35
         height: 46
       spriteId: a902e1f042ac58e418e0a303d6d4bff4
-    - name: Combat 1.1_Frame_92
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 36
         y: 14
         width: 28
         height: 50
       spriteId: bf197b62846347e4895cd5826f00b6a5
-    - name: Combat 1.1_Frame_93
+    - name: Frame_93
       frameIndex: 93
+      additiveSortOrder: 0
       cellRect:
         x: 36
         y: 14
         width: 26
         height: 50
       spriteId: ddd5f78ca3adc254c94aaf7cbe18e49a
-    - name: Combat 1.1_Frame_145
+    - name: Frame_145
       frameIndex: 145
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 13
         width: 12
         height: 14
       spriteId: 9cf6e1f09e191fa4da451c831046a83e
-    - name: Combat 1.1_Frame_146
+    - name: Frame_146
       frameIndex: 146
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 7
         width: 6
         height: 19
       spriteId: 4985e75d145fdc34f9bb9a566ddd3e7e
-    - name: Combat 1.1_Frame_147
+    - name: Frame_147
       frameIndex: 147
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 5
         width: 37
         height: 32
       spriteId: d234a54f447c1874bb2164e60022b629
-    - name: Combat 1.1_Frame_148
+    - name: Frame_148
       frameIndex: 148
+      additiveSortOrder: 0
       cellRect:
         x: 31
         y: 6
         width: 28
         height: 50
       spriteId: ac05a71a310eefa48a86d6a2847133ec
-    - name: Combat 1.1_Frame_149
+    - name: Frame_149
       frameIndex: 149
+      additiveSortOrder: 0
       cellRect:
         x: 31
         y: 14
         width: 28
         height: 45
       spriteId: 95c0a93993e9c7340930ccdeab12947c
-    - name: Combat 1.1_Frame_150
+    - name: Frame_150
       frameIndex: 150
+      additiveSortOrder: 0
       cellRect:
         x: 33
         y: 26
         width: 26
         height: 33
       spriteId: 6ce77298effa5b04c9e458ed55185d14
-    - name: Combat 1.1_Frame_151
+    - name: Frame_151
       frameIndex: 151
+      additiveSortOrder: 0
       cellRect:
         x: 35
         y: 34
         width: 24
         height: 25
       spriteId: 7e66977b7d785e54895211c2fb6da199
-    - name: Combat 1.1_Frame_127
+    - name: Frame_127
       frameIndex: 127
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 18
         width: 33
         height: 37
       spriteId: 0b9779a5c67c2e74a8af035aca706d6b
-    - name: Combat 1.1_Frame_128
+    - name: Frame_128
       frameIndex: 128
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 13
         width: 44
         height: 42
       spriteId: c8d5537222ec48c42ae0b81d2f04490c
-    - name: Combat 1.1_Frame_129
+    - name: Frame_129
       frameIndex: 129
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 10
         width: 46
         height: 48
       spriteId: 97bc4979412c0b84faa4124649adea09
-    - name: Combat 1.1_Frame_130
+    - name: Frame_130
       frameIndex: 130
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 49
         height: 52
       spriteId: 04005a7b5c647644c8f00863d270d0ea
-    - name: Combat 1.1_Frame_131
+    - name: Frame_131
       frameIndex: 131
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 6
         width: 52
         height: 52
       spriteId: 46a237f87cf9c3e41ba17b3e22a44694
-    - name: Combat 1.1_Frame_133
+    - name: Frame_133
       frameIndex: 133
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 3
         width: 22
         height: 20
       spriteId: 78d23092ce1ddf6478bf72c0d2ee68f7
-    - name: Combat 1.1_Frame_134
+    - name: Frame_134
       frameIndex: 134
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 3
         width: 22
         height: 41
       spriteId: 03d4f6043ef58ef4494ffd22aa19ceaf
-    - name: Combat 1.1_Frame_135
+    - name: Frame_135
       frameIndex: 135
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 1
         width: 27
         height: 61
       spriteId: ee6fa6a7f489cd5418ffe25fa400b968
-    - name: Combat 1.1_Frame_136
+    - name: Frame_136
       frameIndex: 136
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 2
         width: 28
         height: 62
       spriteId: 26e1ebaad908f3c4d90274efb1e204e1
-    - name: Combat 1.1_Frame_137
+    - name: Frame_137
       frameIndex: 137
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 3
         width: 29
         height: 61
       spriteId: cb55e3a06198aaf41bf7d8f0dbfbe466
-    - name: Combat 1.1_Frame_138
+    - name: Frame_138
       frameIndex: 138
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 4
         width: 29
         height: 52
       spriteId: c5cd3c2a0123f22459aafe0fb7ff2265
-    - name: Combat 1.1_Frame_139
+    - name: Frame_139
       frameIndex: 139
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 8
         width: 24
         height: 49
       spriteId: 4519adc2dd3f2674e91472618596db09
-    - name: Combat 1.1_Frame_141
+    - name: Frame_141
       frameIndex: 141
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 22
         width: 52
         height: 19
       spriteId: 131d359f00be6f244a286e0b86070c89
-    - name: Combat 1.1_Frame_142
+    - name: Frame_142
       frameIndex: 142
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 22
         width: 51
         height: 19
       spriteId: fd7f4a245c8d669439b78645fc449bdb
-    - name: Combat 1.1_Frame_143
+    - name: Frame_143
       frameIndex: 143
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 23
         width: 52
         height: 18
       spriteId: a8640b7407dd89c4f884495f2bc5642e
-    - name: Combat 1.1_Frame_144
+    - name: Frame_144
       frameIndex: 144
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 23
         width: 51
         height: 18
       spriteId: 2d1899c644b6e8f48b7b8e94c1a68bd7
-    - name: Combat 1.1_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 55
         width: 6
         height: 4
       spriteId: 5de64d66e1f21934cb1ef969993025ae
-    - name: Combat 1.1_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 52
         width: 9
         height: 7
       spriteId: 2a208d15171789c4981163ec4f6d1a5b
-    - name: Combat 1.1_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 5
         width: 47
         height: 54
       spriteId: 1d3f6609bae69df41aff43cdd996ff07
-    - name: Combat 1.1_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 6
         width: 50
         height: 43
       spriteId: 8eca415e0de4e604f889c28ebd552529
-    - name: Combat 1.1_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 6
         width: 56
         height: 46
       spriteId: f694be97469d0a6459874b52ca018f1f
-    - name: Combat 1.1_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 6
         width: 26
         height: 15
       spriteId: 03a220264819bd542b5bfe07a14bdf96
-    - name: Combat 1.1_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 40
         width: 16
         height: 10
       spriteId: 8143e5d0455b43b4da032bc228472b4a
-    - name: Combat 1.1_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 11
         width: 23
         height: 38
       spriteId: dbd53aa665fd4d64cb4a1eb2e0821e14
-    - name: Combat 1.1_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 27
         y: 8
         width: 18
         height: 35
       spriteId: bc2bdb84769e6874dbc0292b765f0218
-    - name: Combat 1.1_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 27
         y: 7
         width: 16
         height: 14
       spriteId: 1e931ec8efef19940a52efff707efc30
-    - name: Combat 1.1_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 10
         width: 11
         height: 27
       spriteId: 2fbb3cce4f5d5a24985159c0af63b1d6
-    - name: Combat 1.1_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 12
         width: 12
         height: 29
       spriteId: b4e34be92103f5041afc91fb7147842a
-    - name: Combat 1.1_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 18
         width: 11
         height: 24
       spriteId: cd7f2bf54900bdf4fa91b1585f1d20c5
-    - name: Combat 1.1_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 28
         width: 32
         height: 28
       spriteId: 5e2242f2a2450e647b0e858b4dfc6e61
-    - name: Combat 1.1_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 27
         width: 32
         height: 27
       spriteId: 3527fe2ca0862314485983e8966e2fe9
-    - name: Combat 1.1_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 26
         y: 26
         width: 28
         height: 29
       spriteId: 0d0a3f66e2a4a8047b78ad461c082b9e
-    - name: Combat 1.1_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 25
         y: 26
         width: 29
         height: 30
       spriteId: 674d1b3e12958c34c9f5a2e645daab3b
-    - name: Combat 1.1_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 24
         width: 31
         height: 33
       spriteId: 1357d3a0a6327a44cab3ea065e0f8e64
-    - name: Combat 1.1_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 18
         width: 48
         height: 31
       spriteId: ae8252299ee2acd4aaf25fc359d07461
-    - name: Combat 1.1_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 17
         width: 48
         height: 31
       spriteId: 5a04dbf8c95247447b8747f0afda0aa6
-    - name: Combat 1.1_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 13
         width: 52
         height: 37
       spriteId: a446e630e0a1a2249b9c6d3fd230f506
-    - name: Combat 1.1_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 12
         width: 56
         height: 40
       spriteId: b0adeb4e107ede842b78852c5368aeb1
-    - name: Combat 1.1_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 11
         width: 53
         height: 43
       spriteId: 94bc3a68176e1f842afb88f6f6fbce20
-    - name: Combat 1.1_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 10
         width: 41
         height: 46
       spriteId: 88eb703a5417eaf40a2762b08e43af8f
-    - name: Combat 1.1_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 15
         width: 36
         height: 35
       spriteId: fcc68cede57d44c4faaac6e7ad93d156
-    - name: Combat 1.1_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 10
         width: 43
         height: 45
       spriteId: d2ded290253bee64ab600a25fd1eeb21
-    - name: Combat 1.1_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 7
         width: 48
         height: 51
       spriteId: 001b07cba568c8749876363887ec19dc
-    - name: Combat 1.1_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 2
         width: 53
         height: 59
       spriteId: 53b2e18ad1ef6e646860969925ca97ea
-    - name: Combat 1.1_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 26
         width: 23
         height: 10
       spriteId: 1263aa6e8c4206640ae644911c28c88a
-    - name: Combat 1.1_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 26
         width: 47
         height: 10
       spriteId: de84aef7e05b15d4f85865c2ef184465
-    - name: Combat 1.1_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 38
         y: 19
         width: 19
         height: 27
       spriteId: 0296527d1eecab44dbe7f44d6a74a4f0
-    - name: Combat 1.1_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 13
         width: 22
         height: 40
       spriteId: 223f5fad8ce59964ba23950b810e7b0b
-    - name: Combat 1.1_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 14
         width: 14
         height: 36
       spriteId: 8c8335d58201f984ea4eb367563cedee
-    - name: Combat 1.1_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 14
         width: 24
         height: 36
       spriteId: f86e45b57aea65a439a6afb0b7d6ba19
-    - name: Combat 1.1_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 14
         width: 33
         height: 36
       spriteId: db72d32517808164bb37423a9310de64
-    - name: Combat 1.1_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 36
         y: 14
         width: 14
         height: 36
       spriteId: 0fd58b4270229bf4990150e8294f0dac
-    - name: Combat 1.1_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 37
         y: 13
         width: 14
         height: 37
       spriteId: c1bca65892c9c45489ae00463c639d29
-    - name: Combat 1.1_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 30
         width: 10
         height: 9
       spriteId: 2ebc7ae013b96814db724629a6510794
-    - name: Combat 1.1_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 10
         width: 53
         height: 42
       spriteId: b470b9ea804832d4b8d5a39e4ea0697d
-    - name: Combat 1.1_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 10
         width: 47
         height: 42
       spriteId: 88f5a320abc6a4846b83e32b39ba9426
-    - name: Combat 1.1_Frame_65
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 10
         width: 51
         height: 42
       spriteId: 8ccf4853196e2f243a255c5b8a5432da
-    - name: Combat 1.1_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 12
         width: 47
         height: 40
       spriteId: 80d659a070f70db42a4156885a25460b
-    - name: Combat 1.1_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 13
         width: 44
         height: 38
       spriteId: 38e78a67239d2fd4a99f1d6c3851f9bf
-    - name: Combat 1.1_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 37
         y: 18
         width: 19
         height: 32
       spriteId: 7d3d083df4b05bf49a0da9c29ec40fe3
-    - name: Combat 1.1_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 18
         width: 27
         height: 27
       spriteId: a97c7be589bc1344d9e1ee57a64b0d42
-    - name: Combat 1.1_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 29
         y: 18
         width: 28
         height: 27
       spriteId: c35f58cb560ea83478e524efaf2873a3
-    - name: Combat 1.1_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 18
         width: 26
         height: 27
       spriteId: bb26ec1508985df40b252381aea4551d
-    - name: Combat 1.1_Frame_77
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 31
         y: 18
         width: 30
         height: 27
       spriteId: c832b17fbddcac54da473bf62db68d0e
-    - name: Combat 1.1_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 32
         y: 18
         width: 29
         height: 27
       spriteId: 1773fcd6010a4c4419ce8177d4802400
-    - name: Combat 1.1_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 19
         width: 15
         height: 22
       spriteId: b490b21e93833284da7862c1ce3e03f3
-    - name: Combat 1.1_Frame_81
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 18
         width: 19
         height: 23
       spriteId: 43c9282f68b779747a22e9de5025c58b
-    - name: Combat 1.1_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 17
         width: 23
         height: 28
       spriteId: e30ba9ecc4f2d6142bb6d01805613902
-    - name: Combat 1.1_Frame_83
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 14
         width: 27
         height: 34
       spriteId: 9f2c77a6989f9e244a21e410349351c9
-    - name: Combat 1.1_Frame_84
+    - name: Frame_84
       frameIndex: 84
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 13
         width: 35
         height: 39
       spriteId: e6d40bd97bdd9fe459a35a5c6d5fce11
-    - name: Combat 1.1_Frame_85
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 35
         y: 13
         width: 24
         height: 38
       spriteId: 0c8715d8947eaa44fb46e4cc64c75ca6
-    - name: Combat 1.1_Frame_94
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 40
         y: 19
         width: 21
         height: 45
       spriteId: 701204e705a58c440969e0ef1e52af76
-    - name: Combat 1.1_Frame_126
+    - name: Frame_126
       frameIndex: 126
+      additiveSortOrder: 0
       cellRect:
         x: 27
         y: 25
         width: 9
         height: 10
       spriteId: 1796ba28b5d9f764db6c703836214e66
-    - name: Combat 1.1_Frame_170
+    - name: Frame_170
       frameIndex: 170
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 20
         width: 25
         height: 25
       spriteId: 44e2ec158f78f84419025f0483e6681a
-    - name: Combat 1.1_Frame_171
+    - name: Frame_171
       frameIndex: 171
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 17
         width: 34
         height: 31
       spriteId: 3681c5fa7305039429c59d3d9d5b47ed
-    - name: Combat 1.1_Frame_172
+    - name: Frame_172
       frameIndex: 172
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 17
         width: 34
         height: 31
       spriteId: c903dc7d0de6d5040bb0e54336a7b4ee
-    - name: Combat 1.1_Frame_173
+    - name: Frame_173
       frameIndex: 173
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 16
         width: 36
         height: 34
       spriteId: b78235f98b5a3bf48bcc0adef54106aa
-    - name: Combat 1.1_Frame_175
+    - name: Frame_175
       frameIndex: 175
+      additiveSortOrder: 0
       cellRect:
         x: 17
         y: 17
         width: 34
         height: 29
       spriteId: 82f5a9502bbf54b4fa63d1b764c10be8
-    - name: Combat 1.1_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 30
         y: 11
         width: 31
         height: 52
       spriteId: e3e6b112616ca1a4aae8e7d66ef62f8d
-    - name: Combat 1.1_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 6
         width: 20
         height: 49
       spriteId: 2db0eca562e4bad449f9f877cec22d4f
-    - name: Combat 1.1_Frame_95
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 2
         width: 22
         height: 5
       spriteId: 7eb2427997f707e47829c9c3cb5eab3a
-    - name: Combat 1.1_Frame_96
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 3
         width: 42
         height: 42
       spriteId: eb8df8d201b9c544888275d43bcaa96e
-    - name: Combat 1.1_Frame_97
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 7
         width: 49
         height: 40
       spriteId: 1a7fbc13d2895bc43b8363a666068e5e
-    - name: Combat 1.1_Frame_98
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 25
         y: 38
         width: 9
         height: 11
       spriteId: 4eacca30a8e06fc428af6a433c8c0bd1
-    - name: Combat 1.1_Frame_100
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 6
         width: 8
         height: 5
       spriteId: 15337291c9a8e0c4f8d131773438de3b
-    - name: Combat 1.1_Frame_101
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 25
         y: 10
         width: 16
         height: 42
       spriteId: 50c5f4df3620e6741a8a88dcdee1e749
-    - name: Combat 1.1_Frame_102
+    - name: Frame_102
       frameIndex: 102
+      additiveSortOrder: 0
       cellRect:
         x: 26
         y: 11
         width: 24
         height: 41
       spriteId: 17ac0d3be6aebbf4fa07ffe3e8b5be6c
-    - name: Combat 1.1_Frame_103
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 14
         width: 26
         height: 38
       spriteId: c28ea2b689887aa4bb9d720e2c83bbac
-    - name: Combat 1.1_Frame_104
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 18
         y: 20
         width: 35
         height: 33
       spriteId: baa2bb6cc47fdf14eb6204e58d3a283b
-    - name: Combat 1.1_Frame_105
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 44
         y: 23
         width: 6
         height: 4
       spriteId: 4b50a5a2338364a47befdb0ab2c3920e
-    - name: Combat 1.1_Frame_106
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 39
         width: 15
         height: 11
       spriteId: 27387f5a5178fe347871956373f8d523
-    - name: Combat 1.1_Frame_107
+    - name: Frame_107
       frameIndex: 107
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 9
         width: 19
         height: 33
       spriteId: 424c0fe6b75226741b9e90d7403193e4
-    - name: Combat 1.1_Frame_108
+    - name: Frame_108
       frameIndex: 108
+      additiveSortOrder: 0
       cellRect:
         x: 33
         y: 7
         width: 9
         height: 14
       spriteId: a0cb61a5e732e7e478a8ed1d1db92c04
-    - name: Combat 1.1_Frame_110
+    - name: Frame_110
       frameIndex: 110
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 28
         width: 9
         height: 7
       spriteId: 2c1c641cecd4c9848be02debc5d6d9bc
-    - name: Combat 1.1_Frame_111
+    - name: Frame_111
       frameIndex: 111
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 26
         width: 33
         height: 15
       spriteId: f4d8cb58b079856458db6dab65db5d48
-    - name: Combat 1.1_Frame_112
+    - name: Frame_112
       frameIndex: 112
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 28
         width: 31
         height: 10
       spriteId: 269c9a2c9c73fb54392e82870dce5c36
-    - name: Combat 1.1_Frame_113
+    - name: Frame_113
       frameIndex: 113
+      additiveSortOrder: 0
       cellRect:
         x: 32
         y: 30
         width: 28
         height: 10
       spriteId: e4a95c2d9bcdc034aab06c22313ed402
-    - name: Combat 1.1_Frame_114
+    - name: Frame_114
       frameIndex: 114
+      additiveSortOrder: 0
       cellRect:
         x: 32
         y: 17
         width: 29
         height: 37
       spriteId: b5d948dc2c0165642857ce2c53ce838f
-    - name: Combat 1.1_Frame_115
+    - name: Frame_115
       frameIndex: 115
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 12
         width: 20
         height: 47
       spriteId: 71e2961ee7f2e3f46a2043f0161a4483
-    - name: Combat 1.1_Frame_116
+    - name: Frame_116
       frameIndex: 116
+      additiveSortOrder: 0
       cellRect:
         x: 43
         y: 11
         width: 18
         height: 44
       spriteId: 8738805e19f259e4dbe01d61d78f1b5f
-    - name: Combat 1.1_Frame_117
+    - name: Frame_117
       frameIndex: 117
+      additiveSortOrder: 0
       cellRect:
         x: 37
         y: 6
         width: 21
         height: 48
       spriteId: 77dfdeffdbc384640bd6c302eab2958e
-    - name: Combat 1.1_Frame_118
+    - name: Frame_118
       frameIndex: 118
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 20
         width: 22
         height: 30
       spriteId: b9a6819c36748144ebe1ea3c1193d800
-    - name: Combat 1.1_Frame_120
+    - name: Frame_120
       frameIndex: 120
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 52
         width: 8
         height: 7
       spriteId: ff21adcc1a82ee74ab5fcad83c37831c
-    - name: Combat 1.1_Frame_121
+    - name: Frame_121
       frameIndex: 121
+      additiveSortOrder: 0
       cellRect:
         x: 28
         y: 19
         width: 27
         height: 33
       spriteId: 78afb3ecf2bf4504990b5becbf6d7475
-    - name: Combat 1.1_Frame_122
+    - name: Frame_122
       frameIndex: 122
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 12
         width: 29
         height: 32
       spriteId: 48525c3ae6ecfc643baf9cec90604d9c
-    - name: Combat 1.1_Frame_123
+    - name: Frame_123
       frameIndex: 123
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 6
         width: 30
         height: 17
       spriteId: 07591c5401775634d9b204f5140bd15b
-    - name: Combat 1.1_Frame_124
+    - name: Frame_124
       frameIndex: 124
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 6
         width: 26
         height: 13
       spriteId: c78aca37d84bc34439a6d5443e2af715
-    - name: Combat 1.1_Frame_125
+    - name: Frame_125
       frameIndex: 125
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 7
         width: 18
         height: 13
       spriteId: 238b2a42b079a4e41974952ef432a1d8
-    - name: Combat 1.1_Frame_152
+    - name: Frame_152
       frameIndex: 152
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 50
         width: 17
         height: 9
       spriteId: a93e5add5e7f23740959f27b7ce0cd47
-    - name: Combat 1.1_Frame_153
+    - name: Frame_153
       frameIndex: 153
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 53
         width: 14
         height: 6
       spriteId: da437fc5cccae6e4eaf3c86dad7a8645
-    - name: Combat 1.1_Frame_154
+    - name: Frame_154
       frameIndex: 154
+      additiveSortOrder: 0
       cellRect:
         x: 27
         y: 27
         width: 11
         height: 10
       spriteId: b076cbeed95a2e04e834e52fc6c0469e
-    - name: Combat 1.1_Frame_155
+    - name: Frame_155
       frameIndex: 155
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 24
         width: 23
         height: 17
       spriteId: f232e0283460c7c47b062eeacceba431
-    - name: Combat 1.1_Frame_156
+    - name: Frame_156
       frameIndex: 156
+      additiveSortOrder: 0
       cellRect:
         x: 18
         y: 19
         width: 29
         height: 27
       spriteId: af3a0876e74851c43805f9ddcb199613
-    - name: Combat 1.1_Frame_157
+    - name: Frame_157
       frameIndex: 157
+      additiveSortOrder: 0
       cellRect:
         x: 17
         y: 23
         width: 30
         height: 19
       spriteId: c979000642bc432489ecb1345ec6f3b1
-    - name: Combat 1.1_Frame_158
+    - name: Frame_158
       frameIndex: 158
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 23
         width: 33
         height: 20
       spriteId: 41c1a9fd296bb9e449b836ff0df75abe
-    - name: Combat 1.1_Frame_159
+    - name: Frame_159
       frameIndex: 159
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 23
         width: 40
         height: 22
       spriteId: c00edbcfb26acd64fa3a9a2a7b32d42e
-    - name: Combat 1.1_Frame_160
+    - name: Frame_160
       frameIndex: 160
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 23
         width: 43
         height: 10
       spriteId: 08b5be8d3734e8a45931594467f37a1c
-    - name: Combat 1.1_Frame_162
+    - name: Frame_162
       frameIndex: 162
+      additiveSortOrder: 0
       cellRect:
         x: 33
         y: 16
         width: 19
         height: 11
       spriteId: 707ead3553daa2e4f8cb38ce081df42e
-    - name: Combat 1.1_Frame_163
+    - name: Frame_163
       frameIndex: 163
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 18
         width: 35
         height: 31
       spriteId: ab9155d0aa85368438c007020e923e61
-    - name: Combat 1.1_Frame_164
+    - name: Frame_164
       frameIndex: 164
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 28
         width: 40
         height: 21
       spriteId: 664815ef8b6aae249a17402b0a05701f
-    - name: Combat 1.1_Frame_165
+    - name: Frame_165
       frameIndex: 165
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 38
         width: 35
         height: 11
       spriteId: 361e417f3df3a7e4ba12dd752aa9c0aa
-    - name: Combat 1.1_Frame_166
+    - name: Frame_166
       frameIndex: 166
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 30
         width: 39
         height: 18
       spriteId: f1d109c32fae896429ce89565a02404a
-    - name: Combat 1.1_Frame_167
+    - name: Frame_167
       frameIndex: 167
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 33
         width: 20
         height: 15
       spriteId: dbaf3a8200b3e794ebbdddf89a8648ac
-    - name: Combat 1.1_Frame_169
+    - name: Frame_169
       frameIndex: 169
+      additiveSortOrder: 0
       cellRect:
         x: 24
         y: 25
         width: 16
         height: 16
       spriteId: b9b0985b2e6c2f74e9e5c3d61c2d1a18
-    - name: Combat 1.1_Frame_174
+    - name: Frame_174
       frameIndex: 174
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 14
         width: 41
         height: 35
       spriteId: 3d62f24dffac0c844a5103c86a9548f6
-    - name: Combat 1.1_Frame_177
+    - name: Frame_177
       frameIndex: 177
+      additiveSortOrder: 0
       cellRect:
         x: 18
         y: 10
         width: 26
         height: 32
       spriteId: 93fbd711c61e0b246b788d862f0b453d
-    - name: Combat 1.1_Frame_178
+    - name: Frame_178
       frameIndex: 178
+      additiveSortOrder: 0
       cellRect:
         x: 18
         y: 13
         width: 26
         height: 30
       spriteId: dd7ca6650bd91584f9b4a5eab2af0591
-    - name: Combat 1.1_Frame_179
+    - name: Frame_179
       frameIndex: 179
+      additiveSortOrder: 0
       cellRect:
         x: 18
         y: 20
         width: 21
         height: 20
       spriteId: ed9537af19598d742863adb5944ae530
-    - name: Combat 1.1_Frame_180
+    - name: Frame_180
       frameIndex: 180
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 27
         width: 18
         height: 18
       spriteId: 57be16cf64a4bee4c99dffc30687a594
-    - name: Combat 1.1_Frame_181
+    - name: Frame_181
       frameIndex: 181
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 18
         width: 26
         height: 28
       spriteId: a5d11ea3af08e0b4ba2e761da4aa4c99
-    - name: Combat 1.1_Frame_182
+    - name: Frame_182
       frameIndex: 182
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 22
         width: 26
         height: 23
       spriteId: 5e5a417603a45764a964f61935039d4b
-    - name: Combat 1.1_Frame_183
+    - name: Frame_183
       frameIndex: 183
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 17
         width: 26
         height: 32
       spriteId: c3a36c26d115e2f469aad4a2dcb028e3
-    - name: Combat 1.1_Frame_184
+    - name: Frame_184
       frameIndex: 184
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 20
@@ -4981,3 +5160,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
+  previousTextureSize: {x: 512, y: 1024}

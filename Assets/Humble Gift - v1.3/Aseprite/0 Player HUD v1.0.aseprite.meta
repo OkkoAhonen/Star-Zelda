@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -1784,670 +1785,758 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 854442983
+    uuid:
+      value0: 3182808131
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -1112159165
     name: 0 Player HUD v1.0
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 0 Player HUD v1.0_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 93ddad4882686ee40b8032a798c23c97
-    - name: 0 Player HUD v1.0_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: f24a4db32dc4f4b489383c8c8360730b
-    - name: 0 Player HUD v1.0_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 08570fca3076d9c499399fa137a8a609
-    - name: 0 Player HUD v1.0_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 441d0c4b7550aa243a4de7b6278aac89
-    - name: 0 Player HUD v1.0_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9ae47fb590833b649ac35d3f9fab2f32
-    - name: 0 Player HUD v1.0_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: cbeced9d7f38041438c0c9601017a325
-    - name: 0 Player HUD v1.0_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 3c43b744a9614714b90fc28f81526569
-    - name: 0 Player HUD v1.0_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9bf256aa6a6fbb3478fb3cd607879674
-    - name: 0 Player HUD v1.0_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: dc6134e6de22f5e49ab8518fa41c8deb
-    - name: 0 Player HUD v1.0_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: efecb89dc062c9b48939b3df698a5126
-    - name: 0 Player HUD v1.0_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e2006768d022467438059c5255ad87fb
-    - name: 0 Player HUD v1.0_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 107d8be846e3cd4468faeb4838533ba6
-    - name: 0 Player HUD v1.0_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: cde9eaac98c0b1a4884538e172a408cb
-    - name: 0 Player HUD v1.0_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 0c94e2fccbea90149bf51ad12d5ef216
-    - name: 0 Player HUD v1.0_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2e8ab7645966c5a42a6ceb4d9258ed67
-    - name: 0 Player HUD v1.0_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b85ddc9b1c6325947bd35e01398921b0
-    - name: 0 Player HUD v1.0_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1a1dbdc8cab81f047a3c96433bf98028
-    - name: 0 Player HUD v1.0_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 3222fbdd5558f1f4a82c39a53e3f1a60
-    - name: 0 Player HUD v1.0_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 3d6688f47177b84468b2f82df80c3ee5
-    - name: 0 Player HUD v1.0_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c357a24f9f2cb224a908d51e4a51fb2d
-    - name: 0 Player HUD v1.0_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bb128199563076f43a9ac0efcea2e0f8
-    - name: 0 Player HUD v1.0_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bb1f1d5c13423db4eaa6ea7dc295a1d2
-    - name: 0 Player HUD v1.0_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7aafa0387f1ebc84bacf127a2cf934d4
-    - name: 0 Player HUD v1.0_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 911e2f6ac49263c4d95e92a9493cfb3c
-    - name: 0 Player HUD v1.0_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 8a986779679042944a9984f2005852a2
-    - name: 0 Player HUD v1.0_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: cf57b1a34ba541348a80ad3d3636bada
-    - name: 0 Player HUD v1.0_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 38912fa8e64fa174b8abdb18531c3a2e
-    - name: 0 Player HUD v1.0_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b626ad3280d3a024dad461321249f4ab
-    - name: 0 Player HUD v1.0_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 85540d843761ecf43bd2ba85bd5355ae
-    - name: 0 Player HUD v1.0_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: eecb6e5241686ca4fa30a4e08a779ad0
-    - name: 0 Player HUD v1.0_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: a23c2290e39f3d149b648d712e4b9623
-    - name: 0 Player HUD v1.0_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: be90a8bda277a134baaf74b618288c9e
-    - name: 0 Player HUD v1.0_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 95a2c9f5bf39b464194741d22f5c87f8
-    - name: 0 Player HUD v1.0_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: acdbf82c0b8fd7844b232103c4466674
-    - name: 0 Player HUD v1.0_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2d2d980e1aee4de4891c54bbc849f893
-    - name: 0 Player HUD v1.0_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 993dc3a30583b544c9741db5e7855c66
-    - name: 0 Player HUD v1.0_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2bae6ae401bd8c24aa1ddf0e0fe9c19c
-    - name: 0 Player HUD v1.0_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 065f6ee053c19604284fbd2fe5b0ff9a
-    - name: 0 Player HUD v1.0_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 002de41992f57544a8630f08f7c3a746
-    - name: 0 Player HUD v1.0_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 4b3f1094b7083be48a3191bf1734c007
-    - name: 0 Player HUD v1.0_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 53f1f6b5ecaef3242b271a1c3e1ad9c8
-    - name: 0 Player HUD v1.0_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 9f6e16f14ef0e4041ada997c85fdb617
-    - name: 0 Player HUD v1.0_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7005268042c9de44997a1a411a21bc9c
-    - name: 0 Player HUD v1.0_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 672e367d747bb3b4daf5896b442da7e6
-    - name: 0 Player HUD v1.0_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 01661fe3cf8cf1349a8196de8dc6e57c
-    - name: 0 Player HUD v1.0_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d338364773f767b46908c2db61a72b55
-    - name: 0 Player HUD v1.0_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 6b07dd07dee40e5419211de10a78831d
-    - name: 0 Player HUD v1.0_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 2e0e675db873ee247830d3d9f9f85371
-    - name: 0 Player HUD v1.0_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1d80b7acf6dec7b4abd144097fd5ab5c
-    - name: 0 Player HUD v1.0_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: acb893c457380824580c6e36c2bacf8e
-    - name: 0 Player HUD v1.0_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 05b0f3f97c4a80a488b64192a4ec457c
-    - name: 0 Player HUD v1.0_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 6ec0fa4605bf1f1468c0570922532b4b
-    - name: 0 Player HUD v1.0_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 14d5d6cbf98cf4645b55296cdae2eb7b
-    - name: 0 Player HUD v1.0_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 6f62a9980c952164d8ef4c442c1420af
-    - name: 0 Player HUD v1.0_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1444aa35395e3f14faef38104930e33f
-    - name: 0 Player HUD v1.0_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 293c4359f6dd807409a2da9e618b59e7
-    - name: 0 Player HUD v1.0_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 56d0a21ab1c973948bf01ab66f1648e5
-    - name: 0 Player HUD v1.0_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 8c4b4afccc88ed04782a0530daa49725
-    - name: 0 Player HUD v1.0_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d60db43d81ec2294cbb80864510794ac
-    - name: 0 Player HUD v1.0_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 5e45670e3fc23414ea8212afbf7a064d
-    - name: 0 Player HUD v1.0_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: c79a6a9be8d3e144185ab8336b5e7be6
-    - name: 0 Player HUD v1.0_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: da024fee9872d144bbe0efd998685763
-    - name: 0 Player HUD v1.0_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: abeeea07e08300f4ba6d4725a1d5ac56
-    - name: 0 Player HUD v1.0_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bcaeadcebc7501745973c1254abf507c
-    - name: 0 Player HUD v1.0_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: a54cd1f08fb511440b52d1f73d959462
-    - name: 0 Player HUD v1.0_Frame_65
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: e55f23b03e473a84e95e023feb80d694
-    - name: 0 Player HUD v1.0_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 93fc0a740e6dcd041a262f5e219e5304
-    - name: 0 Player HUD v1.0_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 7db28f9537578c148b18dd200b2ce094
-    - name: 0 Player HUD v1.0_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: b2fadb298a22d9749b1e3528e778adfb
-    - name: 0 Player HUD v1.0_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 25237ae756c479845aace4ce7b48d9d2
-    - name: 0 Player HUD v1.0_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: d8504054eeebdf74c8d4d4b6fd97aaab
-    - name: 0 Player HUD v1.0_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 6891f8ef2473ae94a849770527ae3aae
-    - name: 0 Player HUD v1.0_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ae47c74fe925f554ba9af78170cf4f88
-    - name: 0 Player HUD v1.0_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: bfb88ec8b7ce31d499d9b4a8acdf5a09
-    - name: 0 Player HUD v1.0_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 35bba187762b72741bcbe8cd9320b572
-    - name: 0 Player HUD v1.0_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 8bc73589e8c7f244990315f0bdb6c044
-    - name: 0 Player HUD v1.0_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 444a233378dbe1b49bc0f596f19703ea
-    - name: 0 Player HUD v1.0_Frame_77
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 150e492ead7e3a64c9bb9eb0cb6db72c
-    - name: 0 Player HUD v1.0_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 1a708881b1bce274789f1d0ee25a4ae7
-    - name: 0 Player HUD v1.0_Frame_79
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: beefc98f784e84b469552518c462d1e3
-    - name: 0 Player HUD v1.0_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: 028ddd21525c8f84eb5c29e9db43541f
-    - name: 0 Player HUD v1.0_Frame_81
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
         width: 759
         height: 591
       spriteId: ea0766af7ab890341a78c83126253078
-    - name: 0 Player HUD v1.0_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: -111
@@ -2461,3 +2550,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 672, y: 480}
+  previousTextureSize: {x: 8192, y: 8192}
