@@ -1,31 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-
-    //playerStats kansio pelaajan tiedot
-    PlayerStats stats;
-
+    private PlayerStats stats;
     private Camera cam;
 
-
-    //Estää visuaalinen rotaation
     public GameObject rotationFix;
-    public quaternion rotationFixRotation;
-
-    // Start is called before the first frame update
+    public Quaternion rotationFixRotation; // Muutettu 'quaternion' -> 'Quaternion'
 
     private void Awake()
     {
         cam = Camera.main;
+        if (cam == null)
+        {
+            Debug.LogError("Pääkameraa ei löytynyt!");
+        }
     }
+
     void Start()
     {
-        rotationFixRotation = rotationFix.transform.rotation;
+        if (rotationFix != null)
+        {
+            rotationFixRotation = rotationFix.transform.rotation;
+        }
+        else
+        {
+            Debug.LogWarning("rotationFix ei ole määritelty!");
+        }
 
         stats = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
@@ -41,8 +45,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         float y = Input.GetAxisRaw("Vertical");
@@ -50,19 +52,20 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 moveDirection = new Vector2(x, y).normalized;
 
-
-        rb.velocity = moveDirection * stats.playerMoveSpeed;
+        rb.velocity = moveDirection * stats.playerMoveSpeed; // Poistettu Time.deltaTime
 
         PlayerMouseRotation();
     }
 
-    public void PlayerMouseRotation() {
+    public void PlayerMouseRotation()
+    {
+        if (cam == null) return;
 
-        Vector3 mousepos = (Vector2)cam.ScreenToWorldPoint( Input.mousePosition);
+        Vector3 mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousepos.z = 0;
 
-        
-        float angleRad = math.atan2(mousepos.y - transform.position.y, mousepos.x - transform.position.x);
-        float angleDeg = (180 / math.PI) * angleRad ;
+        float angleRad = Mathf.Atan2(mousepos.y - transform.position.y, mousepos.x - transform.position.x); // Muutettu math -> Mathf
+        float angleDeg = (180 / Mathf.PI) * angleRad; // Muutettu math -> Mathf
 
         transform.rotation = Quaternion.Euler(0f, 0f, angleDeg);
         Debug.DrawLine(transform.position, mousepos, Color.red, Time.deltaTime);
@@ -70,6 +73,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        rotationFix.transform.rotation = rotationFixRotation;
+        if (rotationFix != null)
+        {
+            rotationFix.transform.rotation = rotationFixRotation;
+        }
     }
 }

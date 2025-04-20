@@ -10,7 +10,6 @@ public class PlayerMovement2D : MonoBehaviour
 
     [SerializeField] private DialogueUI dialogueUI; // Aseta tämä Inspectorissa
     public float health = 8f, MaxHealth = 8f;
-    public Animator animator;
 
     public DialogueUI DialogueUI => dialogueUI;
 
@@ -31,7 +30,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponentInChildren<Animator>(); // Haetaan animaattori lapsiobjektista
+        
         health = MaxHealth;
 
         rb = GetComponent<Rigidbody2D>();
@@ -69,7 +68,6 @@ public class PlayerMovement2D : MonoBehaviour
         // Normalisoidaan liike diagonaalisia tilanteita varten
         movement = movement.normalized;
 
-        UpdateAnimation();
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -84,21 +82,6 @@ public class PlayerMovement2D : MonoBehaviour
         rb.velocity = movement * Player.Speed;
     }
 
-    private void UpdateAnimation()
-    {
-        // Tarkista, liikkuuko pelaaja
-        bool isMoving = movement.sqrMagnitude > 0;
-
-        // Päivitä animaation tila
-        animator.SetBool("IsPlayerMoving", isMoving);
-
-        // Käännä sprite, jos pelaaja liikkuu
-        if (isMoving)
-        {
-            if (movement.x > 0 && !isFacingRight) FlipSprite();
-            else if (movement.x < 0 && isFacingRight) FlipSprite();
-        }
-    }
 
     // Pelaajan vahinkokäsittely
     public void TakeDamage(float damage)
