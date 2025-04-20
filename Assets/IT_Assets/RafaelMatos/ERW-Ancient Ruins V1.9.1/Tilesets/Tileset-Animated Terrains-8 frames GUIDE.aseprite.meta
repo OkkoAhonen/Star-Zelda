@@ -8,7 +8,6 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
-  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -133,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 896
       height: 982
-    spriteID: a562ee597b620744ba5cd64e90b52122
+    spriteID: 133e9c0ab8c84ba418f34802d8244750
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -145,12 +144,7 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    uuid:
-      value0: 2612120709
-      value1: 0
-      value2: 0
-      value3: 0
-    guid: -1682846587
+    guid: 1924803137
     name: Tileset-Animated Terrains-8 frames GUIDE
     layerFlags: 0
     layerType: 0
@@ -158,13 +152,12 @@ ScriptedImporter:
     cells:
     - name: Tileset-Animated Terrains-8 frames GUIDE
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 86
         width: 896
         height: 982
-      spriteId: a562ee597b620744ba5cd64e90b52122
+      spriteId: 133e9c0ab8c84ba418f34802d8244750
     linkedCells: []
     parentIndex: -1
   platformSettings: []
@@ -172,4 +165,3 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 928, y: 1078}
-  previousTextureSize: {x: 1024, y: 1024}
