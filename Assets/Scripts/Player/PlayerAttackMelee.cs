@@ -31,7 +31,7 @@ public class PlayerAttackMelee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.speed = 2f;
+        if(animator != null) animator.speed = 2f;
     }
 
     // Update is called once per frame
