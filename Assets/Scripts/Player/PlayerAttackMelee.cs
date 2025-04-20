@@ -17,6 +17,8 @@ public class PlayerAttackMelee : MonoBehaviour
 
     public Animator animator; //Aseta inspektorissa
 
+    public PlayerStatsManager playerStatsManager;
+
     //Charge muuttujat
 
     public float maxChargeTime = 3f; //Tämä korvataan myöhemmin itemien arvoilla
@@ -31,7 +33,9 @@ public class PlayerAttackMelee : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(animator != null) animator.speed = 2f;
+        Debug.Log(PlayerStatsManager.instance.GetStat(StatType.Strength) + "moi");
+
+        if (animator != null) animator.speed = 2f;
     }
 
     // Update is called once per frame
@@ -67,8 +71,8 @@ public class PlayerAttackMelee : MonoBehaviour
         {
             Debug.Log(equippedItem.attackDamage * Damagebooster);
 
-            EnemyAI enemyhealth = enemyGameobje.GetComponent<EnemyAI>();
-            enemyhealth.enemyTakeDamage(equippedItem.attackDamage * Damagebooster);
+            EnemyController enemyhealth = enemyGameobje.GetComponent<EnemyController>();
+            enemyhealth.TakeDamage( equippedItem.attackDamage * Damagebooster *  PlayerStatsManager.instance.GetStat(StatType.Strength));
 
 
         }

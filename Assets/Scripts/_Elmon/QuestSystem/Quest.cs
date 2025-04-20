@@ -7,6 +7,7 @@ public class QuestReward
     public int gold;
     public int experience;
     public List<Sprite> itemIcons;
+    public Item[] getQuestItem;
 }
 
 [System.Serializable]

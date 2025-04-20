@@ -25,6 +25,7 @@ public class ItemsSellScript : MonoBehaviour
 
     public void sellItem()
     {
+        GameEventsManager.instance.playerEvents.GainExperience(25);
         Item soldItem = InventoryManager.Instance.GetSelectedItem(true);
         if (soldItem != null) { 
         moneyManager.ChangeMoney(soldItem.price);

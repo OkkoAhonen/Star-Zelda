@@ -11,6 +11,9 @@ public class PlayerDialogueAction : MonoBehaviour
 
     public ShopManager shopManager;
 
+
+    public Quest[] quests;
+
     private void Awake()
     {
         shopManager = GameObject.Find("ShopManager").GetComponent<ShopManager>();
@@ -54,6 +57,20 @@ public class PlayerDialogueAction : MonoBehaviour
     public void AvaaNormiKauppa()
     {
         shopManager.OpenShop();
+        AudioManager.instance.PlaySFX("Inventory");
+
+        if (quests[0].state == Quest.QuestState.CAN_START) { 
+        QuestManager.instance.StartQuest(quests[0]);
+        }
+        else if ((quests[0].state == Quest.QuestState.CAN_FINISH)){
+            QuestManager.instance.CompleteQuest(quests[0]);
+        }
+    }
+
+    public void avaaQuest()
+    {
+        
+        QuestManager.instance.StartQuest(quests[0]);
     }
 
 }

@@ -60,6 +60,15 @@ public class QuestManager : MonoBehaviour
 
         quest.state = Quest.QuestState.FINISHED;
 
+        if(quest.rewards.getQuestItem != null) {
+
+            for(int i = 0; i < quest.rewards.getQuestItem.Length; i++) { 
+
+            InventoryManager.Instance.AddItem(quest.rewards.getQuestItem[i]);
+        }
+        }
+        GameEventsManager.instance.playerEvents.GainExperience(quest.rewards.experience);
+        
         GameEventsManager.instance.questEvents.FinishQuest(quest.id);
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
     }

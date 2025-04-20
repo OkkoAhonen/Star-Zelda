@@ -15,5 +15,5 @@ public class Enemy : ScriptableObject
     public bool canfire;
 
 
-    
+
 }

@@ -12,7 +12,9 @@ public enum StatType
 
 public class PlayerStatsManager : MonoBehaviour
 {
-	private readonly HashSet<StatType> bodyStats = new HashSet<StatType>
+
+
+    private readonly HashSet<StatType> bodyStats = new HashSet<StatType>
 	{
 		StatType.Strength, StatType.Vitality, StatType.Endurance
 	};
@@ -30,7 +32,7 @@ public class PlayerStatsManager : MonoBehaviour
 	public static PlayerStatsManager instance { get; private set; }
 	public event Action onStatChanged;
 	
-	private Dictionary<StatType, int> stats = new Dictionary<StatType, int>();
+	public Dictionary<StatType, int> stats = new Dictionary<StatType, int>();
 
 	[Header("Configuration")]
 	[SerializeField] private int startingLevel = 1;
