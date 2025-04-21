@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SceneTransition : MonoBehaviour
@@ -18,6 +19,13 @@ public class SceneTransition : MonoBehaviour
             fadePanel.rectTransform.anchoredPosition = startPosition;
             fadePanel.color = new Color(0f, 0f, 0f, 1f);
             StartCoroutine(FadeOut());
+        }
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         }
     }
 

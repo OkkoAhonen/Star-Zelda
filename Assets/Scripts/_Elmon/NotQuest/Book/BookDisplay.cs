@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 
 public class BookDisplay : MonoBehaviour
@@ -45,8 +46,23 @@ public class BookDisplay : MonoBehaviour
     private int currentPage = 0;
     private bool isOpen = false;
 
+    // --- Animaatiota varten lisättävät muuttujat ---
+    [SerializeField] private float animationDuration = 0.5f;
+    [SerializeField] private float offScreenOffset = 1000f;
+    [SerializeField] private AnimationCurve animationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
+    private RectTransform bookRectTransform;
+    private Vector2 bookOnScreenPosition;
+    private Vector2 bookOffScreenPosition;
+    private Coroutine animationCoroutine = null;
+
+
+
     void Start()
     {
+
+
+
         leftPagePosition = leftPage.transform.position;
         rightPagePosition = rightPage.transform.position;
 
@@ -83,16 +99,89 @@ public class BookDisplay : MonoBehaviour
         gameObject.SetActive(false);
         // But initialize it as closed
         SetBookState(false);
+
+        // --- Lisättävä koodi Awake- tai Start-metodiin ---
+        bookRectTransform = GetComponent<RectTransform>();
+        if (bookRectTransform != null)
+        {
+            bookOnScreenPosition = bookRectTransform.anchoredPosition;
+            bookOffScreenPosition = bookOnScreenPosition + new Vector2(offScreenOffset, 0);
+
+            // Aseta piiloon alussa
+            bookRectTransform.anchoredPosition = bookOffScreenPosition;
+            if (gameObject.activeSelf) // Tarkista ennen deaktivointia
+            {
+                gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            Debug.LogError("RectTransform-komponenttia ei löytynyt!", gameObject);
+        }
     }
 
-    private void ToggleBook()
+
+
+    private void ToggleBook() // Tai public, jos kutsutaan ulkopuolelta
     {
-        // Toggle the entire book on/off
-        gameObject.SetActive(!gameObject.activeSelf);
+        if (bookRectTransform == null) return;
+
+        if (animationCoroutine != null)
+        {
+            StopCoroutine(animationCoroutine);
+            animationCoroutine = null;
+        }
+
         if (gameObject.activeSelf)
         {
-            RefreshBook();
+            // Piilota (animoi ulos)
+            animationCoroutine = StartCoroutine(AnimateBookPosition(bookOnScreenPosition, bookOffScreenPosition, true));
         }
+        else
+        {
+            // Näytä (animoi sisään)
+            gameObject.SetActive(true);
+            bookRectTransform.anchoredPosition = bookOffScreenPosition; // Aseta aloituspaikka
+            animationCoroutine = StartCoroutine(AnimateBookPosition(bookOffScreenPosition, bookOnScreenPosition, false));
+        }
+    }
+    // --- Uusi Coroutine-metodi animaatiota varten ---
+    private IEnumerator AnimateBookPosition(Vector2 startPos, Vector2 endPos, bool disableOnComplete)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < animationDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / animationDuration);
+            float easedT = animationCurve.Evaluate(t);
+            if (bookRectTransform != null) // Lisätty null-tarkistus
+            {
+                bookRectTransform.anchoredPosition = Vector2.LerpUnclamped(startPos, endPos, easedT);
+            }
+            yield return null;
+        }
+
+        if (bookRectTransform != null) // Lisätty null-tarkistus
+        {
+            bookRectTransform.anchoredPosition = endPos; // Varmista loppusijainti
+        }
+
+
+        if (disableOnComplete)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            // Alkuperäinen koodisi kutsui RefreshBook():ia tässä kohdassa,
+            // kun gameObject.activeSelf oli true.
+            // Jos haluat säilyttää sen toiminnallisuuden (päivittää kirjan
+            // sisällön animaation *jälkeen*), lisää kutsu tähän:
+            // RefreshBook();
+        }
+
+        animationCoroutine = null;
     }
 
     public void SetCurrentBook(BookData newBook)
