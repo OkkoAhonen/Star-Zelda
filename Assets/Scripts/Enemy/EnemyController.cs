@@ -1,11 +1,15 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 public class EnemyController : MonoBehaviour
 {
+
+    public string EnemyID = "9";
+
     [Header("Configuration")]
     public Enemy enemyStats;
     [SerializeField] private GameObject lootPrefab;
@@ -263,8 +267,11 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
+        
+
         if (isDead) return; isDead = true;
         Debug.Log($"{gameObject.name} is dying and will remain on screen.");
+        QuestManager.instance.NotifyStepEvent("Kill", EnemyID);
         isMoving = false; isAttacking = false; rb.velocity = Vector2.zero;
         rb.simulated = false; GetComponent<Collider2D>().enabled = false;
         if (animator != null) { animator.SetTrigger("Die"); StartCoroutine(DropLootAfterDelay(deathAnimationDuration)); }

@@ -16,5 +16,5 @@ MonoBehaviour:
   speed: 577
   attackSpeed: 43
   strength: 77
-  detectionRange: 600
+  detectionRange: 300
   canfire: 0

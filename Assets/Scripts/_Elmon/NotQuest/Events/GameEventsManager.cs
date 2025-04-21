@@ -15,7 +15,7 @@ public class GameEventsManager : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Debug.LogError("Found more than one Game Events Manager in the scene.");
+            //Debug.LogError("Found more than one Game Events Manager in the scene.");
             Destroy(gameObject);
             return;
         }
