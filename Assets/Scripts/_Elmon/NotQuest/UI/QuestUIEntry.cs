@@ -53,6 +53,7 @@ public class QuestUIEntry : MonoBehaviour
     private void OnDestroy()
     {
         allEntries.Remove(this);
+        GameEventsManager.instance.questEvents.onQuestStepStateChange -= StepChangeData;
     }
 
     public void OnClicked()
@@ -179,7 +180,11 @@ public class QuestUIEntry : MonoBehaviour
         // Clear existing step entries
         foreach (Transform child in stepListContainer)
         {
+
+            Debug.Log("Debugataan" + child.name);
             Destroy(child.gameObject);
+            
+
         }
 
         // Display steps

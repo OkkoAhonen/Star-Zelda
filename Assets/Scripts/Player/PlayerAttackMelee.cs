@@ -69,11 +69,11 @@ public class PlayerAttackMelee : MonoBehaviour
             {
                 if (equippedItem.name.Contains("_1"))
                 {
-                    animator.gameObject.transform.localScale = new Vector3(40, 40, 1);
+                    animator.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
                 else
                 {
-                    animator.gameObject.transform.localScale = new Vector3(60, 60, 1);
+                    animator.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
                 }
             }
         }

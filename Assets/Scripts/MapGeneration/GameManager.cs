@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // TÄRKEÄÄ: Pitää tämän objektin hengissä scene-latauksissa
+            //DontDestroyOnLoad(gameObject); // TÄRKEÄÄ: Pitää tämän objektin hengissä scene-latauksissa
             Debug.Log("GameManager Initialized - DontDestroyOnLoad");
         }
         else

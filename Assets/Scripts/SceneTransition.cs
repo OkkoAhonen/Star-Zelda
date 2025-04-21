@@ -23,10 +23,7 @@ public class SceneTransition : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-        }
     }
 
     private IEnumerator FadeOut()

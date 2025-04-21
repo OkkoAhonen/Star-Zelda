@@ -6,7 +6,7 @@ public class Managers : MonoBehaviour
     private void Awake()
     {
         book.SetActive(true); // Jos kirja on laitettu pois nenän eestä nii tää aktivoi sen kuitenkin :)
-        DontDestroyOnLoad(gameObject);
+       // DontDestroyOnLoad(gameObject);
         PerkSystem perkSystem = new PerkSystem(); // This will set the singleton instance
     }
 }
