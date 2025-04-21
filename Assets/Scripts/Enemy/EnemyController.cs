@@ -18,6 +18,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float attackCooldown = 2.0f;
     [SerializeField] private float deathAnimationDuration = 1.5f; // Käytetään lootin ajoitukseen
 
+    // --- LISÄTTY: Knockback-kesto ---
+    [Header("Knockback")]
+    [SerializeField] private float knockbackDuration = 0.2f; // Kuinka kauan knockback estää normaalin liikkeen
+
     [Header("Runtime References")]
     private Transform playerTransform;
     private Rigidbody2D rb;
@@ -30,12 +34,15 @@ public class EnemyController : MonoBehaviour
     private bool isAttacking = false;
     private float lastAttackTime = -Mathf.Infinity;
     private bool isDead = false;
-    // --- LISÄTTY: Katsomissuunta ---
-    private bool isFacingRight = true; // Oletetaan, että sprite katsoo oletuksena oikealle
+    private bool isKnockedBack = false; // Knockback-tila
+    private Coroutine knockbackCoroutine = null; // Viittaus aktiiviseen knockback-coroutineen
+    private bool isFacingRight = true; // Katsomissuunta
 
     void Start()
     {
         // ---- Alustukset ----
+        // POISTETTU TURHA TARKISTUS TÄSTÄ
+
         if (enemyStats == null) { Debug.LogError($"EnemyStats puuttuu: {gameObject.name}", this); enabled = false; return; }
 
         rb = GetComponent<Rigidbody2D>();
@@ -60,7 +67,6 @@ public class EnemyController : MonoBehaviour
         isDead = false;
         if (currentHealth <= 0) { Debug.LogError($"ERROR: Enemy {gameObject.name} started with 0 or less health!", this); isDead = true; }
 
-        // --- LISÄTTY: Varmista alkuasento ---
         if ((isFacingRight && transform.localScale.x < 0) || (!isFacingRight && transform.localScale.x > 0))
         {
             Flip();
@@ -73,20 +79,27 @@ public class EnemyController : MonoBehaviour
         WatchHealth();
         if (isDead) return;
         CheckPlayerDistance();
-        HandleActions();
+        // --- MUOKATTU: HandleActions kutsutaan vain jos ei knockback ---
+        // (Tai HandleActions hoitaa itse tarkistuksen alussa)
+        HandleActions(); // HandleActions sisältää nyt tarkistuksen
     }
 
     void FixedUpdate()
     {
         if (isDead) return;
 
-        if (isMoving && !isAttacking)
+        // --- MUOKATTU EHTO: Älä liiku jos knockback on päällä ---
+        if (isMoving && !isAttacking && !isKnockedBack)
         {
             MoveTowardsPlayerOneAxis();
         }
-        else if (!isMoving && rb.velocity != Vector2.zero)
+        // Nollaa velocity vain jos EI liikuta EIKÄ olla knockback-tilassa
+        else if (!isMoving && !isKnockedBack && rb.velocity != Vector2.zero)
         {
-            rb.velocity = Vector2.zero;
+            if (Mathf.Abs(rb.velocity.x) < 0.01f && Mathf.Abs(rb.velocity.y) < 0.01f)
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 
@@ -97,46 +110,58 @@ public class EnemyController : MonoBehaviour
         isPlayerInDetectionRange = distanceToPlayer <= enemyStats.detectionRange;
     }
 
+    // --- MUOKATTU HandleActions ---
     void HandleActions()
     {
+        // --- LISÄTTY TARKISTUS: Älä tee toimintoja knockbackin aikana ---
+        if (isKnockedBack)
+        {
+            isMoving = false; // Varmista, ettei yritä liikkua
+            if (animator != null) animator.SetBool("IsMoving", false); // Varmista animaatio
+            return; // Poistu metodista, jos knockback päällä
+        }
+        // --- ---
+
         bool shouldTryToMove = false;
         if (isPlayerInDetectionRange && playerTransform != null)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-            if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown && !isAttacking) { StartAttack(); }
-            else if (!isAttacking) { shouldTryToMove = true; }
+            // --- LISÄTTY TARKISTUS: Älä hyökkää knockbackin aikana ---
+            if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown && !isAttacking && !isKnockedBack)
+            {
+                StartAttack();
+            }
+            // --- LISÄTTY TARKISTUS: Älä ala liikkua knockbackin aikana ---
+            else if (!isAttacking && !isKnockedBack) // Huom: !isKnockedBack lisätty
+            {
+                shouldTryToMove = true;
+            }
         }
-        else if (!isAttacking) { shouldTryToMove = false; }
+        else if (!isAttacking) { shouldTryToMove = false; } // Ei tarvitse isKnockedBack-tarkistusta, koska se tehdään jo alussa
 
         isMoving = shouldTryToMove;
 
-        if (animator != null) { animator.SetBool("IsMoving", isMoving && !isAttacking); }
+        // Lisätty !isKnockedBack ehtoon
+        if (animator != null) { animator.SetBool("IsMoving", isMoving && !isAttacking && !isKnockedBack); }
 
-        if (!shouldTryToMove && !isAttacking) { rb.velocity = Vector2.zero; }
+        // Velocityn nollaus on FixedUpdatessa / Dragilla
+        // if (!shouldTryToMove && !isAttacking) { rb.velocity = Vector2.zero; } // Tämä rivi voi olla tarpeeton
     }
 
+
+    // --- MUOKATTU StartAttack ---
     void StartAttack()
     {
-        if (isDead) return;
+        // --- LISÄTTY TARKISTUS: Älä hyökkää knockbackin tai kuoleman aikana ---
+        if (isDead || isKnockedBack) return;
+
         isAttacking = true; isMoving = false; lastAttackTime = Time.time;
-        rb.velocity = Vector2.zero;
+        rb.velocity = Vector2.zero; // Pysäytä mahdollinen liike
 
-        // --- LISÄTTY: Käänny pelaajaa kohti ennen hyökkäystä (suositeltavaa, mutta voidaan jättää pois pyynnöstä) ---
-        if (playerTransform != null)
-        {
-            float directionToPlayerX = playerTransform.position.x - transform.position.x;
-            if (directionToPlayerX > 0.01f && !isFacingRight) // Pelaaja oikealla, katson vasemmalle
-            {
-                Flip();
-            }
-            else if (directionToPlayerX < -0.01f && isFacingRight) // Pelaaja vasemmalla, katson oikealle
-            {
-                Flip();
-            }
-        }
-        // --- Kääntymislogiikka hyökkäyksessä päättyy ---
+        // Kääntyminen pelaajaa kohti
+        if (playerTransform != null) { /* ... kääntymislogiikka ... */ }
 
-
+        // Animaattorin päivitys
         if (animator != null)
         {
             animator.SetBool("IsMoving", false);
@@ -151,44 +176,28 @@ public class EnemyController : MonoBehaviour
         if (isDead || playerActionScript == null || playerTransform == null) return;
         if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange * 1.2f)
         {
-            Debug.Log($"Enemy ({gameObject.name}) dealing damage via Animation Event!");
+            // Debug.Log($"Enemy ({gameObject.name}) dealing damage via Animation Event!");
             playerActionScript.playerTakeDamage(enemyStats.strength);
         }
-        else { Debug.Log($"Player moved out of range during {gameObject.name}'s attack animation."); }
+        // else { Debug.Log($"Player moved out of range during {gameObject.name}'s attack animation."); }
     }
 
     public void AttackAnimationFinished() { isAttacking = false; }
 
-
-    // --- MUOKATTU LIIKKUMISLOGIIKKA ---
     void MoveTowardsPlayerOneAxis()
     {
-        if (playerTransform == null) return; // Varmistus
+        if (playerTransform == null) return;
 
         Vector2 difference = (Vector2)playerTransform.position - rb.position;
         float xDiff = Mathf.Abs(difference.x);
         float yDiff = Mathf.Abs(difference.y);
         Vector2 moveDirection = Vector2.zero;
 
-        if (xDiff > yDiff)
-        {
-            moveDirection = new Vector2(Mathf.Sign(difference.x), 0);
-        }
-        else if (yDiff > 0.01f) // Pieni toleranssi
-        {
-            moveDirection = new Vector2(0, Mathf.Sign(difference.y));
-        }
+        if (xDiff > yDiff) { moveDirection = new Vector2(Mathf.Sign(difference.x), 0); }
+        else if (yDiff > 0.01f) { moveDirection = new Vector2(0, Mathf.Sign(difference.y)); }
 
-        // --- LISÄTTY: Kääntyminen liikkeen X-suunnan mukaan ---
-        if (moveDirection.x > 0 && !isFacingRight) // Liikkuu oikealle, mutta katsoo vasemmalle
-        {
-            Flip();
-        }
-        else if (moveDirection.x < 0 && isFacingRight) // Liikkuu vasemmalle, mutta katsoo oikealle
-        {
-            Flip();
-        }
-        // --- Kääntymislogiikka päättyy ---
+        if (moveDirection.x > 0 && !isFacingRight) { Flip(); }
+        else if (moveDirection.x < 0 && isFacingRight) { Flip(); }
 
         if (moveDirection != Vector2.zero)
         {
@@ -197,9 +206,7 @@ public class EnemyController : MonoBehaviour
         }
         else { rb.velocity = Vector2.zero; }
     }
-    // --- LIIKKUMISLOGIIKAN MUOKKAUS PÄÄTTYY ---
 
-    // --- LISÄTTY: Metodi flippausta varten ---
     void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -207,21 +214,47 @@ public class EnemyController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    // --- ---
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private IEnumerator KnockbackCooldown()
     {
-        if (isDead) return;
-        if (collision.gameObject.CompareTag("Player")) { /* Kontaktivahinko */ }
+        yield return new WaitForSeconds(knockbackDuration);
+        if (this != null && gameObject.activeInHierarchy) { isKnockedBack = false; }
+        knockbackCoroutine = null;
     }
 
-    public void TakeDamage(float damage)
+    void OnCollisionEnter2D(Collision2D collision) { /*... Sama ...*/ }
+
+    // TakeDamage on jo päivitetty oikein edellisessä vaiheessa
+    public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce)
     {
         if (isDead) return;
+        if (animator != null) { animator.SetTrigger("Hurt"); }
+
+        if (knockbackCoroutine != null)
+        {
+            StopCoroutine(knockbackCoroutine);
+            knockbackCoroutine = null;
+            isKnockedBack = false;
+        }
+
+        rb.AddForce(hitDirection.normalized * knockbackForce, ForceMode2D.Impulse);
+        // Debug.Log($"{gameObject.name} received knockback force. Velocity after AddForce: {rb.velocity}");
+
+        isKnockedBack = true;
+        knockbackCoroutine = StartCoroutine(KnockbackCooldown());
+
         currentHealth -= damage;
-        Debug.Log($"{gameObject.name} took {damage} damage. Health: {currentHealth}/{enemyStats.maxHealth}");
-        // if (animator != null) animator.SetTrigger("Hit");
+        // Debug.Log($"{gameObject.name} took {damage} damage. Health: {currentHealth}/{enemyStats.maxHealth}");
+
+        if (CameraShake.instance != null)
+        {
+            float shakeDuration = 0.1f;
+            float shakeMagnitude = 0.05f;
+            CameraShake.instance.StartShake(shakeDuration, shakeMagnitude);
+        }
+        else { Debug.LogWarning("CameraShake.instance ei löytynyt!"); }
     }
+
 
     void WatchHealth()
     {

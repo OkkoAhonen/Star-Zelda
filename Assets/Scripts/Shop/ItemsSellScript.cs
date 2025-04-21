@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class ItemsSellScript : MonoBehaviour
 {
@@ -27,8 +28,8 @@ public class ItemsSellScript : MonoBehaviour
     {
         GameEventsManager.instance.playerEvents.GainExperience(25);
         Item soldItem = InventoryManager.Instance.GetSelectedItem(true);
-        if (soldItem != null) { 
-        moneyManager.ChangeMoney(soldItem.price);
+        if (soldItem != null) {
+            GameEventsManager.instance.playerEvents.ChangeGoldBy((int) soldItem.price);
         }
         else { Debug.Log("Ei itemiä kädessä"); }
 

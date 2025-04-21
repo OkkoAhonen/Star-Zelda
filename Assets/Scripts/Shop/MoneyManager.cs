@@ -4,7 +4,7 @@ using TMPro;
 
 public class MoneyManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI m_TextMeshPro;
+
     [SerializeField] GameObject MoneyText;
 
     public static float PlayerMoney = 100f;    // Nykyinen raham‰‰r‰ (julkinen ja staattinen)
@@ -15,7 +15,6 @@ public class MoneyManager : MonoBehaviour
     void Start()
     {
         MoneyText = GameObject.Find("/Canvas/Money");
-        m_TextMeshPro = MoneyText.GetComponent<TextMeshProUGUI>();
         targetMoney = PlayerMoney;              // Asetetaan alkuarvo
         UpdateMoneyUI();                       // P‰ivitet‰‰n UI heti alussa
     }

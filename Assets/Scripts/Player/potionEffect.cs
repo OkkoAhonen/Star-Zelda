@@ -51,7 +51,7 @@ public class potionEffect : MonoBehaviour
         if (collision.CompareTag("Enemy") && canDamage && equippedItem.isDamagePotion)
         {
             EnemyController enemyhealth = collision.GetComponent<EnemyController>();
-            enemyhealth.TakeDamage(equippedItem.potionAttackDamage);
+            enemyhealth.TakeDamage(equippedItem.potionAttackDamage, Vector2.zero, 0f);
             canDamage = false;
             StartCoroutine(PotionDamageCooldown());
         }
