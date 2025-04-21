@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -132,7 +133,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 6b7365ea2148b0e42894bc891182147b
+    spriteID: 24732cd10836e574bac10d446c8e9e65
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +153,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: db176f561297f9c4cb16a40ba2b2e315
+    spriteID: 294026ecc77454a4b896fad0329b0965
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +173,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 0c7569e14a394944e86a079fd11d8bf3
+    spriteID: b25e87f035b32c140be48fe670569a13
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +193,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 0bdcaf4078a91794ca83157f937f2c19
+    spriteID: ed7ec2015ce6a434d927972fb4eb9c1f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +213,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: c32a856740b24b943882b790fc46fcde
+    spriteID: 43ff1e2f2b01ee24da06a32879921e1a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +233,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 806e3756325ce2141b3c0fb7ad27b75b
+    spriteID: 059c551109dccf644a152b63bee4227a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +253,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 7e712706ebc4f9840a5ac6ed2f38e059
+    spriteID: d05f4f99cb59ae4419dee35b567bd1d9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +273,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 3ca1364a2c58c434f9c2739fe0d1e59c
+    spriteID: 62eb21e8e09e5eb46b258fa86f8f0b15
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -292,7 +293,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 7c17b2d94f4fe3b408aa5ba4019b04db
+    spriteID: 2a89d51dacd7c4c49a0e235d75aa5a38
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -312,7 +313,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 4aafb048dffbe1f4cad6713278a9803d
+    spriteID: 3dab4ac236ed48b43b7ea11dd4f11dfd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -332,7 +333,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 2027a601ecce00a439e2888120964b36
+    spriteID: 32cd6475a924efa478d43d7dc58c0d5a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -352,7 +353,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 37bb83f5ddbd1e841896b689e49fd472
+    spriteID: 08748820a5d8dcc439c809eac4731f23
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -372,7 +373,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: 5e592dd846b0b8e458c4558ef12c9a04
+    spriteID: 10b176f8c9d70cb40ac036d63762a620
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -392,7 +393,7 @@ ScriptedImporter:
       y: 4
       width: 62
       height: 61
-    spriteID: c343ca2ccbe07b143832322e9535c528
+    spriteID: de1c0a9d7010b3941af1fae5c64c73c5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -412,7 +413,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 6baf9c0462ef30841aa4972d8298de7a
+    spriteID: f3206c8479f0ff84da5a87e02024b907
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -432,7 +433,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 323bfa21c6efa874da3f9f6ab993eed0
+    spriteID: 6fed544eefb350b4595b8113037a60fe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -452,7 +453,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: fe397934c48426d479eda8e5b0355627
+    spriteID: e3ba8a580d10a1c48b7f71c2ca4f190e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -472,7 +473,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 814000b41a73c6c4da7479d5090872f0
+    spriteID: 8f7e734045156d147bf7fd5068d38552
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -492,7 +493,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 7825294460fc7c14b9d550ee5ad1bfe5
+    spriteID: a401cb5266ce1014b8383fdf053ce82e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -512,7 +513,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 4862f648dcc745d49a60f8e9220f384f
+    spriteID: f422403860d6501409bdc03524cbf44c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -532,7 +533,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 5490ecb42575a574faab6024dbc0d383
+    spriteID: 484daf3a50db9694f811d414d5e333ee
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -552,7 +553,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 3cb3b981587d4744b9b487e685760a89
+    spriteID: 9b7fa32cf4e5f6f4991edf0621696045
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -572,7 +573,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: a14a74e295587274e9491647643f0280
+    spriteID: 8a5991f1daaea5e4896fd8f595fbdd4c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -592,7 +593,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 82edd4d06366d07478a2cb6d1ceeccab
+    spriteID: b4029ebc5d1e7464a9005f3352089dff
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -612,7 +613,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 26cb5eec291d5184ab076e148b3da09b
+    spriteID: e0dfda5a300a2a44fae66b9fc2b4fbf5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -632,7 +633,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 4553f83ea32eb774b9e95f869269323b
+    spriteID: a485c5169fd67d344b090210ea1b16ac
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -652,7 +653,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: 71f836ea85f13e44fac5ce4b0d29e72f
+    spriteID: 936de122cbb6b2042bc8d2d59cefdf25
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -672,7 +673,7 @@ ScriptedImporter:
       y: 73
       width: 62
       height: 61
-    spriteID: ce9a5a6e8e25ddb48b361fe9bf626983
+    spriteID: 730a8a82225a0674da2e4e1443a736a3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -692,7 +693,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: 5d115de5d124d3d4cbcea03e5259fa2e
+    spriteID: 9c06d8cf8b3c2eb4b9cd4efbe81615b1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -712,7 +713,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: f0c624529227093439560410cc77bc81
+    spriteID: e50f138a3e997b84cae5c54ee1c59214
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -732,7 +733,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: 005c22122f27e514fb7ad92cf64f1dae
+    spriteID: 86bb9dedbd535cc4e81cc1e0893e17c0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -752,7 +753,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: 62cdd1d8929a62b408d59449390a99a8
+    spriteID: a9d39afe67ecbd34b901a5a80db22bee
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -772,7 +773,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: 6b744d584f362324398dc32fa1db64c3
+    spriteID: ff1fae49fb7fa364da3503dbe86bb7a2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -792,7 +793,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: b7330c849ee8fbb4b9c88bce7e3db9bb
+    spriteID: 6e3d4c29aed547b4f929aac7e77d5029
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -812,7 +813,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: d528fb1e06c6ab641b5e58b07920429a
+    spriteID: 1659cee996d87f5419465541edb4f28f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -832,7 +833,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: 0a665477c31878343b1c9bd12cbea002
+    spriteID: 35b96fbb08183d44dabf1c01a3019440
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -852,7 +853,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: 34a85689133e1734fa10aa3082ba825c
+    spriteID: fade1db2373b27546b65ed403e0501b3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -872,7 +873,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: 66dbdbf17aff26640be9fde49e1bfc42
+    spriteID: 8e11da61898e8e84594ab50b6dd9f34d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -892,7 +893,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: b5e6266c2c8bbb541bb3bca134a698d5
+    spriteID: 13142648a035a244289418fcd39a68b6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -912,7 +913,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: ee719e0d1e3a9f6478f4ba8fe4b417a0
+    spriteID: 98ef19b0c5a876e4f8d87a34ae370185
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -932,7 +933,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: e40c505e089a50642aeb0096c64dfca4
+    spriteID: 4bee45f1e890f7945b79aa9f752a92ed
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -952,7 +953,7 @@ ScriptedImporter:
       y: 142
       width: 62
       height: 61
-    spriteID: 4a1255d13204c194bb60cf9511fba3fa
+    spriteID: 672e9bd1776196842b40856f864e4548
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -972,7 +973,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: be81318c844a08943891c3ddb0bd7f1b
+    spriteID: 807d3faab105ff642a971193482d7818
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -992,7 +993,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: dddb77588ffd02e46a6c0c7351afc312
+    spriteID: eafd82863f80e2a44b6eac9f71594026
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1012,7 +1013,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: 75fcb21acaedc2e4786af6c72b8b9e32
+    spriteID: f69db72caad76fb49a790e88046cee01
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1032,7 +1033,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: 39e0ce9307cc30440b4b8d2eebbaedab
+    spriteID: a0538b1eade880f4480161ebc96a6398
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1052,7 +1053,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: f58f01471df11ee4b81c454b37f8eae4
+    spriteID: 60122636b476b9a44bf279dd4f023926
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1072,7 +1073,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: 1398dc84121bdcf46b03301197738cd3
+    spriteID: 979df158d23e81348ad7361c519b1838
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1092,7 +1093,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: b9d06a4920300dd4ea8493cea81b9974
+    spriteID: e99b03cbc3d40a549af5309ebcf6f20b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1112,7 +1113,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: 8e9abf74ed43c2d44b0dab19c7a23711
+    spriteID: 040c7a264f0f4d04fb0e4862a60e8775
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1132,7 +1133,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: 282ee714c0e79ff4a975ba8ebe92d5b2
+    spriteID: 42e73c9b05985ab4498c41e76a42c791
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1152,7 +1153,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: a34e21fda71c56246840fd4f6d1b4fc4
+    spriteID: 8a26057085cea7f41a826b4a6dc1bc49
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1172,7 +1173,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: 428753f0e1d77e14683109be61420dcd
+    spriteID: b3b46e124fa642e46a71e2eedf4d10f8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1192,7 +1193,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: 18b5177e358b96841b5d28dfcd020902
+    spriteID: b0e563b12fda2a44393a762f81a83ee4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1212,7 +1213,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: 12752ff6cdf8d7045ab4f814aaf2a9c4
+    spriteID: dd6aff765429bcc43ad0f77f83072e57
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1232,7 +1233,7 @@ ScriptedImporter:
       y: 211
       width: 62
       height: 61
-    spriteID: a0db85b11ff668d4cb1557ce5a7cf6b1
+    spriteID: 3c916ee27242fb143b83a166e9a35d34
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1252,7 +1253,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: 3f5979572b313ff43a97d33371266b0e
+    spriteID: 24ab3b78258655a4ea70f23dc2b2faf0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1272,7 +1273,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: d456a98af40479a449830489996352ff
+    spriteID: 11abb25a0434ce143935eb61df78c827
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1292,7 +1293,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: 9f6007aaf8a7a3944950295c3e4f5426
+    spriteID: fd833bdae5ddee84ea0224dec4b87b86
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1312,7 +1313,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: a8b11af873255684582ca69c8aa47007
+    spriteID: c57a4e6a5ae7f9d439778a9bf2a27813
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1332,7 +1333,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: eaf80aeabc7ecf047a440092616172cb
+    spriteID: b4dfc62b08d988d418bacf62100f0f57
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1352,7 +1353,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: 1f11c5e732da4ed40b03b0982c579d58
+    spriteID: f99963165d88057489abd85573fb7c1b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1372,7 +1373,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: eb6d9697058d8a94480c45eb30e8f929
+    spriteID: 0a0089e60ddd5724e8205dff590d37fa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1392,7 +1393,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: ef66a0f89cd255a48bb2acb63a9f8fef
+    spriteID: b51712caf9459d24bb22767e0a1d4df4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1412,7 +1413,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: a684234d633931d44970b2b62c58ef08
+    spriteID: e1698d0c04439ae4092fbd6bc3297c2c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1432,7 +1433,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: 0549396059e070444aeff8e3966ff473
+    spriteID: d06c02140b117d94ea77e6d4bf986cfd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1452,7 +1453,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: a37e4a9b78a5d234d923ad22ace20e58
+    spriteID: 15e7f8a39c21b4740b273035ae45852f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1472,7 +1473,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: 09dfb51dca630f54bb51b1021fb99d24
+    spriteID: 5e3cb3c7bbc77674e856d014dc05a718
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1492,7 +1493,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: e185fb7dde604114eb9774b629ffd489
+    spriteID: 10d98f473cccc2f44af0dd55b2c23aab
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1512,7 +1513,7 @@ ScriptedImporter:
       y: 280
       width: 62
       height: 61
-    spriteID: c4b93a43027259b4fbf2d894172ab824
+    spriteID: 23567a0407d396d4a88047c3bc57a20a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1532,7 +1533,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: 1ee9931fb50df2c4d9fe19c353383c86
+    spriteID: 24c3fc42227dc7d4d838f9ba28819c29
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1552,7 +1553,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: a2e8a1cc823a9e3418c5f21f7c31edae
+    spriteID: c419d7fe09c5eda4d98f7834e9a219a4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1572,7 +1573,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: 971762b77258da94a9025708d688047e
+    spriteID: d03a6a7409e4dbc4e83dbc6297214dc2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1592,7 +1593,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: 58774da5708f9974ba71463dc4372bdc
+    spriteID: eabaeb0e736691946a1e97ba0d6df5f6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1612,7 +1613,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: 9bca90d0551a8b24c9358ce55a3e81e2
+    spriteID: 164894a5455ac4946995ff1c1d2b96cd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1632,7 +1633,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: 8d67bf842ea41044c979313400321c98
+    spriteID: c3389e29016c1da48b8bfceb7f0d3772
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1652,7 +1653,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: eee95fb626adc9647a98d6d9d44faa1b
+    spriteID: 3d4e4d47efb28384e82677272375ee55
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1672,7 +1673,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: b2558e8bbf3612446a2923098701d5fc
+    spriteID: 13c88b7a12498aa4397b96263a37081f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1692,7 +1693,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: 671b2ab96ee77e541a28f9d219001a4c
+    spriteID: 0a666fd97fced38468b6ee6aac5e6555
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1712,7 +1713,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: ac9133f5aee0d7843818953c9d772f98
+    spriteID: 224ea24bff2714344bd91cca3aa24c75
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1732,7 +1733,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: 92e6da11440bcb042b414055cf724b1d
+    spriteID: 2d465b6a1527bd14996a39b1edb3f945
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1752,7 +1753,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: c1210ee96dc419945a0035adc50d82e0
+    spriteID: 5cf5c1a7cd6ef594e9dee1984255de38
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1772,7 +1773,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: e6aca9873ab25ef47be44f2b30958b81
+    spriteID: 24838f01cdaf9894381f0d384a36600d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1792,7 +1793,7 @@ ScriptedImporter:
       y: 349
       width: 62
       height: 61
-    spriteID: d06bf4e7c9ca8544ba1bd0195986bdc0
+    spriteID: 3bbc0cbd7f789554da78a8bc941cdd74
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1812,7 +1813,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: b8a81a2bd2418e6479254dd7b0ac0465
+    spriteID: 381239afe9ea61843b3c0a867c78368e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1832,7 +1833,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 73152c1eada720449906de0b05704969
+    spriteID: 231da7f47cdfcaa40ab48cd8250c12af
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1852,7 +1853,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 0104c713bde3c9e4e99ba2d8e572c6f7
+    spriteID: 5229175aacfc0a8468ee2b37c1e2727f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1872,7 +1873,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: d2512a68b981c2c4396b2f25a108b58d
+    spriteID: 2d425251d9217a944ae97186ba843c2a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1892,7 +1893,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: d23e870b73ad072459da56db5c31b469
+    spriteID: b1bdaf2b5aadbe24cacbf8dfeba83185
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1912,7 +1913,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 161b9d50248324141a5e02a949d25e49
+    spriteID: ec24780563648b34ebe9e6ad3ea31f86
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1932,7 +1933,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 61ca62333f201124da869aea283a7db7
+    spriteID: 9f4b0145dde700843a9ac6f94df2e8af
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1952,7 +1953,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 365742fa2d24b544aae77940acbd2343
+    spriteID: aec49680578a40a4885de85cfa1ec78c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1972,7 +1973,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 0403e6d17e7a0834d90be5fb7b4dcba3
+    spriteID: 91e701a2186cfdb49ac6f0b4d12340fc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1992,7 +1993,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: c07d2ecf0359b1440bf61bc1edead150
+    spriteID: cbfd18697deb9684194961d19802359e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2012,7 +2013,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: c3bf545a354c90d46a5406f55ab05740
+    spriteID: 7ec3c9ec15f714d4691aabb954bb66f2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2032,7 +2033,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 231b6b77f79980f45a5164a5d28d1ae6
+    spriteID: 552b1b452f9166c40ac4d3e6c527e89e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2052,7 +2053,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 49e2258f0d3500b49aa84ffb92f4aa9a
+    spriteID: 70eda6d19f184ff49bdf3591b6f7d908
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2072,7 +2073,7 @@ ScriptedImporter:
       y: 418
       width: 62
       height: 61
-    spriteID: 08710ede0e3fc7e40aa5af98d03e6755
+    spriteID: e6ca26122e3782840b078876d57b020f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2092,7 +2093,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: c24fb88f179591a4087e6c3c20530311
+    spriteID: 9b586d507b29bb243995897d237a2534
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2112,7 +2113,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 689d26defcb4d284288f4302a43c0d4c
+    spriteID: e5933b995971310419f16334b6dd570c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2132,7 +2133,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: e9ca34e01e7e83c46a6ea7dcc8c787b8
+    spriteID: d00cbc6d2147b004b9fd86f90cf5ad68
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2152,7 +2153,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 468f883d78ba2e14b83bddf4d4fa3313
+    spriteID: e1d3c9a361b069e4b91ce417e4d6507a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2172,7 +2173,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: e8872e2f41bb7eb4ab9e64b3b1e2b213
+    spriteID: 32bd69c9f04a8354494fc424d48b4a43
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2192,7 +2193,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: b9fcde01f32d54f49bf7ad09b5e61c01
+    spriteID: 99d74b094c1d4df4d9349c1f007b246b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2212,7 +2213,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 4e073a3468e88c7438c1a92da96b99d2
+    spriteID: 9f5b56b47039b664497b3da3f4a39033
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2232,7 +2233,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 2b07d07dcb6cc1843b836e740c318768
+    spriteID: bda80c78af01a934dac2409a152cff74
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2252,7 +2253,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 0b42e8579adff104e8c1004ea4226054
+    spriteID: f6d33c6ad98ce2346afa740c2fc827e8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2272,7 +2273,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 24983fbe0246306469adae0cbabb37bd
+    spriteID: c0500f02861d1d140953879a88fe2658
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2292,7 +2293,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 85fb1128f36559542ab2a34dc7b992ca
+    spriteID: 19f91b1391828824dad82ce12cb5986f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2312,7 +2313,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 775aed7d14601e245ba3dcf51eaff19b
+    spriteID: b24f28d9a15607e4eb9d549a02e8a6a9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2332,7 +2333,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 49075078049d0a844863ffb1c250df84
+    spriteID: 7b7847a25e82f1e459e0f2462a4e338f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2352,7 +2353,7 @@ ScriptedImporter:
       y: 487
       width: 62
       height: 61
-    spriteID: 3ba37d04e92890043879cd7931ec35dd
+    spriteID: aaeafcd55f7a40b46a19393bd9b15ad3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2372,7 +2373,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: fe8f0308b930d2749aaef2318d77cda4
+    spriteID: 27057f8d8f380f7439c87aefe4f5b6b5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2392,7 +2393,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: c3f4c93a274def449a4e0d1708bd2e86
+    spriteID: 87f3eed59a4a6e343a16397cd85d6fa3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2412,7 +2413,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: 89b3f4a17ac734c47a140a10fe4e9070
+    spriteID: 7792d914939176e44a3682f2c3740b7f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2432,7 +2433,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: 7b6419fc899cbf84abad53ec8f215570
+    spriteID: bc3e51babdfa07242b89e89417a34d4d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2452,7 +2453,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: 3758a67666595a449bead33bcf698139
+    spriteID: 226517ce136154c44bd3b0b55e018074
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2472,7 +2473,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: dd274e5cdc852974595056ebae656419
+    spriteID: 4e59ed6da08d5bd40829711488aa79e7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2492,7 +2493,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: a16bfaa89d38b7c4d8d6bbd7849aea14
+    spriteID: 86a5238a35763cc40b98b56b7944edaf
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2512,7 +2513,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: 4e1e4fe08f4495b46bce9b9ed63f9975
+    spriteID: 94c8a582566554f4cbe117c25d682ee6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2532,7 +2533,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: eea5ef03aa40209479db77bdbdcf3c7a
+    spriteID: 4a6af0d8d66360d40855e64796ffb3ef
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2552,7 +2553,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: d06b20f1cddf08644b4084b1a4033b3d
+    spriteID: a9da4f8853d1ca944aae2c35fb6f13d5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2572,7 +2573,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: 9d11e603ea73a374cb3ff40fc16d93a9
+    spriteID: 8b49656b878981c42a8b36378ec485f4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2592,7 +2593,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: 8bc9950cde01c58468f2580263615078
+    spriteID: 1085bbd29a6355547a2db0e1617ae5a4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2612,7 +2613,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: e58c8050e39e33e45a85adcbdd4d0ac1
+    spriteID: b8f9301e99b0c2c41aa2590593eca123
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2632,7 +2633,7 @@ ScriptedImporter:
       y: 556
       width: 62
       height: 61
-    spriteID: f5a83c075b821044e9f76bedaa7b8a85
+    spriteID: 2959b0e58d7547f47ba8b07fcb6de21e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2652,7 +2653,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: bc23b8bf0b6c3d34697d0358aaee6524
+    spriteID: 01b315e8169ca03468db8711383c3589
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2672,7 +2673,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: b579196f43f872b4eae5a22198fcdf8c
+    spriteID: 0ec2e450030afbe45b05ff73fa613b92
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2692,7 +2693,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: a344e820690b81d4f92fde6f0e7dc840
+    spriteID: fa19eed0568ca1d4fb3fbeaa09b13816
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2712,7 +2713,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: babfc171b9a569c42a275e65aa43bc40
+    spriteID: f20d95d121390574fa0cbfd4e3cb9a2b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2732,7 +2733,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: 547a0da55c3d90b4abc469b328203a34
+    spriteID: c133ae6b4ada26c4388ffa75f93676e7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2752,7 +2753,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: 6a44a235142e62b48bf181f91c7de6b7
+    spriteID: cd3126efc99a77048861dd5ed04be5ea
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2772,7 +2773,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: 13a3acaf2b3a93841b745f21c9cbc196
+    spriteID: 2390eb3b4a57e85479e00d9fb21d0472
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2792,7 +2793,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: 013f1850a1f625d4c9a37958e651de83
+    spriteID: 69e5db4414044d04c8b28a37558f87fe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2812,7 +2813,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: 17bbb717eaebda44ab67793b1b77f5ab
+    spriteID: 3d83527b11915c24783b8eb35ccd7fac
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2832,7 +2833,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: 68e161fab21ee7f478913114b5c9ffab
+    spriteID: 278f2efefbcc40f4e98c9986e45616f6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2852,7 +2853,7 @@ ScriptedImporter:
       y: 625
       width: 62
       height: 61
-    spriteID: 46a6e8d76f7e2244c8b3ce9e63724883
+    spriteID: 716684cb5fda5b44ab4da7cb54dc0e97
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2864,1108 +2865,1250 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 2126741252
+    uuid:
+      value0: 1963515924
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 1963515924
     name: Day & Nignt Cycle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Day & Nignt Cycle_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 6b7365ea2148b0e42894bc891182147b
-    - name: Day & Nignt Cycle_Frame_2
+      spriteId: 24732cd10836e574bac10d446c8e9e65
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: db176f561297f9c4cb16a40ba2b2e315
-    - name: Day & Nignt Cycle_Frame_11
+      spriteId: 294026ecc77454a4b896fad0329b0965
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 0c7569e14a394944e86a079fd11d8bf3
-    - name: Day & Nignt Cycle_Frame_20
+      spriteId: b25e87f035b32c140be48fe670569a13
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 0bdcaf4078a91794ca83157f937f2c19
-    - name: Day & Nignt Cycle_Frame_29
+      spriteId: ed7ec2015ce6a434d927972fb4eb9c1f
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: c32a856740b24b943882b790fc46fcde
-    - name: Day & Nignt Cycle_Frame_38
+      spriteId: 43ff1e2f2b01ee24da06a32879921e1a
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 806e3756325ce2141b3c0fb7ad27b75b
-    - name: Day & Nignt Cycle_Frame_47
+      spriteId: 059c551109dccf644a152b63bee4227a
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 7e712706ebc4f9840a5ac6ed2f38e059
-    - name: Day & Nignt Cycle_Frame_56
+      spriteId: d05f4f99cb59ae4419dee35b567bd1d9
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 3ca1364a2c58c434f9c2739fe0d1e59c
-    - name: Day & Nignt Cycle_Frame_65
+      spriteId: 62eb21e8e09e5eb46b258fa86f8f0b15
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 7c17b2d94f4fe3b408aa5ba4019b04db
-    - name: Day & Nignt Cycle_Frame_3
+      spriteId: 2a89d51dacd7c4c49a0e235d75aa5a38
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 4aafb048dffbe1f4cad6713278a9803d
-    - name: Day & Nignt Cycle_Frame_4
+      spriteId: 3dab4ac236ed48b43b7ea11dd4f11dfd
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 2027a601ecce00a439e2888120964b36
-    - name: Day & Nignt Cycle_Frame_5
+      spriteId: 32cd6475a924efa478d43d7dc58c0d5a
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 37bb83f5ddbd1e841896b689e49fd472
-    - name: Day & Nignt Cycle_Frame_6
+      spriteId: 08748820a5d8dcc439c809eac4731f23
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 5e592dd846b0b8e458c4558ef12c9a04
-    - name: Day & Nignt Cycle_Frame_7
+      spriteId: 10b176f8c9d70cb40ac036d63762a620
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: c343ca2ccbe07b143832322e9535c528
-    - name: Day & Nignt Cycle_Frame_8
+      spriteId: de1c0a9d7010b3941af1fae5c64c73c5
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 6baf9c0462ef30841aa4972d8298de7a
-    - name: Day & Nignt Cycle_Frame_9
+      spriteId: f3206c8479f0ff84da5a87e02024b907
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 323bfa21c6efa874da3f9f6ab993eed0
-    - name: Day & Nignt Cycle_Frame_12
+      spriteId: 6fed544eefb350b4595b8113037a60fe
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: fe397934c48426d479eda8e5b0355627
-    - name: Day & Nignt Cycle_Frame_13
+      spriteId: e3ba8a580d10a1c48b7f71c2ca4f190e
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 814000b41a73c6c4da7479d5090872f0
-    - name: Day & Nignt Cycle_Frame_14
+      spriteId: 8f7e734045156d147bf7fd5068d38552
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 7825294460fc7c14b9d550ee5ad1bfe5
-    - name: Day & Nignt Cycle_Frame_15
+      spriteId: a401cb5266ce1014b8383fdf053ce82e
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 4862f648dcc745d49a60f8e9220f384f
-    - name: Day & Nignt Cycle_Frame_16
+      spriteId: f422403860d6501409bdc03524cbf44c
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 5490ecb42575a574faab6024dbc0d383
-    - name: Day & Nignt Cycle_Frame_17
+      spriteId: 484daf3a50db9694f811d414d5e333ee
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 3cb3b981587d4744b9b487e685760a89
-    - name: Day & Nignt Cycle_Frame_18
+      spriteId: 9b7fa32cf4e5f6f4991edf0621696045
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a14a74e295587274e9491647643f0280
-    - name: Day & Nignt Cycle_Frame_21
+      spriteId: 8a5991f1daaea5e4896fd8f595fbdd4c
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 82edd4d06366d07478a2cb6d1ceeccab
-    - name: Day & Nignt Cycle_Frame_22
+      spriteId: b4029ebc5d1e7464a9005f3352089dff
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 26cb5eec291d5184ab076e148b3da09b
-    - name: Day & Nignt Cycle_Frame_23
+      spriteId: e0dfda5a300a2a44fae66b9fc2b4fbf5
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 4553f83ea32eb774b9e95f869269323b
-    - name: Day & Nignt Cycle_Frame_24
+      spriteId: a485c5169fd67d344b090210ea1b16ac
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 71f836ea85f13e44fac5ce4b0d29e72f
-    - name: Day & Nignt Cycle_Frame_25
+      spriteId: 936de122cbb6b2042bc8d2d59cefdf25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: ce9a5a6e8e25ddb48b361fe9bf626983
-    - name: Day & Nignt Cycle_Frame_26
+      spriteId: 730a8a82225a0674da2e4e1443a736a3
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 5d115de5d124d3d4cbcea03e5259fa2e
-    - name: Day & Nignt Cycle_Frame_27
+      spriteId: 9c06d8cf8b3c2eb4b9cd4efbe81615b1
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: f0c624529227093439560410cc77bc81
-    - name: Day & Nignt Cycle_Frame_30
+      spriteId: e50f138a3e997b84cae5c54ee1c59214
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 005c22122f27e514fb7ad92cf64f1dae
-    - name: Day & Nignt Cycle_Frame_31
+      spriteId: 86bb9dedbd535cc4e81cc1e0893e17c0
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 62cdd1d8929a62b408d59449390a99a8
-    - name: Day & Nignt Cycle_Frame_32
+      spriteId: a9d39afe67ecbd34b901a5a80db22bee
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 6b744d584f362324398dc32fa1db64c3
-    - name: Day & Nignt Cycle_Frame_33
+      spriteId: ff1fae49fb7fa364da3503dbe86bb7a2
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: b7330c849ee8fbb4b9c88bce7e3db9bb
-    - name: Day & Nignt Cycle_Frame_34
+      spriteId: 6e3d4c29aed547b4f929aac7e77d5029
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: d528fb1e06c6ab641b5e58b07920429a
-    - name: Day & Nignt Cycle_Frame_35
+      spriteId: 1659cee996d87f5419465541edb4f28f
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 0a665477c31878343b1c9bd12cbea002
-    - name: Day & Nignt Cycle_Frame_36
+      spriteId: 35b96fbb08183d44dabf1c01a3019440
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 34a85689133e1734fa10aa3082ba825c
-    - name: Day & Nignt Cycle_Frame_39
+      spriteId: fade1db2373b27546b65ed403e0501b3
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 66dbdbf17aff26640be9fde49e1bfc42
-    - name: Day & Nignt Cycle_Frame_40
+      spriteId: 8e11da61898e8e84594ab50b6dd9f34d
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: b5e6266c2c8bbb541bb3bca134a698d5
-    - name: Day & Nignt Cycle_Frame_41
+      spriteId: 13142648a035a244289418fcd39a68b6
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: ee719e0d1e3a9f6478f4ba8fe4b417a0
-    - name: Day & Nignt Cycle_Frame_42
+      spriteId: 98ef19b0c5a876e4f8d87a34ae370185
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: e40c505e089a50642aeb0096c64dfca4
-    - name: Day & Nignt Cycle_Frame_43
+      spriteId: 4bee45f1e890f7945b79aa9f752a92ed
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 4a1255d13204c194bb60cf9511fba3fa
-    - name: Day & Nignt Cycle_Frame_44
+      spriteId: 672e9bd1776196842b40856f864e4548
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: be81318c844a08943891c3ddb0bd7f1b
-    - name: Day & Nignt Cycle_Frame_45
+      spriteId: 807d3faab105ff642a971193482d7818
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: dddb77588ffd02e46a6c0c7351afc312
-    - name: Day & Nignt Cycle_Frame_48
+      spriteId: eafd82863f80e2a44b6eac9f71594026
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 75fcb21acaedc2e4786af6c72b8b9e32
-    - name: Day & Nignt Cycle_Frame_49
+      spriteId: f69db72caad76fb49a790e88046cee01
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 39e0ce9307cc30440b4b8d2eebbaedab
-    - name: Day & Nignt Cycle_Frame_50
+      spriteId: a0538b1eade880f4480161ebc96a6398
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: f58f01471df11ee4b81c454b37f8eae4
-    - name: Day & Nignt Cycle_Frame_51
+      spriteId: 60122636b476b9a44bf279dd4f023926
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 1398dc84121bdcf46b03301197738cd3
-    - name: Day & Nignt Cycle_Frame_52
+      spriteId: 979df158d23e81348ad7361c519b1838
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: b9d06a4920300dd4ea8493cea81b9974
-    - name: Day & Nignt Cycle_Frame_53
+      spriteId: e99b03cbc3d40a549af5309ebcf6f20b
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 8e9abf74ed43c2d44b0dab19c7a23711
-    - name: Day & Nignt Cycle_Frame_54
+      spriteId: 040c7a264f0f4d04fb0e4862a60e8775
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 282ee714c0e79ff4a975ba8ebe92d5b2
-    - name: Day & Nignt Cycle_Frame_57
+      spriteId: 42e73c9b05985ab4498c41e76a42c791
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a34e21fda71c56246840fd4f6d1b4fc4
-    - name: Day & Nignt Cycle_Frame_58
+      spriteId: 8a26057085cea7f41a826b4a6dc1bc49
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 428753f0e1d77e14683109be61420dcd
-    - name: Day & Nignt Cycle_Frame_59
+      spriteId: b3b46e124fa642e46a71e2eedf4d10f8
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 18b5177e358b96841b5d28dfcd020902
-    - name: Day & Nignt Cycle_Frame_60
+      spriteId: b0e563b12fda2a44393a762f81a83ee4
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 12752ff6cdf8d7045ab4f814aaf2a9c4
-    - name: Day & Nignt Cycle_Frame_61
+      spriteId: dd6aff765429bcc43ad0f77f83072e57
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a0db85b11ff668d4cb1557ce5a7cf6b1
-    - name: Day & Nignt Cycle_Frame_62
+      spriteId: 3c916ee27242fb143b83a166e9a35d34
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 3f5979572b313ff43a97d33371266b0e
-    - name: Day & Nignt Cycle_Frame_63
+      spriteId: 24ab3b78258655a4ea70f23dc2b2faf0
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: d456a98af40479a449830489996352ff
-    - name: Day & Nignt Cycle_Frame_66
+      spriteId: 11abb25a0434ce143935eb61df78c827
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 9f6007aaf8a7a3944950295c3e4f5426
-    - name: Day & Nignt Cycle_Frame_67
+      spriteId: fd833bdae5ddee84ea0224dec4b87b86
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a8b11af873255684582ca69c8aa47007
-    - name: Day & Nignt Cycle_Frame_68
+      spriteId: c57a4e6a5ae7f9d439778a9bf2a27813
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: eaf80aeabc7ecf047a440092616172cb
-    - name: Day & Nignt Cycle_Frame_69
+      spriteId: b4dfc62b08d988d418bacf62100f0f57
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 1f11c5e732da4ed40b03b0982c579d58
-    - name: Day & Nignt Cycle_Frame_70
+      spriteId: f99963165d88057489abd85573fb7c1b
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: eb6d9697058d8a94480c45eb30e8f929
-    - name: Day & Nignt Cycle_Frame_71
+      spriteId: 0a0089e60ddd5724e8205dff590d37fa
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: ef66a0f89cd255a48bb2acb63a9f8fef
-    - name: Day & Nignt Cycle_Frame_72
+      spriteId: b51712caf9459d24bb22767e0a1d4df4
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a684234d633931d44970b2b62c58ef08
-    - name: Day & Nignt Cycle_Frame_76
+      spriteId: e1698d0c04439ae4092fbd6bc3297c2c
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 0549396059e070444aeff8e3966ff473
-    - name: Day & Nignt Cycle_Frame_77
+      spriteId: d06c02140b117d94ea77e6d4bf986cfd
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a37e4a9b78a5d234d923ad22ace20e58
-    - name: Day & Nignt Cycle_Frame_78
+      spriteId: 15e7f8a39c21b4740b273035ae45852f
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 09dfb51dca630f54bb51b1021fb99d24
-    - name: Day & Nignt Cycle_Frame_79
+      spriteId: 5e3cb3c7bbc77674e856d014dc05a718
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: e185fb7dde604114eb9774b629ffd489
-    - name: Day & Nignt Cycle_Frame_80
+      spriteId: 10d98f473cccc2f44af0dd55b2c23aab
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: c4b93a43027259b4fbf2d894172ab824
-    - name: Day & Nignt Cycle_Frame_81
+      spriteId: 23567a0407d396d4a88047c3bc57a20a
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 1ee9931fb50df2c4d9fe19c353383c86
-    - name: Day & Nignt Cycle_Frame_82
+      spriteId: 24c3fc42227dc7d4d838f9ba28819c29
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a2e8a1cc823a9e3418c5f21f7c31edae
-    - name: Day & Nignt Cycle_Frame_83
+      spriteId: c419d7fe09c5eda4d98f7834e9a219a4
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 971762b77258da94a9025708d688047e
-    - name: Day & Nignt Cycle_Frame_85
+      spriteId: d03a6a7409e4dbc4e83dbc6297214dc2
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 58774da5708f9974ba71463dc4372bdc
-    - name: Day & Nignt Cycle_Frame_86
+      spriteId: eabaeb0e736691946a1e97ba0d6df5f6
+    - name: Frame_86
       frameIndex: 86
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 9bca90d0551a8b24c9358ce55a3e81e2
-    - name: Day & Nignt Cycle_Frame_87
+      spriteId: 164894a5455ac4946995ff1c1d2b96cd
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 8d67bf842ea41044c979313400321c98
-    - name: Day & Nignt Cycle_Frame_88
+      spriteId: c3389e29016c1da48b8bfceb7f0d3772
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: eee95fb626adc9647a98d6d9d44faa1b
-    - name: Day & Nignt Cycle_Frame_89
+      spriteId: 3d4e4d47efb28384e82677272375ee55
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: b2558e8bbf3612446a2923098701d5fc
-    - name: Day & Nignt Cycle_Frame_90
+      spriteId: 13c88b7a12498aa4397b96263a37081f
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 671b2ab96ee77e541a28f9d219001a4c
-    - name: Day & Nignt Cycle_Frame_91
+      spriteId: 0a666fd97fced38468b6ee6aac5e6555
+    - name: Frame_91
       frameIndex: 91
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: ac9133f5aee0d7843818953c9d772f98
-    - name: Day & Nignt Cycle_Frame_92
+      spriteId: 224ea24bff2714344bd91cca3aa24c75
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 92e6da11440bcb042b414055cf724b1d
-    - name: Day & Nignt Cycle_Frame_94
+      spriteId: 2d465b6a1527bd14996a39b1edb3f945
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: c1210ee96dc419945a0035adc50d82e0
-    - name: Day & Nignt Cycle_Frame_95
+      spriteId: 5cf5c1a7cd6ef594e9dee1984255de38
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: e6aca9873ab25ef47be44f2b30958b81
-    - name: Day & Nignt Cycle_Frame_96
+      spriteId: 24838f01cdaf9894381f0d384a36600d
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: d06bf4e7c9ca8544ba1bd0195986bdc0
-    - name: Day & Nignt Cycle_Frame_97
+      spriteId: 3bbc0cbd7f789554da78a8bc941cdd74
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: b8a81a2bd2418e6479254dd7b0ac0465
-    - name: Day & Nignt Cycle_Frame_98
+      spriteId: 381239afe9ea61843b3c0a867c78368e
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 73152c1eada720449906de0b05704969
-    - name: Day & Nignt Cycle_Frame_99
+      spriteId: 231da7f47cdfcaa40ab48cd8250c12af
+    - name: Frame_99
       frameIndex: 99
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 0104c713bde3c9e4e99ba2d8e572c6f7
-    - name: Day & Nignt Cycle_Frame_100
+      spriteId: 5229175aacfc0a8468ee2b37c1e2727f
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: d2512a68b981c2c4396b2f25a108b58d
-    - name: Day & Nignt Cycle_Frame_101
+      spriteId: 2d425251d9217a944ae97186ba843c2a
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: d23e870b73ad072459da56db5c31b469
-    - name: Day & Nignt Cycle_Frame_103
+      spriteId: b1bdaf2b5aadbe24cacbf8dfeba83185
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 161b9d50248324141a5e02a949d25e49
-    - name: Day & Nignt Cycle_Frame_104
+      spriteId: ec24780563648b34ebe9e6ad3ea31f86
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 61ca62333f201124da869aea283a7db7
-    - name: Day & Nignt Cycle_Frame_105
+      spriteId: 9f4b0145dde700843a9ac6f94df2e8af
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 365742fa2d24b544aae77940acbd2343
-    - name: Day & Nignt Cycle_Frame_106
+      spriteId: aec49680578a40a4885de85cfa1ec78c
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 0403e6d17e7a0834d90be5fb7b4dcba3
-    - name: Day & Nignt Cycle_Frame_107
+      spriteId: 91e701a2186cfdb49ac6f0b4d12340fc
+    - name: Frame_107
       frameIndex: 107
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: c07d2ecf0359b1440bf61bc1edead150
-    - name: Day & Nignt Cycle_Frame_108
+      spriteId: cbfd18697deb9684194961d19802359e
+    - name: Frame_108
       frameIndex: 108
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: c3bf545a354c90d46a5406f55ab05740
-    - name: Day & Nignt Cycle_Frame_109
+      spriteId: 7ec3c9ec15f714d4691aabb954bb66f2
+    - name: Frame_109
       frameIndex: 109
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 231b6b77f79980f45a5164a5d28d1ae6
-    - name: Day & Nignt Cycle_Frame_110
+      spriteId: 552b1b452f9166c40ac4d3e6c527e89e
+    - name: Frame_110
       frameIndex: 110
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 49e2258f0d3500b49aa84ffb92f4aa9a
-    - name: Day & Nignt Cycle_Frame_112
+      spriteId: 70eda6d19f184ff49bdf3591b6f7d908
+    - name: Frame_112
       frameIndex: 112
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 08710ede0e3fc7e40aa5af98d03e6755
-    - name: Day & Nignt Cycle_Frame_113
+      spriteId: e6ca26122e3782840b078876d57b020f
+    - name: Frame_113
       frameIndex: 113
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: c24fb88f179591a4087e6c3c20530311
-    - name: Day & Nignt Cycle_Frame_114
+      spriteId: 9b586d507b29bb243995897d237a2534
+    - name: Frame_114
       frameIndex: 114
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 689d26defcb4d284288f4302a43c0d4c
-    - name: Day & Nignt Cycle_Frame_115
+      spriteId: e5933b995971310419f16334b6dd570c
+    - name: Frame_115
       frameIndex: 115
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: e9ca34e01e7e83c46a6ea7dcc8c787b8
-    - name: Day & Nignt Cycle_Frame_116
+      spriteId: d00cbc6d2147b004b9fd86f90cf5ad68
+    - name: Frame_116
       frameIndex: 116
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 468f883d78ba2e14b83bddf4d4fa3313
-    - name: Day & Nignt Cycle_Frame_117
+      spriteId: e1d3c9a361b069e4b91ce417e4d6507a
+    - name: Frame_117
       frameIndex: 117
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: e8872e2f41bb7eb4ab9e64b3b1e2b213
-    - name: Day & Nignt Cycle_Frame_118
+      spriteId: 32bd69c9f04a8354494fc424d48b4a43
+    - name: Frame_118
       frameIndex: 118
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: b9fcde01f32d54f49bf7ad09b5e61c01
-    - name: Day & Nignt Cycle_Frame_119
+      spriteId: 99d74b094c1d4df4d9349c1f007b246b
+    - name: Frame_119
       frameIndex: 119
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 4e073a3468e88c7438c1a92da96b99d2
-    - name: Day & Nignt Cycle_Frame_121
+      spriteId: 9f5b56b47039b664497b3da3f4a39033
+    - name: Frame_121
       frameIndex: 121
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 2b07d07dcb6cc1843b836e740c318768
-    - name: Day & Nignt Cycle_Frame_122
+      spriteId: bda80c78af01a934dac2409a152cff74
+    - name: Frame_122
       frameIndex: 122
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 0b42e8579adff104e8c1004ea4226054
-    - name: Day & Nignt Cycle_Frame_123
+      spriteId: f6d33c6ad98ce2346afa740c2fc827e8
+    - name: Frame_123
       frameIndex: 123
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 24983fbe0246306469adae0cbabb37bd
-    - name: Day & Nignt Cycle_Frame_124
+      spriteId: c0500f02861d1d140953879a88fe2658
+    - name: Frame_124
       frameIndex: 124
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 85fb1128f36559542ab2a34dc7b992ca
-    - name: Day & Nignt Cycle_Frame_125
+      spriteId: 19f91b1391828824dad82ce12cb5986f
+    - name: Frame_125
       frameIndex: 125
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 775aed7d14601e245ba3dcf51eaff19b
-    - name: Day & Nignt Cycle_Frame_126
+      spriteId: b24f28d9a15607e4eb9d549a02e8a6a9
+    - name: Frame_126
       frameIndex: 126
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 49075078049d0a844863ffb1c250df84
-    - name: Day & Nignt Cycle_Frame_127
+      spriteId: 7b7847a25e82f1e459e0f2462a4e338f
+    - name: Frame_127
       frameIndex: 127
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 3ba37d04e92890043879cd7931ec35dd
-    - name: Day & Nignt Cycle_Frame_128
+      spriteId: aaeafcd55f7a40b46a19393bd9b15ad3
+    - name: Frame_128
       frameIndex: 128
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: fe8f0308b930d2749aaef2318d77cda4
-    - name: Day & Nignt Cycle_Frame_130
+      spriteId: 27057f8d8f380f7439c87aefe4f5b6b5
+    - name: Frame_130
       frameIndex: 130
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: c3f4c93a274def449a4e0d1708bd2e86
-    - name: Day & Nignt Cycle_Frame_131
+      spriteId: 87f3eed59a4a6e343a16397cd85d6fa3
+    - name: Frame_131
       frameIndex: 131
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 89b3f4a17ac734c47a140a10fe4e9070
-    - name: Day & Nignt Cycle_Frame_132
+      spriteId: 7792d914939176e44a3682f2c3740b7f
+    - name: Frame_132
       frameIndex: 132
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 7b6419fc899cbf84abad53ec8f215570
-    - name: Day & Nignt Cycle_Frame_133
+      spriteId: bc3e51babdfa07242b89e89417a34d4d
+    - name: Frame_133
       frameIndex: 133
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 3758a67666595a449bead33bcf698139
-    - name: Day & Nignt Cycle_Frame_134
+      spriteId: 226517ce136154c44bd3b0b55e018074
+    - name: Frame_134
       frameIndex: 134
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: dd274e5cdc852974595056ebae656419
-    - name: Day & Nignt Cycle_Frame_135
+      spriteId: 4e59ed6da08d5bd40829711488aa79e7
+    - name: Frame_135
       frameIndex: 135
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a16bfaa89d38b7c4d8d6bbd7849aea14
-    - name: Day & Nignt Cycle_Frame_136
+      spriteId: 86a5238a35763cc40b98b56b7944edaf
+    - name: Frame_136
       frameIndex: 136
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 4e1e4fe08f4495b46bce9b9ed63f9975
-    - name: Day & Nignt Cycle_Frame_137
+      spriteId: 94c8a582566554f4cbe117c25d682ee6
+    - name: Frame_137
       frameIndex: 137
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: eea5ef03aa40209479db77bdbdcf3c7a
-    - name: Day & Nignt Cycle_Frame_139
+      spriteId: 4a6af0d8d66360d40855e64796ffb3ef
+    - name: Frame_139
       frameIndex: 139
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: d06b20f1cddf08644b4084b1a4033b3d
-    - name: Day & Nignt Cycle_Frame_140
+      spriteId: a9da4f8853d1ca944aae2c35fb6f13d5
+    - name: Frame_140
       frameIndex: 140
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 9d11e603ea73a374cb3ff40fc16d93a9
-    - name: Day & Nignt Cycle_Frame_141
+      spriteId: 8b49656b878981c42a8b36378ec485f4
+    - name: Frame_141
       frameIndex: 141
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 8bc9950cde01c58468f2580263615078
-    - name: Day & Nignt Cycle_Frame_142
+      spriteId: 1085bbd29a6355547a2db0e1617ae5a4
+    - name: Frame_142
       frameIndex: 142
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: e58c8050e39e33e45a85adcbdd4d0ac1
-    - name: Day & Nignt Cycle_Frame_143
+      spriteId: b8f9301e99b0c2c41aa2590593eca123
+    - name: Frame_143
       frameIndex: 143
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: f5a83c075b821044e9f76bedaa7b8a85
-    - name: Day & Nignt Cycle_Frame_144
+      spriteId: 2959b0e58d7547f47ba8b07fcb6de21e
+    - name: Frame_144
       frameIndex: 144
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: bc23b8bf0b6c3d34697d0358aaee6524
-    - name: Day & Nignt Cycle_Frame_145
+      spriteId: 01b315e8169ca03468db8711383c3589
+    - name: Frame_145
       frameIndex: 145
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: b579196f43f872b4eae5a22198fcdf8c
-    - name: Day & Nignt Cycle_Frame_146
+      spriteId: 0ec2e450030afbe45b05ff73fa613b92
+    - name: Frame_146
       frameIndex: 146
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: a344e820690b81d4f92fde6f0e7dc840
-    - name: Day & Nignt Cycle_Frame_148
+      spriteId: fa19eed0568ca1d4fb3fbeaa09b13816
+    - name: Frame_148
       frameIndex: 148
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: babfc171b9a569c42a275e65aa43bc40
-    - name: Day & Nignt Cycle_Frame_149
+      spriteId: f20d95d121390574fa0cbfd4e3cb9a2b
+    - name: Frame_149
       frameIndex: 149
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 547a0da55c3d90b4abc469b328203a34
-    - name: Day & Nignt Cycle_Frame_150
+      spriteId: c133ae6b4ada26c4388ffa75f93676e7
+    - name: Frame_150
       frameIndex: 150
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 6a44a235142e62b48bf181f91c7de6b7
-    - name: Day & Nignt Cycle_Frame_151
+      spriteId: cd3126efc99a77048861dd5ed04be5ea
+    - name: Frame_151
       frameIndex: 151
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 13a3acaf2b3a93841b745f21c9cbc196
-    - name: Day & Nignt Cycle_Frame_152
+      spriteId: 2390eb3b4a57e85479e00d9fb21d0472
+    - name: Frame_152
       frameIndex: 152
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 013f1850a1f625d4c9a37958e651de83
-    - name: Day & Nignt Cycle_Frame_153
+      spriteId: 69e5db4414044d04c8b28a37558f87fe
+    - name: Frame_153
       frameIndex: 153
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 17bbb717eaebda44ab67793b1b77f5ab
-    - name: Day & Nignt Cycle_Frame_154
+      spriteId: 3d83527b11915c24783b8eb35ccd7fac
+    - name: Frame_154
       frameIndex: 154
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 68e161fab21ee7f478913114b5c9ffab
-    - name: Day & Nignt Cycle_Frame_155
+      spriteId: 278f2efefbcc40f4e98c9986e45616f6
+    - name: Frame_155
       frameIndex: 155
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 8
         width: 62
         height: 61
-      spriteId: 46a6e8d76f7e2244c8b3ce9e63724883
+      spriteId: 716684cb5fda5b44ab4da7cb54dc0e97
     linkedCells: []
     parentIndex: -1
   platformSettings: []
@@ -3973,3 +4116,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 78, y: 77}
+  previousTextureSize: {x: 1024, y: 1024}

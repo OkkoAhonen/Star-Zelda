@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,1056 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: fortress-front parts_0
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 874
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51c4ef2b61d7b04e9425227a6b05a06
+      internalID: 1395472129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 870
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15ecc637d4cead46beaeb67bc1ba5f8
+      internalID: 1337652395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 775
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e71bfdb4338c14fa53ff4b9ca5d2ba
+      internalID: -1599618690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 778
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fec49ecdbb9ab3499c8cf4fa5f2681a
+      internalID: 475327798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 775
+        width: 96
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106e9a40d397dce4489cfdfc6b16ea02
+      internalID: -1123135662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_5
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 775
+        width: 106
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4678eeea8873749bd7dafd5fb21bf3
+      internalID: -1456761254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_6
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 674
+        width: 42
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986ea0aba028dc14ebe3c2085f0af193
+      internalID: 639994268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 635
+        width: 50
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f85c3521903d7478e4fcdd35aac0b6
+      internalID: 492857878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_8
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 635
+        width: 47
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aea07599f0c6e6428e602ce6c2d9993
+      internalID: -1406952971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_9
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 670
+        width: 26
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557a63c89cd82f94680e94e6039693e9
+      internalID: 1275329430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_10
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 637
+        width: 161
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea25285f03573b42bb98135e99fc9e4
+      internalID: 1547281804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_11
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 669
+        width: 20
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f03ad67ba78ea44bbd318710cd18e24
+      internalID: -1927934050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_12
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 674
+        width: 96
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba06e5e5a13cc74bb7b33ad605aff25
+      internalID: 597937255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_13
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 673
+        width: 109
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba85bc2920bc674089d91d4038cec57
+      internalID: 1128328732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_14
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 601
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facadc4c8828ddb4a8ac7271fef5dc55
+      internalID: 696913358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_15
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 600
+        width: 16
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeff98804faeaf0428eb9000485e9dfd
+      internalID: -595212516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_16
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 632
+        width: 95
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6b7986c164689458d56b0ba7d7ed98
+      internalID: -1753741065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_17
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 632
+        width: 106
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043f002713ef09e42a0e97862e9ddfb4
+      internalID: -1513552783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 512
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349926eb730ee74458dc3ad4d21b2dde
+      internalID: -1232542020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_19
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 512
+        width: 46
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb391ae93b1ace419c5201560cb60b1
+      internalID: -300202794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 544
+        width: 64
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a50fa215e9f914db25addee7d14098
+      internalID: 1802843216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_21
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 576
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4730d326740845749bbd08a4f90ab211
+      internalID: -302533383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_22
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 578
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ea38c3576bbdc419f16ea5a7f8c031
+      internalID: 2029185348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_23
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 448
+        width: 17
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1688df4d8190a164a9f4eb1818936270
+      internalID: -1226074386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_24
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 448
+        width: 17
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58758c9d9bd1c474bbe85c650237dabe
+      internalID: 106937191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_25
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 480
+        width: 17
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7953658318df14f4a97d6fc0b1972c3c
+      internalID: -1830999613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_26
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 480
+        width: 17
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280d1b185521fe649b5076811aa893ab
+      internalID: 1067629523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_27
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 429
+        width: 83
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c777977b4b89e469fbf645c67d6cfc
+      internalID: -2010874622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_28
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 407
+        width: 148
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6d1ff502932974b914aa888ea34eeb
+      internalID: -1730559183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 343
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d995dfb7cc76e834b85aad08f1b65e32
+      internalID: 1003316461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_30
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 343
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7fa4a36dd0e934e9bbd04cfe88b512
+      internalID: 1084848933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_31
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 359
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390e1fe67128c5549acda5738dfb35e6
+      internalID: 1846781037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_32
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 362
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2133c862ee760d34e826d555bfbf0e28
+      internalID: 51128969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_33
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 359
+        width: 96
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010096763af7bbd4ea7085f072e9ff1e
+      internalID: 1858370050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_34
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 359
+        width: 106
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c143a47bc32cf49a0aa5c7b6a28898
+      internalID: -1239658362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_35
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 261
+        width: 42
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee2c525aca4b7d43845731e8543de9d
+      internalID: 1827434366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_36
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 256
+        width: 23
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebda149050553024e84dc1630896a19d
+      internalID: 232458933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_37
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 225
+        width: 155
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2660a683d9021438ce05ec1ff28592
+      internalID: 749174942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_38
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 256
+        width: 16
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e725709b50a94c48b9115bc24004f4e
+      internalID: -168731764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_39
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 261
+        width: 96
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a6f2c79025a634983ec8222e6dc355
+      internalID: 2018152545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_40
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 261
+        width: 106
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c418418fb40c6174eb0fc916d125f265
+      internalID: 1024874764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_41
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 110
+        width: 75
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f10ba0da5125143aca2bcbc3a7ef68
+      internalID: 815611856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_42
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 199
+        width: 140
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f538e1ab864aa464ab305d8c16901ef5
+      internalID: -961109280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_43
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 199
+        width: 140
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1197cb6a5f603dc4fae90d325f40b66b
+      internalID: 1080345486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_44
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8707468e5150b4a8f4d396dd3dbaa4
+      internalID: -1603158667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_45
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 96
+        width: 46
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab1ea86a68f7ac4481b929700bdd70c
+      internalID: -1488753431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_46
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 155
+        width: 140
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a222dc9cfa9314ba8a8c1fac9e37ff
+      internalID: 304386693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fortress-front parts_47
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 155
+        width: 140
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c14ea43a60a0a74ab79b14d4e91283e
+      internalID: 1384656403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +1166,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fortress-front parts_0: 1395472129
+      fortress-front parts_1: 1337652395
+      fortress-front parts_10: 1547281804
+      fortress-front parts_11: -1927934050
+      fortress-front parts_12: 597937255
+      fortress-front parts_13: 1128328732
+      fortress-front parts_14: 696913358
+      fortress-front parts_15: -595212516
+      fortress-front parts_16: -1753741065
+      fortress-front parts_17: -1513552783
+      fortress-front parts_18: -1232542020
+      fortress-front parts_19: -300202794
+      fortress-front parts_2: -1599618690
+      fortress-front parts_20: 1802843216
+      fortress-front parts_21: -302533383
+      fortress-front parts_22: 2029185348
+      fortress-front parts_23: -1226074386
+      fortress-front parts_24: 106937191
+      fortress-front parts_25: -1830999613
+      fortress-front parts_26: 1067629523
+      fortress-front parts_27: -2010874622
+      fortress-front parts_28: -1730559183
+      fortress-front parts_29: 1003316461
+      fortress-front parts_3: 475327798
+      fortress-front parts_30: 1084848933
+      fortress-front parts_31: 1846781037
+      fortress-front parts_32: 51128969
+      fortress-front parts_33: 1858370050
+      fortress-front parts_34: -1239658362
+      fortress-front parts_35: 1827434366
+      fortress-front parts_36: 232458933
+      fortress-front parts_37: 749174942
+      fortress-front parts_38: -168731764
+      fortress-front parts_39: 2018152545
+      fortress-front parts_4: -1123135662
+      fortress-front parts_40: 1024874764
+      fortress-front parts_41: 815611856
+      fortress-front parts_42: -961109280
+      fortress-front parts_43: 1080345486
+      fortress-front parts_44: -1603158667
+      fortress-front parts_45: -1488753431
+      fortress-front parts_46: 304386693
+      fortress-front parts_47: 1384656403
+      fortress-front parts_5: -1456761254
+      fortress-front parts_6: 639994268
+      fortress-front parts_7: 492857878
+      fortress-front parts_8: -1406952971
+      fortress-front parts_9: 1275329430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

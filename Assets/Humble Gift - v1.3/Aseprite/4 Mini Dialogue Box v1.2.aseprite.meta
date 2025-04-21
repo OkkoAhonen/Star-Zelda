@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -132,7 +133,7 @@ ScriptedImporter:
       y: 4
       width: 672
       height: 480
-    spriteID: 8e6a397c53a051e46b4140c25b15c9a9
+    spriteID: e630751eb41a1064cb81e84ff37a4383
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +153,7 @@ ScriptedImporter:
       y: 492
       width: 672
       height: 480
-    spriteID: ae9f0533240efa143b02be81b3f032af
+    spriteID: 6b13173b4353a004caea7a6477942c82
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +173,7 @@ ScriptedImporter:
       y: 980
       width: 672
       height: 480
-    spriteID: 325ee0095d84eaf49bd736c3186a7f43
+    spriteID: 2204c6acdb283bb40bcad4a54da7894a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +193,7 @@ ScriptedImporter:
       y: 1468
       width: 672
       height: 480
-    spriteID: 66e05c65ad44da8478382c189d1c9a99
+    spriteID: f0244ae8f66d51f49873e9931e38e968
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +213,7 @@ ScriptedImporter:
       y: 1956
       width: 672
       height: 480
-    spriteID: 857fd56e75738e3468f5036bbb235646
+    spriteID: 29595f2d39006aa42aa071446e6e2c9c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +233,7 @@ ScriptedImporter:
       y: 2444
       width: 672
       height: 480
-    spriteID: ee4ef6eeafd83c049bc3a163c54bc29b
+    spriteID: ba0182a8782de394aa2453ec43dcf222
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +253,7 @@ ScriptedImporter:
       y: 2932
       width: 672
       height: 480
-    spriteID: cb334341b8c40104faeab840365aee97
+    spriteID: 0b300fb4d629882409842363073d2971
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +273,7 @@ ScriptedImporter:
       y: 3420
       width: 672
       height: 480
-    spriteID: dbef2e6e145e5e64ebe26a1d6abd5618
+    spriteID: cc78483ec0dd7894483fd57a00246d29
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -292,7 +293,7 @@ ScriptedImporter:
       y: 3908
       width: 672
       height: 480
-    spriteID: 15497a091b3080f4cbd6024393356853
+    spriteID: c3b493b7692463f4c9fd98abae74456d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -312,7 +313,7 @@ ScriptedImporter:
       y: 4396
       width: 672
       height: 480
-    spriteID: 0b29f5a2e88752e4c90eebf5fdc9eab5
+    spriteID: 2c65e973ebd774d4f8359c7473982bf1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -332,7 +333,7 @@ ScriptedImporter:
       y: 4884
       width: 672
       height: 480
-    spriteID: 8c736e047e8d5a1438446705ed5e2e0f
+    spriteID: f3e904d4bf94101468a84dda971f5c17
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -352,7 +353,7 @@ ScriptedImporter:
       y: 5372
       width: 672
       height: 480
-    spriteID: 8b5f4683d6fa01d4ead47d16a58693df
+    spriteID: a1c75750be2390346addff7edc309ca6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -372,7 +373,7 @@ ScriptedImporter:
       y: 5860
       width: 672
       height: 480
-    spriteID: 56ad9027466bdfa47a11a4f0885da35e
+    spriteID: 9e4f4fcb58f26e94d8b10c62c1a1b690
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -392,7 +393,7 @@ ScriptedImporter:
       y: 6348
       width: 672
       height: 480
-    spriteID: 733aa2e23894ef04ea3447459f06f6f4
+    spriteID: cad83899f6ddaa14689e02e2133d4a75
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -412,7 +413,7 @@ ScriptedImporter:
       y: 6836
       width: 672
       height: 480
-    spriteID: 1616df397e7e4c54f884d8a9ef212ed9
+    spriteID: 97cff5e5ca18f614fb7a159ce924e7ec
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -432,7 +433,7 @@ ScriptedImporter:
       y: 7324
       width: 672
       height: 480
-    spriteID: 96dee0b832ecfdb4a8e97b34d180e9a4
+    spriteID: 72a4437899d699f48908e6beeecd3299
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -452,7 +453,7 @@ ScriptedImporter:
       y: 4
       width: 672
       height: 480
-    spriteID: 7be4802d84546dc4e8ce9a0a0151a294
+    spriteID: 10bbeb2abd398d242801c29c7c4d9691
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -472,7 +473,7 @@ ScriptedImporter:
       y: 492
       width: 672
       height: 480
-    spriteID: 70d9da241b7ec1a479874fd67b282aa8
+    spriteID: eba33ad78e9ee774b99c3a5229362c14
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -492,7 +493,7 @@ ScriptedImporter:
       y: 980
       width: 672
       height: 480
-    spriteID: 8691fe75f60b1e2488f0b54ce7cc46af
+    spriteID: bec426ab1c6020944b194641e0526369
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -512,7 +513,7 @@ ScriptedImporter:
       y: 1468
       width: 672
       height: 480
-    spriteID: 7b213bd31046ac5499023a71085f1dd5
+    spriteID: 8b7eff93663a03947a93f59d3b3d6a0c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -532,7 +533,7 @@ ScriptedImporter:
       y: 1956
       width: 672
       height: 480
-    spriteID: 460bc5060c036bb43ad5126e124e088e
+    spriteID: f33d111873b29a847bdd37549c988ce4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -552,7 +553,7 @@ ScriptedImporter:
       y: 2444
       width: 672
       height: 480
-    spriteID: 5783f64c3b84dfa40966c2f20565481e
+    spriteID: 62e4ef791e842b44fa85a37b7d5591ba
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -572,7 +573,7 @@ ScriptedImporter:
       y: 2932
       width: 672
       height: 480
-    spriteID: 0cdcf3aede14d824897b1e291ef40118
+    spriteID: ba3921797f5cc69408c3218c34a78900
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -592,7 +593,7 @@ ScriptedImporter:
       y: 3420
       width: 672
       height: 480
-    spriteID: e79813d2bdc25eb49834206ba1610159
+    spriteID: 37e91b524d883904196c5596a18bda2e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -612,7 +613,7 @@ ScriptedImporter:
       y: 3908
       width: 672
       height: 480
-    spriteID: 3059111977dd5f9488558663153974b5
+    spriteID: 3ba79d3860cf1444aa337f05cff28576
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -632,7 +633,7 @@ ScriptedImporter:
       y: 4396
       width: 672
       height: 480
-    spriteID: 76580d0029bcce5448586ed92194a99a
+    spriteID: e69ae876d5f0826468f653011c0eeab2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -652,7 +653,7 @@ ScriptedImporter:
       y: 4884
       width: 672
       height: 480
-    spriteID: 616de768202cedd46b41ec571f65da0b
+    spriteID: 766ee3bc734d79b409c1c8528aaaef9c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -672,7 +673,7 @@ ScriptedImporter:
       y: 5372
       width: 672
       height: 480
-    spriteID: 5e6f6f0626fd00840addb4e24c723e13
+    spriteID: cc2281f8938ff7746b2439935940ea2d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -692,7 +693,7 @@ ScriptedImporter:
       y: 5860
       width: 672
       height: 480
-    spriteID: ae8a0a6bfd182154cb1741d7e6d31276
+    spriteID: 56d6d720ea42f294c9014e3a3058aa56
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -712,7 +713,7 @@ ScriptedImporter:
       y: 6348
       width: 672
       height: 480
-    spriteID: b87a6b1f81730f24088e828a224ae678
+    spriteID: 2b92ddc468586e540a30895a00697f30
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -732,7 +733,7 @@ ScriptedImporter:
       y: 6836
       width: 672
       height: 480
-    spriteID: 3901f08d6bf83614187ddd60423c541e
+    spriteID: 21525a03cd3ddb04facc7c3121c6bfb8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -752,7 +753,7 @@ ScriptedImporter:
       y: 7324
       width: 672
       height: 480
-    spriteID: 5fc546570bdc596429c4201c4348522f
+    spriteID: d92717d9cdb3fb441ac82ba7bbe22098
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -772,7 +773,7 @@ ScriptedImporter:
       y: 4
       width: 672
       height: 480
-    spriteID: 18c46762a98dcb14883893cb4f5922c4
+    spriteID: 04c02c9d23499914aa529be0d9955914
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -792,7 +793,7 @@ ScriptedImporter:
       y: 492
       width: 672
       height: 480
-    spriteID: 84c95222232a0fd4dbce4b713716952e
+    spriteID: a403a2285fb905f4c935ca3787e883d6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -812,7 +813,7 @@ ScriptedImporter:
       y: 980
       width: 672
       height: 480
-    spriteID: c2c48fe4ea7071e49b3696e038970bd3
+    spriteID: eb5eb86b84257ae41bc926b9cd149306
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -832,7 +833,7 @@ ScriptedImporter:
       y: 1468
       width: 672
       height: 480
-    spriteID: 3adb45fba450d15428cb75f5a884ca03
+    spriteID: 692eaed30aa7e014099c8f7ae6e32b7f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -852,7 +853,7 @@ ScriptedImporter:
       y: 1956
       width: 672
       height: 480
-    spriteID: 5dcc8a94a3ba15949b2f0c95bfccae44
+    spriteID: 5cb08af9cc16f094da48a06fbd66ae8c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -872,7 +873,7 @@ ScriptedImporter:
       y: 2444
       width: 672
       height: 480
-    spriteID: cbe5ccbf93236e94886e30ae8fcc4435
+    spriteID: 21ed9d6c0c58a5342ba154e653177e98
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -892,7 +893,7 @@ ScriptedImporter:
       y: 2932
       width: 672
       height: 480
-    spriteID: d8a6bf0c85dcfed4b88acdd9409bb891
+    spriteID: fc2e894f8e269654aaf00f5bf8045b33
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -912,7 +913,7 @@ ScriptedImporter:
       y: 3420
       width: 672
       height: 480
-    spriteID: ab6f276668011b34e8816cfb81d667a4
+    spriteID: eec07d6890b7fdc478e51cec307b5293
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -932,7 +933,7 @@ ScriptedImporter:
       y: 3908
       width: 672
       height: 480
-    spriteID: 20625855bc9b12a4fa112d985ba316b1
+    spriteID: 40d630aac98bff3429cea6a68fd4ed43
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -952,7 +953,7 @@ ScriptedImporter:
       y: 4396
       width: 672
       height: 480
-    spriteID: a1139bc6b55373e4bafc5d8f6f08dcbc
+    spriteID: 2e48ae7310f9ec744b849fc6cbdabdc6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -972,7 +973,7 @@ ScriptedImporter:
       y: 4884
       width: 672
       height: 480
-    spriteID: e2d2468105f26884f9e1a4b1caec9d01
+    spriteID: d943964f5b3c64f47914e0a179a8486d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -992,7 +993,7 @@ ScriptedImporter:
       y: 5372
       width: 672
       height: 480
-    spriteID: 5b183397563565941ad597dd93af2cbf
+    spriteID: 16ff5c626726f664996b80401a228c4c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1012,7 +1013,7 @@ ScriptedImporter:
       y: 5860
       width: 672
       height: 480
-    spriteID: fd0a91628fa336146a29ed3cf07af85f
+    spriteID: 078fce937fcee8b419a0c898f2cf275d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1032,7 +1033,7 @@ ScriptedImporter:
       y: 6348
       width: 672
       height: 480
-    spriteID: 9eb090222f31c4a46930251c71fc83a0
+    spriteID: 62e6ed1240e7c8b42a05d155d73f1a20
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1052,7 +1053,7 @@ ScriptedImporter:
       y: 6836
       width: 672
       height: 480
-    spriteID: 0a75d89eefe706344adaf66241f1f2c4
+    spriteID: b14d2c56e248e9b4ba505d616b28d867
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1072,7 +1073,7 @@ ScriptedImporter:
       y: 7324
       width: 672
       height: 480
-    spriteID: fe5216099f62f8a47990239fce922c36
+    spriteID: 2098d01f8e963a4479b7d1c949c36084
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1092,7 +1093,7 @@ ScriptedImporter:
       y: 4
       width: 672
       height: 480
-    spriteID: 59c0488757bb22f43b80a3adff611bfa
+    spriteID: ea201f918912ff947bf1fc89dcf26751
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1112,7 +1113,7 @@ ScriptedImporter:
       y: 492
       width: 672
       height: 480
-    spriteID: 265213b8210e30a4a8c2792c14f92b81
+    spriteID: 969cb01f7626781419d8b1d0ec6feb9f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1132,7 +1133,7 @@ ScriptedImporter:
       y: 980
       width: 672
       height: 480
-    spriteID: ad374c8e131711046b4a5d3aa24651ff
+    spriteID: 604add05e3a2261428d2e106ff78a094
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1152,7 +1153,7 @@ ScriptedImporter:
       y: 1468
       width: 672
       height: 480
-    spriteID: 8a9cea1714e78e5498f8866c43edd344
+    spriteID: c56fb4c4390ad44429101f78a8190e11
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1172,7 +1173,7 @@ ScriptedImporter:
       y: 1956
       width: 672
       height: 480
-    spriteID: 71bd18aafe165f24c82245862301e7e0
+    spriteID: 3e64487fa715c4c4ab843e0fad45a6f1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1192,7 +1193,7 @@ ScriptedImporter:
       y: 2444
       width: 672
       height: 480
-    spriteID: a28e8007bf08373449f57da2347da581
+    spriteID: cded0c05bd77658489b4f45c5163e851
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1212,7 +1213,7 @@ ScriptedImporter:
       y: 2932
       width: 672
       height: 480
-    spriteID: 44b6a754c3699b0429978c071e6d597c
+    spriteID: 75c84d2f742549d4ebf9df447de3f73f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1232,7 +1233,7 @@ ScriptedImporter:
       y: 3420
       width: 672
       height: 480
-    spriteID: 41266d69a65921d4ba672e4f91bcb731
+    spriteID: d6c2e636cc57e2149a0a1db558caf20c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1252,7 +1253,7 @@ ScriptedImporter:
       y: 3908
       width: 672
       height: 480
-    spriteID: f2871107a9083e349af66260975766fa
+    spriteID: 6d2cb182ef2dd6746bd4c578d5a56783
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1272,7 +1273,7 @@ ScriptedImporter:
       y: 4396
       width: 672
       height: 480
-    spriteID: e069950e3182d7840b9e3f173e643720
+    spriteID: ad384a590552eae4f8390d3d5965f464
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1292,7 +1293,7 @@ ScriptedImporter:
       y: 4884
       width: 672
       height: 480
-    spriteID: f935b6104d257be48af7b0e59175801a
+    spriteID: 59f72b13ad6fd89458aca17a920663ef
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1304,484 +1305,548 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 319531393
+    uuid:
+      value0: 3473561797
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -821405499
     name: 4 Mini Dialogue Box v1.2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 4 Mini Dialogue Box v1.2_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 8e6a397c53a051e46b4140c25b15c9a9
-    - name: 4 Mini Dialogue Box v1.2_Frame_1
+      spriteId: e630751eb41a1064cb81e84ff37a4383
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: ae9f0533240efa143b02be81b3f032af
-    - name: 4 Mini Dialogue Box v1.2_Frame_2
+      spriteId: 6b13173b4353a004caea7a6477942c82
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 325ee0095d84eaf49bd736c3186a7f43
-    - name: 4 Mini Dialogue Box v1.2_Frame_3
+      spriteId: 2204c6acdb283bb40bcad4a54da7894a
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 66e05c65ad44da8478382c189d1c9a99
-    - name: 4 Mini Dialogue Box v1.2_Frame_4
+      spriteId: f0244ae8f66d51f49873e9931e38e968
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 857fd56e75738e3468f5036bbb235646
-    - name: 4 Mini Dialogue Box v1.2_Frame_5
+      spriteId: 29595f2d39006aa42aa071446e6e2c9c
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: ee4ef6eeafd83c049bc3a163c54bc29b
-    - name: 4 Mini Dialogue Box v1.2_Frame_6
+      spriteId: ba0182a8782de394aa2453ec43dcf222
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: cb334341b8c40104faeab840365aee97
-    - name: 4 Mini Dialogue Box v1.2_Frame_7
+      spriteId: 0b300fb4d629882409842363073d2971
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: dbef2e6e145e5e64ebe26a1d6abd5618
-    - name: 4 Mini Dialogue Box v1.2_Frame_8
+      spriteId: cc78483ec0dd7894483fd57a00246d29
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 15497a091b3080f4cbd6024393356853
-    - name: 4 Mini Dialogue Box v1.2_Frame_9
+      spriteId: c3b493b7692463f4c9fd98abae74456d
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 0b29f5a2e88752e4c90eebf5fdc9eab5
-    - name: 4 Mini Dialogue Box v1.2_Frame_10
+      spriteId: 2c65e973ebd774d4f8359c7473982bf1
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 8c736e047e8d5a1438446705ed5e2e0f
-    - name: 4 Mini Dialogue Box v1.2_Frame_11
+      spriteId: f3e904d4bf94101468a84dda971f5c17
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 8b5f4683d6fa01d4ead47d16a58693df
-    - name: 4 Mini Dialogue Box v1.2_Frame_12
+      spriteId: a1c75750be2390346addff7edc309ca6
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 56ad9027466bdfa47a11a4f0885da35e
-    - name: 4 Mini Dialogue Box v1.2_Frame_13
+      spriteId: 9e4f4fcb58f26e94d8b10c62c1a1b690
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 733aa2e23894ef04ea3447459f06f6f4
-    - name: 4 Mini Dialogue Box v1.2_Frame_14
+      spriteId: cad83899f6ddaa14689e02e2133d4a75
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 1616df397e7e4c54f884d8a9ef212ed9
-    - name: 4 Mini Dialogue Box v1.2_Frame_15
+      spriteId: 97cff5e5ca18f614fb7a159ce924e7ec
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 96dee0b832ecfdb4a8e97b34d180e9a4
-    - name: 4 Mini Dialogue Box v1.2_Frame_16
+      spriteId: 72a4437899d699f48908e6beeecd3299
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 7be4802d84546dc4e8ce9a0a0151a294
-    - name: 4 Mini Dialogue Box v1.2_Frame_17
+      spriteId: 10bbeb2abd398d242801c29c7c4d9691
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 70d9da241b7ec1a479874fd67b282aa8
-    - name: 4 Mini Dialogue Box v1.2_Frame_18
+      spriteId: eba33ad78e9ee774b99c3a5229362c14
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 8691fe75f60b1e2488f0b54ce7cc46af
-    - name: 4 Mini Dialogue Box v1.2_Frame_19
+      spriteId: bec426ab1c6020944b194641e0526369
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 7b213bd31046ac5499023a71085f1dd5
-    - name: 4 Mini Dialogue Box v1.2_Frame_20
+      spriteId: 8b7eff93663a03947a93f59d3b3d6a0c
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 460bc5060c036bb43ad5126e124e088e
-    - name: 4 Mini Dialogue Box v1.2_Frame_21
+      spriteId: f33d111873b29a847bdd37549c988ce4
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 5783f64c3b84dfa40966c2f20565481e
-    - name: 4 Mini Dialogue Box v1.2_Frame_22
+      spriteId: 62e4ef791e842b44fa85a37b7d5591ba
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 0cdcf3aede14d824897b1e291ef40118
-    - name: 4 Mini Dialogue Box v1.2_Frame_23
+      spriteId: ba3921797f5cc69408c3218c34a78900
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: e79813d2bdc25eb49834206ba1610159
-    - name: 4 Mini Dialogue Box v1.2_Frame_24
+      spriteId: 37e91b524d883904196c5596a18bda2e
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 3059111977dd5f9488558663153974b5
-    - name: 4 Mini Dialogue Box v1.2_Frame_25
+      spriteId: 3ba79d3860cf1444aa337f05cff28576
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 76580d0029bcce5448586ed92194a99a
-    - name: 4 Mini Dialogue Box v1.2_Frame_26
+      spriteId: e69ae876d5f0826468f653011c0eeab2
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 616de768202cedd46b41ec571f65da0b
-    - name: 4 Mini Dialogue Box v1.2_Frame_27
+      spriteId: 766ee3bc734d79b409c1c8528aaaef9c
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 5e6f6f0626fd00840addb4e24c723e13
-    - name: 4 Mini Dialogue Box v1.2_Frame_28
+      spriteId: cc2281f8938ff7746b2439935940ea2d
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: ae8a0a6bfd182154cb1741d7e6d31276
-    - name: 4 Mini Dialogue Box v1.2_Frame_29
+      spriteId: 56d6d720ea42f294c9014e3a3058aa56
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: b87a6b1f81730f24088e828a224ae678
-    - name: 4 Mini Dialogue Box v1.2_Frame_30
+      spriteId: 2b92ddc468586e540a30895a00697f30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 3901f08d6bf83614187ddd60423c541e
-    - name: 4 Mini Dialogue Box v1.2_Frame_31
+      spriteId: 21525a03cd3ddb04facc7c3121c6bfb8
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 5fc546570bdc596429c4201c4348522f
-    - name: 4 Mini Dialogue Box v1.2_Frame_32
+      spriteId: d92717d9cdb3fb441ac82ba7bbe22098
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 18c46762a98dcb14883893cb4f5922c4
-    - name: 4 Mini Dialogue Box v1.2_Frame_33
+      spriteId: 04c02c9d23499914aa529be0d9955914
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 84c95222232a0fd4dbce4b713716952e
-    - name: 4 Mini Dialogue Box v1.2_Frame_34
+      spriteId: a403a2285fb905f4c935ca3787e883d6
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: c2c48fe4ea7071e49b3696e038970bd3
-    - name: 4 Mini Dialogue Box v1.2_Frame_35
+      spriteId: eb5eb86b84257ae41bc926b9cd149306
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 3adb45fba450d15428cb75f5a884ca03
-    - name: 4 Mini Dialogue Box v1.2_Frame_36
+      spriteId: 692eaed30aa7e014099c8f7ae6e32b7f
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 5dcc8a94a3ba15949b2f0c95bfccae44
-    - name: 4 Mini Dialogue Box v1.2_Frame_37
+      spriteId: 5cb08af9cc16f094da48a06fbd66ae8c
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: cbe5ccbf93236e94886e30ae8fcc4435
-    - name: 4 Mini Dialogue Box v1.2_Frame_38
+      spriteId: 21ed9d6c0c58a5342ba154e653177e98
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: d8a6bf0c85dcfed4b88acdd9409bb891
-    - name: 4 Mini Dialogue Box v1.2_Frame_39
+      spriteId: fc2e894f8e269654aaf00f5bf8045b33
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: ab6f276668011b34e8816cfb81d667a4
-    - name: 4 Mini Dialogue Box v1.2_Frame_40
+      spriteId: eec07d6890b7fdc478e51cec307b5293
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 20625855bc9b12a4fa112d985ba316b1
-    - name: 4 Mini Dialogue Box v1.2_Frame_41
+      spriteId: 40d630aac98bff3429cea6a68fd4ed43
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: a1139bc6b55373e4bafc5d8f6f08dcbc
-    - name: 4 Mini Dialogue Box v1.2_Frame_42
+      spriteId: 2e48ae7310f9ec744b849fc6cbdabdc6
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: e2d2468105f26884f9e1a4b1caec9d01
-    - name: 4 Mini Dialogue Box v1.2_Frame_43
+      spriteId: d943964f5b3c64f47914e0a179a8486d
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 5b183397563565941ad597dd93af2cbf
-    - name: 4 Mini Dialogue Box v1.2_Frame_44
+      spriteId: 16ff5c626726f664996b80401a228c4c
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: fd0a91628fa336146a29ed3cf07af85f
-    - name: 4 Mini Dialogue Box v1.2_Frame_45
+      spriteId: 078fce937fcee8b419a0c898f2cf275d
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 9eb090222f31c4a46930251c71fc83a0
-    - name: 4 Mini Dialogue Box v1.2_Frame_46
+      spriteId: 62e6ed1240e7c8b42a05d155d73f1a20
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 0a75d89eefe706344adaf66241f1f2c4
-    - name: 4 Mini Dialogue Box v1.2_Frame_47
+      spriteId: b14d2c56e248e9b4ba505d616b28d867
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: fe5216099f62f8a47990239fce922c36
-    - name: 4 Mini Dialogue Box v1.2_Frame_48
+      spriteId: 2098d01f8e963a4479b7d1c949c36084
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 59c0488757bb22f43b80a3adff611bfa
-    - name: 4 Mini Dialogue Box v1.2_Frame_49
+      spriteId: ea201f918912ff947bf1fc89dcf26751
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 265213b8210e30a4a8c2792c14f92b81
-    - name: 4 Mini Dialogue Box v1.2_Frame_50
+      spriteId: 969cb01f7626781419d8b1d0ec6feb9f
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: ad374c8e131711046b4a5d3aa24651ff
-    - name: 4 Mini Dialogue Box v1.2_Frame_51
+      spriteId: 604add05e3a2261428d2e106ff78a094
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 8a9cea1714e78e5498f8866c43edd344
-    - name: 4 Mini Dialogue Box v1.2_Frame_52
+      spriteId: c56fb4c4390ad44429101f78a8190e11
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 71bd18aafe165f24c82245862301e7e0
-    - name: 4 Mini Dialogue Box v1.2_Frame_53
+      spriteId: 3e64487fa715c4c4ab843e0fad45a6f1
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: a28e8007bf08373449f57da2347da581
-    - name: 4 Mini Dialogue Box v1.2_Frame_54
+      spriteId: cded0c05bd77658489b4f45c5163e851
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 44b6a754c3699b0429978c071e6d597c
-    - name: 4 Mini Dialogue Box v1.2_Frame_55
+      spriteId: 75c84d2f742549d4ebf9df447de3f73f
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: 41266d69a65921d4ba672e4f91bcb731
-    - name: 4 Mini Dialogue Box v1.2_Frame_56
+      spriteId: d6c2e636cc57e2149a0a1db558caf20c
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: f2871107a9083e349af66260975766fa
-    - name: 4 Mini Dialogue Box v1.2_Frame_57
+      spriteId: 6d2cb182ef2dd6746bd4c578d5a56783
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: e069950e3182d7840b9e3f173e643720
-    - name: 4 Mini Dialogue Box v1.2_Frame_58
+      spriteId: ad384a590552eae4f8390d3d5965f464
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 672
         height: 480
-      spriteId: f935b6104d257be48af7b0e59175801a
+      spriteId: 59f72b13ad6fd89458aca17a920663ef
     linkedCells: []
     parentIndex: -1
   platformSettings: []
@@ -1789,3 +1854,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 672, y: 480}
+  previousTextureSize: {x: 4096, y: 8192}

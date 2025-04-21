@@ -53,17 +53,14 @@ public class PlayerDialogueAction : MonoBehaviour
     public void AvaaSepanKauppa()
     {
         shopManager.OpenSepanKauppa();
+
     }
     public void AvaaNormiKauppa()
     {
+        { 
         shopManager.OpenShop();
         AudioManager.instance.PlaySFX("Inventory");
 
-        if (quests[0].state == Quest.QuestState.CAN_START) { 
-        QuestManager.instance.StartQuest(quests[0]);
-        }
-        else if ((quests[0].state == Quest.QuestState.CAN_FINISH)){
-            QuestManager.instance.CompleteQuest(quests[0]);
         }
     }
 
@@ -71,6 +68,30 @@ public class PlayerDialogueAction : MonoBehaviour
     {
         
         QuestManager.instance.StartQuest(quests[0]);
+    }
+
+    public void OpenVillageQuest1()
+    {
+        if (quests[0].state == Quest.QuestState.CAN_START)
+        {
+            QuestManager.instance.StartQuest(quests[0]);
+        }
+        else if ((quests[0].state == Quest.QuestState.CAN_FINISH))
+        {
+            QuestManager.instance.CompleteQuest(quests[0]);
+        }
+    }
+
+    public void OpenMinerQuest2()
+    {
+        if (quests[1].state == Quest.QuestState.CAN_START)
+        {
+            QuestManager.instance.StartQuest(quests[1]);
+        }
+        else if ((quests[1].state == Quest.QuestState.CAN_FINISH))
+        {
+            QuestManager.instance.CompleteQuest(quests[1]);
+        }
     }
 
 }

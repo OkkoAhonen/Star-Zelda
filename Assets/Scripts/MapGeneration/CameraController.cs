@@ -5,7 +5,7 @@ public class CameraController : MonoBehaviour
     [Tooltip("How quickly the camera moves to the target position. Smaller value = faster.")]
     public float smoothTime = 0.3f; // Voit s‰‰t‰‰ t‰t‰ Inspectorissa
 
-    private Vector3 targetPosition; // Sijainti, johon kamera pyrkii
+    [SerializeField] private Vector3 targetPosition; // Sijainti, johon kamera pyrkii
     private Vector3 currentVelocity = Vector3.zero; // Tarvitaan SmoothDamp-funktiolle
     private float initialZ; // Kameran alkuper‰inen Z-koordinaatti
 

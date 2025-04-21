@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -132,7 +133,7 @@ ScriptedImporter:
       y: 4
       width: 2048
       height: 2176
-    spriteID: de78de6da871f8347be90fac7830cd71
+    spriteID: a81a9f0b48e817c40beff8ec8b86ad53
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,7 +145,12 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -544179955
+    uuid:
+      value0: 85177729
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 85177729
     name: Tileset-Terrain-old prison GUIDE
     layerFlags: 0
     layerType: 0
@@ -152,12 +158,13 @@ ScriptedImporter:
     cells:
     - name: Tileset-Terrain-old prison GUIDE
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 32
         width: 2048
         height: 2176
-      spriteId: de78de6da871f8347be90fac7830cd71
+      spriteId: a81a9f0b48e817c40beff8ec8b86ad53
     linkedCells: []
     parentIndex: -1
   platformSettings: []
@@ -165,3 +172,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 2080, y: 2208}
+  previousTextureSize: {x: 4096, y: 4096}

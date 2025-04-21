@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -132,7 +133,7 @@ ScriptedImporter:
       y: 6304
       width: 320
       height: 412
-    spriteID: da4e395ae16014c4f98ed83afc496ee6
+    spriteID: 3bba3f74df321ba4b9a97f362fd9c753
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +153,7 @@ ScriptedImporter:
       y: 6724
       width: 320
       height: 412
-    spriteID: 0f02267bbcca11648a85a8adf604d5fd
+    spriteID: f830615f25a37054d9dff613d1d60eb0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +173,7 @@ ScriptedImporter:
       y: 7280
       width: 320
       height: 426
-    spriteID: e6ebafef21a1dc6429497338de014ba0
+    spriteID: 205db52979325294b82cf49ab2ee19c5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +193,7 @@ ScriptedImporter:
       y: 6304
       width: 320
       height: 480
-    spriteID: 61410ecd41fd8ea42ae3da663d103b0a
+    spriteID: 4dc50799eb26a0a4d9946e3ef06a520d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +213,7 @@ ScriptedImporter:
       y: 6454
       width: 593
       height: 481
-    spriteID: d1a5402a5d1a3ff40ad765e9c384729f
+    spriteID: 892492bc6f451c447a0b14a117ef4eb3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +233,7 @@ ScriptedImporter:
       y: 3416
       width: 656
       height: 412
-    spriteID: 44b7ba18c59644340b40a23fb9ec9998
+    spriteID: b723589840f76bd46b622cccb604759c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +253,7 @@ ScriptedImporter:
       y: 3836
       width: 656
       height: 412
-    spriteID: f8fa6b3c5287841448fda2c56eaa969c
+    spriteID: 8791bf2a5236e5f49ad976eb4d032b48
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +273,7 @@ ScriptedImporter:
       y: 6943
       width: 593
       height: 481
-    spriteID: 132505052d9570c479ac712325a022cc
+    spriteID: ed7b47d4751295448aecf3c96a7ac485
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -292,7 +293,7 @@ ScriptedImporter:
       y: 6792
       width: 320
       height: 480
-    spriteID: 5c268f8cec379364aa1a8b08d9e7d172
+    spriteID: b23c808946d94a2409c3863314ac8254
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -312,7 +313,7 @@ ScriptedImporter:
       y: 7714
       width: 320
       height: 426
-    spriteID: 9910b14b7ce5ca14fb4c1214b0ec7288
+    spriteID: 972c1f39ea307654c914f2048a534fba
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -332,7 +333,7 @@ ScriptedImporter:
       y: 7144
       width: 320
       height: 412
-    spriteID: 989c71f54f38731468f2b68ed8c22e17
+    spriteID: 401dd1db25e0b2840ab0598b06854066
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -352,7 +353,7 @@ ScriptedImporter:
       y: 7564
       width: 320
       height: 412
-    spriteID: 7b02cbe4b9407034db6129203c13ee98
+    spriteID: 6d6620216059d0b4cb0f6fdd1a8e8934
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -372,7 +373,7 @@ ScriptedImporter:
       y: 4256
       width: 656
       height: 412
-    spriteID: e5916e787c1fd254d8bde0629e314c75
+    spriteID: caf1b143d8b79794ba70c561065c295d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -392,7 +393,7 @@ ScriptedImporter:
       y: 4
       width: 656
       height: 423
-    spriteID: f048d4baf3414204bbb44b37eb311628
+    spriteID: f2cbff975b2ae2a4e94ed62b02464a32
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -412,7 +413,7 @@ ScriptedImporter:
       y: 2818
       width: 656
       height: 448
-    spriteID: 767face5101b0144c8aa6229b471449e
+    spriteID: e8aa9993c893bba4a9d4e80b5a67a21c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -432,7 +433,7 @@ ScriptedImporter:
       y: 982
       width: 656
       height: 451
-    spriteID: ff0816caa7d3fdb4bbdfa60e5425db3c
+    spriteID: 57d27a5cf512f814f95e9e5f6c2c96f7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -452,7 +453,7 @@ ScriptedImporter:
       y: 4642
       width: 656
       height: 445
-    spriteID: 94c70ff6435fb0b46b3db7db68814faa
+    spriteID: 9c3e8890b42bb3c4b8f6299e3be148eb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -472,7 +473,7 @@ ScriptedImporter:
       y: 7432
       width: 656
       height: 424
-    spriteID: c56c0fcbc5087b347b66a84fb66e49d9
+    spriteID: ff96b84e3f51ab74ab17d94a8515bf39
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -492,7 +493,7 @@ ScriptedImporter:
       y: 1728
       width: 656
       height: 414
-    spriteID: 2cca760929be51641a37e0fb33feadfc
+    spriteID: 12754f9935c6f6f45b11df03f3ac9870
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -512,7 +513,7 @@ ScriptedImporter:
       y: 4676
       width: 656
       height: 412
-    spriteID: dde5bcbadb6ef264b9d416015c9c028b
+    spriteID: 8639248fa707e5842b2bc38ac195a688
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -532,7 +533,7 @@ ScriptedImporter:
       y: 5096
       width: 656
       height: 412
-    spriteID: 084c3ed27e79d2544bda5834960fd6d6
+    spriteID: 28f36c64e8e85264383eba5ac771c71f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -552,7 +553,7 @@ ScriptedImporter:
       y: 435
       width: 656
       height: 423
-    spriteID: fef67e3adef3aba45b28d440b04c155e
+    spriteID: 5b6dcb299a8483044b4fbdd65f61246c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -572,7 +573,7 @@ ScriptedImporter:
       y: 3274
       width: 656
       height: 448
-    spriteID: 5e0327157499ec643b9d20bf35b541ee
+    spriteID: bee476f8c8ddd1449b917de26eb9f9d8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -592,7 +593,7 @@ ScriptedImporter:
       y: 1441
       width: 656
       height: 451
-    spriteID: 3b1d4ef1e1d5ae1429b3cf06b044d324
+    spriteID: 730150be348a7fc4f9723228674c25f9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -612,7 +613,7 @@ ScriptedImporter:
       y: 5095
       width: 656
       height: 445
-    spriteID: 1ec9bc988ace4bb4987c75018c5689c8
+    spriteID: 452574defeb6c9946a89d4e08a9cbac1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -632,7 +633,7 @@ ScriptedImporter:
       y: 6724
       width: 656
       height: 424
-    spriteID: ee733e2aa5cd46c4cadcba99537a17b4
+    spriteID: 893973c8035e2fb45b7d813d035cb9fc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -652,7 +653,7 @@ ScriptedImporter:
       y: 2150
       width: 656
       height: 414
-    spriteID: 8900915d1c668004aa58b01bac88b483
+    spriteID: 6762ce649880a784bbd864011164e834
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -672,7 +673,7 @@ ScriptedImporter:
       y: 5516
       width: 656
       height: 412
-    spriteID: 9b0bccab762dfee4091f4ffd2a0dfff0
+    spriteID: 573c7f3454ffbd44883ce75ac4e61303
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -692,7 +693,7 @@ ScriptedImporter:
       y: 5936
       width: 656
       height: 412
-    spriteID: 47f6c007483da0e4e870a0db51f7d7dc
+    spriteID: c0294cd880854bb43a3b6caf3ce95dd9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -712,7 +713,7 @@ ScriptedImporter:
       y: 2572
       width: 656
       height: 414
-    spriteID: 9846c32d2451f95449678167bac2845a
+    spriteID: a07806d89c3a8a44ab1b465dac6353f9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -732,7 +733,7 @@ ScriptedImporter:
       y: 7156
       width: 656
       height: 424
-    spriteID: 63381b19e22d2b545af97a6b13b1cb81
+    spriteID: 903aa36a8699b36478d02e0a84e63691
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -752,7 +753,7 @@ ScriptedImporter:
       y: 5548
       width: 656
       height: 445
-    spriteID: 66f3dca11d0b4bc4a96b1f51a3d9aa33
+    spriteID: 652d7f744b0050f459f7a88d809821d3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -772,7 +773,7 @@ ScriptedImporter:
       y: 1900
       width: 656
       height: 451
-    spriteID: f674cbc1588907f4eb632ff1c69e170b
+    spriteID: ad58e137a17074f479bae3a5a023cb5b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -792,7 +793,7 @@ ScriptedImporter:
       y: 3730
       width: 656
       height: 448
-    spriteID: 71ae1ac1b54c5014b84525f02f5a72d8
+    spriteID: dcd0af3a6241c104f84dabbde9af5bf2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -812,7 +813,7 @@ ScriptedImporter:
       y: 866
       width: 656
       height: 423
-    spriteID: 26cb5321611ed5c4bbc4915e44313065
+    spriteID: 5b766361bd9fa8140be3a824ab97ad37
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -832,7 +833,7 @@ ScriptedImporter:
       y: 6356
       width: 656
       height: 412
-    spriteID: 22371d0a5ae35854d8664b83ee25ee02
+    spriteID: e305192cf3cec464f802779dfd70bede
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -852,7 +853,7 @@ ScriptedImporter:
       y: 6776
       width: 656
       height: 412
-    spriteID: 46d8fe628a99012488d9452dc4e483b1
+    spriteID: ccb005967aa5f52469f4c0f177cee8cc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -872,7 +873,7 @@ ScriptedImporter:
       y: 2994
       width: 656
       height: 414
-    spriteID: fffb0a48e740d054cb7ea7bd45926a39
+    spriteID: e43c03228e6906c4da17ebe6e3e7c9a6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -892,7 +893,7 @@ ScriptedImporter:
       y: 7588
       width: 656
       height: 424
-    spriteID: 1365844231c2be44fa894309c6bf9d17
+    spriteID: b4764e7841b438643848b27bc9e01188
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -912,7 +913,7 @@ ScriptedImporter:
       y: 6001
       width: 656
       height: 445
-    spriteID: be33ca9d57211a24793ed0a53213bbae
+    spriteID: a96138de09ca9364cafad2ca12e040c1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -932,7 +933,7 @@ ScriptedImporter:
       y: 2359
       width: 656
       height: 451
-    spriteID: 24da461a53319734d8894ae677fadb32
+    spriteID: 34e2bf814b47d534798ccddec7499ef3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -952,7 +953,7 @@ ScriptedImporter:
       y: 4186
       width: 656
       height: 448
-    spriteID: c125cde7addd31e45997a5057295efcd
+    spriteID: eca82dc56c0718841808620c62a4d90b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -972,7 +973,7 @@ ScriptedImporter:
       y: 1297
       width: 656
       height: 423
-    spriteID: e8fd58b1bd2fb8646b0a8f0776211579
+    spriteID: 9d1ac832736815c499800b6e5b77fd75
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -992,7 +993,7 @@ ScriptedImporter:
       y: 7196
       width: 656
       height: 412
-    spriteID: c6690247698bd06408e78c12da799489
+    spriteID: 3c0f796224ab2a2498e7ee119e9d2324
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1012,7 +1013,7 @@ ScriptedImporter:
       y: 7616
       width: 656
       height: 412
-    spriteID: 412060efbe0833f4db8e8297c3aa929e
+    spriteID: 9b3bb276588ad5e4ca9b384c3330f1e7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1032,7 +1033,7 @@ ScriptedImporter:
       y: 844
       width: 656
       height: 412
-    spriteID: b797b329736ee5943a386fca3ad20f6d
+    spriteID: af964ba0df087c34cbc865a0b7e303fa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1052,7 +1053,7 @@ ScriptedImporter:
       y: 4
       width: 656
       height: 481
-    spriteID: 87dbbfc67b850874dae388a45a1a2968
+    spriteID: 75243eeff27ec2b4a9162d8ed63ac171
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1072,7 +1073,7 @@ ScriptedImporter:
       y: 1264
       width: 656
       height: 412
-    spriteID: 095422a4b3870a0498f9ded2586d61a3
+    spriteID: 477752a2b867d8343addcecf70d67a59
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1092,7 +1093,7 @@ ScriptedImporter:
       y: 1684
       width: 656
       height: 412
-    spriteID: 7a6ac0cad4a325b4f8dcff67f8ca3cc3
+    spriteID: e211d851bd8c49946b3d819396477606
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1112,7 +1113,7 @@ ScriptedImporter:
       y: 2104
       width: 656
       height: 412
-    spriteID: 885118d7fe65ca348b34a7f29a203564
+    spriteID: de9fa0832ddd7bd4abb80d1c6d1497dc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1132,7 +1133,7 @@ ScriptedImporter:
       y: 2524
       width: 656
       height: 412
-    spriteID: 52c502f3ab686b0429dde9aef71c7bce
+    spriteID: c2e6d6c09de0fd043b5139979b9444dc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1152,7 +1153,7 @@ ScriptedImporter:
       y: 2944
       width: 656
       height: 412
-    spriteID: d56b26b70122a6840a8c94b984f4c45f
+    spriteID: 3bc2c8ebc63d94e47975662b7892bd35
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1172,7 +1173,7 @@ ScriptedImporter:
       y: 3364
       width: 656
       height: 412
-    spriteID: 6db2362a305b0ca4e9d37675953ee645
+    spriteID: cfe1bd08fb532e844906d324ab0d2138
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1192,7 +1193,7 @@ ScriptedImporter:
       y: 493
       width: 656
       height: 481
-    spriteID: 92cd4af5e53aef34387209cf7267014a
+    spriteID: df91a42ea2babae43be94a17303ac8a2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1212,7 +1213,7 @@ ScriptedImporter:
       y: 3784
       width: 656
       height: 412
-    spriteID: 99ccbc0f149369e43b4d6ab31c98597d
+    spriteID: cc23220ba059695438b0068b9da5ea94
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1232,7 +1233,7 @@ ScriptedImporter:
       y: 4204
       width: 656
       height: 412
-    spriteID: 3706fae441d16fe419307048aa3af75e
+    spriteID: 491efca7ebba49246a13756a6aff8517
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1252,7 +1253,7 @@ ScriptedImporter:
       y: 4624
       width: 656
       height: 412
-    spriteID: 56af3513706df31498646f019e1e6c38
+    spriteID: 5f99f5067476378459381adeb3dc230c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1272,7 +1273,7 @@ ScriptedImporter:
       y: 5044
       width: 656
       height: 412
-    spriteID: a3ae7f8dbd811d041b79edcc9b469fd7
+    spriteID: fa4e85b94bb9f8e4fb4cb27c150ab9d9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1292,7 +1293,7 @@ ScriptedImporter:
       y: 5464
       width: 656
       height: 412
-    spriteID: 3b2f0ca8685f17842878c95da108687e
+    spriteID: e02bfe8bc1ed7d940b425f13d08c4fe3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1312,7 +1313,7 @@ ScriptedImporter:
       y: 4
       width: 659
       height: 412
-    spriteID: edefff764a3cb5545809ca62d806d1bc
+    spriteID: c6804944453b3ce4a879e18467e8d281
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1332,7 +1333,7 @@ ScriptedImporter:
       y: 3784
       width: 692
       height: 412
-    spriteID: b13850111a3561c43a862767f0d35654
+    spriteID: 297842841864719428ea77d95ee2bfc8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1352,7 +1353,7 @@ ScriptedImporter:
       y: 4204
       width: 692
       height: 412
-    spriteID: a32af47384fc8264fb78b06497514e79
+    spriteID: 3e70f81246898604e92469e7999a6c40
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1372,7 +1373,7 @@ ScriptedImporter:
       y: 4624
       width: 692
       height: 412
-    spriteID: e85bfd567c734234bafa3065cbf15ef4
+    spriteID: c8a3bcc5abc9b6e4e9acfff2a4e83065
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1392,7 +1393,7 @@ ScriptedImporter:
       y: 5044
       width: 692
       height: 412
-    spriteID: e67e1eaa16c88ba47abd4a67d1aa2fce
+    spriteID: a0176c250ac8f5e48ae374321a8c7d61
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1412,7 +1413,7 @@ ScriptedImporter:
       y: 5464
       width: 692
       height: 412
-    spriteID: fcec3a38fd0eee34e8eb324f36b0524d
+    spriteID: 7a67021a6dc3e684aa4faaa3ba8ada45
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1432,7 +1433,7 @@ ScriptedImporter:
       y: 5884
       width: 692
       height: 412
-    spriteID: a89756b1d0448744cba3446ff2fdd9d9
+    spriteID: 308b148a9bbe97b47a0cf6f080c2fea7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1452,7 +1453,7 @@ ScriptedImporter:
       y: 844
       width: 687
       height: 412
-    spriteID: 415079ac176613c4b8db9719f784b489
+    spriteID: fc4dfa4af4703494ab9589fc44474b3a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1472,7 +1473,7 @@ ScriptedImporter:
       y: 1684
       width: 683
       height: 412
-    spriteID: eaafe83ad5f520647a3db08e26d87b88
+    spriteID: 4f1a36ef80915ec4d9f3255597ac3598
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1492,7 +1493,7 @@ ScriptedImporter:
       y: 2104
       width: 683
       height: 412
-    spriteID: 422ec54ead6df0546a29b4be18aff86c
+    spriteID: 68cae4ce260569444affe39f3b0d26ff
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1512,7 +1513,7 @@ ScriptedImporter:
       y: 2524
       width: 683
       height: 412
-    spriteID: 7f2501343d5341e4d971c1c355e242c4
+    spriteID: 5a4ceb90f52782d49a0d83b29e46bfdc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1532,7 +1533,7 @@ ScriptedImporter:
       y: 2944
       width: 683
       height: 412
-    spriteID: e386bfae263c4cc468d08509097cac9b
+    spriteID: 8eea71cedbbfa25409d33f0d5aa154dd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1552,7 +1553,7 @@ ScriptedImporter:
       y: 3364
       width: 683
       height: 412
-    spriteID: d6f6e53dfed250d48a11971f38466934
+    spriteID: a7668857e903ccc408bd3232386ac33b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1572,7 +1573,7 @@ ScriptedImporter:
       y: 3784
       width: 683
       height: 412
-    spriteID: 30aebc7c6aef4854a9f9dba3454a32ed
+    spriteID: ec2a084be6209c14fa4b4f9f6f5752e3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1592,7 +1593,7 @@ ScriptedImporter:
       y: 4
       width: 693
       height: 412
-    spriteID: d989d38250aa87244966354868ea451d
+    spriteID: a7336b929e392e24aad0ae520bfedfee
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1612,7 +1613,7 @@ ScriptedImporter:
       y: 424
       width: 693
       height: 412
-    spriteID: d9c1639d97d759249a7d3d0104c5c380
+    spriteID: 80b153cea0389d44583457650835a565
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1632,7 +1633,7 @@ ScriptedImporter:
       y: 844
       width: 693
       height: 412
-    spriteID: 508b1d327193be840b9d15044958a19c
+    spriteID: 479bad7119b6dd6448a750426eac24cb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1652,7 +1653,7 @@ ScriptedImporter:
       y: 1264
       width: 693
       height: 412
-    spriteID: bf0aca77c7349cd4e82ed0d009babe37
+    spriteID: f1bd84c4b8086ac48864ff3919c42963
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1672,7 +1673,7 @@ ScriptedImporter:
       y: 1684
       width: 693
       height: 412
-    spriteID: 5a0767f8b91722b4f942cae9070bcc3e
+    spriteID: fd291a083aee73c489e73e483a3acd15
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1692,7 +1693,7 @@ ScriptedImporter:
       y: 2104
       width: 693
       height: 412
-    spriteID: 1144dc9d9667d864e8ef9a81f05dee58
+    spriteID: 7d2ed250194f25c48870432abebfac11
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1712,7 +1713,7 @@ ScriptedImporter:
       y: 2524
       width: 693
       height: 412
-    spriteID: dd4597bc064146542b193940c0ddfdce
+    spriteID: e6ef1e7490b2fd841864ec6f1274bc7f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1732,7 +1733,7 @@ ScriptedImporter:
       y: 2944
       width: 693
       height: 412
-    spriteID: a20d40dd200154841af5fe7653963d1a
+    spriteID: 1508d25fb72c54b41b9ca08c5d195409
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1752,7 +1753,7 @@ ScriptedImporter:
       y: 3364
       width: 693
       height: 412
-    spriteID: 4e793be3ce89bc04da9e29d6d192936c
+    spriteID: 243c689a160952d4b800bb0b0b757a4b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1772,7 +1773,7 @@ ScriptedImporter:
       y: 4204
       width: 683
       height: 412
-    spriteID: 2360daa379be7a94281b2c357b585d53
+    spriteID: 9ac40482bdfca4a478d966147339577f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1792,7 +1793,7 @@ ScriptedImporter:
       y: 4624
       width: 683
       height: 412
-    spriteID: c4b56b1ad3bd5774ab79f2e3e4612d4b
+    spriteID: 8d7fb41599dffcd4b932fdd1161274cb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1812,7 +1813,7 @@ ScriptedImporter:
       y: 5044
       width: 683
       height: 412
-    spriteID: 50d2c2a8f80540b4fbc26dfb08029c79
+    spriteID: 695b809bf71d2c84d9a151e90d7e3bd2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1832,7 +1833,7 @@ ScriptedImporter:
       y: 5464
       width: 683
       height: 412
-    spriteID: 9c6cd7d6573b9784ca6b6d5bd857b9a1
+    spriteID: 5fbbec036f13c3845b7704c24cad8759
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1852,7 +1853,7 @@ ScriptedImporter:
       y: 5884
       width: 683
       height: 412
-    spriteID: cdfcbe687bed1fa409d29d7e5b60e609
+    spriteID: ee30bb92f56fd684fae8cbc236dc022f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1872,7 +1873,7 @@ ScriptedImporter:
       y: 6304
       width: 683
       height: 412
-    spriteID: 646f15640fa49b945a544b74bc56a833
+    spriteID: 42c367ee2100bb447a3bb716a84ce9c2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1892,7 +1893,7 @@ ScriptedImporter:
       y: 1264
       width: 687
       height: 412
-    spriteID: 5acd94542fc284940bc767a98377bbec
+    spriteID: 7b01b41de386dce43b073d67160539e5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1912,7 +1913,7 @@ ScriptedImporter:
       y: 6304
       width: 692
       height: 412
-    spriteID: 620612bbfeeb8ab4393297c666ec5800
+    spriteID: 4c174ba86f014bb4cbdd6f7d96c447c4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1932,7 +1933,7 @@ ScriptedImporter:
       y: 6724
       width: 692
       height: 412
-    spriteID: 64dbddefdc301854aac4ae64fc24c5c2
+    spriteID: 9d20f89d2a8957b49b70ff0347339c93
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1952,7 +1953,7 @@ ScriptedImporter:
       y: 7144
       width: 692
       height: 412
-    spriteID: 1f9e8f2b81ce74d4eb9244335d2803ed
+    spriteID: 48c3cec429da8864fba50885c311d149
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1972,7 +1973,7 @@ ScriptedImporter:
       y: 7564
       width: 692
       height: 412
-    spriteID: d68387229b71a164ba36f51cd785f295
+    spriteID: 5fb1abf5e1f3728419c8981933a36dae
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1992,7 +1993,7 @@ ScriptedImporter:
       y: 4
       width: 692
       height: 412
-    spriteID: cdeca4c62eb1cad4caeea981d0608b45
+    spriteID: 19879f3ba18a4ee4ebae4a154b4bc29b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2012,7 +2013,7 @@ ScriptedImporter:
       y: 424
       width: 692
       height: 412
-    spriteID: 538e1b881e263e9449a0cf5950a087ab
+    spriteID: 4fbf0bedc47166049b6a5b5305bab7fa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2032,7 +2033,7 @@ ScriptedImporter:
       y: 424
       width: 659
       height: 412
-    spriteID: be1ee1d5ba665934a8f9ebad4e3dba2f
+    spriteID: f7c352e6cf02a50478db4414a15f842a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2052,7 +2053,7 @@ ScriptedImporter:
       y: 5884
       width: 656
       height: 412
-    spriteID: 0003daa5bee3d7647be09a643afc36d5
+    spriteID: efad837f483cd944da2e87bb8da0a82b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -2064,788 +2065,890 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1735276620
+    uuid:
+      value0: 2537990020
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -1756977276
     name: Gold Inventory Book Source Without Border
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Gold Inventory Book Source Without Border_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 272
         y: 91
         width: 320
         height: 412
-      spriteId: da4e395ae16014c4f98ed83afc496ee6
-    - name: Gold Inventory Book Source Without Border_Frame_1
+      spriteId: 3bba3f74df321ba4b9a97f362fd9c753
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 304
         y: 91
         width: 320
         height: 412
-      spriteId: 0f02267bbcca11648a85a8adf604d5fd
-    - name: Gold Inventory Book Source Without Border_Frame_2
+      spriteId: f830615f25a37054d9dff613d1d60eb0
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 320
         y: 96
         width: 320
         height: 426
-      spriteId: e6ebafef21a1dc6429497338de014ba0
-    - name: Gold Inventory Book Source Without Border_Frame_3
+      spriteId: 205db52979325294b82cf49ab2ee19c5
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 368
         y: 96
         width: 320
         height: 480
-      spriteId: 61410ecd41fd8ea42ae3da663d103b0a
-    - name: Gold Inventory Book Source Without Border_Frame_4
+      spriteId: 4dc50799eb26a0a4d9946e3ef06a520d
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 111
         y: 96
         width: 593
         height: 481
-      spriteId: d1a5402a5d1a3ff40ad765e9c384729f
-    - name: Gold Inventory Book Source Without Border_Frame_5
+      spriteId: 892492bc6f451c447a0b14a117ef4eb3
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 44b7ba18c59644340b40a23fb9ec9998
-    - name: Gold Inventory Book Source Without Border_Frame_7
+      spriteId: b723589840f76bd46b622cccb604759c
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: f8fa6b3c5287841448fda2c56eaa969c
-    - name: Gold Inventory Book Source Without Border_Frame_8
+      spriteId: 8791bf2a5236e5f49ad976eb4d032b48
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 111
         y: 96
         width: 593
         height: 481
-      spriteId: 132505052d9570c479ac712325a022cc
-    - name: Gold Inventory Book Source Without Border_Frame_9
+      spriteId: ed7b47d4751295448aecf3c96a7ac485
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 368
         y: 96
         width: 320
         height: 480
-      spriteId: 5c268f8cec379364aa1a8b08d9e7d172
-    - name: Gold Inventory Book Source Without Border_Frame_10
+      spriteId: b23c808946d94a2409c3863314ac8254
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 320
         y: 96
         width: 320
         height: 426
-      spriteId: 9910b14b7ce5ca14fb4c1214b0ec7288
-    - name: Gold Inventory Book Source Without Border_Frame_11
+      spriteId: 972c1f39ea307654c914f2048a534fba
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 304
         y: 91
         width: 320
         height: 412
-      spriteId: 989c71f54f38731468f2b68ed8c22e17
-    - name: Gold Inventory Book Source Without Border_Frame_12
+      spriteId: 401dd1db25e0b2840ab0598b06854066
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 272
         y: 91
         width: 320
         height: 412
-      spriteId: 7b02cbe4b9407034db6129203c13ee98
-    - name: Gold Inventory Book Source Without Border_Frame_14
+      spriteId: 6d6620216059d0b4cb0f6fdd1a8e8934
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: e5916e787c1fd254d8bde0629e314c75
-    - name: Gold Inventory Book Source Without Border_Frame_15
+      spriteId: caf1b143d8b79794ba70c561065c295d
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 423
-      spriteId: f048d4baf3414204bbb44b37eb311628
-    - name: Gold Inventory Book Source Without Border_Frame_16
+      spriteId: f2cbff975b2ae2a4e94ed62b02464a32
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 448
-      spriteId: 767face5101b0144c8aa6229b471449e
-    - name: Gold Inventory Book Source Without Border_Frame_17
+      spriteId: e8aa9993c893bba4a9d4e80b5a67a21c
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 451
-      spriteId: ff0816caa7d3fdb4bbdfa60e5425db3c
-    - name: Gold Inventory Book Source Without Border_Frame_18
+      spriteId: 57d27a5cf512f814f95e9e5f6c2c96f7
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 445
-      spriteId: 94c70ff6435fb0b46b3db7db68814faa
-    - name: Gold Inventory Book Source Without Border_Frame_19
+      spriteId: 9c3e8890b42bb3c4b8f6299e3be148eb
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 424
-      spriteId: c56c0fcbc5087b347b66a84fb66e49d9
-    - name: Gold Inventory Book Source Without Border_Frame_20
+      spriteId: ff96b84e3f51ab74ab17d94a8515bf39
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 414
-      spriteId: 2cca760929be51641a37e0fb33feadfc
-    - name: Gold Inventory Book Source Without Border_Frame_21
+      spriteId: 12754f9935c6f6f45b11df03f3ac9870
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: dde5bcbadb6ef264b9d416015c9c028b
-    - name: Gold Inventory Book Source Without Border_Frame_23
+      spriteId: 8639248fa707e5842b2bc38ac195a688
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 084c3ed27e79d2544bda5834960fd6d6
-    - name: Gold Inventory Book Source Without Border_Frame_24
+      spriteId: 28f36c64e8e85264383eba5ac771c71f
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 423
-      spriteId: fef67e3adef3aba45b28d440b04c155e
-    - name: Gold Inventory Book Source Without Border_Frame_25
+      spriteId: 5b6dcb299a8483044b4fbdd65f61246c
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 448
-      spriteId: 5e0327157499ec643b9d20bf35b541ee
-    - name: Gold Inventory Book Source Without Border_Frame_26
+      spriteId: bee476f8c8ddd1449b917de26eb9f9d8
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 451
-      spriteId: 3b1d4ef1e1d5ae1429b3cf06b044d324
-    - name: Gold Inventory Book Source Without Border_Frame_27
+      spriteId: 730150be348a7fc4f9723228674c25f9
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 445
-      spriteId: 1ec9bc988ace4bb4987c75018c5689c8
-    - name: Gold Inventory Book Source Without Border_Frame_28
+      spriteId: 452574defeb6c9946a89d4e08a9cbac1
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 424
-      spriteId: ee733e2aa5cd46c4cadcba99537a17b4
-    - name: Gold Inventory Book Source Without Border_Frame_29
+      spriteId: 893973c8035e2fb45b7d813d035cb9fc
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 414
-      spriteId: 8900915d1c668004aa58b01bac88b483
-    - name: Gold Inventory Book Source Without Border_Frame_30
+      spriteId: 6762ce649880a784bbd864011164e834
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 9b0bccab762dfee4091f4ffd2a0dfff0
-    - name: Gold Inventory Book Source Without Border_Frame_32
+      spriteId: 573c7f3454ffbd44883ce75ac4e61303
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 47f6c007483da0e4e870a0db51f7d7dc
-    - name: Gold Inventory Book Source Without Border_Frame_33
+      spriteId: c0294cd880854bb43a3b6caf3ce95dd9
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 414
-      spriteId: 9846c32d2451f95449678167bac2845a
-    - name: Gold Inventory Book Source Without Border_Frame_34
+      spriteId: a07806d89c3a8a44ab1b465dac6353f9
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 424
-      spriteId: 63381b19e22d2b545af97a6b13b1cb81
-    - name: Gold Inventory Book Source Without Border_Frame_35
+      spriteId: 903aa36a8699b36478d02e0a84e63691
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 445
-      spriteId: 66f3dca11d0b4bc4a96b1f51a3d9aa33
-    - name: Gold Inventory Book Source Without Border_Frame_36
+      spriteId: 652d7f744b0050f459f7a88d809821d3
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 451
-      spriteId: f674cbc1588907f4eb632ff1c69e170b
-    - name: Gold Inventory Book Source Without Border_Frame_37
+      spriteId: ad58e137a17074f479bae3a5a023cb5b
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 448
-      spriteId: 71ae1ac1b54c5014b84525f02f5a72d8
-    - name: Gold Inventory Book Source Without Border_Frame_38
+      spriteId: dcd0af3a6241c104f84dabbde9af5bf2
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 423
-      spriteId: 26cb5321611ed5c4bbc4915e44313065
-    - name: Gold Inventory Book Source Without Border_Frame_39
+      spriteId: 5b766361bd9fa8140be3a824ab97ad37
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 22371d0a5ae35854d8664b83ee25ee02
-    - name: Gold Inventory Book Source Without Border_Frame_41
+      spriteId: e305192cf3cec464f802779dfd70bede
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 46d8fe628a99012488d9452dc4e483b1
-    - name: Gold Inventory Book Source Without Border_Frame_42
+      spriteId: ccb005967aa5f52469f4c0f177cee8cc
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 414
-      spriteId: fffb0a48e740d054cb7ea7bd45926a39
-    - name: Gold Inventory Book Source Without Border_Frame_43
+      spriteId: e43c03228e6906c4da17ebe6e3e7c9a6
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 424
-      spriteId: 1365844231c2be44fa894309c6bf9d17
-    - name: Gold Inventory Book Source Without Border_Frame_44
+      spriteId: b4764e7841b438643848b27bc9e01188
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 445
-      spriteId: be33ca9d57211a24793ed0a53213bbae
-    - name: Gold Inventory Book Source Without Border_Frame_45
+      spriteId: a96138de09ca9364cafad2ca12e040c1
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 451
-      spriteId: 24da461a53319734d8894ae677fadb32
-    - name: Gold Inventory Book Source Without Border_Frame_46
+      spriteId: 34e2bf814b47d534798ccddec7499ef3
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 448
-      spriteId: c125cde7addd31e45997a5057295efcd
-    - name: Gold Inventory Book Source Without Border_Frame_47
+      spriteId: eca82dc56c0718841808620c62a4d90b
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 423
-      spriteId: e8fd58b1bd2fb8646b0a8f0776211579
-    - name: Gold Inventory Book Source Without Border_Frame_48
+      spriteId: 9d1ac832736815c499800b6e5b77fd75
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: c6690247698bd06408e78c12da799489
-    - name: Gold Inventory Book Source Without Border_Frame_50
+      spriteId: 3c0f796224ab2a2498e7ee119e9d2324
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 412060efbe0833f4db8e8297c3aa929e
-    - name: Gold Inventory Book Source Without Border_Frame_51
+      spriteId: 9b3bb276588ad5e4ca9b384c3330f1e7
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: b797b329736ee5943a386fca3ad20f6d
-    - name: Gold Inventory Book Source Without Border_Frame_52
+      spriteId: af964ba0df087c34cbc865a0b7e303fa
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 57
         width: 656
         height: 481
-      spriteId: 87dbbfc67b850874dae388a45a1a2968
-    - name: Gold Inventory Book Source Without Border_Frame_53
+      spriteId: 75243eeff27ec2b4a9162d8ed63ac171
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 095422a4b3870a0498f9ded2586d61a3
-    - name: Gold Inventory Book Source Without Border_Frame_54
+      spriteId: 477752a2b867d8343addcecf70d67a59
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 7a6ac0cad4a325b4f8dcff67f8ca3cc3
-    - name: Gold Inventory Book Source Without Border_Frame_55
+      spriteId: e211d851bd8c49946b3d819396477606
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 885118d7fe65ca348b34a7f29a203564
-    - name: Gold Inventory Book Source Without Border_Frame_56
+      spriteId: de9fa0832ddd7bd4abb80d1c6d1497dc
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 52c502f3ab686b0429dde9aef71c7bce
-    - name: Gold Inventory Book Source Without Border_Frame_58
+      spriteId: c2e6d6c09de0fd043b5139979b9444dc
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: d56b26b70122a6840a8c94b984f4c45f
-    - name: Gold Inventory Book Source Without Border_Frame_59
+      spriteId: 3bc2c8ebc63d94e47975662b7892bd35
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 6db2362a305b0ca4e9d37675953ee645
-    - name: Gold Inventory Book Source Without Border_Frame_60
+      spriteId: cfe1bd08fb532e844906d324ab0d2138
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 57
         width: 656
         height: 481
-      spriteId: 92cd4af5e53aef34387209cf7267014a
-    - name: Gold Inventory Book Source Without Border_Frame_61
+      spriteId: df91a42ea2babae43be94a17303ac8a2
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 99ccbc0f149369e43b4d6ab31c98597d
-    - name: Gold Inventory Book Source Without Border_Frame_62
+      spriteId: cc23220ba059695438b0068b9da5ea94
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 3706fae441d16fe419307048aa3af75e
-    - name: Gold Inventory Book Source Without Border_Frame_63
+      spriteId: 491efca7ebba49246a13756a6aff8517
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 56af3513706df31498646f019e1e6c38
-    - name: Gold Inventory Book Source Without Border_Frame_64
+      spriteId: 5f99f5067476378459381adeb3dc230c
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: a3ae7f8dbd811d041b79edcc9b469fd7
-    - name: Gold Inventory Book Source Without Border_Frame_66
+      spriteId: fa4e85b94bb9f8e4fb4cb27c150ab9d9
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 3b2f0ca8685f17842878c95da108687e
-    - name: Gold Inventory Book Source Without Border_Frame_67
+      spriteId: e02bfe8bc1ed7d940b425f13d08c4fe3
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 659
         height: 412
-      spriteId: edefff764a3cb5545809ca62d806d1bc
-    - name: Gold Inventory Book Source Without Border_Frame_68
+      spriteId: c6804944453b3ce4a879e18467e8d281
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: b13850111a3561c43a862767f0d35654
-    - name: Gold Inventory Book Source Without Border_Frame_69
+      spriteId: 297842841864719428ea77d95ee2bfc8
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: a32af47384fc8264fb78b06497514e79
-    - name: Gold Inventory Book Source Without Border_Frame_70
+      spriteId: 3e70f81246898604e92469e7999a6c40
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: e85bfd567c734234bafa3065cbf15ef4
-    - name: Gold Inventory Book Source Without Border_Frame_71
+      spriteId: c8a3bcc5abc9b6e4e9acfff2a4e83065
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: e67e1eaa16c88ba47abd4a67d1aa2fce
-    - name: Gold Inventory Book Source Without Border_Frame_72
+      spriteId: a0176c250ac8f5e48ae374321a8c7d61
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: fcec3a38fd0eee34e8eb324f36b0524d
-    - name: Gold Inventory Book Source Without Border_Frame_73
+      spriteId: 7a67021a6dc3e684aa4faaa3ba8ada45
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: a89756b1d0448744cba3446ff2fdd9d9
-    - name: Gold Inventory Book Source Without Border_Frame_74
+      spriteId: 308b148a9bbe97b47a0cf6f080c2fea7
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 687
         height: 412
-      spriteId: 415079ac176613c4b8db9719f784b489
-    - name: Gold Inventory Book Source Without Border_Frame_75
+      spriteId: fc4dfa4af4703494ab9589fc44474b3a
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: eaafe83ad5f520647a3db08e26d87b88
-    - name: Gold Inventory Book Source Without Border_Frame_76
+      spriteId: 4f1a36ef80915ec4d9f3255597ac3598
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: 422ec54ead6df0546a29b4be18aff86c
-    - name: Gold Inventory Book Source Without Border_Frame_77
+      spriteId: 68cae4ce260569444affe39f3b0d26ff
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: 7f2501343d5341e4d971c1c355e242c4
-    - name: Gold Inventory Book Source Without Border_Frame_78
+      spriteId: 5a4ceb90f52782d49a0d83b29e46bfdc
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: e386bfae263c4cc468d08509097cac9b
-    - name: Gold Inventory Book Source Without Border_Frame_79
+      spriteId: 8eea71cedbbfa25409d33f0d5aa154dd
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: d6f6e53dfed250d48a11971f38466934
-    - name: Gold Inventory Book Source Without Border_Frame_80
+      spriteId: a7668857e903ccc408bd3232386ac33b
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: 30aebc7c6aef4854a9f9dba3454a32ed
-    - name: Gold Inventory Book Source Without Border_Frame_82
+      spriteId: ec2a084be6209c14fa4b4f9f6f5752e3
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: d989d38250aa87244966354868ea451d
-    - name: Gold Inventory Book Source Without Border_Frame_83
+      spriteId: a7336b929e392e24aad0ae520bfedfee
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: d9c1639d97d759249a7d3d0104c5c380
-    - name: Gold Inventory Book Source Without Border_Frame_84
+      spriteId: 80b153cea0389d44583457650835a565
+    - name: Frame_84
       frameIndex: 84
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: 508b1d327193be840b9d15044958a19c
-    - name: Gold Inventory Book Source Without Border_Frame_85
+      spriteId: 479bad7119b6dd6448a750426eac24cb
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: bf0aca77c7349cd4e82ed0d009babe37
-    - name: Gold Inventory Book Source Without Border_Frame_86
+      spriteId: f1bd84c4b8086ac48864ff3919c42963
+    - name: Frame_86
       frameIndex: 86
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: 5a0767f8b91722b4f942cae9070bcc3e
-    - name: Gold Inventory Book Source Without Border_Frame_87
+      spriteId: fd291a083aee73c489e73e483a3acd15
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: 1144dc9d9667d864e8ef9a81f05dee58
-    - name: Gold Inventory Book Source Without Border_Frame_88
+      spriteId: 7d2ed250194f25c48870432abebfac11
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: dd4597bc064146542b193940c0ddfdce
-    - name: Gold Inventory Book Source Without Border_Frame_89
+      spriteId: e6ef1e7490b2fd841864ec6f1274bc7f
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: a20d40dd200154841af5fe7653963d1a
-    - name: Gold Inventory Book Source Without Border_Frame_90
+      spriteId: 1508d25fb72c54b41b9ca08c5d195409
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 693
         height: 412
-      spriteId: 4e793be3ce89bc04da9e29d6d192936c
-    - name: Gold Inventory Book Source Without Border_Frame_92
+      spriteId: 243c689a160952d4b800bb0b0b757a4b
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: 2360daa379be7a94281b2c357b585d53
-    - name: Gold Inventory Book Source Without Border_Frame_93
+      spriteId: 9ac40482bdfca4a478d966147339577f
+    - name: Frame_93
       frameIndex: 93
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: c4b56b1ad3bd5774ab79f2e3e4612d4b
-    - name: Gold Inventory Book Source Without Border_Frame_94
+      spriteId: 8d7fb41599dffcd4b932fdd1161274cb
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: 50d2c2a8f80540b4fbc26dfb08029c79
-    - name: Gold Inventory Book Source Without Border_Frame_95
+      spriteId: 695b809bf71d2c84d9a151e90d7e3bd2
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: 9c6cd7d6573b9784ca6b6d5bd857b9a1
-    - name: Gold Inventory Book Source Without Border_Frame_96
+      spriteId: 5fbbec036f13c3845b7704c24cad8759
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: cdfcbe687bed1fa409d29d7e5b60e609
-    - name: Gold Inventory Book Source Without Border_Frame_97
+      spriteId: ee30bb92f56fd684fae8cbc236dc022f
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 683
         height: 412
-      spriteId: 646f15640fa49b945a544b74bc56a833
-    - name: Gold Inventory Book Source Without Border_Frame_98
+      spriteId: 42c367ee2100bb447a3bb716a84ce9c2
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 687
         height: 412
-      spriteId: 5acd94542fc284940bc767a98377bbec
-    - name: Gold Inventory Book Source Without Border_Frame_99
+      spriteId: 7b01b41de386dce43b073d67160539e5
+    - name: Frame_99
       frameIndex: 99
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: 620612bbfeeb8ab4393297c666ec5800
-    - name: Gold Inventory Book Source Without Border_Frame_100
+      spriteId: 4c174ba86f014bb4cbdd6f7d96c447c4
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: 64dbddefdc301854aac4ae64fc24c5c2
-    - name: Gold Inventory Book Source Without Border_Frame_101
+      spriteId: 9d20f89d2a8957b49b70ff0347339c93
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: 1f9e8f2b81ce74d4eb9244335d2803ed
-    - name: Gold Inventory Book Source Without Border_Frame_102
+      spriteId: 48c3cec429da8864fba50885c311d149
+    - name: Frame_102
       frameIndex: 102
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: d68387229b71a164ba36f51cd785f295
-    - name: Gold Inventory Book Source Without Border_Frame_103
+      spriteId: 5fb1abf5e1f3728419c8981933a36dae
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: cdeca4c62eb1cad4caeea981d0608b45
-    - name: Gold Inventory Book Source Without Border_Frame_104
+      spriteId: 19879f3ba18a4ee4ebae4a154b4bc29b
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 692
         height: 412
-      spriteId: 538e1b881e263e9449a0cf5950a087ab
-    - name: Gold Inventory Book Source Without Border_Frame_105
+      spriteId: 4fbf0bedc47166049b6a5b5305bab7fa
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 659
         height: 412
-      spriteId: be1ee1d5ba665934a8f9ebad4e3dba2f
-    - name: Gold Inventory Book Source Without Border_Frame_106
+      spriteId: f7c352e6cf02a50478db4414a15f842a
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 80
         y: 91
         width: 656
         height: 412
-      spriteId: 0003daa5bee3d7647be09a643afc36d5
+      spriteId: efad837f483cd944da2e87bb8da0a82b
     linkedCells: []
     parentIndex: -1
   platformSettings: []
@@ -2853,3 +2956,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 848, y: 640}
+  previousTextureSize: {x: 4096, y: 8192}

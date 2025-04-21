@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -132,7 +133,7 @@ ScriptedImporter:
       y: 4
       width: 75
       height: 75
-    spriteID: 791c06b807c550841aad7210b028c167
+    spriteID: 64caf73f38c4a0b42839a329426ac7b8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +153,7 @@ ScriptedImporter:
       y: 87
       width: 75
       height: 75
-    spriteID: a0082b06ecb7bb846ac8791dfeb381e7
+    spriteID: 1727a994fe207f041bf4659aae947fa9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +173,7 @@ ScriptedImporter:
       y: 170
       width: 75
       height: 75
-    spriteID: 420533c6d3af3f041bc538461ed3aed8
+    spriteID: 317acbbbf342cc9469898bdac1419213
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +193,7 @@ ScriptedImporter:
       y: 253
       width: 75
       height: 75
-    spriteID: 755001d66d99fc84bbc1c64b3d1169b4
+    spriteID: 0719d3bde3cb6ab4a93cf7c0b51c3d48
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +213,7 @@ ScriptedImporter:
       y: 336
       width: 75
       height: 75
-    spriteID: 6757945a104e8b94fb5586fc7ba47825
+    spriteID: 3cecb9ede74374b47a5c16c7794fa4de
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -232,7 +233,7 @@ ScriptedImporter:
       y: 419
       width: 75
       height: 75
-    spriteID: 7490628d5c85d8e43b51c6d0cb15e5ac
+    spriteID: 2505f11f1e9d47146809c43400923e00
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -252,7 +253,7 @@ ScriptedImporter:
       y: 502
       width: 75
       height: 75
-    spriteID: c76bdee386694c44d88b2ff917ce5df6
+    spriteID: 55dfd9bfb2b0d9943a7adffb5dd1a909
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -272,7 +273,7 @@ ScriptedImporter:
       y: 585
       width: 75
       height: 75
-    spriteID: 8f2337324ed106c45803a5dec1e185f3
+    spriteID: 5e1f7a4a6abfda141b75d26c7323cf92
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -292,7 +293,7 @@ ScriptedImporter:
       y: 668
       width: 75
       height: 75
-    spriteID: e5d94f7d1eba76041b498c09e666fee1
+    spriteID: 802a1396d3feb8b40aac6117fce0af8d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -312,7 +313,7 @@ ScriptedImporter:
       y: 751
       width: 75
       height: 75
-    spriteID: 7bc77be18dcf952429868dc0a6e00f8b
+    spriteID: fb6b338790e5167409e2617f300e3d75
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -332,7 +333,7 @@ ScriptedImporter:
       y: 834
       width: 75
       height: 75
-    spriteID: 685cb3456e6e78d40926512a6222bb73
+    spriteID: cff6499275b66fa428cc2121d275dcd5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -352,7 +353,7 @@ ScriptedImporter:
       y: 917
       width: 75
       height: 75
-    spriteID: 9f379e340f104bf4fad52ad26adb5a4c
+    spriteID: 4e294d0d85c064347b7e581167eaf0bd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -372,7 +373,7 @@ ScriptedImporter:
       y: 4
       width: 75
       height: 75
-    spriteID: 50f03a7832e68574c88042dc21aad554
+    spriteID: 9afee891909fd2645a513a24d0448b18
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -392,7 +393,7 @@ ScriptedImporter:
       y: 87
       width: 75
       height: 75
-    spriteID: 85f2396e9d31dc84caa918af22265a2b
+    spriteID: 1794f8a81c7c54b4f9e7c4041eb5e947
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -412,7 +413,7 @@ ScriptedImporter:
       y: 170
       width: 75
       height: 75
-    spriteID: 5518212634038ed49815325898127ed6
+    spriteID: 1ad33983a7282bc46a2fd14bb253c69f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -432,7 +433,7 @@ ScriptedImporter:
       y: 253
       width: 75
       height: 75
-    spriteID: 86711ca25f5ae70498f113de01aca2d8
+    spriteID: 2174138757abddc4f96e8d19367047e3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -452,7 +453,7 @@ ScriptedImporter:
       y: 336
       width: 75
       height: 75
-    spriteID: 504f6c0e23d2a2f498a2bf11c9b2c895
+    spriteID: 655f94cc00e0df047a9462fa7800cd1a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -472,7 +473,7 @@ ScriptedImporter:
       y: 419
       width: 75
       height: 75
-    spriteID: 9bdd9076b564db24da377241a34a3647
+    spriteID: edbef5b88617e2548baff59457e5bc7d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -492,7 +493,7 @@ ScriptedImporter:
       y: 502
       width: 75
       height: 75
-    spriteID: 52883ce0c42eb7440ac0eb0e8be49b90
+    spriteID: 1d2136e01e5fbae46be13d77ab527910
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -512,7 +513,7 @@ ScriptedImporter:
       y: 585
       width: 75
       height: 75
-    spriteID: b0e953387a0f9a6468a897d2da8cf967
+    spriteID: b41f8bb2c923b2e4684f314d4c888bff
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -532,7 +533,7 @@ ScriptedImporter:
       y: 668
       width: 75
       height: 75
-    spriteID: 1a116a906a9d38440aa2ee1527f49ace
+    spriteID: c50701741e757f543ba53240d63c6e60
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -552,7 +553,7 @@ ScriptedImporter:
       y: 751
       width: 75
       height: 75
-    spriteID: 41cbaff58984c7749b2e425940b0c948
+    spriteID: 8336215986e367243ac52e66628e91c4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -572,7 +573,7 @@ ScriptedImporter:
       y: 834
       width: 75
       height: 75
-    spriteID: 1a16d0725d2fd104aaf84923a3a61d83
+    spriteID: 0af3f7b26146c8947a74c9a7fea93237
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -592,7 +593,7 @@ ScriptedImporter:
       y: 917
       width: 75
       height: 75
-    spriteID: 46355f64e9cc47a4291bf5e256e7581b
+    spriteID: 9bb064d146961f147b57cbbbc56169b9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -612,7 +613,7 @@ ScriptedImporter:
       y: 4
       width: 75
       height: 75
-    spriteID: 7509a1d32488b08428e9023e0d7022b2
+    spriteID: c800f62e4efd77d43b074be5852dd1f2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -632,7 +633,7 @@ ScriptedImporter:
       y: 87
       width: 75
       height: 75
-    spriteID: 252904cb75c1e1449aeed1661ee39965
+    spriteID: c4fc0b2c789c3bd4c8fcd55ffd5938ec
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -652,7 +653,7 @@ ScriptedImporter:
       y: 170
       width: 75
       height: 75
-    spriteID: 22e7e82a7b0bef84c952452e49a8fa27
+    spriteID: f1b2240f4227a3c4f9d12ec6e8c3c950
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -672,7 +673,7 @@ ScriptedImporter:
       y: 253
       width: 75
       height: 75
-    spriteID: c51d089d27b57cf48985130de99d298d
+    spriteID: f20a39accb43f9f468f684f5e7d7647a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -692,7 +693,7 @@ ScriptedImporter:
       y: 336
       width: 75
       height: 75
-    spriteID: bcf9b7851ea42c9438d282e6de4c0bdf
+    spriteID: 1d12bb4ae2cf93b4d929ce668eed7242
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -712,7 +713,7 @@ ScriptedImporter:
       y: 419
       width: 75
       height: 75
-    spriteID: 9728f74f4b04cdd45bc08ddb830d5b80
+    spriteID: 07660be8aecab7a4f8620bfbf2106365
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -732,7 +733,7 @@ ScriptedImporter:
       y: 502
       width: 75
       height: 75
-    spriteID: 8637cc61b596ec5488e2d69bc728341f
+    spriteID: a87512f79cb92034193018dc0296bb04
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -752,7 +753,7 @@ ScriptedImporter:
       y: 585
       width: 75
       height: 75
-    spriteID: 0bbd9f4ee9d7161468b38855aa6e5d54
+    spriteID: 259592ca58f58b54e836ddb438d12a80
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -772,7 +773,7 @@ ScriptedImporter:
       y: 668
       width: 75
       height: 75
-    spriteID: 6b82f813f20ab4146b0f9f3bdbdd619c
+    spriteID: edee44233950c7541bd32056556cced1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -792,7 +793,7 @@ ScriptedImporter:
       y: 751
       width: 75
       height: 75
-    spriteID: 2e393e4270bbedb4184a40d160530add
+    spriteID: b0fb244ad291b2e43b5827982b675e09
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -812,7 +813,7 @@ ScriptedImporter:
       y: 834
       width: 75
       height: 75
-    spriteID: 7e9064e2e98bb054d9d8e20533b4b1aa
+    spriteID: 692e6d322e6eea84583bacbc3a96ccec
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -832,7 +833,7 @@ ScriptedImporter:
       y: 917
       width: 75
       height: 75
-    spriteID: f38d0ec99ae5c364bafb35bb85da222b
+    spriteID: ca687d0b245e28147b91b067241091d9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -852,7 +853,7 @@ ScriptedImporter:
       y: 4
       width: 75
       height: 75
-    spriteID: 81fb2e80c2a599644b6b63d18cf1dc4c
+    spriteID: a8f9a454c3b7b6d479234890f603f538
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -872,7 +873,7 @@ ScriptedImporter:
       y: 87
       width: 75
       height: 75
-    spriteID: 68b6548040a70dd40b7059f2c63635ad
+    spriteID: 39cd06da5c2470b42b2b1c15325fbce6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -892,7 +893,7 @@ ScriptedImporter:
       y: 170
       width: 75
       height: 75
-    spriteID: 8e442f2ad3baa0d44b94bf529171617e
+    spriteID: 366f5bd65770e8c4f8ebca3c2f837854
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -912,7 +913,7 @@ ScriptedImporter:
       y: 253
       width: 75
       height: 75
-    spriteID: 05e81004980c86b469d4a7850bb7e209
+    spriteID: 20822b91078547c46b02d33d3bac0014
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -932,7 +933,7 @@ ScriptedImporter:
       y: 336
       width: 75
       height: 75
-    spriteID: 387b871ed84af994d85a270285ec6729
+    spriteID: b6b0e32ecedacfc4391955fcb3b6d59e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -952,7 +953,7 @@ ScriptedImporter:
       y: 419
       width: 75
       height: 75
-    spriteID: 007fa885300719f4da4747a206514926
+    spriteID: 16d87688b544df44db1a4c14d6cd1b56
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -972,7 +973,7 @@ ScriptedImporter:
       y: 502
       width: 75
       height: 75
-    spriteID: 1545ab46d3d6f814996fa218dede68ec
+    spriteID: 314bc2f41dc33d44ab27d02bdcb0f2b0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -992,7 +993,7 @@ ScriptedImporter:
       y: 585
       width: 75
       height: 75
-    spriteID: 9c0e3cd8050e2c847987b8a320cf1979
+    spriteID: 511cb741fb037394e8f9b01116a66d5b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1012,7 +1013,7 @@ ScriptedImporter:
       y: 668
       width: 75
       height: 75
-    spriteID: f106a9e95386028458eed052f7121dc1
+    spriteID: 08168df58152db1449b547ac8c45f20e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1032,7 +1033,7 @@ ScriptedImporter:
       y: 751
       width: 75
       height: 75
-    spriteID: c91b7669e0066ec4bb9651df3af8958c
+    spriteID: 43282f49b5a934143ad88c65f167cca9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1052,7 +1053,7 @@ ScriptedImporter:
       y: 834
       width: 75
       height: 75
-    spriteID: 74fc189f30226c04689edad9aae621dc
+    spriteID: b3d8821a7f0dd0544919c61fba9ae10c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1072,7 +1073,7 @@ ScriptedImporter:
       y: 917
       width: 75
       height: 75
-    spriteID: 326236a9b70d70d44a38d54774e8cd55
+    spriteID: da7f0f78aac33d14db14c9bced6c6b83
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1092,7 +1093,7 @@ ScriptedImporter:
       y: 4
       width: 75
       height: 75
-    spriteID: ff92544bb0b335b40b8204731c062696
+    spriteID: 217e96a9c0c54d1469ee4fc60aae8ae5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1112,7 +1113,7 @@ ScriptedImporter:
       y: 87
       width: 75
       height: 75
-    spriteID: b8b38bb4bca7b3f4d906cda521835b99
+    spriteID: 981c6c820ef304d4ebeed90fba6a94bd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1132,7 +1133,7 @@ ScriptedImporter:
       y: 170
       width: 75
       height: 75
-    spriteID: b997587e11a2d4046993e637ea9ec83a
+    spriteID: b87a5ad48554aa247b6f9d52756f0440
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1152,7 +1153,7 @@ ScriptedImporter:
       y: 253
       width: 75
       height: 75
-    spriteID: 018ef469f6a36f14fb62bd2bc11ba89b
+    spriteID: 4c10074a114424642a70843749a01e99
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1172,7 +1173,7 @@ ScriptedImporter:
       y: 336
       width: 75
       height: 75
-    spriteID: a2042832ee3d85b42a96d63c2028d1f1
+    spriteID: 46c30762ead1301449308ea4fe5a83c7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1192,7 +1193,7 @@ ScriptedImporter:
       y: 419
       width: 75
       height: 75
-    spriteID: bfeb160d0fdfedf42bc3d028ef0b031c
+    spriteID: a825d1e584c6b4445af6b1785e039923
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1212,7 +1213,7 @@ ScriptedImporter:
       y: 502
       width: 75
       height: 75
-    spriteID: 4133247ebfcc67d46b04262e919ebfa9
+    spriteID: 04e23e0db9e04e042bd98dcac4963e44
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1232,7 +1233,7 @@ ScriptedImporter:
       y: 585
       width: 75
       height: 75
-    spriteID: 9c465bba0daa35f49972c9f2db483683
+    spriteID: e2fc62275b8e279449e16df4987466f0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1252,7 +1253,7 @@ ScriptedImporter:
       y: 668
       width: 75
       height: 75
-    spriteID: 8694e43ca14523f47b4b5c1fb37f175e
+    spriteID: 6563aba00c945a74bb57e1f5e64b688f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1272,7 +1273,7 @@ ScriptedImporter:
       y: 751
       width: 75
       height: 75
-    spriteID: c27c79aff2f2d3b46b81220949d8f850
+    spriteID: 219512bbc4e8b5a4bb0a8bf523b2561f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1292,7 +1293,7 @@ ScriptedImporter:
       y: 834
       width: 75
       height: 75
-    spriteID: e1f434b602b2fc24fa3112570cb7c1e5
+    spriteID: b498332a13ca0f642acb70612b18bbf9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1312,7 +1313,7 @@ ScriptedImporter:
       y: 917
       width: 75
       height: 75
-    spriteID: 0b3231328d226304a9758e7a9ddeaaac
+    spriteID: b905a43bd606bfe489a70aa64849d138
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1332,7 +1333,7 @@ ScriptedImporter:
       y: 4
       width: 75
       height: 75
-    spriteID: 372bf051d3aada14fa541db7249e15bf
+    spriteID: 500425b805db35447a22bae9d23b42d8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1352,7 +1353,7 @@ ScriptedImporter:
       y: 87
       width: 75
       height: 75
-    spriteID: 93ff923300e59774c80a43ca4a9fb90d
+    spriteID: daf1ff8c21c258e4391c16dc256d48b4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1372,7 +1373,7 @@ ScriptedImporter:
       y: 170
       width: 75
       height: 75
-    spriteID: fb229bdb8734b5c408cb162b775641f5
+    spriteID: f0523ed9e3731e148ae13a875fa44221
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1392,7 +1393,7 @@ ScriptedImporter:
       y: 253
       width: 75
       height: 75
-    spriteID: a937a91fed054474bb6113f97ff2d462
+    spriteID: 5714b002f373dfc4ab6a314037bdbfbd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1412,7 +1413,7 @@ ScriptedImporter:
       y: 336
       width: 75
       height: 75
-    spriteID: 7f41909eadcd18e4fae89a4ba55aed7b
+    spriteID: 618484e782c00cc4a880499c724b19d2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1432,7 +1433,7 @@ ScriptedImporter:
       y: 419
       width: 75
       height: 75
-    spriteID: 5b40cafa817776d41bd3e81895998a3b
+    spriteID: 4897d3b852799a24a8f2a5e8e0b6818c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1452,7 +1453,7 @@ ScriptedImporter:
       y: 502
       width: 75
       height: 75
-    spriteID: 30ef864745e93554896ef5fd4f0efe8d
+    spriteID: d4dfdea9a0e1b924ba014e507933b517
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1472,7 +1473,7 @@ ScriptedImporter:
       y: 585
       width: 75
       height: 75
-    spriteID: 4ed2144f11f79784da28a29d16fcede1
+    spriteID: 58193b3f42586304385a8548679407aa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1492,7 +1493,7 @@ ScriptedImporter:
       y: 668
       width: 75
       height: 75
-    spriteID: da322119b7d05ed4fbbd68cf46039d51
+    spriteID: 049d53b5373a2dd42abf3178a1188242
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1512,7 +1513,7 @@ ScriptedImporter:
       y: 751
       width: 75
       height: 75
-    spriteID: f0e6ddce79f567e42b2d3b606c64c797
+    spriteID: 63f96b07cf012e74b910a629f1710142
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1524,572 +1525,647 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -386655327
+    uuid:
+      value0: 150485861
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 150485861
     name: Inventory Book Day & Night Cycle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Inventory Book Day & Night Cycle_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 791c06b807c550841aad7210b028c167
-    - name: Inventory Book Day & Night Cycle_Frame_11
+      spriteId: 64caf73f38c4a0b42839a329426ac7b8
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: a0082b06ecb7bb846ac8791dfeb381e7
-    - name: Inventory Book Day & Night Cycle_Frame_22
+      spriteId: 1727a994fe207f041bf4659aae947fa9
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 420533c6d3af3f041bc538461ed3aed8
-    - name: Inventory Book Day & Night Cycle_Frame_33
+      spriteId: 317acbbbf342cc9469898bdac1419213
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 755001d66d99fc84bbc1c64b3d1169b4
-    - name: Inventory Book Day & Night Cycle_Frame_44
+      spriteId: 0719d3bde3cb6ab4a93cf7c0b51c3d48
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 6757945a104e8b94fb5586fc7ba47825
-    - name: Inventory Book Day & Night Cycle_Frame_55
+      spriteId: 3cecb9ede74374b47a5c16c7794fa4de
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 7490628d5c85d8e43b51c6d0cb15e5ac
-    - name: Inventory Book Day & Night Cycle_Frame_66
+      spriteId: 2505f11f1e9d47146809c43400923e00
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: c76bdee386694c44d88b2ff917ce5df6
-    - name: Inventory Book Day & Night Cycle_Frame_1
+      spriteId: 55dfd9bfb2b0d9943a7adffb5dd1a909
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 8f2337324ed106c45803a5dec1e185f3
-    - name: Inventory Book Day & Night Cycle_Frame_2
+      spriteId: 5e1f7a4a6abfda141b75d26c7323cf92
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: e5d94f7d1eba76041b498c09e666fee1
-    - name: Inventory Book Day & Night Cycle_Frame_3
+      spriteId: 802a1396d3feb8b40aac6117fce0af8d
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 7bc77be18dcf952429868dc0a6e00f8b
-    - name: Inventory Book Day & Night Cycle_Frame_4
+      spriteId: fb6b338790e5167409e2617f300e3d75
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 685cb3456e6e78d40926512a6222bb73
-    - name: Inventory Book Day & Night Cycle_Frame_5
+      spriteId: cff6499275b66fa428cc2121d275dcd5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 9f379e340f104bf4fad52ad26adb5a4c
-    - name: Inventory Book Day & Night Cycle_Frame_6
+      spriteId: 4e294d0d85c064347b7e581167eaf0bd
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 50f03a7832e68574c88042dc21aad554
-    - name: Inventory Book Day & Night Cycle_Frame_7
+      spriteId: 9afee891909fd2645a513a24d0448b18
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 85f2396e9d31dc84caa918af22265a2b
-    - name: Inventory Book Day & Night Cycle_Frame_8
+      spriteId: 1794f8a81c7c54b4f9e7c4041eb5e947
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 5518212634038ed49815325898127ed6
-    - name: Inventory Book Day & Night Cycle_Frame_9
+      spriteId: 1ad33983a7282bc46a2fd14bb253c69f
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 86711ca25f5ae70498f113de01aca2d8
-    - name: Inventory Book Day & Night Cycle_Frame_12
+      spriteId: 2174138757abddc4f96e8d19367047e3
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 504f6c0e23d2a2f498a2bf11c9b2c895
-    - name: Inventory Book Day & Night Cycle_Frame_13
+      spriteId: 655f94cc00e0df047a9462fa7800cd1a
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 9bdd9076b564db24da377241a34a3647
-    - name: Inventory Book Day & Night Cycle_Frame_14
+      spriteId: edbef5b88617e2548baff59457e5bc7d
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 52883ce0c42eb7440ac0eb0e8be49b90
-    - name: Inventory Book Day & Night Cycle_Frame_15
+      spriteId: 1d2136e01e5fbae46be13d77ab527910
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: b0e953387a0f9a6468a897d2da8cf967
-    - name: Inventory Book Day & Night Cycle_Frame_16
+      spriteId: b41f8bb2c923b2e4684f314d4c888bff
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 1a116a906a9d38440aa2ee1527f49ace
-    - name: Inventory Book Day & Night Cycle_Frame_17
+      spriteId: c50701741e757f543ba53240d63c6e60
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 41cbaff58984c7749b2e425940b0c948
-    - name: Inventory Book Day & Night Cycle_Frame_18
+      spriteId: 8336215986e367243ac52e66628e91c4
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 1a16d0725d2fd104aaf84923a3a61d83
-    - name: Inventory Book Day & Night Cycle_Frame_19
+      spriteId: 0af3f7b26146c8947a74c9a7fea93237
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 46355f64e9cc47a4291bf5e256e7581b
-    - name: Inventory Book Day & Night Cycle_Frame_20
+      spriteId: 9bb064d146961f147b57cbbbc56169b9
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 7509a1d32488b08428e9023e0d7022b2
-    - name: Inventory Book Day & Night Cycle_Frame_23
+      spriteId: c800f62e4efd77d43b074be5852dd1f2
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 252904cb75c1e1449aeed1661ee39965
-    - name: Inventory Book Day & Night Cycle_Frame_24
+      spriteId: c4fc0b2c789c3bd4c8fcd55ffd5938ec
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 22e7e82a7b0bef84c952452e49a8fa27
-    - name: Inventory Book Day & Night Cycle_Frame_25
+      spriteId: f1b2240f4227a3c4f9d12ec6e8c3c950
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: c51d089d27b57cf48985130de99d298d
-    - name: Inventory Book Day & Night Cycle_Frame_26
+      spriteId: f20a39accb43f9f468f684f5e7d7647a
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: bcf9b7851ea42c9438d282e6de4c0bdf
-    - name: Inventory Book Day & Night Cycle_Frame_27
+      spriteId: 1d12bb4ae2cf93b4d929ce668eed7242
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 9728f74f4b04cdd45bc08ddb830d5b80
-    - name: Inventory Book Day & Night Cycle_Frame_28
+      spriteId: 07660be8aecab7a4f8620bfbf2106365
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 8637cc61b596ec5488e2d69bc728341f
-    - name: Inventory Book Day & Night Cycle_Frame_29
+      spriteId: a87512f79cb92034193018dc0296bb04
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 0bbd9f4ee9d7161468b38855aa6e5d54
-    - name: Inventory Book Day & Night Cycle_Frame_30
+      spriteId: 259592ca58f58b54e836ddb438d12a80
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 6b82f813f20ab4146b0f9f3bdbdd619c
-    - name: Inventory Book Day & Night Cycle_Frame_31
+      spriteId: edee44233950c7541bd32056556cced1
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 2e393e4270bbedb4184a40d160530add
-    - name: Inventory Book Day & Night Cycle_Frame_34
+      spriteId: b0fb244ad291b2e43b5827982b675e09
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 7e9064e2e98bb054d9d8e20533b4b1aa
-    - name: Inventory Book Day & Night Cycle_Frame_35
+      spriteId: 692e6d322e6eea84583bacbc3a96ccec
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: f38d0ec99ae5c364bafb35bb85da222b
-    - name: Inventory Book Day & Night Cycle_Frame_36
+      spriteId: ca687d0b245e28147b91b067241091d9
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 81fb2e80c2a599644b6b63d18cf1dc4c
-    - name: Inventory Book Day & Night Cycle_Frame_37
+      spriteId: a8f9a454c3b7b6d479234890f603f538
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 68b6548040a70dd40b7059f2c63635ad
-    - name: Inventory Book Day & Night Cycle_Frame_38
+      spriteId: 39cd06da5c2470b42b2b1c15325fbce6
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 8e442f2ad3baa0d44b94bf529171617e
-    - name: Inventory Book Day & Night Cycle_Frame_39
+      spriteId: 366f5bd65770e8c4f8ebca3c2f837854
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 05e81004980c86b469d4a7850bb7e209
-    - name: Inventory Book Day & Night Cycle_Frame_40
+      spriteId: 20822b91078547c46b02d33d3bac0014
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 387b871ed84af994d85a270285ec6729
-    - name: Inventory Book Day & Night Cycle_Frame_41
+      spriteId: b6b0e32ecedacfc4391955fcb3b6d59e
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 007fa885300719f4da4747a206514926
-    - name: Inventory Book Day & Night Cycle_Frame_42
+      spriteId: 16d87688b544df44db1a4c14d6cd1b56
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 1545ab46d3d6f814996fa218dede68ec
-    - name: Inventory Book Day & Night Cycle_Frame_45
+      spriteId: 314bc2f41dc33d44ab27d02bdcb0f2b0
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 9c0e3cd8050e2c847987b8a320cf1979
-    - name: Inventory Book Day & Night Cycle_Frame_46
+      spriteId: 511cb741fb037394e8f9b01116a66d5b
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: f106a9e95386028458eed052f7121dc1
-    - name: Inventory Book Day & Night Cycle_Frame_47
+      spriteId: 08168df58152db1449b547ac8c45f20e
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: c91b7669e0066ec4bb9651df3af8958c
-    - name: Inventory Book Day & Night Cycle_Frame_48
+      spriteId: 43282f49b5a934143ad88c65f167cca9
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 74fc189f30226c04689edad9aae621dc
-    - name: Inventory Book Day & Night Cycle_Frame_49
+      spriteId: b3d8821a7f0dd0544919c61fba9ae10c
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 326236a9b70d70d44a38d54774e8cd55
-    - name: Inventory Book Day & Night Cycle_Frame_50
+      spriteId: da7f0f78aac33d14db14c9bced6c6b83
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: ff92544bb0b335b40b8204731c062696
-    - name: Inventory Book Day & Night Cycle_Frame_51
+      spriteId: 217e96a9c0c54d1469ee4fc60aae8ae5
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: b8b38bb4bca7b3f4d906cda521835b99
-    - name: Inventory Book Day & Night Cycle_Frame_52
+      spriteId: 981c6c820ef304d4ebeed90fba6a94bd
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: b997587e11a2d4046993e637ea9ec83a
-    - name: Inventory Book Day & Night Cycle_Frame_53
+      spriteId: b87a5ad48554aa247b6f9d52756f0440
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 018ef469f6a36f14fb62bd2bc11ba89b
-    - name: Inventory Book Day & Night Cycle_Frame_56
+      spriteId: 4c10074a114424642a70843749a01e99
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: a2042832ee3d85b42a96d63c2028d1f1
-    - name: Inventory Book Day & Night Cycle_Frame_57
+      spriteId: 46c30762ead1301449308ea4fe5a83c7
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: bfeb160d0fdfedf42bc3d028ef0b031c
-    - name: Inventory Book Day & Night Cycle_Frame_58
+      spriteId: a825d1e584c6b4445af6b1785e039923
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 4133247ebfcc67d46b04262e919ebfa9
-    - name: Inventory Book Day & Night Cycle_Frame_59
+      spriteId: 04e23e0db9e04e042bd98dcac4963e44
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 9c465bba0daa35f49972c9f2db483683
-    - name: Inventory Book Day & Night Cycle_Frame_60
+      spriteId: e2fc62275b8e279449e16df4987466f0
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 8694e43ca14523f47b4b5c1fb37f175e
-    - name: Inventory Book Day & Night Cycle_Frame_61
+      spriteId: 6563aba00c945a74bb57e1f5e64b688f
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: c27c79aff2f2d3b46b81220949d8f850
-    - name: Inventory Book Day & Night Cycle_Frame_62
+      spriteId: 219512bbc4e8b5a4bb0a8bf523b2561f
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: e1f434b602b2fc24fa3112570cb7c1e5
-    - name: Inventory Book Day & Night Cycle_Frame_63
+      spriteId: b498332a13ca0f642acb70612b18bbf9
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 0b3231328d226304a9758e7a9ddeaaac
-    - name: Inventory Book Day & Night Cycle_Frame_64
+      spriteId: b905a43bd606bfe489a70aa64849d138
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 372bf051d3aada14fa541db7249e15bf
-    - name: Inventory Book Day & Night Cycle_Frame_67
+      spriteId: 500425b805db35447a22bae9d23b42d8
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 93ff923300e59774c80a43ca4a9fb90d
-    - name: Inventory Book Day & Night Cycle_Frame_68
+      spriteId: daf1ff8c21c258e4391c16dc256d48b4
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: fb229bdb8734b5c408cb162b775641f5
-    - name: Inventory Book Day & Night Cycle_Frame_69
+      spriteId: f0523ed9e3731e148ae13a875fa44221
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: a937a91fed054474bb6113f97ff2d462
-    - name: Inventory Book Day & Night Cycle_Frame_70
+      spriteId: 5714b002f373dfc4ab6a314037bdbfbd
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 7f41909eadcd18e4fae89a4ba55aed7b
-    - name: Inventory Book Day & Night Cycle_Frame_71
+      spriteId: 618484e782c00cc4a880499c724b19d2
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 5b40cafa817776d41bd3e81895998a3b
-    - name: Inventory Book Day & Night Cycle_Frame_72
+      spriteId: 4897d3b852799a24a8f2a5e8e0b6818c
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 30ef864745e93554896ef5fd4f0efe8d
-    - name: Inventory Book Day & Night Cycle_Frame_73
+      spriteId: d4dfdea9a0e1b924ba014e507933b517
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: 4ed2144f11f79784da28a29d16fcede1
-    - name: Inventory Book Day & Night Cycle_Frame_74
+      spriteId: 58193b3f42586304385a8548679407aa
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: da322119b7d05ed4fbbd68cf46039d51
-    - name: Inventory Book Day & Night Cycle_Frame_75
+      spriteId: 049d53b5373a2dd42abf3178a1188242
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 9
         width: 75
         height: 75
-      spriteId: f0e6ddce79f567e42b2d3b606c64c797
+      spriteId: 63f96b07cf012e74b910a629f1710142
     linkedCells: []
     parentIndex: -1
   platformSettings: []
@@ -2097,3 +2173,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 96, y: 96}
+  previousTextureSize: {x: 512, y: 1024}

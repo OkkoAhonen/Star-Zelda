@@ -64,6 +64,7 @@ public class PlayerStatsManager : MonoBehaviour
 	private int magicPowersLevelPoints;
 	private int attributePoints; // Spend on attributes
 
+
 	private void Awake()
 	{
 		if (instance != null && instance != this)
@@ -95,6 +96,8 @@ public class PlayerStatsManager : MonoBehaviour
 		XPToNextLevel = ExperienceNeededPerLevel;
 	}
 
+	
+
 	public int GetStat(StatType stat) => stats[stat];
 
 	public void IncreaseStat(StatType stat, int amount)
@@ -103,8 +106,15 @@ public class PlayerStatsManager : MonoBehaviour
 		Debug.Log(stat + " increased to " + stats[stat]);
 		onStatChanged?.Invoke();
 	}
-	
-	public int GetRemainingPoints(string category)
+
+    private void Update()
+    {
+		if(CurrentHealth <= 10) { 
+		CurrentHealth += 1;
+        }
+    }
+
+    public int GetRemainingPoints(string category)
 	{
 		switch (category.ToLower())
 		{

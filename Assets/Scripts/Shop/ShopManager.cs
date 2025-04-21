@@ -106,7 +106,7 @@ public class ShopManager : MonoBehaviour
         if (index >= 0 && index < items.Length)
         {
             Item item = items[index];
-            moneyManager.ChangeMoney(-item.price);
+            GameEventsManager.instance.playerEvents.ChangeGoldBy((int) -item.price);
             inventoryManager.AddItem(item);
         }
     }
