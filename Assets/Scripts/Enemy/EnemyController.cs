@@ -171,17 +171,22 @@ public class EnemyController : MonoBehaviour
             animator.SetBool("IsMoving", false);
             if (Random.Range(0, 2) == 0) { animator.SetTrigger("Attack1"); } else { animator.SetTrigger("Attack2"); }
             Debug.Log($"{gameObject.name} triggering Attack");
+            DoAttackDamage();
         }
         else { Invoke(nameof(DoAttackDamage), 0.2f); Invoke(nameof(AttackAnimationFinished), 0.5f); }
     }
 
     public void DoAttackDamage()
     {
-        if (isDead || playerActionScript == null || playerTransform == null) return;
+        if (isDead  || playerTransform == null) return;
         if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange * 1.2f)
         {
-            // Debug.Log($"Enemy ({gameObject.name}) dealing damage via Animation Event!");
-            playerActionScript.playerTakeDamage(enemyStats.strength);
+            Debug.Log($"Enemy ({gameObject.name}) dealing damage via Animation Event!");
+
+
+
+
+            PlayerStatsManager.instance.TakeDamage((int)enemyStats.strength);   
         }
         // else { Debug.Log($"Player moved out of range during {gameObject.name}'s attack animation."); }
     }

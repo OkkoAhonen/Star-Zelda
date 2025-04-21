@@ -11,7 +11,8 @@ public class MenuAnimation : MonoBehaviour
     public Vector2[] targetPositions;
 
     // Pelin nimi TextMeshPro-elementtin‰
-    public TMP_Text gameTitle;
+    public GameObject gameTitle;
+
 
     // Pelin nimen lopullinen Y-positio (m‰‰rit‰ Inspectorissa)
     public Vector2 titleTargetPosition;
