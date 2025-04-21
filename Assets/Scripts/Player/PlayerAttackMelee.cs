@@ -54,7 +54,7 @@ public class PlayerAttackMelee : MonoBehaviour
             Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
             if (equippedItem.isWeapon == true)
             {
-                chargeSword();
+               
 
                 if (Input.GetMouseButtonUp(0))
                 {
@@ -83,27 +83,24 @@ public class PlayerAttackMelee : MonoBehaviour
     {
         animator.SetTrigger("Attack1");
         Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
-        Damagebooster = equippedItem.damageBooster;
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackpoint.transform.position, equippedItem.attackRadius, enemies);
-        Damagebooster = Damagebooster + (Damagebooster * currentChargeTime);
         foreach (Collider2D enemyGameobje in enemy)
         {
-            Debug.Log(equippedItem.attackDamage * Damagebooster);
 
             EnemyController enemyhealth = enemyGameobje.GetComponent<EnemyController>();
             Debug.Log(enemyhealth.gameObject.name + "Moi");
-            enemyhealth.TakeDamage( equippedItem.attackDamage * Damagebooster /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/);
+            Vector2 direction = (enemyGameobje.transform.position - transform.position).normalized;
+            enemyhealth.TakeDamage( equippedItem.attackDamage  /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/, direction, 2f);
 
 
         }
 
 
-        Damagebooster = 1f;
         currentChargeTime = 0f;
 
     }
 
-    private void chargeSword()
+    /*private void chargeSword()
     {
         if (Input.GetMouseButton(0))
         {
@@ -123,7 +120,7 @@ public class PlayerAttackMelee : MonoBehaviour
 
             slider.UpdateSlider(currentChargeTime, equippedItem.maxChargeTime);
         }
-    }
+    }*/
 
     private void OnDrawGizmos()
     {
