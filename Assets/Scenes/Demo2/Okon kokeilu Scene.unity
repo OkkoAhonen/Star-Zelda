@@ -3391,7 +3391,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   slider: {fileID: 0}
-  animator: {fileID: 755034583}
+  animator: {fileID: 8134943086730063345}
   playerStatsManager: {fileID: 0}
   maxChargeTime: 3
   Damage: 5
