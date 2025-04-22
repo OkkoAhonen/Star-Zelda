@@ -18,7 +18,7 @@ MonoBehaviour:
   minimapIconBaseSize: 500
   minimapIconScale: 0.06
   minimapPadding: 0.1
-  startRoomTemplate: {fileID: 11400000, guid: 17da85ccf97012a48a00d151bf88a0c3, type: 2}
+  startRoomTemplate: {fileID: 11400000, guid: 036d25e8545a2574392f40b2c541d41a, type: 2}
   bossRoomTemplate: {fileID: 11400000, guid: f26058a35802ea74e9042773c9c8f649, type: 2}
   treasureRoomTemplate: {fileID: 11400000, guid: 036d25e8545a2574392f40b2c541d41a, type: 2}
   normalRoomTemplates:

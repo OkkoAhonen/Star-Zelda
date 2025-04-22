@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BeholderAI : MonoBehaviour
@@ -34,6 +35,8 @@ public class BeholderAI : MonoBehaviour
     private void Update()
     {
         if (!isAlive) return;
+
+        player = GameObject.FindWithTag("Player").transform;
 
         switch (currentState)
         {
@@ -95,5 +98,6 @@ public class BeholderAI : MonoBehaviour
         isAlive = false;
         bossAnimation.Death();
     }
+
 
 }
