@@ -74,6 +74,7 @@ public class Laser : MonoBehaviour
     {
         laserAnimator.SetBool("Firing", false);
         impactAnimator.SetBool("Firing", false);
+        DisableLaser();
     }
 
     public void DisableLaser()
@@ -93,58 +94,47 @@ public class Laser : MonoBehaviour
     {
         Transform holder = laserObject.parent;
         float worldScale = holder.lossyScale.x;
-        float worldMaxLen = maxLaserLength * worldScale;
-        Vector2 baseOrigin = (Vector2)holder.position + (Vector2)(-holder.up * 0.01f);
-        Vector2 baseDirection = -holder.up;
+        float maxWorldLen = maxLaserLength * worldScale;
+        bool usingOffsets = holder.GetComponentInParent<BeholderAnimation>()?.useLaserOffsets ?? false;
 
-        RaycastHit2D hit = Physics2D.Raycast(baseOrigin, baseDirection, worldMaxLen, hitMask);
-        bool usingOffsets = (holder.GetComponentInParent<BeholderAnimation>()?.useLaserOffsets ?? false);
+        Vector2 beamOrigin;
+        Vector2 beamDir = -holder.up;
 
         if (usingOffsets)
         {
-            float rawDist = hit.collider != null ? hit.distance : worldMaxLen;
-            Vector2 rawTip = hit.collider != null ? hit.point : baseOrigin + baseDirection * rawDist;
-
-            Vector2 bossDelta = (Vector2)holder.parent.position - (Vector2)holder.position;
-            float shiftAmt = Vector2.Dot(bossDelta, baseDirection);
-            Vector2 tipWorld = rawTip + baseDirection * shiftAmt;
-
-            float worldLen = Vector2.Distance(baseOrigin, tipWorld);
-            float localLen = worldLen / worldScale;
-
-            var lp = laserObject.localPosition;
-            lp.y = -localLen * 0.5f;
-            laserObject.localPosition = lp;
-            laserRenderer.size = new Vector2(localLen, laserRenderer.size.y);
-            if (laserCollider)
-                laserCollider.size = new Vector2(localLen, laserCollider.size.y);
-
-            var impactLocal = holder.InverseTransformPoint(tipWorld);
-            impactLocal.y += impactOffset;
-            impactLocal.z = impactObject.localPosition.z;
-            impactObject.localPosition = impactLocal;
-            impactRenderer.enabled = isFiring && hit.collider != null;
+            // —— OFFSETTED origin: back up from holder by its localPosition —— 
+            Vector2 localOffset = holder.localPosition;
+            Vector2 worldOffset = holder.TransformVector(localOffset);
+            beamOrigin = (Vector2)holder.position - worldOffset;
         }
         else
         {
-            float worldLen = hit.collider != null ? hit.distance : worldMaxLen;
-            float localLen = worldLen / worldScale;
-
-            var lp = laserObject.localPosition;
-            lp.y = -localLen * 0.5f;
-            laserObject.localPosition = lp;
-
-            laserRenderer.size = new Vector2(localLen, laserRenderer.size.y);
-            if (laserCollider)
-                laserCollider.size = new Vector2(localLen, laserCollider.size.y);
-
-            Vector2 tipWorld = hit.collider != null ? hit.point : baseOrigin + baseDirection * worldLen;
-            var impactLocal = holder.InverseTransformPoint(tipWorld);
-            impactLocal.y += impactOffset;
-            impactLocal.z = impactObject.localPosition.z;
-            impactObject.localPosition = impactLocal;
-            impactRenderer.enabled = isFiring && hit.collider != null;
+            // —— SIMPLE origin: exactly at the holder’s world?position ——
+            beamOrigin = holder.position;
         }
+
+        // — common raycast & sizing logic —
+        RaycastHit2D hit = Physics2D.Raycast(beamOrigin, beamDir, maxWorldLen, hitMask);
+        float worldLen = hit.collider != null ? hit.distance : maxWorldLen;
+        float localLen = worldLen / worldScale;
+
+        // resize beam
+        laserRenderer.size = new Vector2(localLen, laserRenderer.size.y);
+        if (laserCollider)
+            laserCollider.size = new Vector2(localLen, laserCollider.size.y);
+
+        // keep the beam’s base anchored at beamOrigin
+        var lp = laserObject.localPosition;
+        lp.y = -localLen * 0.5f;
+        laserObject.localPosition = lp;
+
+        // place impact
+        Vector2 worldTip = hit.collider != null
+            ? hit.point
+            : beamOrigin + beamDir * worldLen;
+
+        impactObject.position = worldTip + (Vector2)(laserObject.up) * impactOffset;
+        impactRenderer.enabled = isFiring && hit.collider != null;
     }
 
     private void OnTriggerStay2D(Collider2D other)

@@ -7,7 +7,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: Attacking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 161762163929452282}
   m_Solo: 0
@@ -186,7 +189,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
   - m_ConditionMode: 6
-    m_ConditionEvent: AttackInt
+    m_ConditionEvent: CurrentAttack
     m_EventTreshold: 2
   - m_ConditionMode: 2
     m_ConditionEvent: LookingUp
@@ -392,7 +395,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
   - m_ConditionMode: 6
-    m_ConditionEvent: AttackInt
+    m_ConditionEvent: CurrentAttack
     m_EventTreshold: 2
   - m_ConditionMode: 1
     m_ConditionEvent: LookingUp
@@ -500,7 +503,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
   - m_ConditionMode: 6
-    m_ConditionEvent: AttackInt
+    m_ConditionEvent: CurrentAttack
     m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 330078365612011452}
@@ -543,7 +546,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: AttackInt
+  - m_Name: CurrentAttack
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 1
@@ -689,7 +692,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
   - m_ConditionMode: 6
-    m_ConditionEvent: AttackInt
+    m_ConditionEvent: CurrentAttack
     m_EventTreshold: 1
   - m_ConditionMode: 1
     m_ConditionEvent: LookingUp
@@ -870,7 +873,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Attacking
     m_EventTreshold: 0
   - m_ConditionMode: 6
-    m_ConditionEvent: AttackInt
+    m_ConditionEvent: CurrentAttack
     m_EventTreshold: 1
   - m_ConditionMode: 2
     m_ConditionEvent: LookingUp

@@ -16,12 +16,18 @@ public class BeholderAnimation : MonoBehaviour
 
     [Header("Laser?Holder Offsets (8 slots)")]
     [SerializeField]
-    private Vector2[] laserOffsets = new Vector2[5] {
-        new Vector2(-0.006f, -0.1034f),
+    private Vector2[] laserOffsets = new Vector2[8] {
+        new Vector2(-0.006f, -0.1034f), // Down
+
         new Vector2( 0.093f, -0.112f),
-        new Vector2( 0.158f, -0.059f),
+        new Vector2( 0.158f, -0.059f), // Right
         new Vector2( 0.114f, -0.059f),
-        new Vector2(-0.006f, -0.059f),
+
+        new Vector2(-0.006f, -0.059f), // Up
+        
+        new Vector2( -0.114f, -0.059f),
+        new Vector2( -0.158f, -0.059f), // Left
+        new Vector2( -0.093f, -0.112f)
     };
 
     [Header("Bounce Attack Settings")]
@@ -89,7 +95,6 @@ public class BeholderAnimation : MonoBehaviour
 
     public void TriggerAttack(bool facingUpDirection)
     {
-        Debug.Log("TriggerAttack");
         facingUp = facingUpDirection;
         isAttackInProgress = true;
 
@@ -103,7 +108,6 @@ public class BeholderAnimation : MonoBehaviour
 
     public void TriggerBounceAttack(bool startBounceRight)
     {
-        Debug.Log("TriggerBounceAttack");
         isAttackInProgress = true;
         isBouncing = true;
 
@@ -125,7 +129,6 @@ public class BeholderAnimation : MonoBehaviour
 
     public void OnAttackPrepEnd()
     {
-        Debug.Log("OnAttackPrepEnd");
         // if we're bouncing, skip the laser?spin entirely
         if (isBouncing)
             return;
@@ -140,7 +143,6 @@ public class BeholderAnimation : MonoBehaviour
 
     public void OnAttackEnd()
     {
-        Debug.Log("OnAttackEnd");
         isSpinning = false;
         laser.EndLaser();
 
@@ -206,24 +208,6 @@ public class BeholderAnimation : MonoBehaviour
     {
         if (!isBouncing) return;
         if (((1 << collision.gameObject.layer) & hitMask) == 0) return;
-
-        // grab the first contact point
-        ContactPoint2D contact = collision.GetContact(0);
-        Vector2 normal = contact.normal;
-
-        float x = 1;
-        float y = 1;
-        if (normal.x != 0)
-        {
-            x = normal.x;
-        }
-        if (normal.y != 0)
-        {
-            y = normal.y;
-        }
-        rb.velocity = new Vector2(rb.velocity.x * x, rb.velocity.y * y);
-
-        Debug.Log($"Reflected off surface with normal {normal}, new velocity = {rb.velocity}");
     }
 
     private void EndBounce()
