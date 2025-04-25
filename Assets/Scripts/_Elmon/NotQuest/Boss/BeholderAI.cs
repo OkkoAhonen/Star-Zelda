@@ -1,13 +1,22 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BeholderAI : MonoBehaviour
 {
-    [Header("AI Timings")] public float waitTime = 3f;
+    [Header("Attack Weights (out of total)")]
+    [Tooltip("e.g. 2 means 2/8 chance for Laser")]
+    public int laserWeight = 2;
+    [Tooltip("e.g. 5 means 5/8 chance for Bounce")]
+    public int bounceWeight = 5;
+    [Tooltip("e.g. 1 means 1/8 chance for Other")]
+    public int otherWeight = 1;
+
+    [Header("AI Timings")]
+    public float waitTime = 3f;
     public float followTime = 2f;
     public int movements = 2;
 
-    [Header("Masks & Settings")] public LayerMask hitMask;
+    [Header("Masks & Settings")]
+    public LayerMask hitMask;
     public LayerMask damageMask;
     public bool startBounceRight = true;
 
@@ -25,18 +34,17 @@ public class BeholderAI : MonoBehaviour
 
     private void Start()
     {
+        if (player == null)
+            player = GameObject.FindWithTag("Player").transform;
+
         bossAnimation.laser.SetMasks(hitMask, damageMask);
         bossAnimation.SetHitMask(hitMask);
         stateTimer = waitTime;
-        // pass masks into Laser
-        bossAnimation.laser.SetMasks(hitMask, damageMask);
     }
 
     private void Update()
     {
         if (!isAlive) return;
-
-        player = GameObject.FindWithTag("Player").transform;
 
         switch (currentState)
         {
@@ -60,20 +68,7 @@ public class BeholderAI : MonoBehaviour
                         moveCount = 0;
                         currentState = AIState.Attacking;
 
-                        bool up = Random.value > 0.5f;
-                        if (Random.value > 0.5f)
-                        {
-                            currentAttack = 1;
-                            bossAnimation.SetCurrentAttack(currentAttack);
-                            bossAnimation.TriggerAttack(up);
-                        }
-                        else
-                        {
-                            currentAttack = 3;
-                            bossAnimation.SetCurrentAttack(currentAttack);
-                            bool bounceRight = Random.value > 0.5f;
-                            bossAnimation.TriggerBounceAttack(bounceRight);
-                        }
+                        TriggerWeightedAttack();
                     }
                     else
                     {
@@ -93,11 +88,31 @@ public class BeholderAI : MonoBehaviour
         }
     }
 
-    public void Kill()
+    private void TriggerWeightedAttack()
     {
-        isAlive = false;
-        bossAnimation.Death();
+        int totalWeight = laserWeight + bounceWeight + otherWeight;
+        int roll = Random.Range(1, totalWeight + 1); // Inclusive max
+
+        if (roll <= laserWeight)
+        {
+            currentAttack = 1;
+            bossAnimation.SetCurrentAttack(currentAttack);
+            bool up = Random.value > 0.5f;
+            bossAnimation.TriggerAttack(up);
+        }
+        else if (roll <= laserWeight + bounceWeight)
+        {
+            currentAttack = 3;
+            bossAnimation.SetCurrentAttack(currentAttack);
+            bool bounceRight = Random.value > 0.5f;
+            bossAnimation.TriggerBounceAttack(bounceRight);
+        }
+        else
+        {
+            currentAttack = 2;
+            bossAnimation.SetCurrentAttack(currentAttack);
+            Debug.Log("Triggering OtherAttack placeholder");
+            // bossAnimation.TriggerOtherAttack(); // Add this when ready
+        }
     }
-
-
 }

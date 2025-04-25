@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
         cam = Camera.main;
         if (cam == null)
         {
-            Debug.LogError("Pääkameraa ei löytynyt!");
+            Debug.LogError("Pï¿½ï¿½kameraa ei lï¿½ytynyt!");
         }
     }
 
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("rotationFix ei ole määritelty!");
+            Debug.LogWarning("rotationFix ei ole mï¿½ï¿½ritelty!");
         }
 
         stats = GetComponent<PlayerStats>();
@@ -36,12 +36,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (stats == null)
         {
-            Debug.LogError("PlayerStats-komponenttia ei löytynyt tästä GameObjectista!");
+            Debug.LogError("PlayerStats-komponenttia ei lï¿½ytynyt tï¿½stï¿½ GameObjectista!");
         }
 
         if (rb == null)
         {
-            Debug.LogError("Rigidbody2D-komponenttia ei löytynyt tästä GameObjectista!");
+            Debug.LogError("Rigidbody2D-komponenttia ei lï¿½ytynyt tï¿½stï¿½ GameObjectista!");
         }
     }
 
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 moveDirection = new Vector2(x, y).normalized;
 
-        rb.velocity = moveDirection * stats.playerMoveSpeed; // Poistettu Time.deltaTime
+        rb.linearVelocity = moveDirection * stats.playerMoveSpeed; // Poistettu Time.deltaTime
 
         PlayerMouseRotation();
     }

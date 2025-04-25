@@ -11,7 +11,7 @@ public class ChangeRooms : MonoBehaviour
 
     void Start()
     {
-        levelGenerator = FindObjectOfType<GenerateLevel>();
+        levelGenerator = (GenerateLevel)FindFirstObjectByType(typeof(GenerateLevel));
         if (levelGenerator == null)
         {
             Debug.LogError("GenerateLevel script not found in the scene!");
@@ -27,7 +27,7 @@ public class ChangeRooms : MonoBehaviour
 
         cooldownTime = levelGenerator.currentSettings.roomChangeTime;
 
-        cameraController = FindObjectOfType<CameraController>();
+        cameraController = (CameraController)FindFirstObjectByType(typeof(CameraController));
         if (cameraController == null)
         {
             Debug.LogError("CameraController script not found in the scene! Camera movement will not work.");

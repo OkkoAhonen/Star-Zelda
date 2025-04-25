@@ -369,7 +369,6 @@ public class GenerateLevel : MonoBehaviour
             List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
             ShuffleList(directions);
 
-            bool roomAdded = false;
             foreach (Vector2 direction in directions)
             {
                 Vector2 newLocation = expandFrom.Location + direction;
@@ -391,7 +390,6 @@ public class GenerateLevel : MonoBehaviour
                         DrawMinimapIconAndInstantiateRoom(newRoom);
                         Debug.Log($"EnsureMinimumRooms: Added extra room at {newLocation} (Attempt {attempts}). New count: {generatedRooms.Count(r => r.template.type == RoomType.Normal)}");
                         currentNormalRooms++; // Päivitä laskuri
-                        roomAdded = true;
                         break; // Lisättiin yksi tällä kierroksella, poistu direction-loopista
                     }
                 }

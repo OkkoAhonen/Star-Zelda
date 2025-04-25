@@ -60,13 +60,13 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
-        // Animaatiot myöhemmin :P
+        // Animaatiot myï¿½hemmin :P
         //UpdateAnimations();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = velocity;
+        rb.linearVelocity = velocity;
     }
 
     private void UpdateAnimations()

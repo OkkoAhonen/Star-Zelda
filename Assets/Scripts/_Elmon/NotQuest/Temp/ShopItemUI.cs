@@ -58,7 +58,7 @@ public class ShopItemUI : MonoBehaviour
     // Called when the buy button is clicked.
     public void Buy()
     {
-        ShopTemp shop = FindObjectOfType<ShopTemp>();
+        ShopTemp shop = (ShopTemp)FindFirstObjectByType(typeof(ShopTemp));
         
         if (!shop.availablePerks.Contains(perkData))
         {

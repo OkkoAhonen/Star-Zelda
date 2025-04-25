@@ -18,7 +18,7 @@ public class Laser : MonoBehaviour
     private LayerMask hitMask;
     private LayerMask damageMask;
 
-    private float impactOffset = 0.05f;
+    public float impactOffset = 0.05f;
     private float maxLaserLength = 15f;
 
     private bool isFiring = false;
@@ -95,55 +95,45 @@ public class Laser : MonoBehaviour
         Transform holder = laserObject.parent;
         float worldScale = holder.lossyScale.x;
         float maxWorldLen = maxLaserLength * worldScale;
-        bool usingOffsets = holder.GetComponentInParent<BeholderAnimation>()?.useLaserOffsets ?? false;
-
-        Vector2 beamOrigin;
         Vector2 beamDir = -holder.up;
 
-        if (usingOffsets)
-        {
-            // —— OFFSETTED origin: back up from holder by its localPosition —— 
-            Vector2 localOffset = holder.localPosition;
-            Vector2 worldOffset = holder.TransformVector(localOffset);
-            beamOrigin = (Vector2)holder.position - worldOffset;
-        }
-        else
-        {
-            // —— SIMPLE origin: exactly at the holder’s world?position ——
-            beamOrigin = holder.position;
-        }
+        // compute half-thickness in world units
+        float halfThickWS = laserRenderer.size.y * worldScale * 0.5f;
 
-        // — common raycast & sizing logic —
-        RaycastHit2D hit = Physics2D.Raycast(beamOrigin, beamDir, maxWorldLen, hitMask);
-        float worldLen = hit.collider != null ? hit.distance : maxWorldLen;
+        // origin nudged out by half thickness so we don’t start inside walls
+        Vector2 originWS = (Vector2)holder.position + beamDir * halfThickWS;
+
+        // raycast
+        RaycastHit2D hit = Physics2D.Raycast(originWS, beamDir, maxWorldLen, hitMask);
+        float rawDist = hit.collider ? hit.distance : maxWorldLen;
+
+        // — OPTION A laser length: add half-thickness back in —
+        float worldLen = rawDist + halfThickWS;
         float localLen = worldLen / worldScale;
 
         // resize beam
         laserRenderer.size = new Vector2(localLen, laserRenderer.size.y);
-        if (laserCollider)
+        if (laserCollider != null)
             laserCollider.size = new Vector2(localLen, laserCollider.size.y);
 
-        // keep the beam’s base anchored at beamOrigin
-        var lp = laserObject.localPosition;
-        lp.y = -localLen * 0.5f;
-        laserObject.localPosition = lp;
+        // re-anchor beam so its base stays at the holder
+        laserObject.localPosition = new Vector3(
+            0f,
+            -localLen * 0.5f,
+            laserObject.localPosition.z
+        );
 
-        // place impact
-        Vector2 worldTip = hit.collider != null
-            ? hit.point
-            : beamOrigin + beamDir * worldLen;
+        // now compute **visual** tip: raw hit point + half-thickness
+        Vector2 rawTip = originWS + beamDir * rawDist;
+        Vector2 visualTip = rawTip + beamDir * halfThickWS;
 
-        impactObject.position = worldTip + (Vector2)(laserObject.up) * impactOffset;
+        // place impact at that visual tip, then back off by your impactOffset
+        float impactWSOffset = impactOffset * worldScale;
+        impactObject.position = visualTip
+            - beamDir.normalized * impactWSOffset;
+
+        // toggle visibility
+        laserRenderer.enabled = isFiring;
         impactRenderer.enabled = isFiring && hit.collider != null;
     }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (!isFiring) return;
-        if (!other.CompareTag("Player")) return;
-        if (((1 << other.gameObject.layer) & damageMask) == 0) return;
-
-        transform.GetComponent<BossBase>().DealDamageToOthers(laserDamage);
-    }
-
 }

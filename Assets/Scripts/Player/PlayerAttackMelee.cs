@@ -15,20 +15,20 @@ public class PlayerAttackMelee : MonoBehaviour
 
     public BasicBar slider;
 
-    public Animator animator; //Aseta inspektorissa
+    public Animator animator; // Aseta inspektorissa
 
     public PlayerStatsManager playerStatsManager;
 
-    //Charge muuttujat
+    // Charge muuttujat
 
     public float maxChargeTime = 3f; //Tämä korvataan myöhemmin itemien arvoilla
     public float Damage = 5f;
     public float Damagebooster;
     public float currentChargeTime = 0f;
-    private bool UpOrDown = false;
+    //private bool UpOrDown = false;
 
     //[SerializeField] private GameObject chargebar;
-    private bool charging = false;
+    //private bool charging = false;
 
     // Start is called before the first frame update
     void Start()

@@ -24,7 +24,7 @@ public class LevelTransitionManager : MonoBehaviour
     {
         
         // Etsi viittaus, jos tarpeen
-        exitInteraction = FindObjectOfType<LevelExitInteraction>();
+        exitInteraction = (LevelExitInteraction)FindFirstObjectByType(typeof(LevelExitInteraction));
 
         // Varmista että paneeli on piilossa alussa
         if (choiceUIPanel != null)

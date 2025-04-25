@@ -26,7 +26,7 @@ public class LevelExitInteraction : MonoBehaviour
     {
         // Yritä löytää Transition Manager (jos se on erillinen)
         // Voit myös vaatia sen Inspectorissa [SerializeField] avulla
-        transitionManager = FindObjectOfType<LevelTransitionManager>();
+        transitionManager = (LevelTransitionManager)FindFirstObjectByType(typeof(LevelTransitionManager));
         if (transitionManager == null)
         {
             Debug.LogError("LevelTransitionManager not found in scene! Exit interactions will not work.");
@@ -87,7 +87,7 @@ public class LevelExitInteraction : MonoBehaviour
     // LevelExitInteraction.cs - Interact() metodissa
     private void Interact()
     {
-        LevelTransitionManager transitionManager = FindObjectOfType<LevelTransitionManager>(); // Etsi globaali manageri
+        LevelTransitionManager transitionManager = (LevelTransitionManager)FindFirstObjectByType(typeof(LevelTransitionManager)); // Etsi globaali manageri
         if (transitionManager != null)
         {
             Debug.Log("Interaction key pressed. Requesting choice panel.");

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Loot : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private BoxCollider2D collider;
+    [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Item item;
 
@@ -32,7 +32,7 @@ public class Loot : MonoBehaviour
 
     private IEnumerator MoveAndCollect(Transform target)
     {
-        Destroy(collider);
+        Destroy(boxCollider);
 
         while (transform.position != target.position)
         {

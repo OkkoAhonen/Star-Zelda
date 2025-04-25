@@ -9,7 +9,7 @@ public class potionEffect : MonoBehaviour
     public float duration = 5f; // Aika, jonka kuluessa v�ri muuttuu
 
     private float timer = 0f;
-    private float damageDuration = .5f;
+    //private float damageDuration = .5f;
     private bool canDamage = true;
 
     [SerializeField] private GameObject player;

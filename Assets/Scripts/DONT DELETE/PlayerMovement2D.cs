@@ -8,7 +8,7 @@ public class PlayerMovement2D : MonoBehaviour
 {
     public static event Action OnplayerDamaged;
 
-    [SerializeField] private DialogueUI dialogueUI; // Aseta tämä Inspectorissa
+    [SerializeField] private DialogueUI dialogueUI; // Aseta tï¿½mï¿½ Inspectorissa
     public float health = 8f, MaxHealth = 8f;
 
     public DialogueUI DialogueUI => dialogueUI;
@@ -20,7 +20,7 @@ public class PlayerMovement2D : MonoBehaviour
     private bool isFacingRight = true; // Pelaaja katsoo oletuksena oikealle
     private Rigidbody2D rb;
 
-    // Tallennetaan pelaajan syötteet
+    // Tallennetaan pelaajan syï¿½tteet
     private Vector2 movement;
 
     public bool hasItFlipped = false;
@@ -41,7 +41,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         if (visuals == null)
         {
-            visuals = transform.Find("Visuals"); // Yritetään löytää lapsi nimeltä "Visuals"
+            visuals = transform.Find("Visuals"); // Yritetï¿½ï¿½n lï¿½ytï¿½ï¿½ lapsi nimeltï¿½ "Visuals"
             if (visuals == null)
             {
                 Debug.LogError("Visuals child object is missing!");
@@ -51,7 +51,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void UpdateMoneyUI()
     {
-        moneyText.text = "Money: " + money; // Päivittää UI:n
+        moneyText.text = "Money: " + money; // Pï¿½ivittï¿½ï¿½ UI:n
     }
 
 
@@ -59,7 +59,7 @@ public class PlayerMovement2D : MonoBehaviour
     {
         movement = Vector2.zero;
 
-        // Lukee pelaajan syötteet
+        // Lukee pelaajan syï¿½tteet
         if (Input.GetKey(KeyCode.W)) movement.y = 1;
         if (Input.GetKey(KeyCode.S)) movement.y = -1;
         if (Input.GetKey(KeyCode.A)) movement.x = -1;
@@ -79,11 +79,11 @@ public class PlayerMovement2D : MonoBehaviour
     void FixedUpdate()
     {
         // Pelaajan liike
-        rb.velocity = movement * Player.Speed;
+        rb.linearVelocity = movement * Player.Speed;
     }
 
 
-    // Pelaajan vahinkokäsittely
+    // Pelaajan vahinkokï¿½sittely
     public void TakeDamage(float damage)
     {
         Debug.Log("Player has taken damage: " + damage);
@@ -101,7 +101,7 @@ public class PlayerMovement2D : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player has died.");
-        // Pelaajan kuoleman käsittely, kuten peli loppuu tai animaatio alkaa
+        // Pelaajan kuoleman kï¿½sittely, kuten peli loppuu tai animaatio alkaa
     }
 
     public void SetInteractable(Interactable interactable)
@@ -111,14 +111,14 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void FlipSprite()
     {
-        // Tarkistaa, pitääkö sprite kääntää
+        // Tarkistaa, pitï¿½ï¿½kï¿½ sprite kï¿½ï¿½ntï¿½ï¿½
         if (visuals != null)
         {
             hasItFlipped = !hasItFlipped;
             isFacingRight = !isFacingRight; // Vaihdetaan suunta
 
             Vector3 scale = visuals.localScale;
-            scale.x *= -1f; // Käännetään vain visuals-objekti
+            scale.x *= -1f; // Kï¿½ï¿½nnetï¿½ï¿½n vain visuals-objekti
             visuals.localScale = scale;
         }
     }

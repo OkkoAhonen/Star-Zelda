@@ -121,7 +121,7 @@ public class BeholderAnimation : MonoBehaviour
         bounceDir = new Vector2(dx, dy).normalized;
 
         // apply initial velocity
-        rb.velocity = bounceDir * bounceSpeed;
+        rb.linearVelocity = bounceDir * bounceSpeed;
 
         animator.SetBool("Attacking", true);
         bossBase.SetAttackState(true);
@@ -213,7 +213,7 @@ public class BeholderAnimation : MonoBehaviour
     private void EndBounce()
     {
         isBouncing = false;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         animator.SetBool("Attacking", false);
         isAttackInProgress = false;
         bossBase.SetAttackState(false);
