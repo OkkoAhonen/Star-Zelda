@@ -6,7 +6,7 @@ public class BeholderAnimation : MonoBehaviour
     [Header("References (do not touch)")]
     [SerializeField] private BossBase bossBase;
     [SerializeField] private Animator animator;
-    [SerializeField] private Transform laserHolder;
+    [SerializeField] public Transform laserHolder;
     public Laser laser;
 
     [Header("Tunable Attack Settings")]
