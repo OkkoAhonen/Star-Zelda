@@ -80,17 +80,10 @@ public class BeholderEyeProjectile : MonoBehaviour
         hasHit = true;
         rb.linearVelocity = Vector2.zero;
         animator.SetTrigger("SomethingHit");
-
-        // wait for the "Exit" state in the animator, then destroy
-        StartCoroutine(WaitForExitAndDestroy());
     }
 
-    private IEnumerator WaitForExitAndDestroy()
+    public void OnHitAnimationComplete() // Called at the end of the hit animation
     {
-        // spin until the animator’s current state is named "Exit"
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Exit"))
-            yield return null;
-
         Destroy(gameObject);
     }
 }

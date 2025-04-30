@@ -16,7 +16,7 @@ public class BeholderAnimation : MonoBehaviour
 
     [Header("Laser?Holder Offsets (8 slots)")]
     [SerializeField]
-    private Vector2[] laserOffsets = new Vector2[8] {
+    public Vector2[] laserOffsets = new Vector2[8] {
         new Vector2(-0.006f, -0.1034f), // Down
 
         new Vector2( 0.093f, -0.112f),
@@ -129,8 +129,8 @@ public class BeholderAnimation : MonoBehaviour
 
     public void OnAttackPrepEnd()
     {
-        // if we're bouncing, skip the laser?spin entirely
-        if (isBouncing)
+        // only laser-spin if we're in the laser attack (attackInt == 1)
+        if (currentAttack != 1 || isBouncing)
             return;
 
         // choose spin direction at random

@@ -6,13 +6,14 @@ public class BeholderAI : MonoBehaviour
     [Header("Attack Weights (out of total)")]
     public int laserWeight = 1;
     public int bounceWeight = 1;
-    public int circleWeight = 1;  // was otherWeight
-    public int playerWeight = 1;  // new fourth option
+    public int circleWeight = 1;
+    public int playerWeight = 1;
 
     [Header("Eye Circle Attack")]
     public float eyeCircleDuration;
     public float eyeCircleSpawnRate;
     public float eyeCircleSpawnSize;
+    public bool eyeCircleMoveWhileShooting;
 
     [Header("Eye Player-Target Attack")]
     public float eyePlayerDuration;
@@ -20,6 +21,7 @@ public class BeholderAI : MonoBehaviour
     public float eyePlayerSpawnSize;
     [Tooltip("Half-angle of the cone (in degrees) within which eyes are fired at the player")]
     public float eyeAttackRadius;
+    public bool eyePlayerMoveWhileShooting;
 
     [Header("Common Eye Settings")]
     public int eyeDamage;
@@ -34,43 +36,48 @@ public class BeholderAI : MonoBehaviour
     [Header("Masks & Settings")]
     public LayerMask hitMask;
     public LayerMask damageMask;
-    public bool startBounceRight = true;
 
-    [Header("References (do not touch)")]
+    [Header("References")]
     public Transform player;
+    public Transform playerOffset;
     public BeholderAnimation bossAnimation;
-    public BossBase bossBase;
-
-    [HideInInspector] public int currentAttack;
-    private int moveCount;
+    private BossBase bossBase;
+    public Transform projectiles; // parent for spawned eyes
 
     private enum AIState { Waiting, Following, Attacking }
-    private AIState currentState = AIState.Waiting;
+    private AIState currentState;
     private float stateTimer;
-    private bool isAlive = true;
+    private int moveCount;
+    private bool isAlive;
+    private bool isDoingEyeAttack;
 
-    // cached transform under which eyes should spawn
     private Transform laserHolder;
 
     private void Start()
     {
-        bossAnimation = transform.GetComponent<BeholderAnimation>();
-        bossBase = transform.GetComponent<BossBase>();
-        // grab the Transform of your laserHolder (parent of the Laser script)
-        laserHolder = bossAnimation.laser.transform.parent;
+        bossAnimation = GetComponent<BeholderAnimation>();
+        bossBase = GetComponent<BossBase>();
+        laserHolder = bossAnimation.laserHolder;
 
         if (player == null)
+        {
             player = GameObject.FindWithTag("Player").transform;
+        }
 
         bossAnimation.laser.SetMasks(hitMask, damageMask);
         bossAnimation.SetHitMask(hitMask);
 
+        currentState = AIState.Waiting;
         stateTimer = waitTime;
+        isAlive = true;
     }
 
     private void Update()
     {
-        if (!isAlive) return;
+        if (!isAlive)
+        {
+            return;
+        }
 
         switch (currentState)
         {
@@ -104,11 +111,15 @@ public class BeholderAI : MonoBehaviour
                 break;
 
             case AIState.Attacking:
-                // for the circle & player attacks, we let the coroutine run
-                // but we instantly return to Following so movement & facing can continue.
-                // If you want to lock out movement during these attacks, change this.
-                stateTimer = followTime;
-                currentState = AIState.Following;
+                if (isDoingEyeAttack)
+                {
+                    return;
+                }
+                if (!bossAnimation.IsAttackInProgress())
+                {
+                    stateTimer = followTime;
+                    currentState = AIState.Following;
+                }
                 break;
         }
     }
@@ -120,28 +131,30 @@ public class BeholderAI : MonoBehaviour
 
         if (roll <= laserWeight)
         {
-            currentAttack = 1;
-            bossAnimation.SetCurrentAttack(currentAttack);
-            bool up = Random.value > 0.5f;
-            bossAnimation.TriggerAttack(up);
+            currentState = AIState.Attacking;
+            bossAnimation.SetCurrentAttack(1);
+            bossAnimation.TriggerAttack(Random.value > 0.5f);
         }
         else if (roll <= laserWeight + bounceWeight)
         {
-            currentAttack = 3;
-            bossAnimation.SetCurrentAttack(currentAttack);
-            bool bounceRight = Random.value > 0.5f;
-            bossAnimation.TriggerBounceAttack(bounceRight);
+            currentState = AIState.Attacking;
+            bossAnimation.SetCurrentAttack(3);
+            bossAnimation.TriggerBounceAttack(Random.value > 0.5f);
         }
         else if (roll <= laserWeight + bounceWeight + circleWeight)
         {
-            currentAttack = 2;
-            bossAnimation.SetCurrentAttack(currentAttack);
+            currentState = AIState.Attacking;
+            bossAnimation.SetCurrentAttack(2);
+            bossBase.SetAttackState(true);
+            isDoingEyeAttack = true;
             StartCoroutine(EyeCircleAttack());
         }
         else
         {
-            currentAttack = 4;
-            bossAnimation.SetCurrentAttack(currentAttack);
+            currentState = AIState.Attacking;
+            bossAnimation.SetCurrentAttack(4);
+            bossBase.SetAttackState(true);
+            isDoingEyeAttack = true;
             StartCoroutine(EyePlayerAttack());
         }
     }
@@ -153,66 +166,67 @@ public class BeholderAI : MonoBehaviour
 
         while (elapsed < eyeCircleDuration)
         {
-            Vector2 dir = Random.insideUnitCircle.normalized;
-            SpawnEye(dir, eyeCircleSpawnSize);
+            if (eyeCircleMoveWhileShooting)
+            {
+                bossAnimation.FollowTarget(player);
+            }
+
+            Vector2 direction = Random.insideUnitCircle.normalized;
+            SpawnEyeAt(direction, eyeCircleSpawnSize, laserHolder.position);
 
             yield return new WaitForSeconds(interval);
             elapsed += interval;
         }
+
+        bossBase.SetAttackState(false);
+        isDoingEyeAttack = false;
     }
 
     private IEnumerator EyePlayerAttack()
     {
+        Vector2[] offsets = bossAnimation.laserOffsets;
         float interval = 1f / eyePlayerSpawnRate;
         float elapsed = 0f;
 
         while (elapsed < eyePlayerDuration)
         {
-            // face the player
-            Vector2 toPlayer = ((Vector2)player.position - (Vector2)laserHolder.position).normalized;
-            bossBase.FaceDirection(toPlayer);
+            Vector3 offsetPosition = playerOffset.position;
+            Vector2 toTarget = ((Vector2)offsetPosition - (Vector2)laserHolder.position).normalized;
+            bossBase.FaceDirection(toTarget);
+            if (eyePlayerMoveWhileShooting)
+            {
+                bossAnimation.FollowTarget(playerOffset);
+            }
 
-            // pick a random cone offset
-            float halfA = eyeAttackRadius * 0.5f;
-            float offsetDeg = Random.Range(-halfA, halfA);
-            Vector2 dir = Rotate(toPlayer, offsetDeg);
-
-            SpawnEye(dir, eyePlayerSpawnSize);
+            foreach (Vector2 off in offsets)
+            {
+                Vector3 worldOff = laserHolder.TransformVector(off);
+                Vector3 spawnPos = laserHolder.position + worldOff;
+                Vector2 direction = ((Vector2)offsetPosition - (Vector2)spawnPos).normalized;
+                SpawnEyeAt(direction, eyePlayerSpawnSize, spawnPos);
+            }
 
             yield return new WaitForSeconds(interval);
             elapsed += interval;
         }
+
+        bossBase.SetAttackState(false);
+        isDoingEyeAttack = false;
     }
 
-    private void SpawnEye(Vector2 dir, float size)
+    private void SpawnEyeAt(Vector2 direction, float size, Vector3 position)
     {
-        var eye = Instantiate(eyePrefab, laserHolder.position, Quaternion.identity);
-        eye.transform.localScale = Vector3.one * size;
+        GameObject eye = Instantiate(eyePrefab, position, Quaternion.identity, projectiles);
+        float bossScale = bossBase.transform.lossyScale.x;
+        eye.transform.localScale = Vector3.one * size * bossScale;
 
-        var proj = eye.GetComponent<BeholderEyeProjectile>();
+        BeholderEyeProjectile proj = eye.GetComponent<BeholderEyeProjectile>();
         proj.Initialize(
-            dir,
+            direction,
             hitMask: hitMask,
             damageMask: damageMask,
             damage: eyeDamage,
             lifespan: eyeLifespan
         );
-    }
-
-    // helper to rotate a vector by degrees
-    private Vector2 Rotate(Vector2 v, float degrees)
-    {
-        float rad = degrees * Mathf.Deg2Rad;
-        float c = Mathf.Cos(rad), s = Mathf.Sin(rad);
-        return new Vector2(
-            v.x * c - v.y * s,
-            v.x * s + v.y * c
-        );
-    }
-
-    public void Kill()
-    {
-        isAlive = false;
-        bossAnimation.Death();
     }
 }
