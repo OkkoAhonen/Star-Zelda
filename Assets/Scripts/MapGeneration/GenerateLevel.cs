@@ -16,81 +16,66 @@ public class GenerateLevel : MonoBehaviour
     [Tooltip("Parent Transform for instantiated room GameObjects in the scene.")]
     public Transform generatedRoomsParent;
 
-    // Nykyiset käytössä olevat asetukset tälle tasolle.
-    // HUOM: Tämä on public, jotta esim. ChangeRooms voi lukea roomChangeTime.
-    // Parempi vaihtoehto voisi olla julkinen property: public LevelGenerationSettings CurrentSettings => currentSettings;
-    public LevelGenerationSettings currentSettings { get; private set; } // Muutettu propertyksi, jossa public get, private set
+    // Nykyiset asetukset tälle tasolle (luetaan Awaken aikana)
+    public LevelGenerationSettings currentSettings { get; private set; }
 
     // --- Private State ---
     private List<Room> generatedRooms = new List<Room>();
     private System.Random randomGenerator;
-    private bool isGenerating = false; // Nimi muutettu selkeämmäksi
-    private int currentRecursionDepthFailsafe = 0; // Nimi muutettu selkeämmäksi
-
+    private bool isGenerating = false;
+    private int currentRecursionDepthFailsafe = 0;
 
     void Awake()
     {
         Debug.Log("GenerateLevel Awake: Initializing...");
+        if (!LoadSettings()) return; // Yritä ladata asetukset, lopeta jos epäonnistuu
+        if (!CheckSceneReferences()) return; // Tarkista viittaukset, lopeta jos puuttuu
 
-        // --- LISÄTTY OSA ---
-        // Hae GameManager
-        if (GameManager.Instance == null)
-        {
-            Debug.LogError("GameManager instance not found! GenerateLevel cannot determine level depth. Disabling script.");
-            enabled = false; // Poista tämä komponentti käytöstä
-            return;
-        }
-
-        // Hae nykyinen syvyys
-        int depthIndex = GameManager.Instance.CurrentDepth - 1; // Listan indeksi = syvyys - 1
-
-        // Tarkista onko asetuksia määritetty ja onko indeksi validi
-        if (depthSettingsAssets == null || depthSettingsAssets.Count == 0)
-        {
-            Debug.LogError("No Depth Settings Assets assigned in GenerateLevel script Inspector! Disabling script.");
-            enabled = false;
-            return;
-        }
-        if (depthIndex < 0 || depthIndex >= depthSettingsAssets.Count)
-        {
-            Debug.LogError($"Invalid depth index ({depthIndex}) for current depth {GameManager.Instance.CurrentDepth}. Check depthSettingsAssets list size ({depthSettingsAssets.Count}). Falling back to index 0.");
-            depthIndex = 0; // Yritä käyttää ensimmäistä asetusta hätätapauksessa
-        }
-
-        // Lataa oikea asetus-asset nykyiselle syvyydelle
-        // Käytetään propertyn setteriä
-        currentSettings = depthSettingsAssets[depthIndex];
-
-        if (currentSettings == null)
-        {
-            Debug.LogError($"LevelGenerationSettings asset for depth {GameManager.Instance.CurrentDepth} (index {depthIndex}) is assigned as NULL in the list! Disabling script.");
-            enabled = false;
-            return;
-        }
-        Debug.Log($"Using Level Settings for Depth: {GameManager.Instance.CurrentDepth} (Asset: {currentSettings.name})");
-        // --- LISÄTTY OSA LOPPUU ---
-
-
-        // Varmistetaan että parentit on määritetty
-        if (minimapIconParent == null)
-        {
-            Debug.LogError("Minimap Icon Parent is not assigned in GenerateLevel script Inspector! Disabling script.");
-            enabled = false;
-            return;
-        }
-        if (generatedRoomsParent == null)
-        {
-            Debug.LogError("Generated Rooms Parent is not assigned in GenerateLevel script Inspector! Disabling script.");
-            enabled = false;
-            return;
-        }
-
-        // Alustetaan satunnaislukugeneraattori VAIN Awake-vaiheessa
-        InitializeRandomGenerator();
+        InitializeRandomGenerator(); // Alusta generaattori vain kerran
         Debug.Log("GenerateLevel Awake: Initialization complete.");
     }
 
-    // MUOKATTU: Käytä 'currentSettings'
+    bool LoadSettings()
+    {
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager instance not found! Disabling script.");
+            enabled = false; return false;
+        }
+        int depthIndex = GameManager.Instance.CurrentDepth - 1;
+        if (depthSettingsAssets == null || depthSettingsAssets.Count == 0)
+        {
+            Debug.LogError("No Depth Settings Assets assigned! Disabling script.");
+            enabled = false; return false;
+        }
+        if (depthIndex < 0 || depthIndex >= depthSettingsAssets.Count)
+        {
+            Debug.LogError($"Invalid depth index ({depthIndex}). Using index 0.");
+            depthIndex = 0;
+        }
+        currentSettings = depthSettingsAssets[depthIndex];
+        if (currentSettings == null)
+        {
+            Debug.LogError($"LevelGenerationSettings asset at index {depthIndex} is NULL! Disabling script.");
+            enabled = false; return false;
+        }
+        Debug.Log($"Using Level Settings for Depth: {GameManager.Instance.CurrentDepth} (Asset: {currentSettings.name})");
+
+        if (currentSettings.minTotalRooms > currentSettings.maxTotalRooms)
+        {
+            Debug.LogWarning($"Settings '{currentSettings.name}': minTotalRooms ({currentSettings.minTotalRooms}) > maxTotalRooms ({currentSettings.maxTotalRooms}). Clamping min to max.");
+            currentSettings.minTotalRooms = currentSettings.maxTotalRooms;
+        }
+        return true;
+    }
+
+    bool CheckSceneReferences()
+    {
+        if (minimapIconParent == null) { Debug.LogError("Minimap Icon Parent not assigned! Disabling script."); enabled = false; return false; }
+        if (generatedRoomsParent == null) { Debug.LogError("Generated Rooms Parent not assigned! Disabling script."); enabled = false; return false; }
+        return true;
+    }
+
     private void InitializeRandomGenerator()
     {
         if (currentSettings.useSeed)
@@ -100,17 +85,14 @@ public class GenerateLevel : MonoBehaviour
         }
         else
         {
-            // Käytetään järjestelmän oletussiementä (yleensä aikaan perustuva)
             int seed = (int)System.DateTime.Now.Ticks;
             randomGenerator = new System.Random(seed);
             Debug.Log($"Initialized random generator with time-based seed (approx): {seed}");
         }
     }
 
-    // *** LISÄTTY Start() METODI KUTSUMAAN GENERATENEWLEVEL ***
     void Start()
     {
-        // Varmistetaan vielä kerran, että kaikki on ok ennen generointia
         if (currentSettings != null && !isGenerating)
         {
             Debug.Log("GenerateLevel Start: Calling GenerateNewLevel...");
@@ -118,172 +100,124 @@ public class GenerateLevel : MonoBehaviour
         }
         else if (currentSettings == null)
         {
-            Debug.LogError("GenerateLevel Start: Cannot generate level because currentSettings is null (check Awake errors).");
-        }
-        else if (isGenerating)
-        {
-            Debug.LogWarning("GenerateLevel Start: Generation seems to be already in progress?");
+            Debug.LogError("GenerateLevel Start: Cannot generate level because currentSettings is null.");
         }
     }
 
-
     private void GenerateNewLevel(int attempt = 1)
     {
-        // Estä päällekkäinen generointi
-        if (isGenerating)
-        {
-            Debug.LogWarning("GenerateNewLevel called while already generating. Aborting new call.");
+        if (isGenerating && attempt == 1)
+        { // Estä ulkoinen kutsu jos jo generoi, salli rekursiiviset yritykset
+            Debug.LogWarning("GenerateNewLevel called externally while already generating. Ignoring.");
             return;
         }
-        isGenerating = true;
+        isGenerating = true; // Merkitse generointi alkaneeksi
 
         Debug.Log($"--- Starting Level Generation (Attempt: {attempt}) ---");
-
-        // 1. Siivoa edellinen taso (jos on)
         ClearLevel();
-
-        // 2. Nollaa failsafe-laskuri
         currentRecursionDepthFailsafe = 0;
 
-        // *** LISÄTTY KRIITTINEN TARKISTUS ***
-        // 3. Luo lähtöhuone (Tarkista ensin onko template olemassa!)
-        if (currentSettings.startRoomTemplate == null)
+        // Tarkista KRIITTISET templatet heti
+        if (!CheckRequiredTemplates())
         {
-            Debug.LogError($"CRITICAL FAILURE: Start Room Template is NOT ASSIGNED in LevelGenerationSettings asset '{currentSettings.name}'! Cannot generate level.");
+            Debug.LogError($"CRITICAL FAILURE: Required templates missing/invalid in '{currentSettings.name}'. Aborting generation.");
             isGenerating = false;
-            return; // Lopetetaan generointi tähän
-        }
-        if (currentSettings.startRoomTemplate.prefab == null)
-        {
-            Debug.LogError($"CRITICAL FAILURE: Start Room Template ('{currentSettings.startRoomTemplate.name}') PREFAB is NOT ASSIGNED! Cannot generate level.");
-            isGenerating = false;
-            return; // Lopetetaan generointi tähän
+            // Tässä ei yleensä kannata yrittää regenerointia, koska asetukset on rikki.
+            return;
         }
 
-        Debug.Log("Creating Start Room...");
+        // 1. Luo Start-huone
         Room startRoom = new Room(currentSettings.startRoomTemplate, Vector2.zero, 0);
-        startRoom.IsExplored = true; // Lähtöhuone on aina tutkittu
-        DrawMinimapIconAndInstantiateRoom(startRoom); // Tämä lisää myös generatedRooms-listaan
-        Debug.Log($"Start Room added. Generated rooms count: {generatedRooms.Count}");
+        startRoom.IsExplored = true;
+        DrawMinimapIconAndInstantiateRoom(startRoom);
 
-        // 4. Aloita rekursiivinen generointi lähtöhuoneesta
-        Debug.Log("Starting recursive generation from Start Room...");
-        GenerateRecursive(startRoom);
-        Debug.Log("Recursive generation finished.");
-
-        // 5. Tarkista minimihuonemäärä (Generointi Takuu - Osa 1)
-        Debug.Log("Ensuring minimum room count...");
-        EnsureMinimumRooms();
-
-        // *** LISÄTTY KRIITTINEN TARKISTUS ***
-        // 6. Sijoita pomohuone (Tarkista template)
-        if (currentSettings.bossRoomTemplate == null)
+        // 2. Generoi normaalit (kunnioittaa maxTotalRooms)
+        if (generatedRooms.Count < currentSettings.maxTotalRooms)
         {
-            Debug.LogError($"CRITICAL FAILURE: Boss Room Template is NOT ASSIGNED in LevelGenerationSettings asset '{currentSettings.name}'! Cannot place boss room.");
-            // Vaikka tämä on kriittinen, ei välttämättä lopeteta koko generointia, mutta varoitetaan isosti.
-            // Voit päättää haluatko palauttaa false tai yrittää jatkaa ilman bossia.
-            HandleGenerationFailure("Boss Room (Template Missing)", attempt); // Käsitellään virheenä
-            isGenerating = false; // Merkitään generointi valmiiksi (vaikkakin epäonnistuneesti)
-            return;
-        }
-        if (currentSettings.bossRoomTemplate.prefab == null)
-        {
-            Debug.LogError($"CRITICAL FAILURE: Boss Room Template ('{currentSettings.bossRoomTemplate.name}') PREFAB is NOT ASSIGNED! Cannot place boss room.");
-            HandleGenerationFailure("Boss Room (Prefab Missing)", attempt);
-            isGenerating = false;
-            return;
+            GenerateRecursive(startRoom);
         }
 
-        Debug.Log("Attempting to place Boss Room...");
+        // 3. Täytä minimi (kunnioittaa maxTotalRooms)
+        EnsureMinimumTotalRooms();
+
+        // 4. SIJOITA BOSSHUONE (PRIORITEETTI)
+        Debug.Log("Attempting to place REQUIRED Boss Room...");
         bool bossPlaced = GenerateSpecialRoomPlacement(currentSettings.bossRoomTemplate);
+
+        // Jos bossin sijoitus epäonnistui TÄYSIN (jopa pakotuksen jälkeen), yritä koko generointia uudelleen
         if (!bossPlaced)
         {
-            // HandleGenerationFailure hoitaa jo virhelokin ja mahdollisen uuden yrityksen
-            Debug.LogError($"Failed to place Boss Room even after fallback attempts (or template was missing).");
-            isGenerating = false;
-            return; // Lopetetaan tämän yrityksen generointi
+            Debug.LogError($"CRITICAL FAILURE: Boss Room placement FAILED completely (Attempt {attempt}). Retrying generation if possible...");
+            HandleGenerationFailure("Boss Room Placement Completely Failed", attempt);
+            // HandleGenerationFailure hoitaa joko uuden kutsun tai lopetuksen, joten palataan tästä
+            return;
         }
-        Debug.Log("Boss Room placed successfully.");
+        Debug.Log($"Boss Room placed successfully. Room count: {generatedRooms.Count}");
 
-        // *** LISÄTTY KRIITTINEN TARKISTUS ***
-        // 7. Sijoita aarrehuone (Tarkista template)
-        if (currentSettings.treasureRoomTemplate == null)
+        // 5. Sijoita aarrehuone (jos määritelty ja tilaa - TÄMÄ KUNNIOITTAA MAXIA)
+        if (currentSettings.treasureRoomTemplate != null && currentSettings.treasureRoomTemplate.prefab != null)
         {
-            Debug.LogWarning($"Treasure Room Template is NOT ASSIGNED in LevelGenerationSettings asset '{currentSettings.name}'. Skipping treasure room placement.");
-            // Tämä ei ole yhtä kriittinen kuin boss, joten voidaan ehkä jatkaa varoituksella.
-        }
-        else if (currentSettings.treasureRoomTemplate.prefab == null)
-        {
-            Debug.LogWarning($"Treasure Room Template ('{currentSettings.treasureRoomTemplate.name}') PREFAB is NOT ASSIGNED. Skipping treasure room placement.");
-        }
-        else
-        {
-            Debug.Log("Attempting to place Treasure Room...");
+            Debug.Log("Attempting to place Treasure Room (if space allows)...");
             bool treasurePlaced = GenerateSpecialRoomPlacement(currentSettings.treasureRoomTemplate);
-            if (!treasurePlaced)
-            {
-                // HandleGenerationFailure hoitaa jo virhelokin ja mahdollisen uuden yrityksen
-                Debug.LogWarning($"Failed to place Treasure Room even after fallback attempts.");
-                // Ei välttämättä lopeteta generointia, jos aarrehuone epäonnistuu
-            }
-            else
-            {
-                Debug.Log("Treasure Room placed successfully.");
-            }
+            if (treasurePlaced) { Debug.Log($"Treasure Room placed successfully. Room count: {generatedRooms.Count}"); }
+            // Virhe/ohitus logataan GenerateSpecialRoomPlacementissa
         }
+        else { Debug.Log("Treasure Room Template/Prefab not assigned. Skipping."); }
 
 
-        // 8. Aktivoi lähtöhuoneen GameObject
-        if (startRoom.RoomInstance != null)
-        {
-            startRoom.RoomInstance.SetActive(true);
-            Debug.Log("Activating Start Room instance.");
-            // HUOM: Player.CurrentRoom ja kameran siirto pitäisi tehdä ChangeRooms.Start():ssa
-            // tai erillisessä LevelManagerissa, ei tässä.
-        }
-        else
-        {
-            // Tämän ei pitäisi tapahtua, jos prefab-tarkistus meni läpi
-            Debug.LogError("Start room instance was null after generation, even though template prefab seemed okay!");
-        }
+        // 6. Aktivoi lähtöhuone
+        if (startRoom.RoomInstance != null) { startRoom.RoomInstance.SetActive(true); }
+        else { Debug.LogError("Start room instance was null after generation!"); }
 
         Debug.Log($"--- Level Generation Successful (Attempt: {attempt}) ---");
-        Debug.Log($"Total rooms generated: {generatedRooms.Count}");
-        PrintRoomList(); // Tulostetaan huonelista debuggausta varten
-        isGenerating = false; // Merkitään generointi valmiiksi
+        Debug.Log($"Final total rooms generated: {generatedRooms.Count}");
+        PrintRoomList();
+        isGenerating = false; // Merkitse generointi valmiiksi
+    }
+
+    bool CheckRequiredTemplates()
+    {
+        bool ok = true;
+        if (currentSettings.startRoomTemplate == null || currentSettings.startRoomTemplate.prefab == null)
+        {
+            Debug.LogError($"Start Room Template or its Prefab is NULL in '{currentSettings.name}'!"); ok = false;
+        }
+        if (currentSettings.bossRoomTemplate == null || currentSettings.bossRoomTemplate.prefab == null)
+        {
+            Debug.LogError($"Boss Room Template or its Prefab is NULL in '{currentSettings.name}'!"); ok = false;
+        }
+        if (currentSettings.normalRoomTemplates == null || currentSettings.normalRoomTemplates.Count == 0 || currentSettings.normalRoomTemplates.All(t => t == null))
+        {
+            Debug.LogError($"No valid Normal Room Templates defined in '{currentSettings.name}'!"); ok = false;
+        }
+        else if (currentSettings.normalRoomTemplates.Any(t => t != null && t.prefab == null))
+        {
+            Debug.LogError($"One or more Normal Room Templates in '{currentSettings.name}' have a NULL Prefab!"); ok = false;
+        }
+        return ok;
     }
 
     private void HandleGenerationFailure(string reason, int currentAttempt)
     {
-        Debug.LogError($"Generation Failure (Attempt {currentAttempt}): {reason}"); // Muutettu LogErroriksi
+        Debug.LogError($"Generation Failure (Attempt {currentAttempt}): {reason}");
         if (currentAttempt < currentSettings.maxRegenerationAttempts)
         {
             Debug.LogWarning($"Retrying generation (Attempt {currentAttempt + 1} of {currentSettings.maxRegenerationAttempts})...");
-            // Resetoidaan tila ennen uutta yritystä (ClearLevel kutsutaan GenerateNewLevelin alussa)
-            generatedRooms.Clear(); // Varmuuden vuoksi tyhjennetään lista täälläkin
-            // Aloita uusi generointi (älä tee tätä silmukassa, vaan anna kutsun palata ja Startin hoitaa se?)
-            // Itse asiassa, rekursiivinen kutsu tässä on ok, koska ClearLevel siivoaa edellisen yrityksen.
-            GenerateNewLevel(currentAttempt + 1); // Yritä uudelleen
+            // Kutsu GenerateNewLevel uudelleen, isGenerating pysyy true
+            GenerateNewLevel(currentAttempt + 1);
         }
         else
         {
-            Debug.LogError($"Failed to generate level after {currentSettings.maxRegenerationAttempts} attempts. Reason: {reason}. Stopping generation for this level.");
-            // Tässä kohtaa pitäisi ehkä näyttää virheilmoitus pelaajalle tai ladata päävalikko.
-            isGenerating = false; // Merkitään generointi epäonnistuneeksi ja lopetetuksi
+            Debug.LogError($"Failed to generate level after {currentSettings.maxRegenerationAttempts} attempts. Reason: {reason}. Stopping generation.");
+            isGenerating = false; // Lopetetaan lopullisesti
         }
     }
 
-
-    // Rekursiivinen pääfunktio huoneiden generointiin
     private void GenerateRecursive(Room parentRoom)
     {
-        // Failsafe: Estä liian syvä rekursio
-        if (parentRoom.recursionDepth >= currentSettings.maxRecursionDepth)
-        {
-            return;
-        }
+        if (parentRoom.recursionDepth >= currentSettings.maxRecursionDepth) return;
+        if (generatedRooms.Count >= currentSettings.maxTotalRooms) return; // Lopeta jos max täynnä
 
-        // Päivitä globaali failsafe-syvyys (debuggausta varten)
         if (parentRoom.recursionDepth > currentRecursionDepthFailsafe)
         {
             currentRecursionDepthFailsafe = parentRoom.recursionDepth;
@@ -294,129 +228,121 @@ public class GenerateLevel : MonoBehaviour
 
         foreach (Vector2 direction in directions)
         {
-            // Todennäköisyys jatkaa haaraa
+            if (generatedRooms.Count >= currentSettings.maxTotalRooms) break; // Tarkista ennen joka suuntaa
+
             if (randomGenerator.NextDouble() < currentSettings.branchingChance)
             {
                 Vector2 newLocation = parentRoom.Location + direction;
-
-                // Tarkista rajat
                 if (Mathf.Abs(newLocation.x) <= currentSettings.roomLimit && Mathf.Abs(newLocation.y) <= currentSettings.roomLimit)
                 {
-                    // Tarkista olemassaolo
                     if (!CheckIfRoomExists(newLocation))
                     {
-                        // Tarkista "Isaac-sääntö" (ei 2x2)
                         if (!CheckIfCausesCrowding(newLocation, direction))
                         {
                             RoomTemplate newTemplate = GetRandomNormalRoomTemplate();
-                            if (newTemplate != null)
+                            if (newTemplate != null && newTemplate.prefab != null)
                             {
-                                if (newTemplate.prefab == null)
-                                { // *** LISÄTTY TARKISTUS ***
-                                    Debug.LogWarning($"Skipping room at {newLocation} because Normal Room Template ('{newTemplate.name}') PREFAB is NOT ASSIGNED.");
-                                    continue; // Siirry seuraavaan suuntaan
-                                }
                                 Room newRoom = new Room(newTemplate, newLocation, parentRoom.recursionDepth + 1);
                                 DrawMinimapIconAndInstantiateRoom(newRoom);
-                                GenerateRecursive(newRoom); // Jatka tästä uudesta huoneesta
+                                GenerateRecursive(newRoom); // Jatka rekursiota
                             }
-                            else
+                            else if (newTemplate != null)
                             {
-                                // Virhe logattiin jo GetRandomNormalRoomTemplate-metodissa
+                                Debug.LogWarning($"Skipping room: Normal Template '{newTemplate.name}' prefab is null.");
                             }
                         }
                     }
                 }
             }
+            if (generatedRooms.Count >= currentSettings.maxTotalRooms) break; // Tarkista joka suunnan jälkeen
         }
     }
 
-    // Generointi Takuu - Osa 1: Varmistaa minimihuonemäärän
-    private void EnsureMinimumRooms()
+    private void EnsureMinimumTotalRooms()
     {
-        // Laske nykyinen normaalihuoneiden määrä
-        int currentNormalRooms = generatedRooms.Count(r => r.template.type == RoomType.Normal);
-        if (currentNormalRooms >= currentSettings.minRooms)
-        {
-            Debug.Log($"Minimum room count ({currentSettings.minRooms}) already met ({currentNormalRooms} normal rooms).");
-            return; // Ei tarvitse tehdä mitään
-        }
+        if (generatedRooms.Count >= currentSettings.minTotalRooms) return;
 
-        Debug.Log($"Current normal rooms ({currentNormalRooms}) is less than minimum ({currentSettings.minRooms}). Attempting to add more...");
-
+        Debug.Log($"Current total rooms ({generatedRooms.Count}) < minimum ({currentSettings.minTotalRooms}). Adding more...");
         int attempts = 0;
-        // Käytetään turvallisempaa maksimiyritysmäärää
-        int maxAttempts = currentSettings.minRooms * 5 + 10; // Heuristinen arvo
+        int maxAttempts = (currentSettings.minTotalRooms - generatedRooms.Count) * 5 + 20;
 
-        while (currentNormalRooms < currentSettings.minRooms && attempts < maxAttempts)
+        while (generatedRooms.Count < currentSettings.minTotalRooms && attempts < maxAttempts)
         {
             attempts++;
-            // Etsi potentiaalisia paikkoja laajentaa
-            List<Room> potentialExpandParents = generatedRooms
-                .Where(r => r.template.type == RoomType.Normal || r.template.type == RoomType.Start) // Laajenna normaaleista tai startista
-                .Where(r => CountNeighbors(r.Location) < 4) // Joilla on tilaa
-                .ToList();
-
-            if (potentialExpandParents.Count == 0)
-            {
-                Debug.LogWarning($"EnsureMinimumRooms: Could not find any room to expand from (Attempt {attempts}). Stopping expansion.");
-                break; // Ei voi laajentaa enempää
+            if (generatedRooms.Count >= currentSettings.maxTotalRooms)
+            { // Tarkista max raja heti alussa
+                Debug.Log("EnsureMinimumTotalRooms: Reached maxTotalRooms. Stopping expansion.");
+                break;
             }
 
-            ShuffleList(potentialExpandParents);
-            Room expandFrom = potentialExpandParents[0]; // Valitse satunnainen laajennuskohde
+            List<Room> potentialParents = generatedRooms
+                .Where(r => (r.template.type == RoomType.Normal || r.template.type == RoomType.Start) && CountNeighbors(r.Location) < 4)
+                .ToList();
 
-            List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
-            ShuffleList(directions);
+            if (potentialParents.Count == 0) { Debug.LogWarning($"EnsureMinimumTotalRooms: No room to expand from (Attempt {attempts})."); break; }
 
+            ShuffleList(potentialParents); Room expandFrom = potentialParents[0];
+            List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down }; ShuffleList(directions);
+            bool roomAdded = false;
             foreach (Vector2 direction in directions)
             {
+                if (generatedRooms.Count >= currentSettings.maxTotalRooms)
+                { // Tarkista max raja silmukan sisällä
+                    Debug.Log("EnsureMinimumTotalRooms: Reached maxTotalRooms during direction check. Stopping expansion.");
+                    goto MaxReachedInEnsureMin; // Hypätään ulos
+                }
+
                 Vector2 newLocation = expandFrom.Location + direction;
-                // Tarkista kaikki ehdot uudelleen
-                if (Mathf.Abs(newLocation.x) <= currentSettings.roomLimit &&
-                    Mathf.Abs(newLocation.y) <= currentSettings.roomLimit &&
-                    !CheckIfRoomExists(newLocation) &&
-                    !CheckIfCausesCrowding(newLocation, direction)) // Varmista ettei aiheuta crowdingia
+                if (Mathf.Abs(newLocation.x) <= currentSettings.roomLimit && Mathf.Abs(newLocation.y) <= currentSettings.roomLimit &&
+                    !CheckIfRoomExists(newLocation) && !CheckIfCausesCrowding(newLocation, direction))
                 {
                     RoomTemplate newTemplate = GetRandomNormalRoomTemplate();
-                    if (newTemplate != null)
+                    if (newTemplate != null && newTemplate.prefab != null)
                     {
-                        if (newTemplate.prefab == null)
-                        { // *** LISÄTTY TARKISTUS ***
-                            Debug.LogWarning($"EnsureMinimumRooms: Skipping room at {newLocation} because Normal Room Template ('{newTemplate.name}') PREFAB is NOT ASSIGNED.");
-                            continue;
-                        }
                         Room newRoom = new Room(newTemplate, newLocation, expandFrom.recursionDepth + 1);
                         DrawMinimapIconAndInstantiateRoom(newRoom);
-                        Debug.Log($"EnsureMinimumRooms: Added extra room at {newLocation} (Attempt {attempts}). New count: {generatedRooms.Count(r => r.template.type == RoomType.Normal)}");
-                        currentNormalRooms++; // Päivitä laskuri
-                        break; // Lisättiin yksi tällä kierroksella, poistu direction-loopista
+                        //Debug.Log($"EnsureMinimumTotalRooms: Added room at {newLocation}. New total: {generatedRooms.Count}");
+                        roomAdded = true;
+                        break; // Lisättiin yksi, riittää tälle attemptille
+                    }
+                    else if (newTemplate != null)
+                    {
+                        Debug.LogWarning($"EnsureMinimumTotalRooms: Skipping room: Normal Template '{newTemplate.name}' prefab is null.");
                     }
                 }
             }
-            // Jos ei onnistuttu lisäämään tästä vanhemmasta, while-loop yrittää seuraavaa (tai samaa uudelleen sekoituksen jälkeen)
-        }
+            // Jos ei lisätty, while jatkuu
+        } // end while
 
-        if (currentNormalRooms < currentSettings.minRooms)
+    MaxReachedInEnsureMin:; // Goto kohde
+
+        if (generatedRooms.Count < currentSettings.minTotalRooms)
         {
-            Debug.LogWarning($"EnsureMinimumRooms: Failed to generate minimum number of rooms ({currentSettings.minRooms}) after {attempts} attempts. Generated: {currentNormalRooms} normal rooms.");
+            Debug.LogWarning($"EnsureMinimumTotalRooms: Failed to reach minimum ({currentSettings.minTotalRooms}) after {attempts} attempts. Generated: {generatedRooms.Count}.");
         }
         else
         {
-            Debug.Log($"EnsureMinimumRooms: Minimum room count ({currentSettings.minRooms}) met or exceeded ({currentNormalRooms} normal rooms).");
+            //Debug.Log($"EnsureMinimumTotalRooms: Minimum met or exceeded ({generatedRooms.Count}).");
         }
     }
 
-
-    // --- Special Room Placement ---
     private bool GenerateSpecialRoomPlacement(RoomTemplate specialTemplate)
     {
-        // Template ja prefab tarkistukset tehdään jo GenerateNewLevel-metodissa ennen tämän kutsumista,
-        // mutta varmistetaan vielä prefab tässäkin, jos tätä kutsuttaisiin muualta.
         if (specialTemplate == null || specialTemplate.prefab == null)
         {
-            Debug.LogError($"GenerateSpecialRoomPlacement called with null template or null prefab for type {specialTemplate?.type.ToString() ?? "Unknown"}!");
+            Debug.LogError($"GenerateSpecialRoomPlacement: Invalid template or prefab ({specialTemplate?.name ?? "NULL"})");
             return false;
+        }
+
+        // Ohita max huoneiden tarkistus VAIN bossille
+        if (specialTemplate.type != RoomType.Boss && generatedRooms.Count >= currentSettings.maxTotalRooms)
+        {
+            Debug.Log($"Skipping placement of {specialTemplate.type}: maxTotalRooms ({currentSettings.maxTotalRooms}) reached.");
+            return false;
+        }
+        else if (specialTemplate.type == RoomType.Boss && generatedRooms.Count >= currentSettings.maxTotalRooms)
+        {
+            Debug.LogWarning($"Placing REQUIRED Boss Room even though maxTotalRooms ({currentSettings.maxTotalRooms}) is reached/exceeded!");
         }
 
         Debug.Log($"Attempting to place Special Room: {specialTemplate.type}");
@@ -424,194 +350,128 @@ public class GenerateLevel : MonoBehaviour
         List<Room> potentialParents = new List<Room>();
         Vector2 placementLocation = Vector2.zero;
         bool foundSpot = false;
+        Room designatedBossParent = null;
 
-        // --- Määritä Potentiaaliset Vanhemmat ---
+        // Määritä potentiaaliset vanhemmat
         if (specialTemplate.type == RoomType.Boss)
         {
-            // Pomohuone: Etsi kauimmainen huone lähtöhuoneesta.
-            // Otetaan huomioon KAIKKI generoidut huoneet (paitsi ehkä aarre/muut erikoishuoneet, jos niin halutaan).
-            float maxDist = -1f;
-            List<Room> farthestRooms = new List<Room>(); // Kerätään kaikki yhtä kaukana olevat
-
-            foreach (Room r in generatedRooms.Where(room => room.template.type != RoomType.Treasure)) // Rajataan pois esim. aarrehuoneet
+            float maxDist = -1f; List<Room> farthestRooms = new List<Room>();
+            foreach (Room r in generatedRooms.Where(room => room.template.type != RoomType.Treasure))
             {
-                float dist = Vector2.Distance(r.Location, Vector2.zero); // Käytetään etäisyyttä origosta
-                // Tai Manhattan etäisyys: float dist = Mathf.Abs(r.Location.x) + Mathf.Abs(r.Location.y);
-
-                if (dist > maxDist)
-                {
-                    maxDist = dist;
-                    farthestRooms.Clear(); // Löytyi uusi kauimmainen
-                    farthestRooms.Add(r);
-                }
-                else if (dist == maxDist)
-                {
-                    farthestRooms.Add(r); // Lisää yhtä kaukana oleva listaan
-                }
+                float dist = Vector2.Distance(r.Location, Vector2.zero);
+                if (dist > maxDist) { maxDist = dist; farthestRooms.Clear(); farthestRooms.Add(r); }
+                else if (dist == maxDist) { farthestRooms.Add(r); }
             }
-
-            if (farthestRooms.Count > 0)
-            {
-                ShuffleList(farthestRooms); // Arvotaan yksi yhtä kaukana olevista
-                potentialParents.Add(farthestRooms[0]);
-                Debug.Log($"Selected farthest room at {farthestRooms[0].Location} (Distance: {maxDist}) as potential parent for Boss.");
-            }
-            else
-            {
-                Debug.LogError("Could not find any potential parent room (farthest room) for Boss Room!");
-                return false; // Kriittinen virhe
-            }
+            if (farthestRooms.Count > 0) { ShuffleList(farthestRooms); designatedBossParent = farthestRooms[0]; potentialParents.Add(designatedBossParent); Debug.Log($"Selected farthest room: {designatedBossParent.Location} for Boss."); }
+            else { Debug.LogError("Cannot place Boss: Could not find farthest room!"); return false; }
         }
-        else // Muut erikoishuoneet (esim. Treasure)
+        else
         {
-            // Aarrehuoneelle tms.: Etsi normaalit huoneet, joilla on vain YKSI naapuri (dead ends).
             potentialParents = generatedRooms.Where(r => r.template.type == RoomType.Normal && CountNeighbors(r.Location) == 1).ToList();
-            Debug.Log($"Found {potentialParents.Count} potential dead end parent rooms for {specialTemplate.type}.");
-
             if (potentialParents.Count == 0)
             {
-                // Fallback: Jos ei dead endejä, yritä mistä tahansa normaalista huoneesta, jolla on vapaa naapuri.
-                // Vältetään start-huonetta, jos mahdollista.
-                potentialParents = generatedRooms
-                                   .Where(r => r.template.type == RoomType.Normal && CountNeighbors(r.Location) < 4)
-                                   .ToList();
-                Debug.Log($"No dead ends found. Found {potentialParents.Count} potential non-full normal parent rooms for {specialTemplate.type}.");
-
-                if (potentialParents.Count == 0)
-                {
-                    // Vielä fallback: Yritä start-huoneesta jos silläkään on tilaa
-                    Room start = GetRoomAt(Vector2.zero);
-                    if (start != null && CountNeighbors(start.Location) < 4)
-                    {
-                        potentialParents.Add(start);
-                        Debug.LogWarning($"Using Start room as fallback parent for {specialTemplate.type}.");
-                    }
-                }
+                potentialParents = generatedRooms.Where(r => r.template.type == RoomType.Normal && CountNeighbors(r.Location) < 4).ToList();
+                if (potentialParents.Count == 0) { Room start = GetRoomAt(Vector2.zero); if (start != null && CountNeighbors(start.Location) < 4) potentialParents.Add(start); }
             }
+            Debug.Log($"Found {potentialParents.Count} potential parents for {specialTemplate.type}.");
         }
 
-        // Tarkistetaan onko yhtään potentiaalista vanhempaa löytynyt
-        if (potentialParents.Count == 0)
-        {
-            Debug.LogError($"Could not find ANY suitable parent rooms to attach Special Room: {specialTemplate.type}.");
-            return false; // Ei voida sijoittaa
-        }
+        if (potentialParents.Count == 0 && specialTemplate.type != RoomType.Boss) { Debug.LogWarning($"Could not find parent for {specialTemplate.type}."); return false; }
 
-        // --- Yritä Sijoittaa Huone ---
-        ShuffleList(potentialParents); // Sekoita järjestys
-
+        // Yritä normaalia sijoitusta
+        ShuffleList(potentialParents);
         foreach (Room parent in potentialParents)
         {
-            List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
-            ShuffleList(directions);
-
+            List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down }; ShuffleList(directions);
             foreach (Vector2 direction in directions)
             {
                 Vector2 newLocation = parent.Location + direction;
-
-                // Tarkista rajat
                 if (Mathf.Abs(newLocation.x) <= currentSettings.roomLimit && Mathf.Abs(newLocation.y) <= currentSettings.roomLimit)
                 {
-                    // Tarkista olemassaolo
                     if (!CheckIfRoomExists(newLocation))
                     {
-                        // Tarkista ISAAC-sääntö: Erikoishuoneella saa olla VAIN YKSI naapuri (se vanhempi).
-                        // Eli lasketaan montako naapuria TULEVALLA sijainnilla olisi.
-                        if (CountNeighbors(newLocation) == 0) // Tämän pitää olla 0, koska parent tulee ainoaksi naapuriksi
-                        {
-                            placementLocation = newLocation;
-                            foundSpot = true;
-                            Debug.Log($"Found valid placement for {specialTemplate.type} at {placementLocation} adjacent to parent at {parent.Location}.");
-                            break; // Löytyi paikka tälle vanhemmalle
+                        if (CountNeighbors(newLocation) == 0)
+                        { // Isaac Rule
+                            placementLocation = newLocation; foundSpot = true; Debug.Log($"Found valid (standard) placement for {specialTemplate.type} at {placementLocation}"); break;
                         }
                     }
                 }
             }
-            if (foundSpot) break; // Löytyi paikka, lopeta vanhempien läpikäynti
+            if (foundSpot) break;
         }
 
-        // --- Jos Normaali Sijoitus Epäonnistui (Fallback) ---
-        if (!foundSpot)
+        // Pakotettu sijoitus bossille, jos standardi epäonnistui
+        if (!foundSpot && specialTemplate.type == RoomType.Boss)
         {
-            Debug.LogWarning($"Could not find placement for {specialTemplate.type} using standard rules (only 1 neighbor allowed). Attempting fallback placement (any free adjacent spot)...");
+            Debug.LogWarning($"Standard placement failed for Boss. Attempting FORCED placement near {designatedBossParent?.Location}...");
+            if (designatedBossParent != null)
+            {
+                List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down }; ShuffleList(directions);
+                foreach (Vector2 direction in directions)
+                {
+                    Vector2 newLocation = designatedBossParent.Location + direction;
+                    // OHITA SÄÄNNÖT, tarkista vain rajat ja tyhjä paikka
+                    if (Mathf.Abs(newLocation.x) <= currentSettings.roomLimit && Mathf.Abs(newLocation.y) <= currentSettings.roomLimit && !CheckIfRoomExists(newLocation))
+                    {
+                        placementLocation = newLocation; foundSpot = true; Debug.LogWarning($"FORCED Boss Room placement at {placementLocation}. Rules ignored."); break;
+                    }
+                }
+                if (!foundSpot) Debug.LogError($"FORCE PLACEMENT FAILED for Boss Room near {designatedBossParent.Location}! Very rare.");
+            }
+            else { Debug.LogError("Cannot force boss placement: designated parent was null!"); }
+        }
 
-            // Rentoutetaan sääntöä: Etsi MIKÄ TAHANSA vapaa paikka MIKÄ TAHANSA generoidun huoneen vierestä (pois lukien muut erikoishuoneet?).
-            List<Room> fallbackParents = generatedRooms
-                                        .Where(r => r.template.type == RoomType.Normal || r.template.type == RoomType.Start) // Normaali tai start
-                                        .ToList();
-            ShuffleList(fallbackParents);
-
+        // Yleinen fallback (vain jos ei bossi JA standardi epäonnistui)
+        if (!foundSpot && specialTemplate.type != RoomType.Boss)
+        {
+            Debug.LogWarning($"Standard placement failed for {specialTemplate.type}. Trying general fallback...");
+            List<Room> fallbackParents = generatedRooms.Where(r => r.template.type == RoomType.Normal || r.template.type == RoomType.Start).ToList(); ShuffleList(fallbackParents);
             foreach (Room parent in fallbackParents)
             {
-                List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
-                ShuffleList(directions);
-
+                List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down }; ShuffleList(directions);
                 foreach (Vector2 direction in directions)
                 {
                     Vector2 newLocation = parent.Location + direction;
-                    if (Mathf.Abs(newLocation.x) <= currentSettings.roomLimit &&
-                        Mathf.Abs(newLocation.y) <= currentSettings.roomLimit &&
-                        !CheckIfRoomExists(newLocation))
+                    if (Mathf.Abs(newLocation.x) <= currentSettings.roomLimit && Mathf.Abs(newLocation.y) <= currentSettings.roomLimit && !CheckIfRoomExists(newLocation))
                     {
-                        // Rento sääntö: Kunhan paikka on vapaa ja rajojen sisällä, sijoita tähän.
-                        placementLocation = newLocation;
-                        foundSpot = true;
-                        Debug.LogWarning($"FALLBACK PLACEMENT used for {specialTemplate.type} at {placementLocation} adjacent to {parent.Location}. Rules relaxed (multiple neighbors possible).");
-                        break;
+                        placementLocation = newLocation; foundSpot = true; Debug.LogWarning($"GENERAL FALLBACK used for {specialTemplate.type} at {placementLocation}"); break;
                     }
                 }
                 if (foundSpot) break;
             }
         }
 
-
-        // --- Luo Huone Jos Paikka Löytyi ---
+        // Luo huone, jos paikka löytyi
         if (foundSpot)
         {
-            Room specialRoom = new Room(specialTemplate, placementLocation, 0); // Recursion depth 0 tai muu merkintä
-            DrawMinimapIconAndInstantiateRoom(specialRoom);
+            // Ei enää max checkiä bossille tässä
+            Room specialRoom = new Room(specialTemplate, placementLocation, 0);
+            DrawMinimapIconAndInstantiateRoom(specialRoom); // Lisää listaan
             return true;
         }
         else
         {
-            Debug.LogError($"PLACEMENT FAILED for {specialTemplate.type}: Could not find any suitable spot, even with fallback methods.");
-            return false; // Ei onnistunut
+            // Tämän pitäisi tapahtua vain jos bossin pakotuskin epäonnistui tai muun fallback epäonnistui
+            Debug.LogError($"PLACEMENT FAILED COMPLETELY for {specialTemplate.type}.");
+            return false;
         }
     }
 
     // --- Utility Functions ---
+    private bool CheckIfRoomExists(Vector2 location) { return generatedRooms.Exists(room => room.Location == location); }
 
-    private bool CheckIfRoomExists(Vector2 location)
-    {
-        // Käytä FirstOrDefault nopeampaan hakuun, jos lista on suuri,
-        // mutta Exists on selkeämpi pienillä listoilla. Pidetään Exists.
-        return generatedRooms.Exists(room => room.Location == location);
-    }
-
-    // Tarkistaa, aiheuttaisiko huoneen lisääminen annettuun paikkaan
-    // kielletyn 2x2-ryppään muodostumisen, KUN ollaan tulossa suunnasta 'directionFromParent'.
     private bool CheckIfCausesCrowding(Vector2 location, Vector2 directionFromParent)
     {
-        // Isaac-sääntö: Uudella huoneella saa olla vain yksi naapuri (se mistä tultiin),
-        // kun se lisätään. Eli muut kolme suuntaa pitää olla tyhjiä.
         int neighborCountExcludingParent = 0;
         Vector2[] checkDirections = { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
-
         foreach (Vector2 checkDir in checkDirections)
         {
-            // Älä laske sitä suuntaa, josta vanhempi tulee
             if (checkDir == -directionFromParent) continue;
-
-            if (CheckIfRoomExists(location + checkDir))
-            {
-                neighborCountExcludingParent++;
-            }
+            if (CheckIfRoomExists(location + checkDir)) { neighborCountExcludingParent++; }
         }
-        // Jos on YKSIKIN muu naapuri kuin vanhempi, se rikkoo sääntöä.
         return neighborCountExcludingParent > 0;
     }
 
-    // Laskee olemassa olevien naapurien määrän annetulle sijainnille.
     private int CountNeighbors(Vector2 location)
     {
         int count = 0;
@@ -624,19 +484,9 @@ public class GenerateLevel : MonoBehaviour
 
     private RoomTemplate GetRandomNormalRoomTemplate()
     {
-        if (currentSettings.normalRoomTemplates == null || currentSettings.normalRoomTemplates.Count == 0)
-        {
-            Debug.LogError("No normal room templates defined in LevelGenerationSettings! Cannot generate normal rooms.");
-            return null;
-        }
-        // Varmista ettei listassa ole nulleja
-        List<RoomTemplate> validTemplates = currentSettings.normalRoomTemplates.Where(t => t != null).ToList();
-        if (validTemplates.Count == 0)
-        {
-            Debug.LogError("Normal room templates list is defined, but contains only NULL entries!");
-            return null;
-        }
-
+        if (currentSettings.normalRoomTemplates == null || currentSettings.normalRoomTemplates.Count == 0) { Debug.LogError("No normal room templates defined!"); return null; }
+        List<RoomTemplate> validTemplates = currentSettings.normalRoomTemplates.Where(t => t != null && t.prefab != null).ToList(); // Lisätty prefab check
+        if (validTemplates.Count == 0) { Debug.LogError("Normal room templates list has no valid entries (null or prefab missing)!"); return null; }
         int randomIndex = randomGenerator.Next(0, validTemplates.Count);
         return validTemplates[randomIndex];
     }
@@ -646,242 +496,105 @@ public class GenerateLevel : MonoBehaviour
         int n = list.Count;
         while (n > 1)
         {
-            n--;
-            int k = randomGenerator.Next(n + 1);
-            T value = list[k];
-            list[k] = list[n];
-            list[n] = value;
+            n--; int k = randomGenerator.Next(n + 1);
+            T value = list[k]; list[k] = list[n]; list[n] = value;
         }
     }
 
-    // Luo minikarttaikonin ja instansioi huone-prefabin.
     private void DrawMinimapIconAndInstantiateRoom(Room room)
     {
-        // Tarkistetaan prefab vielä kerran (vaikka kutsuvissa metodeissa on tarkistuksia)
-        if (room == null || room.template == null || room.template.prefab == null)
-        {
-            Debug.LogError($"DrawMinimapIconAndInstantiateRoom called with invalid room or template (Prefab is null for template: {room?.template?.name ?? "Unknown"})");
-            return;
-        }
-
-        // --- Instansioi Huone Prefab ---
+        if (room == null || room.template == null || room.template.prefab == null) { Debug.LogError($"DrawMinimap: Invalid room/template/prefab"); return; }
         try
-        {
-            // Laske maailman positio (voit säätää kerrointa tarpeen mukaan)
-            float roomSpacing = 20f; // Esimerkki huoneiden välistä
+        { // Instansioi huone
+            float roomSpacing = 20f; // Voit säätää tätä
             Vector3 worldPosition = new Vector3(room.Location.x * roomSpacing, room.Location.y * roomSpacing, 0);
-
             room.RoomInstance = Instantiate(room.template.prefab, worldPosition, Quaternion.identity, generatedRoomsParent);
             room.RoomInstance.name = $"{room.template.type} Room ({room.Location.x},{room.Location.y})";
-            // Deaktivoi huone oletuksena (paitsi start room aktivoidaan GenerateNewLevelin lopussa)
-            room.RoomInstance.SetActive(false);
-            // Tässä kohtaa voisi myös välittää huoneelle sen datan (Room-olio), jos tarpeen
-            // RoomController controller = room.RoomInstance.GetComponent<RoomController>();
-            // if (controller != null) controller.Initialize(room);
-
+            room.RoomInstance.SetActive(false); // Aktivoidaan myöhemmin tarvittaessa
         }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"Error instantiating room prefab for template '{room.template.name}' at {room.Location}: {e.Message}");
-            // Älä jatka ikonin luontiin, jos instansiointi epäonnistui
-            return;
-        }
+        catch (System.Exception e) { Debug.LogError($"Error instantiating room '{room.template.name}': {e.Message}"); return; }
 
-
-        // --- Luo Minikarttaikoni ---
         try
-        {
+        { // Luo minikarttaikoni
             GameObject minimapTile = new GameObject($"Minimap_{room.template.type}_{room.Location.x}_{room.Location.y}");
             minimapTile.transform.SetParent(minimapIconParent, false);
-
             Image image = minimapTile.AddComponent<Image>();
             room.RoomImage = image;
-
-            // Päivitä ikoni heti oikeaksi
-            UpdateMinimapIcon(room);
-
-            RectTransform rectTransform = image.GetComponent<RectTransform>();
-            if (rectTransform == null)
-            { // Varmuuden vuoksi
-                rectTransform = minimapTile.AddComponent<RectTransform>();
-            }
-
-            // Laske koko ja sijainti minikartalla
+            UpdateMinimapIcon(room); // Aseta oikea ikoni heti
+            RectTransform rectTransform = image.GetComponent<RectTransform>() ?? minimapTile.AddComponent<RectTransform>();
             float iconSize = currentSettings.minimapIconBaseSize * currentSettings.minimapIconScale;
             rectTransform.sizeDelta = new Vector2(iconSize, iconSize);
-
             float paddedSize = iconSize * (1f + currentSettings.minimapPadding);
-            // Varmistetaan että käytetään Vector2:ta anchoredPositioniin
             rectTransform.anchoredPosition = new Vector2(room.Location.x * paddedSize, room.Location.y * paddedSize);
-
         }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"Error creating minimap icon for room at {room.Location}: {e.Message}");
-            // Huoneen instanssi on jo luotu, mutta ikoni puuttuu
-        }
+        catch (System.Exception e) { Debug.LogError($"Error creating minimap icon for room at {room.Location}: {e.Message}"); }
 
-        // Lisää generoitu huone listaan vasta kun kaikki onnistui
+        // Lisää listaan vasta lopuksi
         generatedRooms.Add(room);
-        // Debug.Log($"Added room {room.template.type} at {room.Location}. Total rooms: {generatedRooms.Count}");
     }
 
-    // Päivittää yksittäisen huoneen minikarttaikonin sen tilan mukaan
     public void UpdateMinimapIcon(Room room)
     {
-        if (room == null || room.RoomImage == null || currentSettings == null) return; // Lisätty currentSettings tarkistus
-
-        Sprite iconToShow = null;
-        Color iconColor = Color.white;
-        bool isCurrent = (Player.CurrentRoom == room); // Käytä Player.CurrentRoomia jos se on asetettu oikein
-
-        if (isCurrent)
-        {
-            iconToShow = currentSettings.currentRoomIcon;
-        }
+        if (room == null || room.RoomImage == null || currentSettings == null) return;
+        Sprite iconToShow = null; Color iconColor = Color.white; bool isCurrent = (Player.CurrentRoom == room); // Olettaa Player.CurrentRoom asetettu oikein
+        if (isCurrent) { iconToShow = currentSettings.currentRoomIcon; }
         else if (room.IsExplored)
         {
             switch (room.template.type)
             {
                 case RoomType.Boss: iconToShow = currentSettings.bossRoomIcon; break;
                 case RoomType.Treasure: iconToShow = currentSettings.treasureRoomIcon; break;
-                // Lisää caseja muille erikoistyypeille tarvittaessa (Shop, Secret, jne.)
-                // default: // Start ja Normal tutkittuna
-                case RoomType.Start: // Näytä normaali ikoni startille kun se ei ole current
-                case RoomType.Normal:
-                    iconToShow = currentSettings.normalRoomIcon; break;
-                default: // Tuntematon tyyppi? Näytä normaali.
-                    iconToShow = currentSettings.normalRoomIcon; break;
+                case RoomType.Start: case RoomType.Normal: default: iconToShow = currentSettings.normalRoomIcon; break;
             }
         }
-        else // Huone on olemassa, mutta sitä ei ole tutkittu
-        {
-            // Haluatko näyttää tutkimattomille aina saman ikonin vai paljastaa erikoishuoneet?
-            // Binding of Isaac ei yleensä paljasta erikoishuoneita ennen kuin niissä käy.
-            iconToShow = currentSettings.unexploredRoomIcon;
-            // Voit himmentää tutkimattomia:
-            // iconColor = new Color(0.7f, 0.7f, 0.7f, 0.8f);
-        }
+        else { iconToShow = currentSettings.unexploredRoomIcon; }
 
-        // Varmista että sprite on olemassa ennen asetusta
         if (iconToShow != null)
         {
-            room.RoomImage.sprite = iconToShow;
-            room.RoomImage.color = iconColor;
+            room.RoomImage.sprite = iconToShow; room.RoomImage.color = iconColor; room.RoomImage.enabled = true;
         }
         else
         {
-            // Jos sopivaa ikonia ei löytynyt asetuksista, piilota tai näytä placeholder?
-            Debug.LogWarning($"Minimap icon sprite is NULL for room type {room.template.type}, explored state: {room.IsExplored}, isCurrent: {isCurrent}. Check LevelGenerationSettings ('{currentSettings.name}').");
-            // Voit piilottaa ikonin tai asettaa jonkin oletusikoni/värin
-            room.RoomImage.enabled = false; // Piilotetaan jos ikoni puuttuu
-        }
-        if (room.RoomImage.sprite != null) room.RoomImage.enabled = true; // Varmista että näkyy jos sprite löytyi
-    }
-
-
-    public void UpdateAllMinimapIcons()
-    {
-        // Debug.Log("Updating all minimap icons...");
-        foreach (Room room in generatedRooms)
-        {
-            UpdateMinimapIcon(room);
+            Debug.LogWarning($"Minimap icon sprite is NULL for room type {room.template.type}, state explored={room.IsExplored}, current={isCurrent}. Check settings '{currentSettings.name}'.");
+            room.RoomImage.enabled = false; // Piilota jos ikonia ei ole
         }
     }
+
+    public void UpdateAllMinimapIcons() { foreach (Room room in generatedRooms) { UpdateMinimapIcon(room); } }
 
     private void ClearLevel()
     {
-        Debug.Log("Clearing previous level data and instances...");
-        // Poista vanhat huone-instanssit scenestä generatedRoomsParentin alta
-        if (generatedRoomsParent != null)
-        {
-            for (int i = generatedRoomsParent.childCount - 1; i >= 0; i--)
-            {
-                // Tarkista null ennen tuhoamista
-                if (generatedRoomsParent.GetChild(i) != null)
-                {
-                    Destroy(generatedRoomsParent.GetChild(i).gameObject);
-                }
-            }
-        }
-        else
-        {
-            Debug.LogWarning("generatedRoomsParent is null in ClearLevel, cannot clear old room instances.");
-        }
-
-
-        // Poista vanhat minikarttaikonit UI:sta minimapIconParentin alta
-        if (minimapIconParent != null)
-        {
-            for (int i = minimapIconParent.childCount - 1; i >= 0; i--)
-            {
-                if (minimapIconParent.GetChild(i) != null)
-                {
-                    Destroy(minimapIconParent.GetChild(i).gameObject);
-                }
-            }
-        }
-        else
-        {
-            Debug.LogWarning("minimapIconParent is null in ClearLevel, cannot clear old minimap icons.");
-        }
-
-
-        // Tyhjennä huonelista
+        Debug.Log("Clearing previous level...");
+        if (generatedRoomsParent != null) { for (int i = generatedRoomsParent.childCount - 1; i >= 0; i--) { if (generatedRoomsParent.GetChild(i) != null) Destroy(generatedRoomsParent.GetChild(i).gameObject); } }
+        else { Debug.LogWarning("generatedRoomsParent is null in ClearLevel."); }
+        if (minimapIconParent != null) { for (int i = minimapIconParent.childCount - 1; i >= 0; i--) { if (minimapIconParent.GetChild(i) != null) Destroy(minimapIconParent.GetChild(i).gameObject); } }
+        else { Debug.LogWarning("minimapIconParent is null in ClearLevel."); }
         generatedRooms.Clear();
-
-        // Nollaa Playerin tila? (Tehdään mieluiten Player-skriptissä tai GameManagerissa)
-        // Player.CurrentRoom = null; // ÄLÄ TEE TÄTÄ TÄÄLLÄ, ChangeRooms hoitaa Player.CurrentRoomin asetuksen
     }
 
-    // Kutsu tämä metodi esim. napista tai debug-komennolla
     public void Regenerate()
     {
-        if (isGenerating)
-        {
-            Debug.LogWarning("Cannot Regenerate: Generation already in progress.");
-            return;
-        }
-        Debug.Log("Regenerate called. Re-initializing random generator and starting new level generation...");
-        // Varmista että oikeat asetukset ladataan uudelleen, jos syvyys on voinut muuttua
-        // Tässä vaiheessa oletetaan, että Awake on jo ajettu ja currentSettings on oikea
-        // Mutta jos haluat vaihtaa siementä lennosta, Initialize täytyy kutsua uudelleen:
-        if (currentSettings != null)
-        {
-            InitializeRandomGenerator(); // Varmista että uusi siemen otetaan käyttöön JOS asetusta muutettu lennosta
-            GenerateNewLevel();
-        }
-        else
-        {
-            Debug.LogError("Cannot Regenerate: currentSettings is null. Check for errors during Awake.");
-        }
-
+        if (isGenerating) { Debug.LogWarning("Cannot Regenerate: Generation in progress."); return; }
+        Debug.Log("Regenerate called...");
+        if (currentSettings != null) { InitializeRandomGenerator(); GenerateNewLevel(); }
+        else { Debug.LogError("Cannot Regenerate: currentSettings is null."); }
     }
 
-    // Debug-metodi huonelistan tulostamiseen
-    [ContextMenu("Print Generated Room List")] // Voit kutsua tämän Inspectorista
+    [ContextMenu("Print Generated Room List")]
     private void PrintRoomList()
     {
-        if (generatedRooms == null || generatedRooms.Count == 0)
-        {
-            Debug.Log("Room List is empty.");
-            return;
-        }
-        string log = $"--- Generated Room List ({generatedRooms.Count} rooms) ---\n";
-        // Järjestetään sijainnin mukaan selkeyden vuoksi
+        if (generatedRooms == null || generatedRooms.Count == 0) { Debug.Log("Room List empty."); return; }
+        string log = $"--- Generated Room List ({generatedRooms.Count} rooms, Min: {currentSettings.minTotalRooms}, Max: {currentSettings.maxTotalRooms}) ---\n";
         foreach (Room r in generatedRooms.OrderBy(room => room.Location.y).ThenBy(room => room.Location.x))
         {
             string instanceStatus = r.RoomInstance != null ? (r.RoomInstance.activeSelf ? "Active" : "Inactive") : "NULL";
             log += $"Loc: ({r.Location.x},{r.Location.y}) | Type: {r.template?.type.ToString() ?? "N/A"} | Explored: {r.IsExplored} | Neighbors: {CountNeighbors(r.Location)} | Instance: {instanceStatus}\n";
         }
-        log += "--------------------------------------";
-        Debug.Log(log);
+        Debug.Log(log + "--------------------------------------");
     }
 
-    // Julkinen metodi huoneen hakemiseen sijainnin perusteella
     public Room GetRoomAt(Vector2 location)
     {
-        // Käytetään FirstOrDefault, joka palauttaa null jos huonetta ei löydy.
         return generatedRooms.FirstOrDefault(r => r.Location == location);
     }
-}
+} // End of GenerateLevel class
