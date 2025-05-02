@@ -272,7 +272,8 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
-        
+        GameEventsManager.instance.playerEvents.GainExperience(50);
+
 
         if (isDead) return; isDead = true;
         Debug.Log($"{gameObject.name} is dying and will remain on screen.");
