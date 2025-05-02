@@ -5,15 +5,18 @@ using UnityEngine;
 public class RoomTemplate : ScriptableObject
 {
     [Header("Identification")]
-    // Minkä tyyppinen huone tämä malli edustaa.
     public RoomType type;
 
     [Header("Visuals")]
-    // Prefab, joka instansioidaan pelimaailmaan tätä huonetta varten.
-    // Tämän prefabin tulee sisältää "Doors"-niminen lapsiobjekti,
-    // jonka alla on trigger colliderit nimillä "LeftDoor", "RightDoor", "TopDoor", "BottomDoor".
-    public GameObject prefab;
+    public GameObject prefab; // Tämän tulee sisältää Doors-objekti jne.
 
-    // Voit lisätä tänne muita huonetyyppikohtaisia asetuksia,
-    // esim. vihollislistoja, esineitä, jne.
+    [Header("Camera Behavior")]
+    [Tooltip("Should the camera follow the player within this room instead of being static?")]
+    public bool followPlayerCamera = false;
+
+    // POISTETTU KENTTÄ:
+    // [Tooltip("Collider used to determine the bounds...")]
+    // public Collider2D roomBoundsCollider;
+
+    // ... (Muut mahdolliset asetukset) ...
 }

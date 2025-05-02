@@ -297,7 +297,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305327794}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1595483ef9bbb5499fe7b94768c8d27, type: 3}
   m_Name: 
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothTime: 0.3
-  targetPosition: {x: 0, y: 0, z: 0}
+  playerTransform: {fileID: 0}
 --- !u!114 &305327800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7c1103b24df594b89d5a239ae7b4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 5
+  playerMoveSpeed: 20
   playerMaxHealth: 100
   playerCurrentHealth: 100
   Startpoint: 0

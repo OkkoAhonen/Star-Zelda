@@ -1,7 +1,10 @@
 using UnityEngine;
-using System.Linq;
+using UnityEngine.Tilemaps; // <<< Varmista tämä using-lauseke
+using System.Linq;         // <<< Varmista tämä using-lauseke
+using Unity.VisualScripting;
 
-[RequireComponent(typeof(Collider2D))]
+// RequireComponentia ei välttämättä tarvita, jos skripti on pelaajassa itsessään
+// [RequireComponent(typeof(Collider2D))]
 public class ChangeRooms : MonoBehaviour
 {
     private CameraController cameraController;
@@ -11,61 +14,93 @@ public class ChangeRooms : MonoBehaviour
 
     void Start()
     {
-        levelGenerator = (GenerateLevel)FindFirstObjectByType(typeof(GenerateLevel));
+        // Käytä modernia tapaa etsiä (tai vanhaa FindObjectOfType jos Unity-versio vaatii)
+        levelGenerator = FindFirstObjectByType<GenerateLevel>();
         if (levelGenerator == null)
         {
             Debug.LogError("GenerateLevel script not found in the scene!");
-            enabled = false;
-            return;
+            enabled = false; return;
         }
         if (levelGenerator.currentSettings == null)
         {
-            Debug.LogError("GenerateLevel script does not have LevelGenerationSettings assigned!");
-            enabled = false;
-            return;
+            // Tämä tarkistus on nyt tärkeämpi, koska GenerateLevel voi poistaa itsensä käytöstä Awaken aikana
+            if (levelGenerator.enabled)
+            { // Tarkista onko generaattori vielä päällä
+                Debug.LogError("GenerateLevel script does not have LevelGenerationSettings loaded! Check for errors in GenerateLevel's Awake.");
+            }
+            else
+            {
+                Debug.Log("GenerateLevel was disabled, likely due to initialization errors. ChangeRooms cannot function.");
+            }
+            enabled = false; return;
         }
 
         cooldownTime = levelGenerator.currentSettings.roomChangeTime;
 
-        cameraController = (CameraController)FindFirstObjectByType(typeof(CameraController));
+        cameraController = FindFirstObjectByType<CameraController>();
         if (cameraController == null)
         {
             Debug.LogError("CameraController script not found in the scene! Camera movement will not work.");
+            // Ei välttämättä poisteta skriptiä käytöstä, peli voi toimia ilman kameran liikettäkin
         }
 
-        // Varmista että Player.Transform asetetaan jossain pelaajan omassa skriptissä!
-        // Esimerkiksi pelaajan liikuskriptin Awake():ssa: Player.Transform = this.transform;
-        // Tässä vain varmistus, ettei se ole null Startissa.
+        // Pelaajan Transformin asetus (Paras paikka on pelaajan omassa skriptissä!)
         if (Player.Transform == null)
         {
-            // Jos tämä on pelaajan skripti, voit asettaa sen tässä:
-            // Player.Transform = this.transform;
-            // Mutta jos tämä on eri skripti, tämä ei toimi oikein.
-            Debug.LogWarning("Player.Transform was null in ChangeRooms.Start(). Make sure it's set elsewhere.");
-            // Yritetään varmuuden vuoksi:
-            if (gameObject.CompareTag("Player")) // Varmista että pelaajalla on "Player"-tägi
+            if (gameObject.CompareTag("Player"))
             {
                 Player.Transform = this.transform;
-                Debug.Log("Set Player.Transform in ChangeRooms as fallback.");
+                Debug.LogWarning("Fallback: Set Player.Transform in ChangeRooms. Set this in Player's own Awake/Start script.");
+            }
+            else
+            {
+                Debug.LogWarning("Player.Transform is null in ChangeRooms.Start() and this is not the player. Ensure Player.Transform is set elsewhere.");
             }
         }
 
-
+        // Alkuasetukset lähtöhuoneelle
         Room startRoom = levelGenerator.GetRoomAt(Vector2.zero);
         if (startRoom != null)
         {
-            Player.CurrentRoom = startRoom;
-            EnableDoors(Player.CurrentRoom);
-            levelGenerator.UpdateAllMinimapIcons();
-
-            if (cameraController != null && startRoom.RoomInstance != null)
+            // Varmista että start roomin instanssi on olemassa (GenerateLevel aktivoi sen)
+            if (startRoom.RoomInstance == null && levelGenerator.enabled)
             {
-                cameraController.SnapToTarget(startRoom.RoomInstance.transform.position);
+                Debug.LogError("Start room data found, but its RoomInstance is NULL! Check GenerateLevel logs.");
+                // Yritetään löytää se uudelleen varmuuden vuoksi? Ei yleensä auta.
+                startRoom.RoomInstance = GameObject.Find($"{startRoom.template.type} Room (0,0)"); // Hätäratkaisu, voi epäonnistua
             }
+
+
+            Player.CurrentRoom = startRoom; // Aseta nykyinen huone
+            levelGenerator.UpdateAllMinimapIcons(); // Päivitä kaikki ikonit alussa
+
+            if (startRoom.RoomInstance != null)
+            { // Tarkista uudelleen, jos se löytyi
+                EnableDoors(Player.CurrentRoom); // Aktivoi ovet start-huoneessa
+
+                if (cameraController != null)
+                {
+                    // Aseta kameran alkutila
+                    bool follow = startRoom.template.followPlayerCamera;
+                    Vector3 targetPos = GetRoomCenterTarget(startRoom);
+                    Bounds bounds = GetRoomBounds(startRoom);
+
+                    // Aseta tila ja snappaa kamera paikalleen
+                    cameraController.SetCameraMode(follow, bounds, targetPos);
+                    cameraController.SnapToTarget(targetPos); // Snapataan joka tapauksessa alkuun
+                }
+            }
+            else if (levelGenerator.enabled)
+            {
+                // Jos generaattori on päällä mutta instanssia ei ole, jotain on pahasti pielessä
+                Debug.LogError("Start Room instance could not be found or created properly!");
+            }
+
         }
-        else
+        else if (levelGenerator.enabled)
         {
-            Debug.LogError("Start room (0,0) not found after level generation!");
+            // Jos generaattori on päällä mutta start roomia ei löydy, se on generointivirhe
+            Debug.LogError("Start room (0,0) data not found after level generation!");
         }
     }
 
@@ -74,14 +109,14 @@ public class ChangeRooms : MonoBehaviour
         changeRoomCooldown = false;
     }
 
+    // Aktivoi/Deaktivoi ovet huoneen naapurien perusteella
     void EnableDoors(Room room)
     {
         if (room == null || room.RoomInstance == null)
         {
-            Debug.LogWarning($"EnableDoors called with null room or room instance.");
+            Debug.LogWarning($"EnableDoors called with null room or instance.");
             return;
         }
-
         Transform doorsParent = room.RoomInstance.transform.Find("Doors");
         if (doorsParent == null)
         {
@@ -89,17 +124,13 @@ public class ChangeRooms : MonoBehaviour
             return;
         }
 
-        ActivateDoor(doorsParent, "LeftDoor", false);
-        ActivateDoor(doorsParent, "RightDoor", false);
-        ActivateDoor(doorsParent, "TopDoor", false);
-        ActivateDoor(doorsParent, "BottomDoor", false);
-
-        if (levelGenerator.GetRoomAt(room.Location + Vector2.left) != null) ActivateDoor(doorsParent, "LeftDoor", true);
-        if (levelGenerator.GetRoomAt(room.Location + Vector2.right) != null) ActivateDoor(doorsParent, "RightDoor", true);
-        if (levelGenerator.GetRoomAt(room.Location + Vector2.up) != null) ActivateDoor(doorsParent, "TopDoor", true);
-        if (levelGenerator.GetRoomAt(room.Location + Vector2.down) != null) ActivateDoor(doorsParent, "BottomDoor", true);
+        ActivateDoor(doorsParent, "LeftDoor", levelGenerator.GetRoomAt(room.Location + Vector2.left) != null);
+        ActivateDoor(doorsParent, "RightDoor", levelGenerator.GetRoomAt(room.Location + Vector2.right) != null);
+        ActivateDoor(doorsParent, "TopDoor", levelGenerator.GetRoomAt(room.Location + Vector2.up) != null);
+        ActivateDoor(doorsParent, "BottomDoor", levelGenerator.GetRoomAt(room.Location + Vector2.down) != null);
     }
 
+    // Apumetodi yksittäisen oven aktivointiin
     void ActivateDoor(Transform doorsParent, string doorName, bool active)
     {
         Transform door = doorsParent.Find(doorName);
@@ -113,57 +144,24 @@ public class ChangeRooms : MonoBehaviour
         }
     }
 
-
+    // Päälogiikka huoneen vaihtoon oven triggeristä
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (changeRoomCooldown || levelGenerator == null || Player.CurrentRoom == null || cameraController == null)
-        {
-            return;
-        }
+        if (changeRoomCooldown || levelGenerator == null || Player.CurrentRoom == null || !levelGenerator.enabled) return;
 
         string doorName = collision.gameObject.name;
-        Vector2 direction = Vector2.zero;
-        string oppositeDoorName = "";
-        Vector3 playerSpawnOffset = Vector3.zero;
+        Vector2 direction; string oppositeDoorName; Vector3 playerSpawnOffset;
 
-        // --- TÄMÄ SWITCH-LAUSEKE PUUTTUI ---
         switch (doorName)
         {
-            case "LeftDoor":
-                direction = Vector2.left;
-                oppositeDoorName = "RightDoor";
-                playerSpawnOffset = new Vector3(-1.5f, 0, 0); // Säädä offset tarpeen mukaan
-                break;
-            case "RightDoor":
-                direction = Vector2.right;
-                oppositeDoorName = "LeftDoor";
-                playerSpawnOffset = new Vector3(1.5f, 0, 0);
-                break;
-            case "TopDoor":
-                direction = Vector2.up;
-                oppositeDoorName = "BottomDoor";
-                playerSpawnOffset = new Vector3(0, 1.5f, 0);
-                break;
-            case "BottomDoor":
-                direction = Vector2.down;
-                oppositeDoorName = "TopDoor";
-                playerSpawnOffset = new Vector3(0, -1.5f, 0);
-                break;
-            default:
-                //Debug.Log($"Collided with non-door trigger: {doorName}");
-                return; // Ei ollut tunnettu ovi
-        }
-        // --- SWITCH LOPPUU ---
-
-        // Tarkistus lisätty varmuudeksi, ettei jatketa jos suuntaa ei määritetty
-        if (direction == Vector2.zero)
-        {
-            Debug.LogWarning($"Direction was zero after switch for door: {doorName}");
-            return;
+            case "LeftDoor": direction = Vector2.left; oppositeDoorName = "RightDoor"; playerSpawnOffset = new Vector3(-1.5f, 0, 0); break;
+            case "RightDoor": direction = Vector2.right; oppositeDoorName = "LeftDoor"; playerSpawnOffset = new Vector3(1.5f, 0, 0); break;
+            case "TopDoor": direction = Vector2.up; oppositeDoorName = "BottomDoor"; playerSpawnOffset = new Vector3(0, 1.5f, 0); break;
+            case "BottomDoor": direction = Vector2.down; oppositeDoorName = "TopDoor"; playerSpawnOffset = new Vector3(0, -1.5f, 0); break;
+            default: return;
         }
 
         Debug.Log($"Player entered door: {doorName}, moving towards {direction}");
-
         changeRoomCooldown = true;
         Invoke(nameof(EndChangeRoomCooldown), cooldownTime);
 
@@ -172,51 +170,59 @@ public class ChangeRooms : MonoBehaviour
 
         if (newRoomData != null)
         {
-            if (Player.CurrentRoom.RoomInstance != null)
-            {
-                Player.CurrentRoom.RoomInstance.SetActive(false);
-            }
+            if (Player.CurrentRoom?.RoomInstance != null) { Player.CurrentRoom.RoomInstance.SetActive(false); }
 
             if (newRoomData.RoomInstance != null)
             {
                 newRoomData.RoomInstance.SetActive(true);
-
                 bool wasAlreadyExplored = newRoomData.IsExplored;
                 newRoomData.IsExplored = true;
 
-                Transform entryDoor = newRoomData.RoomInstance.transform.Find("Doors")?.Find(oppositeDoorName);
+                // Siirrä pelaaja
+                if (Player.Transform != null)
+                {
+                    Transform entryDoor = newRoomData.RoomInstance.transform.Find("Doors")?.Find(oppositeDoorName);
+                    if (entryDoor != null) Player.Transform.position = entryDoor.position + playerSpawnOffset;
+                    else { Debug.LogError($"Opposite door '{oppositeDoorName}' not found!"); Player.Transform.position = newRoomData.RoomInstance.transform.position; }
+                }
+                else { Debug.LogError("Player.Transform is NULL!"); }
 
-                // Tarkista Player.Transform ennen käyttöä!
-                if (Player.Transform == null)
-                {
-                    Debug.LogError("Player.Transform is NULL when trying to move player!");
-                }
-                else if (entryDoor != null) // Jos entryDoor löytyi JA Player.Transform EI ole null
-                {
-                    Player.Transform.position = entryDoor.position + playerSpawnOffset;
-                }
-                else // Jos entryDoor EI löytynyt, mutta Player.Transform ON olemassa
-                {
-                    Debug.LogError($"Could not find opposite door '{oppositeDoorName}' in new room instance. Placing player at room center.");
-                    Player.Transform.position = newRoomData.RoomInstance.transform.position;
-                }
-
+                // --- Kameran Käsittely ---
+                bool follow = newRoomData.template.followPlayerCamera;
+                Vector3 targetPos = GetRoomCenterTarget(newRoomData);
+                Bounds bounds = GetRoomBounds(newRoomData); // <<< MÄÄRITELLÄÄN NYT TÄÄLLÄ YLEMPÄNÄ
 
                 if (cameraController != null)
-                {
-                    cameraController.MoveToTarget(newRoomData.RoomInstance.transform.position);
+                { // Tarkistetaan kamera edelleen
+                  // Tarkista bounds vain jos aiotaan seurata
+                    if (follow && (bounds == default || bounds.size == Vector3.zero))
+                    {
+                        Debug.LogError($"Cannot set camera to FOLLOW mode for room {newRoomData.RoomInstance.name} because valid bounds could not be determined! Falling back to STATIC.");
+                        follow = false; // Pakota staattiseen
+                        targetPos = GetRoomCenterTarget(newRoomData); // Hae keskipiste uudelleen
+                        bounds = default; // Nollaa bounds, koska sitä ei käytetä staattisessa
+                    }
+                    cameraController.SetCameraMode(follow, bounds, targetPos);
                 }
+                // --- Kameran käsittely loppuu ---
 
+                // Päivitä pelin tila
                 Room previousRoom = Player.CurrentRoom;
                 Player.CurrentRoom = newRoomData;
 
+                // Päivitä UI
                 levelGenerator.UpdateMinimapIcon(previousRoom);
                 levelGenerator.UpdateMinimapIcon(newRoomData);
-                if (!wasAlreadyExplored) { UpdateNeighborMinimapIcons(newRoomData); } // Päivitä naapurit jos tutkittiin ekaa kertaa
+                if (!wasAlreadyExplored) { UpdateNeighborMinimapIcons(newRoomData); }
 
+                // Aktivoi ovet
                 EnableDoors(newRoomData);
 
-                Debug.Log($"Successfully changed to room at {newRoomData.Location}");
+                // NYT 'bounds' on edelleen olemassa tässä debug-lauseessa
+                // Lisätään tarkistus, että bounds on validi, jotta 'Follow'-tila näytetään oikein
+                bool boundsAreValid = (bounds != default && bounds.size != Vector3.zero);
+                Debug.Log($"Successfully changed to room at {newRoomData.Location}. Camera Mode: {(cameraController != null && follow && boundsAreValid ? "Follow" : "Static")}");
+
             }
             else
             {
@@ -226,33 +232,90 @@ public class ChangeRooms : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Player collided with door '{doorName}' but no room data found at target location {newLocation}.");
+            Debug.LogWarning($"No room data found at target location {newLocation}.");
             CancelInvoke(nameof(EndChangeRoomCooldown)); EndChangeRoomCooldown();
         }
-    } // <-- TÄMÄ AALTOSULJE PUUTTUI OnTriggerEnter2D:ltä
+    }
 
-    // (Valinnainen) Päivittää annetun huoneen naapurien minikarttaikonit
-    void UpdateNeighborMinimapIcons(Room centerRoom)
+    // Hakee keskipisteen, johon staattisen kameran tulisi tähdätä
+    Vector3 GetRoomCenterTarget(Room room)
     {
+        if (room == null || room.RoomInstance == null) return Vector3.zero;
+
+        // Yritä ensin löytää CompositeCollider2D (tarkin tilemapeille)
+        CompositeCollider2D composite = room.RoomInstance.GetComponentInChildren<CompositeCollider2D>(true);
+        if (composite != null) return composite.bounds.center;
+
+        // Sitten TilemapRenderer
+        TilemapRenderer tmRenderer = room.RoomInstance.GetComponentInChildren<TilemapRenderer>(true);
+        if (tmRenderer != null && tmRenderer.gameObject.activeInHierarchy) return tmRenderer.bounds.center;
+
+        // Viimeisenä RoomInstancen oma sijainti (prefabin pivot)
+        Debug.LogWarning($"GetRoomCenterTarget: Could not find CompositeCollider or TilemapRenderer for {room.RoomInstance.name}. Using transform.position as center.");
+        return room.RoomInstance.transform.position;
+    }
+
+    // Hakee huoneen rajat (Bounds) kameran rajausta varten
+    Bounds GetRoomBounds(Room room)
+    {
+        if (room == null || room.RoomInstance == null)
+        {
+            Debug.LogError("GetRoomBounds called with null room or instance!"); return default;
+        }
+        // Debug.Log($"DEBUG: Attempting to get bounds for {room.RoomInstance.name}..."); // Voit poistaa tämän jos toimii
+
+        // ETUSIJALLA: Yritä löytää CompositeCollider2D
+        {
+            // ... (null checkit) ...
+            Debug.Log($"DEBUG: Getting bounds for {room.RoomInstance.name}...");
+
+            CompositeCollider2D composite = room.RoomInstance.GetComponentInChildren<CompositeCollider2D>(true);
+            if (composite != null)
+            {
+                Debug.Log($"DEBUG: Found CompositeCollider '{composite.name}'. Center={composite.bounds.center}, Size={composite.bounds.size}"); // TÄRKEÄ LOGI
+                return composite.bounds;
+            }
+
+            TilemapRenderer tmRenderer = room.RoomInstance.GetComponentInChildren<TilemapRenderer>(true);
+            if (tmRenderer != null && tmRenderer.gameObject.activeInHierarchy)
+            {
+                Debug.Log($"DEBUG: Found TilemapRenderer '{tmRenderer.name}'. Center={tmRenderer.bounds.center}, Size={tmRenderer.bounds.size}"); // TÄRKEÄ LOGI
+                return tmRenderer.bounds;
+            }
+
+            // ... (fallback colliderin etsintä ja logit) ...
+            Collider2D[] allColliders = room.RoomInstance.GetComponentsInChildren<Collider2D>(true);
+            Collider2D fallbackCollider = allColliders.FirstOrDefault(c => c.transform.parent == null || c.transform.parent.name != "Doors");
+            if (fallbackCollider != null)
+            {
+                Debug.LogWarning($"DEBUG: Using fallback collider '{fallbackCollider.name}'. Center={fallbackCollider.bounds.center}, Size={fallbackCollider.bounds.size}"); // TÄRKEÄ LOGI
+                return fallbackCollider.bounds;
+            }
+
+
+            Debug.LogError($"COULD NOT DETERMINE ANY BOUNDS for {room.RoomInstance.name}!");
+            return default;
+        }
+    }
+
+        // Päivittää viereisten huoneiden minikarttaikonit (jos ne eivät ole jo tutkittuja)
+        void UpdateNeighborMinimapIcons(Room centerRoom)
+    {
+        if (levelGenerator == null || centerRoom == null) return; // Varmistus
+
         Vector2[] directions = { Vector2.left, Vector2.right, Vector2.up, Vector2.down };
         foreach (Vector2 dir in directions)
         {
             Room neighbor = levelGenerator.GetRoomAt(centerRoom.Location + dir);
-            if (neighbor != null)
+            // Päivitä naapurin ikoni VAIN jos se on olemassa EIKÄ sitä ole vielä tutkittu
+            if (neighbor != null && !neighbor.IsExplored)
             {
-                // Päivitä vain jos naapuri ei ole vielä tutkittu? Tai aina?
-                // Tässä päivitetään aina, jos halutaan Isaac-tyyli missä naapurit paljastuu
-                if (!neighbor.IsExplored)
-                {
-                    // Voitaisiin merkitä naapuri paljastetuksi, mutta ei tutkituksi
-                    // tai vain päivittää sen ikoni. Tässä päivitetään ikoni.
-                    levelGenerator.UpdateMinimapIcon(neighbor);
-                }
+                levelGenerator.UpdateMinimapIcon(neighbor);
             }
         }
     }
 
-} // <-- Tämä on luokan päättävä aaltosulje
+} // End of ChangeRooms class
 
 
 public static class Player

@@ -87,7 +87,7 @@ public class GenerateLevel : MonoBehaviour
         {
             int seed = (int)System.DateTime.Now.Ticks;
             randomGenerator = new System.Random(seed);
-            Debug.Log($"Initialized random generator with time-based seed (approx): {seed}");
+           // Debug.Log($"Initialized random generator with time-based seed (approx): {seed}");
         }
     }
 
