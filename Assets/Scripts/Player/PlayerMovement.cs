@@ -26,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashCooldown = 1f;    // Dashin cooldown sekunneissa
 
     // Dashin tilamuuttujat
-    private bool isDashing = false;  // Onko pelaaja parhaillaan dashaamassa?
-    private bool canDash = true;     // Voiko pelaaja dashata (ei cooldownilla)?
+    [SerializeField]  private bool isDashing = false;  // Onko pelaaja parhaillaan dashaamassa?
+    [SerializeField]  private bool canDash = true;     // Voiko pelaaja dashata (ei cooldownilla)?
     private Coroutine dashCoroutine; // Viittaus käynnissä olevaan dash-korutiiniin
 
     // --- Unity Lifecycle Methods ---
@@ -199,7 +199,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Asetetaan dash-nopeus Rigidbodyyn
         rb.linearVelocity = dashDirection.normalized * dashSpeed;
-
+        if(AudioManager.instance.gameObject.active == true) { 
+        AudioManager.instance.PlaySFX("Pop");
+        }
         // Odotetaan dashin keston ajan
         yield return new WaitForSeconds(dashDuration);
 
