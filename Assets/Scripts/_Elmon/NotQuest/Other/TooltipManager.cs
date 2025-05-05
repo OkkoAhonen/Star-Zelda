@@ -8,12 +8,15 @@ public class TooltipManager : MonoBehaviour
 {
     public static TooltipManager Instance { get; private set; }
 
+    [Header("UI Elements")]
     [SerializeField] private GameObject tooltipRoot;
     [SerializeField] private Image tooltipIcon;
     [SerializeField] private TMP_Text tooltipTitle;
     [SerializeField] private TMP_Text tooltipBody;
 
     private bool isFollowingMouse = false;
+    private RectTransform tooltipRect;
+    private Vector2 screenBounds;
 
     private void Awake()
     {
@@ -23,6 +26,8 @@ public class TooltipManager : MonoBehaviour
             return;
         }
         Instance = this;
+        tooltipRect = tooltipRoot.GetComponent<RectTransform>();
+        screenBounds = new Vector2(Screen.width, Screen.height);
         Hide();
     }
 
@@ -31,18 +36,21 @@ public class TooltipManager : MonoBehaviour
         if (isFollowingMouse)
         {
             Vector2 pos = Input.mousePosition;
+            Vector2 pivot = new Vector2(0, 1);
 
-            // Optional: Offset so tooltip doesn't cover cursor
-            pos += new Vector2(15f, -15f);
+            // Clamp to screen bounds
+            float pivotX = pos.x + tooltipRect.rect.width > screenBounds.x ? 1 : 0;
+            float pivotY = pos.y - tooltipRect.rect.height < 0 ? 0 : 1;
+            pivot = new Vector2(pivotX, pivotY);
 
+            tooltipRect.pivot = pivot;
             tooltipRoot.transform.position = pos;
         }
     }
 
     public void Show(ScriptableObject so, Vector2 screenPos)
     {
-        // Use reflection to fetch name, description, icon (same as before)
-
+        // (Reflection code as before)
         string title = so.name;
         MemberInfo titleM = GetMember(so, "displayName", "perkName");
         if (titleM != null) title = GetStringValue(so, titleM);
@@ -57,13 +65,25 @@ public class TooltipManager : MonoBehaviour
 
         tooltipTitle.text = title;
 
-        tooltipBody.gameObject.SetActive(!string.IsNullOrEmpty(body));
-        if (tooltipBody.gameObject.activeSelf)
+        if (!string.IsNullOrEmpty(body))
+        {
+            tooltipBody.gameObject.SetActive(true);
             tooltipBody.text = body;
+        }
+        else
+        {
+            tooltipBody.gameObject.SetActive(false);
+        }
 
-        tooltipIcon.gameObject.SetActive(icon != null);
-        if (tooltipIcon.gameObject.activeSelf)
+        if (icon != null)
+        {
+            tooltipIcon.gameObject.SetActive(true);
             tooltipIcon.sprite = icon;
+        }
+        else
+        {
+            tooltipIcon.gameObject.SetActive(false);
+        }
 
         tooltipRoot.SetActive(true);
         tooltipRoot.transform.position = screenPos;
