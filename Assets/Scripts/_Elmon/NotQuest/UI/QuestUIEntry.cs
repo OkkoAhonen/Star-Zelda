@@ -203,7 +203,7 @@ public class QuestUIEntry : MonoBehaviour
                 _ => "Unknown step"
             };
 
-            progressText += new string('I', currentQuest.questDifficulty);
+            progressText += " Diff " + new string('I', currentQuest.questDifficulty);
 
             var entry = Instantiate(stepEntryPrefab, stepListContainer);
             entry.GetComponent<TextMeshProUGUI>().text = progressText;

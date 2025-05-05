@@ -5,9 +5,15 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 public enum StatType
 {
-	Strength, Dexterity, Vitality, Intelligence, Sanity, Wisdom, Charisma,
-	Endurance, Agility, Luck, Perception, Willpower,
-	Magic, Faith, Alchemy, Ranged, Instinct
+	Strength, // Melee 
+	Vitality, // Max health
+	Intelligence, // More levels, stronger magic
+	Endurance, // Stamina?
+	Agility, // Speed
+	Luck, // Luck
+	Magic, // Magic
+	Alchemy, // Potions
+	Ranged // Bow
 }
 
 public class PlayerStatsManager : MonoBehaviour
@@ -21,12 +27,12 @@ public class PlayerStatsManager : MonoBehaviour
 
 	private readonly HashSet<StatType> accuracyStats = new HashSet<StatType>
 	{
-		StatType.Agility, StatType.Luck, StatType.Dexterity, StatType.Perception, StatType.Ranged
+		StatType.Agility, StatType.Luck, StatType.Ranged
 	};
 
 	private readonly HashSet<StatType> magicPowerStats = new HashSet<StatType>
 	{
-		StatType.Magic, StatType.Faith, StatType.Alchemy, StatType.Intelligence, StatType.Wisdom, StatType.Willpower
+        StatType.Magic, StatType.Alchemy, StatType.Intelligence
 	};
 
 	public static PlayerStatsManager instance { get; private set; }
@@ -43,7 +49,7 @@ public class PlayerStatsManager : MonoBehaviour
 
 	// These values are read-only from other scripts
 	public int CurrentLevel { get; private set; }
-	public int CurrentExperience { get; private set; }
+	public float CurrentExperience { get; private set; }
 	public int CurrentGold { get; private set; }
 	public int CurrentArmor { get; private set; }
 	public int CurrentHealth { get; private set; }
@@ -221,9 +227,9 @@ public class PlayerStatsManager : MonoBehaviour
 		onStatChanged?.Invoke();
 	}
 
-	public void GainExperience(int experience)
+	public void GainExperience(float experience)
 	{
-		CurrentExperience += experience;
+        CurrentExperience += experience * (1 + GetStat(StatType.Intelligence) * 0.1f);
 		while (CurrentExperience >= XPToNextLevel)
 		{
 			CurrentExperience -= XPToNextLevel;
