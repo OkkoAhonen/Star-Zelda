@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using static UnityEngine.GraphicsBuffer;
+using UnityEditor.PackageManager;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -16,7 +17,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Item dropItem;
     [Header("Components")]
     [SerializeField] private Animator animator;
-    [SerializeField] private Animator DamageAnimator; 
+    [SerializeField] private Animator DamageAnimator;
 
     [Header("Attacking")]
     [SerializeField] private float attackRange = 1.0f;
@@ -182,18 +183,18 @@ public class EnemyController : MonoBehaviour
 
     public void DoAttackDamage()
     {
-        if (isDead  || playerTransform == null) return;
+        if (isDead || playerTransform == null) return;
         if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange * 1.2f)
         {
             Debug.Log($"Enemy ({gameObject.name}) dealing damage via Animation Event!");
 
 
 
-            
+
             //PlayerStatsManager.instance.TakeDamage((int)enemyStats.strength);   
-       
+
         }
-        // else { Debug.Log($"Player moved out of range during {gameObject.name}'s attack animation."); }
+        else { Debug.Log($"Player moved out of range during {gameObject.name}'s attack animation."); }
     }
 
     public void AttackAnimationFinished() { isAttacking = false; }
@@ -254,7 +255,7 @@ public class EnemyController : MonoBehaviour
         if (isDead) return;
         if (animator != null) { animator.SetTrigger("Hurt"); }
 
-        if(DamageAnimator != null) { DamageAnimator.SetTrigger("TakeDamage"); }
+        if (DamageAnimator != null) { DamageAnimator.SetTrigger("TakeDamage"); }
 
         if (knockbackCoroutine != null)
         {
@@ -323,5 +324,7 @@ public class EnemyController : MonoBehaviour
         if (enemyStats != null) { Gizmos.color = Color.yellow; Gizmos.DrawWireSphere(transform.position, enemyStats.detectionRange); }
         else { Gizmos.color = Color.gray; Gizmos.DrawWireSphere(transform.position, 5f); }
         Gizmos.color = Color.red; Gizmos.DrawWireSphere(transform.position, attackRange);
+
+
     }
 }
