@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Valiaikainen : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,11 @@ public class Valiaikainen : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 
+            
+
         }
+
+
+
     }
 }
