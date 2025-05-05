@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using static UnityEngine.GraphicsBuffer;
+using UnityEditor.PackageManager;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -16,6 +17,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Item dropItem;
     [Header("Components")]
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator DamageAnimator;
 
     [Header("Attacking")]
     [SerializeField] private float attackRange = 1.0f;
@@ -56,6 +58,9 @@ public class EnemyController : MonoBehaviour
         if (animator == null) animator = GetComponent<Animator>();
         if (animator == null) animator = GetComponentInChildren<Animator>();
         if (animator == null) Debug.LogWarning($"Animator component ei l�ytynyt: {gameObject.name}", this);
+
+        GameObject DamageAnimatorGameObject = this.gameObject.transform.GetChild(0).gameObject;
+        DamageAnimator = DamageAnimatorGameObject.GetComponent<Animator>();
 
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
@@ -178,7 +183,7 @@ public class EnemyController : MonoBehaviour
 
     public void DoAttackDamage()
     {
-        if (isDead  || playerTransform == null) return;
+        if (isDead || playerTransform == null) return;
         if (Vector2.Distance(transform.position, playerTransform.position) <= attackRange * 1.2f)
         {
             Debug.Log($"Enemy ({gameObject.name}) dealing damage via Animation Event!");
@@ -186,9 +191,10 @@ public class EnemyController : MonoBehaviour
 
 
 
-            PlayerStatsManager.instance.TakeDamage((int)enemyStats.strength);   
+            //PlayerStatsManager.instance.TakeDamage((int)enemyStats.strength);   
+
         }
-        // else { Debug.Log($"Player moved out of range during {gameObject.name}'s attack animation."); }
+        else { Debug.Log($"Player moved out of range during {gameObject.name}'s attack animation."); }
     }
 
     public void AttackAnimationFinished() { isAttacking = false; }
@@ -231,13 +237,25 @@ public class EnemyController : MonoBehaviour
         knockbackCoroutine = null;
     }
 
-    void OnCollisionEnter2D(Collision2D collision) { /*... Sama ...*/ }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Aseta vihollisen nopeus nollaksi
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f; // Aseta kulmanopeus nollaksi float-arvolla
+        }
+    }
+
+
 
     // TakeDamage on jo p�ivitetty oikein edellisess� vaiheessa
     public void TakeDamage(float damage, Vector2 hitDirection, float knockbackForce)
     {
         if (isDead) return;
         if (animator != null) { animator.SetTrigger("Hurt"); }
+
+        if (DamageAnimator != null) { DamageAnimator.SetTrigger("TakeDamage"); }
 
         if (knockbackCoroutine != null)
         {
@@ -258,7 +276,7 @@ public class EnemyController : MonoBehaviour
         if (CameraShake.instance != null)
         {
             float shakeDuration = 0.1f;
-            float shakeMagnitude = 0.05f;
+            float shakeMagnitude = 0.5f;
             CameraShake.instance.StartShake(shakeDuration, shakeMagnitude);
         }
         else { Debug.LogWarning("CameraShake.instance ei l�ytynyt!"); }
@@ -272,11 +290,12 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
-        
+        //GameEventsManager.instance.playerEvents.GainExperience(50);
+        AudioManager.instance.PlaySFX("Pop");
 
         if (isDead) return; isDead = true;
         Debug.Log($"{gameObject.name} is dying and will remain on screen.");
-        QuestManager.instance.NotifyStepEvent("Kill", EnemyID);
+        //QuestManager.instance.NotifyStepEvent("Kill", EnemyID);
         isMoving = false; isAttacking = false; rb.linearVelocity = Vector2.zero;
         rb.simulated = false; GetComponent<Collider2D>().enabled = false;
         if (animator != null) { animator.SetTrigger("Die"); StartCoroutine(DropLootAfterDelay(deathAnimationDuration)); }
@@ -305,5 +324,7 @@ public class EnemyController : MonoBehaviour
         if (enemyStats != null) { Gizmos.color = Color.yellow; Gizmos.DrawWireSphere(transform.position, enemyStats.detectionRange); }
         else { Gizmos.color = Color.gray; Gizmos.DrawWireSphere(transform.position, 5f); }
         Gizmos.color = Color.red; Gizmos.DrawWireSphere(transform.position, attackRange);
+
+
     }
 }

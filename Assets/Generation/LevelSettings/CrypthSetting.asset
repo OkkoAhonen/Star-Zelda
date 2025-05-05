@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250be443d4ba67f4c8a59a58212bfded, type: 3}
   m_Name: CrypthSetting
   m_EditorClassIdentifier: 
-  roomLimit: 3
+  roomLimit: 2
   branchingChance: 0.338
-  minRooms: 4
+  minTotalRooms: 10
+  maxTotalRooms: 20
   minimapIconBaseSize: 500
   minimapIconScale: 0.06
   minimapPadding: 0.1
@@ -42,4 +43,4 @@ MonoBehaviour:
   useSeed: 0
   maxRecursionDepth: 250
   maxRegenerationAttempts: 25
-  roomChangeTime: 0.3
+  roomChangeTime: 0.1

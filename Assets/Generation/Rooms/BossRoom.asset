@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   prefab: {fileID: 2946792326283932865, guid: 16394a47e880f8b499c1780090569308, type: 3}
+  followPlayerCamera: 1
+  roomBoundsCollider: {fileID: 7247389843151220920, guid: 078d8cdc335f7bb408112b44a93eaeee, type: 3}

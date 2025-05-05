@@ -12,48 +12,51 @@ public class LevelGenerationSettings : ScriptableObject
     // Todenn‰kˆisyys (0.0 - 1.0) sille, ett‰ generointi yritt‰‰ jatkua uuteen huoneeseen.
     // Korkeampi arvo = enemm‰n haaroja ja huoneita (todenn‰kˆisemmin).
     [Range(0f, 1f)]
-    public float branchingChance = 0.6f; // Nimi muutettu selke‰mm‰ksi
-    // Generoinnin takuu: Minimim‰‰r‰ huoneita, joita yritet‰‰n generoida (pl. erikoishuoneet).
-    public int minRooms = 8;
+    public float branchingChance = 0.6f;
+
+    // --- MUUTETUT/UUDET KENTƒT ---
+    [Tooltip("Minimum TOTAL number of rooms to generate (including start, boss, treasure etc.)")]
+    public int minTotalRooms = 10; // Uusi minimi kaikille huoneille
+
+    [Tooltip("Maximum TOTAL number of rooms allowed (generation stops if this limit is reached).")]
+    public int maxTotalRooms = 20; // Uusi maksimi kaikille huoneille
+
+    // Vanha minRooms poistettu (tai kommentoi pois jos haluat s‰ilytt‰‰ sen jostain syyst‰)
+    // public int minRooms = 8;
 
     [Header("Minimap Settings")]
-    // N‰m‰ vaikuttavat minikartan ikonien kokoon ja sijoitteluun.
-    // K‰ytet‰‰n vain height, koska ikonit ovat neliˆit‰.
-    public float minimapIconBaseSize = 500f; // Selke‰mpi nimi
-    // Skaalauskerroin nimenomaan minikartan ikoneille. M‰‰ritt‰‰ ikonin koon.
+    public float minimapIconBaseSize = 500f;
     public float minimapIconScale = 0.06f;
-    // Tyhj‰ tila (padding) minikartan ikonien v‰lill‰ suhteessa ikonin kokoon.
-    public float minimapPadding = 0.1f; // Suhteellinen padding on usein helpompi hallita
+    public float minimapPadding = 0.1f;
 
     [Header("Room Templates")]
-    // Viittaukset huonemalleihin (RoomTemplate ScriptableObjecteihin).
-    // N‰m‰ asetetaan Inspectorissa vet‰m‰ll‰ oikeat assetit kenttiin.
-    public RoomTemplate startRoomTemplate;
-    public RoomTemplate bossRoomTemplate;
+    [Tooltip("Template for the starting room (REQUIRED). Must have a Prefab assigned.")]
+    public RoomTemplate startRoomTemplate; // Varmista ett‰ Prefab on asetettu!
+
+    [Tooltip("Template for the boss room (REQUIRED). Must have a Prefab assigned.")]
+    public RoomTemplate bossRoomTemplate; // Varmista ett‰ Prefab on asetettu!
+
+    [Tooltip("Template for the treasure room (Optional). Assign if used.")]
     public RoomTemplate treasureRoomTemplate;
-    // Lista kaikista mahdollisista "tavallisista" huoneista, joita voidaan arpoa.
-    public List<RoomTemplate> normalRoomTemplates;
-    // Voit lis‰t‰ listoja muille tyypeille (Shop, Secret jne.)
+
+    [Tooltip("List of possible templates for normal rooms (REQUIRED, at least one valid entry). Ensure assigned Templates have Prefabs.")]
+    public List<RoomTemplate> normalRoomTemplates; // Varmista ett‰ listassa on ainakin yksi, ja sill‰ Prefab!
 
     [Header("Minimap Icons")]
-    // Sprite-referenssit minikartan eri huonetyyppien ikoneille.
-    // N‰m‰ voidaan nyt asettaa suoraan t‰h‰n assettiin Inspectorissa.
     public Sprite currentRoomIcon;
     public Sprite bossRoomIcon;
     public Sprite treasureRoomIcon;
-    public Sprite normalRoomIcon; // Korvaa vanhan DefaultRoomIconin
-    public Sprite unexploredRoomIcon; // Lis‰t‰‰n tuki t‰lle
+    public Sprite normalRoomIcon;
+    public Sprite unexploredRoomIcon;
 
     [Header("Generation Control")]
-    // Satunnaislukugeneraattorin siemenluku. Jos useSeed = true, sama siemenluku tuottaa aina saman kartan.
     public int seed = 0;
     public bool useSeed = false;
-    // Failsafe: Maksimi rekursiosyvyys est‰m‰‰n liian syv‰t/jumittuvat generoinnit.
     public int maxRecursionDepth = 50;
-    // Failsafe: Maksimi yritysm‰‰r‰ generoida kartta uudelleen, jos esim. aarrehuonetta ei saada sijoitettua.
-    public int maxRegenerationAttempts = 5;
+
+    [Tooltip("How many times to retry the ENTIRE level generation if critical placement (like Boss room) fails.")]
+    public int maxRegenerationAttempts = 10; // Nostettu oletusarvoa hieman varmuuden lis‰‰miseksi
 
     [Header("Gameplay")]
-    // Aika sekunneissa, jonka pelaajan pit‰‰ odottaa ennen kuin voi vaihtaa huonetta uudelleen.
     public float roomChangeTime = 1f;
 }

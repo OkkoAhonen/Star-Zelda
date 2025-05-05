@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,8 @@ public class PlayerAttackMelee : MonoBehaviour
     public Animator animator; // Aseta inspektorissa
 
     public PlayerStatsManager playerStatsManager;
+
+
 
     // Charge muuttujat
 
@@ -47,7 +50,7 @@ public class PlayerAttackMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
 
         if (InventoryManager.Instance.GetSelectedItem(false) != null)
         {
@@ -56,7 +59,7 @@ public class PlayerAttackMelee : MonoBehaviour
             {
                
 
-                if (Input.GetMouseButtonUp(0))
+                if (Input.GetMouseButtonUp(0) )
                 {
                     attack1();
 
@@ -84,43 +87,75 @@ public class PlayerAttackMelee : MonoBehaviour
         animator.SetTrigger("Attack1");
         Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackpoint.transform.position, equippedItem.attackRadius, enemies);
+
+        if (enemy.Length >= 0) {
+            AudioManager.instance.PlaySFX("AttackMiss1");
+
+            CameraShake.instance.StartShake(0.1f, 0.2f);
+        
+        }
+
         foreach (Collider2D enemyGameobje in enemy)
         {
 
             EnemyController enemyhealth = enemyGameobje.GetComponent<EnemyController>();
             Debug.Log(enemyhealth.gameObject.name + "Moi");
             Vector2 direction = (enemyGameobje.transform.position - transform.position).normalized;
-            enemyhealth.TakeDamage( equippedItem.attackDamage  /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/, direction, 2f);
 
+            AttackAudio();
+
+            StartCoroutine(Freeze());
+            
+            AudioManager.instance.PlaySFX("Attack1");
+            enemyhealth.TakeDamage(equippedItem.attackDamage  /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/, direction, 2f);
 
         }
+
+       
+        
 
 
         currentChargeTime = 0f;
 
     }
 
-    /*private void chargeSword()
+    private void AttackAudio()
     {
-        if (Input.GetMouseButton(0))
+        int RandomSFXNumber = UnityEngine.Random.Range(1, 5);
+        
+        Debug.Log("ATTACKaUDIOnUMBER: " +  RandomSFXNumber);
+        switch (RandomSFXNumber)
         {
-            Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
-            if (equippedItem == null || slider == null)
-            {
-                Debug.LogError("Cannot charge sword: equippedItem or slider is null!");
-                return;
-            }
+            case 1:
+                AudioManager.instance.PlaySFX("Attack1");
 
-            currentChargeTime += Time.deltaTime * 2;
-
-            if (currentChargeTime > equippedItem.maxChargeTime)
-            {
-                currentChargeTime = equippedItem.maxChargeTime;
-            }
-
-            slider.UpdateSlider(currentChargeTime, equippedItem.maxChargeTime);
+                break;
+            case 2:
+                AudioManager.instance.PlaySFX("Attack2");
+                break;
+            case 3:
+                AudioManager.instance.PlaySFX("Attack3");
+                break;
+            case 4:
+                AudioManager.instance.PlaySFX("Attack4");
+                break;
         }
-    }*/
+    }
+
+    private IEnumerator Freeze()
+    {
+        Time.timeScale = 0f;
+        float freezeDuration = 0.15f;
+
+        float elapset = 0f;
+        while (elapset < freezeDuration)
+        {
+            elapset += Time.unscaledDeltaTime;
+            yield return null;
+        }
+        Time.timeScale = 1f;
+    }
+
 
     private void OnDrawGizmos()
     {
@@ -137,5 +172,7 @@ public class PlayerAttackMelee : MonoBehaviour
             Gizmos.DrawWireSphere(attackpoint.transform.position, currentRadius);
         }
     }
+
+
 
 }
