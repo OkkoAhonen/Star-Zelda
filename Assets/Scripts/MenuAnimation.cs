@@ -3,99 +3,85 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[System.Serializable]
+public class MenuElement
+{
+    [Tooltip("UI element to animate")]
+    public RectTransform rect;
+    [Tooltip("Start position (for inspector preview)")]
+    public Vector2 startPosition;
+    [Tooltip("Target position when animation completes")]
+    public Vector2 targetPosition;
+    [Tooltip("Speed of movement for this element")]
+    public float moveSpeed = 5f;
+    [Tooltip("Delay before this element starts moving")]
+    public float delay = 0.1f;
+}
+
 public class MenuAnimation : MonoBehaviour
 {
-    public Button[] menuButtons;
-    public Vector2[] targetPositions;
-    public GameObject gameTitle;
-    public Vector2 titleTargetPosition;
-    public float moveSpeed = 5f;
-    public float delayBetweenButtons = 0.2f;
+    [Header("Elements to Animate")]
+    [Tooltip("Assign each UI element with its start, target, speed and delay")]
+    [SerializeField] private MenuElement[] elements;
 
-    private Vector2 buttonStartPosition = new Vector2(-200f, 0f);
-    private Vector2 titleStartPosition = new Vector2(0f, 600f);
-    private bool[] hasMoved;
-    private bool titleHasMoved;
     private bool isSkipping = false;
+    private bool[] shouldMove;
 
-    void Start()
+    private void Start()
     {
-        if (menuButtons.Length != targetPositions.Length)
-            Debug.LogError("Buttons and target positions must match lengths");
-
-        hasMoved = new bool[menuButtons.Length];
-        for (int i = 0; i < menuButtons.Length; i++)
+        shouldMove = new bool[elements.Length];
+        for (int i = 0; i < elements.Length; i++)
         {
-            RectTransform rt = menuButtons[i].GetComponent<RectTransform>();
-            rt.anchoredPosition = buttonStartPosition;
-            hasMoved[i] = false;
+            elements[i].rect.anchoredPosition = elements[i].startPosition;
+            shouldMove[i] = false;
         }
 
-        if (gameTitle != null)
-        {
-            RectTransform tr = gameTitle.GetComponent<RectTransform>();
-            tr.anchoredPosition = titleStartPosition;
-            titleHasMoved = false;
-        }
-
-        StartCoroutine(AnimateMenu());
+        StartCoroutine(AnimateSequence());
     }
 
-    void Update()
+    private void Update()
     {
-        if (isSkipping) return;
-
-        for (int i = 0; i < menuButtons.Length; i++)
+        if (isSkipping)
         {
-            if (hasMoved[i])
+            return;
+        }
+
+        for (int i = 0; i < elements.Length; i++)
+        {
+            if (shouldMove[i])
             {
-                RectTransform rt = menuButtons[i].GetComponent<RectTransform>();
-                rt.anchoredPosition = Vector2.Lerp(rt.anchoredPosition, targetPositions[i], Time.deltaTime * moveSpeed);
-                if (Vector2.Distance(rt.anchoredPosition, targetPositions[i]) < 0.1f)
+                RectTransform rt = elements[i].rect;
+                rt.anchoredPosition = Vector2.Lerp(
+                    rt.anchoredPosition,
+                    elements[i].targetPosition,
+                    Time.deltaTime * elements[i].moveSpeed
+                );
+                if (Vector2.Distance(rt.anchoredPosition, elements[i].targetPosition) < 0.05f)
                 {
-                    rt.anchoredPosition = targetPositions[i];
-                    hasMoved[i] = false;
+                    rt.anchoredPosition = elements[i].targetPosition;
+                    shouldMove[i] = false;
                 }
             }
         }
-
-        if (titleHasMoved && gameTitle != null)
-        {
-            RectTransform tr = gameTitle.GetComponent<RectTransform>();
-            tr.anchoredPosition = Vector2.Lerp(tr.anchoredPosition, titleTargetPosition, Time.deltaTime * moveSpeed);
-            if (Vector2.Distance(tr.anchoredPosition, titleTargetPosition) < 0.1f)
-                titleHasMoved = false;
-        }
     }
 
-    IEnumerator AnimateMenu()
+    private IEnumerator AnimateSequence()
     {
-        titleHasMoved = true;
-        yield return new WaitForSeconds(delayBetweenButtons);
-        for (int i = 0; i < menuButtons.Length; i++)
+        for (int i = 0; i < elements.Length; i++)
         {
-            yield return new WaitForSeconds(delayBetweenButtons);
-            hasMoved[i] = true;
+            yield return new WaitForSeconds(elements[i].delay);
+            shouldMove[i] = true;
         }
     }
 
-    // skips the animation and jumps elements to their end positions
+    // instantly place all elements at their target positions
     public void SkipMenuAnimations()
     {
         isSkipping = true;
 
-        // snap title
-        if (gameTitle != null)
+        for (int i = 0; i < elements.Length; i++)
         {
-            RectTransform tr = gameTitle.GetComponent<RectTransform>();
-            tr.anchoredPosition = titleTargetPosition;
-        }
-
-        // snap buttons
-        for (int i = 0; i < menuButtons.Length; i++)
-        {
-            RectTransform rt = menuButtons[i].GetComponent<RectTransform>();
-            rt.anchoredPosition = targetPositions[i];
+            elements[i].rect.anchoredPosition = elements[i].targetPosition;
         }
     }
 }
