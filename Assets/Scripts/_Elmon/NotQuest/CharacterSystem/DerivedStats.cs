@@ -27,11 +27,9 @@ public class DerivedStats
 		MaxHP = playerStatsManager.GetStat(StatType.Vitality) * 10 +
 				playerStatsManager.GetStat(StatType.Endurance) * 5;
 
-		Stamina = playerStatsManager.GetStat(StatType.Endurance) * 8 +
-				  playerStatsManager.GetStat(StatType.Agility) * 4;
+		Stamina = playerStatsManager.GetStat(StatType.Endurance) * 8;
 
-		MeleeDamage = playerStatsManager.GetStat(StatType.Strength) * 2 +
-					  playerStatsManager.GetStat(StatType.Dexterity) * 1;
+		MeleeDamage = playerStatsManager.GetStat(StatType.Strength) * 2;
 
 		MagicDamage = playerStatsManager.GetStat(StatType.Magic) * 2 +
 					  playerStatsManager.GetStat(StatType.Intelligence) * 1;
@@ -39,13 +37,8 @@ public class DerivedStats
 		ArmorRating = playerStatsManager.GetStat(StatType.Endurance) * 2 +
 					  playerStatsManager.GetStat(StatType.Strength) * 1;
 
-		CriticalHitChance = playerStatsManager.GetStat(StatType.Luck) * 0.5f +
-							playerStatsManager.GetStat(StatType.Dexterity) * 0.3f;
+		CriticalHitChance = playerStatsManager.GetStat(StatType.Luck) * 0.5f;
 
-		DodgeChance = playerStatsManager.GetStat(StatType.Agility) * 0.4f +
-					  playerStatsManager.GetStat(StatType.Instinct) * 0.3f;
-
-		MagicDefense = playerStatsManager.GetStat(StatType.Faith) * 2 +
-					   playerStatsManager.GetStat(StatType.Wisdom) * 1;
+		DodgeChance = playerStatsManager.GetStat(StatType.Agility) * 0.4f;
 	}
 }

@@ -32,7 +32,6 @@ public class BookDisplay : MonoBehaviour
     public Button prevButton;
     public Button openButton;
     public Button closeButton;
-    public Button refreshButton;
 
     [Header("Page Layout")]
     public bool startOnRightPage = true; // If true, first page is on right, then left-right pairs
@@ -81,7 +80,6 @@ public class BookDisplay : MonoBehaviour
         prevButton.onClick.AddListener(PreviousPage);
         openButton.onClick.AddListener(OpenBook);
         closeButton.onClick.AddListener(CloseBook);
-        refreshButton.onClick.AddListener(RefreshBook);
 
         leftPageInput.onEndEdit.AddListener((text) => HandleTextInput(text, true));
         rightPageInput.onEndEdit.AddListener((text) => HandleTextInput(text, false));
@@ -387,7 +385,6 @@ public class BookDisplay : MonoBehaviour
         prevButton.onClick.RemoveListener(PreviousPage);
         openButton.onClick.RemoveListener(OpenBook);
         closeButton.onClick.RemoveListener(CloseBook);
-        refreshButton.onClick.RemoveListener(RefreshBook);
 
         leftPageInput.onEndEdit.RemoveListener((text) => HandleTextInput(text, true));
         rightPageInput.onEndEdit.RemoveListener((text) => HandleTextInput(text, false));

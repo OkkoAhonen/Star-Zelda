@@ -60,11 +60,11 @@ public class BeholderAI : MonoBehaviour
         laserHolder = bossAnimation.laserHolder;
 
         if (player == null)
-        {
             player = GameObject.FindWithTag("Player").transform;
-        }
+        if (playerOffset == null)
+            playerOffset = player.Find("playerOffset");
 
-        bossAnimation.laser.SetMasks(hitMask, damageMask);
+            bossAnimation.laser.SetMasks(hitMask, damageMask);
         bossAnimation.SetHitMask(hitMask);
 
         currentState = AIState.Waiting;
@@ -91,7 +91,7 @@ public class BeholderAI : MonoBehaviour
                 break;
 
             case AIState.Following:
-                bossAnimation.FollowTarget(player);
+                bossAnimation.FollowTarget(playerOffset);
                 stateTimer -= Time.deltaTime;
                 if (stateTimer <= 0f)
                 {
@@ -168,7 +168,7 @@ public class BeholderAI : MonoBehaviour
         {
             if (eyeCircleMoveWhileShooting)
             {
-                bossAnimation.FollowTarget(player);
+                bossAnimation.FollowTarget(playerOffset);
             }
 
             Vector2 direction = Random.insideUnitCircle.normalized;

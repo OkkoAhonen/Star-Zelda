@@ -8,13 +8,12 @@ public class Perk : ScriptableObject
 	[SerializeField] private string _perkName;
 	[SerializeField] private string _description;
 	[SerializeField] private Sprite _icon;
-	[SerializeField] private bool _isTiered;
-	[SerializeField] private int _maxLevel = 1;
-	[SerializeField] private int _scalingFactor = 5; // how many more stat points needed per perk's level
+	[SerializeField] private bool _isTiered; // ?
+	[SerializeField] private int _maxLevel = 1; // How many times can be upgraded (1 means no upgrades)
+	[SerializeField] private int _scalingFactor = 5; // How many more stat points needed per perk's level
 	[SerializeField] private int _price = 100;
 	[SerializeField] private List<StatRequirement> _statRequirements = new List<StatRequirement>();
 
-	// Properties that use the serialized fields
 	public string perkName => _perkName;
 	public string description => _description;
 	public Sprite icon => _icon;
@@ -26,7 +25,7 @@ public class Perk : ScriptableObject
 }
 
 [System.Serializable]
-public class StatRequirement
+public class StatRequirement // What stat and how many levels of it?
 {
 	public StatType statType;
 	public int requiredLevel;

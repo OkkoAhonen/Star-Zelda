@@ -50,6 +50,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -87,7 +90,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &765755307754770846
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,6 +104,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -157,6 +161,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -194,7 +201,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 1
 --- !u!95 &2301665661796515116
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -208,6 +215,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -221,6 +229,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5940373096983697442}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -244,7 +253,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,7 +265,6 @@ BoxCollider2D:
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 1, y: 0.156}
   m_EdgeRadius: 0
 --- !u!1 &7568022133279026897
@@ -325,7 +334,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.84, y: 0, z: 0}
-  m_LocalScale: {x: 6.66, y: 6.66, z: 6.66}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3647390801686041319}
@@ -348,6 +357,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -385,7 +397,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &7799401142665992007
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -399,6 +411,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -431,11 +444,11 @@ MonoBehaviour:
   - {x: 0.114, y: -0.059}
   - {x: 0.158, y: -0.059}
   - {x: 0.093, y: -0.112}
-  bounceSpeed: 25
-  minBounceAngle: -30
-  maxBounceAngle: 30
-  minBounceTime: 4
-  maxBounceTime: 7
+  bounceSpeed: 12
+  minBounceAngle: -10
+  maxBounceAngle: 10
+  minBounceTime: 2
+  maxBounceTime: 4
 --- !u!114 &559417251019577174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,19 +461,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fe7c14bda68d547a673541602dc065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 1
-  followTime: 1
-  movements: 1
+  laserWeight: 1
+  bounceWeight: 1
+  circleWeight: 1
+  playerWeight: 1
+  eyeCircleDuration: 3
+  eyeCircleSpawnRate: 20
+  eyeCircleSpawnSize: 1.5
+  eyeCircleMoveWhileShooting: 0
+  eyePlayerDuration: 2
+  eyePlayerSpawnRate: 8
+  eyePlayerSpawnSize: 1.5
+  eyeAttackRadius: 15
+  eyePlayerMoveWhileShooting: 0
+  eyeDamage: 11
+  eyeLifespan: 3
+  eyePrefab: {fileID: 135858785801601513, guid: 98f17962e452ef9459f3621e0a80605b, type: 3}
+  waitTime: 0.5
+  followTime: 0.5
+  movements: 2
   hitMask:
     serializedVersion: 2
     m_Bits: 768
   damageMask:
     serializedVersion: 2
     m_Bits: 2048
-  startBounceRight: 1
   player: {fileID: 0}
+  playerOffset: {fileID: 0}
   bossAnimation: {fileID: 5128553206198711373}
-  currentAttack: 0
+  projectiles: {fileID: 0}
 --- !u!114 &399086636032525198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2a1f6f00d2bf24e810e643265ea5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 0.5
   minHalfSpins: 1
   maxHalfSpins: 2
   spinSpeed: 90
@@ -494,10 +523,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserObject: {fileID: 8379306218726585304}
   impactObject: {fileID: 3362191573626464383}
+  impactOffset: 0.28
   laserDamage: 10
 --- !u!50 &6498957329406413049
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -508,8 +538,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1000
-  m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_LinearDamping: 0
+  m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 5725679e23327624489fb14d44621c90, type: 2}
   m_IncludeLayers:
@@ -530,6 +560,7 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7651510063523061384}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -553,7 +584,7 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.06}
-  serializedVersion: 2
   m_Radius: 0.23

@@ -99,7 +99,7 @@ public class QuestTrackerUI : MonoBehaviour
             var state = currentQuest.stepStates[i];
 
             string status = state == Quest.QuestStepState.COMPLETE ? "[O]" : "[ ]";
-            string label = $"{step.stepType}: Step {i + 1} {status}  (I{step.stepDifficulty})";
+            string label = $"{step.stepType}: Step {i + 1} {status}  Diff {new string('I',step.stepDifficulty)}";
 
             var stepObj = Instantiate(stepTextPrefab, stepsContainer);
             stepObj.GetComponentInChildren<TextMeshProUGUI>().text = label;

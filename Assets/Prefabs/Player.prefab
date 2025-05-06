@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9106728513280019464}
   m_Layer: 11
-  m_Name: TempHitboxCenter
+  m_Name: TempOffset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

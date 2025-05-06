@@ -57,7 +57,7 @@ public class ScreenUIManager : MonoBehaviour
         armorNumber.text = $"{newArmorValue}";
     }
 
-    private void UpdateExperience(int xp)
+    private void UpdateExperience(float xp)
     {
         float currentXP = playerStatsManager.CurrentExperience;
         float requiredXP = playerStatsManager.XPToNextLevel;
