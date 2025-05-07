@@ -10,24 +10,34 @@ public class MageSkeletonController : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 1.5f;
-    // [SerializeField] private float walkDuration = 2.0f; // Ei en�� tarvita n�in
-    [SerializeField] private float desiredStoppingDistance = 2.5f; // Kuinka l�helle pelaajaa k�vell��n
+    [SerializeField] private float shortWalkDistance = 2.0f; // Matka, jonka kävelee kerrallaan
+    [SerializeField] private float preferredDistanceToPlayer = 5.0f; // Etäisyys, jota yrittää ylläpitää
 
     [Header("Combat")]
     [SerializeField] private int maxHealth = 100;
-    [SerializeField] private float attackRange = 3.0f; // Maksimiet�isyys hy�kk�ykselle
-    [SerializeField] private float attackCooldown = 2.0f; // Aika hy�kk�ysten v�lill�
+    [SerializeField] private float attackCooldown = 2.0f;
+    // Min/Max attack rangeja ei enää tarvita tässä mallissa, hyökkäyspäätös on todennäköisyyspohjainen kävelyn jälkeen
 
-    [Header("Timings")]
+    [Header("Probabilities & Timings")]
+    [Range(0f, 1f)]
+    [SerializeField] private float chanceToWalkRandomly = 0.25f; // 25%
+    [Range(0f, 1f)]
+    [SerializeField] private float chanceToAttackAfterWalk = 0.75f; // 75%
     [SerializeField] private float initialIdleDelay = 1.5f;
-    [SerializeField] private float timeBetweenActions = 1.0f; // Odotus Idless� p��t�sten v�lill�
+    [SerializeField] private float timeBetweenActions = 1.0f; // Tauko ennen uutta liike/hyökkäys-sykliä
+
+    [Header("Effects")]
+    [Tooltip("Raahaa tähän PölyPrefab, joka soitetaan Attack2:n aikana.")]
+    [SerializeField] private GameObject dustEffectPrefab;
+    [Tooltip("Luo tyhjä GameObject MageSkeletonin lapseksi ja sijoita se kohtaan, johon pölyefekti ilmestyy. Raahaa se tähän.")]
+    [SerializeField] private Transform dustEffectSpawnPoint;
 
     private int currentHealth;
     private enum State { IdleDecision, Walking, Attacking, Hurt, Dead }
     private State currentState;
     private bool isFacingRight = true;
     private Coroutine currentActionCoroutine;
-    private float lastAttackTime = -Mathf.Infinity; // Alustetaan niin, ett� voi hy�k�t� heti
+    private float lastAttackTime = -Mathf.Infinity;
 
     private readonly int hashIdle = Animator.StringToHash("Idle");
     private readonly int hashWalk = Animator.StringToHash("Walk");
@@ -39,30 +49,50 @@ public class MageSkeletonController : MonoBehaviour
     void Awake()
     {
         if (animator == null) animator = GetComponent<Animator>();
-        FindPlayer(); // Etsit��n pelaaja
+        FindPlayer();
     }
 
     void Start()
     {
         currentHealth = maxHealth;
         currentState = State.IdleDecision;
-        if (playerTransform != null) // Aloita vain jos pelaaja l�ytyi
+        if (playerTransform != null)
         {
             StartCoroutine(InitialDelay());
         }
         else
         {
-            enabled = false; // Poista skripti k�yt�st� jos pelaajaa ei ole
+            enabled = false;
         }
     }
 
     void Update()
     {
-        // Jatkuva k��ntyminen pelaajaa kohti voi tehd� vihollisesta el�v�mm�n,
-        // mutta vain jos se ei ole hy�kk��m�ss� tai ottamassa vahinkoa.
         if (playerTransform != null && currentState != State.Dead && currentState != State.Hurt && currentState != State.Attacking)
         {
             FlipTowardsPlayer();
+        }
+    }
+
+    // Tämä funktio kutsutaan Animation Eventistä
+    public void AE_SpawnAttack2DustEffect()
+    {
+        if (dustEffectPrefab != null && dustEffectSpawnPoint != null)
+        {
+            // Luo pölyefekti-instanssi määriteltyyn paikkaan ja rotaatioon
+            Instantiate(dustEffectPrefab, dustEffectSpawnPoint.position, dustEffectSpawnPoint.rotation);
+            Debug.Log("Dust effect spawned via Animation Event for Attack2.");
+        }
+        else
+        {
+            if (dustEffectPrefab == null)
+            {
+                Debug.LogWarning("MageSkeletonController: dustEffectPrefab is not assigned in the Inspector!");
+            }
+            if (dustEffectSpawnPoint == null)
+            {
+                Debug.LogWarning("MageSkeletonController: dustEffectSpawnPoint is not assigned in the Inspector! You can create an empty child object for this.");
+            }
         }
     }
 
@@ -71,267 +101,234 @@ public class MageSkeletonController : MonoBehaviour
         if (playerTransform == null)
         {
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-            if (playerObject != null)
-            {
-                playerTransform = playerObject.transform;
-                Debug.Log("Player found.");
-            }
-            else
-            {
-                Debug.LogError("MageSkeletonController: Player object with tag 'Player' not found!", this.gameObject);
-            }
+            if (playerObject != null) playerTransform = playerObject.transform;
+            else Debug.LogError("MageSkeletonController: Player not found!", this.gameObject);
         }
     }
 
     private IEnumerator InitialDelay()
     {
         yield return new WaitForSeconds(initialIdleDelay);
-        if (playerTransform != null) // Tarkistus uudelleen
-        {
-            StartActionLoop();
-        }
+        if (playerTransform != null) StartNewActionCycle();
     }
 
-    void StartActionLoop()
+    // Käynnistää uuden täyden toimintosyklin alusta
+    void StartNewActionCycle()
     {
-        // Debug.Log($"StartActionLoop called. Current State: {currentState}, Animator State: {GetCurrentAnimatorStateName()}");
+        if (currentState == State.Dead) return;
 
-        // Varmista, ettei vanha korutiini j�� py�rim��n, paitsi jos se on jo oikea
         if (currentActionCoroutine != null)
         {
-            // Tarkista onko k�ynniss� jo ActionLoop, jos on, �l� tee mit��n
-            // T�m� vaatisi korutiinin nimen tallentamista tai monimutkaisempaa hallintaa.
-            // Yksinkertaisempi tapa: pys�yt� aina vanha ja aloita uusi.
             StopCoroutine(currentActionCoroutine);
-            currentActionCoroutine = null; // Nollaa viittaus
+            currentActionCoroutine = null;
         }
-
-        currentState = State.IdleDecision; // Aseta aina tila oikein
-        // Ei v�ltt�m�tt� tarvitse trigger�id� Idle� t�ss�, jos paluu Idleen toimii muuten
-        // animator.SetTrigger("Idle");
-
-        currentActionCoroutine = StartCoroutine(ActionLoop());
+        currentState = State.IdleDecision; // Valmis uuteen päätökseen
+        // Varmistetaan Idle-animaatio, jos ei jo ole
+        if (!IsAnimatorInState(hashIdle))
+        {
+            animator.ResetTrigger("Walk"); // Nollaa muut triggerit
+            animator.ResetTrigger("Attack1Prep");
+            animator.ResetTrigger("Attack2");
+            animator.SetTrigger("Idle");
+        }
+        currentActionCoroutine = StartCoroutine(MainBehaviorLoop());
+        Debug.Log("Starting new Action Cycle.");
     }
 
-    private IEnumerator ActionLoop()
+    private IEnumerator MainBehaviorLoop()
     {
-        Debug.Log($"ActionLoop started. Waiting for Idle state and IdleDecision.");
+        // 0. Odotetaan, että ollaan varmasti idlessä ja valmiita
+        yield return new WaitUntil(() => IsAnimatorInState(hashIdle) && currentState == State.IdleDecision);
+        Debug.Log("MainBehaviorLoop: Idle confirmed. Waiting for timeBetweenActions.");
 
-        while (currentState != State.Dead)
+        // 1. Tauko ennen toimintoja
+        yield return new WaitForSeconds(timeBetweenActions);
+
+        if (currentState != State.IdleDecision) // Tarkistus, jos tila muuttui tauon aikana (esim. Hurt)
         {
-            // Odotetaan, ett� animaattori on Idless� JA skriptin tila on IdleDecision
-            yield return new WaitUntil(() => IsAnimatorInState(hashIdle) && currentState == State.IdleDecision);
-            Debug.Log("ActionLoop: Conditions met (Animator Idle, Script IdleDecision). Waiting for timeBetweenActions.");
+            Debug.Log($"MainBehaviorLoop: State changed to {currentState} during timeBetweenActions. Restarting cycle logic if not dead/hurt.");
+            // Jos ei ole Hurt tai Dead, StartNewActionCycle kutsutaan RecoverFromHurtista
+            // Joten tässä ei välttämättä tarvitse tehdä muuta kuin antaa korutiinin päättyä
+            yield break;
+        }
 
-            // Pieni tauko Idless� ennen seuraavaa p��t�st�
-            yield return new WaitForSeconds(timeBetweenActions);
+        if (playerTransform == null)
+        {
+            Debug.Log("MainBehaviorLoop: Player is null. Ending current cycle.");
+            yield break; // Pelaajaa ei ole, lopetetaan tämä sykli (voisi yrittää löytää uudelleen)
+        }
 
-            // Tarkistetaan tila uudelleen tauon j�lkeen (jos otti vahinkoa)
-            if (currentState != State.IdleDecision)
-            {
-                Debug.Log($"ActionLoop: State changed during idle pause ({currentState}). Restarting WaitUntil.");
-                continue; // Aloita WaitUntil alusta
-            }
+        // 2. Liikkumispäätös
+        Vector2 moveDirection;
+        float randomValueForMoveType = Random.value; // Arvo 0.0 ja 1.0 välillä
 
-            // Laske et�isyys pelaajaan
+        if (randomValueForMoveType <= chanceToWalkRandomly) // 25% satunnainen liike
+        {
+            moveDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+            if (moveDirection == Vector2.zero) moveDirection = Vector2.right; // Varmistus ettei ole nollavektori
+            Debug.Log($"MainBehaviorLoop: Decided to walk randomly. Direction: {moveDirection}");
+        }
+        else // 75% pelaajaan reagoiva liike
+        {
             float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-            bool canAttack = Time.time >= lastAttackTime + attackCooldown;
-
-            Debug.Log($"ActionLoop: Deciding action. Distance: {distanceToPlayer}, CanAttack: {canAttack}");
-
-            // --- P��t�ksentekologiikka ---
-            if (distanceToPlayer <= attackRange && canAttack)
+            if (distanceToPlayer < preferredDistanceToPlayer)
             {
-                // Hy�kk�� jos pelaaja on kantamalla ja cooldown on valmis
-                currentState = State.Attacking;
-                int attackChoice = Random.Range(0, 2);
-                if (attackChoice == 0)
-                {
-                    Debug.Log("ActionLoop: Triggering Attack 1");
-                    animator.SetTrigger("Attack1Prep");
-                }
-                else
-                {
-                    Debug.Log("ActionLoop: Triggering Attack 2");
-                    animator.SetTrigger("Attack2");
-                }
-                lastAttackTime = Time.time; // Nollaa cooldown
-                // K�ynnistet��n korutiini valvomaan hy�kk�yksen p��ttymist�
-                currentActionCoroutine = StartCoroutine(MonitorActionCompletion());
-                yield break; // Poistu ActionLoopista, MonitorActionCompletion hoitaa jatkon
-            }
-            else if (distanceToPlayer > desiredStoppingDistance)
-            {
-                // K�vele jos pelaaja on liian kaukana
-                currentState = State.Walking;
-                Debug.Log("ActionLoop: Triggering Walk");
-                animator.SetTrigger("Walk");
-                currentActionCoroutine = StartCoroutine(WalkRoutine());
-                yield break; // Poistu ActionLoopista, WalkRoutine hoitaa jatkon
+                moveDirection = (transform.position - playerTransform.position).normalized; // Poispäin
+                Debug.Log($"MainBehaviorLoop: Player too close ({distanceToPlayer} < {preferredDistanceToPlayer}). Moving away.");
             }
             else
             {
-                // Pelaaja on l�hell�, mutta ei hy�kk�yset�isyydell� TAI cooldown ei ole valmis
-                // Pysy Idless� ja odota seuraavaa p��t�st� (ActionLoop jatkuu)
-                Debug.Log("ActionLoop: Player close but not attacking (range/cooldown). Staying IdleDecision.");
-                // Varmista, ett� animaattori on idless�, jos se ei jo ollut
-                if (!IsAnimatorInState(hashIdle)) animator.SetTrigger("Idle");
-                // Ei yield break, annetaan while-silmukan jatkua ja odottaa seuraavaa kierrosta
-                yield return null; // Odota frame ennen uutta tarkistusta
+                moveDirection = (playerTransform.position - transform.position).normalized; // Kohti
+                Debug.Log($"MainBehaviorLoop: Player far enough ({distanceToPlayer} >= {preferredDistanceToPlayer}). Moving towards.");
             }
         }
-        Debug.Log("ActionLoop ended (likely Dead).");
+
+        // 3. Liikkuminen
+        currentState = State.Walking;
+        animator.SetTrigger("Walk");
+        Debug.Log("MainBehaviorLoop: Starting WalkRoutine.");
+        yield return StartCoroutine(WalkRoutine(moveDirection, shortWalkDistance)); // Odota kävelyn päättymistä
+
+        // WalkRoutine kutsuu MonitorPostWalkActions() lopuksi, jos se päättyy normaalisti
+
     }
 
-    // Korutiini k�velylle - Pys�htyy et�isyyden perusteella
-    private IEnumerator WalkRoutine()
+    private IEnumerator WalkRoutine(Vector2 direction, float distanceToWalk)
     {
-        Debug.Log("WalkRoutine started.");
-        while (currentState == State.Walking) // Poistuttiin ajastimesta
+        Debug.Log($"WalkRoutine started. Direction: {direction}, Distance: {distanceToWalk}");
+        Vector2 startPosition = transform.position;
+        float distanceWalked = 0f;
+
+        while (distanceWalked < distanceToWalk && currentState == State.Walking)
         {
             if (playerTransform == null) { yield break; } // Lopeta jos pelaaja katoaa
 
-            float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-
-            // Jos ollaan tarpeeksi l�hell�, lopeta k�vely
-            if (distanceToPlayer <= desiredStoppingDistance)
-            {
-                Debug.Log("WalkRoutine: Reached desired stopping distance.");
-                break; // Poistu while-silmukasta
-            }
-
-            // Liiku ja k��nny
-            Vector2 direction = (playerTransform.position - transform.position).normalized;
-            MoveTowards(direction);
-            // K��ntyminen hoidetaan nyt Updatessa
-            // FlipTowards(direction); // Tai voit pit�� sen t�ss�kin
-
-            yield return null; // Odota seuraavaa framea
+            transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + direction, moveSpeed * Time.deltaTime);
+            distanceWalked = Vector2.Distance(startPosition, transform.position);
+            yield return null;
         }
 
-        // K�velyn lopetus (joko et�isyyden tai keskeytyksen vuoksi)
-        if (currentState == State.Walking) // Vain jos k�vely loppui normaalisti
+        if (currentState == State.Walking) // Jos kävely päättyi normaalisti (ei keskeytynyt Hurtiin)
         {
-            Debug.Log("WalkRoutine finished, returning to Idle decision.");
-            animator.ResetTrigger("Walk"); // Varmista ettei j�� p��lle
-            animator.SetTrigger("Idle");
-            currentState = State.IdleDecision;
-            StartActionLoop(); // K�ynnist� p��t�ksenteko uudelleen
+            Debug.Log("WalkRoutine finished. Resetting Walk trigger.");
+            animator.ResetTrigger("Walk"); // Nollaa triggeri, jotta Idle-siirtymä voi tapahtua
+            animator.SetTrigger("Idle");   // Varmista paluu Idleen (Animator Controllerin siirtymä Walk->Idle pitäisi hoitaa tämä)
+
+            // Odotetaan hetki, että animaattori ehtii varmasti Idleen
+            yield return new WaitUntil(() => IsAnimatorInState(hashIdle));
+            Debug.Log("WalkRoutine: Animator confirmed Idle. Starting MonitorPostWalkActions.");
+
+            // Siirretään päätöksenteko kävelyn jälkeen omaan korutiiniin
+            currentActionCoroutine = StartCoroutine(MonitorPostWalkActions());
         }
         else
         {
             Debug.Log($"WalkRoutine interrupted. Current state: {currentState}");
+            // Jos Hurt/Dead, niiden logiikka hoitaa jatkon.
         }
     }
 
-    // UUSI Korutiini: Valvoo hy�kk�yksen p��ttymist� (Animatorin paluuta Idleen)
-    private IEnumerator MonitorActionCompletion()
+    // Korutiini kävelyn jälkeisille päätöksille
+    private IEnumerator MonitorPostWalkActions()
     {
-        Debug.Log("MonitorActionCompletion: Waiting for attack animation to return to Idle state...");
-
-        // Odota kunnes animaattori EI ole en�� hy�kk�ysanimaatioissa JA on palannut Idleen
-        // T�m� vaatii tarkempaa tietoa hy�kk�ysanimaatioiden nimist�/hasheista.
-        // Yksinkertaistettu versio: Odota kunnes ollaan Idless�.
-        yield return new WaitUntil(() => IsAnimatorInState(hashIdle) || currentState == State.Hurt || currentState == State.Dead);
-
-
-        // Pieni lis�varmistus, ett� ollaan varmasti Idless� eik� juuri siirtym�ss�
-        //yield return new WaitForSeconds(0.1f); // Valinnainen pieni viive
-
-        if (currentState != State.Dead && currentState != State.Hurt)
+        Debug.Log("MonitorPostWalkActions: Deciding action after walk.");
+        // Varmistetaan, että ollaan edelleen valmiita päätökseen
+        if (currentState != State.Walking && currentState != State.IdleDecision) // Tila on voinut muuttua
         {
-            // Varmistetaan uudelleen tila, jos se ei ole muuttunut
-            if (currentState == State.Attacking || IsAnimatorInState(hashIdle)) // Joskus tila voi olla viel� Attacking vaikka animaattori on jo Idless�
+            // Jos tila on Walking, se tarkoittaa että WalkRoutine ei asettanut sitä oikein.
+            // IdleDecision on ok tila tässä.
+            if (currentState == State.Walking) currentState = State.IdleDecision; // Korjataan tila
+            else
             {
-                Debug.Log("MonitorActionCompletion: Action presumed complete (Animator Idle or state not Hurt/Dead). Restarting Action Loop.");
-                currentState = State.IdleDecision; // Aseta tila OIKEIN
-                StartActionLoop();
+                Debug.Log($"MonitorPostWalkActions: State is {currentState}, not suitable for post-walk decision. Ending.");
+                yield break; // Jokin muu on ottanut kontrollin (Hurt, Dead)
+            }
+        }
+        currentState = State.IdleDecision; // Varmistetaan tila
+
+        float randomValueForAttack = Random.value;
+        bool canAttackNow = Time.time >= lastAttackTime + attackCooldown;
+
+        if (randomValueForAttack <= chanceToAttackAfterWalk && canAttackNow) // 75% hyökkäys
+        {
+            currentState = State.Attacking;
+            int attackChoice = Random.Range(0, 2);
+            if (attackChoice == 0) animator.SetTrigger("Attack1Prep");
+            else animator.SetTrigger("Attack2");
+            lastAttackTime = Time.time;
+            Debug.Log($"MonitorPostWalkActions: Decided to Attack {(attackChoice == 0 ? "1" : "2")}.");
+
+            // Odota hyökkäyksen valmistumista (Animatorin paluuta Idleen)
+            yield return new WaitUntil(() => IsAnimatorInState(hashIdle) || currentState == State.Hurt || currentState == State.Dead);
+
+            Debug.Log("MonitorPostWalkActions: Attack finished (or interrupted). Starting new action cycle.");
+            StartNewActionCycle(); // Aloita koko sykli alusta hyökkäyksen jälkeen
+        }
+        else // 25% uusi liike (tai hyökkäys cooldownilla)
+        {
+            if (!canAttackNow && randomValueForAttack <= chanceToAttackAfterWalk)
+            {
+                Debug.Log("MonitorPostWalkActions: Wanted to attack, but on cooldown. Starting new action cycle (will move).");
             }
             else
             {
-                Debug.Log($"MonitorActionCompletion: State changed unexpectedly during monitoring ({currentState}). Letting other logic handle.");
+                Debug.Log("MonitorPostWalkActions: Attack chance failed (25%). Starting new action cycle (will move).");
             }
-
-        }
-        else
-        {
-            Debug.Log($"MonitorActionCompletion: Interrupted by Hurt/Dead. State: {currentState}");
-            // Hurt/Death logiikka hoitaa jo uudelleenk�ynnistyksen tai lopetuksen
+            StartNewActionCycle(); // Aloita koko sykli alusta (johtaa uuteen liikkumiseen)
         }
     }
 
 
-    private void MoveTowards(Vector2 direction)
-    {
-        if (currentState != State.Walking) return;
-        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
-    }
-
-    // K��ntymisfunktio, jota Update voi kutsua
     private void FlipTowardsPlayer()
     {
         if (playerTransform == null || currentState == State.Dead) return;
-        float playerDirectionX = playerTransform.position.x - transform.position.x;
-        if (playerDirectionX > 0.1f && !isFacingRight)
+        Vector2 directionToPlayer = playerTransform.position - transform.position;
+        if (directionToPlayer.x > 0.01f && !isFacingRight)
         {
-            // Katso oikealle
             isFacingRight = true;
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
-        else if (playerDirectionX < -0.1f && isFacingRight)
+        else if (directionToPlayer.x < -0.01f && isFacingRight)
         {
-            // Katso vasemmalle
             isFacingRight = false;
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
     }
 
-    // --- Vahinko ja Kuolema (ennallaan, mutta tarkista StartActionLoop kutsu RecoverFromHurt:ssa) ---
     public void TakeDamage(int damage)
     {
         if (currentState == State.Dead) return;
-
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health: {currentHealth}");
-
-        // Pys�ytet��n nykyinen toimintokorutiini
         if (currentActionCoroutine != null)
         {
             StopCoroutine(currentActionCoroutine);
             currentActionCoroutine = null;
         }
 
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        if (currentHealth <= 0) Die();
         else
         {
             currentState = State.Hurt;
             animator.SetTrigger("Hurt");
-            Debug.Log("Triggering Hurt");
-            // K�ynnistet��n toipuminen
             currentActionCoroutine = StartCoroutine(RecoverFromHurt());
         }
     }
 
     private IEnumerator RecoverFromHurt()
     {
-        Debug.Log("RecoverFromHurt: Waiting for Hurt animation...");
-        // Odotetaan kunnes Hurt-animaatio on ohi JA ollaan palattu Idleen
-        // T�m� vaatii ett� Hurt -> Idle siirtym�ll� on Has Exit Time p��ll�
+        Debug.Log("RecoverFromHurt: Waiting for Hurt animation to return to Idle...");
+        // Odota kunnes animaattori on palannut Idleen TAI vihollinen kuolee
         yield return new WaitUntil(() => IsAnimatorInState(hashIdle) || currentState == State.Dead);
 
         if (currentState != State.Dead)
         {
-            Debug.Log("Recovered from Hurt, restarting Action Loop.");
-            // Ei tarvitse asettaa currentState = State.IdleDecision t�ss�,
-            // koska StartActionLoop tekee sen.
-            StartActionLoop();
+            Debug.Log("Recovered from Hurt, starting new action cycle.");
+            StartNewActionCycle(); // Aloita koko sykli alusta
         }
         else
         {
-            Debug.Log("RecoverFromHurt: Died during hurt recovery.");
+            Debug.Log("Died during Hurt recovery.");
         }
     }
 
@@ -342,52 +339,19 @@ public class MageSkeletonController : MonoBehaviour
             StopCoroutine(currentActionCoroutine);
             currentActionCoroutine = null;
         }
-        StopAllCoroutines(); // Varmuuden vuoksi
-
+        StopAllCoroutines();
         Debug.Log("Triggering Death");
         currentState = State.Dead;
-        // Varmista ettei mik��n triggeri j�� p��lle
-        animator.ResetTrigger("Walk");
-        animator.ResetTrigger("Attack1Prep");
-        animator.ResetTrigger("Attack2");
-        animator.ResetTrigger("Hurt");
+        animator.ResetTrigger("Walk"); animator.ResetTrigger("Attack1Prep"); animator.ResetTrigger("Attack2"); animator.ResetTrigger("Hurt");
         animator.SetTrigger("Death");
-
         GetComponent<Collider2D>().enabled = false;
-        if (GetComponent<Rigidbody2D>() != null)
-        {
-            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero; // Pys�yt� liike jos k�yt�t rigidbodya
-            GetComponent<Rigidbody2D>().simulated = false;
-        }
+        if (GetComponent<Rigidbody2D>() != null) { GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero; GetComponent<Rigidbody2D>().simulated = false; }
         Destroy(gameObject, 3f);
     }
 
     private bool IsAnimatorInState(int stateHash)
     {
-        // Lis�t��n tarkistus, onko animaattori edes aktiivinen/initialisoitu
-        if (animator == null || !animator.isInitialized || !animator.gameObject.activeInHierarchy)
-        {
-            // Debug.LogWarning("IsAnimatorInState check failed: Animator not ready or inactive.");
-            return false;
-        }
-        // Varmista ett� k�yt�t oikeaa layer indexi� (yleens� 0)
+        if (animator == null || !animator.isInitialized || !animator.gameObject.activeInHierarchy) return false;
         return animator.GetCurrentAnimatorStateInfo(0).shortNameHash == stateHash;
-    }
-
-    // Apufunktio debuggaukseen (valinnainen)
-    string GetCurrentAnimatorStateName()
-    {
-        if (animator == null || !animator.isInitialized || !animator.gameObject.activeInHierarchy) return "Animator_Not_Ready";
-        var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        // T�m� vaatii, ett� tied�t animaatioiden nimet tarkasti
-        if (stateInfo.IsName("Idle")) return "Idle";
-        if (stateInfo.IsName("Walk")) return "Walk";
-        if (stateInfo.IsName("Attack1_prep")) return "Attack1_prep";
-        if (stateInfo.IsName("Attack1Stage2")) return "Attack1Stage2";
-        if (stateInfo.IsName("Attack1FinalStage")) return "Attack1FinalStage";
-        if (stateInfo.IsName("Attack2")) return "Attack2";
-        if (stateInfo.IsName("Hurt")) return "Hurt";
-        if (stateInfo.IsName("Death")) return "Death";
-        return "Unknown_" + stateInfo.shortNameHash;
     }
 }
