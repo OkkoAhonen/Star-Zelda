@@ -1,64 +1,66 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
+
+[System.Serializable]
+public struct SliderSetting
+{
+    public string key;          // e.g. "MasterVolume", "MouseSpeed"
+    public Slider slider;
+    public TMP_Text value;        // shows the formatted value
+    public float minValue;
+    public float maxValue;
+    public bool isPercentage;
+}
 
 public class MenuManager : MonoBehaviour
 {
-    // ----- Configuration -----
     [Header("Scenes")]
     [SerializeField] private string mainMenuSceneName = "MainMenu";
     [SerializeField] private string defaultPlayScene = "Game";
 
-    [Header("Animation Control")]
-    [SerializeField] private bool animateMenus = true;
-
-    // ----- Panels -----
-    [Header("Panels (assign in MainMenu scene)")]
+    [Header("Panels (MainMenu scene)")]
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private GameObject settingsMenuPanel;
 
-    // ----- Settings Controls -----
-    [Header("Game Settings UI")]
-    [SerializeField] private Slider mouseSpeedSlider;
-    [SerializeField] private Slider pointerSizeSlider;
+    [Header("Pointer Icon List")]
+    [SerializeField] private Button pointerIconToggle;
+    [SerializeField] private GameObject pointerIconList;
     [SerializeField] private Image pointerIconPreview;
-    [SerializeField] private TMP_Dropdown pointerIconDropdown;
 
-    [SerializeField] private Slider masterVolumeSlider;
-    [SerializeField] private Slider sfxVolumeSlider;
-    [SerializeField] private Slider musicVolumeSlider;
-
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
-    [SerializeField] private Toggle fullscreenToggle;
+    [Header("Resolution List")]
+    [SerializeField] private Button resolutionToggle;
+    [SerializeField] private GameObject resolutionOptionList;
+    [SerializeField] private TMP_Text resolutionLabel;
     [SerializeField] private Button applyResolutionButton;
+    [SerializeField] private Toggle fullscreenToggle;
 
-    [SerializeField] private Slider screenShakeSlider;
+    [Header("Sliders")]
+    [SerializeField] private SliderSetting[] sliderSettings;
 
-    // ----- Fade -----
     [Header("Fade Transition")]
     [SerializeField] private Image fadePanel;
     [SerializeField] private float fadeSpeed = 2f;
     private readonly Vector2 fadeStart = new Vector2(-1920f, 0f);
     private readonly Vector2 fadeEnd = Vector2.zero;
 
-    // ----- State -----
     private bool isPaused = false;
     private string lastNonMenuScene = null;
     private Resolution[] availableResolutions;
-    private int currentResolutionIndex;
+    private int selectedResolutionIndex = 0;
 
     private void Awake()
     {
-        // remember last scene
+        // remember last non-menu scene
         string current = SceneManager.GetActiveScene().name;
         if (current != mainMenuSceneName)
             lastNonMenuScene = current;
 
-        // fade panel
+        // prepare fade panel
         if (fadePanel != null)
         {
             RectTransform rt = fadePanel.rectTransform;
@@ -66,87 +68,113 @@ public class MenuManager : MonoBehaviour
             fadePanel.color = Color.black;
         }
 
-        // panel visibility
-        if (mainMenuPanel != null)
-            mainMenuPanel.SetActive(current == mainMenuSceneName);
-        if (pauseMenuPanel != null)
-            pauseMenuPanel.SetActive(false);
-        if (settingsMenuPanel != null)
-            settingsMenuPanel.SetActive(false);
+        // panels visibility
+        if (mainMenuPanel != null) mainMenuPanel.SetActive(current == mainMenuSceneName);
+        if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
+        if (settingsMenuPanel != null) settingsMenuPanel.SetActive(false);
 
-        // init settings UI
         InitSettingsUI();
 
-        // skip animations
-        if (!animateMenus)
-        {
-            MenuAnimation ma = FindFirstObjectByType<MenuAnimation>();
-            if (ma != null) ma.SkipMenuAnimations();
-        }
+        // skip animations if disabled
+        if (FindFirstObjectByType<MenuAnimation>() is MenuAnimation ma && !ma.enabled)
+            ma.SkipMenuAnimations();
     }
 
     private void InitSettingsUI()
     {
-        // mouse settings
-        mouseSpeedSlider.onValueChanged.AddListener(MousePointerManager.Instance.SetSpeed);
-        pointerSizeSlider.onValueChanged.AddListener(MousePointerManager.Instance.SetSize);
-        pointerIconDropdown.onValueChanged.AddListener(OnPointerIconChanged);
+        // sliders
+        for (int i = 0; i < sliderSettings.Length; i++)
+        {
+            var ss = sliderSettings[i];
+            ss.slider.minValue = 0f;
+            ss.slider.maxValue = 1f;
+            float saved = PlayerPrefs.GetFloat(ss.key, 1f);
+            ss.slider.value = saved;
+            ss.value.text = FormatValue(ss, saved);
+            ss.slider.onValueChanged.AddListener(norm =>
+            {
+                ss.value.text = FormatValue(ss, norm);
+                PlayerPrefs.SetFloat(ss.key, norm);
+            });
+        }
 
-        // audio settings
-        masterVolumeSlider.onValueChanged.AddListener(value => AudioListener.volume = value);
-        sfxVolumeSlider.onValueChanged.AddListener(value => PlayerPrefs.SetFloat("SFXVolume", value));
-        musicVolumeSlider.onValueChanged.AddListener(value => PlayerPrefs.SetFloat("MusicVolume", value));
+        // pointer-icon toggle
+        pointerIconToggle.onClick.AddListener(() =>
+            pointerIconList.SetActive(!pointerIconList.activeSelf)
+        );
 
-        // resolution
+        // resolution toggle
+        resolutionToggle.onClick.AddListener(() =>
+            resolutionOptionList.SetActive(!resolutionOptionList.activeSelf)
+        );
+
+        // fullscreen
+        fullscreenToggle.onValueChanged.AddListener(isFull =>
+            Screen.fullScreen = isFull
+        );
+
+        // gather resolutions & set label
         availableResolutions = Screen.resolutions;
-        List<string> options = new List<string>();
         for (int i = 0; i < availableResolutions.Length; i++)
         {
-            string opt = availableResolutions[i].width + " x " + availableResolutions[i].height;
-            options.Add(opt);
-            if (availableResolutions[i].width == Screen.currentResolution.width &&
-                availableResolutions[i].height == Screen.currentResolution.height)
-                currentResolutionIndex = i;
+            var r = availableResolutions[i];
+            if (r.width == Screen.currentResolution.width &&
+                r.height == Screen.currentResolution.height)
+            {
+                selectedResolutionIndex = i;
+                break;
+            }
         }
-        resolutionDropdown.ClearOptions();
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        var cur = availableResolutions[selectedResolutionIndex];
+        resolutionLabel.text = $"{cur.width} x {cur.height}";
         applyResolutionButton.onClick.AddListener(ApplyResolution);
-
-        fullscreenToggle.onValueChanged.AddListener(isFull => Screen.fullScreen = isFull);
-
-        // screen shake
-        screenShakeSlider.onValueChanged.AddListener(value => PlayerPrefs.SetFloat("ScreenShake", value));
     }
 
-    private void OnPointerIconChanged(int idx)
+    private string FormatValue(SliderSetting ss, float normalized)
+    {
+        float actual = Mathf.Lerp(ss.minValue, ss.maxValue, normalized);
+        if (ss.isPercentage)
+        {
+            return Mathf.RoundToInt(actual * 100f) + "%";
+        }
+        return actual.ToString("0.##");
+    }
+
+    public void OnPointerIconSelected(int idx)
     {
         Sprite icon = MousePointerManager.Instance.GetIcon(idx);
         pointerIconPreview.sprite = icon;
+        pointerIconList.SetActive(false);
         MousePointerManager.Instance.SetIcon(idx);
+        PlayerPrefs.SetInt("PointerIcon", idx);
     }
 
-    // ----- Main Menu Buttons -----
-    public void StartGame()
+    // called by each button under resolutionOptionList
+    public void OnResolutionChosen(int idx)
     {
-        StartCoroutine(FadeAndLoadScene(defaultPlayScene));
+        selectedResolutionIndex = idx;
+        Resolution r = availableResolutions[idx];
+        resolutionLabel.text = $"{r.width} x {r.height}";
+        resolutionOptionList.SetActive(false);
+        PlayerPrefs.SetInt("ResolutionIndex", idx);
     }
+
+    public void ApplyResolution()
+    {
+        var r = availableResolutions[selectedResolutionIndex];
+        Screen.SetResolution(r.width, r.height, fullscreenToggle.isOn);
+    }
+
+    public void StartGame()
+        => StartCoroutine(FadeAndLoadScene(defaultPlayScene));
 
     public void ContinueGame()
-    {
-        if (!string.IsNullOrEmpty(lastNonMenuScene))
-            StartCoroutine(FadeAndLoadScene(lastNonMenuScene));
-        else StartGame();
-    }
+        => StartCoroutine(FadeAndLoadScene(
+            lastNonMenuScene ?? defaultPlayScene));
 
     public void ToggleSettings()
-    {
-        if (settingsMenuPanel != null)
-            settingsMenuPanel.SetActive(!settingsMenuPanel.activeSelf);
-    }
+        => settingsMenuPanel.SetActive(!settingsMenuPanel.activeSelf);
 
-    // ----- Pause Menu -----
     public void PauseGame()
     {
         isPaused = true;
@@ -176,14 +204,6 @@ public class MenuManager : MonoBehaviour
 #endif
     }
 
-    private void ApplyResolution()
-    {
-        int idx = resolutionDropdown.value;
-        Resolution res = availableResolutions[idx];
-        Screen.SetResolution(res.width, res.height, fullscreenToggle.isOn);
-    }
-
-    // ----- Fade & Load -----
     private IEnumerator FadeAndLoadScene(string scene)
     {
         if (scene != mainMenuSceneName)
@@ -192,7 +212,7 @@ public class MenuManager : MonoBehaviour
         if (fadePanel != null)
         {
             float t = 0f;
-            RectTransform rt = fadePanel.rectTransform;
+            var rt = fadePanel.rectTransform;
             while (t < 1f)
             {
                 t += Time.deltaTime * fadeSpeed;
@@ -201,6 +221,7 @@ public class MenuManager : MonoBehaviour
             }
             rt.anchoredPosition = fadeEnd;
         }
+
         SceneManager.LoadScene(scene);
     }
 }

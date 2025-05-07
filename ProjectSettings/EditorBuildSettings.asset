@@ -14,4 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo2/Okon kokeilu Scene.unity
     guid: 0e81a1df5509dd04e9f8e07ecd84d49f
+  - enabled: 1
+    path: Assets/Scenes/Muut/ElmonTesti.unity
+    guid: 26e56ffa05e588247a1b3d8b6632cd3d
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
