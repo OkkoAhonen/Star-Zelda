@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8229086381964974292}
   - component: {fileID: 8229086381964974293}
   - component: {fileID: 8229086381964974294}
+  - component: {fileID: 2852013037043870533}
   m_Layer: 0
   m_Name: MageSkeleton-atk2FX
   m_TagString: Untagged
@@ -110,3 +111,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2852013037043870533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8229086381964974295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda7cfe68a8152c488699c7d089d150e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 0.5
