@@ -98,16 +98,19 @@ public class PlayerAttackMelee : MonoBehaviour
         foreach (Collider2D enemyGameobje in enemy)
         {
 
-            EnemyController enemyhealth = enemyGameobje.GetComponent<EnemyController>();
-            Debug.Log(enemyhealth.gameObject.name + "Moi");
+            MageSkeletonController mageController = enemyGameobje.GetComponent<MageSkeletonController>();
+            //EnemyController enemyhealth = enemyGameobje.GetComponent<EnemyController>();
+            //Debug.Log(enemyhealth.gameObject.name + "Moi");
             Vector2 direction = (enemyGameobje.transform.position - transform.position).normalized;
 
             AttackAudio();
 
             StartCoroutine(Freeze());
             
-            AudioManager.instance.PlaySFX("Attack1");
-            enemyhealth.TakeDamage(equippedItem.attackDamage  /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/, direction, 2f);
+           // AudioManager.instance.PlaySFX("Attack1");
+
+            mageController.TakeDamage(5);
+            //enemyhealth.TakeDamage(equippedItem.attackDamage  /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/, direction, 2f);
 
         }
 
