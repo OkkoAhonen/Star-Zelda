@@ -4,42 +4,50 @@ using System.Collections;
 [RequireComponent(typeof(CircleCollider2D))]
 public class CrystalProjectile : MonoBehaviour
 {
-    [Tooltip("Damage dealt to the player")]
+    [Tooltip("Damage dealt if the player touches it")]
     [SerializeField] private int damage = 10;
-    [Tooltip("Time until the crystal hits the ground (seconds)")]
-    [SerializeField] private float groundDelay = 1f;
-    [Tooltip("Time collider remains active after landing")]
+    [Tooltip("How long collider stays active after landing")]
     [SerializeField] private float lifeAfterLanding = 0.5f;
+    [Tooltip("Health of the crystal; breaks if ? 0")]
+    [SerializeField] private float crystalHealth = 15f;
 
-    private CircleCollider2D col2d;
+    private CircleCollider2D col;
 
-    void Awake()
+    private void Awake()
     {
-        col2d = GetComponent<CircleCollider2D>();
-        col2d.enabled = false;
+        col = GetComponent<CircleCollider2D>();
+        col.isTrigger = false;
+        col.enabled = false;
     }
 
-    void Start()
+    // Called by your “Land” animation event
+    public void EnableCollider()
     {
-        StartCoroutine(Lifecycle());
+        col.enabled = true;
+        StartCoroutine(DestroyAfter(lifeAfterLanding));
     }
 
-    private IEnumerator Lifecycle()
+    private IEnumerator DestroyAfter(float delay)
     {
-        // fall from roof
-        yield return new WaitForSeconds(groundDelay);
-
-        // enable damage collider
-        col2d.enabled = true;
-
-        // wait a bit then disappear
-        yield return new WaitForSeconds(lifeAfterLanding);
+        yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    // Called by your “Break” animation event or when health ? 0
+    public void BreakCrystal()
     {
-        if (other.CompareTag("Player"))
+        Destroy(gameObject);
+    }
+
+    public void TakeDamage(float amt)
+    {
+        crystalHealth -= amt;
+        if (crystalHealth <= 0f) BreakCrystal();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Player"))
         {
             PlayerStatsManager.instance.TakeDamage(damage);
         }
