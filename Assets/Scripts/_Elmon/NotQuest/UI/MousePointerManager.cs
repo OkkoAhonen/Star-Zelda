@@ -6,7 +6,7 @@ public class MousePointerManager : MonoBehaviour
 
     [SerializeField] private float defaultSpeed = 1f;
     [SerializeField] private float defaultSize = 1f;
-    [SerializeField] private Sprite[] pointerIcons;
+    [SerializeField] public Sprite[] pointerIcons;
 
     private CursorMode cursorMode = CursorMode.Auto;
     private Vector2 hotspot = Vector2.zero;
