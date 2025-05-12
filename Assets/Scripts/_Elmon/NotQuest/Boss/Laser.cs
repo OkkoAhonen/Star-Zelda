@@ -16,7 +16,6 @@ public class Laser : MonoBehaviour
 
     // Masks set by AI
     private LayerMask hitMask;
-    private LayerMask damageMask;
 
     public float impactOffset = 0.05f;
     private float maxLaserLength = 15f;
@@ -24,23 +23,9 @@ public class Laser : MonoBehaviour
     private bool isFiring = false;
     [SerializeField] private int laserDamage;
 
-    public void SetMasks(LayerMask hitMask, LayerMask damageMask)
-    {
-        this.hitMask = hitMask;
-        this.damageMask = damageMask;
-
-        int laserLayer = laserObject.gameObject.layer;
-        for (int i = 0; i < 32; i++)
-        {
-            if (((1 << i) & damageMask) == 0)
-            Physics2D.IgnoreLayerCollision(laserLayer, i, true);
-        }
-    }
-
-    public LayerMask HitMask => hitMask;
-
     private void Awake()
     {
+        hitMask = StaticValueManager.HitMask;
         laserRenderer = laserObject.GetComponent<SpriteRenderer>();
         laserAnimator = laserObject.GetComponent<Animator>();
         laserCollider = laserObject.GetComponent<BoxCollider2D>();

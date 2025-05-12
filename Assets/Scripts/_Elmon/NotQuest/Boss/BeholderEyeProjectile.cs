@@ -28,17 +28,17 @@ public class BeholderEyeProjectile : MonoBehaviour
     private bool hasHit = false;
 
     /// Call this immediately after Instantiate.
-    public void Initialize(Vector2 dir, LayerMask hitMask, LayerMask damageMask, int damage, float lifespan = 5f)
+    public void Initialize(Vector2 dir, int damage, float lifespan = 5f)
     {
         this.direction = dir.normalized;
-        this.hitMask = hitMask;
-        this.damageMask = damageMask;
         this.eyeDamage = damage;
         this.eyeLifespan = lifespan;
     }
 
     private void Awake()
     {
+        hitMask = StaticValueManager.HitMask;
+        damageMask = StaticValueManager.DamageNonEnemiesMask;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
