@@ -274,7 +274,8 @@ public class PlayerStatsManager : MonoBehaviour
 	public void TakeDamage(int amount)
 	{
 		CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
-		Debug.Log("Player took " + amount + " damage. Health: " + CurrentHealth + "/" + MaxHealth);
+        GameEventsManager.instance.playerEvents.HealthChangeTo(CurrentHealth, MaxHealth);
+        Debug.Log("Player took " + amount + " damage. Health: " + CurrentHealth + "/" + MaxHealth);
 	}
 
 	public void Heal(int amount)

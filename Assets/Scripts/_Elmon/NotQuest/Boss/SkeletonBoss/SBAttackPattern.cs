@@ -4,9 +4,9 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName = "Boss/SBAttack Pattern")]
 public class SBAttackPattern : ScriptableObject
 {
-    // For your reference in the inspector
     public string patternName;
+    public float speedMultiplier = 1f;
 
-    // Sequence of steps this pattern will execute
+    // sequence of steps
     public List<SBPatternStep> steps = new List<SBPatternStep>();
 }
