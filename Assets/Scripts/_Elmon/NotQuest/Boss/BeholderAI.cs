@@ -34,8 +34,8 @@ public class BeholderAI : MonoBehaviour
     public int movements = 2;
 
     [Header("Masks & Settings")]
-    public LayerMask hitMask;
-    public LayerMask damageMask;
+    private LayerMask hitMask;
+    private LayerMask damageMask;
 
     [Header("References")]
     public Transform player;
@@ -55,6 +55,8 @@ public class BeholderAI : MonoBehaviour
 
     private void Start()
     {
+        hitMask = StaticValueManager.HitMask;
+        damageMask = StaticValueManager.DamageNonEnemiesMask;
         bossAnimation = GetComponent<BeholderAnimation>();
         bossBase = GetComponent<BossBase>();
         laserHolder = bossAnimation.laserHolder;
@@ -63,9 +65,6 @@ public class BeholderAI : MonoBehaviour
             player = GameObject.FindWithTag("Player").transform;
         if (playerOffset == null)
             playerOffset = player.Find("playerOffset");
-
-            bossAnimation.laser.SetMasks(hitMask, damageMask);
-        bossAnimation.SetHitMask(hitMask);
 
         currentState = AIState.Waiting;
         stateTimer = waitTime;
@@ -223,8 +222,6 @@ public class BeholderAI : MonoBehaviour
         BeholderEyeProjectile proj = eye.GetComponent<BeholderEyeProjectile>();
         proj.Initialize(
             direction,
-            hitMask: hitMask,
-            damageMask: damageMask,
             damage: eyeDamage,
             lifespan: eyeLifespan
         );

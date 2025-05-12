@@ -42,7 +42,7 @@ public class SkeletonBossAI : MonoBehaviour
     [Header("Initial Appearance")]
     [SerializeField] private Sprite initialSprite;
 
-    private float health;
+    [SerializeField] private float health;
     private float currentHealthDiffMult;
 
     private Animator animator;

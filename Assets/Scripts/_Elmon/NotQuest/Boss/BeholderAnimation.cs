@@ -51,6 +51,7 @@ public class BeholderAnimation : MonoBehaviour
 
     private void Awake()
     {
+        hitMask = StaticValueManager.HitMask;
         // Physics?driven bounces
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Dynamic;
@@ -63,9 +64,6 @@ public class BeholderAnimation : MonoBehaviour
     {
         bossSortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
         laserHolder.gameObject.SetActive(true);
-
-        // grab hitMask from laser
-        hitMask = laser.HitMask;
     }
 
     private void FixedUpdate()
@@ -80,11 +78,6 @@ public class BeholderAnimation : MonoBehaviour
         }
         if (isSpinning)
             RotateAndAnimateLaser();
-    }
-
-    public void SetHitMask(LayerMask mask)
-    {
-        hitMask = mask;
     }
 
     public void SetCurrentAttack(int attack)
