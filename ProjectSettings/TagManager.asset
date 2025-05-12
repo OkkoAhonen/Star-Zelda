@@ -10,6 +10,7 @@ TagManager:
   - InventoryManager
   - Shop
   - Enemies
+  - Boss
   layers:
   - Default
   - TransparentFX

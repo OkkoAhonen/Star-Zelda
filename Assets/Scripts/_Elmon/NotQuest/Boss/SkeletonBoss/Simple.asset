@@ -13,46 +13,104 @@ MonoBehaviour:
   m_Name: Simple
   m_EditorClassIdentifier: 
   patternName: Simple
+  speedMultiplier: 1
   steps:
   - stepType: 0
+    speedMultiplier: 1
+    approachRandomOffset: 0
+    combo: 0
     staggerWhileWalking: 1
     staggerDamageThreshold: 20
     staggerSkipAttacks: 2
     attack3Duration: 0
+    crystalSpawnRate: 3
+    crystalHealth: 15
     idleDuration: 0
-  - stepType: 1
+  - stepType: 3
+    speedMultiplier: 0
+    approachRandomOffset: 0
+    combo: 0
     staggerWhileWalking: 0
     staggerDamageThreshold: 0
     staggerSkipAttacks: 2
     attack3Duration: 0
+    crystalSpawnRate: 3
+    crystalHealth: 15
     idleDuration: 0
   - stepType: 0
+    speedMultiplier: 1
+    approachRandomOffset: 0
+    combo: 0
     staggerWhileWalking: 1
     staggerDamageThreshold: 20
     staggerSkipAttacks: 2
     attack3Duration: 0
+    crystalSpawnRate: 3
+    crystalHealth: 15
     idleDuration: 0
-  - stepType: 1
+  - stepType: 3
+    speedMultiplier: 1
+    approachRandomOffset: 0
+    combo: 0
     staggerWhileWalking: 1
     staggerDamageThreshold: 20
     staggerSkipAttacks: 1
     attack3Duration: 0
+    crystalSpawnRate: 3
+    crystalHealth: 15
     idleDuration: 0
-  - stepType: 3
+  - stepType: 0
+    speedMultiplier: 1
+    approachRandomOffset: 0
+    combo: 0
     staggerWhileWalking: 1
     staggerDamageThreshold: 10
     staggerSkipAttacks: 0
     attack3Duration: 0
+    crystalSpawnRate: 3
+    crystalHealth: 15
     idleDuration: 0
-  - stepType: 4
+  - stepType: 3
+    speedMultiplier: 1
+    approachRandomOffset: 0
+    combo: 1
     staggerWhileWalking: 0
     staggerDamageThreshold: 0
     staggerSkipAttacks: 0
-    attack3Duration: 6
+    attack3Duration: 5
+    crystalSpawnRate: 8
+    crystalHealth: 15
     idleDuration: 0
-  - stepType: 5
+  - stepType: 1
+    speedMultiplier: 1
+    approachRandomOffset: 0
+    combo: 0
     staggerWhileWalking: 0
     staggerDamageThreshold: 0
     staggerSkipAttacks: 0
     attack3Duration: 0
+    crystalSpawnRate: 3
+    crystalHealth: 15
+    idleDuration: 3
+  - stepType: 4
+    speedMultiplier: 1
+    approachRandomOffset: 0
+    combo: 0
+    staggerWhileWalking: 0
+    staggerDamageThreshold: 0
+    staggerSkipAttacks: 0
+    attack3Duration: 4
+    crystalSpawnRate: 8
+    crystalHealth: 15
+    idleDuration: 3
+  - stepType: 5
+    speedMultiplier: 1
+    approachRandomOffset: 0
+    combo: 0
+    staggerWhileWalking: 0
+    staggerDamageThreshold: 0
+    staggerSkipAttacks: 0
+    attack3Duration: 5
+    crystalSpawnRate: 8
+    crystalHealth: 15
     idleDuration: 3

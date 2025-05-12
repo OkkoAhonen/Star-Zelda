@@ -6,27 +6,35 @@ public class SBPatternStep
     public enum StepType
     {
         WalkToPlayer,
-        Attack1,
-        ComboAttack2,
         WalkToCenter,
+        RandomSpot,               // new: pick a random point in the arena
+        Attack1,
         Attack3,
         Idle
     }
 
     public StepType stepType;
 
-    [Header("Walk Settings (for WalkToPlayer / WalkToCenter)")]
+    [Header("Movement")]
+    // per-step speed multiplier (default 1)
+    public float speedMultiplier = 1f;
+
+    [Header("Walk ? Player")]
+    public float approachRandomOffset = 0f;
+
+    [Header("Attack1 Settings")]
+    public bool combo = false;          // if true, play the combo ending
+
+    [Header("Stagger (Walk steps)")]
     public bool staggerWhileWalking = false;
-    // Damage needed to stagger mid-walk
     public float staggerDamageThreshold = 10f;
-    // Number of subsequent attacks to skip when staggered
-    public int staggerSkipAttacks = 1;
+    public int staggerSkipAttacks = 2;
 
     [Header("Attack3 Settings")]
-    // How long Attack3 lasts before ending
-    public float attack3Duration = 2f;
+    public float attack3Duration = 5f;
+    public float crystalSpawnRate = 8f;
+    public float crystalHealth = 15f;
 
     [Header("Idle Settings")]
-    // Base idle duration (seconds)
     public float idleDuration = 3f;
 }

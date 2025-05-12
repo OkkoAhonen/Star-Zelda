@@ -264,4 +264,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.9
+    functionName: EnableAtk1FX
+    data: 
+    objectReferenceParameter: {fileID: 8078510309027791931, guid: 44780a8679a81d74c8d83469a5844e5e, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
