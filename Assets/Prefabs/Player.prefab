@@ -231,14 +231,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2549333557817776568}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.631, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: -0.0000001490116}
+  m_LocalPosition: {x: 0.511, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8951403917207649658}
-  m_Father: {fileID: 7705296211104158538}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 5016155196146051381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!212 &5016357855619519542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ Transform:
   m_GameObject: {fileID: 5813854654563068058}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.036, y: -0.024, z: 0}
+  m_LocalPosition: {x: -0.036, y: -0.012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -641,7 +641,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7705296211104158538}
+  - {fileID: 4068814577263795595}
   - {fileID: 9125822342757198458}
   - {fileID: 7398335602670468069}
   m_Father: {fileID: 0}
@@ -786,18 +786,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe19aadfda19fa48b93d2420dd64285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  arrowPrefab: {fileID: 0}
+  bow: {fileID: 2549333557817776568}
+  firePoint: {fileID: 8951403917207649658}
+  arrowPrefab: {fileID: 4268332270749143857, guid: 86d88c70810af9e4182e6bcd752d41c2, type: 3}
+  particleContainer: {fileID: 0}
   maxBowCharge: 1.5
-  cooldownTime: 0.5
-  minArrowSpeed: 5
+  cooldownTime: 0.3
+  chargeSlider: {fileID: 0}
+  chargeLabel: {fileID: 0}
+  sliderOffset: {x: 0, y: 2, z: 0}
+  minArrowSpeed: 8
   maxArrowSpeed: 20
   minArrowDamage: 10
   maxArrowDamage: 50
   minArrowLifeSpan: 2
   maxArrowLifeSpan: 5
-  chargeBowBigPS: {fileID: 0}
-  chargeBowSmallPS: {fileID: 0}
+  maxArrowGlow: 1
+  arrowStuckLifespan: 2
+  bigParticlePrefab: {fileID: 3872357187623980748, guid: e9488134c57f9604da44f70364757cbe, type: 3}
+  totalBigParticles: 16
+  bigParticleRadius: 0.3
+  minBigSpinSpeed: 30
+  maxBigSpinSpeed: 180
+  bigParticleAppearSpeed: 2
+  smallPSPrefab: {fileID: 5043097397336899911, guid: 2aeab233e7a1ac74db1f4fc72b397990, type: 3}
+  smallExplosionCount: 30
+  smallExplosionSpeedMultiplier: 8
 --- !u!114 &4675650988052381220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,35 +926,3 @@ MonoBehaviour:
   potionSpash: {fileID: 3598729058638829589, guid: 90d86e1c557ae034babe32aba2e317d4, type: 3}
   potionAttackTimer: 2
   potionDamage: 20
---- !u!1 &6688970115109196618
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7705296211104158538}
-  m_Layer: 11
-  m_Name: HandOffsetter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7705296211104158538
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6688970115109196618}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4068814577263795595}
-  m_Father: {fileID: 5016155196146051381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
