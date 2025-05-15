@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250be443d4ba67f4c8a59a58212bfded, type: 3}
+  m_Name: Depths
+  m_EditorClassIdentifier: 
+  roomLimit: 3
+  branchingChance: 0.301
+  minTotalRooms: 3
+  maxTotalRooms: 6
+  minimapIconBaseSize: 500
+  minimapIconScale: 0.06
+  minimapPadding: 0.1
+  startRoomTemplate: {fileID: 11400000, guid: e8f772beb00a6d348bf55cfdd4cd99fa, type: 2}
+  bossRoomTemplate: {fileID: 11400000, guid: f26058a35802ea74e9042773c9c8f649, type: 2}
+  treasureRoomTemplate: {fileID: 11400000, guid: fa61e1db3b5e0154dbedafe845d506ff, type: 2}
+  normalRoomTemplates:
+  - {fileID: 11400000, guid: 5ee5612443669544991d256c99ad74db, type: 2}
+  - {fileID: 11400000, guid: 4bb5d3fd479056443b9f3c7a287afb8d, type: 2}
+  - {fileID: 11400000, guid: 15d1a9c6472f7e84bb2be91b2588bdb1, type: 2}
+  - {fileID: 11400000, guid: 09b5a7389dd913a4a8ca000cfdef32de, type: 2}
+  - {fileID: 11400000, guid: 35517010746aff04dbf316ecb1562311, type: 2}
+  - {fileID: 11400000, guid: 8fdbb5837a3300947bf68ffce92e1bb0, type: 2}
+  - {fileID: 11400000, guid: c462bb78963ffbf49b323c801dfcaaf3, type: 2}
+  - {fileID: 11400000, guid: f8c3d38e4288d6e42806d27d8b9ec6d1, type: 2}
+  currentRoomIcon: {fileID: 21300000, guid: 5c448d688dc1b64478839cbf25732f50, type: 3}
+  bossRoomIcon: {fileID: 21300000, guid: 559ed83e3c386f046b401c51b1e777ce, type: 3}
+  treasureRoomIcon: {fileID: 21300000, guid: fbbc95c7c25fb6d49bab15cd8bc04ee8, type: 3}
+  normalRoomIcon: {fileID: 21300000, guid: f5c19026d22d441499b5dd3492b9bf38, type: 3}
+  unexploredRoomIcon: {fileID: 21300000, guid: cd05a9ad49d008e44b54d4915d255265, type: 3}
+  seed: 0
+  useSeed: 0
+  maxRecursionDepth: 50
+  maxRegenerationAttempts: 10
+  roomChangeTime: 1
