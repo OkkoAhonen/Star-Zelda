@@ -62,6 +62,10 @@ public class Bow : MonoBehaviour
     private float _spawnInterval;
     private int _spawnedCount;
 
+    private bool isBowEquipped = false;
+
+    Item equippedItem;
+
     // track arrows
     private class ArrowData
     {
@@ -100,6 +104,11 @@ public class Bow : MonoBehaviour
 
     private void Update()
     {
+
+        equippedItem = InventoryManager.Instance.GetSelectedItem(false);
+        if( equippedItem != null ) { 
+        if( equippedItem.type !=  ItemType.Bow) { bow.gameObject.GetComponent<SpriteRenderer>().enabled = false; }
+        }
         float dt = Time.deltaTime;
         if (_currentCooldown > 0f)
             _currentCooldown -= dt;
@@ -117,6 +126,8 @@ public class Bow : MonoBehaviour
 
     private void HandleCharging(float dt)
     {
+        if(equippedItem == null) {  return; }   
+        if (equippedItem.type != ItemType.Bow) { return; }
         // Begin charge
         if (Input.GetMouseButtonDown(0) && _currentCooldown <= 0f)
         {
