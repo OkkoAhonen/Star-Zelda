@@ -51,7 +51,7 @@ public enum ItemType
     Tool,
     Weapon,
     potion,
-    bow,
+    Bow,
     Food,
     Mushroom,
     GemStone,

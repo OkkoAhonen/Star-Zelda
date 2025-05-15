@@ -86,6 +86,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.L)) { PlayerStatsManager.instance.Heal(-40); }
         // Jos komponentteja puuttuu, älä jatka
         if (rb == null || stats == null) return;
 

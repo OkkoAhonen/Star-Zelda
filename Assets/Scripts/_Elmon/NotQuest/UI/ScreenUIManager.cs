@@ -12,6 +12,7 @@ public class ScreenUIManager : MonoBehaviour
     [SerializeField] private TMP_Text armorNumber;
     [SerializeField] private TMP_Text levelNumber;
     [SerializeField] private Slider levelSlider;
+    [SerializeField] private Slider HPSlider;
 
 
     private PlayerStatsManager playerStatsManager;
@@ -50,6 +51,7 @@ public class ScreenUIManager : MonoBehaviour
     private void UpdateHealth(int currentHealth, int maxHealth)
     {
         healthNumber.text = $"{currentHealth}/{maxHealth}";
+        HPSlider.value = currentHealth/maxHealth;
     }
 
     private void UpdateArmor(int newArmorValue)
