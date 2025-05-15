@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6850024460659565097}
   - component: {fileID: 6159108805490259861}
   - component: {fileID: 6490773836595619307}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SkeletonBoss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -130,12 +130,12 @@ MonoBehaviour:
   maxHealth: 200
   baseSpeed: 5
   difficultyMultiplier: 1
-  attackYOffset: -0.5
+  attack1Offset: {x: 5, y: 0}
   arenaCenter: {x: 0, y: 0}
   spawnAreaMin: {x: -9.7, y: -4.6}
   spawnAreaMax: {x: 10, y: 4.2}
-  normalCrystalPrefab: {fileID: 5056043370374071974, guid: 4d44981bb779edd4eaef41786d04f6cf, type: 3}
-  glowingCrystalPrefab: {fileID: 8334909061003502288, guid: 9708030591644714382d1988cbc5227f, type: 3}
+  normalCrystalPrefab: {fileID: 0}
+  glowingCrystalPrefab: {fileID: 0}
   projectiles: {fileID: 0}
   patternGroups:
   - minHealthPercent: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   - minHealthPercent: 0.75
     healthDifficultyMultiplier: 1
     patterns:
-    - {fileID: 11400000, guid: 482a412b973754e49bcbf9fb3901f16b, type: 2}
+    - {fileID: 11400000, guid: cb66a5caa82a22c4eb62745401e3d73a, type: 2}
   - minHealthPercent: 0.5
     healthDifficultyMultiplier: 1
     patterns:
@@ -157,7 +157,6 @@ MonoBehaviour:
   atk1FX: {fileID: 7311147997568811922}
   atk2FX: {fileID: 7190102021379088280}
   initialSprite: {fileID: -666022485, guid: b99f5be0da42cc941bc4e1bd79ebf7c0, type: 3}
-  health: 0
 --- !u!61 &6159108805490259861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -310,7 +309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8078510309027791931, guid: 44780a8679a81d74c8d83469a5844e5e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -341,7 +340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2523921945213401008, guid: ff36ee6243e5ce14a96c3c79787a46a7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5249500649816890260, guid: ff36ee6243e5ce14a96c3c79787a46a7, type: 3}
       propertyPath: m_LocalPosition.x
