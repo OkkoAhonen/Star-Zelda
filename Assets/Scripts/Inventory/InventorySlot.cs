@@ -19,21 +19,27 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     private void Awake()
     {
         Deselect();
-
+        if(selectedItemShower != null) {
         selectedItemShower.GetComponent<Image>().enabled = false;
+        }
     }
 
     public void Select()
     {
         image.color = selectedColor;
-        selectedItemShower.GetComponent<Image>().enabled = true;
-
+        if (selectedItemShower != null)
+        {
+            selectedItemShower.GetComponent<Image>().enabled = true;
+        }
     }
     public void Deselect()
     {
         image.color = notSelectedColor;
-        selectedItemShower.GetComponent<Image>().enabled = false;
+        if (selectedItemShower != null)
+        {
+            selectedItemShower.GetComponent<Image>().enabled = false;
 
+        }
     }
 
     public void OnDrop(PointerEventData eventData)
