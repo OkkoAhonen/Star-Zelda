@@ -239,7 +239,7 @@ public class PotEnemyAI : MonoBehaviour
         float damage, arcH, arcSp, t;
         int mask;
         Animator anim;
-        bool splashed;
+        bool splashing;
 
         public void Init(Vector3 from, Vector3 to, int dmg, float h, float sp, int m)
         {
@@ -250,7 +250,7 @@ public class PotEnemyAI : MonoBehaviour
             arcSp = sp;
             mask = m;
             t = 0f;
-            splashed = false;
+            splashing = false;
         }
 
         void Start()
@@ -261,7 +261,7 @@ public class PotEnemyAI : MonoBehaviour
 
         void Update()
         {
-            if (splashed) return;
+            if (splashing) return;
 
             t += Time.deltaTime * arcSp;
             float y = 4f * arcH * t * (1f - t);
@@ -274,7 +274,7 @@ public class PotEnemyAI : MonoBehaviour
 
         void OnTriggerEnter2D(Collider2D c)
         {
-            if (splashed) return;
+            if (splashing) return;
             if (c.CompareTag("Player"))
             {
                 Debug.Log("Projectile hit Player");
@@ -289,7 +289,7 @@ public class PotEnemyAI : MonoBehaviour
 
         void BeginSplash()
         {
-            splashed = true;
+            splashing = true;
             anim.SetTrigger("splash");
             StartCoroutine(DestroyAfterSplash());
         }

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3224904694940581876}
   - component: {fileID: 5485013486109034628}
   - component: {fileID: 6429743789702072283}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PotCreature
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
