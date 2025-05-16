@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class potionEffect : MonoBehaviour
+public class PotionEffect : MonoBehaviour
 {
     private SpriteRenderer sr;
     public Color startColor = Color.cyan;

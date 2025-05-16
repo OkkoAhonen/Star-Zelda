@@ -13,6 +13,10 @@ public class ImpAI : MonoBehaviour
     public int lavaDamage = 1;
     public GameObject lavaStream;             // assign child lava stream object here
 
+    public GameObject lavaBlobPrefab;
+    public Transform lavaBlobSpawnPoint;
+    public float lavaBlobLifespan = 2f;
+
     public int maxHealth = 5;
     int currentHealth;
 
@@ -100,6 +104,7 @@ public class ImpAI : MonoBehaviour
     {
         lavaStream.SetActive(true);
         lavasStreamAnimator.enabled = true;
+        StartCoroutine(StartLavaBlob());
         StartCoroutine(LavaDurationRoutine());
     }
 
@@ -107,6 +112,28 @@ public class ImpAI : MonoBehaviour
     {
         yield return new WaitForSeconds(lavaDuration);
         StopLava();
+    }
+
+    public IEnumerator StartLavaBlob()
+    {
+        yield return new WaitForSeconds(0.55f); // 0.55 vaa alottaa hyvään aikaan lätäkön
+        GameObject parent = GameObject.Find("Projectiles")
+                            ?? new GameObject("Projectiles");
+
+        Vector3 spawnPos = lavaBlobSpawnPoint != null
+                           ? lavaBlobSpawnPoint.position
+                           : transform.position;
+
+        GameObject blob = Instantiate(
+            lavaBlobPrefab,
+            spawnPos,
+            Quaternion.identity,
+            parent.transform
+        );
+
+        // attach controller in the same script
+        var ctl = blob.AddComponent<BlobController>();
+        ctl.Init(lavaBlobLifespan, meleeDamage);
     }
 
     public void StopLava()
@@ -206,5 +233,47 @@ public class ImpAI : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, detectionDistance);
+    }
+
+    private class BlobController : MonoBehaviour
+    {
+        float lifespan;
+        int damage;
+        Animator anim;
+
+        public void Init(float life, int dmg)
+        {
+            lifespan = life;
+            damage = dmg;
+        }
+
+        void Start()
+        {
+            anim = GetComponent<Animator>();
+            StartCoroutine(Lifecycle());
+        }
+
+        IEnumerator Lifecycle()
+        {
+            // live for a bit
+            yield return new WaitForSeconds(lifespan);
+
+            // trigger extinguish
+            anim.SetTrigger("endLavaLoop");
+
+            // wait out that animation
+            yield return null;
+            var clips = anim.GetCurrentAnimatorClipInfo(0);
+            if (clips.Length > 0)
+                yield return new WaitForSeconds(clips[0].clip.length - 0.1f);
+
+            Destroy(gameObject);
+        }
+
+        void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.CompareTag("Player"))
+                PlayerStatsManager.instance.TakeDamage(damage);
+        }
     }
 }
