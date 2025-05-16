@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Depths 10
   m_EditorClassIdentifier: 
   type: 1
-  prefab: {fileID: 3384747430786734793, guid: 51034aaa62c2cd043b4ed698dfb56905, type: 3}
+  prefab: {fileID: 193896765688555309, guid: b6f0fb5fcc6381d4597ca502638870c0, type: 3}
   followPlayerCamera: 1
