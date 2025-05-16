@@ -22,6 +22,7 @@ public class PlayerInputAnimator : MonoBehaviour
 
     void Update()
     {
+        
         float horizontal = 0f;
         float vertical = 0f;
 

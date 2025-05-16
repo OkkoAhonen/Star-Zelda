@@ -127,7 +127,7 @@ public class Bow : MonoBehaviour
 
         if (_isCharging && chargeSlider.gameObject.activeSelf)
         {
-            Vector3 screen = Camera.main.WorldToScreenPoint(bow.transform.position + sliderOffset);
+            Vector3 screen = Camera.main.WorldToScreenPoint(transform.position + sliderOffset);
             ((RectTransform)chargeSlider.transform).position = screen;
             ((RectTransform)chargeLabel.transform).position = screen + Vector3.up * 20f;
         }

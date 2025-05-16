@@ -18,7 +18,7 @@ public class ImpAI : MonoBehaviour
     public float lavaBlobLifespan = 2f;
 
     public int maxHealth = 5;
-    int currentHealth;
+    public int currentHealth;
 
     // runtime
     Transform target;

@@ -331,7 +331,7 @@ public class MageSkeletonController : MonoBehaviour
         if (currentState == State.Dead) return;
         currentHealth -= damage;
         if (currentActionCoroutine != null) StopCoroutine(currentActionCoroutine);
-        if (currentHealth <= 0) Die();
+        if (currentHealth <= 0) { Die(); }
         else
         {
             currentState = State.Hurt;
