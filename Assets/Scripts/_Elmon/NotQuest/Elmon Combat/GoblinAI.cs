@@ -17,10 +17,17 @@ public class GoblinAI : MonoBehaviour
     bool isDetected = false;
     bool isBusy = false;
 
+    public int maxHealth = 70;
+    public int currentHealth;
+
     void Awake()
     {
         target = GameObject.FindWithTag("Player").transform;
         animator = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -82,7 +89,9 @@ public class GoblinAI : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player") && animator.GetBool("meleeAttack"))
+            if(PlayerStatsManager.instance != null) {
             PlayerStatsManager.instance.TakeDamage(meleeDamage);
+            }
     }
 
     public void OnMeleeEnd()   // end-of-first-attack AnimationEvent
@@ -90,6 +99,13 @@ public class GoblinAI : MonoBehaviour
         animator.SetBool("meleeAttack", false);
         animator.SetBool("combo", false);
         StartCoroutine(ResetBusy());
+    }
+    public void TakeDamage(int damage)
+    {
+        animator.SetTrigger("Hurt");
+        currentHealth -= damage;
+
+        if (currentHealth < 0) { Die(); }
     }
 
     public void CheckCombo()  // end-of-neutral-return AnimationEvent
@@ -121,6 +137,7 @@ public class GoblinAI : MonoBehaviour
     public void Die()
     {
         animator.SetTrigger("death");
+        Destroy(gameObject, 1f);
         // at end of Death clip: AnimationEvent ? OnReallyDead()
     }
 

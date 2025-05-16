@@ -104,14 +104,23 @@ public class Bow : MonoBehaviour
 
     private void Update()
     {
-
         equippedItem = InventoryManager.Instance.GetSelectedItem(false);
-        if( equippedItem != null ) { 
-        if( equippedItem.type !=  ItemType.Bow) { bow.gameObject.GetComponent<SpriteRenderer>().enabled = false; }
+
+        if (equippedItem != null && equippedItem.type == ItemType.Bow)
+        {
+                bow.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
+        else
+        {
+            bow.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
         float dt = Time.deltaTime;
+
         if (_currentCooldown > 0f)
+        {
             _currentCooldown -= dt;
+        }
 
         HandleCharging(dt);
         UpdateArrows(dt);
@@ -123,6 +132,7 @@ public class Bow : MonoBehaviour
             ((RectTransform)chargeLabel.transform).position = screen + Vector3.up * 20f;
         }
     }
+
 
     private void HandleCharging(float dt)
     {
@@ -301,6 +311,8 @@ public class Bow : MonoBehaviour
 
             foreach (var h in hits)
             {
+
+                
                 int bit = 1 << h.collider.gameObject.layer;
                 if ((bit & hitMask) != 0)
                 {
@@ -316,7 +328,10 @@ public class Bow : MonoBehaviour
                 else if ((bit & damageMask) != 0)
                 {
                     var hitGO = h.collider.gameObject;
-                    Debug.LogError("Player arrow hit: " + hitGO.name);
+                    
+
+                    dealDamage(hitGO, 30);
+
                     if (hitGO.name == "SkeletonBoss")
                         hitGO.GetComponent<SkeletonBossAI>().TakeDamage(arrow.damage);
                     Destroy(arrow.go);
@@ -338,6 +353,37 @@ public class Bow : MonoBehaviour
                     _arrows.RemoveAt(i);
                 }
             }
+        }
+    }
+
+    private void dealDamage(GameObject enemy, float damage)
+    {
+        switch (enemy.name)
+        {
+            case "Enemy1":
+                MageSkeletonController mageSkeletonController = enemy.GetComponent<MageSkeletonController>();
+                mageSkeletonController.TakeDamage((int)damage);
+                Debug.Log($"MageSkeleton currenthealth: {mageSkeletonController.currentHealth} / {mageSkeletonController.maxHealth}");
+                break;
+            case "Enemy2":
+                PirateCaptainController pirateCaptainController = enemy.GetComponentInParent<PirateCaptainController>();
+                pirateCaptainController.TakeDamage((int)damage);
+                Debug.Log($"PirateCaptain currenthealth: {pirateCaptainController.currentHealth} / {pirateCaptainController.maxHealth}");
+                break;
+            case "Enemy3":
+                ImpAI impAi = enemy.GetComponentInParent<ImpAI>();
+                impAi.TakeDamage((int)damage); Debug.Log($"IMP currenthealth: {impAi.currentHealth} / {impAi.maxHealth}");
+
+                break;
+            case "Enemy4":
+                RockyDudeAI rockyDudeAI = enemy.GetComponent<RockyDudeAI>();
+                rockyDudeAI.TakeDamage((int)damage);
+
+                break;
+            case "Enemy5":
+                GoblinAI goblinAI = enemy.GetComponent<GoblinAI>();
+                goblinAI.TakeDamage((int)damage);
+                break;
         }
     }
 }

@@ -13,8 +13,8 @@ public class ImpAI : MonoBehaviour
     public int lavaDamage = 1;
     public GameObject lavaStream;             // assign child lava stream object here
 
-    public int maxHealth = 5;
-    int currentHealth;
+    public int maxHealth = 40;
+    public int currentHealth;
 
     // runtime
     Transform target;
@@ -118,7 +118,7 @@ public class ImpAI : MonoBehaviour
     {
         if (!col.CompareTag("Player"))
             return;
-
+        if(PlayerStatsManager.instance != null ) { 
         // Melee damage when in melee attack
         if (animator.GetBool("meleeAttack"))
         {
@@ -131,6 +131,7 @@ public class ImpAI : MonoBehaviour
         {
             PlayerStatsManager.instance.TakeDamage(meleeDamage);
         }
+    }
     }
 
     public void OnMeleeEnd()  // AnimationEvent

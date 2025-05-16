@@ -15,7 +15,7 @@ public class MageSkeletonController : MonoBehaviour
     [SerializeField] private float preferredDistanceToPlayer = 5.0f;
 
     [Header("Combat")]
-    [SerializeField] private int maxHealth = 100;
+    public int maxHealth { get; private set; } = 100;
     [SerializeField] private float attackCooldown = 2.0f;
 
     [Header("Probabilities & Timings")]
@@ -41,7 +41,8 @@ public class MageSkeletonController : MonoBehaviour
     [SerializeField] private float attack2ProjectileSpeed = 8f; // Attack2 ammusten nopeus
 
 
-    private int currentHealth;
+    public int currentHealth { get; private set; }
+
     private enum State { IdleDecision, Walking, Attacking, Hurt, Dead }
     private State currentState;
     private bool isFacingRight = true;

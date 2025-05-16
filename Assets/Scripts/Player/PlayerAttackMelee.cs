@@ -98,28 +98,48 @@ public class PlayerAttackMelee : MonoBehaviour
         foreach (Collider2D enemyGameobje in enemy)
         {
 
-            MageSkeletonController mageController = enemyGameobje.GetComponent<MageSkeletonController>();
-            //EnemyController enemyhealth = enemyGameobje.GetComponent<EnemyController>();
-            //Debug.Log(enemyhealth.gameObject.name + "Moi");
             Vector2 direction = (enemyGameobje.transform.position - transform.position).normalized;
 
             AttackAudio();
+            dealDamage(enemyGameobje.gameObject, equippedItem.attackDamage);
 
             StartCoroutine(Freeze());
-            
-           // AudioManager.instance.PlaySFX("Attack1");
-
-            mageController.TakeDamage(5);
-            //enemyhealth.TakeDamage(equippedItem.attackDamage  /*  *(float) PlayerStatsManager.instance.GetStat(StatType.Strength)*/, direction, 2f);
-
         }
-
-       
-        
 
 
         currentChargeTime = 0f;
 
+    }
+
+    private void dealDamage(GameObject enemy,float damage)
+    {
+        switch (enemy.name)
+        {
+            case "Enemy1":
+                MageSkeletonController mageSkeletonController = enemy.GetComponent<MageSkeletonController>();
+                mageSkeletonController.TakeDamage((int )damage);
+                Debug.Log($"MageSkeleton currenthealth: {mageSkeletonController.currentHealth} / {mageSkeletonController.maxHealth}");
+                break;
+            case "Enemy2":
+                PirateCaptainController pirateCaptainController = enemy.GetComponentInParent<PirateCaptainController>();
+                pirateCaptainController.TakeDamage((int )damage);
+                Debug.Log($"PirateCaptain currenthealth: {pirateCaptainController.currentHealth} / {pirateCaptainController.maxHealth}");
+                break;
+            case "Enemy3":
+                ImpAI impAi  = enemy.GetComponentInParent<ImpAI>();
+                impAi.TakeDamage((int )damage); Debug.Log($"IMP currenthealth: {impAi.currentHealth} / {impAi.maxHealth}");
+
+                break;
+            case "Enemy4":
+                RockyDudeAI rockyDudeAI = enemy.GetComponent<RockyDudeAI>();
+                rockyDudeAI.TakeDamage((int )damage);
+
+                break;
+            case "Enemy5":
+                GoblinAI goblinAI = enemy.GetComponent <GoblinAI>();
+                goblinAI.TakeDamage( (int )damage);
+                break;
+        }
     }
 
     private void AttackAudio()
