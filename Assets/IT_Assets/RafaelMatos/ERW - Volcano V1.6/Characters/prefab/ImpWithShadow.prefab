@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc191d4b07d46c4088fd8f7cd4926df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionDistance: 5
+  detectionDistance: 4
   meleeOffset: {x: -0.8, y: -0.9}
   lavaDuration: 2
   walkSpeed: 2
@@ -180,6 +180,9 @@ MonoBehaviour:
   meleeDamage: 1
   lavaDamage: 1
   lavaStream: {fileID: 8521439539580424384}
+  lavaBlobPrefab: {fileID: 7285790912591436799, guid: 93d9d54568111d74aa2052168cf6a16f, type: 3}
+  lavaBlobSpawnPoint: {fileID: 5327620236046883582}
+  lavaBlobLifespan: 10
   maxHealth: 5
 --- !u!61 &3730292167141129909
 BoxCollider2D:
@@ -227,6 +230,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.23037462, y: 0.32789075}
   m_EdgeRadius: 0
+--- !u!1 &9116196342181284410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5327620236046883582}
+  m_Layer: 0
+  m_Name: LavaBlobSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5327620236046883582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9116196342181284410}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.104, y: -0.279, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8521439539580424415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6985976814920682423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -285,7 +319,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1635106807886027624, guid: a94d53bcfb94a854a99c398d542af25c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5327620236046883582}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a94d53bcfb94a854a99c398d542af25c, type: 3}
 --- !u!1 &8521439539580424384 stripped
