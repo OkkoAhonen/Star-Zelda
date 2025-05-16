@@ -19,10 +19,17 @@ public class RockyDudeAI : MonoBehaviour
     bool isSlammingFollow = false;
     int attackCounter = 0;
 
+    public int maxHealth = 70;
+    public int currentHealth;
+
     void Awake()
     {
         target = GameObject.FindWithTag("Player").transform;
         animator = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -142,6 +149,10 @@ public class RockyDudeAI : MonoBehaviour
     public void TakeDamage(int amt)
     {
         animator.SetTrigger("hurt");
+
+        currentHealth -= amt;
+
+        if(currentHealth < 0) { Die(); }
         // end-of-hurt ? AnimationEvent ? OnHurtEnd()
     }
 
@@ -153,6 +164,8 @@ public class RockyDudeAI : MonoBehaviour
     public void Die()
     {
         animator.SetTrigger("death");
+
+        Destroy(gameObject, 1f);
         // end-of-death ? AnimationEvent ? OnReallyDead()
     }
 

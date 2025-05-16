@@ -16,7 +16,7 @@ public class PirateCaptainController : MonoBehaviour
     [SerializeField] private float spinMoveSpeed = 5.0f; // Nopeus Attack2-spinnauksen aikana
 
     [Header("Combat - General")]
-    [SerializeField] private int maxHealth = 120;
+    public int maxHealth = 120;
     [SerializeField] private float attackCooldown = 2.5f;
     [SerializeField] private float closeRangeAttackThreshold = 3.0f; // Etäisyys, jonka sisällä Attack2 (spin) valitaan
 
@@ -36,7 +36,7 @@ public class PirateCaptainController : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float chanceToAttackAfterWalk = 0.75f; // 75% -> Kohtaan 4, 25% -> Kohtaan 1
 
-    private int currentHealth;
+    public int currentHealth;
     private enum State { Idling, WalkingToPlayer, DecidingAfterWalk, ApproachingForAttack1, PerformingAttack1, PreparingAttack2, SpinningAttack2, EndingAttack2, Hurt, Dead }
     private State currentState;
     private bool isFacingRight = true;
