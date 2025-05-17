@@ -13,8 +13,10 @@ public class QuestReward
 [System.Serializable]
 public class QuestStepData
 {
-    public enum StepType { Kill, Gather, Visit, Talk }
+    public enum StepType { Kill, Gather, Visit, Give }
     public StepType stepType;
+
+    public string stepName;
 
     public string targetId;     // Could be enemy ID, item ID, or location name
     public int requiredAmount = 1; // For kills/gathers

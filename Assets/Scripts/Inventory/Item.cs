@@ -43,6 +43,11 @@ public class Item : ScriptableObject
 
     [Header("Food")]
     public float foodHeal = 20f;
+
+
+    [Header("QuestItem")]
+    public bool isItVillapaita = false;
+
 }
 
 public enum ItemType
@@ -57,8 +62,6 @@ public enum ItemType
     GemStone,
     Blood,
     Stone,
-
-
     QuestItem
 
 }

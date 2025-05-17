@@ -17,7 +17,7 @@ MonoBehaviour:
   questGiverName: Village Leader
   questImportance: 1
   questDifficulty: 1
-  stepStates: 010000000000000000000000
+  stepStates: 000000000100000000000000
   description: explore the village
   id: Village
   displayName: Village Exploration
@@ -31,15 +31,18 @@ MonoBehaviour:
   state: 2
   steps:
   - stepType: 2
+    stepName: Local Market
     targetId: Village_Market
     requiredAmount: 1
     stepDifficulty: 1
   - stepType: 2
+    stepName: Cave
     targetId: Village_Cave
     requiredAmount: 1
     stepDifficulty: 1
   - stepType: 2
+    stepName: Local blacksmith
     targetId: Village_BlackSmith
     requiredAmount: 1
     stepDifficulty: 1
-  stepProgress: 010000000000000000000000
+  stepProgress: 000000000100000000000000

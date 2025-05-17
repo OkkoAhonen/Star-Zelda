@@ -4,6 +4,8 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class MageSkeletonController : MonoBehaviour
 {
+    public string EnemyID = "MageSkeleton";
+
     [Header("References")]
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Animator animator;
@@ -355,6 +357,10 @@ public class MageSkeletonController : MonoBehaviour
 
     private void Die()
     {
+
+        if(QuestManager.instance != null) { 
+        QuestManager.instance.NotifyStepEvent("Kill", EnemyID);
+        }
         if (currentActionCoroutine != null) StopCoroutine(currentActionCoroutine);
         StopAllCoroutines();
         currentState = State.Dead;

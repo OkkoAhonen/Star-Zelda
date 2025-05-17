@@ -97,9 +97,9 @@ public class QuestTrackerUI : MonoBehaviour
         {
             var step = currentQuest.steps[i];
             var state = currentQuest.stepStates[i];
-
-            string status = state == Quest.QuestStepState.COMPLETE ? "[O]" : "[ ]";
-            string label = $"{step.stepType}: Step {i + 1} {status}  Diff {new string('I',step.stepDifficulty)}";
+            
+            string status = state == Quest.QuestStepState.COMPLETE ? "[Done]" : "[In progress]";
+            string label = $"{step.stepType}: {step.stepName} {i + 1} {status}";
 
             var stepObj = Instantiate(stepTextPrefab, stepsContainer);
             stepObj.GetComponentInChildren<TextMeshProUGUI>().text = label;

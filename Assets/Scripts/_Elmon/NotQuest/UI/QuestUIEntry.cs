@@ -199,7 +199,7 @@ public class QuestUIEntry : MonoBehaviour
                 QuestStepData.StepType.Kill => $"{step.stepType}: {progress} / {step.requiredAmount}",
                 QuestStepData.StepType.Gather => $"{step.stepType}: {progress} / {step.requiredAmount}",
                 QuestStepData.StepType.Visit => state == Quest.QuestStepState.COMPLETE ? $"{step.stepType}: Complete" : $"{step.stepType}: Incomplete",
-                QuestStepData.StepType.Talk => state == Quest.QuestStepState.COMPLETE ? $"{step.stepType}: Complete" : $"{step.stepType}: Incomplete",
+                QuestStepData.StepType.Give => state == Quest.QuestStepState.COMPLETE ? $"{step.stepType}: Complete" : $"{step.stepType}: Incomplete",
                 _ => "Unknown step"
             };
 

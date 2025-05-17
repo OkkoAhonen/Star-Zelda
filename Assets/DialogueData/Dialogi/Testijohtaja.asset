@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Testijohtaja
   m_EditorClassIdentifier: 
   dialogue:
-  - MoiMoiMoi
+  - Hey, I am the leader of the town. You should go search this town. After you have
+    been in all of the important places, I give you my sword and bow
+  - Does this sound like a deal?
   responses:
-  - responseText: I will
+  - responseText: Yeah!
     dialogueObject: {fileID: 0}

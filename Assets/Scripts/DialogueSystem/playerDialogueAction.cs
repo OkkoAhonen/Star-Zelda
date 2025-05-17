@@ -12,8 +12,11 @@ public class PlayerDialogueAction : MonoBehaviour
 
     public ShopManager shopManager;
 
-
+    public DialogueObject GolemTankyou;
     public Quest[] quests;
+
+    public Item ChocolateItem;
+    public Item StoneItem;
 
     private void Awake()
     {
@@ -22,7 +25,7 @@ public class PlayerDialogueAction : MonoBehaviour
 
     private void Start()
     {
-        if(shopManager == null)
+        if (shopManager == null)
         {
             Debug.LogError("ShopManager null");
         }
@@ -58,45 +61,60 @@ public class PlayerDialogueAction : MonoBehaviour
     }
     public void AvaaNormiKauppa()
     {
-        { 
-        shopManager.OpenShop();
-        AudioManager.instance.PlaySFX("Inventory");
+        {
+            shopManager.OpenShop();
+            AudioManager.instance.PlaySFX("Inventory");
 
         }
-    }
-
-    public void avaaQuest()
-    {
-        
-        QuestManager.instance.StartQuest(quests[0]);
     }
 
     public void OpenVillageQuest1()
     {
-        if (quests[0].state == Quest.QuestState.CAN_START)
+        if (QuestManager.instance.allQuests[0].state == Quest.QuestState.CAN_START)
         {
-            QuestManager.instance.StartQuest(quests[0]);
+            QuestManager.instance.StartQuest(QuestManager.instance.allQuests[0]);
         }
-        else if ((quests[0].state == Quest.QuestState.CAN_FINISH))
+        else if (QuestManager.instance.allQuests[0].state == Quest.QuestState.CAN_FINISH)
         {
-            QuestManager.instance.CompleteQuest(quests[0]);
+            QuestManager.instance.CompleteQuest(QuestManager.instance.allQuests[0]);
         }
     }
 
-    public void OpenMinerQuest2()
+    public void OpenSlauhterQuest()
     {
-        if (quests[1].state == Quest.QuestState.CAN_START)
+        
+
+        if (QuestManager.instance.allQuests[1].state == Quest.QuestState.CAN_START)
         {
-            QuestManager.instance.StartQuest(quests[1]);
+            QuestManager.instance.StartQuest(QuestManager.instance.allQuests[1]);
         }
-        else if ((quests[1].state == Quest.QuestState.CAN_FINISH))
+        else if (QuestManager.instance.allQuests[1].state == Quest.QuestState.CAN_FINISH)
         {
-            QuestManager.instance.CompleteQuest(quests[1]);
+            QuestManager.instance.CompleteQuest(QuestManager.instance.allQuests[1]);
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    
+    public void OpenChocolateQuest()
+    {
+        if (QuestManager.instance.allQuests[2].state == Quest.QuestState.CAN_START)
+        {
+            QuestManager.instance.StartQuest(QuestManager.instance.allQuests[2]);
+        }
+        else if (InventoryManager.Instance.FindAndConsumeItem(ChocolateItem, true)) {
+            QuestManager.instance.CompleteQuest(QuestManager.instance.allQuests[2]);
+        }
+    }
 
+    public void OpenStoneQuest()
+    {
+        if (QuestManager.instance.allQuests[3].state == Quest.QuestState.CAN_START)
+        {
+            QuestManager.instance.StartQuest(QuestManager.instance.allQuests[3]);
+        }
+       else if (InventoryManager.Instance.HasOrConsumeItemAmount(StoneItem, 10, true))
+        {
+            QuestManager.instance.CompleteQuest(QuestManager.instance.allQuests[3]);
+        }
+    }
 }

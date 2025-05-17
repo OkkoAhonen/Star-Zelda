@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ecb5eb1880bf84baad899bc672cfd0, type: 3}
+  m_Name: ChocolateQuest
+  m_EditorClassIdentifier: 
+  wasCompleted: 0
+  completionOrder: -1
+  questGiverName: AhonenOkkoAlvar
+  questImportance: 2
+  questDifficulty: 2
+  stepStates: 
+  description: Give chocolate to the freezing player
+  id: Chocolate
+  displayName: Hot Chocolate
+  rewards:
+    gold: 500
+    experience: 250
+    itemIcons: []
+    getQuestItem: []
+  state: 1
+  steps:
+  - stepType: 3
+    stepName: Hot Chocolate
+    targetId: Chocolate2
+    requiredAmount: 0
+    stepDifficulty: 2
+  stepProgress: 

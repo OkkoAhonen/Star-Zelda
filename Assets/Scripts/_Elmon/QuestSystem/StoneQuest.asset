@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ecb5eb1880bf84baad899bc672cfd0, type: 3}
+  m_Name: StoneQuest
+  m_EditorClassIdentifier: 
+  wasCompleted: 0
+  completionOrder: -1
+  questGiverName: Okko
+  questImportance: 3
+  questDifficulty: 3
+  stepStates: 00000000
+  description: Give one stone to the local golem
+  id: Golem
+  displayName: Broken Golem
+  rewards:
+    gold: 100
+    experience: 250
+    itemIcons: []
+    getQuestItem: []
+  state: 2
+  steps:
+  - stepType: 3
+    stepName: Stone
+    targetId: Stone
+    requiredAmount: 1
+    stepDifficulty: 1
+  stepProgress: 00000000

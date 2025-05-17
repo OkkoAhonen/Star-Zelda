@@ -75,7 +75,7 @@ public class InventoryManager : MonoBehaviour
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null &&
                 itemInSlot.item == item &&
-                itemInSlot.count < 4 &&
+                itemInSlot.count < 10 &&
                 itemInSlot.item.stackable == true)
             {
                 Debug.Log($"Found stackable item in slot {i}");
@@ -137,4 +137,102 @@ public class InventoryManager : MonoBehaviour
 
         return null;
     }
+
+    public bool FindAndConsumeItem(Item itemToFind, bool consume)
+    {
+        // T‰m‰ funktio voisi nyt kutsua uutta, monipuolisempaa funktiota:
+        return HasOrConsumeItemAmount(itemToFind, 1, consume);
+    }
+
+    // ----- UUSI FUNKTIO TƒSSƒ -----
+    /// <summary>
+    /// Etsii annettua esinetyyppi‰ ja -m‰‰r‰‰ koko inventaariosta.
+    /// Jos lˆytyy riitt‰v‰sti, voi halutessaan kuluttaa ne.
+    /// Kulutus tapahtuu tarvittaessa useammasta pinosta.
+    /// </summary>
+    /// <param name="itemToFind">Etsitt‰v‰ Item ScriptableObject.</param>
+    /// <param name="amountToHandle">Etsitt‰v‰/kulutettava m‰‰r‰. T‰m‰n tulee olla positiivinen luku.</param>
+    /// <param name="consume">Jos true, v‰hent‰‰ esineiden m‰‰r‰‰ ja poistaa ne tarvittaessa.</param>
+    /// <returns>True, jos esineit‰ lˆytyi riitt‰v‰sti (ja mahdollisesti kulutettiin, jos consume=true), muuten false.</returns>
+    public bool HasOrConsumeItemAmount(Item itemToFind, int amountToHandle, bool consume)
+    {
+        if (itemToFind == null)
+        {
+            Debug.LogWarning("ItemToFind cannot be null in HasOrConsumeItemAmount.");
+            return false;
+        }
+        if (amountToHandle <= 0)
+        {
+            Debug.LogWarning($"AmountToHandle ({amountToHandle}) must be greater than 0 in HasOrConsumeItemAmount.");
+            return false; // Ei voida k‰sitell‰ nollaa tai negatiivista m‰‰r‰‰ t‰ll‰ logiikalla
+        }
+
+        List<InventoryItem> itemInstancesInInventory = new List<InventoryItem>();
+        int totalAvailableCount = 0;
+
+        // Vaihe 1: Etsi kaikki esineen instanssit ja laske kokonaism‰‰r‰
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            // Huom: GetComponentInChildren etsii myˆs itse objektista, jos komponentti on siin‰.
+            // Jos InventoryItem on AINA lapsiobjekti, t‰m‰ on ok.
+            // Jos se voisi olla myˆs samassa objektissa slotin kanssa, t‰m‰ on myˆs ok.
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+
+            if (itemInSlot != null && itemInSlot.item == itemToFind)
+            {
+                itemInstancesInInventory.Add(itemInSlot);
+                totalAvailableCount += itemInSlot.count;
+            }
+        }
+
+        // Vaihe 2: Tarkista onko tarpeeksi esineit‰
+        if (totalAvailableCount < amountToHandle)
+        {
+            return false; // Ei tarpeeksi esineit‰ inventaariossa
+        }
+
+        // Vaihe 3: Jos vain tarkistetaan (ei kuluteta) ja esineit‰ on tarpeeksi, palauta true
+        if (!consume)
+        {
+            return true;
+        }
+
+        // Vaihe 4: Kuluta esineet (jos consume == true ja niit‰ on tarpeeksi)
+        int amountLeftToConsume = amountToHandle;
+        foreach (InventoryItem itemInstance in itemInstancesInInventory)
+        {
+            if (amountLeftToConsume <= 0)
+            {
+                break; // Tarvittava m‰‰r‰ on jo kulutettu
+            }
+
+            int amountToTakeFromThisStack = Mathf.Min(itemInstance.count, amountLeftToConsume);
+
+            itemInstance.count -= amountToTakeFromThisStack;
+            amountLeftToConsume -= amountToTakeFromThisStack;
+
+            if (itemInstance.count <= 0)
+            {
+                Destroy(itemInstance.gameObject); // Tuhoa esineen GameObject, jos m‰‰r‰ menee nollaan
+            }
+            else
+            {
+                itemInstance.RefrestCount(); // P‰ivit‰ esineen n‰ytt‰m‰ m‰‰r‰ (huom: mahdollinen kirjoitusvirhe "RefreshCount")
+            }
+        }
+
+        // Varmistus (t‰m‰n ei pit‰isi tapahtua, jos logiikka on oikein)
+        if (amountLeftToConsume > 0)
+        {
+            Debug.LogError($"InventoryManager: Virhe esineiden kulutuksessa. Yritettiin kuluttaa {amountToHandle} kpl esinett‰ {itemToFind.name}, mutta {amountLeftToConsume} j‰i kuluttamatta. T‰m‰ viittaa logiikkavirheeseen.");
+            // T‰ss‰ voisi teoriassa yritt‰‰ peruuttaa tehdyt muutokset, mutta se monimutkaistaisi huomattavasti.
+            // T‰ss‰ vaiheessa palautetaan false, koska kaikkea pyydetty‰ ei saatu kulutettua.
+            return false;
+        }
+
+        return true; // Esineet lˆytyiv‰t ja kulutus onnistui (jos consume oli true)
+    }
+    // ----- UUDEN FUNKTION LOPPU -----
 }
+
