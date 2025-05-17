@@ -34,7 +34,7 @@ public class QuestUIManager : MonoBehaviour
         var activeQuestsDict = QuestManager.instance.GetActiveQuests();
         var allQuestsList = QuestManager.instance.GetAllQuests();
 
-        var allQuests = activeQuestsDict?.Values?.ToList() ?? new List<Quest>();
+        List<Quest> allQuests = activeQuestsDict?.Values?.ToList() ?? new List<Quest>();
         var completedQuests = allQuestsList?.Where(q => q.state == Quest.QuestState.FINISHED).ToList() ?? new List<Quest>();
 
         // Set order for completed quests if not already set

@@ -5,13 +5,13 @@ public class ImpAI : MonoBehaviour
 {
     // Inspector
     public float detectionDistance = 6f;
-    public Vector2 meleeOffset;               // offset from player to stop at
+    public Vector2 meleeOffset;
     public float lavaDuration = 2f;
     public float walkSpeed = 2f;
     public float idleBetweenAttacksTime = 1f;
     public int meleeDamage = 1;
     public int lavaDamage = 1;
-    public GameObject lavaStream;             // assign child lava stream object here
+    public GameObject lavaStream;
 
     public GameObject lavaBlobPrefab;
     public Transform lavaBlobSpawnPoint;
@@ -27,20 +27,21 @@ public class ImpAI : MonoBehaviour
     bool isBusy = false;
     int attackCounter = 0;
     Animator lavasStreamAnimator;
+    LayerMask damageMask;
 
     void Awake()
     {
+        damageMask = StaticValueManager.DamageNonEnemiesMask;
         lavasStreamAnimator = lavaStream.GetComponent<Animator>();
         lavasStreamAnimator.enabled = false;
         target = GameObject.FindWithTag("Player").transform;
         animator = GetComponent<Animator>();
-        lavaStream.SetActive(false);           // ensure off by default
+        lavaStream.SetActive(false);
     }
 
     void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, target.position);
-
         if (!isDetected)
         {
             if (distToPlayer <= detectionDistance)
@@ -51,7 +52,7 @@ public class ImpAI : MonoBehaviour
 
         // face player
         Vector3 s = transform.localScale;
-        s.x = (target.position.x < transform.position.x)
+        s.x = target.position.x < transform.position.x
                 ? -Mathf.Abs(s.x)
                 : Mathf.Abs(s.x);
         transform.localScale = s;
@@ -62,7 +63,6 @@ public class ImpAI : MonoBehaviour
             return;
         }
 
-        // compute stop point with offset and facing
         int facing = s.x > 0 ? 1 : -1;
         Vector2 stopPoint = (Vector2)target.position
                              + new Vector2(meleeOffset.x * facing, meleeOffset.y);
@@ -90,17 +90,15 @@ public class ImpAI : MonoBehaviour
     {
         isBusy = true;
         animator.SetBool("meleeAttack", true);
-        // end-of-melee clip ? AnimationEvent ? OnMeleeEnd()
     }
 
     void StartLavaAttack()
     {
         isBusy = true;
         animator.SetBool("lavaAttack", true);
-        // end-of-lava clip ? AnimationEvent ? OnLavaEnd()
     }
 
-    public void StartLavaLoop()  // AnimationEvent on prep end
+    public void StartLavaLoop()  // AnimationEvent
     {
         lavaStream.SetActive(true);
         lavasStreamAnimator.enabled = true;
@@ -114,9 +112,10 @@ public class ImpAI : MonoBehaviour
         StopLava();
     }
 
-    public IEnumerator StartLavaBlob()
+    private IEnumerator StartLavaBlob()
     {
-        yield return new WaitForSeconds(0.55f); // 0.55 vaa alottaa hyvään aikaan lätäkön
+        yield return new WaitForSeconds(0.55f);
+
         GameObject parent = GameObject.Find("Projectiles")
                             ?? new GameObject("Projectiles");
 
@@ -124,49 +123,42 @@ public class ImpAI : MonoBehaviour
                            ? lavaBlobSpawnPoint.position
                            : transform.position;
 
-        GameObject blob = Instantiate(
-            lavaBlobPrefab,
-            spawnPos,
-            Quaternion.identity,
-            parent.transform
-        );
+        // ? pooled instantiate
+        GameObject blob = PoolingManager.Instance.GetPooledObject(lavaBlobPrefab);
+        blob.transform.SetParent(parent.transform, false);
+        blob.transform.position = spawnPos;
+        blob.transform.rotation = Quaternion.identity;
 
-        // attach controller in the same script
-        var ctl = blob.AddComponent<BlobController>();
-        ctl.Init(lavaBlobLifespan, meleeDamage);
+        var splashScript = blob.GetComponent<SplashArea>();
+        splashScript.damage = lavaDamage;
+        splashScript.lifespan = lavaBlobLifespan;
+        splashScript.damageMask = damageMask;
+        splashScript.hasEndAnimation = true;
     }
 
-    public void StopLava()
-    {
-        animator.SetBool("lavaAttack", false);
-    }
+    public void StopLava() => animator.SetBool("lavaAttack", false);
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.CompareTag("Player"))
-            return;
+        if (!col.CompareTag("Player")) return;
 
-        // Melee damage when in melee attack
         if (animator.GetBool("meleeAttack"))
         {
             PlayerStatsManager.instance.TakeDamage(meleeDamage);
             return;
         }
 
-        // Lava damage when lava is streaming
         if (animator.GetBool("lavaAttack") && lavaStream.activeSelf)
-        {
             PlayerStatsManager.instance.TakeDamage(meleeDamage);
-        }
     }
 
-    public void OnMeleeEnd()  // AnimationEvent
+    public void OnMeleeEnd()
     {
         animator.SetBool("meleeAttack", false);
         StartCoroutine(ResetBusy());
     }
 
-    public void OnLavaEnd()  // AnimationEvent
+    public void OnLavaEnd()
     {
         animator.SetBool("lavaAttack", false);
         StartCoroutine(DisableLavaAndReset());
@@ -175,9 +167,7 @@ public class ImpAI : MonoBehaviour
     private IEnumerator DisableLavaAndReset()
     {
         lavasStreamAnimator.SetTrigger("endLavaLoop");
-        // allow Animator to enter post-lava state
         yield return null;
-        // wait for the current clip length minus a small buffer
         var clips = lavasStreamAnimator.GetCurrentAnimatorClipInfo(0);
         if (clips.Length > 0)
             yield return new WaitForSeconds(clips[0].clip.length - 0.1f);
@@ -196,34 +186,26 @@ public class ImpAI : MonoBehaviour
     public void TakeDamage(int amt)
     {
         currentHealth -= amt;
-
         if (currentHealth <= 0)
         {
-            // always die immediately
             animator.SetTrigger("death");
             return;
         }
-
-        // if not already doing lavaAttack, stagger
         if (!animator.GetBool("lavaAttack"))
         {
             animator.SetTrigger("hurt");
-            isBusy = true;  // prevent further actions until OnHurtEnd
+            isBusy = true;
         }
     }
 
-    public void OnHurtEnd()  // AnimationEvent
-    {
-        isBusy = false;
-    }
+    public void OnHurtEnd() => isBusy = false;
 
     public void Die()
     {
         animator.SetTrigger("death");
-        // end-of-death ? AnimationEvent ? OnReallyDead()
     }
 
-    public void OnReallyDead()  // AnimationEvent
+    public void OnReallyDead()
     {
         animator.enabled = false;
         Destroy(gameObject, 0.1f);
@@ -233,47 +215,5 @@ public class ImpAI : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, detectionDistance);
-    }
-
-    private class BlobController : MonoBehaviour
-    {
-        float lifespan;
-        int damage;
-        Animator anim;
-
-        public void Init(float life, int dmg)
-        {
-            lifespan = life;
-            damage = dmg;
-        }
-
-        void Start()
-        {
-            anim = GetComponent<Animator>();
-            StartCoroutine(Lifecycle());
-        }
-
-        IEnumerator Lifecycle()
-        {
-            // live for a bit
-            yield return new WaitForSeconds(lifespan);
-
-            // trigger extinguish
-            anim.SetTrigger("endLavaLoop");
-
-            // wait out that animation
-            yield return null;
-            var clips = anim.GetCurrentAnimatorClipInfo(0);
-            if (clips.Length > 0)
-                yield return new WaitForSeconds(clips[0].clip.length - 0.1f);
-
-            Destroy(gameObject);
-        }
-
-        void OnTriggerEnter2D(Collider2D col)
-        {
-            if (col.CompareTag("Player"))
-                PlayerStatsManager.instance.TakeDamage(damage);
-        }
     }
 }

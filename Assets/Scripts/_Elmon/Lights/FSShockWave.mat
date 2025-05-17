@@ -56,7 +56,7 @@ Material:
     - _Fullscreen_SrcColorBlend: 2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ShockWaveStrength: 1.25
+    - _ShockWaveStrength: 3.77
     - _Size: 0.13
     - _WaveDistanceFromCenter: 0.305
     - _XSizeRatio: 1.777

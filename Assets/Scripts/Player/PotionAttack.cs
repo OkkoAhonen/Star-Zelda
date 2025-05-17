@@ -26,7 +26,13 @@ public class PotionAttack : MonoBehaviour
     [SerializeField] private float minThrowDistance = 2f;
     [SerializeField] private float maxThrowDistance = 8f;
 
-    // Internal tracking of flying potions
+    [Header("Splash Damage Settings")]
+    [SerializeField] private float splashDamage = 10f;
+    [SerializeField] private float damageSpeed = 0.5f;
+    [SerializeField] private float splashLifespan = 2f;
+    [SerializeField] private float splashSizeMultiplier = 1f;
+
+    private LayerMask damageMask;
     private class PotionData
     {
         public GameObject go;
@@ -39,85 +45,72 @@ public class PotionAttack : MonoBehaviour
 
     private void Awake()
     {
-        // find or create the container
+        damageMask = StaticValueManager.DamageEnemiesMask;
         if (projectilesParent == null)
         {
-            GameObject go = GameObject.Find("Projectiles");
-            projectilesParent = go != null ? go.transform
-                                           : new GameObject("Projectiles").transform;
+            var go = GameObject.Find("Projectiles");
+            projectilesParent = go != null
+                ? go.transform
+                : new GameObject("Projectiles").transform;
         }
     }
 
     private void Update()
     {
         float dt = Time.deltaTime;
-
-        // Cooldown
         if (_cooldownTimer > 0f)
             _cooldownTimer -= dt;
 
-        // Get equipped item
-        Item equipped = InventoryManager.Instance.GetSelectedItem(false);
-        bool canFire = equipped != null
-                       && equipped.type == ItemType.potion
-                       && _chargeTimer >= equipped.potionActivetimer
-                       && _cooldownTimer <= 0f;
-
-        // Start charging
-        if (Input.GetMouseButtonDown(0) && canFire)
-        {
+        if (Input.GetMouseButtonDown(0) && _cooldownTimer <= 0f)
             _chargeTimer = 0f;
-        }
 
-        // Charging
-        if (Input.GetMouseButton(0) && canFire)
-        {
+        if (Input.GetMouseButton(0) && _cooldownTimer <= 0f)
             _chargeTimer = Mathf.Min(_chargeTimer + dt, maxPotionCharge);
-        }
 
-        // Release to throw
-        if (Input.GetMouseButtonUp(0) && canFire)
+        if (Input.GetMouseButtonUp(0) && _cooldownTimer <= 0f)
         {
-            ThrowChargedPotion(equipped);
+            ThrowChargedPotion();
             _chargeTimer = 0f;
             _cooldownTimer = cooldownTime;
         }
 
-        // Update flying potions
         for (int i = _potions.Count - 1; i >= 0; i--)
         {
-            PotionData p = _potions[i];
+            var p = _potions[i];
             p.t += dt * Mathf.Lerp(minPotionSpeed, maxPotionSpeed, p.t);
             float y = 4f * p.arcH * p.t * (1f - p.t);
             p.go.transform.position = Vector3.Lerp(p.startPos, p.endPos, p.t)
                                        + Vector3.up * y;
             if (p.t >= 1f)
             {
-                StartCoroutine(SplashAndDestroy(p.go.transform.position));
+                StartCoroutine(SpawnSplash(p.go.transform.position));
                 Destroy(p.go);
                 _potions.RemoveAt(i);
             }
         }
     }
 
-    private void ThrowChargedPotion(Item equipped)
+    private void ThrowChargedPotion()
     {
-        // Determine charge ratio
-        float chargeRatio = _chargeTimer / maxPotionCharge;
+        if (potionPrefab == null || firePoint == null) return;
 
-        // Compute actual throw distance
+        float chargeRatio = _chargeTimer / maxPotionCharge;
         float maxDist = Mathf.Lerp(minThrowDistance, maxThrowDistance, chargeRatio);
+
         Vector3 mouseW = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseW.z = 0f;
-        Vector3 dir = (mouseW - firePoint.position);
+        Vector3 dir = mouseW - firePoint.position;
         float dist = Mathf.Min(dir.magnitude, maxDist);
         Vector3 target = firePoint.position + dir.normalized * dist;
 
-        // Compute arc height for this throw
         float arcH = Mathf.Lerp(minArcHeight, maxArcHeight, chargeRatio);
 
-        // Instantiate potion
-        GameObject go = Instantiate(potionPrefab, firePoint.position, Quaternion.identity, projectilesParent);
+        var go = Instantiate(
+            potionPrefab,
+            firePoint.position,
+            Quaternion.identity,
+            projectilesParent
+        );
 
         _potions.Add(new PotionData
         {
@@ -129,21 +122,22 @@ public class PotionAttack : MonoBehaviour
         });
     }
 
-    private IEnumerator SplashAndDestroy(Vector3 pos)
+    private IEnumerator SpawnSplash(Vector3 pos)
     {
-        yield return null; // one frame delay if needed
-        if (splashPrefab != null)
-            Instantiate(splashPrefab, pos, Quaternion.identity);
-    }
+        yield return null;
 
-    private void OnDrawGizmosSelected()
-    {
-        // draw maximum throw radius while charging
-        Gizmos.color = Color.blue;
-        float ratio = Application.isPlaying
-                      ? (_chargeTimer / maxPotionCharge)
-                      : 1f;
-        float r = Mathf.Lerp(minThrowDistance, maxThrowDistance, ratio);
-        Gizmos.DrawWireSphere(firePoint.position, r);
+        if (splashPrefab == null) yield break;
+
+        // ? pooled instantiate
+        GameObject splashGO = PoolingManager.Instance.GetPooledObject(splashPrefab);
+        splashGO.transform.SetParent(projectilesParent, false);
+        splashGO.transform.position = pos;
+        splashGO.transform.rotation = Quaternion.identity;
+
+        var splashScript = splashGO.GetComponent<SplashArea>();
+        splashScript.damage = splashDamage;
+        splashScript.lifespan = splashLifespan;
+        splashScript.damageMask = damageMask;
+        splashScript.sizeMultiplier *= splashSizeMultiplier;
     }
 }
