@@ -11045,6 +11045,10 @@ Transform:
   - {fileID: 5626646537521791441}
   - {fileID: 9034342332953948774}
   - {fileID: 1408996370937288845}
+  - {fileID: 329110617404760634}
+  - {fileID: 4021406323652143354}
+  - {fileID: 7655744371823144700}
+  - {fileID: 2345996285630580064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &9182069836835791347
@@ -12950,3 +12954,251 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &196029597350085489
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7296882333450750039}
+    m_Modifications:
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146124, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_Name
+      value: Lightning4Tiles Variant (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+--- !u!4 &4021406323652143354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+  m_PrefabInstance: {fileID: 196029597350085489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1583067422140526315
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7296882333450750039}
+    m_Modifications:
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.117
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146124, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_Name
+      value: Lightning4Tiles Variant (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+--- !u!4 &2345996285630580064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+  m_PrefabInstance: {fileID: 1583067422140526315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3596040752648423857
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7296882333450750039}
+    m_Modifications:
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146124, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_Name
+      value: Lightning4Tiles Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+--- !u!4 &329110617404760634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+  m_PrefabInstance: {fileID: 3596040752648423857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6865775764071941495
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7296882333450750039}
+    m_Modifications:
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.117
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852416476779146124, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+      propertyPath: m_Name
+      value: Lightning4Tiles Variant (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+--- !u!4 &7655744371823144700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3852416476779146123, guid: 7856d40a0fabd5c4885d9f01423deb69, type: 3}
+  m_PrefabInstance: {fileID: 6865775764071941495}
+  m_PrefabAsset: {fileID: 0}
