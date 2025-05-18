@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: StartingRoom
   m_EditorClassIdentifier: 
   type: 0
-  prefab: {fileID: 8621818952549655225, guid: cad4a53b05fbe2a48bc0123301792b12, type: 3}
+  prefab: {fileID: 3969946308580000497, guid: e577bb9abb8192047b836ad40213a203, type: 3}
+  followPlayerCamera: 0

@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class BossDoorScript : MonoBehaviour
+{
+    public BoxCollider2D InputBox;
+
+    public Animator animator;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        animator.SetTrigger("Down");
+    }
+ 
+}
