@@ -6438,7 +6438,7 @@ GameObject:
   - component: {fileID: 8147798448516541805}
   - component: {fileID: 6914321288559686082}
   m_Layer: 0
-  m_Name: Depths11
+  m_Name: RightDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

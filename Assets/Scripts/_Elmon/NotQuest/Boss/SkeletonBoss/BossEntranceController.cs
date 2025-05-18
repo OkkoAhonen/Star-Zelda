@@ -42,12 +42,15 @@ public class BossEntranceController : MonoBehaviour
 
     private IEnumerator EntranceSequence()
     {
+
+        
         // pan camera to the boss’s arenaCenter
         var cam = Camera.main.transform;
-        Vector3 target = bossAI.arenaCenter;
+        Vector3 target = bossAI.gameObject.transform.position;
         target.z = cam.position.z;
 
-        while ((Vector2)cam.position != bossAI.arenaCenter)
+        while ((Vector2)cam.position != (Vector2)bossAI.gameObject.transform.position)
+
         {
             cam.position = Vector3.MoveTowards(
                 cam.position, target, panSpeed * Time.deltaTime);
