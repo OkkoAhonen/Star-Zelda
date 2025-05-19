@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -57,7 +58,7 @@ public class PlayerAttackMelee : MonoBehaviour
             Item equippedItem = InventoryManager.Instance.GetSelectedItem(false);
             if (equippedItem.isWeapon == true)
             {
-               
+                
 
                 if (Input.GetMouseButtonUp(0) )
                 {
@@ -111,36 +112,56 @@ public class PlayerAttackMelee : MonoBehaviour
 
     }
 
-    private void dealDamage(GameObject enemy,float damage)
+
+    private IEnumerator DrawSound()
     {
-        switch (enemy.name)
+        yield return new WaitForSeconds(0.1f);
+        AudioManager.instance.PlaySFX("DrawSword");
+        yield break;
+    }
+    private void dealDamage(GameObject enemy, float damage)
+    {
+        string enemyName = enemy.name;
+
+        if (enemyName.StartsWith("Enemy1"))
         {
-            case "Enemy1":
-                MageSkeletonController mageSkeletonController = enemy.GetComponent<MageSkeletonController>();
-                mageSkeletonController.TakeDamage((int )damage);
-                Debug.Log($"MageSkeleton currenthealth: {mageSkeletonController.currentHealth} / {mageSkeletonController.maxHealth}");
-                break;
-            case "Enemy2":
-                PirateCaptainController pirateCaptainController = enemy.GetComponentInParent<PirateCaptainController>();
-                pirateCaptainController.TakeDamage((int )damage);
-                Debug.Log($"PirateCaptain currenthealth: {pirateCaptainController.currentHealth} / {pirateCaptainController.maxHealth}");
-                break;
-            case "Enemy3":
-                ImpAI impAi  = enemy.GetComponentInParent<ImpAI>();
-                impAi.TakeDamage((int )damage); Debug.Log($"IMP currenthealth: {impAi.currentHealth} / {impAi.maxHealth}");
-
-                break;
-            case "Enemy4":
-                RockyDudeAI rockyDudeAI = enemy.GetComponent<RockyDudeAI>();
-                rockyDudeAI.TakeDamage((int )damage);
-
-                break;
-            case "Enemy5":
-                GoblinAI goblinAI = enemy.GetComponent <GoblinAI>();
-                goblinAI.TakeDamage( (int )damage);
-                break;
+            MageSkeletonController mageSkeletonController = enemy.GetComponent<MageSkeletonController>();
+            mageSkeletonController.TakeDamage((int)damage);
+            Debug.Log($"MageSkeleton currenthealth: {mageSkeletonController.currentHealth} / {mageSkeletonController.maxHealth}");
+        }
+        else if (enemyName.StartsWith("Enemy2"))
+        {
+            PirateCaptainController pirateCaptainController = enemy.GetComponentInParent<PirateCaptainController>();
+            pirateCaptainController.TakeDamage((int)damage);
+            Debug.Log($"PirateCaptain currenthealth: {pirateCaptainController.currentHealth} / {pirateCaptainController.maxHealth}");
+        }
+        else if (enemyName.StartsWith("Enemy3"))
+        {
+            ImpAI impAi = enemy.GetComponentInParent<ImpAI>();
+            impAi.TakeDamage((int)damage);
+            Debug.Log($"IMP currenthealth: {impAi.currentHealth} / {impAi.maxHealth}");
+        }
+        else if (enemyName.StartsWith("Enemy4"))
+        {
+            RockyDudeAI rockyDudeAI = enemy.GetComponent<RockyDudeAI>();
+            rockyDudeAI.TakeDamage((int)damage);
+        }
+        else if (enemyName.StartsWith("Enemy5"))
+        {
+            GoblinAI goblinAI = enemy.GetComponent<GoblinAI>();
+            goblinAI.TakeDamage((int)damage);
+        }
+        else if (enemyName.StartsWith("SkeletonBoss"))
+        {
+            SkeletonBossAI skeletonBossAI = enemy.GetComponent<SkeletonBossAI>();
+            skeletonBossAI.TakeDamage(damage);
+        }
+        else
+        {
+            Debug.LogWarning("Tuntematon vihollinen: " + enemyName);
         }
     }
+
 
     private void AttackAudio()
     {

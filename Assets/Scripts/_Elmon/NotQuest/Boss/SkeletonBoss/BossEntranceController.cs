@@ -12,7 +12,7 @@ public class BossEntranceController : MonoBehaviour
     [Tooltip("Delay before resurrection")]
     [SerializeField] private float dramaticPauseTime = 1f;
 
-    private CameraFollow camFollow;
+    private CameraController camFollow;
     private SkeletonBossAI bossAI;
     private Animator bossAnimator;
     private bool triggered;
@@ -33,8 +33,8 @@ public class BossEntranceController : MonoBehaviour
     {
         if (triggered || other.tag != "Player") return;
         triggered = true;
-
-        camFollow = Camera.main.GetComponent<CameraFollow>();
+        Debug.Log("Start boss");
+        camFollow = Camera.main.GetComponent<CameraController>();
         if (camFollow) camFollow.enabled = false;
 
         StartCoroutine(EntranceSequence());
@@ -42,12 +42,15 @@ public class BossEntranceController : MonoBehaviour
 
     private IEnumerator EntranceSequence()
     {
+
+        
         // pan camera to the boss’s arenaCenter
         var cam = Camera.main.transform;
-        Vector3 target = bossAI.arenaCenter;
+        Vector3 target = bossAI.gameObject.transform.position;
         target.z = cam.position.z;
 
-        while ((Vector2)cam.position != bossAI.arenaCenter)
+        while ((Vector2)cam.position != (Vector2)bossAI.gameObject.transform.position)
+
         {
             cam.position = Vector3.MoveTowards(
                 cam.position, target, panSpeed * Time.deltaTime);
@@ -69,6 +72,9 @@ public class BossEntranceController : MonoBehaviour
             var s = bossAnimator.GetCurrentAnimatorStateInfo(layer);
             return s.shortNameHash == clipHash && s.normalizedTime < 1f;
         });
+
+
+
 
         if (camFollow) camFollow.enabled = true;
         Destroy(gameObject);
