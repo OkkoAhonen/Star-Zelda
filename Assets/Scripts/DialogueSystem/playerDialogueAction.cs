@@ -13,6 +13,7 @@ public class PlayerDialogueAction : MonoBehaviour
     public ShopManager shopManager;
 
     [SerializeField] Item questItem;
+    public int count;
 
     private void Start()
     {
@@ -87,16 +88,13 @@ public class PlayerDialogueAction : MonoBehaviour
         {
             QuestManager.instance.StartQuest(QuestManager.instance.allQuests[quest]);
         }
-        if (state == Quest.QuestState.CAN_FINISH)
+        else if (state == Quest.QuestState.CAN_FINISH)
         {
-            if (item == null)
-            {
-                QuestManager.instance.CompleteQuest(QuestManager.instance.allQuests[quest]);
-            }
-            else if (InventoryManager.Instance.HasOrConsumeItemAmount(item, 10, true))
-            {
-                QuestManager.instance.CompleteQuest(QuestManager.instance.allQuests[quest]);
-            }
+            QuestManager.instance.CompleteQuest(QuestManager.instance.allQuests[quest]);
+        }
+        else if (InventoryManager.Instance.HasOrConsumeItemAmount(item, count, true))
+        {
+            QuestManager.instance.CompleteQuest(QuestManager.instance.allQuests[quest]);
         }
     }
 }

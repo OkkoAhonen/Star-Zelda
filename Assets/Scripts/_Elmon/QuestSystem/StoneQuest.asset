@@ -17,20 +17,20 @@ MonoBehaviour:
   questGiverName: Okko
   questImportance: 3
   questDifficulty: 3
-  stepStates: 00000000
+  stepStates: 
   description: Give one stone to the local golem
   id: Golem
   displayName: Broken Golem
   rewards:
-    gold: 100
+    gold: 500
     experience: 250
     itemIcons: []
     getQuestItem: []
-  state: 2
+  state: 1
   steps:
   - stepType: 3
     stepName: Stone
     targetId: Stone
     requiredAmount: 1
     stepDifficulty: 1
-  stepProgress: 00000000
+  stepProgress: 

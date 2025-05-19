@@ -18,11 +18,11 @@ MonoBehaviour:
   questImportance: 2
   questDifficulty: 2
   stepStates: 
-  description: Give chocolate to the freezing player
+  description: Give chocolate to the freezing man
   id: Chocolate
   displayName: Hot Chocolate
   rewards:
-    gold: 500
+    gold: 100
     experience: 250
     itemIcons: []
     getQuestItem: []

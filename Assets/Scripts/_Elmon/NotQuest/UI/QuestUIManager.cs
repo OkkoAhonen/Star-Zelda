@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Linq;
+using UnityEngine;
 
 public class QuestUIManager : MonoBehaviour
 {

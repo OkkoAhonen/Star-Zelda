@@ -68,7 +68,8 @@ public class QuestManager : MonoBehaviour
         }
         }
         GameEventsManager.instance.playerEvents.GainExperience(quest.rewards.experience);
-        
+        GameEventsManager.instance.playerEvents.ChangeGoldBy(quest.rewards.gold);
+
         GameEventsManager.instance.questEvents.FinishQuest(quest.id);
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
     }

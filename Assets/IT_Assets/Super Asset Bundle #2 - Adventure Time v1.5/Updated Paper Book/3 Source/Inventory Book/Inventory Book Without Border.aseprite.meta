@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Inventory Book Without Border_Frame_0
+  - name: Frame_0
     originalName: 
     pivot: {x: 0.5386905, y: -0.30403802}
     alignment: 9
@@ -144,7 +144,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1036, y: 7019}
-  - name: Inventory Book Without Border_Frame_1
+  - name: Frame_1
     originalName: 
     pivot: {x: 0.49107146, y: -0.29024944}
     alignment: 9
@@ -165,7 +165,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7622, y: 528}
-  - name: Inventory Book Without Border_Frame_2
+  - name: Frame_2
     originalName: 
     pivot: {x: 0.44345236, y: -0.2524655}
     alignment: 9
@@ -186,7 +186,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 7019}
-  - name: Inventory Book Without Border_Frame_3
+  - name: Frame_3
     originalName: 
     pivot: {x: 0.542811, y: -0.23837209}
     alignment: 9
@@ -207,7 +207,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Inventory Book Without Border_Frame_4
+  - name: Frame_4
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -228,7 +228,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1182, y: 5679}
-  - name: Inventory Book Without Border_Frame_6
+  - name: Frame_6
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -249,7 +249,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1851, y: 5679}
-  - name: Inventory Book Without Border_Frame_7
+  - name: Frame_7
     originalName: 
     pivot: {x: 0.542811, y: -0.23837209}
     alignment: 9
@@ -270,7 +270,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 631, y: 4}
-  - name: Inventory Book Without Border_Frame_8
+  - name: Frame_8
     originalName: 
     pivot: {x: 0.44345236, y: -0.2524655}
     alignment: 9
@@ -291,7 +291,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 348, y: 7019}
-  - name: Inventory Book Without Border_Frame_9
+  - name: Frame_9
     originalName: 
     pivot: {x: 0.49107146, y: -0.29024944}
     alignment: 9
@@ -312,7 +312,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 692, y: 7019}
-  - name: Inventory Book Without Border_Frame_10
+  - name: Frame_10
     originalName: 
     pivot: {x: 0.5386905, y: -0.30403802}
     alignment: 9
@@ -333,7 +333,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1380, y: 7019}
-  - name: Inventory Book Without Border_Frame_12
+  - name: Frame_12
     originalName: 
     pivot: {x: 0.48648682, y: -0.2942584}
     alignment: 9
@@ -354,7 +354,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 8105, y: 5679}
-  - name: Inventory Book Without Border_Frame_13
+  - name: Frame_13
     originalName: 
     pivot: {x: 0.4977778, y: -0.26973686}
     alignment: 9
@@ -375,7 +375,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7948, y: 4}
-  - name: Inventory Book Without Border_Frame_14
+  - name: Frame_14
     originalName: 
     pivot: {x: 0.49913943, y: -0.25413224}
     alignment: 9
@@ -396,7 +396,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 5679}
-  - name: Inventory Book Without Border_Frame_15
+  - name: Frame_15
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -417,7 +417,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2520, y: 5679}
-  - name: Inventory Book Without Border_Frame_17
+  - name: Frame_17
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -438,7 +438,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3189, y: 5679}
-  - name: Inventory Book Without Border_Frame_18
+  - name: Frame_18
     originalName: 
     pivot: {x: 0.49913943, y: -0.25413224}
     alignment: 9
@@ -459,7 +459,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 593, y: 5679}
-  - name: Inventory Book Without Border_Frame_19
+  - name: Frame_19
     originalName: 
     pivot: {x: 0.4977778, y: -0.26973686}
     alignment: 9
@@ -480,7 +480,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7872, y: 5679}
-  - name: Inventory Book Without Border_Frame_20
+  - name: Frame_20
     originalName: 
     pivot: {x: 0.48648682, y: -0.2942584}
     alignment: 9
@@ -501,7 +501,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 8150, y: 5679}
-  - name: Inventory Book Without Border_Frame_22
+  - name: Frame_22
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -522,7 +522,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3858, y: 5679}
-  - name: Inventory Book Without Border_Frame_23
+  - name: Frame_23
     originalName: 
     pivot: {x: 0.49924356, y: -0.29216152}
     alignment: 9
@@ -543,7 +543,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4018, y: 5242}
-  - name: Inventory Book Without Border_Frame_24
+  - name: Frame_24
     originalName: 
     pivot: {x: 0.49924356, y: -0.2789116}
     alignment: 9
@@ -564,7 +564,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1342, y: 528}
-  - name: Inventory Book Without Border_Frame_25
+  - name: Frame_25
     originalName: 
     pivot: {x: 0.49924356, y: -0.2847222}
     alignment: 9
@@ -585,7 +585,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4802}
-  - name: Inventory Book Without Border_Frame_26
+  - name: Frame_26
     originalName: 
     pivot: {x: 0.49924356, y: -0.2867133}
     alignment: 9
@@ -606,7 +606,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5506, y: 4802}
-  - name: Inventory Book Without Border_Frame_27
+  - name: Frame_27
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -627,7 +627,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4527, y: 5679}
-  - name: Inventory Book Without Border_Frame_28
+  - name: Frame_28
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -648,7 +648,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5196, y: 5679}
-  - name: Inventory Book Without Border_Frame_29
+  - name: Frame_29
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -669,7 +669,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5865, y: 5679}
-  - name: Inventory Book Without Border_Frame_30
+  - name: Frame_30
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -690,7 +690,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6534, y: 5679}
-  - name: Inventory Book Without Border_Frame_32
+  - name: Frame_32
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -711,7 +711,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7203, y: 5679}
-  - name: Inventory Book Without Border_Frame_33
+  - name: Frame_33
     originalName: 
     pivot: {x: 0.49924356, y: -0.29216152}
     alignment: 9
@@ -732,7 +732,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4687, y: 5242}
-  - name: Inventory Book Without Border_Frame_34
+  - name: Frame_34
     originalName: 
     pivot: {x: 0.49924356, y: -0.2789116}
     alignment: 9
@@ -753,7 +753,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2011, y: 528}
-  - name: Inventory Book Without Border_Frame_35
+  - name: Frame_35
     originalName: 
     pivot: {x: 0.49924356, y: -0.2847222}
     alignment: 9
@@ -774,7 +774,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 673, y: 4802}
-  - name: Inventory Book Without Border_Frame_36
+  - name: Frame_36
     originalName: 
     pivot: {x: 0.49924356, y: -0.2867133}
     alignment: 9
@@ -795,7 +795,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6175, y: 4802}
-  - name: Inventory Book Without Border_Frame_37
+  - name: Frame_37
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -816,7 +816,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 6171}
-  - name: Inventory Book Without Border_Frame_38
+  - name: Frame_38
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -837,7 +837,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 673, y: 6171}
-  - name: Inventory Book Without Border_Frame_39
+  - name: Frame_39
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -858,7 +858,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1342, y: 6171}
-  - name: Inventory Book Without Border_Frame_40
+  - name: Frame_40
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -879,7 +879,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2011, y: 6171}
-  - name: Inventory Book Without Border_Frame_42
+  - name: Frame_42
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -900,7 +900,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2680, y: 6171}
-  - name: Inventory Book Without Border_Frame_43
+  - name: Frame_43
     originalName: 
     pivot: {x: 0.49924356, y: -0.28738317}
     alignment: 9
@@ -921,7 +921,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1342, y: 5242}
-  - name: Inventory Book Without Border_Frame_44
+  - name: Frame_44
     originalName: 
     pivot: {x: 0.49924356, y: -0.27152318}
     alignment: 9
@@ -942,7 +942,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3934, y: 4}
-  - name: Inventory Book Without Border_Frame_45
+  - name: Frame_45
     originalName: 
     pivot: {x: 0.49924356, y: -0.26914662}
     alignment: 9
@@ -963,7 +963,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1258, y: 4}
-  - name: Inventory Book Without Border_Frame_46
+  - name: Frame_46
     originalName: 
     pivot: {x: 0.49924356, y: -0.27333334}
     alignment: 9
@@ -984,7 +984,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6610, y: 4}
-  - name: Inventory Book Without Border_Frame_47
+  - name: Frame_47
     originalName: 
     pivot: {x: 0.49924356, y: -0.2867133}
     alignment: 9
@@ -1005,7 +1005,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6844, y: 4802}
-  - name: Inventory Book Without Border_Frame_48
+  - name: Frame_48
     originalName: 
     pivot: {x: 0.49924356, y: -0.2935561}
     alignment: 9
@@ -1026,7 +1026,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5356, y: 5242}
-  - name: Inventory Book Without Border_Frame_49
+  - name: Frame_49
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -1047,7 +1047,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3349, y: 6171}
-  - name: Inventory Book Without Border_Frame_51
+  - name: Frame_51
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -1068,7 +1068,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4018, y: 6171}
-  - name: Inventory Book Without Border_Frame_52
+  - name: Frame_52
     originalName: 
     pivot: {x: 0.49924356, y: -0.28738317}
     alignment: 9
@@ -1089,7 +1089,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2011, y: 5242}
-  - name: Inventory Book Without Border_Frame_53
+  - name: Frame_53
     originalName: 
     pivot: {x: 0.49924356, y: -0.27152318}
     alignment: 9
@@ -1110,7 +1110,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4603, y: 4}
-  - name: Inventory Book Without Border_Frame_54
+  - name: Frame_54
     originalName: 
     pivot: {x: 0.49924356, y: -0.26914662}
     alignment: 9
@@ -1131,7 +1131,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1927, y: 4}
-  - name: Inventory Book Without Border_Frame_55
+  - name: Frame_55
     originalName: 
     pivot: {x: 0.49924356, y: -0.27333334}
     alignment: 9
@@ -1152,7 +1152,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7279, y: 4}
-  - name: Inventory Book Without Border_Frame_56
+  - name: Frame_56
     originalName: 
     pivot: {x: 0.49924356, y: -0.2867133}
     alignment: 9
@@ -1173,7 +1173,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7513, y: 4802}
-  - name: Inventory Book Without Border_Frame_57
+  - name: Frame_57
     originalName: 
     pivot: {x: 0.49924356, y: -0.2935561}
     alignment: 9
@@ -1194,7 +1194,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6025, y: 5242}
-  - name: Inventory Book Without Border_Frame_58
+  - name: Frame_58
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -1215,7 +1215,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4687, y: 6171}
-  - name: Inventory Book Without Border_Frame_60
+  - name: Frame_60
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -1236,7 +1236,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5356, y: 6171}
-  - name: Inventory Book Without Border_Frame_61
+  - name: Frame_61
     originalName: 
     pivot: {x: 0.49924356, y: -0.2935561}
     alignment: 9
@@ -1257,7 +1257,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6694, y: 5242}
-  - name: Inventory Book Without Border_Frame_62
+  - name: Frame_62
     originalName: 
     pivot: {x: 0.49924356, y: -0.2867133}
     alignment: 9
@@ -1278,7 +1278,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 5242}
-  - name: Inventory Book Without Border_Frame_63
+  - name: Frame_63
     originalName: 
     pivot: {x: 0.49924356, y: -0.27333334}
     alignment: 9
@@ -1299,7 +1299,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 528}
-  - name: Inventory Book Without Border_Frame_64
+  - name: Frame_64
     originalName: 
     pivot: {x: 0.49924356, y: -0.26914662}
     alignment: 9
@@ -1320,7 +1320,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2596, y: 4}
-  - name: Inventory Book Without Border_Frame_65
+  - name: Frame_65
     originalName: 
     pivot: {x: 0.49924356, y: -0.27152318}
     alignment: 9
@@ -1341,7 +1341,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5272, y: 4}
-  - name: Inventory Book Without Border_Frame_66
+  - name: Frame_66
     originalName: 
     pivot: {x: 0.49924356, y: -0.28738317}
     alignment: 9
@@ -1362,7 +1362,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2680, y: 5242}
-  - name: Inventory Book Without Border_Frame_67
+  - name: Frame_67
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -1383,7 +1383,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6025, y: 6171}
-  - name: Inventory Book Without Border_Frame_69
+  - name: Frame_69
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -1404,7 +1404,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6694, y: 6171}
-  - name: Inventory Book Without Border_Frame_70
+  - name: Frame_70
     originalName: 
     pivot: {x: 0.49924356, y: -0.2935561}
     alignment: 9
@@ -1425,7 +1425,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7363, y: 5242}
-  - name: Inventory Book Without Border_Frame_71
+  - name: Frame_71
     originalName: 
     pivot: {x: 0.49924356, y: -0.2867133}
     alignment: 9
@@ -1446,7 +1446,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 673, y: 5242}
-  - name: Inventory Book Without Border_Frame_72
+  - name: Frame_72
     originalName: 
     pivot: {x: 0.49924356, y: -0.27333334}
     alignment: 9
@@ -1467,7 +1467,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 673, y: 528}
-  - name: Inventory Book Without Border_Frame_73
+  - name: Frame_73
     originalName: 
     pivot: {x: 0.49924356, y: -0.26914662}
     alignment: 9
@@ -1488,7 +1488,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3265, y: 4}
-  - name: Inventory Book Without Border_Frame_74
+  - name: Frame_74
     originalName: 
     pivot: {x: 0.49924356, y: -0.27152318}
     alignment: 9
@@ -1509,7 +1509,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5941, y: 4}
-  - name: Inventory Book Without Border_Frame_75
+  - name: Frame_75
     originalName: 
     pivot: {x: 0.49924356, y: -0.28738317}
     alignment: 9
@@ -1530,7 +1530,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3349, y: 5242}
-  - name: Inventory Book Without Border_Frame_76
+  - name: Frame_76
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -1551,7 +1551,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7363, y: 6171}
-  - name: Inventory Book Without Border_Frame_78
+  - name: Frame_78
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1572,7 +1572,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4946, y: 986}
-  - name: Inventory Book Without Border_Frame_79
+  - name: Frame_79
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1593,7 +1593,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5649, y: 986}
-  - name: Inventory Book Without Border_Frame_80
+  - name: Frame_80
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1614,7 +1614,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6352, y: 986}
-  - name: Inventory Book Without Border_Frame_81
+  - name: Frame_81
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1635,7 +1635,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7055, y: 986}
-  - name: Inventory Book Without Border_Frame_82
+  - name: Frame_82
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1656,7 +1656,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 1410}
-  - name: Inventory Book Without Border_Frame_83
+  - name: Frame_83
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1677,7 +1677,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 707, y: 1410}
-  - name: Inventory Book Without Border_Frame_84
+  - name: Frame_84
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1698,7 +1698,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1410, y: 1410}
-  - name: Inventory Book Without Border_Frame_85
+  - name: Frame_85
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1719,7 +1719,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2113, y: 1410}
-  - name: Inventory Book Without Border_Frame_86
+  - name: Frame_86
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1740,7 +1740,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2816, y: 1410}
-  - name: Inventory Book Without Border_Frame_87
+  - name: Frame_87
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1761,7 +1761,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3519, y: 1410}
-  - name: Inventory Book Without Border_Frame_88
+  - name: Frame_88
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1782,7 +1782,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4222, y: 1410}
-  - name: Inventory Book Without Border_Frame_89
+  - name: Frame_89
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1803,7 +1803,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4925, y: 1410}
-  - name: Inventory Book Without Border_Frame_90
+  - name: Frame_90
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1824,7 +1824,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5628, y: 1410}
-  - name: Inventory Book Without Border_Frame_91
+  - name: Frame_91
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1845,7 +1845,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6331, y: 1410}
-  - name: Inventory Book Without Border_Frame_92
+  - name: Frame_92
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1866,7 +1866,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7034, y: 1410}
-  - name: Inventory Book Without Border_Frame_93
+  - name: Frame_93
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1887,7 +1887,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 1834}
-  - name: Inventory Book Without Border_Frame_94
+  - name: Frame_94
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1908,7 +1908,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 707, y: 1834}
-  - name: Inventory Book Without Border_Frame_95
+  - name: Frame_95
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1929,7 +1929,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1410, y: 1834}
-  - name: Inventory Book Without Border_Frame_96
+  - name: Frame_96
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1950,7 +1950,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2113, y: 1834}
-  - name: Inventory Book Without Border_Frame_97
+  - name: Frame_97
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1971,7 +1971,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2816, y: 1834}
-  - name: Inventory Book Without Border_Frame_98
+  - name: Frame_98
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -1992,7 +1992,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3519, y: 1834}
-  - name: Inventory Book Without Border_Frame_99
+  - name: Frame_99
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2013,7 +2013,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4222, y: 1834}
-  - name: Inventory Book Without Border_Frame_100
+  - name: Frame_100
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2034,7 +2034,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4925, y: 1834}
-  - name: Inventory Book Without Border_Frame_101
+  - name: Frame_101
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2055,7 +2055,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5628, y: 1834}
-  - name: Inventory Book Without Border_Frame_102
+  - name: Frame_102
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2076,7 +2076,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6331, y: 1834}
-  - name: Inventory Book Without Border_Frame_103
+  - name: Frame_103
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2097,7 +2097,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7034, y: 1834}
-  - name: Inventory Book Without Border_Frame_104
+  - name: Frame_104
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2118,7 +2118,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 2258}
-  - name: Inventory Book Without Border_Frame_105
+  - name: Frame_105
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2139,7 +2139,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 707, y: 2258}
-  - name: Inventory Book Without Border_Frame_106
+  - name: Frame_106
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2160,7 +2160,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1410, y: 2258}
-  - name: Inventory Book Without Border_Frame_107
+  - name: Frame_107
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2181,7 +2181,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2113, y: 2258}
-  - name: Inventory Book Without Border_Frame_108
+  - name: Frame_108
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2202,7 +2202,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2816, y: 2258}
-  - name: Inventory Book Without Border_Frame_109
+  - name: Frame_109
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2223,7 +2223,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3519, y: 2258}
-  - name: Inventory Book Without Border_Frame_110
+  - name: Frame_110
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2244,7 +2244,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4222, y: 2258}
-  - name: Inventory Book Without Border_Frame_111
+  - name: Frame_111
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2265,7 +2265,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4925, y: 2258}
-  - name: Inventory Book Without Border_Frame_112
+  - name: Frame_112
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2286,7 +2286,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5628, y: 2258}
-  - name: Inventory Book Without Border_Frame_113
+  - name: Frame_113
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2307,7 +2307,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6331, y: 2258}
-  - name: Inventory Book Without Border_Frame_115
+  - name: Frame_115
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2328,7 +2328,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7034, y: 2258}
-  - name: Inventory Book Without Border_Frame_116
+  - name: Frame_116
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2349,7 +2349,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 2682}
-  - name: Inventory Book Without Border_Frame_117
+  - name: Frame_117
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2370,7 +2370,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 707, y: 2682}
-  - name: Inventory Book Without Border_Frame_118
+  - name: Frame_118
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2391,7 +2391,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1410, y: 2682}
-  - name: Inventory Book Without Border_Frame_119
+  - name: Frame_119
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2412,7 +2412,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2113, y: 2682}
-  - name: Inventory Book Without Border_Frame_120
+  - name: Frame_120
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2433,7 +2433,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2816, y: 2682}
-  - name: Inventory Book Without Border_Frame_121
+  - name: Frame_121
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2454,7 +2454,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3519, y: 2682}
-  - name: Inventory Book Without Border_Frame_122
+  - name: Frame_122
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2475,7 +2475,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4222, y: 2682}
-  - name: Inventory Book Without Border_Frame_123
+  - name: Frame_123
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2496,7 +2496,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4925, y: 2682}
-  - name: Inventory Book Without Border_Frame_124
+  - name: Frame_124
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2517,7 +2517,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5628, y: 2682}
-  - name: Inventory Book Without Border_Frame_125
+  - name: Frame_125
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2538,7 +2538,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6331, y: 2682}
-  - name: Inventory Book Without Border_Frame_126
+  - name: Frame_126
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2559,7 +2559,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7034, y: 2682}
-  - name: Inventory Book Without Border_Frame_127
+  - name: Frame_127
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2580,7 +2580,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 3106}
-  - name: Inventory Book Without Border_Frame_128
+  - name: Frame_128
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2601,7 +2601,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 707, y: 3106}
-  - name: Inventory Book Without Border_Frame_129
+  - name: Frame_129
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2622,7 +2622,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1410, y: 3106}
-  - name: Inventory Book Without Border_Frame_130
+  - name: Frame_130
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2643,7 +2643,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2113, y: 3106}
-  - name: Inventory Book Without Border_Frame_131
+  - name: Frame_131
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2664,7 +2664,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2816, y: 3106}
-  - name: Inventory Book Without Border_Frame_132
+  - name: Frame_132
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2685,7 +2685,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3519, y: 3106}
-  - name: Inventory Book Without Border_Frame_133
+  - name: Frame_133
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2706,7 +2706,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4222, y: 3106}
-  - name: Inventory Book Without Border_Frame_134
+  - name: Frame_134
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2727,7 +2727,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4925, y: 3106}
-  - name: Inventory Book Without Border_Frame_135
+  - name: Frame_135
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2748,7 +2748,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5628, y: 3106}
-  - name: Inventory Book Without Border_Frame_136
+  - name: Frame_136
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2769,7 +2769,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6331, y: 3106}
-  - name: Inventory Book Without Border_Frame_137
+  - name: Frame_137
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2790,7 +2790,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7034, y: 3106}
-  - name: Inventory Book Without Border_Frame_138
+  - name: Frame_138
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2811,7 +2811,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 3530}
-  - name: Inventory Book Without Border_Frame_139
+  - name: Frame_139
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2832,7 +2832,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 707, y: 3530}
-  - name: Inventory Book Without Border_Frame_140
+  - name: Frame_140
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2853,7 +2853,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1410, y: 3530}
-  - name: Inventory Book Without Border_Frame_141
+  - name: Frame_141
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2874,7 +2874,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2113, y: 3530}
-  - name: Inventory Book Without Border_Frame_142
+  - name: Frame_142
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2895,7 +2895,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2816, y: 3530}
-  - name: Inventory Book Without Border_Frame_143
+  - name: Frame_143
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2916,7 +2916,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3519, y: 3530}
-  - name: Inventory Book Without Border_Frame_144
+  - name: Frame_144
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2937,7 +2937,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4222, y: 3530}
-  - name: Inventory Book Without Border_Frame_145
+  - name: Frame_145
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2958,7 +2958,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4925, y: 3530}
-  - name: Inventory Book Without Border_Frame_146
+  - name: Frame_146
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -2979,7 +2979,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5628, y: 3530}
-  - name: Inventory Book Without Border_Frame_147
+  - name: Frame_147
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3000,7 +3000,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6331, y: 3530}
-  - name: Inventory Book Without Border_Frame_148
+  - name: Frame_148
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3021,7 +3021,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7034, y: 3530}
-  - name: Inventory Book Without Border_Frame_149
+  - name: Frame_149
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3042,7 +3042,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 3954}
-  - name: Inventory Book Without Border_Frame_150
+  - name: Frame_150
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3063,7 +3063,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 707, y: 3954}
-  - name: Inventory Book Without Border_Frame_152
+  - name: Frame_152
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3084,7 +3084,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2796, y: 4378}
-  - name: Inventory Book Without Border_Frame_153
+  - name: Frame_153
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3105,7 +3105,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1410, y: 3954}
-  - name: Inventory Book Without Border_Frame_154
+  - name: Frame_154
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3126,7 +3126,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2113, y: 3954}
-  - name: Inventory Book Without Border_Frame_155
+  - name: Frame_155
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3147,7 +3147,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2816, y: 3954}
-  - name: Inventory Book Without Border_Frame_156
+  - name: Frame_156
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3168,7 +3168,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3519, y: 3954}
-  - name: Inventory Book Without Border_Frame_157
+  - name: Frame_157
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3189,7 +3189,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4222, y: 3954}
-  - name: Inventory Book Without Border_Frame_158
+  - name: Frame_158
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3210,7 +3210,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4925, y: 3954}
-  - name: Inventory Book Without Border_Frame_159
+  - name: Frame_159
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3231,7 +3231,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5628, y: 3954}
-  - name: Inventory Book Without Border_Frame_160
+  - name: Frame_160
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3252,7 +3252,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6331, y: 3954}
-  - name: Inventory Book Without Border_Frame_161
+  - name: Frame_161
     originalName: 
     pivot: {x: 0.47482014, y: -0.29567307}
     alignment: 9
@@ -3273,7 +3273,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 7034, y: 3954}
-  - name: Inventory Book Without Border_Frame_163
+  - name: Frame_163
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -3294,7 +3294,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 6595}
-  - name: Inventory Book Without Border_Frame_164
+  - name: Frame_164
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -3315,7 +3315,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 673, y: 6595}
-  - name: Inventory Book Without Border_Frame_165
+  - name: Frame_165
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3336,7 +3336,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2680, y: 528}
-  - name: Inventory Book Without Border_Frame_166
+  - name: Frame_166
     originalName: 
     pivot: {x: 0.47826087, y: -0.29567307}
     alignment: 9
@@ -3357,7 +3357,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4378}
-  - name: Inventory Book Without Border_Frame_167
+  - name: Frame_167
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3378,7 +3378,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3386, y: 528}
-  - name: Inventory Book Without Border_Frame_168
+  - name: Frame_168
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3399,7 +3399,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4092, y: 528}
-  - name: Inventory Book Without Border_Frame_169
+  - name: Frame_169
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3420,7 +3420,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4798, y: 528}
-  - name: Inventory Book Without Border_Frame_170
+  - name: Frame_170
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3441,7 +3441,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5504, y: 528}
-  - name: Inventory Book Without Border_Frame_171
+  - name: Frame_171
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3462,7 +3462,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6210, y: 528}
-  - name: Inventory Book Without Border_Frame_172
+  - name: Frame_172
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3483,7 +3483,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6916, y: 528}
-  - name: Inventory Book Without Border_Frame_173
+  - name: Frame_173
     originalName: 
     pivot: {x: 0.47826087, y: -0.29567307}
     alignment: 9
@@ -3504,7 +3504,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 702, y: 4378}
-  - name: Inventory Book Without Border_Frame_174
+  - name: Frame_174
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3525,7 +3525,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3490, y: 4378}
-  - name: Inventory Book Without Border_Frame_175
+  - name: Frame_175
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3546,7 +3546,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4184, y: 4378}
-  - name: Inventory Book Without Border_Frame_176
+  - name: Frame_176
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3567,7 +3567,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4878, y: 4378}
-  - name: Inventory Book Without Border_Frame_177
+  - name: Frame_177
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3588,7 +3588,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 5572, y: 4378}
-  - name: Inventory Book Without Border_Frame_178
+  - name: Frame_178
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3609,7 +3609,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6266, y: 4378}
-  - name: Inventory Book Without Border_Frame_179
+  - name: Frame_179
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3630,7 +3630,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 6960, y: 4378}
-  - name: Inventory Book Without Border_Frame_181
+  - name: Frame_181
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3651,7 +3651,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1342, y: 4802}
-  - name: Inventory Book Without Border_Frame_182
+  - name: Frame_182
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3672,7 +3672,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2036, y: 4802}
-  - name: Inventory Book Without Border_Frame_183
+  - name: Frame_183
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3693,7 +3693,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2730, y: 4802}
-  - name: Inventory Book Without Border_Frame_184
+  - name: Frame_184
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3714,7 +3714,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3424, y: 4802}
-  - name: Inventory Book Without Border_Frame_185
+  - name: Frame_185
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3735,7 +3735,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4118, y: 4802}
-  - name: Inventory Book Without Border_Frame_186
+  - name: Frame_186
     originalName: 
     pivot: {x: 0.48104954, y: -0.29567307}
     alignment: 9
@@ -3756,7 +3756,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4812, y: 4802}
-  - name: Inventory Book Without Border_Frame_187
+  - name: Frame_187
     originalName: 
     pivot: {x: 0.47826087, y: -0.29567307}
     alignment: 9
@@ -3777,7 +3777,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1400, y: 4378}
-  - name: Inventory Book Without Border_Frame_188
+  - name: Frame_188
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3798,7 +3798,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 986}
-  - name: Inventory Book Without Border_Frame_189
+  - name: Frame_189
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3819,7 +3819,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 710, y: 986}
-  - name: Inventory Book Without Border_Frame_190
+  - name: Frame_190
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3840,7 +3840,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1416, y: 986}
-  - name: Inventory Book Without Border_Frame_191
+  - name: Frame_191
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3861,7 +3861,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2122, y: 986}
-  - name: Inventory Book Without Border_Frame_192
+  - name: Frame_192
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3882,7 +3882,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2828, y: 986}
-  - name: Inventory Book Without Border_Frame_193
+  - name: Frame_193
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3903,7 +3903,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 3534, y: 986}
-  - name: Inventory Book Without Border_Frame_194
+  - name: Frame_194
     originalName: 
     pivot: {x: 0.47826087, y: -0.29567307}
     alignment: 9
@@ -3924,7 +3924,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 2098, y: 4378}
-  - name: Inventory Book Without Border_Frame_195
+  - name: Frame_195
     originalName: 
     pivot: {x: 0.47277933, y: -0.29567307}
     alignment: 9
@@ -3945,7 +3945,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4240, y: 986}
-  - name: Inventory Book Without Border_Frame_196
+  - name: Frame_196
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
@@ -3966,7 +3966,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 1342, y: 6595}
-  - name: Inventory Book Without Border_Frame_197
+  - name: Frame_197
     originalName: 
     pivot: {x: 0.49924356, y: -0.29567307}
     alignment: 9
