@@ -37,9 +37,9 @@ public class BookDisplay : MonoBehaviour
     [SerializeField] private AnimationCurve animationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
     [Header("Animator Branching")]
-    public bool closeBookNormal;
+    public bool closeBookNormal; // choose your open/close animation variant
 
-    [Header("Information")]
+    [Header("Information (Debug)")]
     [SerializeField] private int currentPage;
     [SerializeField] private bool bookOpen;
     [SerializeField] private bool bookUp;
@@ -60,30 +60,37 @@ public class BookDisplay : MonoBehaviour
         animator = GetComponent<Animator>();
         bookRectTransform = GetComponent<RectTransform>();
 
+        // Cover icon starts closed
         if (image != null)
             image.sprite = defaultSprite;
 
+        // Off-screen setup
         bookOnScreenPos = bookRectTransform.anchoredPosition;
         bookOffScreenPos = bookOnScreenPos + Vector2.right * offScreenOffset;
         bookRectTransform.anchoredPosition = bookOffScreenPos;
         gameObject.SetActive(false);
 
+        // Load or instantiate pages
         if (bookContentParent.transform.childCount == 0)
             SetCurrentBook(defaultBook);
         else
-            currentBookContainer = bookContentParent.transform.GetChild(0)
+            currentBookContainer = bookContentParent.transform
+                                    .GetChild(0)
                                     .GetComponent<BookPagesContainer>();
 
+        // Wire buttons
         nextButton.onClick.AddListener(NextPage);
         prevButton.onClick.AddListener(PreviousPage);
         openButton.onClick.AddListener(OpenBook);
         closeButton.onClick.AddListener(CloseBook);
 
+        // Listen for toggle event
         GameEventsManager.instance.inputEvents.onBookToggle += ToggleBook;
 
+        // Start closed
         bookOpen = false;
         bookUp = false;
-        TogglePageButtons();
+        RefreshButtons();
         animator.enabled = false;
     }
 
@@ -100,24 +107,22 @@ public class BookDisplay : MonoBehaviour
         }
     }
 
-    private void TogglePageButtons()
+    private void RefreshButtons()
     {
-        openButton.interactable = !bookOpen;
-        closeButton.interactable = bookOpen;
-        prevButton.interactable = bookOpen && currentPage > 0;
-        nextButton.interactable = bookOpen && (
-            startOnRightPage
-                ? currentPage < currentBookContainer.PageCount - 1
-                : currentPage < currentBookContainer.PageCount - 2
-        );
+        // Entire GameObjects on/off
+        openButton.gameObject.SetActive(!bookOpen);
+        closeButton.gameObject.SetActive(bookOpen);
+        prevButton.gameObject.SetActive(bookOpen);
+        nextButton.gameObject.SetActive(bookOpen);
     }
 
     private void UpdatePages()
     {
         if (!bookOpen || currentBookContainer == null) return;
 
+        // Hide all pages
         for (int i = 0; i < currentBookContainer.PageCount; i++)
-            currentBookContainer.GetPage(i).SetActive(false);
+            currentBookContainer.GetPage(i)?.SetActive(false);
 
         pageNumberLeft.text = "";
         pageNumberRight.text = "";
@@ -162,7 +167,8 @@ public class BookDisplay : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
-            bookRectTransform.anchoredPosition = Vector2.LerpUnclamped(from, to, animationCurve.Evaluate(t));
+            bookRectTransform.anchoredPosition =
+                Vector2.LerpUnclamped(from, to, animationCurve.Evaluate(t));
             yield return null;
         }
         bookRectTransform.anchoredPosition = to;
@@ -182,7 +188,6 @@ public class BookDisplay : MonoBehaviour
     {
         if (!bookUp)
             gameObject.SetActive(true);
-
         StartCoroutine(PositionAnimation());
     }
 
@@ -203,10 +208,10 @@ public class BookDisplay : MonoBehaviour
     public void NextPage()
     {
         if (!bookOpen) return;
-        int max = startOnRightPage
+        int limit = startOnRightPage
             ? currentBookContainer.PageCount - 1
             : currentBookContainer.PageCount - 2;
-        if (currentPage >= max) return;
+        if (currentPage >= limit) return;
 
         currentPage += 2;
         lastAnimation = AnimationType.Flip;
@@ -216,7 +221,6 @@ public class BookDisplay : MonoBehaviour
     public void PreviousPage()
     {
         if (!bookOpen || currentPage <= 0) return;
-
         currentPage -= 2;
         lastAnimation = AnimationType.Flip;
         StartCoroutine(PlayAndWait("right", Random.Range(1, 4)));
@@ -224,7 +228,7 @@ public class BookDisplay : MonoBehaviour
 
     private IEnumerator PlayAndWait(string trigger, int randomInt = -1)
     {
-        // hide UI/content
+        // hide content immediately
         bookUI.SetActive(false);
         bookContentParent.SetActive(false);
 
@@ -234,32 +238,37 @@ public class BookDisplay : MonoBehaviour
         animator.SetBool("closeBookNormal", closeBookNormal);
         animator.SetTrigger(trigger);
 
+        // wait one frame so clip info is valid
         yield return null;
 
         var clips = animator.GetCurrentAnimatorClipInfo(0);
         if (clips.Length > 0)
             yield return new WaitForSeconds(clips[0].clip.length - 0.05f);
 
-        // handle open/close
+        // handle result
         if (lastAnimation == AnimationType.Open)
         {
             bookOpen = true;
             if (image != null) image.sprite = openSprite;
-            UpdatePages();            // <<< ensure first pages show
+            // show pages on first open
+            UpdatePages();
         }
         else if (lastAnimation == AnimationType.Close)
         {
             bookOpen = false;
             if (image != null) image.sprite = defaultSprite;
         }
+        else if (lastAnimation == AnimationType.Flip && bookOpen)
+        {
+            UpdatePages();
+        }
 
+        // reveal or hide UI/content
         bookUI.SetActive(bookOpen);
         bookContentParent.SetActive(bookOpen);
 
-        if (lastAnimation == AnimationType.Flip && bookOpen)
-            UpdatePages();
-
-        TogglePageButtons();
+        // refresh which buttons are present
+        RefreshButtons();
 
         animator.enabled = false;
     }
