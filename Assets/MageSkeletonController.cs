@@ -357,7 +357,7 @@ public class MageSkeletonController : MonoBehaviour
 
     private void Die()
     {
-
+        AudioManager.instance.PlaySFX("Zombie1");
         if(QuestManager.instance != null) { 
         QuestManager.instance.NotifyStepEvent("Kill", EnemyID);
         }

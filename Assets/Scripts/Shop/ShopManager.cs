@@ -25,6 +25,8 @@ public class ShopManager : MonoBehaviour
         moneyManager = inventoryManagerGameObject.GetComponent<MoneyManager>();
         inventoryManager = inventoryManagerGameObject.GetComponent<InventoryManager>();
 
+        AudioManager.instance.PlayMusic("Village");
+
         // Varmistetaan, ett‰ molemmat kaupat ovat aluksi pois p‰‰lt‰
         shop.SetActive(false);
         sepanKauppa.SetActive(false);

@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
         // LoadGameData();
     }
 
+    private void Start()
+    {
+        AudioManager.instance.PlayMusic("Chaos");
+    }
+
     public void IncreaseDepth()
     {
         if (CurrentDepth < MaxDepth)

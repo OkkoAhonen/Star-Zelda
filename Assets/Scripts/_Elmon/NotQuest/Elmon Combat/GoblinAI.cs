@@ -139,6 +139,8 @@ public class GoblinAI : MonoBehaviour
         animator.SetTrigger("death");
         Destroy(gameObject, 1f);
         // at end of Death clip: AnimationEvent ? OnReallyDead()
+
+        AudioManager.instance.PlaySFX("MonsterRoar2");
     }
 
     public void OnReallyDead()  // AnimationEvent
