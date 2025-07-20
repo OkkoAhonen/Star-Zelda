@@ -29,7 +29,6 @@ public class PlayerDialogueAction : MonoBehaviour
     public void addSwordToInventory()
     {
         InventoryManager.Instance.AddItem(Sword);
-        TownManager.influence += 1;
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         playerStats.PlusStartPoints();
     }

@@ -6,22 +6,16 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
-
-
     public Image image;
     //public Image TopImage;
     public Color selectedColor, notSelectedColor;
-    public string name;
-    [SerializeField] private GameObject selectedItemShower; //vie inspectorista
+    [SerializeField] private GameObject selectedItemShower;
 
 
 
     private void Awake()
     {
         Deselect();
-        if(selectedItemShower != null) {
-        selectedItemShower.GetComponent<Image>().enabled = false;
-        }
     }
 
     public void Select()
@@ -32,6 +26,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             selectedItemShower.GetComponent<Image>().enabled = true;
         }
     }
+
     public void Deselect()
     {
         image.color = notSelectedColor;
@@ -49,5 +44,4 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         inventoryItem.parentAfterDrag = transform;
 
     }
-    
 }

@@ -18,7 +18,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "a2d73800-175f-4b40-bb65-ac2f70ca9a82",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -27,7 +27,7 @@
                     "name": "QuestLogToggle",
                     "type": "Button",
                     "id": "401826fc-ba80-46d5-a856-aa9f53a0f853",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -199,6 +199,17 @@
                     "name": "",
                     "id": "6a729d64-4a0f-4dea-a1d8-59af65228fb8",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "48ce143d-ac1e-4edd-9203-438e46876df3",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
