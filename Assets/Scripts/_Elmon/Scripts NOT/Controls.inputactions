@@ -36,7 +36,7 @@
                     "name": "Inventory",
                     "type": "Button",
                     "id": "e8e000cf-d7a6-4da0-980b-f3c2f8a30b24",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
