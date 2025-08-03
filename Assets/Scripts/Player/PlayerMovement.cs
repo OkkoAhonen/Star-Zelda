@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // Komponenttiviittaukset
     [Header("Core Components")]
     [SerializeField] private Rigidbody2D rb;
-    private PlayerStats stats;
+    private PlayerStatsManager statsManager;
     private Camera cam;
 
     [Header("Rotation Fix (Optional)")]
@@ -34,28 +34,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        // Hae viittaus kameraan heti alussa
         FindMainCamera();
 
-        // Hae komponentit tästä GameObjectista
-        // On yleensä turvallisempaa hakea komponentit Startissa tai Awakessa
-        // Varmista, että ne ovat olemassa ennen käyttöä
-        stats = GetComponent<PlayerStats>();
+        statsManager = PlayerStatsManager.instance;
         rb = GetComponent<Rigidbody2D>();
-
-        if (stats == null)
-        {
-            Debug.LogError("PlayerStats-komponenttia ei löytynyt tästä GameObjectista!", this);
-        }
-        if (rb == null)
-        {
-            Debug.LogError("Rigidbody2D-komponenttia ei löytynyt tästä GameObjectista!", this);
-        }
     }
 
     void Start()
     {
-        // Tallennetaan rotationFixin alkurotaatio, jos se on asetettu
         if (rotationFix != null)
         {
             rotationFixRotation = rotationFix.transform.rotation;
@@ -81,36 +67,30 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("PlayerMovement Enabled - Resetting State and Finding Camera");
         ResetDashState(); // Nollaa dashin tila (erityisen tärkeää scenen vaihdon jälkeen)
-        FindMainCamera(); // Yritä löytää (mahdollisesti uuden scenen) pääkamera
+        cam = Camera.main; // Yritä löytää (mahdollisesti uuden scenen) pääkamera
     }
 
     void Update()
     {
 
         if(Input.GetKeyDown(KeyCode.L)) { PlayerStatsManager.instance.Heal(-40); }
-        // Jos komponentteja puuttuu, älä jatka
-        if (rb == null || stats == null) return;
 
-        // --- Inputien lukeminen ---
         ProcessInputs();
 
-        // --- Liikkumisen suoritus ---
-        // Liikutetaan pelaajaa normaalisti VAIN jos hän ei ole dashaamassa
         if (!isDashing)
         {
             ApplyMovement();
         }
 
-        // --- Rotaatio ---
-        // Varmistetaan, että kamera on löytynyt ennen rotaation yrittämistä
+        // --- Rotation ---
         if (cam != null)
         {
             PlayerMouseRotation();
         }
         else
         {
-            // Yritetään löytää kamera uudelleen, jos se puuttuu
-            FindMainCamera();
+            // Yritetään löytää kamera uudelleen, jos se puuttuu (POISTA JOSKUS)
+            cam = Camera.main;
         }
     }
 
@@ -150,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
     void ApplyMovement()
     {
         // Käytetään PlayerStatsista saatua nopeutta
-        rb.linearVelocity = moveDirection * stats.playerMoveSpeed;
+        rb.linearVelocity = moveDirection * statsManager..playerMoveSpeed;
     }
 
     // Metodi pelaajan kääntämiseksi hiiren osoittimen suuntaan
@@ -201,8 +181,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Asetetaan dash-nopeus Rigidbodyyn
         rb.linearVelocity = dashDirection.normalized * dashSpeed;
-        if(AudioManager.instance.gameObject.active == true) { 
-        AudioManager.instance.PlaySFX("Pop");
+        if (AudioManager.instance.gameObject.activeSelf)
+        {
+            AudioManager.instance.PlaySFX("Pop");
         }
         // Odotetaan dashin keston ajan
         yield return new WaitForSeconds(dashDuration);
@@ -247,28 +228,5 @@ public class PlayerMovement : MonoBehaviour
             // jos tiedät sen vakioarvon (esim. rb.gravityScale = 1f;)
         }
         Debug.Log("Dash state has been reset.");
-    }
-
-
-    // --- Helper Methods ---
-
-    // Metodi pääkameran löytämiseksi ja tallentamiseksi
-    void FindMainCamera()
-    {
-        // Älä hae uudelleen, jos kamera on jo löytynyt
-        // if (cam != null) return; // Voit lisätä tämän optimointina, mutta uudelleenhaku OnEnable:ssa voi olla tarpeen scenen vaihtuessa
-
-        cam = Camera.main;
-        if (cam == null)
-        {
-            Debug.LogWarning("Pääkameraa (tag: 'MainCamera') ei löytynyt scenestä!", this);
-            // Voit yrittää löytää sen muilla tavoilla, jos tagia ei ole asetettu:
-            // cam = FindObjectOfType<Camera>();
-            // if (cam != null) Debug.Log("Löytyi kamera ilman 'MainCamera' tagia.");
-        }
-        else
-        {
-            Debug.Log("Main Camera Found.", this);
-        }
     }
 }

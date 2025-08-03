@@ -54,7 +54,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private float fadeSpeed = 2f;
     private readonly Vector2 fadeStart = new Vector2(-1920f, 0f), fadeEnd = Vector2.zero;
 
-    private bool isPaused;
     private string lastNonMenuScene;
     private Resolution[] availableResolutions;
     private int selectedResolutionIndex;
@@ -164,7 +163,6 @@ public class MenuManager : MonoBehaviour
         if (opening)
         {
             // pause immediately
-            isPaused = true;
             Time.timeScale = 0f;
             pauseMenuPanel.SetActive(true);
             MenuAnimation.Instance.AnimatePanelIn(idx);
@@ -172,7 +170,6 @@ public class MenuManager : MonoBehaviour
         else
         {
             // unpause immediately
-            isPaused = false;
             Time.timeScale = 1f;
             // hide settings if open
             int sidx = FindPanelIndex(settingsMenuPanel);
@@ -274,7 +271,6 @@ public class MenuManager : MonoBehaviour
 
     public void QuitToMenu()
     {
-        isPaused = false;
         Time.timeScale = 1f;
         StartCoroutine(FadeAndLoadScene(mainMenuSceneName));
     }

@@ -49,6 +49,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "NextScene",
+                    "type": "Button",
+                    "id": "b6947f4a-7156-42ac-bed6-d6abd8531071",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LastScene",
+                    "type": "Button",
+                    "id": "abacc0b1-201b-4b39-9937-dea6f667bbc0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Heal",
+                    "type": "Button",
+                    "id": "e5831602-367a-4813-a448-34566f76d4cd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -197,17 +224,6 @@
                 },
                 {
                     "name": "",
-                    "id": "6a729d64-4a0f-4dea-a1d8-59af65228fb8",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "48ce143d-ac1e-4edd-9203-438e46876df3",
                     "path": "<Keyboard>/i",
                     "interactions": "",
@@ -225,6 +241,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "OpenBook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "938395cb-c325-4713-b183-61836b2d05c9",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8cee215-a6b2-4a00-b194-163e065ed9c4",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LastScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "226314ea-a1ec-41c7-99d1-fbdaa032e86b",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Heal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

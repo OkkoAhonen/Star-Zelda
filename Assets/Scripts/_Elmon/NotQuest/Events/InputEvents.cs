@@ -48,4 +48,22 @@ public class InputEvents
     {
         onBookToggle?.Invoke();
     }
+
+    public event Action onLastScene;
+    public void LastScene()
+    {
+        onLastScene?.Invoke();
+    }
+
+    public event Action onNextScene;
+    public void NextScene()
+    {
+        onNextScene?.Invoke();
+    }
+
+    public event Action onHealPressed;
+    public void HealPressed()
+    {
+        onHealPressed?.Invoke();
+    }
 }

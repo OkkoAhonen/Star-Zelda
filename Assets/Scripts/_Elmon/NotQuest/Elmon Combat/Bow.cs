@@ -62,8 +62,6 @@ public class Bow : MonoBehaviour
     private float _spawnInterval;
     private int _spawnedCount;
 
-    private bool isBowEquipped = false;
-
     Item equippedItem;
 
     // track arrows

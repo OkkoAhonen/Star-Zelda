@@ -34,11 +34,43 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public void InventoryPressed(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            GameEventsManager.instance.inputEvents.InventoryPressed();
+        }
+    }
+
     public void BookToggled(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             GameEventsManager.instance.inputEvents.BookToggled();
+        }
+    }
+
+    public void LastScene(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            GameEventsManager.instance.inputEvents.LastScene();
+        }
+    }
+
+    public void NextScene(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            GameEventsManager.instance.inputEvents.NextScene();
+        }
+    }
+
+    public void HealPressed(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            GameEventsManager.instance.inputEvents.HealPressed();
         }
     }
 }

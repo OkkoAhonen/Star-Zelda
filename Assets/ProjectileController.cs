@@ -8,7 +8,6 @@ public class ProjectileController : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float lifetime = 3f;
-    [SerializeField] private int damageAmount = 10;
     // [SerializeField] private string playerTag = "Player";
 
     // [SerializeField] private GameObject hitEffectPrefab;

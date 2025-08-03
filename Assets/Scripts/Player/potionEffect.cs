@@ -57,8 +57,6 @@ public class PotionEffect : MonoBehaviour
         }
         else if (collision.CompareTag("Player") && equippedItem.isHealthPotion && canDamage)
         {
-            playerAction playeraction = collision.gameObject.GetComponent<playerAction>();
-            playeraction.playerTakeDamage(-equippedItem.PotionHeal);
             StartCoroutine(PotionDamageCooldown());
   
         }

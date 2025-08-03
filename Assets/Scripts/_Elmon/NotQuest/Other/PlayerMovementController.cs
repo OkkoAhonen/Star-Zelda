@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovementController : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed;
 
     private Rigidbody2D rb;
     private Vector2 velocity = Vector2.zero;
@@ -27,6 +27,8 @@ public class PlayerMovementController : MonoBehaviour
         GameEventsManager.instance.inputEvents.onMovePressed += MovePressed;
         GameEventsManager.instance.playerEvents.onDisablePlayerMovement += DisablePlayerMovement;
         GameEventsManager.instance.playerEvents.onEnablePlayerMovement += EnablePlayerMovement;
+
+        moveSpeed = PlayerStatsManager.instance.
     }
 
     private void OnDestroy()

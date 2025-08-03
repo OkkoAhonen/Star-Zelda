@@ -91,21 +91,7 @@ public class CharacterUIManager : MonoBehaviour
             Button increaseButton = statEntry.transform.GetChild(2).GetComponent<Button>();
 
             // Use our StatDefinition SO to get display name and description
-            StatDefinition def = StatDefinition.Get(stat);
-            if (def != null)
-            {
-                statNameText.text = def.displayName;
-                // If your prefab has a 4th text for description:
-                if (statEntry.transform.childCount > 3)
-                {
-                    TMP_Text statDescText = statEntry.transform.GetChild(3).GetComponent<TMP_Text>();
-                    statDescText.text = def.description;
-                }
-            }
-            else
-            {
-                statNameText.text = stat.ToString();
-            }
+            statNameText.text = stat.ToString();
 
             statValueText.text = playerStatsManager.GetStat(stat).ToString();
 
@@ -147,9 +133,9 @@ public class CharacterUIManager : MonoBehaviour
             {
                 eventID = EventTriggerType.PointerEnter
             };
-            entryEnter.callback.AddListener((data) =>
-                TooltipManager.Instance.Show(def, Input.mousePosition)
-            );
+            //entryEnter.callback.AddListener((data) =>
+            //    TooltipManager.Instance.Show(def, Input.mousePosition)
+            //);
             trigger.triggers.Add(entryEnter);
 
             // Pointer Exit => Hide()

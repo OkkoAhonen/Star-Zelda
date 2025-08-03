@@ -283,7 +283,6 @@ public class GenerateLevel : MonoBehaviour
 
             ShuffleList(potentialParents); Room expandFrom = potentialParents[0];
             List<Vector2> directions = new List<Vector2> { Vector2.left, Vector2.right, Vector2.up, Vector2.down }; ShuffleList(directions);
-            bool roomAdded = false;
             foreach (Vector2 direction in directions)
             {
                 if (generatedRooms.Count >= currentSettings.maxTotalRooms)
@@ -302,7 +301,6 @@ public class GenerateLevel : MonoBehaviour
                         Room newRoom = new Room(newTemplate, newLocation, expandFrom.recursionDepth + 1);
                         DrawMinimapIconAndInstantiateRoom(newRoom);
                         //Debug.Log($"EnsureMinimumTotalRooms: Added room at {newLocation}. New total: {generatedRooms.Count}");
-                        roomAdded = true;
                         break; // Lis‰ttiin yksi, riitt‰‰ t‰lle attemptille
                     }
                     else if (newTemplate != null)

@@ -15,7 +15,6 @@ public class PlayerMovement2D : MonoBehaviour
 
     public int money = 0;
     [SerializeField] private Text moneyText;
-    public Interactable Interactable { get; set; }
 
     private bool isFacingRight = true; // Pelaaja katsoo oletuksena oikealle
     private Rigidbody2D rb;
@@ -102,11 +101,6 @@ public class PlayerMovement2D : MonoBehaviour
     {
         Debug.Log("Player has died.");
         // Pelaajan kuoleman k�sittely, kuten peli loppuu tai animaatio alkaa
-    }
-
-    public void SetInteractable(Interactable interactable)
-    {
-        Interactable = interactable;
     }
 
     private void FlipSprite()

@@ -1,9 +1,16 @@
 using UnityEngine;
 
-public class DialogueActivator : MonoBehaviour, Interactable
+public class DialogueActivator : MonoBehaviour
 {
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     [SerializeField] private DialogueObject dialogueObject;
-    public void Interact(playerAction player)
+    public void Interact()
     {
         foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
         {
@@ -15,6 +22,7 @@ public class DialogueActivator : MonoBehaviour, Interactable
 
        player.DialogueUI.ShowDialogue(dialogueObject);
     }
+
     public void UpdateDialogueObject(DialogueObject dialogueObject)
     {
         this.dialogueObject = dialogueObject;
@@ -22,7 +30,7 @@ public class DialogueActivator : MonoBehaviour, Interactable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && collision.TryGetComponent(out playerAction player))
+        if (collision.CompareTag("Player") && collision.TryGetComponent(out player))
         {
             player.Interactable = this;
         }

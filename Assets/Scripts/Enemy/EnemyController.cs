@@ -31,7 +31,6 @@ public class EnemyController : MonoBehaviour
     [Header("Runtime References")]
     private Transform playerTransform;
     private Rigidbody2D rb;
-    private playerAction playerActionScript;
 
     [Header("State")]
     private float currentHealth;
@@ -66,8 +65,6 @@ public class EnemyController : MonoBehaviour
         if (playerObject != null)
         {
             playerTransform = playerObject.transform;
-            playerActionScript = playerObject.GetComponent<playerAction>();
-            if (playerActionScript == null) Debug.LogWarning($"PlayerAction-skripti� ei l�ytynyt pelaajasta.", this);
         }
         else { Debug.LogError("Pelaajaa (tagi 'Player') ei l�ytynyt.", this); enabled = false; return; }
 

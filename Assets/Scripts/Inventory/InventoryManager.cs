@@ -11,7 +11,47 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject InventoryItemPrefab;
 
-    int selectedSlot = 0; // Ensimmäinen slotti oletuksena valittuna.
+    private int selectedSlot = 0;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("Multiple InventoryManager instances detected. Destroying duplicate.");
+            Destroy(this);
+        }
+
+        GameEventsManager.instance.inputEvents.onHealPressed += UseHealItem;
+    }
+
+
+    private void Start()
+    {
+        ChangeSelectedSlot(0);
+        foreach (var item in startItems)
+        {
+            AddItem(item);
+        }
+
+        Debug.Log(selectedSlot);
+    }
+
+
+    private void Update()
+    {
+        if (Input.inputString != null) // Select slot with keyboard (1-9, 0)  (good enough)
+        {
+            bool isNumber = int.TryParse(Input.inputString, out int number);
+            if (isNumber && number > 0 && number <= inventorySlots.Length) 
+            {
+                ChangeSelectedSlot(number);
+            }
+        }
+    }
 
     void ChangeSelectedSlot(int NewValue)
     {
@@ -27,44 +67,6 @@ public class InventoryManager : MonoBehaviour
         }
         inventorySlots[NewValue].Select();
         selectedSlot = NewValue;
-    }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Debug.LogWarning("Multiple InventoryManager instances detected. Destroying duplicate.");
-        }
-    }
-
-
-    private void Start()
-    {
-        ChangeSelectedSlot(0);
-        foreach (var item in startItems)
-        {
-            AddItem(item);
-            
-        }
-
-        Debug.Log(selectedSlot);
-    }
-
-
-    private void Update()
-    {
-        if (Input.inputString != null)
-        {
-            bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number <= inventorySlots.Length) 
-            {
-                ChangeSelectedSlot(number - 1);
-            }
-        }
     }
 
     public bool AddItem(Item item)
@@ -106,14 +108,29 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.IntialiseItem(item);
     }
 
-    public Item GetSelectedItem(bool use)
+    public void UseHealItem()
     {
-        if (selectedSlot < 0 || selectedSlot >= inventorySlots.Length)
+        // Find a way to find if has heal potions in inventory
+        // Then use them
+
+        for (int i = 0; i < inventorySlots.Length; i++) // This goes through the whole inventory each time, so it sucks
         {
-            Debug.LogWarning("Selected slot is out of range.");
-            return null;
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot != null &&
+                itemInSlot.item.foodHeal > 0)
+            {
+                PlayerStatsManager.instance.Heal(itemInSlot.item.foodHeal);
+                GetSelectedItem(true);
+                break;
+            }
         }
 
+        Debug.Log("Can't heal: no healing items in inventory!");
+    }
+
+    public Item GetSelectedItem(bool use)
+    {
         InventorySlot slot = inventorySlots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
         if (itemInSlot != null)
@@ -136,12 +153,6 @@ public class InventoryManager : MonoBehaviour
         }
 
         return null;
-    }
-
-    public bool FindAndConsumeItem(Item itemToFind, bool consume)
-    {
-        // Tämä funktio voisi nyt kutsua uutta, monipuolisempaa funktiota:
-        return HasOrConsumeItemAmount(itemToFind, 1, consume);
     }
 
     // ----- UUSI FUNKTIO TÄSSÄ -----

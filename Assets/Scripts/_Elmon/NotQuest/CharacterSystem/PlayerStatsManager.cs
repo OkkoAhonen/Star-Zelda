@@ -7,8 +7,6 @@ public enum StatType
 {
 	Strength, // Melee 
 	Vitality, // Max health
-	Intelligence, // More levels, stronger magic
-	Endurance, // Stamina?
 	Agility, // Speed
 	Luck, // Luck
 	Magic, // Magic
@@ -22,7 +20,7 @@ public class PlayerStatsManager : MonoBehaviour
 
     private readonly HashSet<StatType> bodyStats = new HashSet<StatType>
 	{
-		StatType.Strength, StatType.Vitality, StatType.Endurance
+		StatType.Strength, StatType.Vitality
 	};
 
 	private readonly HashSet<StatType> accuracyStats = new HashSet<StatType>
@@ -32,11 +30,10 @@ public class PlayerStatsManager : MonoBehaviour
 
 	private readonly HashSet<StatType> magicPowerStats = new HashSet<StatType>
 	{
-        StatType.Magic, StatType.Alchemy, StatType.Intelligence
+        StatType.Magic, StatType.Alchemy
 	};
 
 	public static PlayerStatsManager instance { get; private set; }
-	public event Action onStatChanged;
 	
 	public Dictionary<StatType, int> stats = new Dictionary<StatType, int>();
 
@@ -45,7 +42,7 @@ public class PlayerStatsManager : MonoBehaviour
 	[SerializeField] private int startingExperience = 0;
 	[SerializeField] private int startingGold = 98;
 	[SerializeField] private int startingArmor = 0;
-	[SerializeField] private int startingAttributePoints = 5;
+	[SerializeField] private int startingAttributePoints = 3;
 
 	// These values are read-only from other scripts
 	public int CurrentLevel { get; private set; }
@@ -80,7 +77,8 @@ public class PlayerStatsManager : MonoBehaviour
 		}
 		instance = this;
 
-		PointsPerLevel = 15;
+		if (PointsPerLevel == 0)
+			PointsPerLevel = 3; // Intelligence would increase this!!
 		
 		// Initialize attribute points with starting value
 		attributePoints = startingAttributePoints;
@@ -100,7 +98,9 @@ public class PlayerStatsManager : MonoBehaviour
 		CurrentArmor = startingArmor;
 		CurrentHealth = MaxHealth;
 		XPToNextLevel = ExperienceNeededPerLevel;
-	}
+
+        PlayerStatsManager.onStatChanged += RecalculateStats;
+    }
 
 	
 
@@ -110,7 +110,6 @@ public class PlayerStatsManager : MonoBehaviour
 	{
 		stats[stat] += amount;
 		Debug.Log(stat + " increased to " + stats[stat]);
-		onStatChanged?.Invoke();
 	}
 
     private void Update()
@@ -258,17 +257,32 @@ public class PlayerStatsManager : MonoBehaviour
 		{
 			Debug.Log("Not enough attribute points.");
 		}
-	}
+    }
 
-	private void ChangeGold(int gold)
+    private void RecalculateStats()
+    {
+        MaxHealth = GetStat(StatType.Vitality) * 10;
+
+        MeleeDamage = GetStat(StatType.Strength) * 2;
+
+        MagicDamage = GetStat(StatType.Magic) * 2;
+
+        //Stamina = playerStatsManager.GetStat(StatType.Endurance) * 8;
+
+        //CriticalHitChance = playerStatsManager.GetStat(StatType.Luck) * 0.5f;
+
+        //DodgeChance = playerStatsManager.GetStat(StatType.Agility) * 0.4f;
+    }
+
+    private void ChangeGold(int gold)
 	{
 		CurrentGold += gold;
 	}
 
-	public void ChangeArmor(int amount)
+	public void ChangeArmorBy(int amount)
 	{
-		CurrentArmor = Mathf.Max(0, CurrentArmor + amount);
-		GameEventsManager.instance.playerEvents.ChangeArmorBy(CurrentArmor);
+		CurrentArmor += amount;
+		GameEventsManager.instance.playerEvents.ChangeArmorTo(CurrentArmor); // Does nothing?
 	}
 
 	public void TakeDamage(int amount)
@@ -281,7 +295,7 @@ public class PlayerStatsManager : MonoBehaviour
 	public void Heal(int amount)
 	{
 		CurrentHealth = Mathf.Min(MaxHealth, CurrentHealth + amount);
-		Debug.Log("Player healed " + amount + " HP. Health: " + CurrentHealth + "/" + MaxHealth);
+		Debug.Log("Player healed " + amount + " HP. Current health: " + CurrentHealth + "/" + MaxHealth);
 	}
 
 	private void OnEnable()

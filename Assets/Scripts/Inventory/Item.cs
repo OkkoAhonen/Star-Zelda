@@ -42,7 +42,7 @@ public class Item : ScriptableObject
     public bool isBow = false;
 
     [Header("Food")]
-    public float foodHeal = 20f;
+    public int foodHeal = 20;
 
 
     [Header("QuestItem")]

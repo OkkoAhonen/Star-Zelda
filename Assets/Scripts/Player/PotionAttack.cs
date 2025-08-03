@@ -28,7 +28,6 @@ public class PotionAttack : MonoBehaviour
 
     [Header("Splash Damage Settings")]
     [SerializeField] private float splashDamage = 10f;
-    [SerializeField] private float damageSpeed = 0.5f;
     [SerializeField] private float splashLifespan = 2f;
     [SerializeField] private float splashSizeMultiplier = 1f;
 

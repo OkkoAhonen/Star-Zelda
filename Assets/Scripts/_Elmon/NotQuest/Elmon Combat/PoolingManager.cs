@@ -69,10 +69,8 @@ public class PoolingManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Gets you an active instance (recycled or new up to maxSize).  
-    /// Returns null if you’re at maxSize and the pool is empty.
-    /// </summary>
+    // Gets you an active instance (recycled or new up to maxSize).  
+    // Returns null if you’re at maxSize and the pool is empty.
     public GameObject GetPooledObject(GameObject prefab)
     {
         if (!_poolDictionary.TryGetValue(prefab, out var data))
@@ -103,9 +101,7 @@ public class PoolingManager : MonoBehaviour
         return null;
     }
 
-    /// <summary>
-    /// Returns an object to its pool, or destroys it if the pool is already full.
-    /// </summary>
+    // Returns an object to its pool, or destroys it if the pool is already full.
     public void ReturnToPool(GameObject prefab, GameObject obj)
     {
         if (_poolDictionary.TryGetValue(prefab, out var data))

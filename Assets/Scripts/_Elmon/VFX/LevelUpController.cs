@@ -16,7 +16,9 @@ public class LevelUpController : MonoBehaviour
     public float outroZoomMultiplier = 1.2f; // Zoom multiplier on second flash
 
     [Header("Camera Control")]
+#pragma warning disable CS0618 // Type or member is obsolete
     public CinemachineVirtualCamera vCam;
+#pragma warning restore CS0618 // Type or member is obsolete
     public float baseOrthographicSize = 5f;
     public float zoomOutDuration = 0.5f;
     public AnimationCurve slowZoomCurve;

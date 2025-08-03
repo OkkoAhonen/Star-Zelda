@@ -26,24 +26,13 @@ public class PlayerDialogueAction : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void addSwordToInventory()
+    public void QuestReward()
     {
         InventoryManager.Instance.AddItem(Sword);
-        PlayerStats playerStats = player.GetComponent<PlayerStats>();
-        playerStats.PlusStartPoints();
-    }
-
-    public void addPotionToInventory()
-    {
-        InventoryManager.Instance.AddItem(Potion);
-        PlayerStats playerStats = player.GetComponent<PlayerStats>();
-        playerStats.PlusStartPoints();
     }
 
     public void HasSpokentoTheLeader()
     {
-        PlayerStats playerStats = player.GetComponent<PlayerStats>();
-        playerStats.PlusStartPoints();
     }
 
     public void AvaaSepanKauppa()
