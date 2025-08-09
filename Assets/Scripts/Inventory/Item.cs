@@ -1,77 +1,63 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(menuName = "Game Data/Item")]
-
-
+// Base item data. Use derived SOs to categorize items in the inspector.
+[CreateAssetMenu(menuName = "Game Data/Item/Base")]
 public class Item : ScriptableObject
 {
+    // Stable unique ID (for saves). Keep this consistent for an asset.
+    public string ID;
+    public string DisplayName;
+    public Sprite Image;
+    [TextArea] public string Description;
 
-    [Header("Only gameplay")]
-    public TileBase tile;
-    public ItemType type;
-    public ActionType actionType;
-    public Vector2Int range = new Vector2Int(5, 4);
-    public float price = 25f;
+    // Stacking
+    public bool Stackable = true;
+    public int MaxStack = 99;
 
-    [Header("Only UI")]
-    public bool stackable = true;
+    // Simple consumable heal amount
+    public int FoodHeal = 0;
 
-    [Header("Both")]
-    public Sprite image;
+    // Armor
+    public bool IsArmor = false;
+    // 0 = hat, 1 = shirt, 2 = shoes
+    public int ArmorSlotIndex = -1;
+    public int ArmorValue = 0;
 
-    [Header("Melee Combat Properties")]
-    public float attackDamage = 0f; //katso combat script
-    public float damageBooster = 1f; //jkatso combat script
-    public float attackRadius = 1.5f;
-    public float maxChargeTime = 3f;
-    public bool isWeapon = false; // Voit m‰‰ritt‰‰, onko kyseinen item ase.
+    // General combat fields (optional)
+    public bool IsWeapon = false;
+    public float MeleeDamage = 0f;
+    public float MeleeSpeed = 0f;
+    public bool IsBow = false;
+    public bool IsPotion = false;
+    public float PotionEffectValue = 0f;
 
-    [Header("Potion Combat Properties")]
-    public float potionAttackDamage = 20f;
-    public float potionActivetimer = 2f;
-    public float damageDuration = 0.5f;
-    public bool isDamagePotion;
-    public bool isHealthPotion;
-    public float PotionHeal = 10f;
+    // Attribute bonuses (flat)
+    [SerializeField] private AttributeBonus[] attributeBonuses = new AttributeBonus[0];
 
-    [Header("archer Combat Properties")]
-    public float accurasu = 20f;
-    public bool isBow = false;
+    public Dictionary<PlayerStatsManager.AttributeType, int> GetAttributeBonuses()
+    {
+        var dict = new Dictionary<PlayerStatsManager.AttributeType, int>();
+        for (int i = 0; i < attributeBonuses.Length; i++)
+        {
+            var b = attributeBonuses[i];
+            if (!dict.ContainsKey(b.Attribute))
+                dict[b.Attribute] = b.Value;
+            else
+                dict[b.Attribute] += b.Value;
+        }
+        return dict;
+    }
 
-    [Header("Food")]
-    public int foodHeal = 20;
+    public int GetArmorValue()
+    {
+        return IsArmor ? ArmorValue : 0;
+    }
 
-
-    [Header("QuestItem")]
-    public bool isItVillapaita = false;
-
+    [System.Serializable]
+    public struct AttributeBonus
+    {
+        public PlayerStatsManager.AttributeType Attribute;
+        public int Value;
+    }
 }
-
-public enum ItemType
-{
-    BuildingBlock,
-    Tool,
-    Weapon,
-    potion,
-    Bow,
-    Food,
-    Mushroom,
-    GemStone,
-    Blood,
-    Stone,
-    QuestItem
-
-}
-
-public enum ActionType
-{
-    Dig,
-    Mine,
-    Slash,
-    potionthrow
-    
-}
-

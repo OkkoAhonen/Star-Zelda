@@ -27,6 +27,6 @@ public class Perk : ScriptableObject
 [System.Serializable]
 public class StatRequirement // What stat and how many levels of it?
 {
-	public StatType statType;
+	public PlayerStatsManager.AttributeType attributeType;
 	public int requiredLevel;
 }

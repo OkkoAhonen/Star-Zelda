@@ -10,7 +10,7 @@ public class PlayerEvents
 	public event Action<string> onEnemyKilled;
 	public event Action<int, int> onHealthChangeTo;
 	public event Action<int> onChangeArmorTo;
-	public event Action<StatType, int> onStatChange;
+	public event Action onStatsChanged;
     public event Action<int> onChangeGoldBy;
 	public event Action onShop;
 
@@ -21,7 +21,7 @@ public class PlayerEvents
 	public void EnemyKilled(string target) => onEnemyKilled?.Invoke(target);
 	public void HealthChangeTo(int currentHealth, int maxHealth) => onHealthChangeTo?.Invoke(currentHealth, maxHealth);
 	public void ChangeArmorTo(int newArmor) => onChangeArmorTo?.Invoke(newArmor);
-	public void StatChange(StatType statType, int newValue) => onStatChange?.Invoke(statType, newValue);
+	public void StatsChanged() => onStatsChanged?.Invoke();
     public void ChangeGoldBy(int gold) => onChangeGoldBy?.Invoke(gold);
 	public void Shop() => onShop?.Invoke();
 

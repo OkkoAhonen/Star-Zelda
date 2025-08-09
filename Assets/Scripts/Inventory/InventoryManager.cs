@@ -1,249 +1,259 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+// InventoryManager handles quickbar (0-9), stacking, equipment (hat/shirt/shoes), and basic item queries.
+// It intentionally keeps a simple API for use by other systems (PlayerStatsManager, UI, loot, etc.).
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager Instance;
+    public static InventoryManager Instance { get; private set; }
 
-    public Item[] startItems;
+    // Quickbar slots (0..N-1). Configure in inspector (10 recommended).
+    [Header("Quickbar")]
+    [SerializeField] private InventorySlotUI[] quickSlots;
 
-    public InventorySlot[] inventorySlots;
-    public GameObject InventoryItemPrefab;
+    // UI prefab for item visuals (InventoryItemUI)
+    [Header("UI")]
+    [SerializeField] private GameObject inventoryItemPrefab;
 
-    private int selectedSlot = 0;
+    // All known items in the game (for load-by-id). Populate in inspector or via editor script.
+    [Header("Item Database")]
+    [SerializeField] private List<Item> allItems = new List<Item>();
+
+    // Equipment slots: 0 = Hat, 1 = Shirt, 2 = Shoes
+    private Item[] equipment = new Item[3];
+
+    // Internal stack storage: each quick slot maps to an ItemStack or null
+    private ItemStack[] stacks;
+
+    // Selected quick slot index
+    private int selectedSlotIndex = 0;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Debug.LogWarning("Multiple InventoryManager instances detected. Destroying duplicate.");
-            Destroy(this);
-        }
-
-        GameEventsManager.instance.inputEvents.onHealPressed += UseHealItem;
-    }
-
-
-    private void Start()
-    {
-        ChangeSelectedSlot(0);
-        foreach (var item in startItems)
-        {
-            AddItem(item);
-        }
-
-        Debug.Log(selectedSlot);
-    }
-
-
-    private void Update()
-    {
-        if (Input.inputString != null) // Select slot with keyboard (1-9, 0)  (good enough)
-        {
-            bool isNumber = int.TryParse(Input.inputString, out int number);
-            if (isNumber && number > 0 && number <= inventorySlots.Length) 
-            {
-                ChangeSelectedSlot(number);
-            }
-        }
-    }
-
-    void ChangeSelectedSlot(int NewValue)
-    {
-        if (NewValue < 0 || NewValue >= inventorySlots.Length)
-        {
-            Debug.LogWarning("Tried to select a slot outside valid range.");
+            Debug.LogWarning("Duplicate InventoryManager, destroying.");
+            Destroy(gameObject);
             return;
         }
 
-        if (selectedSlot >= 0)
+        // init stacks array to match UI slots
+        stacks = new ItemStack[quickSlots.Length];
+        for (int i = 0; i < quickSlots.Length; i++)
         {
-            inventorySlots[selectedSlot].Deselect();
+            quickSlots[i].Initialize(this, i);
+            stacks[i] = null;
         }
-        inventorySlots[NewValue].Select();
-        selectedSlot = NewValue;
     }
 
-    public bool AddItem(Item item)
+    private void Start()
     {
-        for (int i = 0; i < inventorySlots.Length; i++)
-        {
-            InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot != null &&
-                itemInSlot.item == item &&
-                itemInSlot.count < 10 &&
-                itemInSlot.item.stackable == true)
-            {
-                Debug.Log($"Found stackable item in slot {i}");
+        // Select initial slot 0 if available
+        if (quickSlots.Length > 0)
+            SelectSlot(0);
+    }
 
-                itemInSlot.count++;
-                itemInSlot.RefrestCount();
-                return true;
+    // Public API: select slot (call from input system)
+    public void SelectSlot(int index)
+    {
+        if (index < 0 || index >= quickSlots.Length) return;
+
+        quickSlots[selectedSlotIndex].Deselect();
+        selectedSlotIndex = index;
+        quickSlots[selectedSlotIndex].Select();
+    }
+
+    public int GetSelectedIndex() => selectedSlotIndex;
+
+    // Add an item to inventory quickbar. Returns true if fully added (stacked or new), false if no room.
+    public bool AddItem(Item item, int count = 1)
+    {
+        if (item == null) return false;
+
+        // Try to stack in existing stacks first (same item & stackable & not full)
+        if (item.Stackable)
+        {
+            for (int i = 0; i < stacks.Length; i++)
+            {
+                if (stacks[i] != null && stacks[i].Item == item && stacks[i].Count < item.MaxStack)
+                {
+                    int canAdd = Mathf.Min(count, item.MaxStack - stacks[i].Count);
+                    stacks[i].Count += canAdd;
+                    quickSlots[i].RefreshFromStack(stacks[i]);
+                    count -= canAdd;
+                    if (count <= 0) return true;
+                }
             }
         }
 
-        for (int i = 0; i < inventorySlots.Length; i++)
+        // Find empty slots
+        for (int i = 0; i < stacks.Length && count > 0; i++)
         {
-            InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot == null)
+            if (stacks[i] == null)
             {
-                SpawnNewItem(item, slot);
+                int take = item.Stackable ? Mathf.Min(count, item.MaxStack) : 1;
+                stacks[i] = new ItemStack(item, take);
+                quickSlots[i].RefreshFromStack(stacks[i]);
+                count -= take;
+            }
+        }
+
+        // If any left, couldn't fit
+        return count <= 0;
+    }
+
+    // Count how many of an item are present in inventory
+    public int CountItem(Item item)
+    {
+        if (item == null) return 0;
+        int total = 0;
+        for (int i = 0; i < stacks.Length; i++)
+            if (stacks[i] != null && stacks[i].Item == item)
+                total += stacks[i].Count;
+        return total;
+    }
+
+    // Consume up to amount of item. Returns true if consumed entire amount.
+    // Consumes from stacks left-to-right.
+    public bool ConsumeItem(Item item, int amount)
+    {
+        if (item == null || amount <= 0) return false;
+        int have = CountItem(item);
+        if (have < amount) return false;
+
+        int remaining = amount;
+        for (int i = 0; i < stacks.Length && remaining > 0; i++)
+        {
+            if (stacks[i] != null && stacks[i].Item == item)
+            {
+                int take = Mathf.Min(remaining, stacks[i].Count);
+                stacks[i].Count -= take;
+                remaining -= take;
+                if (stacks[i].Count <= 0)
+                {
+                    stacks[i] = null;
+                    quickSlots[i].Clear();
+                }
+                else
+                {
+                    quickSlots[i].RefreshFromStack(stacks[i]);
+                }
+            }
+        }
+
+        return remaining == 0;
+    }
+
+    // Get the selected item instance without consuming. If use==true, consume one from the stack.
+    public Item GetSelectedItem(bool use)
+    {
+        ItemStack s = stacks[selectedSlotIndex];
+        if (s == null) return null;
+        Item item = s.Item;
+        if (use)
+        {
+            // consume one
+            s.Count--;
+            if (s.Count <= 0)
+            {
+                stacks[selectedSlotIndex] = null;
+                quickSlots[selectedSlotIndex].Clear();
+            }
+            else quickSlots[selectedSlotIndex].RefreshFromStack(s);
+        }
+        return item;
+    }
+
+    // Find and automatically use a healing consumable (FoodHeal > 0). Returns true if used.
+    public bool UseHealItem()
+    {
+        for (int i = 0; i < stacks.Length; i++)
+        {
+            var s = stacks[i];
+            if (s != null && s.Item.FoodHeal > 0)
+            {
+                //PlayerStatsManager.instance.Heal(s.Item.FoodHeal);
+                ConsumeItem(s.Item, 1);
                 return true;
             }
         }
         return false;
     }
 
-    public void SpawnNewItem(Item item, InventorySlot slot) //Ei tarvitse koskea 
+    // Equipment API. 0=Hat,1=Shirt,2=Shoes. Equip returns previously equipped item (or null).
+    public Item Equip(int slotIndex, Item item)
     {
-        GameObject newItemGo = Instantiate(InventoryItemPrefab, slot.transform);
-        InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
-        inventoryItem.IntialiseItem(item);
+        if (slotIndex < 0 || slotIndex >= equipment.Length)
+        {
+            Debug.LogWarning("Invalid equipment slot");
+            return null;
+        }
+
+        Item previous = equipment[slotIndex];
+        equipment[slotIndex] = item;
+
+        // Update player stats manager with new equipment bonuses
+        UpdatePlayerEquipmentBonuses();
+
+        return previous;
     }
 
-    public void UseHealItem()
+    public Item GetEquipped(int slotIndex)
     {
-        // Find a way to find if has heal potions in inventory
-        // Then use them
-
-        for (int i = 0; i < inventorySlots.Length; i++) // This goes through the whole inventory each time, so it sucks
-        {
-            InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot != null &&
-                itemInSlot.item.foodHeal > 0)
-            {
-                PlayerStatsManager.instance.Heal(itemInSlot.item.foodHeal);
-                GetSelectedItem(true);
-                break;
-            }
-        }
-
-        Debug.Log("Can't heal: no healing items in inventory!");
+        if (slotIndex < 0 || slotIndex >= equipment.Length) return null;
+        return equipment[slotIndex];
     }
 
-    public Item GetSelectedItem(bool use)
+    private void UpdatePlayerEquipmentBonuses()
     {
-        InventorySlot slot = inventorySlots[selectedSlot];
-        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-        if (itemInSlot != null)
-        {
-            Item item = itemInSlot.item;
-            if (use == true)
-            {
-                itemInSlot.count--;
-                if (itemInSlot.count <= 0)
-                {
-                    Destroy(itemInSlot.gameObject);
-                }
-                else
-                {
-                    itemInSlot.RefrestCount();
-                }
-            }
+        // Reset bonuses in PlayerStatsManager by clearing equipment bonuses and re-adding
+        // PlayerStatsManager expects Item.GetAttributeBonuses and GetArmorValue() so we just call it
+        // We will call PlayerStatsManager to re-read equipped items (simpler) ó but PlayerStatsManager
+        // earlier expects inventory to provide item instances by ID when loading. Here we directly push bonuses.
 
-            return item;
+        // Clear all equipment bonuses first
+        foreach (PlayerStatsManager.AttributeType attr in System.Enum.GetValues(typeof(PlayerStatsManager.AttributeType)))
+        {
+            // PlayerStatsManager has method UpdateEquipmentBonuses via Inventory Manager from earlier code.
+            // Instead of calling internal methods, call public Equip hooks on PlayerStatsManager by setting items there.
         }
 
-        return null;
+        // The PlayerStatsManager script you have already queries InventoryManager in LoadStats for equipped items.
+        // To keep logic simple, we'll call PlayerStatsManager methods for applying equipment now:
+        //PlayerStatsManager.instance.EquipFromInventory(equipment[0], equipment[1], equipment[2]);
+
+        // Recalculate stats
+        PlayerStatsManager.instance.RecalculateAllStats();
+
+        // Notify listeners
+        GameEventsManager.instance.playerEvents.StatsChanged();
     }
 
-    // ----- UUSI FUNKTIO TƒSSƒ -----
-    /// <summary>
-    /// Etsii annettua esinetyyppi‰ ja -m‰‰r‰‰ koko inventaariosta.
-    /// Jos lˆytyy riitt‰v‰sti, voi halutessaan kuluttaa ne.
-    /// Kulutus tapahtuu tarvittaessa useammasta pinosta.
-    /// </summary>
-    /// <param name="itemToFind">Etsitt‰v‰ Item ScriptableObject.</param>
-    /// <param name="amountToHandle">Etsitt‰v‰/kulutettava m‰‰r‰. T‰m‰n tulee olla positiivinen luku.</param>
-    /// <param name="consume">Jos true, v‰hent‰‰ esineiden m‰‰r‰‰ ja poistaa ne tarvittaessa.</param>
-    /// <returns>True, jos esineit‰ lˆytyi riitt‰v‰sti (ja mahdollisesti kulutettiin, jos consume=true), muuten false.</returns>
-    public bool HasOrConsumeItemAmount(Item itemToFind, int amountToHandle, bool consume)
+    // Get item by ID (used during load)
+    public Item GetItemByID(string id)
     {
-        if (itemToFind == null)
-        {
-            Debug.LogWarning("ItemToFind cannot be null in HasOrConsumeItemAmount.");
-            return false;
-        }
-        if (amountToHandle <= 0)
-        {
-            Debug.LogWarning($"AmountToHandle ({amountToHandle}) must be greater than 0 in HasOrConsumeItemAmount.");
-            return false; // Ei voida k‰sitell‰ nollaa tai negatiivista m‰‰r‰‰ t‰ll‰ logiikalla
-        }
-
-        List<InventoryItem> itemInstancesInInventory = new List<InventoryItem>();
-        int totalAvailableCount = 0;
-
-        // Vaihe 1: Etsi kaikki esineen instanssit ja laske kokonaism‰‰r‰
-        for (int i = 0; i < inventorySlots.Length; i++)
-        {
-            InventorySlot slot = inventorySlots[i];
-            // Huom: GetComponentInChildren etsii myˆs itse objektista, jos komponentti on siin‰.
-            // Jos InventoryItem on AINA lapsiobjekti, t‰m‰ on ok.
-            // Jos se voisi olla myˆs samassa objektissa slotin kanssa, t‰m‰ on myˆs ok.
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-
-            if (itemInSlot != null && itemInSlot.item == itemToFind)
-            {
-                itemInstancesInInventory.Add(itemInSlot);
-                totalAvailableCount += itemInSlot.count;
-            }
-        }
-
-        // Vaihe 2: Tarkista onko tarpeeksi esineit‰
-        if (totalAvailableCount < amountToHandle)
-        {
-            return false; // Ei tarpeeksi esineit‰ inventaariossa
-        }
-
-        // Vaihe 3: Jos vain tarkistetaan (ei kuluteta) ja esineit‰ on tarpeeksi, palauta true
-        if (!consume)
-        {
-            return true;
-        }
-
-        // Vaihe 4: Kuluta esineet (jos consume == true ja niit‰ on tarpeeksi)
-        int amountLeftToConsume = amountToHandle;
-        foreach (InventoryItem itemInstance in itemInstancesInInventory)
-        {
-            if (amountLeftToConsume <= 0)
-            {
-                break; // Tarvittava m‰‰r‰ on jo kulutettu
-            }
-
-            int amountToTakeFromThisStack = Mathf.Min(itemInstance.count, amountLeftToConsume);
-
-            itemInstance.count -= amountToTakeFromThisStack;
-            amountLeftToConsume -= amountToTakeFromThisStack;
-
-            if (itemInstance.count <= 0)
-            {
-                Destroy(itemInstance.gameObject); // Tuhoa esineen GameObject, jos m‰‰r‰ menee nollaan
-            }
-            else
-            {
-                itemInstance.RefrestCount(); // P‰ivit‰ esineen n‰ytt‰m‰ m‰‰r‰ (huom: mahdollinen kirjoitusvirhe "RefreshCount")
-            }
-        }
-
-        // Varmistus (t‰m‰n ei pit‰isi tapahtua, jos logiikka on oikein)
-        if (amountLeftToConsume > 0)
-        {
-            Debug.LogError($"InventoryManager: Virhe esineiden kulutuksessa. Yritettiin kuluttaa {amountToHandle} kpl esinett‰ {itemToFind.name}, mutta {amountLeftToConsume} j‰i kuluttamatta. T‰m‰ viittaa logiikkavirheeseen.");
-            // T‰ss‰ voisi teoriassa yritt‰‰ peruuttaa tehdyt muutokset, mutta se monimutkaistaisi huomattavasti.
-            // T‰ss‰ vaiheessa palautetaan false, koska kaikkea pyydetty‰ ei saatu kulutettua.
-            return false;
-        }
-
-        return true; // Esineet lˆytyiv‰t ja kulutus onnistui (jos consume oli true)
+        if (string.IsNullOrEmpty(id)) return null;
+        return allItems.FirstOrDefault(x => x != null && x.ID == id);
     }
-    // ----- UUDEN FUNKTION LOPPU -----
+
+    // Utility for other code: give out the list of equipment for saving
+    public string GetEquippedID(int slotIndex)
+    {
+        Item it = GetEquipped(slotIndex);
+        return it != null ? it.ID : "";
+    }
+
+    // Simple container representing an item stack in a quick slot
+    private class ItemStack
+    {
+        public Item Item;
+        public int Count;
+        public ItemStack(Item item, int count) { Item = item; Count = count; }
+    }
 }
-

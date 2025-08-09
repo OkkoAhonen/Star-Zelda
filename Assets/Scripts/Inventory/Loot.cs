@@ -1,45 +1,47 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// Simple loot pickup that moves toward player and adds to InventoryManager
 public class Loot : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private Item item;
 
-    public void Initialize(Item item)
+    public void Initialize(Item itemToGive)
     {
-        this.item = item;
-        sr.sprite = item.image;
+        item = itemToGive;
+        if (sr != null && item != null) sr.sprite = item.Image;
     }
 
-    // Start()-funktio tyhjennetty, koska alustus tehd‰‰n Die()-funktiossa
     private void Start()
     {
-        Initialize(this.item);
+        if (item != null && sr != null) sr.sprite = item.Image;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        // Use static mask if assigned; fallback to tag check
+        if ((StaticValueManager.DamageNonEnemiesMask.value & (1 << collision.gameObject.layer)) != 0 ||
+            collision.gameObject.CompareTag("Player"))
         {
-            InventoryManager.Instance.AddItem(item);
+            if (InventoryManager.Instance != null)
+            {
+                InventoryManager.Instance.AddItem(item);
+            }
             StartCoroutine(MoveAndCollect(collision.transform));
         }
     }
 
     private IEnumerator MoveAndCollect(Transform target)
     {
-        Destroy(boxCollider);
-
-        while (transform.position != target.position)
+        if (boxCollider != null) Destroy(boxCollider);
+        while (Vector3.Distance(transform.position, target.position) > 0.1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            yield return null; // Korvattu 'yield return 0' modernimmalla 'null'-arvolla
+            yield return null;
         }
-
         Destroy(gameObject);
     }
 }
